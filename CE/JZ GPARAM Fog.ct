@@ -1,0 +1,1973 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>1337116432</ID>
+      <Description>"Debug Gparam Fog"</Description>
+      <Options moHideChildren="1"/>
+      <LastState/>
+      <Color>FF0080</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : eldenring.exe
+  Version: 
+  Date   : 2022-05-05
+  Author : JZ
+
+  Overwrite selected gparam fields
+}
+
+define(address,"eldenring.exe"+1B0C350)
+define(bytes,0F B6 02 88 01)
+
+[ENABLE]
+
+assert(address,bytes)
+alloc(newmem,$1000,"eldenring.exe"+1B0C350)
+
+alloc(debug_gparam_address,8,address)
+registersymbol(debug_gparam_address)
+debug_gparam_address:
+dd 0
+
+alloc(debug_gparam_replace,0x14c,address)
+registersymbol(debug_gparam_replace)
+debug_gparam_replace:
+db 01 CC 8C 3F 60 00 00 00 18 00 00 00 CD CC CC 3D 00 00 FA 44 00 00 80 3F 00 40 1C 45 00 00 80 3F 01 00 00 00 00 00 00 00 00 00 00 00 00 7F 00 00 00 00 00 00 01 00 00 00 0B 00 10 BD 00 00 96 43 00 00 00 00 CD CC 4C 3E 00 00 80 3F 00 00 00 3F 28 07 46 3C 00 00 C0 41 00 00 00 00 00 00 80 3F DA 5F B2 3A 49 93 26 17 92 93 E0 16 E0 93 99 16 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 F2 B0 B0 3D EB E0 E0 3D EE D0 D0 3D
+
+alloc(debug_gparam_replace_bool,0x53,address)
+registersymbol(debug_gparam_replace_bool)
+debug_gparam_replace_bool:
+db 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+
+alloc(debug_gparam_replace_address,8,address)
+registersymbol(debug_gparam_replace_address)
+debug_gparam_replace_address:
+dq debug_gparam_replace
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  movzx eax,byte ptr [rdx]
+  mov [debug_gparam_address],rdx
+  mov [rcx],al
+
+    pushf
+    push rbx
+    push r8
+    push r9
+  xor r8,r8
+  xor r9,r9
+  xor rbx,rbx
+
+replace_loop:
+  mov r8,debug_gparam_replace_bool
+  add r8,rbx
+  cmp [r8],0 //check whether we should replace the current field
+  je skip_replace
+
+  mov r8,rbx //calc offset
+  imul r8,4
+  mov r9,r8
+
+  mov r8,debug_gparam_replace
+  add r8,r9
+  add r9,rdx //replace in r8, original in r9
+  mov r8,[r8] //move replace value itself into reg so we can move it into memory
+  mov [r9],r8
+
+skip_replace:
+  inc rbx
+  cmp rbx,0x30 //was last field? TODO increase to file size (overwriting certain values seems to crash)
+  jle replace_loop
+
+    pop r9
+    pop r8
+    pop rbx
+    popf
+  jmp return
+
+address:
+  jmp newmem
+return:
+
+[DISABLE]
+
+address:
+  db bytes
+  // movzx eax,byte ptr [rdx]
+  // mov [rcx],al
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: eldenring.exe+1B0C350
+
+eldenring.exe+1B0C335: 48 89 07        - mov [rdi],rax
+eldenring.exe+1B0C338: 48 8B 5C 24 40  - mov rbx,[rsp+40]
+eldenring.exe+1B0C33D: 48 83 C4 30     - add rsp,30
+eldenring.exe+1B0C341: 5F              - pop rdi
+eldenring.exe+1B0C342: C3              - ret 
+eldenring.exe+1B0C343: 90              - nop 
+eldenring.exe+1B0C344: E1 2A           - loope eldenring.exe+1B0C370
+eldenring.exe+1B0C346: 77 CA           - ja eldenring.exe+1B0C312
+eldenring.exe+1B0C348: B8 E1 AA CD 28  - mov eax,28CDAAE1
+eldenring.exe+1B0C34D: 3A 04 18        - cmp al,[rax+rbx]
+// ---------- INJECTING HERE ----------
+eldenring.exe+1B0C350: 0F B6 02        - movzx eax,byte ptr [rdx]
+// ---------- DONE INJECTING  ----------
+eldenring.exe+1B0C353: 88 01           - mov [rcx],al
+eldenring.exe+1B0C355: 8B 42 04        - mov eax,[rdx+04]
+eldenring.exe+1B0C358: 89 41 04        - mov [rcx+04],eax
+eldenring.exe+1B0C35B: 8B 42 08        - mov eax,[rdx+08]
+eldenring.exe+1B0C35E: 89 41 08        - mov [rcx+08],eax
+eldenring.exe+1B0C361: 8B 42 0C        - mov eax,[rdx+0C]
+eldenring.exe+1B0C364: 89 41 0C        - mov [rcx+0C],eax
+eldenring.exe+1B0C367: 8B 42 10        - mov eax,[rdx+10]
+eldenring.exe+1B0C36A: 89 41 10        - mov [rcx+10],eax
+eldenring.exe+1B0C36D: 8B 42 14        - mov eax,[rdx+14]
+}
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>1337116433</ID>
+          <Description>"[Original Fog Gparam data]"</Description>
+          <Options moHideChildren="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Array of byte</VariableType>
+          <ByteLength>0</ByteLength>
+          <Address>debug_gparam_address</Address>
+          <Offsets>
+            <Offset>0x0</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>1337116434</ID>
+              <Description>"No description"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">1 204 140 63 96 0 0 0 24 0 0 0 205 204 204 61 0 0 250 68 0 0 128 63 0 64 28 69 0 0 128 63 1 0 0 0 0 0 0 0 0 0 0 0 0 127 0 0 0 0 0 0 1 0 0 0 11 0 16 189 0 0 150 67 0 0 0 0 205 204 76 62 0 0 128 63 0 0 0 63 232 101 84 60 0 0 192 65 0 0 0 0 0 0 128 63 218 181 170 58 73 147 38 23 146 147 224 22 224 147 153 22 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 242 176 176 61 235 224 224 61 238 208 208 61:Limgrave
+</DropDownList>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Array of byte</VariableType>
+              <ByteLength>177</ByteLength>
+              <Address>+0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116611</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116508</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+4</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116435</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+8</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116436</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116437</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+10</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116438</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+14</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116439</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+18</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116440</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+1C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116441</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+20</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116442</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+24</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116443</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+28</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116444</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+2c</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116445</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+30</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116446</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+34</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116447</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+38</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116448</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+3C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116449</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+40</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116450</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+44</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116451</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+48</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116452</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+4C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116453</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+50</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116454</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+54</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116455</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+58</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116456</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+5C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116457</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+60</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116458</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+64</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116459</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+68</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116467</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+6c</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116460</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+70</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116461</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+74</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116462</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+78</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116463</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+7C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116464</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+80</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116465</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+84</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116466</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+88</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116468</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+8C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116469</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+90</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116470</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+94</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116471</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+98</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116472</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+9C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116473</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+A0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116474</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+A4</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116475</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+A8</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116476</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+AC</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116477</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+B0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116478</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+B4</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116479</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+B8</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116480</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+BC</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116481</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+C0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116482</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+C4</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116483</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+C8</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116484</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+CC</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116485</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+D0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116486</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+D4</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116487</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+D8</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116488</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+DC</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116489</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+E0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116490</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+E4</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116491</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+E8</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116492</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+EC</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116493</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+F0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116494</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+F4</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116495</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+F8</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116496</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+FC</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116497</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+100</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116498</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+104</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116499</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+108</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116500</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+10C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116501</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+110</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116502</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+114</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116503</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+118</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116504</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+11C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116505</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+120</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116506</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+124</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116507</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+128</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>1337116637</ID>
+          <Description>"Active fields"</Description>
+          <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0:ALL OFF
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1:ALL ON
+</DropDownList>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Array of byte</VariableType>
+          <ByteLength>48</ByteLength>
+          <Address>debug_gparam_replace_bool</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>1337116509</ID>
+          <Description>"debug_gparam_replace"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">1 204 140 63 60 0 0 0 18 0 0 0 205 204 204 61 0 0 250 44 0 0 80 63 0 0 28 45 0 0 80 63 1 0 0 0 0 0 0 0 205 204 140 63 0 127 0 0 0 0 0 0 1 0 0 0 11 0 10 189 0 0 60 43 0 0 0 0 205 204 76 62 0 0 64 65 0 0 0 63 40 7 75 60 0 0 80 44 0 0 0 0 0 0 80 63 0 0 64 65 31 93 26 11 92 93 224 10 224 93 63 10 0 0 128 192 0 0 0 0 0 0 128 192 0 0 0 0 154 153 25 63 205 204 76 63 0 0 0 0 10 215 163 188 0 0 0 0 0 0 40 40 0 0 0 0 0 0 0 0 0 68 89 9 0 0 0 0 0 0 0 0 0 0 0 0 0:Bright NEON
+01 CC 8C 3F 60 00 00 00 18 00 00 00 CD CC CC 3D 00 00 FA 44 00 00 80 3F 00 00 7A 45 00 00 80 3F 01 00 00 00 00 00 00 00 00 00 00 00 00 7F 00 00 00 00 00 00 01 00 00 00 0B 00 0A BD 00 00 60 2B 00 00 00 00 CD CC 4C 3E 00 00 80 3F 00 00 00 3F 8F C2 75 3D 00 00 80 C2 00 00 00 00 00 00 80 3F 6F 12 03 3C 31 5D 1A 11 5C 5D E0 10 E0 5D 63 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 5F 0E B7 3E E7 2D A7 3E B8 60 95 3E CD CC CC 3E 00 00 00 00 00 00 40 40 00 00 00 00 00 00 00 00 00 68 89 09 00 00 00 00 00 00 00 00 00 00 00 00 00:Elden Throne
+01 CC 8C 3F 60 00 00 00 18 00 00 00 CD CC CC 3D 00 00 FA 44 00 00 80 3F 00 00 7A 45 00 00 80 3F 01 00 00 00 00 00 00 00 00 00 00 00 00 7F 00 00 00 00 00 00 01 00 00 00 0B 00 10 BD 00 00 96 43 00 00 00 00 CD CC 4C 3E 00 00 80 3F 00 00 00 3F 0A D7 A3 3C 00 00 40 44 00 00 00 00 00 00 80 3F 52 49 9D 39 49 93 26 17 92 93 E0 16 E0 93 99 16 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 CD CC 4C 3E CC D4 54 3E B0 AC AC 3E CD CC 4C 3E 00 00 00 00 00 00 40 40 00 00 00 00 00 3E 4B 0D 00 68 89 09 00 00 00 00 00 00 00 00 00 00 00 00 00:Siofra
+01 00 80 3F 60 00 00 00 18 00 00 00 CD CC CC 3D 00 00 FA 44 00 00 80 3F 00 00 FA 44 00 00 80 3F 01 00 00 00 00 00 00 00 00 00 00 00 00 7F 00 00 00 00 00 00 05 00 00 00 00 00 10 3A 00 00 80 3F 00 00 00 00 CD CC 4C 3E 00 00 80 3F 00 00 00 3F 0A D7 A3 3C 00 00 00 00 00 00 00 00 00 00 80 3F 34 80 37 3B 49 93 26 17 92 93 E0 16 E0 93 99 16 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 71 90 10 3E D0 B4 34 3E AE B8 38 3E 6F CB 00 3F 00 00 00 00 00 00 40 40 00 00 00 00 8E 98 75 13 00 68 89 09 00 00 00 00 00 00 00 00 00 00 00 00 00:Caelid day
+1 204 140 63 96 0 0 0 24 0 0 0 205 204 204 61 0 0 250 68 0 0 128 63 0 64 28 69 0 0 128 63 1 0 0 0 0 0 0 0 0 0 0 0 0 127 0 0 0 0 0 0 1 0 0 0 11 0 16 189 0 0 150 67 0 0 0 0 205 204 76 62 0 0 128 63 0 0 0 63 232 101 84 60 0 0 192 65 0 0 0 0 0 0 128 63 218 181 170 58 73 147 38 23 146 147 224 22 224 147 153 22 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 242 176 176 61 235 224 224 61 238 208 208 61:Limgrave
+</DropDownList>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Array of byte</VariableType>
+          <ByteLength>177</ByteLength>
+          <Address>debug_gparam_replace_address</Address>
+          <Offsets>
+            <Offset>0</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>1337116510</ID>
+              <Description>"?"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+0</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116587</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116511</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+4</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116588</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+1</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116512</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+8</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116589</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+2</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116513</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+C</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116590</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+3</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116514</ID>
+              <Description>"Fog1? Distance"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+10</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116591</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+4</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116515</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+14</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116592</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+5</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116516</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+18</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116593</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+6</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116517</ID>
+              <Description>"Fog start multiplier"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF0080</Color>
+              <VariableType>Float</VariableType>
+              <Address>+1C</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116594</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+7</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116518</ID>
+              <Description>"overwrite vfx?"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+20</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116595</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+8</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116519</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+24</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116596</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+9</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116520</ID>
+              <Description>"Density (far)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>8000FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>+28</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116597</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+a</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116521</ID>
+              <Description>"?"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+2c</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116598</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+b</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116522</ID>
+              <Description>"?"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+30</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116599</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+c</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116523</ID>
+              <Description>"?"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+34</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116600</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+d</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116524</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+38</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116601</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+e</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116525</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+3C</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116602</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+f</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116526</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+40</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116603</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+10</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116527</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+44</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116604</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+11</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116528</ID>
+              <Description>"Glow (grace vfx)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+48</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116605</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+12</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116529</ID>
+              <Description>"distance top ?"</Description>
+              <DropDownList DisplayValueAsItem="1">Nan:breaks
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+4C</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116606</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+13</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116530</ID>
+              <Description>"Fog density decay y"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF8080</Color>
+              <VariableType>Float</VariableType>
+              <Address>+50</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116607</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+14</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116531</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+54</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116608</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+15</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116532</ID>
+              <Description>"Fog density decay y threshold"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF8080</Color>
+              <VariableType>Float</VariableType>
+              <Address>+58</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116609</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+16</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116533</ID>
+              <Description>"Fog density decay y threshold"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF8080</Color>
+              <VariableType>Float</VariableType>
+              <Address>+5C</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116610</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+17</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116534</ID>
+              <Description>"Density 2 (near)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>8000FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>+60</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116612</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+18</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116535</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+64</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116613</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+19</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116536</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+68</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116614</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+1a</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116537</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+6c</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116615</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+1b</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116538</ID>
+              <Description>"Cyan (try negative for these)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>F8FE01</Color>
+              <VariableType>Float</VariableType>
+              <Address>+70</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116616</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+1c</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116539</ID>
+              <Description>"Magenta"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>B900FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>+74</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116617</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+1d</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116540</ID>
+              <Description>"Yellow"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>00BFFF</Color>
+              <VariableType>Float</VariableType>
+              <Address>+78</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116618</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+1e</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116541</ID>
+              <Description>"Black (unused)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+7C</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116619</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+1f</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116542</ID>
+              <Description>"Red"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>0000FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>+80</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116620</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+20</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116543</ID>
+              <Description>"Green"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>00FF00</Color>
+              <VariableType>Float</VariableType>
+              <Address>+84</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116621</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+21</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116544</ID>
+              <Description>"Blue?"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF0000</Color>
+              <VariableType>Float</VariableType>
+              <Address>+88</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116622</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+22</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116545</ID>
+              <Description>"Alpha (multiplies RGB)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>800080</Color>
+              <VariableType>Float</VariableType>
+              <Address>+8C</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116623</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+23</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116546</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+90</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116624</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+24</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116547</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+94</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116625</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+25</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116548</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+98</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116626</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+26</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116549</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+9C</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116627</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+27</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116550</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+A0</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116628</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+28</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116551</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+A4</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116629</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+29</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116552</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+A8</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116630</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+2a</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116553</ID>
+              <Description>"something distance"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+AC</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116631</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+2b</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116554</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+B0</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116632</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+2c</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116555</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+B4</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116633</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+2d</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116556</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+B8</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116634</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+2e</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116557</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+BC</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116635</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+2f</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116558</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+C0</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337116636</ID>
+                  <Description>"enable"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ENABLED
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808080</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>debug_gparam_replace_bool+30</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116559</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+C4</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116560</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+C8</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116561</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+CC</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116562</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+D0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116563</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+D4</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116564</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+D8</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116565</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+DC</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116566</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+E0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116567</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+E4</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116568</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+E8</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116569</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+EC</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116570</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+F0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116571</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+F4</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116572</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+F8</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116573</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+FC</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116574</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+100</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116575</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+104</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116576</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+108</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116577</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+10C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116578</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+110</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116579</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+114</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116580</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+118</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116581</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+11C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116582</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+120</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116583</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+124</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337116584</ID>
+              <Description>"No description"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>+128</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>1337116585</ID>
+          <Description>"Function that writes to original"</Description>
+          <LastState/>
+          <Color>C0C0C0</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : eldenring.exe
+  Version: 
+  Date   : 2022-05-05
+  Author : JZ
+
+  This script does blah blah blah
+}
+
+define(address,"eldenring.exe"+1B3A788)
+define(bytes,F3 0F 11 0B 48 8B 5C 24 70)
+
+[ENABLE]
+
+assert(address,bytes)
+alloc(newmem,$1000,"eldenring.exe"+1B3A788)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  //movss [rbx],xmm1
+  mov rbx,[rsp+70]
+  jmp return
+
+address:
+  jmp newmem
+  nop 4
+return:
+
+[DISABLE]
+
+address:
+  db bytes
+  // movss [rbx],xmm1
+  // mov rbx,[rsp+70]
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: eldenring.exe+1B3A788
+
+eldenring.exe+1B3A75C: F3 0F 59 C3                 - mulss xmm0,xmm3
+eldenring.exe+1B3A760: 0F 28 CA                    - movaps xmm1,xmm2
+eldenring.exe+1B3A763: F3 0F 58 C8                 - addss xmm1,xmm0
+eldenring.exe+1B3A767: EB 06                       - jmp eldenring.exe+1B3A76F
+eldenring.exe+1B3A769: F3 0F 10 4C 24 78           - movss xmm1,[rsp+78]
+eldenring.exe+1B3A76F: 0F 28 74 24 50              - movaps xmm6,[rsp+50]
+eldenring.exe+1B3A774: 0F 5A C1                    - cvtps2pd xmm0,xmm1
+eldenring.exe+1B3A777: F2 0F 59 84 24 90 00 00 00  - mulsd xmm0,[rsp+00000090]
+eldenring.exe+1B3A780: 66 0F 5A C8                 - cvtpd2ps xmm1,xmm0
+eldenring.exe+1B3A784: F3 0F 58 0B                 - addss xmm1,[rbx]
+// ---------- INJECTING HERE ----------
+eldenring.exe+1B3A788: F3 0F 11 0B                 - movss [rbx],xmm1
+// ---------- DONE INJECTING  ----------
+eldenring.exe+1B3A78C: 48 8B 5C 24 70              - mov rbx,[rsp+70]
+eldenring.exe+1B3A791: 48 83 C4 60                 - add rsp,60
+eldenring.exe+1B3A795: 5F                          - pop rdi
+eldenring.exe+1B3A796: C3                          - ret 
+eldenring.exe+1B3A797: 90                          - nop 
+eldenring.exe+1B3A798: 20 AD 6B 70 AC 29           - and [rbp+29AC706B],ch
+eldenring.exe+1B3A79E: 66 C1 4C 8B DC 49           - ror word ptr [rbx+rcx*4-24],49
+eldenring.exe+1B3A7A4: 89 5B 08                    - mov [rbx+08],ebx
+eldenring.exe+1B3A7A7: 57                          - push rdi
+eldenring.exe+1B3A7A8: 48 83 EC 60                 - sub rsp,60
+}
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
