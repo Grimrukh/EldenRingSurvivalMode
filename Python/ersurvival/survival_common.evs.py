@@ -7,8 +7,6 @@ from soulstruct.eldenring.events import *
 from .survival_enums import *
 
 
-# TODO: All event IDs are 666 for now. Set with enums.
-
 # TODO: Special event that buffs Malenia if you have Pure Scarlet Rot.
 #  (Too lazy to put it in Haligtree map; just check for battle start flag.)
 
@@ -145,9 +143,7 @@ def Constructor():
     CurePureScarletRot()
 
 
-# --- HUNGER ---
-
-
+@NeverRestart(SurvivalFlags.GrowingHunger)
 def GrowingHunger():
     """Hunger ticks up every 60 seconds."""
 
@@ -229,10 +225,12 @@ def GrowingHunger():
     Restart()
 
 
+@NeverRestart(SurvivalFlags.GrowingThirst)
 def GrowingThirst():
     """TODO"""
 
 
+@NeverRestart(SurvivalFlags.CheckMildHeatArea)
 def CheckMildHeatArea():
     """Checks if mild heat should be applied to the player due to current time and place."""
 
@@ -263,13 +261,12 @@ def CheckMildHeatArea():
 
     EnableFlag(SurvivalFlags.ShowMildHeatWarning)
     AddSpecialEffect(PLAYER, SurvivalEffects.Heat_Mild)
-    # TODO: Have the effect last three seconds and just repeat this event,
-    #  rather than needing to check for a disable condition (too risky/hard).
     Wait(3.0)
     DisableFlag(SurvivalFlags.ShowMildHeatWarning)
     return RESTART
 
 
+@NeverRestart(SurvivalFlags.CheckModerateHeatArea)
 def CheckModerateHeatArea():
     """Checks if moderate heat should be applied to the player due to current time and place."""
 
@@ -300,13 +297,12 @@ def CheckModerateHeatArea():
     AddSpecialEffect(PLAYER, SurvivalEffects.Heat_Mild)
     SkipLines(1)
     AddSpecialEffect(PLAYER, SurvivalEffects.Heat_Moderate)
-    # TODO: Have the effect last three seconds and just repeat this event,
-    #  rather than needing to check for a disable condition (too risky/hard).
     Wait(3.0)
     DisableFlag(SurvivalFlags.ShowModerateHeatWarning)
     return RESTART
 
 
+@NeverRestart(SurvivalFlags.CheckSevereHeatArea)
 def CheckSevereHeatArea():
     """Checks if severe heat should be applied to the player due to current time and place."""
 
@@ -339,13 +335,12 @@ def CheckSevereHeatArea():
     SkipLines(1)
     AddSpecialEffect(PLAYER, SurvivalEffects.Heat_Severe)
 
-    # TODO: Have the effect last three seconds and just repeat this event,
-    #  rather than needing to check for a disable condition (too risky/hard).
     Wait(3.0)
     DisableFlag(SurvivalFlags.ShowSevereHeatWarning)
     return RESTART
 
 
+@NeverRestart(SurvivalFlags.CheckMildColdArea)
 def CheckMildColdArea():
 
     # --- NIGHT ---
@@ -379,13 +374,12 @@ def CheckMildColdArea():
     EnableFlag(SurvivalFlags.ShowMildColdWarning)
 
     AddSpecialEffect(PLAYER, SurvivalEffects.Cold_Mild)
-    # TODO: Have the effect last three seconds and just repeat this event,
-    #  rather than needing to check for a disable condition (too risky/hard).
     Wait(3.0)
     DisableFlag(SurvivalFlags.ShowMildColdWarning)
     return RESTART
 
 
+@NeverRestart(SurvivalFlags.CheckModerateColdArea)
 def CheckModerateColdArea():
     # --- MOUNTAINTOPS in DAY ---
     IfTimeOfDay(1, (8, 0, 0), (18, 0, 0))
@@ -416,13 +410,12 @@ def CheckModerateColdArea():
     AddSpecialEffect(PLAYER, SurvivalEffects.Cold_Mild)
     SkipLines(1)
     AddSpecialEffect(PLAYER, SurvivalEffects.Cold_Moderate)
-    # TODO: Have the effect last three seconds and just repeat this event,
-    #  rather than needing to check for a disable condition (too risky/hard).
     Wait(3.0)
     DisableFlag(SurvivalFlags.ShowModerateColdWarning)
     return RESTART
 
 
+@NeverRestart(SurvivalFlags.CheckSevereColdArea)
 def CheckSevereColdArea():
     # --- MOUNTAINTOPS / FARUM AZULA at NIGHT ---
     IfTimeOfDay(1, (18, 0, 0), (8, 0, 0))
@@ -453,55 +446,60 @@ def CheckSevereColdArea():
     AddSpecialEffect(PLAYER, SurvivalEffects.Cold_Moderate)
     SkipLines(1)
     AddSpecialEffect(PLAYER, SurvivalEffects.Cold_Severe)
-    # TODO: Have the effect last three seconds and just repeat this event,
-    #  rather than needing to check for a disable condition (too risky/hard).
     Wait(3.0)
     DisableFlag(SurvivalFlags.ShowSevereColdWarning)
     return RESTART
 
 
+@NeverRestart(SurvivalFlags.MildHeatWarning)
 def MildHeatWarning():
     IfFlagOn(0, SurvivalFlags.ShowMildHeatWarning)
-    # TODO: Display warning message.
+    DisplayDialog(SurvivalText.MildHeatWarning)
     Wait(60.0)
     return RESTART
 
 
+@NeverRestart(SurvivalFlags.ModerateHeatWarning)
 def ModerateHeatWarning():
     IfFlagOn(0, SurvivalFlags.ShowModerateHeatWarning)
-    # TODO: Display warning message.
+    DisplayDialog(SurvivalText.ModerateHeatWarning)
     Wait(60.0)
     return RESTART
 
 
+@NeverRestart(SurvivalFlags.SevereHeatWarning)
 def SevereHeatWarning():
     IfFlagOn(0, SurvivalFlags.ShowSevereHeatWarning)
-    # TODO: Display warning message.
+    DisplayDialog(SurvivalText.SevereHeatWarning)
     Wait(60.0)
     return RESTART
 
 
+@NeverRestart(SurvivalFlags.MildColdWarning)
 def MildColdWarning():
     IfFlagOn(0, SurvivalFlags.ShowMildColdWarning)
-    # TODO: Display warning message.
+    DisplayDialog(SurvivalText.MildColdWarning)
     Wait(60.0)
     return RESTART
 
 
+@NeverRestart(SurvivalFlags.ModerateColdWarning)
 def ModerateColdWarning():
     IfFlagOn(0, SurvivalFlags.ShowModerateColdWarning)
-    # TODO: Display warning message.
+    DisplayDialog(SurvivalText.ModerateColdWarning)
     Wait(60.0)
     return RESTART
 
 
+@NeverRestart(SurvivalFlags.SevereColdWarning)
 def SevereColdWarning():
     IfFlagOn(0, SurvivalFlags.ShowSevereColdWarning)
-    # TODO: Display warning message.
+    DisplayDialog(SurvivalText.SevereColdWarning)
     Wait(60.0)
     return RESTART
 
 
+@NeverRestart(SurvivalFlags.GetDiseaseOverworld)
 def GetDiseaseOverworld(_, disease_effect: int, location_flag: Flag, had_once_flag: Flag, had_twice_flag: Flag):
     EndIfFlagOn(had_twice_flag)
 
@@ -535,6 +533,7 @@ def GetDiseaseOverworld(_, disease_effect: int, location_flag: Flag, had_once_fl
     EnableFlag(had_twice_flag)
 
 
+@NeverRestart(SurvivalFlags.GetDiseaseLegacyDungeon)
 def GetDiseaseLegacyDungeon(
     _, disease_effect: int, a: int, b: int, c: int, d: int, had_once_flag: Flag, had_twice_flag: Flag
 ):
@@ -575,6 +574,7 @@ def GetDiseaseLegacyDungeon(
 # --- SPECIFIC DISEASE EVENTS ---
 
 
+@NeverRestart(SurvivalFlags.GetDiseaseSiofra)
 def GetDiseaseSiofra():
     EndIfFlagOn(SurvivalFlags.SiofraDiseaseTwice)
 
@@ -610,6 +610,7 @@ def GetDiseaseSiofra():
     EnableFlag(SurvivalFlags.SiofraDiseaseTwice)
 
 
+@NeverRestart(SurvivalFlags.GetDiseaseAinsel)
 def GetDiseaseAinsel():
     EndIfFlagOn(SurvivalFlags.AinselDiseaseTwice)
 
@@ -643,6 +644,7 @@ def GetDiseaseAinsel():
     EnableFlag(SurvivalFlags.AinselDiseaseTwice)
 
 
+@NeverRestart(SurvivalFlags.GetDiseaseDeeprootAstel)
 def GetDiseaseDeeprootAstel():
     EndIfFlagOn(SurvivalFlags.DeeprootDiseaseTwice)
 
@@ -678,6 +680,7 @@ def GetDiseaseDeeprootAstel():
     EnableFlag(SurvivalFlags.DeeprootDiseaseTwice)
 
 
+@NeverRestart(SurvivalFlags.GetDiseaseRadahn)
 def GetDiseaseRadahn():
     """TODO: Check Radahn boss fight flag and use Radahn's actual entity ID."""
     EndIfFlagOn(SurvivalFlags.RadahnDiseaseTwice)
@@ -715,21 +718,125 @@ def GetDiseaseRadahn():
 # --- GENERIC DUNGEON DISEASES ---
 
 
+@NeverRestart(SurvivalFlags.GetDiseaseCatacombs)
 def GetDiseaseCatacombs():
-    """TODO"""
+    EndIfFlagOn(SurvivalFlags.CatacombsDiseaseTwice)
+
+    IfInsideMap(1, (30, 255, 255, 255))  # ANY Catacombs
+    IfAttackedWithDamageType(1, PLAYER, -1, DamageType.Unspecified)
+    IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.CatacombsToxin)
+    IfFlagOff(1, SurvivalFlags.DiseaseRollLock)
+
+    IfConditionTrue(0, 1)
+
+    EnableFlag(SurvivalFlags.DiseaseRollLock)
+    DisableFlagRange((SurvivalFlags.DiseaseRollFirst, SurvivalFlags.DiseaseRollLast))
+    EnableRandomFlagInRange((SurvivalFlags.DiseaseRollFirst, SurvivalFlags.DiseaseRollLast))
+
+    IfFlagOn(-2, SurvivalFlags.DiseaseRollFirst)
+    IfFlagOff(2, SurvivalFlags.CatacombsDiseaseOnce)
+    IfFlagOn(2, SurvivalFlags.DiseaseRollSecond)
+    IfConditionTrue(-2, 2)
+
+    SkipLinesIfConditionTrue(2, -2)
+    DisableFlag(SurvivalFlags.DiseaseRollLock)
+    Restart()  # no proc, try again next time
+
+    DisableFlag(SurvivalFlags.DiseaseRollLock)
+
+    AddSpecialEffect(PLAYER, SurvivalEffects.CatacombsToxin)
+
+    SkipLinesIfFlagOn(2, SurvivalFlags.CatacombsDiseaseOnce)
+    EnableFlag(SurvivalFlags.CatacombsDiseaseOnce)
+    End()
+    EnableFlag(SurvivalFlags.CatacombsDiseaseTwice)
 
 
+@NeverRestart(SurvivalFlags.GetDiseaseCaves)
 def GetDiseaseCaves():
-    """TODO"""
+    EndIfFlagOn(SurvivalFlags.CavesDiseaseTwice)
+
+    IfInsideMap(1, (31, 255, 255, 255))  # ANY Cave
+    IfAttackedWithDamageType(1, PLAYER, -1, DamageType.Unspecified)
+    IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.CaveParasite)
+    IfFlagOff(1, SurvivalFlags.DiseaseRollLock)
+
+    IfConditionTrue(0, 1)
+
+    EnableFlag(SurvivalFlags.DiseaseRollLock)
+    DisableFlagRange((SurvivalFlags.DiseaseRollFirst, SurvivalFlags.DiseaseRollLast))
+    EnableRandomFlagInRange((SurvivalFlags.DiseaseRollFirst, SurvivalFlags.DiseaseRollLast))
+
+    IfFlagOn(-2, SurvivalFlags.DiseaseRollFirst)
+    IfFlagOff(2, SurvivalFlags.CaveDiseaseOnce)
+    IfFlagOn(2, SurvivalFlags.DiseaseRollSecond)
+    IfConditionTrue(-2, 2)
+
+    SkipLinesIfConditionTrue(2, -2)
+    DisableFlag(SurvivalFlags.DiseaseRollLock)
+    Restart()  # no proc, try again next time
+
+    DisableFlag(SurvivalFlags.DiseaseRollLock)
+
+    AddSpecialEffect(PLAYER, SurvivalEffects.CaveParasite)
+
+    SkipLinesIfFlagOn(2, SurvivalFlags.CaveDiseaseOnce)
+    EnableFlag(SurvivalFlags.CaveDiseaseOnce)
+    End()
+    EnableFlag(SurvivalFlags.CaveDiseaseTwice)
 
 
+@NeverRestart(SurvivalFlags.GetDiseaseTunnels)
 def GetDiseaseTunnels():
-    """TODO"""
+    EndIfFlagOn(SurvivalFlags.TunnelDiseaseTwice)
+
+    IfInsideMap(1, (32, 255, 255, 255))  # ANY Tunnel
+    IfAttackedWithDamageType(1, PLAYER, -1, DamageType.Unspecified)
+    IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.TunnelFever)
+    IfFlagOff(1, SurvivalFlags.DiseaseRollLock)
+
+    IfConditionTrue(0, 1)
+
+    EnableFlag(SurvivalFlags.DiseaseRollLock)
+    DisableFlagRange((SurvivalFlags.DiseaseRollFirst, SurvivalFlags.DiseaseRollLast))
+    EnableRandomFlagInRange((SurvivalFlags.DiseaseRollFirst, SurvivalFlags.DiseaseRollLast))
+
+    IfFlagOn(-2, SurvivalFlags.DiseaseRollFirst)
+    IfFlagOff(2, SurvivalFlags.TunnelDiseaseOnce)
+    IfFlagOn(2, SurvivalFlags.DiseaseRollSecond)
+    IfConditionTrue(-2, 2)
+
+    SkipLinesIfConditionTrue(2, -2)
+    DisableFlag(SurvivalFlags.DiseaseRollLock)
+    Restart()  # no proc, try again next time
+
+    DisableFlag(SurvivalFlags.DiseaseRollLock)
+
+    AddSpecialEffect(PLAYER, SurvivalEffects.TunnelFever)
+
+    SkipLinesIfFlagOn(2, SurvivalFlags.TunnelDiseaseOnce)
+    EnableFlag(SurvivalFlags.TunnelDiseaseOnce)
+    End()
+    EnableFlag(SurvivalFlags.TunnelDiseaseTwice)
+
+
+# --- PURE SCARLET ROT ---
+
+
+@NeverRestart(SurvivalFlags.GetPureScarletRot)
+def GetPureScarletRot():
+    """Chance of proccing each time you get normal scarlet rot.
+
+    100% chance if you are in the Lake of Rot (checking if you're in Ainsel River is sufficient).
+    """
+    # TODO: Not bothering with this for now.
+    End()
 
 
 # --- DISEASE CURES ---
 
 
+@NeverRestart(SurvivalFlags.CurePlague)
 def CurePlague():
     IfPlayerHasSpecialEffect(1, SurvivalEffects.PlagueCure)
 
@@ -753,6 +860,7 @@ def CurePlague():
     return RESTART
 
 
+@NeverRestart(SurvivalFlags.CureToxin)
 def CureToxin():
     IfPlayerHasSpecialEffect(1, SurvivalEffects.ToxinCure)
 
@@ -776,6 +884,7 @@ def CureToxin():
     return RESTART
 
 
+@NeverRestart(SurvivalFlags.CureFever)
 def CureFever():
     IfPlayerHasSpecialEffect(1, SurvivalEffects.FeverCure)
 
@@ -799,6 +908,7 @@ def CureFever():
     return RESTART
 
 
+@NeverRestart(SurvivalFlags.CureParasite)
 def CureParasite():
     IfPlayerHasSpecialEffect(1, SurvivalEffects.ParasiteCure)
 
@@ -822,6 +932,7 @@ def CureParasite():
     return RESTART
 
 
+@NeverRestart(SurvivalFlags.CurePureScarletRot)
 def CurePureScarletRot():
     IfPlayerHasSpecialEffect(1, SurvivalEffects.PureScarletRotCure)
     IfPlayerHasSpecialEffect(1, SurvivalEffects.PureScarletRot)
@@ -840,6 +951,7 @@ def CurePureScarletRot():
 # --- MAP CHECKS ---
 
 
+@NeverRestart(SurvivalFlags.MonitorInLimgrave)
 def MonitorInLimgrave():
     DisableFlag(SurvivalFlags.PlayerInLimgrave)
 
@@ -875,6 +987,7 @@ def MonitorInLimgrave():
     return RESTART
 
 
+@NeverRestart(SurvivalFlags.MonitorInLiurnia)
 def MonitorInLiurnia():
     DisableFlag(SurvivalFlags.PlayerInLiurnia)
 
@@ -915,6 +1028,7 @@ def MonitorInLiurnia():
     return RESTART
 
 
+@NeverRestart(SurvivalFlags.MonitorInCaelid)
 def MonitorInCaelid():
     DisableFlag(SurvivalFlags.PlayerInCaelid)
 
@@ -949,6 +1063,7 @@ def MonitorInCaelid():
     return RESTART
 
 
+@NeverRestart(SurvivalFlags.MonitorInAltus)
 def MonitorInAltus():
     """Does NOT include Mt. Gelmir."""
     DisableFlag(SurvivalFlags.PlayerInAltus)
@@ -984,6 +1099,7 @@ def MonitorInAltus():
     return RESTART
 
 
+@NeverRestart(SurvivalFlags.MonitorInMtGelmir)
 def MonitorInMtGelmir():
     """Does NOT include rest of Altus."""
     DisableFlag(SurvivalFlags.PlayerInMtGelmir)
@@ -1013,6 +1129,7 @@ def MonitorInMtGelmir():
     return RESTART
 
 
+@NeverRestart(SurvivalFlags.MonitorInMountaintops)
 def MonitorInMountaintops():
     DisableFlag(SurvivalFlags.PlayerInMountaintops)
 

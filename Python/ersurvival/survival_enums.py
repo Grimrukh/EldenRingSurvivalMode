@@ -1,80 +1,132 @@
 from soulstruct.game_types import *
 
 
+BASE_FLAG = 8000
+
+
+class SurvivalText(IntEnum):
+    """Map event text, mostly."""
+    MildHeatWarning = 50000
+    ModerateHeatWarning = 50001
+    SevereHeatWarning = 50002
+    MildColdWarning = 50003
+    ModerateColdWarning = 50004
+    SevereColdWarning = 50005
+
+
 class SurvivalFlags(Flag):
     """Flags used by Survival Mode.
 
     TODO: Try to avoid using the same flags as Matt's randomizers.
     """
-    # TODO: 100-flag range for disease proc.
-    #  Most diseases have a 2/100 change (first time), then 1/100 (second time), then zero.
+    GrowingHunger = BASE_FLAG + 0
+    GrowingThirst = BASE_FLAG + 1
 
-    # TODO: Flags to track how many times each disease has been caught (for above).
+    CheckMildHeatArea = BASE_FLAG + 10
+    MildHeatWarning = BASE_FLAG + 11
+    ShowMildHeatWarning = BASE_FLAG + 12
 
-    ShowMildHeatWarning = 1
-    ShowModerateHeatWarning = 2
-    ShowSevereHeatWarning = 3
-    ShowMildColdWarning = 4
-    ShowModerateColdWarning = 5
-    ShowSevereColdWarning = 6
+    CheckModerateHeatArea = BASE_FLAG + 13
+    ModerateHeatWarning = BASE_FLAG + 14
+    ShowModerateHeatWarning = BASE_FLAG + 15
+
+    CheckSevereHeatArea = BASE_FLAG + 16
+    SevereHeatWarning = BASE_FLAG + 17
+    ShowSevereHeatWarning = BASE_FLAG + 18
+
+    CheckMildColdArea = BASE_FLAG + 19
+    MildColdWarning = BASE_FLAG + 20
+    ShowMildColdWarning = BASE_FLAG + 21
+
+    CheckModerateColdArea = BASE_FLAG + 22
+    ModerateColdWarning = BASE_FLAG + 23
+    ShowModerateColdWarning = BASE_FLAG + 24
+
+    CheckSevereColdArea = BASE_FLAG + 25
+    SevereColdWarning = BASE_FLAG + 26
+    ShowSevereColdWarning = BASE_FLAG + 27
 
     # Overworld area monitoring
-    PlayerInLimgrave = 50
-    PlayerInLiurnia = 51
-    PlayerInCaelid = 52
-    PlayerInAltus = 53
-    PlayerInMtGelmir = 54
-    PlayerInMountaintops = 55
+    MonitorInLimgrave = BASE_FLAG + 40
+    MonitorInLiurnia = BASE_FLAG + 41
+    MonitorInCaelid = BASE_FLAG + 42
+    MonitorInAltus = BASE_FLAG + 43
+    MonitorInMtGelmir = BASE_FLAG + 44
+    MonitorInMountaintops = BASE_FLAG + 45
+    PlayerInLimgrave = BASE_FLAG + 50
+    PlayerInLiurnia = BASE_FLAG + 51
+    PlayerInCaelid = BASE_FLAG + 52
+    PlayerInAltus = BASE_FLAG + 53
+    PlayerInMtGelmir = BASE_FLAG + 54
+    PlayerInMountaintops = BASE_FLAG + 55
 
-    DiseaseRollLock = 99
-    DiseaseRollFirst = 100
-    DiseaseRollSecond = 101
-    DiseaseRollLast = 199
+    GetDiseaseOverworld = BASE_FLAG + 60  # 10 slots
+    GetDiseaseLegacyDungeon = BASE_FLAG + 70  # 10 slots
+    GetDiseaseSiofra = BASE_FLAG + 80
+    GetDiseaseAinsel = BASE_FLAG + 81
+    GetDiseaseDeeprootAstel = BASE_FLAG + 82
+    GetDiseaseRadahn = BASE_FLAG + 83
+    GetDiseaseCatacombs = BASE_FLAG + 84
+    GetDiseaseCaves = BASE_FLAG + 85
+    GetDiseaseTunnels = BASE_FLAG + 86
+    GetPureScarletRot = BASE_FLAG + 87
 
-    LimgraveDiseaseOnce = 200
-    LimgraveDiseaseTwice = 201
-    LiurniaDiseaseOnce = 202
-    LiurniaDiseaseTwice = 203
-    CaelidDiseaseOnce = 204
-    CaelidDiseaseTwice = 205
-    AltusDiseaseOnce = 206
-    AltusDiseaseTwice = 207
-    MtGelmirDiseaseOnce = 208
-    MtGelmirDiseaseTwice = 209
-    MountaintopsDiseaseOnce = 210
-    MountaintopsDiseaseTwice = 211
-    SiofraDiseaseOnce = 214
-    SiofraDiseaseTwice = 215
-    AinselDiseaseOnce = 216
-    AinselDiseaseTwice = 217
-    DeeprootDiseaseOnce = 218
-    DeeprootDiseaseTwice = 219
+    CurePlague = BASE_FLAG + 90
+    CureToxin = BASE_FLAG + 91
+    CureFever = BASE_FLAG + 92
+    CureParasite = BASE_FLAG + 93
+    CurePureScarletRot = BASE_FLAG + 94
 
-    StormveilDiseaseOnce = 220
-    StormveilDiseaseTwice = 221
-    RayaLucariaDiseaseOnce = 222
-    RayaLucariaDiseaseTwice = 223
-    RadahnDiseaseOnce = 224
-    RadahnDiseaseTwice = 225
-    VolcanoManorDiseaseOnce = 226
-    VolcanoManorDiseaseTwice = 227
-    LeyndellDiseaseOnce = 228
-    LeyndellDiseaseTwice = 229
-    SewersDiseaseOnce = 230
-    SewersDiseaseTwice = 231
-    HaligtreeDiseaseOnce = 232
-    HaligtreeDiseaseTwice = 233
-    FarumAzulaDiseaseOnce = 234
-    FarumAzulaDiseaseTwice = 235
-    MohgwynDiseaseOnce = 236
-    MohgwynDiseaseTwice = 237
+    DiseaseRollLock = BASE_FLAG + 99
+    DiseaseRollFirst = BASE_FLAG + 100
+    DiseaseRollSecond = BASE_FLAG + 101
+    DiseaseRollLast = BASE_FLAG + 199
 
-    CatacombsDiseaseOnce = 238
-    CatacombsDiseaseTwice = 239
-    CaveDiseaseOnce = 240
-    CaveDiseaseTwice = 241
-    TunnelDiseaseOnce = 242
-    TunnelDiseaseTwice = 243
+    # Active disease status is tracked using possession of key items, not flags.
+    LimgraveDiseaseOnce = BASE_FLAG + 200
+    LimgraveDiseaseTwice = BASE_FLAG + 201
+    LiurniaDiseaseOnce = BASE_FLAG + 202
+    LiurniaDiseaseTwice = BASE_FLAG + 203
+    CaelidDiseaseOnce = BASE_FLAG + 204
+    CaelidDiseaseTwice = BASE_FLAG + 205
+    AltusDiseaseOnce = BASE_FLAG + 206
+    AltusDiseaseTwice = BASE_FLAG + 207
+    MtGelmirDiseaseOnce = BASE_FLAG + 208
+    MtGelmirDiseaseTwice = BASE_FLAG + 209
+    MountaintopsDiseaseOnce = BASE_FLAG + 210
+    MountaintopsDiseaseTwice = BASE_FLAG + 211
+    SiofraDiseaseOnce = BASE_FLAG + 214
+    SiofraDiseaseTwice = BASE_FLAG + 215
+    AinselDiseaseOnce = BASE_FLAG + 216
+    AinselDiseaseTwice = BASE_FLAG + 217
+    DeeprootDiseaseOnce = BASE_FLAG + 218
+    DeeprootDiseaseTwice = BASE_FLAG + 219
+    StormveilDiseaseOnce = BASE_FLAG + 220
+    StormveilDiseaseTwice = BASE_FLAG + 221
+    RayaLucariaDiseaseOnce = BASE_FLAG + 222
+    RayaLucariaDiseaseTwice = BASE_FLAG + 223
+    RadahnDiseaseOnce = BASE_FLAG + 224
+    RadahnDiseaseTwice = BASE_FLAG + 225
+    VolcanoManorDiseaseOnce = BASE_FLAG + 226
+    VolcanoManorDiseaseTwice = BASE_FLAG + 227
+    LeyndellDiseaseOnce = BASE_FLAG + 228
+    LeyndellDiseaseTwice = BASE_FLAG + 229
+    SewersDiseaseOnce = BASE_FLAG + 230
+    SewersDiseaseTwice = BASE_FLAG + 231
+    HaligtreeDiseaseOnce = BASE_FLAG + 232
+    HaligtreeDiseaseTwice = BASE_FLAG + 233
+    FarumAzulaDiseaseOnce = BASE_FLAG + 234
+    FarumAzulaDiseaseTwice = BASE_FLAG + 235
+    MohgwynDiseaseOnce = BASE_FLAG + 236
+    MohgwynDiseaseTwice = BASE_FLAG + 237
+    CatacombsDiseaseOnce = BASE_FLAG + 238
+    CatacombsDiseaseTwice = BASE_FLAG + 239
+    CaveDiseaseOnce = BASE_FLAG + 240
+    CaveDiseaseTwice = BASE_FLAG + 241
+    TunnelDiseaseOnce = BASE_FLAG + 242
+    TunnelDiseaseTwice = BASE_FLAG + 243
+
+    PureScarletRotOnce = BASE_FLAG + 250
 
 
 class VanillaFlags(Flag):
