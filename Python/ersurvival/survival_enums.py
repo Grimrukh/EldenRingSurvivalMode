@@ -1,7 +1,8 @@
 from soulstruct.game_types import *
 
 
-BASE_FLAG = 8000
+# Haligtree 3000 range
+BASE_FLAG = 15003000
 
 
 class SurvivalText(IntEnum):
@@ -15,10 +16,7 @@ class SurvivalText(IntEnum):
 
 
 class SurvivalFlags(Flag):
-    """Flags used by Survival Mode.
-
-    TODO: Try to avoid using the same flags as Matt's randomizers.
-    """
+    """NEW flags and events used by Survival Mode."""
     GrowingHunger = BASE_FLAG + 0
     GrowingThirst = BASE_FLAG + 1
 
@@ -128,17 +126,17 @@ class SurvivalFlags(Flag):
 
     PureScarletRotOnce = BASE_FLAG + 250
 
-
-class VanillaFlags(Flag):
-    RadahnBattleActive = 1  # TODO
+    # TIME FLAG. Increments by 1 every 30 in-game minutes.
+    MonitorTimeFlag = 15003399
+    TimeEventValue = 15003400  # 4 flags
 
 
 class VanillaCharacters(Character):
-    Radahn = 1  # TODO
+    Radahn = 1052380800
 
 
 class SurvivalEffects(SpecialEffectParam):
-    """TODO: Dummy numbering for now."""
+    """New SpEffects used by Survival Mode."""
 
     # Fifteen hunger levels, each reducing max HP by an addition 5%.
     # Hunger level increases once per minute. Lower hunger levels are better.
