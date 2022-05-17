@@ -405,6 +405,42 @@ def Constructor():
     RunEvent(9943)
     RunEvent(9940)
     RunEvent(1700)
+    SkipIfCharacterDoesNotHaveSpecialEffect(2, character=PLAYER, special_effect=40029)
+    CancelSpecialEffect(PLAYER, 40029)
+    AddSpecialEffect(PLAYER, 40028)
+    RunEvent(15003000)
+    RunEvent(15003001)
+    RunEvent(15003010)
+    RunEvent(15003013)
+    RunEvent(15003016)
+    RunEvent(15003019)
+    RunEvent(15003022)
+    RunEvent(15003025)
+    RunEvent(15003060, slot=0, args=(53000, 15003050, 15003200, 15003201, 50010), arg_types="iIIIi")
+    RunEvent(15003060, slot=1, args=(53001, 15003051, 15003202, 15003203, 50011), arg_types="iIIIi")
+    RunEvent(15003060, slot=2, args=(53002, 15003052, 15003204, 15003205, 50012), arg_types="iIIIi")
+    RunEvent(15003060, slot=3, args=(53003, 15003053, 15003206, 15003207, 50013), arg_types="iIIIi")
+    RunEvent(15003060, slot=4, args=(53004, 15003054, 15003208, 15003209, 50014), arg_types="iIIIi")
+    RunEvent(15003060, slot=5, args=(53005, 15003055, 15003210, 15003211, 50015), arg_types="iIIIi")
+    RunEvent(15003070, slot=0, args=(53009, 10, 0, 0, 0, 15003220, 15003221, 50019), arg_types="iBBBBIIi")
+    RunEvent(15003070, slot=1, args=(53010, 14, 0, 0, 0, 15003222, 15003223, 50020), arg_types="iBBBBIIi")
+    RunEvent(15003070, slot=2, args=(53012, 16, 0, 0, 0, 15003226, 15003227, 50022), arg_types="iBBBBIIi")
+    RunEvent(15003070, slot=3, args=(53013, 11, 0, 0, 0, 15003228, 15003229, 50023), arg_types="iBBBBIIi")
+    RunEvent(15003070, slot=4, args=(53014, 35, 0, 0, 0, 15003230, 15003231, 50024), arg_types="iBBBBIIi")
+    RunEvent(15003070, slot=5, args=(53015, 15, 0, 0, 0, 15003232, 15003233, 50025), arg_types="iBBBBIIi")
+    RunEvent(15003070, slot=6, args=(53016, 13, 0, 0, 0, 15003234, 15003235, 50026), arg_types="iBBBBIIi")
+    RunEvent(15003070, slot=7, args=(53017, 12, 5, 0, 0, 15003236, 15003237, 50027), arg_types="iBBBBIIi")
+    RunEvent(15003080)
+    RunEvent(15003081)
+    RunEvent(15003082)
+    RunEvent(15003083)
+    RunEvent(15003084)
+    RunEvent(15003085)
+    RunEvent(15003086)
+    RunEvent(15003090)
+    RunEvent(15003091)
+    RunEvent(15003092)
+    RunEvent(15003093)
 
 
 @NeverRestart(50)
@@ -7868,3 +7904,978 @@ def Event9950(_, arg_0_3: uint, arg_4_7: uint):
     EndIfFlagOn(arg_0_3)
     IfFlagOn(0, arg_0_3)
     EnableFlag(arg_4_7)
+
+
+@NeverRestart(15003000)
+def Event15003000():
+    """Event 15003000"""
+    IfCharacterDoesNotHaveSpecialEffect(1, PLAYER, 51912)
+    IfCharacterDoesNotHaveSpecialEffect(1, PLAYER, 40015)
+    IfConditionTrue(0, input_condition=1)
+    Wait(60.0)
+    SkipIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40001)
+    CancelSpecialEffect(PLAYER, 40001)
+    AddSpecialEffect(PLAYER, 40002)
+    Restart()
+    SkipIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40002)
+    CancelSpecialEffect(PLAYER, 40002)
+    AddSpecialEffect(PLAYER, 40003)
+    Restart()
+    SkipIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40003)
+    CancelSpecialEffect(PLAYER, 40003)
+    AddSpecialEffect(PLAYER, 40004)
+    Restart()
+    SkipIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40004)
+    CancelSpecialEffect(PLAYER, 40004)
+    AddSpecialEffect(PLAYER, 40005)
+    Restart()
+    SkipIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40005)
+    CancelSpecialEffect(PLAYER, 40005)
+    AddSpecialEffect(PLAYER, 40006)
+    Restart()
+    SkipIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40006)
+    CancelSpecialEffect(PLAYER, 40006)
+    AddSpecialEffect(PLAYER, 40007)
+    Restart()
+    SkipIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40007)
+    CancelSpecialEffect(PLAYER, 40007)
+    AddSpecialEffect(PLAYER, 40008)
+    Restart()
+    SkipIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40008)
+    CancelSpecialEffect(PLAYER, 40008)
+    AddSpecialEffect(PLAYER, 40009)
+    Restart()
+    SkipIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40009)
+    CancelSpecialEffect(PLAYER, 40009)
+    AddSpecialEffect(PLAYER, 40010)
+    Restart()
+    SkipIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40010)
+    CancelSpecialEffect(PLAYER, 40010)
+    AddSpecialEffect(PLAYER, 40011)
+    Restart()
+    SkipIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40011)
+    CancelSpecialEffect(PLAYER, 40011)
+    AddSpecialEffect(PLAYER, 40012)
+    Restart()
+    SkipIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40012)
+    CancelSpecialEffect(PLAYER, 40012)
+    AddSpecialEffect(PLAYER, 40013)
+    Restart()
+    SkipIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40013)
+    CancelSpecialEffect(PLAYER, 40013)
+    AddSpecialEffect(PLAYER, 40014)
+    Restart()
+    SkipIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40014)
+    CancelSpecialEffect(PLAYER, 40014)
+    AddSpecialEffect(PLAYER, 40015)
+    Restart()
+    AddSpecialEffect(PLAYER, 40001)
+    Restart()
+
+
+@NeverRestart(15003001)
+def Event15003001():
+    """Event 15003001"""
+    IfCharacterDoesNotHaveSpecialEffect(1, PLAYER, 51913)
+    IfCharacterDoesNotHaveSpecialEffect(1, PLAYER, 40029)
+    IfConditionTrue(0, input_condition=1)
+    Wait(100.0)
+    SkipIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40021)
+    CancelSpecialEffect(PLAYER, 40021)
+    AddSpecialEffect(PLAYER, 40022)
+    Restart()
+    SkipIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40022)
+    CancelSpecialEffect(PLAYER, 40022)
+    AddSpecialEffect(PLAYER, 40023)
+    Restart()
+    SkipIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40023)
+    CancelSpecialEffect(PLAYER, 40023)
+    AddSpecialEffect(PLAYER, 40024)
+    Restart()
+    SkipIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40024)
+    CancelSpecialEffect(PLAYER, 40024)
+    AddSpecialEffect(PLAYER, 40025)
+    Restart()
+    SkipIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40025)
+    CancelSpecialEffect(PLAYER, 40025)
+    AddSpecialEffect(PLAYER, 40026)
+    Restart()
+    SkipIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40026)
+    CancelSpecialEffect(PLAYER, 40026)
+    AddSpecialEffect(PLAYER, 40027)
+    Restart()
+    SkipIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40027)
+    CancelSpecialEffect(PLAYER, 40027)
+    AddSpecialEffect(PLAYER, 40028)
+    Restart()
+    SkipIfCharacterDoesNotHaveSpecialEffect(4, character=PLAYER, special_effect=40028)
+    CancelSpecialEffect(PLAYER, 40028)
+    AddSpecialEffect(PLAYER, 40029)
+    DisplayDialog(
+        50050,
+        anchor_entity=-1,
+        display_distance=3.0,
+        button_type=ButtonType.OK_or_Cancel,
+        number_buttons=NumberButtons.NoButton,
+    )
+    Restart()
+    AddSpecialEffect(PLAYER, 40021)
+    Restart()
+
+
+@NeverRestart(15003010)
+def Event15003010():
+    """Event 15003010"""
+    IfTimeOfDay(1, earliest=(10, 0, 0), latest=(17, 0, 0))
+    IfFlagOn(-1, 15003052)
+    IfFlagOn(-1, 15003053)
+    IfInsideMap(-1, game_map=LEYNDELL_ROYAL_CAPITAL)
+    IfInsideMap(-1, game_map=LEYNDELL_ASHEN_CAPITAL)
+    IfConditionTrue(1, input_condition=-1)
+    IfTimeOfDay(2, earliest=(18, 0, 0), latest=(8, 0, 0))
+    IfFlagOn(2, 15003054)
+    IfConditionTrue(-3, input_condition=1)
+    IfConditionTrue(-3, input_condition=2)
+    IfConditionTrue(3, input_condition=-3)
+    IfCharacterDoesNotHaveSpecialEffect(3, PLAYER, 52200)
+    IfCharacterDoesNotHaveSpecialEffect(3, PLAYER, 52201)
+    IfCharacterDoesNotHaveSpecialEffect(3, PLAYER, 52202)
+    IfConditionTrue(0, input_condition=3)
+    EnableFlag(15003012)
+    AddSpecialEffect(PLAYER, 52100)
+    Wait(3.0)
+    DisableFlag(15003012)
+    Restart()
+
+
+@NeverRestart(15003013)
+def Event15003013():
+    """Event 15003013"""
+    IfTimeOfDay(1, earliest=(8, 0, 0), latest=(18, 0, 0))
+    IfFlagOn(1, 15003054)
+    IfTimeOfDay(2, earliest=(18, 0, 0), latest=(8, 0, 0))
+    IfInsideMap(2, game_map=VOLCANO_MANOR)
+    IfConditionTrue(-3, input_condition=1)
+    IfConditionTrue(-3, input_condition=2)
+    IfConditionTrue(3, input_condition=-3)
+    IfCharacterDoesNotHaveSpecialEffect(3, PLAYER, 52201)
+    IfCharacterDoesNotHaveSpecialEffect(3, PLAYER, 52202)
+    IfConditionTrue(0, input_condition=3)
+    EnableFlag(15003015)
+    SkipIfCharacterDoesNotHaveSpecialEffect(2, character=PLAYER, special_effect=52200)
+    AddSpecialEffect(PLAYER, 52100)
+    SkipLines(1)
+    AddSpecialEffect(PLAYER, 52101)
+    Wait(3.0)
+    DisableFlag(15003015)
+    Restart()
+
+
+@NeverRestart(15003016)
+def Event15003016():
+    """Event 15003016"""
+    IfTimeOfDay(1, earliest=(8, 0, 0), latest=(18, 0, 0))
+    IfInsideMap(1, game_map=VOLCANO_MANOR)
+    IfInsideMap(2, game_map=MOHGWYN_PALACE)
+    IfConditionTrue(-3, input_condition=1)
+    IfConditionTrue(-3, input_condition=2)
+    IfConditionTrue(3, input_condition=-3)
+    IfCharacterDoesNotHaveSpecialEffect(3, PLAYER, 52202)
+    IfConditionTrue(0, input_condition=3)
+    EnableFlag(15003018)
+    SkipIfCharacterDoesNotHaveSpecialEffect(2, character=PLAYER, special_effect=52201)
+    AddSpecialEffect(PLAYER, 52100)
+    SkipLines(4)
+    SkipIfCharacterDoesNotHaveSpecialEffect(2, character=PLAYER, special_effect=52200)
+    AddSpecialEffect(PLAYER, 52101)
+    SkipLines(1)
+    AddSpecialEffect(PLAYER, 52102)
+    Wait(3.0)
+    DisableFlag(15003018)
+    Restart()
+
+
+@NeverRestart(15003019)
+def Event15003019():
+    """Event 15003019"""
+    IfTimeOfDay(1, earliest=(18, 0, 0), latest=(8, 0, 0))
+    IfFlagOn(-1, 15003051)
+    IfInsideMap(-1, game_map=RAYA_LUCARIA)
+    IfConditionTrue(1, input_condition=-1)
+    IfInsideMap(-2, game_map=SIOFRA_RIVER)
+    IfInsideMap(-2, game_map=SIOFRA_RIVER_START)
+    IfConditionTrue(2, input_condition=-2)
+    IfConditionTrue(-3, input_condition=1)
+    IfConditionTrue(-3, input_condition=2)
+    IfConditionTrue(3, input_condition=-3)
+    IfCharacterDoesNotHaveSpecialEffect(3, PLAYER, 52250)
+    IfCharacterDoesNotHaveSpecialEffect(3, PLAYER, 52251)
+    IfCharacterDoesNotHaveSpecialEffect(3, PLAYER, 52252)
+    IfConditionTrue(0, input_condition=3)
+    EnableFlag(15003021)
+    AddSpecialEffect(PLAYER, 52150)
+    Wait(3.0)
+    DisableFlag(15003021)
+    Restart()
+
+
+@NeverRestart(15003022)
+def Event15003022():
+    """Event 15003022"""
+    IfTimeOfDay(1, earliest=(8, 0, 0), latest=(18, 0, 0))
+    IfFlagOn(1, 15003055)
+    IfInsideMap(-2, game_map=AINSEL_RIVER)
+    IfInsideMap(-2, game_map=DEEPROOT_DEPTHS)
+    IfConditionTrue(2, input_condition=-2)
+    IfConditionTrue(-3, input_condition=1)
+    IfConditionTrue(-3, input_condition=2)
+    IfConditionTrue(3, input_condition=-3)
+    IfCharacterDoesNotHaveSpecialEffect(3, PLAYER, 52251)
+    IfCharacterDoesNotHaveSpecialEffect(3, PLAYER, 52252)
+    IfConditionTrue(0, input_condition=3)
+    EnableFlag(15003024)
+    SkipIfCharacterDoesNotHaveSpecialEffect(2, character=PLAYER, special_effect=52250)
+    AddSpecialEffect(PLAYER, 52150)
+    SkipLines(1)
+    AddSpecialEffect(PLAYER, 52151)
+    Wait(3.0)
+    DisableFlag(15003024)
+    Restart()
+
+
+@NeverRestart(15003025)
+def Event15003025():
+    """Event 15003025"""
+    IfTimeOfDay(1, earliest=(18, 0, 0), latest=(8, 0, 0))
+    IfFlagOn(-1, 15003055)
+    IfInsideMap(-1, game_map=CRUMBLING_FARUM_AZULA)
+    IfConditionTrue(1, input_condition=-1)
+    IfInsideMap(2, game_map=ASTEL_ARENA)
+    IfConditionTrue(-3, input_condition=1)
+    IfConditionTrue(-3, input_condition=2)
+    IfConditionTrue(3, input_condition=-3)
+    IfCharacterDoesNotHaveSpecialEffect(3, PLAYER, 52252)
+    IfConditionTrue(0, input_condition=3)
+    EnableFlag(15003027)
+    SkipIfCharacterDoesNotHaveSpecialEffect(2, character=PLAYER, special_effect=52251)
+    AddSpecialEffect(PLAYER, 52150)
+    SkipLines(4)
+    SkipIfCharacterDoesNotHaveSpecialEffect(2, character=PLAYER, special_effect=52250)
+    AddSpecialEffect(PLAYER, 52151)
+    SkipLines(1)
+    AddSpecialEffect(PLAYER, 52152)
+    Wait(3.0)
+    DisableFlag(15003027)
+    Restart()
+
+
+@NeverRestart(15003011)
+def Event15003011():
+    """Event 15003011"""
+    IfFlagOn(0, 15003012)
+    DisplayDialog(
+        50000,
+        anchor_entity=-1,
+        display_distance=3.0,
+        button_type=ButtonType.OK_or_Cancel,
+        number_buttons=NumberButtons.NoButton,
+    )
+    Wait(60.0)
+    Restart()
+
+
+@NeverRestart(15003014)
+def Event15003014():
+    """Event 15003014"""
+    IfFlagOn(0, 15003015)
+    DisplayDialog(
+        50001,
+        anchor_entity=-1,
+        display_distance=3.0,
+        button_type=ButtonType.OK_or_Cancel,
+        number_buttons=NumberButtons.NoButton,
+    )
+    Wait(60.0)
+    Restart()
+
+
+@NeverRestart(15003017)
+def Event15003017():
+    """Event 15003017"""
+    IfFlagOn(0, 15003018)
+    DisplayDialog(
+        50002,
+        anchor_entity=-1,
+        display_distance=3.0,
+        button_type=ButtonType.OK_or_Cancel,
+        number_buttons=NumberButtons.NoButton,
+    )
+    Wait(60.0)
+    Restart()
+
+
+@NeverRestart(15003020)
+def Event15003020():
+    """Event 15003020"""
+    IfFlagOn(0, 15003021)
+    DisplayDialog(
+        50003,
+        anchor_entity=-1,
+        display_distance=3.0,
+        button_type=ButtonType.OK_or_Cancel,
+        number_buttons=NumberButtons.NoButton,
+    )
+    Wait(60.0)
+    Restart()
+
+
+@NeverRestart(15003023)
+def Event15003023():
+    """Event 15003023"""
+    IfFlagOn(0, 15003024)
+    DisplayDialog(
+        50004,
+        anchor_entity=-1,
+        display_distance=3.0,
+        button_type=ButtonType.OK_or_Cancel,
+        number_buttons=NumberButtons.NoButton,
+    )
+    Wait(60.0)
+    Restart()
+
+
+@NeverRestart(15003026)
+def Event15003026():
+    """Event 15003026"""
+    IfFlagOn(0, 15003027)
+    DisplayDialog(
+        50005,
+        anchor_entity=-1,
+        display_distance=3.0,
+        button_type=ButtonType.OK_or_Cancel,
+        number_buttons=NumberButtons.NoButton,
+    )
+    Wait(60.0)
+    Restart()
+
+
+@NeverRestart(15003060)
+def Event15003060(_, arg_0_3: int, arg_4_7: uint, arg_8_11: uint, arg_12_15: uint, arg_16_19: int):
+    """Event 15003060"""
+    EndIfFlagOn(arg_12_15)
+    IfFlagOn(1, arg_4_7)
+    IfAttackedWithDamageType(1, attacked_entity=PLAYER, attacker=-1)
+    IfCharacterDoesNotHaveSpecialEffect(1, PLAYER, arg_0_3)
+    IfFlagOff(1, 15003099)
+    IfConditionTrue(0, input_condition=1)
+    EnableFlag(15003099)
+    DisableFlagRange((15003100, 15003199))
+    EnableRandomFlagInRange((15003100, 15003199))
+    IfFlagOn(-2, 15003100)
+    IfFlagOff(2, arg_8_11)
+    IfFlagOn(2, 15003101)
+    IfConditionTrue(-2, input_condition=2)
+    SkipLinesIfConditionTrue(2, -2)
+    DisableFlag(15003099)
+    Restart()
+    DisableFlag(15003099)
+    AddSpecialEffect(PLAYER, arg_0_3)
+    DisplayDialog(
+        arg_16_19,
+        anchor_entity=-1,
+        display_distance=3.0,
+        button_type=ButtonType.OK_or_Cancel,
+        number_buttons=NumberButtons.NoButton,
+    )
+    SkipLinesIfFlagOn(2, arg_8_11)
+    EnableFlag(arg_8_11)
+    End()
+    EnableFlag(arg_12_15)
+
+
+@NeverRestart(15003070)
+def Event15003070(
+    _,
+    arg_0_3: int,
+    arg_4_4: uchar,
+    arg_5_5: uchar,
+    arg_6_6: uchar,
+    arg_7_7: uchar,
+    arg_8_11: uint,
+    arg_12_15: uint,
+    arg_16_19: int,
+):
+    """Event 15003070"""
+    EndIfFlagOn(arg_12_15)
+    IfInsideMap(1, game_map=(arg_4_4, arg_5_5, arg_6_6, arg_7_7))
+    IfAttackedWithDamageType(1, attacked_entity=PLAYER, attacker=-1)
+    IfCharacterDoesNotHaveSpecialEffect(1, PLAYER, arg_0_3)
+    IfFlagOff(1, 15003099)
+    IfConditionTrue(0, input_condition=1)
+    EnableFlag(15003099)
+    DisableFlagRange((15003100, 15003199))
+    EnableRandomFlagInRange((15003100, 15003199))
+    IfFlagOn(-2, 15003100)
+    IfFlagOff(2, arg_8_11)
+    IfFlagOn(2, 15003101)
+    IfConditionTrue(-2, input_condition=2)
+    SkipLinesIfConditionTrue(2, -2)
+    DisableFlag(15003099)
+    Restart()
+    DisableFlag(15003099)
+    AddSpecialEffect(PLAYER, arg_0_3)
+    DisplayDialog(
+        arg_16_19,
+        anchor_entity=-1,
+        display_distance=3.0,
+        button_type=ButtonType.OK_or_Cancel,
+        number_buttons=NumberButtons.NoButton,
+    )
+    SkipLinesIfFlagOn(2, arg_8_11)
+    EnableFlag(arg_8_11)
+    End()
+    EnableFlag(arg_12_15)
+
+
+@NeverRestart(15003080)
+def Event15003080():
+    """Event 15003080"""
+    EndIfFlagOn(15003215)
+    IfInsideMap(-1, game_map=SIOFRA_RIVER)
+    IfInsideMap(-1, game_map=SIOFRA_RIVER_START)
+    IfConditionTrue(1, input_condition=-1)
+    IfAttackedWithDamageType(1, attacked_entity=PLAYER, attacker=-1)
+    IfCharacterDoesNotHaveSpecialEffect(1, PLAYER, 53006)
+    IfFlagOff(1, 15003099)
+    IfConditionTrue(0, input_condition=1)
+    EnableFlag(15003099)
+    DisableFlagRange((15003100, 15003199))
+    EnableRandomFlagInRange((15003100, 15003199))
+    IfFlagOn(-2, 15003100)
+    IfFlagOff(2, 15003214)
+    IfFlagOn(2, 15003101)
+    IfConditionTrue(-2, input_condition=2)
+    SkipLinesIfConditionTrue(2, -2)
+    DisableFlag(15003099)
+    Restart()
+    DisableFlag(15003099)
+    AddSpecialEffect(PLAYER, 53006)
+    DisplayDialog(
+        50016,
+        anchor_entity=-1,
+        display_distance=3.0,
+        button_type=ButtonType.OK_or_Cancel,
+        number_buttons=NumberButtons.NoButton,
+    )
+    SkipLinesIfFlagOn(2, 15003214)
+    EnableFlag(15003214)
+    End()
+    EnableFlag(15003215)
+
+
+@NeverRestart(15003081)
+def Event15003081():
+    """Event 15003081"""
+    EndIfFlagOn(15003217)
+    IfInsideMap(1, game_map=AINSEL_RIVER)
+    IfAttackedWithDamageType(1, attacked_entity=PLAYER, attacker=-1)
+    IfCharacterDoesNotHaveSpecialEffect(1, PLAYER, 53007)
+    IfFlagOff(1, 15003099)
+    IfConditionTrue(0, input_condition=1)
+    EnableFlag(15003099)
+    DisableFlagRange((15003100, 15003199))
+    EnableRandomFlagInRange((15003100, 15003199))
+    IfFlagOn(-2, 15003100)
+    IfFlagOff(2, 15003216)
+    IfFlagOn(2, 15003101)
+    IfConditionTrue(-2, input_condition=2)
+    SkipLinesIfConditionTrue(2, -2)
+    DisableFlag(15003099)
+    Restart()
+    DisableFlag(15003099)
+    AddSpecialEffect(PLAYER, 53007)
+    DisplayDialog(
+        50017,
+        anchor_entity=-1,
+        display_distance=3.0,
+        button_type=ButtonType.OK_or_Cancel,
+        number_buttons=NumberButtons.NoButton,
+    )
+    SkipLinesIfFlagOn(2, 15003216)
+    EnableFlag(15003216)
+    End()
+    EnableFlag(15003217)
+
+
+@NeverRestart(15003082)
+def Event15003082():
+    """Event 15003082"""
+    EndIfFlagOn(15003219)
+    IfInsideMap(-1, game_map=DEEPROOT_DEPTHS)
+    IfInsideMap(-1, game_map=ASTEL_ARENA)
+    IfConditionTrue(1, input_condition=-1)
+    IfAttackedWithDamageType(1, attacked_entity=PLAYER, attacker=-1)
+    IfCharacterDoesNotHaveSpecialEffect(1, PLAYER, 53008)
+    IfFlagOff(1, 15003099)
+    IfConditionTrue(0, input_condition=1)
+    EnableFlag(15003099)
+    DisableFlagRange((15003100, 15003199))
+    EnableRandomFlagInRange((15003100, 15003199))
+    IfFlagOn(-2, 15003100)
+    IfFlagOff(2, 15003218)
+    IfFlagOn(2, 15003101)
+    IfConditionTrue(-2, input_condition=2)
+    SkipLinesIfConditionTrue(2, -2)
+    DisableFlag(15003099)
+    Restart()
+    DisableFlag(15003099)
+    AddSpecialEffect(PLAYER, 53008)
+    DisplayDialog(
+        50018,
+        anchor_entity=-1,
+        display_distance=3.0,
+        button_type=ButtonType.OK_or_Cancel,
+        number_buttons=NumberButtons.NoButton,
+    )
+    SkipLinesIfFlagOn(2, 15003218)
+    EnableFlag(15003218)
+    End()
+    EnableFlag(15003219)
+
+
+@NeverRestart(15003083)
+def Event15003083():
+    """Event 15003083"""
+    EndIfFlagOn(15003225)
+    IfAttackedWithDamageType(1, attacked_entity=PLAYER, attacker=1052380800)
+    IfCharacterDoesNotHaveSpecialEffect(1, PLAYER, 53011)
+    IfFlagOff(1, 15003099)
+    IfConditionTrue(0, input_condition=1)
+    EnableFlag(15003099)
+    DisableFlagRange((15003100, 15003199))
+    EnableRandomFlagInRange((15003100, 15003199))
+    IfFlagOn(-2, 15003100)
+    IfFlagOff(2, 15003224)
+    IfFlagOn(2, 15003101)
+    IfConditionTrue(-2, input_condition=2)
+    SkipLinesIfConditionTrue(2, -2)
+    DisableFlag(15003099)
+    Restart()
+    DisableFlag(15003099)
+    AddSpecialEffect(PLAYER, 53011)
+    DisplayDialog(
+        50021,
+        anchor_entity=-1,
+        display_distance=3.0,
+        button_type=ButtonType.OK_or_Cancel,
+        number_buttons=NumberButtons.NoButton,
+    )
+    SkipLinesIfFlagOn(2, 15003224)
+    EnableFlag(15003224)
+    End()
+    EnableFlag(15003225)
+
+
+@NeverRestart(15003084)
+def Event15003084():
+    """Event 15003084"""
+    EndIfFlagOn(15003239)
+    IfInsideMap(1, game_map=(30, 255, 255, 255))
+    IfAttackedWithDamageType(1, attacked_entity=PLAYER, attacker=-1)
+    IfCharacterDoesNotHaveSpecialEffect(1, PLAYER, 53018)
+    IfFlagOff(1, 15003099)
+    IfConditionTrue(0, input_condition=1)
+    EnableFlag(15003099)
+    DisableFlagRange((15003100, 15003199))
+    EnableRandomFlagInRange((15003100, 15003199))
+    IfFlagOn(-2, 15003100)
+    IfFlagOff(2, 15003238)
+    IfFlagOn(2, 15003101)
+    IfConditionTrue(-2, input_condition=2)
+    SkipLinesIfConditionTrue(2, -2)
+    DisableFlag(15003099)
+    Restart()
+    DisableFlag(15003099)
+    AddSpecialEffect(PLAYER, 53018)
+    DisplayDialog(
+        50028,
+        anchor_entity=-1,
+        display_distance=3.0,
+        button_type=ButtonType.OK_or_Cancel,
+        number_buttons=NumberButtons.NoButton,
+    )
+    SkipLinesIfFlagOn(2, 15003238)
+    EnableFlag(15003238)
+    End()
+    EnableFlag(15003239)
+
+
+@NeverRestart(15003085)
+def Event15003085():
+    """Event 15003085"""
+    EndIfFlagOn(15003241)
+    IfInsideMap(1, game_map=(31, 255, 255, 255))
+    IfAttackedWithDamageType(1, attacked_entity=PLAYER, attacker=-1)
+    IfCharacterDoesNotHaveSpecialEffect(1, PLAYER, 53019)
+    IfFlagOff(1, 15003099)
+    IfConditionTrue(0, input_condition=1)
+    EnableFlag(15003099)
+    DisableFlagRange((15003100, 15003199))
+    EnableRandomFlagInRange((15003100, 15003199))
+    IfFlagOn(-2, 15003100)
+    IfFlagOff(2, 15003240)
+    IfFlagOn(2, 15003101)
+    IfConditionTrue(-2, input_condition=2)
+    SkipLinesIfConditionTrue(2, -2)
+    DisableFlag(15003099)
+    Restart()
+    DisableFlag(15003099)
+    AddSpecialEffect(PLAYER, 53019)
+    DisplayDialog(
+        50029,
+        anchor_entity=-1,
+        display_distance=3.0,
+        button_type=ButtonType.OK_or_Cancel,
+        number_buttons=NumberButtons.NoButton,
+    )
+    SkipLinesIfFlagOn(2, 15003240)
+    EnableFlag(15003240)
+    End()
+    EnableFlag(15003241)
+
+
+@NeverRestart(15003086)
+def Event15003086():
+    """Event 15003086"""
+    EndIfFlagOn(15003243)
+    IfInsideMap(1, game_map=(32, 255, 255, 255))
+    IfAttackedWithDamageType(1, attacked_entity=PLAYER, attacker=-1)
+    IfCharacterDoesNotHaveSpecialEffect(1, PLAYER, 53020)
+    IfFlagOff(1, 15003099)
+    IfConditionTrue(0, input_condition=1)
+    EnableFlag(15003099)
+    DisableFlagRange((15003100, 15003199))
+    EnableRandomFlagInRange((15003100, 15003199))
+    IfFlagOn(-2, 15003100)
+    IfFlagOff(2, 15003242)
+    IfFlagOn(2, 15003101)
+    IfConditionTrue(-2, input_condition=2)
+    SkipLinesIfConditionTrue(2, -2)
+    DisableFlag(15003099)
+    Restart()
+    DisableFlag(15003099)
+    AddSpecialEffect(PLAYER, 53020)
+    DisplayDialog(
+        50030,
+        anchor_entity=-1,
+        display_distance=3.0,
+        button_type=ButtonType.OK_or_Cancel,
+        number_buttons=NumberButtons.NoButton,
+    )
+    SkipLinesIfFlagOn(2, 15003242)
+    EnableFlag(15003242)
+    End()
+    EnableFlag(15003243)
+
+
+@NeverRestart(15003087)
+def Event15003087():
+    """Event 15003087"""
+    End()
+
+
+@NeverRestart(15003090)
+def Event15003090():
+    """Event 15003090"""
+    IfCharacterHasSpecialEffect(1, PLAYER, 53100)
+    IfCharacterHasSpecialEffect(-1, PLAYER, 53000)
+    IfCharacterHasSpecialEffect(-1, PLAYER, 53006)
+    IfCharacterHasSpecialEffect(-1, PLAYER, 53013)
+    IfCharacterHasSpecialEffect(-1, PLAYER, 53015)
+    IfCharacterHasSpecialEffect(-1, PLAYER, 53009)
+    IfConditionTrue(1, input_condition=-1)
+    IfConditionTrue(0, input_condition=1)
+    CancelSpecialEffect(PLAYER, 53000)
+    CancelSpecialEffect(PLAYER, 53006)
+    CancelSpecialEffect(PLAYER, 53013)
+    CancelSpecialEffect(PLAYER, 53015)
+    CancelSpecialEffect(PLAYER, 53009)
+    DisplayDialog(
+        50040,
+        anchor_entity=-1,
+        display_distance=3.0,
+        button_type=ButtonType.OK_or_Cancel,
+        number_buttons=NumberButtons.NoButton,
+    )
+    IfCharacterDoesNotHaveSpecialEffect(0, PLAYER, 53100)
+    Restart()
+
+
+@NeverRestart(15003091)
+def Event15003091():
+    """Event 15003091"""
+    IfCharacterHasSpecialEffect(1, PLAYER, 53101)
+    IfCharacterHasSpecialEffect(-1, PLAYER, 53001)
+    IfCharacterHasSpecialEffect(-1, PLAYER, 53018)
+    IfCharacterHasSpecialEffect(-1, PLAYER, 53007)
+    IfCharacterHasSpecialEffect(-1, PLAYER, 53010)
+    IfCharacterHasSpecialEffect(-1, PLAYER, 53012)
+    IfConditionTrue(1, input_condition=-1)
+    IfConditionTrue(0, input_condition=1)
+    CancelSpecialEffect(PLAYER, 53001)
+    CancelSpecialEffect(PLAYER, 53018)
+    CancelSpecialEffect(PLAYER, 53007)
+    CancelSpecialEffect(PLAYER, 53010)
+    CancelSpecialEffect(PLAYER, 53012)
+    DisplayDialog(
+        50041,
+        anchor_entity=-1,
+        display_distance=3.0,
+        button_type=ButtonType.OK_or_Cancel,
+        number_buttons=NumberButtons.NoButton,
+    )
+    IfCharacterDoesNotHaveSpecialEffect(0, PLAYER, 53101)
+    Restart()
+
+
+@NeverRestart(15003092)
+def Event15003092():
+    """Event 15003092"""
+    IfCharacterHasSpecialEffect(1, PLAYER, 53102)
+    IfCharacterHasSpecialEffect(-1, PLAYER, 53003)
+    IfCharacterHasSpecialEffect(-1, PLAYER, 53020)
+    IfCharacterHasSpecialEffect(-1, PLAYER, 53011)
+    IfCharacterHasSpecialEffect(-1, PLAYER, 53016)
+    IfCharacterHasSpecialEffect(-1, PLAYER, 53017)
+    IfConditionTrue(1, input_condition=-1)
+    IfConditionTrue(0, input_condition=1)
+    CancelSpecialEffect(PLAYER, 53003)
+    CancelSpecialEffect(PLAYER, 53020)
+    CancelSpecialEffect(PLAYER, 53011)
+    CancelSpecialEffect(PLAYER, 53016)
+    CancelSpecialEffect(PLAYER, 53017)
+    DisplayDialog(
+        50042,
+        anchor_entity=-1,
+        display_distance=3.0,
+        button_type=ButtonType.OK_or_Cancel,
+        number_buttons=NumberButtons.NoButton,
+    )
+    IfCharacterDoesNotHaveSpecialEffect(0, PLAYER, 53102)
+    Restart()
+
+
+@NeverRestart(15003093)
+def Event15003093():
+    """Event 15003093"""
+    IfCharacterHasSpecialEffect(1, PLAYER, 53103)
+    IfCharacterHasSpecialEffect(-1, PLAYER, 53019)
+    IfCharacterHasSpecialEffect(-1, PLAYER, 53002)
+    IfCharacterHasSpecialEffect(-1, PLAYER, 53014)
+    IfCharacterHasSpecialEffect(-1, PLAYER, 53005)
+    IfCharacterHasSpecialEffect(-1, PLAYER, 53008)
+    IfConditionTrue(1, input_condition=-1)
+    IfConditionTrue(0, input_condition=1)
+    CancelSpecialEffect(PLAYER, 53019)
+    CancelSpecialEffect(PLAYER, 53002)
+    CancelSpecialEffect(PLAYER, 53014)
+    CancelSpecialEffect(PLAYER, 53005)
+    CancelSpecialEffect(PLAYER, 53008)
+    DisplayDialog(
+        50043,
+        anchor_entity=-1,
+        display_distance=3.0,
+        button_type=ButtonType.OK_or_Cancel,
+        number_buttons=NumberButtons.NoButton,
+    )
+    IfCharacterDoesNotHaveSpecialEffect(0, PLAYER, 53103)
+    Restart()
+
+
+@NeverRestart(15003094)
+def Event15003094():
+    """Event 15003094"""
+    IfCharacterHasSpecialEffect(1, PLAYER, 53104)
+    IfCharacterHasSpecialEffect(1, PLAYER, 53050)
+    IfConditionTrue(0, input_condition=1)
+    CancelSpecialEffect(PLAYER, 53050)
+    IfCharacterDoesNotHaveSpecialEffect(0, PLAYER, 53104)
+    Restart()
+
+
+@NeverRestart(15003040)
+def Event15003040():
+    """Event 15003040"""
+    DisableFlag(15003050)
+    IfInsideMapTile(-1, game_map=WEST_LIMGRAVE)
+    IfInsideMapTile(-1, game_map=WEST_WEEPING_PENINSULA)
+    IfInsideMapTile(-1, game_map=SOUTH_WEEPING_PENINSULA)
+    IfInsideMapTile(-1, game_map=SOUTHEAST_WEEPING_PENINSULA_COAST)
+    IfInsideMapTile(-1, game_map=EAST_WEEPING_PENINSULA)
+    IfInsideMapTile(-1, game_map=EAST_LIMGRAVE_NW)
+    IfInsideMapTile(-1, game_map=EAST_LIMGRAVE_SW)
+    IfInsideMapTile(-1, game_map=EAST_LIMGRAVE_SE_SW)
+    IfInsideMapTile(-1, game_map=EAST_LIMGRAVE_SE_NW)
+    IfInsideMapTile(-1, game_map=EAST_LIMGRAVE_NE_SW)
+    IfConditionTrue(0, input_condition=-1)
+    EnableFlag(15003050)
+    IfInsideMapTile(-2, game_map=WEST_LIMGRAVE)
+    IfInsideMapTile(-2, game_map=WEST_WEEPING_PENINSULA)
+    IfInsideMapTile(-2, game_map=SOUTH_WEEPING_PENINSULA)
+    IfInsideMapTile(-2, game_map=SOUTHEAST_WEEPING_PENINSULA_COAST)
+    IfInsideMapTile(-2, game_map=EAST_WEEPING_PENINSULA)
+    IfInsideMapTile(-2, game_map=EAST_LIMGRAVE_NW)
+    IfInsideMapTile(-2, game_map=EAST_LIMGRAVE_SW)
+    IfInsideMapTile(-2, game_map=EAST_LIMGRAVE_SE_SW)
+    IfInsideMapTile(-2, game_map=EAST_LIMGRAVE_SE_NW)
+    IfInsideMapTile(-2, game_map=EAST_LIMGRAVE_NE_SW)
+    IfConditionFalse(0, input_condition=-2)
+    Restart()
+
+
+@NeverRestart(15003041)
+def Event15003041():
+    """Event 15003041"""
+    DisableFlag(15003051)
+    IfInsideMapTile(-1, game_map=SOUTHWEST_LIURNIA)
+    IfInsideMapTile(-1, game_map=WEST_LIURNIA)
+    IfInsideMapTile(-1, game_map=NORTHWEST_LIURNIA)
+    IfInsideMapTile(-1, game_map=EAST_LIURNIA)
+    IfInsideMapTile(-1, game_map=SOUTHEAST_LIURNIA_SW)
+    IfInsideMapTile(-1, game_map=SOUTHEAST_LIURNIA_NW)
+    IfInsideMapTile(-1, game_map=SOUTHEAST_LIURNIA_NE)
+    IfInsideMapTile(-1, game_map=SOUTHEAST_LIURNIA_SE_SW)
+    IfInsideMapTile(-1, game_map=SOUTHEAST_LIURNIA_SE_NW)
+    IfInsideMapTile(-1, game_map=SOUTHEAST_LIURNIA_SE_NE)
+    IfInsideMapTile(-1, game_map=LIURNIA_TO_ALTUS_PLATEAU_SW)
+    IfInsideMapTile(-1, game_map=LIURNIA_TO_ALTUS_PLATEAU_SE)
+    IfInsideMapTile(-1, game_map=LIURNIA_TO_ALTUS_PLATEAU_NW_SW)
+    IfConditionTrue(0, input_condition=-1)
+    EnableFlag(15003051)
+    IfInsideMapTile(-2, game_map=SOUTHWEST_LIURNIA)
+    IfInsideMapTile(-2, game_map=WEST_LIURNIA)
+    IfInsideMapTile(-2, game_map=NORTHWEST_LIURNIA)
+    IfInsideMapTile(-2, game_map=EAST_LIURNIA)
+    IfInsideMapTile(-2, game_map=SOUTHEAST_LIURNIA_SW)
+    IfInsideMapTile(-2, game_map=SOUTHEAST_LIURNIA_NW)
+    IfInsideMapTile(-2, game_map=SOUTHEAST_LIURNIA_NE)
+    IfInsideMapTile(-2, game_map=SOUTHEAST_LIURNIA_SE_SW)
+    IfInsideMapTile(-2, game_map=SOUTHEAST_LIURNIA_SE_NW)
+    IfInsideMapTile(-2, game_map=SOUTHEAST_LIURNIA_SE_NE)
+    IfInsideMapTile(-2, game_map=LIURNIA_TO_ALTUS_PLATEAU_SW)
+    IfInsideMapTile(-2, game_map=LIURNIA_TO_ALTUS_PLATEAU_SE)
+    IfInsideMapTile(-2, game_map=LIURNIA_TO_ALTUS_PLATEAU_NW_SW)
+    IfConditionFalse(0, input_condition=-2)
+    Restart()
+
+
+@NeverRestart(15003042)
+def Event15003042():
+    """Event 15003042"""
+    DisableFlag(15003052)
+    IfInsideMapTile(-1, game_map=NORTH_CAELID)
+    IfInsideMapTile(-1, game_map=SOUTH_CAELID)
+    IfInsideMapTile(-1, game_map=NORTHEAST_CAELID)
+    IfInsideMapTile(-1, game_map=SOUTHEAST_CAELID)
+    IfInsideMapTile(-1, game_map=FAR_SOUTH_CAELID)
+    IfInsideMapTile(-1, game_map=NORTHWEST_CAELID_SE)
+    IfInsideMapTile(-1, game_map=NORTHWEST_CAELID_NE)
+    IfInsideMapTile(-1, game_map=EAST_LIMGRAVE_SE_NE)
+    IfInsideMapTile(-1, game_map=EAST_LIMGRAVE_NE_SE)
+    IfInsideMapTile(-1, game_map=EAST_LIMGRAVE_NE_NE)
+    IfConditionTrue(0, input_condition=-1)
+    EnableFlag(15003052)
+    IfInsideMapTile(-2, game_map=NORTH_CAELID)
+    IfInsideMapTile(-2, game_map=SOUTH_CAELID)
+    IfInsideMapTile(-2, game_map=NORTHEAST_CAELID)
+    IfInsideMapTile(-2, game_map=SOUTHEAST_CAELID)
+    IfInsideMapTile(-2, game_map=FAR_SOUTH_CAELID)
+    IfInsideMapTile(-2, game_map=NORTHWEST_CAELID_SE)
+    IfInsideMapTile(-2, game_map=NORTHWEST_CAELID_NE)
+    IfInsideMapTile(-2, game_map=EAST_LIMGRAVE_SE_NE)
+    IfInsideMapTile(-2, game_map=EAST_LIMGRAVE_NE_SE)
+    IfInsideMapTile(-2, game_map=EAST_LIMGRAVE_NE_NE)
+    IfConditionFalse(0, input_condition=-2)
+    Restart()
+
+
+@NeverRestart(15003043)
+def Event15003043():
+    """Event 15003043"""
+    DisableFlag(15003053)
+    IfInsideMapTile(-1, game_map=SOUTH_ALTUS_PLATEAU)
+    IfInsideMapTile(-1, game_map=NORTH_ALTUS_PLATEAU)
+    IfInsideMapTile(-1, game_map=NORTHEAST_ALTUS_PLATEAU_SW)
+    IfInsideMapTile(-1, game_map=LIURNIA_TO_ALTUS_PLATEAU_NW_NW)
+    IfInsideMapTile(-1, game_map=LIURNIA_TO_ALTUS_PLATEAU_NW_NE)
+    IfInsideMapTile(-1, game_map=LIURNIA_TO_ALTUS_PLATEAU_NE_NW)
+    IfInsideMapTile(-1, game_map=LIURNIA_TO_ALTUS_PLATEAU_NE_SE)
+    IfInsideMapTile(-1, game_map=LIURNIA_TO_ALTUS_PLATEAU_NE_NE)
+    IfInsideMapTile(-1, game_map=WEST_ALTUS_PLATEAU_SE_SE)
+    IfInsideMapTile(-1, game_map=WEST_ALTUS_PLATEAU_SE_NE)
+    IfInsideMapTile(-1, game_map=WEST_ALTUS_PLATEAU_NE_SE)
+    IfConditionTrue(0, input_condition=-1)
+    IfInsideMapTile(-2, game_map=SOUTH_ALTUS_PLATEAU)
+    IfInsideMapTile(-2, game_map=NORTH_ALTUS_PLATEAU)
+    IfInsideMapTile(-2, game_map=NORTHEAST_ALTUS_PLATEAU_SW)
+    IfInsideMapTile(-2, game_map=LIURNIA_TO_ALTUS_PLATEAU_NW_NW)
+    IfInsideMapTile(-2, game_map=LIURNIA_TO_ALTUS_PLATEAU_NW_NE)
+    IfInsideMapTile(-2, game_map=LIURNIA_TO_ALTUS_PLATEAU_NE_NW)
+    IfInsideMapTile(-2, game_map=LIURNIA_TO_ALTUS_PLATEAU_NE_SE)
+    IfInsideMapTile(-2, game_map=LIURNIA_TO_ALTUS_PLATEAU_NE_NE)
+    IfInsideMapTile(-2, game_map=WEST_ALTUS_PLATEAU_SE_SE)
+    IfInsideMapTile(-2, game_map=WEST_ALTUS_PLATEAU_SE_NE)
+    IfInsideMapTile(-2, game_map=WEST_ALTUS_PLATEAU_NE_SE)
+    IfConditionFalse(0, input_condition=-2)
+    Restart()
+
+
+@NeverRestart(15003044)
+def Event15003044():
+    """Event 15003044"""
+    DisableFlag(15003054)
+    IfInsideMapTile(-1, game_map=FAR_WEST_ALTUS_PLATEAU_SE)
+    IfInsideMapTile(-1, game_map=FAR_WEST_ALTUS_PLATEAU_NE)
+    IfInsideMapTile(-1, game_map=WEST_ALTUS_PLATEAU_SW)
+    IfInsideMapTile(-1, game_map=WEST_ALTUS_PLATEAU_NW)
+    IfInsideMapTile(-1, game_map=WEST_ALTUS_PLATEAU_SE_SW)
+    IfInsideMapTile(-1, game_map=WEST_ALTUS_PLATEAU_SE_SW)
+    IfInsideMapTile(-1, game_map=WEST_ALTUS_PLATEAU_SE_NW)
+    IfInsideMapTile(-1, game_map=WEST_ALTUS_PLATEAU_NE_SW)
+    IfConditionTrue(0, input_condition=-1)
+    IfInsideMapTile(-2, game_map=FAR_WEST_ALTUS_PLATEAU_SE)
+    IfInsideMapTile(-2, game_map=FAR_WEST_ALTUS_PLATEAU_NE)
+    IfInsideMapTile(-2, game_map=WEST_ALTUS_PLATEAU_SW)
+    IfInsideMapTile(-2, game_map=WEST_ALTUS_PLATEAU_NW)
+    IfInsideMapTile(-2, game_map=WEST_ALTUS_PLATEAU_SE_SW)
+    IfInsideMapTile(-2, game_map=WEST_ALTUS_PLATEAU_SE_SW)
+    IfInsideMapTile(-2, game_map=WEST_ALTUS_PLATEAU_SE_NW)
+    IfInsideMapTile(-2, game_map=WEST_ALTUS_PLATEAU_NE_SW)
+    IfConditionFalse(0, input_condition=-2)
+    Restart()
+
+
+@NeverRestart(15003045)
+def Event15003045():
+    """Event 15003045"""
+    DisableFlag(15003055)
+    IfInsideMapTile(-1, game_map=WEST_CONSECRATED_SNOWFIELD)
+    IfInsideMapTile(-1, game_map=NORTHWEST_MOUNTAINTOPS)
+    IfInsideMapTile(-1, game_map=NORTHEAST_MOUNTAINTOPS)
+    IfInsideMapTile(-1, game_map=SOUTHEAST_MOUNTAINTOPS)
+    IfInsideMapTile(-1, game_map=SOUTHWEST_MOUNTAINTOPS_NW)
+    IfInsideMapTile(-1, game_map=SOUTHWEST_MOUNTAINTOPS_SE)
+    IfInsideMapTile(-1, game_map=SOUTHWEST_MOUNTAINTOPS_NE)
+    IfInsideMapTile(-1, game_map=NORTHEAST_ALTUS_PLATEAU_NE)
+    IfConditionTrue(0, input_condition=-1)
+    EnableFlag(15003055)
+    IfInsideMapTile(-2, game_map=WEST_CONSECRATED_SNOWFIELD)
+    IfInsideMapTile(-2, game_map=NORTHWEST_MOUNTAINTOPS)
+    IfInsideMapTile(-2, game_map=NORTHEAST_MOUNTAINTOPS)
+    IfInsideMapTile(-2, game_map=SOUTHEAST_MOUNTAINTOPS)
+    IfInsideMapTile(-2, game_map=SOUTHWEST_MOUNTAINTOPS_NW)
+    IfInsideMapTile(-2, game_map=SOUTHWEST_MOUNTAINTOPS_SE)
+    IfInsideMapTile(-2, game_map=SOUTHWEST_MOUNTAINTOPS_NE)
+    IfInsideMapTile(-2, game_map=NORTHEAST_ALTUS_PLATEAU_NE)
+    IfConditionFalse(0, input_condition=-2)
+    Restart()

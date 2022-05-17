@@ -14,6 +14,35 @@ class SurvivalText(IntEnum):
     ModerateColdWarning = 50004
     SevereColdWarning = 50005
 
+    ContractedLimgraveDisease = 50010
+    ContractedLiurniaDisease = 50011
+    ContractedCaelidDisease = 50012
+    ContractedAltusDisease = 50013
+    ContractedMtGelmirDisease = 50014
+    ContractedMountaintopsDisease = 50015
+    ContractedSiofraDisease = 50016
+    ContractedAinselDisease = 50017
+    ContractedDeeprootDisease = 50018
+    ContractedStormveilDisease = 50019
+    ContractedRayaLucariaDisease = 50020
+    ContractedRadahnDisease = 50021
+    ContractedVolcanoManorDisease = 50022
+    ContractedLeyndellDisease = 50023
+    ContractedSewersDisease = 50024
+    ContractedHaligtreeDisease = 50025
+    ContractedFarumAzulaDisease = 50026
+    ContractedMohgwynDisease = 50027
+    ContractedCatacombsDisease = 50028
+    ContractedCaveDisease = 50029
+    ContractedTunnelDisease = 50030
+
+    CuredPlague = 50040
+    CuredToxin = 50041
+    CuredFever = 50042
+    CuredParasite = 50043
+
+    Dehydration = 50050
+
 
 class SurvivalFlags(Flag):
     """NEW flags and events used by Survival Mode."""
@@ -129,6 +158,9 @@ class SurvivalFlags(Flag):
     # TIME FLAG. Increments by 1 every 30 in-game minutes.
     MonitorTimeFlag = 15003399
     TimeEventValue = 15003400  # 4 flags
+
+    # For crafting weapons.
+    WeaponCraftingBase = 15004000  # 377 slots
 
 
 class VanillaCharacters(Character):
@@ -268,72 +300,61 @@ class SurvivalEffects(SpecialEffectParam):
     JarBrittle = 51920  # 5x Living Jar Shards, ???. (no pot)
 
 
-class CraftingMaterials(IntEnum):
-    """These are in order of in-game sort ID."""
-    SliverOfMeat = 15000
-    StripOfWhiteFlesh = 15160
-    BeastLiver = 15010
-    LumpOfFlesh = 15020
-    TurtleNeckMeat = 15090
-    BeastBlood = 15030
-    AlbinauricBloodclot = 15420
-    BuddingHorn = 15050
-    OldFang = 15040
-    FlightPinion = 15060
-    StormhawkFeather = 15430
-    FourToedFowlFoot = 15080
-    SlumberingEgg = 15120
-    CrabEggs = 15130
-    LandOctopusOvary = 15140
-    ThinBeastBones = 15340
-    HeftyBeastBone = 15341
-    HumanBoneShard = 15100
-    GreatDragonflyHead = 15110
-    GoldFirefly = 20811
-    SilverFirefly = 20810
-    GlintstoneFirefly = 20812
-    SmolderingButterfly = 20802
-    AeonianButterfly = 20801
-    NascentButterfly = 20800
-    GoldenCentipede = 20820
-    LivingJarShard = 15410
-    SilverTearHusk = 20825
-    GoldTingedExcrement = 20830
-    BloodTaintedExcrement = 20831
-    YellowEmber = 20845
-    RowaFruit = 20720
-    GoldenRowa = 20721
-    RimedRowa = 20722
-    Herba = 20690
-    DewkissedHerba = 20710
-    ArteriaLeaf = 20691
-    Mushroom = 20760
-    ToxicMushroom = 20770
-    MeltedMushroom = 20761
-    ErdleafFlower = 20680
-    FadedErdleafFlower = 20660
-    FireBlossom = 20682
-    Poisonbloom = 20650
-    Fulgurbloom = 20652
-    AltusBloom = 20681
-    Bloodrose = 20723
-    GraveViolet = 20654
-    TarnishedGoldenSunflower = 20685
-    GoldenSunflower = 20683
-    TrinasLily = 20651
-    MiquellasLily = 20653
-    CrystalBud = 20750
-    RimedCrystalBud = 20751
-    SacramentalBud = 20753
-    EyeOfYelough = 20740
-    MirandaPowder = 15150
-    RootResin = 20775
-    CaveMoss = 20840
-    BuddingCaveMoss = 20841
-    CrystalCaveMoss = 20842
-    String = 15400
-    SanctuaryStone = 20795
-    CrackedCrystal = 20780
-    VolcanicStone = 20850
-    FormicRock = 20852
-    GravelStone = 20855
+class WeaponCategory(IntEnum):
+    """Vanilla enum."""
+    Dagger = 0
+    StraightSword = 1
+    ThrustingSword = 2
+    CurvedSwordKatana = 3
+    Axe = 4
+    Hammer = 5
+    Spear = 6
+    HalberdReaper = 7
+    StaffSeal = 8
+    Fists = 9
+    Bow = 10
+    Crossbow = 11
+    Shield = 12
+    Arrow = 13
+    Bolt = 14
+
+
+class WeaponType(IntEnum):
+    Dagger = 1
+    StraightSword = 3
+    Greatsword = 5
+    ColossalSword = 7
+    CurvedSword = 9
+    CurvedGreatsword = 11
+    Katana = 13
+    Twinblade = 14
+    ThrustingSword = 15
+    HeavyThrustingSword = 16
+    Axe = 17
+    Greataxe = 19
+    Hammer = 21
+    GreatHammer = 23
+    Flail = 24
+    Spear = 25
+    HeavySpear = 28
+    Halberd = 29
+    Scythe = 31
+    Fist = 35
+    Claw = 37
+    Whip = 39
+    ColossalWeapon = 41
+    LightBow = 50
+    Bow = 51
+    Greatbow = 53
+    Crossbow = 55
+    Ballista = 56
+    Staff = 57
+    Seal = 61
+    SmallShield = 65
+    MediumShield = 67
+    Greatshield = 69
+    Arrow = 81
+    Greatarrow = 83
+    Bolt = 85
+    BallistaBolt = 86
+    Torch = 87
