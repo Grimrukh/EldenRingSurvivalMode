@@ -15,7 +15,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.SmallHilt),
             (1, Materials.IronPlate),
-            (1, Materials.BlackMark),
+            (1, Materials.BlackMark), #?
         ],
     },
     "Parrying Dagger": {
@@ -134,89 +134,122 @@ WEAPON_RECIPES = {
             (5, Materials.ArteriaLeaf),
         ],
     },
-    # TODO: Grim is up to here with recipes.
+    # OG Grim recipes end here
     "Longsword": {
         "id": 200,
         "recipe": [
             (1, Materials.StandardHilt),
+            (2, Materials.IronPlate),
+            (1, Materials.IronShards),
         ],
     },
     "Short Sword": {
         "id": 201,
         "recipe": [
             (1, Materials.StandardHilt),
+            (1, Materials.IronPlate),
+            (2, Materials.IronShards),
         ],
     },
     "Broadsword": {
         "id": 202,
         "recipe": [
             (1, Materials.StandardHilt),
+            (2, Materials.IronPlate),
         ],
     },
     "Lordsworn's Straight Sword": {
         "id": 204,
         "recipe": [
             (1, Materials.StandardHilt),
+            (2, Materials.IronPlate),
+            (1, Materials.RootResin),
         ],
     },
     "Weathered Straight Sword": {
         "id": 205,
         "recipe": [
             (1, Materials.StandardHilt),
+            (4, Materials.IronShards),
         ],
     },
     "Ornamental Straight Sword": {
         "id": 206,
         "recipe": [
             (1, Materials.StandardHilt),
+            (2, Materials.IronPlate),
+            (3, Materials.SomberStoneFragment),
+            (1, Materials.GoldenCentipede),
         ],
     },
     "Golden Epitaph": {
         "id": 207,
         "recipe": [
             (1, Materials.StandardHilt),
+            (2, Materials.IronPlate),
+            (4, Materials.StoneFragment),
+            (4, Materials.AltusBloom),
+            (4, Materials.GoldenSunflower),
         ],
     },
     "Nox Flowing Sword": {
         "id": 208,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (1, Materials.LiquidMetal),
+            (4, Materials.SilverTearHusk), #?
         ],
     },
     "Inseparable Sword": {
         "id": 209,
         "recipe": [
             (1, Materials.GiantHilt),
+            (4, Materials.SomberStoneFragment),
+            (10, Materials.SilverFirefly),
+            (10, Materials.GoldFirefly),
         ],
     },
     "Coded Sword": {
         "id": 211,
         "recipe": [
             (1, Materials.StandardHilt),
+            (1, Materials.IronPlate),
+            (3, Materials.SomberStoneFragment),
+            (8, Materials.GoldTingedExcrement),
         ],
     },
     "Sword of Night and Flame": {
         "id": 214,
         "recipe": [
             (1, Materials.StandardHilt),
+            (8, Materials.SomberStoneFragment),
+            (1, Materials.LiquidMetal),
+            (3, Materials.MeteoriteChunk),
         ],
     },
     "Crystal Sword": {
         "id": 215,
         "recipe": [
             (1, Materials.StandardHilt),
+            (3, Materials.RimedCrystalBud),
+            (5, Materials.CrackedCrystal),
         ],
     },
     "Carian Knight's Sword": {
         "id": 218,
         "recipe": [
             (1, Materials.StandardHilt),
+            (2, Materials.IronPlate),
+            (1, Materials.GlintstoneFirefly),
         ],
     },
     "Sword of St. Trina": {
         "id": 219,
         "recipe": [
             (1, Materials.StandardHilt),
+            (2, Materials.IronPlate),
+            (3, Materials.MeltedMushroom),
+            (8, Materials.TrinasLily),
         ],
     },
     "Miquellan Knight's Sword": {

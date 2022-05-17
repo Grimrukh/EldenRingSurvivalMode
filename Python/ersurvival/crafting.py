@@ -74,22 +74,50 @@ class Materials(IntEnum):
 
     # NEW ITEMS
 
-    # Basic equipment components. T
+    # Basic equipment components.
+        # Guidelines are in progress
     SoftWood = 21000
+        # Very Common. Weapons with wood
+        # Weaker weapons/arrows
     RefinedWood = 21001
-    StoneFragment = 21002  # can be obtained by "breaking" Smithing Stones
-    SomberStoneFragment = 21003  # can be obtained by "breaking" Somber Smithing Stones
-    IronShards = 21004
-    IronPlate = 21005
-    LiquidMetal = 21006  # for "Nox" weapons
+        # Uncommon? Weapons with wood
+        # Stronger weapons/arrows
+    StoneFragment = 21002
+        # Common. Used for stronger weapons
+        # Obtained by "breaking" Smithing Stones
+    SomberStoneFragment = 21003
+        # Common. Used for EVEN STRONGER weapons
+        # Obtained by "breaking" Somber Smithing Stones
+    IronShards = 21004 # Maybe rename to "Metal Scrap"
+        # Very common. Worth a "portion" of an Iron plate
+        # More for DEX weapons vs Iron Plate
+        # Used for bleed/spiky weapons
+    IronPlate = 21005 # Maybe rename to "Metal Plate"
+        # Very common. Base material for most weapons
+        # More for heavier weapons types (1 dagger -> 2 straight sword -> 3 greatsword -> etc)
+        # More for STR weapons vs Iron Shards
+    LiquidMetal = 21006
+        # Rare. Used for Nox weapons
+        # Can be used for weird weapons
+        # Possibly replace usage with silver tear husks?
     DragonTeeth = 21007
+        # Rare. Used for Dragon weapons
     GruesomeBone = 21008
+		# Rare. Used for weird weapons
+
+    # Additional item ideas:
+    # Glintstone Dust
+        # Int stuff.
+    # Erdtree Amber
+        # Faith stuff.
 
     # Special equipment components. These are all quite rare.
+        # Don't use these ATM until their fate is decided
     Chain = 21500  # rare drop from Iron Virgin; rare treasure
     ErdtreeWood = 21501  # mainly from defeating Erdtree Avatars
     FallingstarJawbone = 21502  # reward from Fallingstar Beast
     MeteoriteChunk = 21503  # rare treasure
+        # Maybe make this a "commonly used" rare ingreident in more weapons?
     GrindingWheel = 21504  # for Ghiza's Wheel only (replaces that item)
     DragonspearChunk = 21505  # for Bolt of Gransax only (replaces that item)
     BlackMark = 21506  # for weapons touched by Rune of Death; mainly from defeating Black Knife Assassins/Gargoyles
