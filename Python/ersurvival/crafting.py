@@ -83,17 +83,17 @@ class Materials(IntEnum):
         # Uncommon? Weapons with wood
         # Stronger weapons/arrows
     StoneFragment = 21002
-        # Common. Used for stronger weapons
+        # Used for stronger weapons
         # Obtained by "breaking" Smithing Stones
     SomberStoneFragment = 21003
-        # Common. Used for EVEN STRONGER weapons
+        # Used for EVEN STRONGER weapons
         # Obtained by "breaking" Somber Smithing Stones
     IronShards = 21004 # Generic metal scrap
         # Very common. Worth a "portion" of an Iron plate
         # More for DEX weapons vs Iron Plate
         # Used for bleed/spiky weapons
     IronPlate = 21005 # Generic metal plate
-        # Very common. Base material for most weapons
+        # Common. Base material for most weapons
         # More for heavier weapons types (1 dagger -> 2 straight sword -> 3 greatsword -> etc)
         # More for STR weapons vs Iron Shards
     LiquidMetal = 21006
@@ -106,9 +106,9 @@ class Materials(IntEnum):
 		# Rare. Used for weird weapons
         # Arcane weapons?
     GlintstoneDust = 0 # TODO
-        # Uncommon. Int stuff.
+        # Semi-rare. Int stuff.
     ErdtreeAmber = 0 # TODO
-        # Uncommon. Faith stuff.
+        # Semi-rare. Faith stuff.
 
     # Special equipment components. These are all quite rare.
         # Don't use these ATM until their fate is decided

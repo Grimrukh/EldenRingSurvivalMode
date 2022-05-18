@@ -249,8 +249,9 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.StandardHilt),
             (2, Materials.IronPlate),
-            (3, Materials.MeltedMushroom),
-            (8, Materials.TrinasLily),
+            (2, Materials.StoneFragment),
+            (2, Materials.SlumberingEgg),
+            (7, Materials.TrinasLily),
         ],
     },
     "Miquellan Knight's Sword": {
@@ -274,7 +275,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.StandardHilt),
             (2, Materials.IronPlate),
-            (2, Materials.GruesomeBone),
+            (1, Materials.GruesomeBone),
             (10, Materials.SacramentalBud),
         ],
     },
@@ -308,11 +309,11 @@ WEAPON_RECIPES = {
         "id": 226,
         "recipe": [
             (1, Materials.StandardHilt),
+            (1, Materials.SomberStoneFragment),
             (1, Materials.GruesomeBone),
             (10, Materials.CrackedCrystal),
         ],
     },
-    #bookmark
     "Bastard Sword": {
         "id": 300,
         "recipe": [
@@ -324,116 +325,167 @@ WEAPON_RECIPES = {
         "id": 301,
         "recipe": [
             (1, Materials.GiantHilt),
+            (2, Materials.IronPlate),
+            (5, Materials.IronShards),
+            (4, Materials.GraveViolet),
         ],
     },
     "Iron Greatsword": {
         "id": 302,
         "recipe": [
             (1, Materials.GiantHilt),
+            (5, Materials.IronPlate),
         ],
     },
     "Lordsworn's Greatsword": {
         "id": 303,
         "recipe": [
             (1, Materials.GiantHilt),
+            (2, Materials.IronPlate),
+            (2, Materials.IronShards),
         ],
     },
     "Knight's Greatsword": {
         "id": 304,
         "recipe": [
             (1, Materials.GiantHilt),
+            (2, Materials.IronPlate),
+            (3, Materials.IronShards),
         ],
     },
     "Flamberge": {
         "id": 305,
         "recipe": [
             (1, Materials.GiantHilt),
+            (1, Materials.IronPlate),
+            (5, Materials.IronShards),
+            (1, Materials.StoneFragment),
         ],
     },
     "Ordovis's Greatsword": {
         "id": 306,
         "recipe": [
             (1, Materials.GiantHilt),
+            (2, Materials.RefinedWood),
+            (2, Materials.IronPlate),
+            (2, Materials.SomberStoneFragment),
+            (5, Materials.ErdtreeAmber),
         ],
     },
     "Onyx Lord's Sword": {
         "id": 307,
         "recipe": [
             (1, Materials.GiantHilt),
+            (3, Materials.StoneFragment),
+            (2, Materials.MeteoriteChunk),
         ],
     },
     "Banished Knight's Greatsword": {
         "id": 308,
         "recipe": [
             (1, Materials.GiantHilt),
+            (3, Materials.IronPlate),
+            (10, Materials.SanctuaryStone),
         ],
     },
     "Dark Moon Greatsword": {
         "id": 309,
         "recipe": [
             (1, Materials.GiantHilt),
+            (3, Materials.IronPlate),
+            (2, Materials.LiquidMetal),
+            (10, Materials.SomberStoneFragment),
         ],
     },
     "Sacred Relic Sword": {
         "id": 310,
         "recipe": [
             (1, Materials.GiantHilt),
+            (6, Materials.ErdtreeAmber),
+            (20, Materials.LumpOfFlesh),
+            (8, Materials.GoldenCentipede),
         ],
     },
     "Helphen's Steeple": {
         "id": 313,
         "recipe": [
             (1, Materials.GiantHilt),
+            (1, Materials.LiquidMetal),
+            (1, Materials.GruesomeBone),
+            (4, Materials.HumanBoneShard),
         ],
     },
     "Blasphemous Blade": {
         "id": 314,
         "recipe": [
             (1, Materials.GiantHilt),
+            (3, Materials.IronPlate),
+            (1, Materials.GruesomeBone),
+            (4, Materials.BeastBlood),
         ],
     },
     "Marais Executioner's Sword": {
         "id": 315,
         "recipe": [
             (1, Materials.GiantHilt),
+            (3, Materials.IronPlate),
+            (1, Materials.GruesomeBone),
+            (4, Materials.AeonianButterfly),
         ],
     },
     "Sword of Milos": {
         "id": 316,
         "recipe": [
             (1, Materials.GiantHilt),
+            (3, Materials.IronPlate),
+            (2, Materials.StoneFragment),
+            (6, Materials.HeftyBeastBone),
         ],
     },
     "Golden Order Greatsword": {
         "id": 317,
         "recipe": [
             (1, Materials.GiantHilt),
+            (3, Materials.IronPlate),
+            (5, Materials.SomberStoneFragment),
+            (5, Materials.ErdtreeAmber),
         ],
     },
     "Claymore": {
         "id": 318,
         "recipe": [
             (1, Materials.GiantHilt),
+            (3, Materials.IronPlate),
+            (1, Materials.StoneFragment),
         ],
     },
     "Gargoyle's Greatsword": {
         "id": 319,
         "recipe": [
             (1, Materials.GiantHilt),
+            (3, Materials.IronPlate),
+            (1, Materials.GruesomeBone),
         ],
     },
     "Death's Poker": {
         "id": 320,
         "recipe": [
             (1, Materials.GiantHilt),
+            (2, Materials.StoneFragment),
+            (2, Materials.BuddingHorn),
+            (4, Materials.HumanBoneShard),
         ],
     },
     "Gargoyle's Blackblade": {
         "id": 321,
         "recipe": [
             (1, Materials.GiantHilt),
+            (2, Materials.IronPlate),
+            (1, Materials.GruesomeBone),
+            (1, Materials.ErdtreeAmber),
         ],
     },
+    #bookmark
     "Greatsword": {
         "id": 400,
         "recipe": [
