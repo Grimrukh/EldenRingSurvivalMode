@@ -440,8 +440,8 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.GiantHilt),
             (3, Materials.IronPlate),
-            (2, Materials.StoneFragment),
-            (6, Materials.HeftyBeastBone),
+            (4, Materials.HeftyBeastBone),
+            (1, Materials.FormicRock),
         ],
     },
     "Golden Order Greatsword": {
@@ -586,6 +586,8 @@ WEAPON_RECIPES = {
         "id": 500,
         "recipe": [
             (1, Materials.StandardHilt),
+            (2, Materials.IronPlate),
+            (1, Materials.IronShards),
         ],
     },
     "Cleanrot Knight's Sword": {

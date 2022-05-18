@@ -97,30 +97,32 @@ class Materials(IntEnum):
         # More for heavier weapons types (1 dagger -> 2 straight sword -> 3 greatsword -> etc)
         # More for STR weapons vs Iron Shards
     LiquidMetal = 21006
-        # Rare. Used for Nox weapons
-        # Can be used for weird weapons
+        # Rare. Used for Nox weapons and weird weapons
         # Possibly replace usage with silver tear husks?
     DragonTeeth = 21007
         # Rare. Used for Dragon weapons
     GruesomeBone = 21008
-		# Rare. Used for weird weapons
-        # Arcane weapons?
+        # Rare. Used for weird weapons & Arcane weapons
     GlintstoneDust = 0 # TODO
         # Semi-rare. Int stuff.
     ErdtreeAmber = 0 # TODO
         # Semi-rare. Faith stuff.
-
+    
+    MeteoriteChunk = 21503
+        # Rare. Used for outer space stuff
+    BlackMark = 21506 
+        # Rare. Used for Mark of Death stuff 
+            # Black Knife assassins, gargoyles, godskin/blackflame
+    
     # Special equipment components. These are all quite rare.
-        # Don't use these ATM until their fate is decided
+        # Probably don't use these at the moment until their fate is decided
     Chain = 21500  # rare drop from Iron Virgin; rare treasure
     ErdtreeWood = 21501  # mainly from defeating Erdtree Avatars
     FallingstarJawbone = 21502  # reward from Fallingstar Beast
-    MeteoriteChunk = 21503  # rare treasure
-        # Rare. Used for outer space stuff
+    # MeteoriteChunk = 21503 # moved to the above section
     GrindingWheel = 21504  # for Ghiza's Wheel only (replaces that item)
     DragonspearChunk = 21505  # for Bolt of Gransax only (replaces that item)
-    BlackMark = 21506  # for weapons touched by Rune of Death; mainly from defeating Black Knife Assassins/Gargoyles
-        # Rare. Used for black knife assassin, gargoyle, and godskin (blackflame)
+    # BlackMark = 21506 # moved to the above section
 
     # Required single base components. These are all rare treasure or bought from merchants.
     SmallHilt = 21600  # daggers, whips
