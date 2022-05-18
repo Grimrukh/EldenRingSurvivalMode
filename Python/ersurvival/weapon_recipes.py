@@ -15,7 +15,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.SmallHilt),
             (1, Materials.IronPlate),
-            (1, Materials.BlackMark), #?
+            (1, Materials.BlackMark),
         ],
     },
     "Parrying Dagger": {
@@ -334,7 +334,9 @@ WEAPON_RECIPES = {
         "id": 302,
         "recipe": [
             (1, Materials.GiantHilt),
-            (5, Materials.IronPlate),
+            (3, Materials.IronPlate),
+            (1, Materials.IronShards),
+            (2, Materials.StoneFragment),
         ],
     },
     "Lordsworn's Greatsword": {
@@ -411,7 +413,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.GiantHilt),
             (1, Materials.LiquidMetal),
-            (1, Materials.GruesomeBone),
+            (1, Materials.BlackMark),
             (4, Materials.HumanBoneShard),
         ],
     },
@@ -449,6 +451,7 @@ WEAPON_RECIPES = {
             (3, Materials.IronPlate),
             (5, Materials.SomberStoneFragment),
             (5, Materials.ErdtreeAmber),
+            (1, Materials.GoldenSunflower),
         ],
     },
     "Claymore": {
@@ -464,7 +467,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.GiantHilt),
             (3, Materials.IronPlate),
-            (1, Materials.GruesomeBone),
+            (1, Materials.BlackMark),
         ],
     },
     "Death's Poker": {
@@ -481,77 +484,104 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.GiantHilt),
             (2, Materials.IronPlate),
-            (1, Materials.GruesomeBone),
+            (1, Materials.BlackMark),
             (1, Materials.ErdtreeAmber),
         ],
     },
-    #bookmark
     "Greatsword": {
         "id": 400,
         "recipe": [
             (1, Materials.GiantHilt),
+            (4, Materials.IronPlate),
         ],
     },
     "Watchdog's Greatsword": {
         "id": 401,
         "recipe": [
             (1, Materials.GiantHilt),
+            (6, Materials.StoneFragment),
+            (4, Materials.SomberStoneFragment),
+            (2, Materials.GraveViolet),
         ],
     },
     "Maliketh's Black Blade": {
         "id": 402,
         "recipe": [
             (1, Materials.GiantHilt),
+            (4, Materials.IronPlate),
+            (2, Materials.BlackMark),
+            (4, Materials.OldFang),
+            (3, Materials.SomberStoneFragment),
         ],
     },
     "Troll's Golden Sword": {
         "id": 403,
         "recipe": [
             (1, Materials.GiantHilt),
+            (4, Materials.IronPlate),
+            (2, Materials.GoldTingedExcrement),
         ],
     },
     "Zweihander": {
         "id": 404,
         "recipe": [
             (1, Materials.GiantHilt),
+            (4, Materials.IronPlate),
+            (2, Materials.StoneFragment),
         ],
     },
     "Starscourge Greatsword": {
         "id": 405,
         "recipe": [
             (1, Materials.GiantHilt),
+            (3, Materials.IronPlate),
+            (2, Materials.LiquidMetal),
+            (1, Materials.GlintstoneDust),
         ],
     },
     "Royal Greatsword": {
         "id": 406,
         "recipe": [
             (1, Materials.GiantHilt),
+            (4, Materials.IronPlate),
+            (1, Materials.GlintstoneDust),
+            (1, Materials.AeonianButterfly),
         ],
     },
     "Godslayer's Greatsword": {
         "id": 407,
         "recipe": [
             (1, Materials.GiantHilt),
+            (4, Materials.IronPlate),
+            (2, Materials.BlackMark),
+            (4, Materials.SmolderingButterfly),
         ],
     },
     "Ruins Greatsword": {
         "id": 408,
         "recipe": [
             (1, Materials.GiantHilt),
+            (1, Materials.MeteoriteChunk),
+            (2, Materials.SomberStoneFragment),
+            (20, Materials.SanctuaryStone),
         ],
     },
     "Grafted Blade Greatsword": {
         "id": 410,
         "recipe": [
             (1, Materials.GiantHilt),
+            (12, Materials.IronShards),
         ],
     },
     "Troll Knight's Sword": {
         "id": 411,
         "recipe": [
             (1, Materials.GiantHilt),
+            (4, Materials.IronPlate),
+            (2, Materials.GlintstoneFirefly),
         ],
     },
+    #bookmark
     "Estoc": {
         "id": 500,
         "recipe": [

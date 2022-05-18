@@ -116,10 +116,11 @@ class Materials(IntEnum):
     ErdtreeWood = 21501  # mainly from defeating Erdtree Avatars
     FallingstarJawbone = 21502  # reward from Fallingstar Beast
     MeteoriteChunk = 21503  # rare treasure
-        # Maybe make this a "commonly used" rare ingreident in more weapons?
+        # Rare. Used for outer space stuff
     GrindingWheel = 21504  # for Ghiza's Wheel only (replaces that item)
     DragonspearChunk = 21505  # for Bolt of Gransax only (replaces that item)
     BlackMark = 21506  # for weapons touched by Rune of Death; mainly from defeating Black Knife Assassins/Gargoyles
+        # Rare. Used for black knife assassin, gargoyle, and godskin (blackflame)
 
     # Required single base components. These are all rare treasure or bought from merchants.
     SmallHilt = 21600  # daggers, whips
