@@ -88,11 +88,11 @@ class Materials(IntEnum):
     SomberStoneFragment = 21003
         # Common. Used for EVEN STRONGER weapons
         # Obtained by "breaking" Somber Smithing Stones
-    IronShards = 21004 # Maybe rename to "Metal Scrap"
+    IronShards = 21004 # Generic metal scrap
         # Very common. Worth a "portion" of an Iron plate
         # More for DEX weapons vs Iron Plate
         # Used for bleed/spiky weapons
-    IronPlate = 21005 # Maybe rename to "Metal Plate"
+    IronPlate = 21005 # Generic metal plate
         # Very common. Base material for most weapons
         # More for heavier weapons types (1 dagger -> 2 straight sword -> 3 greatsword -> etc)
         # More for STR weapons vs Iron Shards
@@ -104,12 +104,11 @@ class Materials(IntEnum):
         # Rare. Used for Dragon weapons
     GruesomeBone = 21008
 		# Rare. Used for weird weapons
-
-    # Additional item ideas:
-    # Glintstone Dust
-        # Int stuff.
-    # Erdtree Amber
-        # Faith stuff.
+        # Arcane weapons?
+    GlintstoneDust = 0 # TODO
+        # Uncommon. Int stuff.
+    ErdtreeAmber = 0 # TODO
+        # Uncommon. Faith stuff.
 
     # Special equipment components. These are all quite rare.
         # Don't use these ATM until their fate is decided

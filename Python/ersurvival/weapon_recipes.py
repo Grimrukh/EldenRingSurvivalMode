@@ -204,6 +204,7 @@ WEAPON_RECIPES = {
         "id": 209,
         "recipe": [
             (1, Materials.GiantHilt),
+            (3, Materials.IronPlate),
             (4, Materials.SomberStoneFragment),
             (10, Materials.SilverFirefly),
             (10, Materials.GoldFirefly),
@@ -213,7 +214,6 @@ WEAPON_RECIPES = {
         "id": 211,
         "recipe": [
             (1, Materials.StandardHilt),
-            (1, Materials.IronPlate),
             (3, Materials.SomberStoneFragment),
             (8, Materials.GoldTingedExcrement),
         ],
@@ -223,7 +223,8 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.StandardHilt),
             (8, Materials.SomberStoneFragment),
-            (1, Materials.LiquidMetal),
+            (3, Materials.GlintstoneDust),
+            (3, Materials.ErdtreeAmber),
             (3, Materials.MeteoriteChunk),
         ],
     },
@@ -256,48 +257,67 @@ WEAPON_RECIPES = {
         "id": 220,
         "recipe": [
             (1, Materials.StandardHilt),
+            (2, Materials.IronPlate),
+            (1, Materials.ErdtreeAmber),
         ],
     },
     "Cane Sword": {
         "id": 221,
         "recipe": [
             (1, Materials.StandardHilt),
+            (1, Materials.SoftWood),
+            (3, Materials.IronShards),
         ],
     },
     "Regalia of Eochaid": {
         "id": 222,
         "recipe": [
             (1, Materials.StandardHilt),
+            (2, Materials.IronPlate),
+            (2, Materials.GruesomeBone),
+            (10, Materials.SacramentalBud),
         ],
     },
     "Noble's Slender Sword": {
         "id": 223,
         "recipe": [
             (1, Materials.StandardHilt),
+            (1, Materials.IronPlate),
+            (2, Materials.IronShards),
+            (1, Materials.TarnishedGoldenSunflower),
         ],
     },
     "Warhawk's Talon": {
         "id": 224,
         "recipe": [
             (1, Materials.StandardHilt),
+            (1, Materials.IronPlate),
+            (2, Materials.IronShards),
+            (1, Materials.StoneFragment),
         ],
     },
     "Lazuli Glintstone Sword": {
         "id": 225,
         "recipe": [
             (1, Materials.StandardHilt),
+            (2, Materials.SoftWood),
+            (1, Materials.GlintstoneDust),
         ],
     },
     "Rotten Crystal Sword": {
         "id": 226,
         "recipe": [
             (1, Materials.StandardHilt),
+            (1, Materials.GruesomeBone),
+            (10, Materials.CrackedCrystal),
         ],
     },
+    #bookmark
     "Bastard Sword": {
         "id": 300,
         "recipe": [
             (1, Materials.GiantHilt),
+            (3, Materials.IronPlate),
         ],
     },
     "Forked Greatsword": {
