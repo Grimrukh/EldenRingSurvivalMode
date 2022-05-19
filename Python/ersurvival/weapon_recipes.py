@@ -1,5 +1,4 @@
 """Lists the recipes for weapons."""
-from tokenize import String
 from crafting import Materials
 
 
@@ -2327,7 +2326,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.BowGrip),
             (1, Materials.String),
-            (2, Materials.Softood),
+            (2, Materials.SoftWood),
         ],
     },
     "Misbegotten Shortbow": {
@@ -2335,7 +2334,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.BowGrip),
             (1, Materials.String),
-            (1, Materials.Softwood)
+            (1, Materials.SoftWood)
             (1, Materials.ThinBeastBones),
         ],
     },
@@ -2401,7 +2400,6 @@ WEAPON_RECIPES = {
             (1, Materials.BowGrip),
             (2, Materials.RefinedWood),
             (1, Materials.GruesomeBone),
-
         ],
     },
     "Pulley Bow": {
@@ -2434,7 +2432,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.GreatBowGrip),
             (4, Materials.IronPlate),
-            (1, Materials.FallingstarJawbone)
+            (1, Materials.FallingstarJawbone) #?
         ],
     },
     "Erdtree Greatbow": {
@@ -2450,9 +2448,9 @@ WEAPON_RECIPES = {
         "id": 4204,
         "recipe": [
             (1, Materials.GreatBowGrip),
+            (3, Materials.String)
             (2, Materials.RefinedWood),
             (2, Materials.IronPlate),
-            (3, Materials.String)
         ],
     },
     "Soldier's Crossbow": {
@@ -2521,8 +2519,8 @@ WEAPON_RECIPES = {
         "id": 4400,
         "recipe": [
             (1, Materials.TriggerMechanism),
-            (3, Materials.RefinedWood),
             (4, Materials,String),
+            (3, Materials.RefinedWood),
             (2, Materials.IronPlate),
         ],
     },
@@ -2530,8 +2528,8 @@ WEAPON_RECIPES = {
         "id": 4401,
         "recipe": [
             (1, Materials.TriggerMechanism),
-            (2, Materials.SomberStoneFragment),
             (2, Materials.IronPlate),
+            (2, Materials.SomberStoneFragment),
             (4, Materials.LivingJarShard),
         ],
     },
