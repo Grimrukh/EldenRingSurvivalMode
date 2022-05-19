@@ -840,7 +840,6 @@ WEAPON_RECIPES = {
         ],
     },
     "Omen Cleaver": {
-    #bookmark
         "id": 806,
         "recipe": [
             (1, Materials.CurvedHilt),
@@ -853,20 +852,30 @@ WEAPON_RECIPES = {
         "id": 807,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (1, Materials.IronPlate),
+            (4, Materials.IronShards),
+            (2, Materials.SomberStoneFragment),
         ],
     },
     "Beastman's Cleaver": {
         "id": 808,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (4, Materials.IronPlate),
+            (2, Materials.HeftyBeastBone),
+            (2, Materials.StoneFragment),
         ],
     },
     "Morgott's Cursed Sword": {
         "id": 810,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (1, Materials.GruesomeBone),
+            (4, Materials.BloodTaintedExcrement),
+            (6, Materials.ArteriaLeaf),
         ],
     },
+    #bookmark
     "Uchigatana": {
         "id": 900,
         "recipe": [
