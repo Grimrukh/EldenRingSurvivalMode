@@ -1,5 +1,28 @@
 from enum import IntEnum
 
+    #Notes: material RNG weights
+    #Tier1Mat = .2 # Early game/Common vanilla Materials
+    #Tier2Mat = .75 # Mid Game/Uncommon vanilla Materials
+    #Tier3Mat = 2 # Late game/Rare vanilla materials
+
+    #StoneFragment = .25
+    #SomberStoneFragment = .75
+    #IronShards = .75
+	#SoftWood = 1
+    #IronPlate = 1.5
+    #RefinedWood = 2
+    #GlintstoneDust = 4
+    #ErdtreeAmber = 4
+    #LiquidMetal = 6
+    #GruesomeBone = 8
+    #MeteoriteChunk = 8
+    #BlackMark = 8
+    #DragonTeeth = 10
+
+    #Tier0 = 0
+    #Tier1 = 6
+    #Tier2 = 12
+    #Tier3 = 16
 
 class Materials(IntEnum):
 

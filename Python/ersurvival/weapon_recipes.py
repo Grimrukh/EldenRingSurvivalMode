@@ -1,7 +1,6 @@
 """Lists the recipes for weapons."""
 from crafting import Materials
 
-
 WEAPON_RECIPES = {
     "Dagger": {
         "id": 100,
@@ -90,6 +89,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.SmallHilt),
             (1, Materials.IronPlate),
+            (1, Materials.IronShards),
             (5, Materials.StoneFragment),
         ],
     },
@@ -197,7 +197,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.CurvedHilt),
             (1, Materials.LiquidMetal),
-            (4, Materials.SilverTearHusk), #?
+            (2, Materials.SilverTearHusk), #?
         ],
     },
     "Inseparable Sword": {
@@ -225,7 +225,7 @@ WEAPON_RECIPES = {
             (8, Materials.SomberStoneFragment),
             (3, Materials.GlintstoneDust),
             (3, Materials.ErdtreeAmber),
-            (3, Materials.MeteoriteChunk),
+            (2, Materials.MeteoriteChunk),
         ],
     },
     "Crystal Sword": {
@@ -241,7 +241,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.StandardHilt),
             (2, Materials.IronPlate),
-            (1, Materials.GlintstoneFirefly),
+            (5, Materials.GlintstoneFirefly),
         ],
     },
     "Sword of St. Trina": {
@@ -249,7 +249,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.StandardHilt),
             (2, Materials.IronPlate),
-            (2, Materials.StoneFragment),
+            (4, Materials.StoneFragment),
             (2, Materials.SlumberingEgg),
             (7, Materials.TrinasLily),
         ],
@@ -294,7 +294,7 @@ WEAPON_RECIPES = {
             (1, Materials.StandardHilt),
             (1, Materials.IronPlate),
             (2, Materials.IronShards),
-            (1, Materials.StoneFragment),
+            (2, Materials.StoneFragment),
         ],
     },
     "Lazuli Glintstone Sword": {
@@ -309,7 +309,7 @@ WEAPON_RECIPES = {
         "id": 226,
         "recipe": [
             (1, Materials.StandardHilt),
-            (1, Materials.SomberStoneFragment),
+            (8, Materials.SomberStoneFragment),
             (1, Materials.GruesomeBone),
             (10, Materials.CrackedCrystal),
         ],
@@ -327,6 +327,7 @@ WEAPON_RECIPES = {
             (1, Materials.GiantHilt),
             (2, Materials.IronPlate),
             (5, Materials.IronShards),
+            (4, Materials.StoneFragment),
             (4, Materials.GraveViolet),
         ],
     },
@@ -351,8 +352,9 @@ WEAPON_RECIPES = {
         "id": 304,
         "recipe": [
             (1, Materials.GiantHilt),
+            (1, Materials.SoftWood),
             (2, Materials.IronPlate),
-            (3, Materials.IronShards),
+            (2, Materials.IronShards),
         ],
     },
     "Flamberge": {
@@ -361,7 +363,7 @@ WEAPON_RECIPES = {
             (1, Materials.GiantHilt),
             (1, Materials.IronPlate),
             (5, Materials.IronShards),
-            (1, Materials.StoneFragment),
+            (1, Materials.Bloodrose),
         ],
     },
     "Ordovis's Greatsword": {
@@ -370,16 +372,17 @@ WEAPON_RECIPES = {
             (1, Materials.GiantHilt),
             (2, Materials.RefinedWood),
             (2, Materials.IronPlate),
-            (2, Materials.SomberStoneFragment),
-            (5, Materials.ErdtreeAmber),
+            (6, Materials.SomberStoneFragment),
+            (2, Materials.ErdtreeAmber),
         ],
     },
     "Onyx Lord's Sword": {
         "id": 307,
         "recipe": [
             (1, Materials.GiantHilt),
-            (3, Materials.StoneFragment),
-            (2, Materials.MeteoriteChunk),
+            (8, Materials.StoneFragment),
+            (1, Materials.GlintstoneDust),
+            (1, Materials.MeteoriteChunk),
         ],
     },
     "Banished Knight's Greatsword": {
@@ -405,7 +408,7 @@ WEAPON_RECIPES = {
             (1, Materials.GiantHilt),
             (6, Materials.ErdtreeAmber),
             (20, Materials.LumpOfFlesh),
-            (8, Materials.GoldenCentipede),
+            (14, Materials.GoldenCentipede),
         ],
     },
     "Helphen's Steeple": {
@@ -449,8 +452,8 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.GiantHilt),
             (3, Materials.IronPlate),
-            (5, Materials.SomberStoneFragment),
-            (5, Materials.ErdtreeAmber),
+            (10, Materials.SomberStoneFragment),
+            (4, Materials.ErdtreeAmber),
             (1, Materials.GoldenSunflower),
         ],
     },
@@ -459,7 +462,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.GiantHilt),
             (3, Materials.IronPlate),
-            (1, Materials.StoneFragment),
+            (2, Materials.StoneFragment),
         ],
     },
     "Gargoyle's Greatsword": {
@@ -474,7 +477,7 @@ WEAPON_RECIPES = {
         "id": 320,
         "recipe": [
             (1, Materials.GiantHilt),
-            (2, Materials.StoneFragment),
+            (2, Materials.SomberStoneFragment),
             (2, Materials.BuddingHorn),
             (4, Materials.HumanBoneShard),
         ],
@@ -492,7 +495,8 @@ WEAPON_RECIPES = {
         "id": 400,
         "recipe": [
             (1, Materials.GiantHilt),
-            (4, Materials.IronPlate),
+            (3, Materials.IronPlate),
+            (1, Materials.SomberStoneFragment),
         ],
     },
     "Watchdog's Greatsword": {
@@ -509,9 +513,9 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.GiantHilt),
             (4, Materials.IronPlate),
+            (9, Materials.SomberStoneFragment),
             (2, Materials.BlackMark),
             (4, Materials.OldFang),
-            (3, Materials.SomberStoneFragment),
         ],
     },
     "Troll's Golden Sword": {
@@ -544,8 +548,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.GiantHilt),
             (4, Materials.IronPlate),
-            (1, Materials.GlintstoneDust),
-            (1, Materials.AeonianButterfly),
+            (4, Materials.AeonianButterfly),
         ],
     },
     "Godslayer's Greatsword": {
@@ -562,7 +565,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.GiantHilt),
             (1, Materials.MeteoriteChunk),
-            (2, Materials.SomberStoneFragment),
+            (4, Materials.SomberStoneFragment),
             (20, Materials.SanctuaryStone),
         ],
     },
@@ -610,9 +613,9 @@ WEAPON_RECIPES = {
         "id": 503,
         "recipe": [
             (1, Materials.StandardHilt),
-            (3, Materials.StoneFragment),
             (1, Materials.IronPlate),
             (2, Materials.IronShards),
+            (5, Materials.StoneFragment),
         ],
     },
     "Antspur Rapier": {
@@ -647,9 +650,9 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.GiantHilt),
             (1, Materials.IronPlate),
-            (4, Materials.IronShards),
             (1, Materials.GruesomeBone),
             (2, Materials.BeastBlood),
+            (8, Materials.LumpOfFlesh),
         ],
     },
     "Godskin Stitcher": {
@@ -658,6 +661,7 @@ WEAPON_RECIPES = {
             (1, Materials.GiantHilt),
             (3, Materials.IronPlate),
             (2, Materials.SomberStoneFragment),
+            (4, Materials.StripOfWhiteFlesh),
         ],
     },
     "Great epee": {
@@ -672,7 +676,7 @@ WEAPON_RECIPES = {
         "id": 604,
         "recipe": [
             (1, Materials.GiantHilt),
-            (14, Materials.StoneFragment),
+            (20, Materials.StoneFragment),
             (16, Materials.GravelStone),
         ],
     },
@@ -688,7 +692,8 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.CurvedHilt),
             (1, Materials.IronPlate),
-            (2, Materials.IronShards),
+            (1, Materials.IronShards),
+            (4, Materials.ThinBeastBones),
         ],
     },
     "Shotel": {
@@ -700,107 +705,148 @@ WEAPON_RECIPES = {
             (1, Materials.StoneFragment),
         ],
     },
-    #bookmark
     "Shamshir": {
         "id": 703,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (1, Materials.IronPlate),
+            (1, Materials.IronShards),
+            (2, Materials.ThinBeastBones),
         ],
     },
     "Bandit's Curved Sword": {
         "id": 704,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (2, Materials.IronPlate),
+            (1, Materials.IronShards),
+            (1, Materials.GraveViolet),
         ],
     },
     "Magma Blade": {
         "id": 705,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (6, Materials.StoneFragment),
+            (4, Materials.VolcanicStone),
         ],
     },
     "Flowing Curved Sword": {
         "id": 706,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (2, Materials.IronPlate),
+            (1, Materials.SomberStoneFragment),
         ],
     },
     "Wing of Astel": {
         "id": 707,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (1, Materials.MeteoriteChunk),
+            (2, Materials.GlintstoneDust),
         ],
     },
     "Scavenger's Curved Sword": {
         "id": 708,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (4, Materials.IronShards),
+            (5, Materials.CaveMoss),
         ],
     },
     "Eclipse Shotel": {
         "id": 710,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (1, Materials.IronPlate),
+            (2, Materials.IronShards),
+            (1, Materials.BlackMark),
         ],
     },
     "Serpent-God's Curved Sword": {
         "id": 711,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (2, Materials.IronPlate),
+            (4, Materials.SacramentalBud),
         ],
     },
     "Mantis Blade": {
         "id": 712,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (1, Materials.IronPlate),
+            (1, Materials.IronShards),
+            (1, Materials.String),
+            (1, Materials.RootResin),
         ],
     },
     "Scimitar": {
         "id": 714,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (1, Materials.IronPlate),
+            (2, Materials.IronShards),
         ],
     },
     "Grossmesser": {
         "id": 715,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (2, Materials.IronPlate),
         ],
     },
     "Onyx Lord's Greatsword": {
         "id": 801,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (3, Materials.SomberStoneFragment),
+            (1, Materials.GlintstoneDust),
+            (1, Materials.MeteoriteChunk),
         ],
     },
     "Dismounter": {
         "id": 802,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (3, Materials.IronPlate),
         ],
     },
     "Bloodhound's Fang": {
         "id": 803,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (2, Materials.IronPlate),
+            (2, Materials.IronShards),
         ],
     },
     "Magma Wyrm's Scalesword": {
         "id": 804,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (3, Materials.StoneFragment),
+            (3, Materials.SomberStoneFragment),
+            (4, Materials.VolcanicStone),
         ],
     },
     "Zamor Curved Sword": {
         "id": 805,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (2, Materials.IronPlate),
+            (2, Materials.GlintstoneDust),
+            (4, Materials.RimedCrystalBud),
         ],
     },
     "Omen Cleaver": {
+    #bookmark
         "id": 806,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (2, Materials.IronPlate),
+            (2, Materials.IronShards),
+            (6, Materials.Herba),
         ],
     },
     "Monk's Flameblade": {
@@ -975,6 +1021,8 @@ WEAPON_RECIPES = {
         "id": 1112,
         "recipe": [
             (1, Materials.AxeHandle),
+            (1, Materials.LiquidMetal),
+            (4, Materials.SilverTearHusk), #?
         ],
     },
     "Ringed Finger": {
