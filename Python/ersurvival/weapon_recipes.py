@@ -582,7 +582,6 @@ WEAPON_RECIPES = {
             (2, Materials.GlintstoneFirefly),
         ],
     },
-    #bookmark
     "Estoc": {
         "id": 500,
         "recipe": [
@@ -595,80 +594,114 @@ WEAPON_RECIPES = {
         "id": 501,
         "recipe": [
             (1, Materials.StandardHilt),
+            (1, Materials.SoftWood),
+            (2, Materials.IronPlate),
+            (1, Materials.StoneFragment),
         ],
     },
     "Rapier": {
         "id": 502,
         "recipe": [
             (1, Materials.StandardHilt),
+            (1, Materials.IronPlate),
+            (2, Materials.IronShards),
         ],
     },
     "Rogier's Rapier": {
         "id": 503,
         "recipe": [
             (1, Materials.StandardHilt),
+            (3, Materials.StoneFragment),
+            (1, Materials.IronPlate),
+            (2, Materials.IronShards),
         ],
     },
     "Antspur Rapier": {
         "id": 504,
         "recipe": [
             (1, Materials.StandardHilt),
+            (1, Materials.RefinedWood),
+            (1, Materials.GruesomeBone),
+            (4, Materials.FormicRock),
         ],
     },
     "Frozen Needle": {
         "id": 505,
         "recipe": [
             (1, Materials.StandardHilt),
+            (1, Materials.IronPlate),
+            (1, Materials.LiquidMetal),
+            (1, Materials.GlintstoneDust),
         ],
     },
     "Noble's Estoc": {
         "id": 506,
         "recipe": [
             (1, Materials.StandardHilt),
+            (1, Materials.IronPlate),
+            (2, Materials.IronShards),
+            (1, Materials.TarnishedGoldenSunflower),
         ],
     },
     "Bloody Helice": {
         "id": 600,
         "recipe": [
             (1, Materials.GiantHilt),
+            (1, Materials.IronPlate),
+            (4, Materials.IronShards),
+            (1, Materials.GruesomeBone),
+            (2, Materials.BeastBlood),
         ],
     },
     "Godskin Stitcher": {
         "id": 601,
         "recipe": [
             (1, Materials.GiantHilt),
+            (3, Materials.IronPlate),
+            (2, Materials.SomberStoneFragment),
         ],
     },
     "Great epee": {
         "id": 602,
         "recipe": [
             (1, Materials.GiantHilt),
+            (3, Materials.IronPlate),
+            (1, Materials.IronShards),
         ],
     },
     "Dragon King's Cragblade": {
         "id": 604,
         "recipe": [
             (1, Materials.GiantHilt),
+            (14, Materials.StoneFragment),
+            (16, Materials.GravelStone),
         ],
     },
     "Falchion": {
         "id": 700,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (2, Materials.IronPlate),
         ],
     },
     "Beastman's Curved Sword": {
         "id": 701,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (1, Materials.IronPlate),
+            (2, Materials.IronShards),
         ],
     },
     "Shotel": {
         "id": 702,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (1, Materials.IronPlate),
+            (2, Materials.IronShards),
+            (1, Materials.StoneFragment),
         ],
     },
+    #bookmark
     "Shamshir": {
         "id": 703,
         "recipe": [
