@@ -2318,57 +2318,80 @@ WEAPON_RECIPES = {
     "Finger Seal": {
         "id": 3400,
         "recipe": [
-
+            (1, Materials.RefinedWood),
+            (3, Materials.StoneFragment),
+            (3, Materials.ErdleafFlower),
+            (1, Materials.GoldenCentipede),
         ],
     },
     "Godslayer's Seal": {
         "id": 3401,
         "recipe": [
-
+            (2, Materials.SomberStoneFragment),
+            (3, Materials.StoneFragment),
+            (1, Materials.BlackMark),
         ],
     },
     "Giant's Seal": {
         "id": 3402,
         "recipe": [
-
+            (3, Materials.SomberStoneFragment),
+            (5, Materials.FireBlossom),
+            (2, Materials.HeftyBeastBone),
+            (2, Materials.String),
         ],
     },
     "Gravel Stone Seal": {
         "id": 3403,
         "recipe": [
-
+            (2, Materials.SomberStoneFragment),
+            (2, Materials.StoneFragment),
+            (2, Materials.AltusBloom),
+            (6, Materials.GravelStone),
         ],
     },
     "Clawmark Seal": {
         "id": 3404,
         "recipe": [
-
+            (6, Materials.StoneFragment),
+            (3, Materials.OldFang),
+            (2, Materials.BeastBlood),
         ],
     },
     "Golden Order Seal": {
         "id": 3406,
         "recipe": [
-
+            (5, Materials.SomberStoneFragment),
+            (3, Materials.AltusBloom),
+            (6, Materials.GoldFirefly),
+            (2, Materials.CrystalBud),
         ],
     },
     "Erdtree Seal": {
         "id": 3407,
         "recipe": [
-
+            (5, Materials.SomberStoneFragment),
+            (3, Materials.ErdtreeAmber),
+            (7, Materials.ErdleafFlower),
+            (1, Materials.GoldenSunflower),
         ],
     },
     "Dragon Communion Seal": {
         "id": 3408,
         "recipe": [
-
+            (4, Materials.SomberStoneFragment),
+            (10, Materials.GravelStone),
+            (2, Materials.StoneFragment),
         ],
     },
     "Frenzied Flame Seal": {
         "id": 3409,
         "recipe": [
-
+            (3, Materials.SomberStoneFragment),
+            (8, Materials.YellowEmber),
+            (5, Materials.EyeOfYelough),
         ],
-    }, #Bookmark for bows
+    },
     "Shortbow": {
         "id": 4000,
         "recipe": [
