@@ -2320,7 +2320,7 @@ WEAPON_RECIPES = {
         "recipe": [
 
         ],
-    },
+    }, #Bookmark for bows
     "Shortbow": {
         "id": 4000,
         "recipe": [
@@ -2344,6 +2344,7 @@ WEAPON_RECIPES = {
             (1, Materials.BowGrip),
             (1, Materials.RefinedWood),
             (1, Materials.String),
+            (2, Materials.RowaFruit),
         ],
     },
     "Harp Bow": {
@@ -2359,6 +2360,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.BowGrip),
             (2, Materials.String),
+            (2, Materials.SoftWood),
         ],
     },
     "Longbow": {
@@ -2366,12 +2368,14 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.BowGrip),
             (1, Materials.String),
+            (2, Materials.SoftWood),
         ],
     },
     "Albinauric Bow": {
         "id": 4101,
         "recipe": [
             (1, Materials.BowGrip),
+            (2, Materials.RefinedWood),
             (1, Materials.AlbinauricBloodclot),
             (1, Materials.StoneFragment),
         ],
@@ -2380,7 +2384,7 @@ WEAPON_RECIPES = {
         "id": 4102,
         "recipe": [
             (1, Materials.BowGrip),
-            (2, Materials.RefinedWood),
+            (3, Materials.RefinedWood),
             (1, Materials.String),
         ],
     },
@@ -2400,6 +2404,7 @@ WEAPON_RECIPES = {
             (1, Materials.BowGrip),
             (2, Materials.RefinedWood),
             (1, Materials.GruesomeBone),
+            (2, Materials.String),
         ],
     },
     "Pulley Bow": {
@@ -2408,20 +2413,23 @@ WEAPON_RECIPES = {
             (1, Materials.BowGrip),
             (3, Materials.String),
             (2, Materials.StoneFragment),
+            (2, Materials.RefinedWood),
         ],
     },
     "Black Bow": {
         "id": 4107,
         "recipe": [
             (1, Materials.BowGrip),
-            (2, Materials.StoneFragment)
-            (2, Materials.String)
+            (2, Materials.RefinedWood),
+            (2, Materials.StoneFragment),
+            (2, Materials.String),
         ],
     },
     "Lion Greatbow": {
         "id": 4200,
         "recipe": [
             (1, Materials.GreatBowGrip),
+            (2, Materials.RefinedWood),
             (2, Materials.SomberStoneFragment),
             (2, Materials.Ironshards),
             (2, Materials.String),
@@ -2431,8 +2439,9 @@ WEAPON_RECIPES = {
         "id": 4201,
         "recipe": [
             (1, Materials.GreatBowGrip),
+            (2, Materials.RefinedWood),
             (4, Materials.IronPlate),
-            (1, Materials.FallingstarJawbone) #?
+            (2, Materials.MeteoriteChunk),
         ],
     },
     "Erdtree Greatbow": {
@@ -2476,7 +2485,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.TriggerMechanism),
             (1, Materials.String),
-            (1, Materials.SoftWood),
+            (3, Materials.SoftWood),
             (2, Materials.StoneFragment),
         ],
     },
@@ -2484,8 +2493,8 @@ WEAPON_RECIPES = {
         "id": 4305,
         "recipe": [
             (1, Materials.TriggerMechanism),
-            (2, Materials.String),
-            (1, Materials.RefinedWood),
+            (3, Materials.String),
+            (2, Materials.RefinedWood),
             (1, Materials.IronPlate),
         ],
     },
@@ -2493,8 +2502,8 @@ WEAPON_RECIPES = {
         "id": 4306,
         "recipe": [
             (1, Materials.TriggerMechanism),
-            (1, Materials.String),
-            (2, Materials.RefinedWood),
+            (4, Materials.String),
+            (4, Materials.RefinedWood),
             (1, Materials.SomberStoneFragment),
         ],
     },
@@ -2519,7 +2528,7 @@ WEAPON_RECIPES = {
         "id": 4400,
         "recipe": [
             (1, Materials.TriggerMechanism),
-            (4, Materials,String),
+            (4, Materials.String),
             (3, Materials.RefinedWood),
             (2, Materials.IronPlate),
         ],
