@@ -2321,7 +2321,6 @@ WEAPON_RECIPES = {
             (1, Materials.RefinedWood),
             (3, Materials.StoneFragment),
             (3, Materials.ErdleafFlower),
-            (1, Materials.GoldenCentipede),
         ],
     },
     "Godslayer's Seal": {
@@ -2335,9 +2334,9 @@ WEAPON_RECIPES = {
     "Giant's Seal": {
         "id": 3402,
         "recipe": [
-            (3, Materials.SomberStoneFragment),
-            (5, Materials.FireBlossom),
-            (2, Materials.HeftyBeastBone),
+            (5, Materials.SomberStoneFragment),
+            (10, Materials.FireBlossom),
+            (3, Materials.HeftyBeastBone),
             (2, Materials.String),
         ],
     },
@@ -2362,9 +2361,11 @@ WEAPON_RECIPES = {
         "id": 3406,
         "recipe": [
             (5, Materials.SomberStoneFragment),
-            (3, Materials.AltusBloom),
-            (6, Materials.GoldFirefly),
-            (2, Materials.CrystalBud),
+            (2, Materials.ErdTreeAmber),
+            (4, Materials.AltusBloom),
+            (3, Materials.GoldFirefly),
+            (3, Materials.GlintstoneFirefly),
+            (4, Materials.CrystalBud),
         ],
     },
     "Erdtree Seal": {
@@ -2380,8 +2381,7 @@ WEAPON_RECIPES = {
         "id": 3408,
         "recipe": [
             (4, Materials.SomberStoneFragment),
-            (10, Materials.GravelStone),
-            (2, Materials.StoneFragment),
+            (6, Materials.StoneFragment),
         ],
     },
     "Frenzied Flame Seal": {
