@@ -1,4 +1,5 @@
 """Lists the recipes for weapons."""
+from tokenize import String
 from crafting import Materials
 
 
@@ -2292,150 +2293,213 @@ WEAPON_RECIPES = {
         "id": 4000,
         "recipe": [
             (1, Materials.BowGrip),
+            (1, Materials.String),
+            (2, Materials.Softood),
         ],
     },
     "Misbegotten Shortbow": {
         "id": 4001,
         "recipe": [
             (1, Materials.BowGrip),
+            (1, Materials.String),
+            (1, Materials.Softwood)
+            (1, Materials.ThinBeastBones),
         ],
     },
     "Red Branch Shortbow": {
         "id": 4002,
         "recipe": [
             (1, Materials.BowGrip),
+            (1, Materials.RefinedWood),
+            (1, Materials.String),
         ],
     },
     "Harp Bow": {
         "id": 4003,
         "recipe": [
             (1, Materials.BowGrip),
+            (6, Materials.String),
+            (1, Materials.RefinedWood),
         ],
     },
     "Composite Bow": {
         "id": 4005,
         "recipe": [
             (1, Materials.BowGrip),
+            (2, Materials.String),
         ],
     },
     "Longbow": {
         "id": 4100,
         "recipe": [
             (1, Materials.BowGrip),
+            (1, Materials.String),
         ],
     },
     "Albinauric Bow": {
         "id": 4101,
         "recipe": [
             (1, Materials.BowGrip),
+            (1, Materials.AlbinauricBloodclot),
+            (1, Materials.StoneFragment),
         ],
     },
     "Horn Bow": {
         "id": 4102,
         "recipe": [
             (1, Materials.BowGrip),
+            (2, Materials.RefinedWood),
+            (1, Materials.String),
         ],
     },
     "Erdtree Bow": {
         "id": 4103,
         "recipe": [
             (1, Materials.BowGrip),
+            (2, Materials.ErdtreeWood),
+            (2, Materials.String),
+            (2, Materials.GoldFirefly),
+            (1, Materials.ErdtreeAmber),
         ],
     },
     "Serpent Bow": {
         "id": 4104,
         "recipe": [
             (1, Materials.BowGrip),
+            (2, Materials.RefinedWood),
+            (1, Materials.GruesomeBone),
+
         ],
     },
     "Pulley Bow": {
         "id": 4106,
         "recipe": [
             (1, Materials.BowGrip),
+            (3, Materials.String),
+            (2, Materials.StoneFragment),
         ],
     },
     "Black Bow": {
         "id": 4107,
         "recipe": [
             (1, Materials.BowGrip),
+            (2, Materials.StoneFragment)
+            (2, Materials.String)
         ],
     },
     "Lion Greatbow": {
         "id": 4200,
         "recipe": [
             (1, Materials.GreatBowGrip),
+            (2, Materials.SomberStoneFragment),
+            (2, Materials.Ironshards),
+            (2, Materials.String),
         ],
     },
     "Golem Greatbow": {
         "id": 4201,
         "recipe": [
             (1, Materials.GreatBowGrip),
+            (4, Materials.IronPlate),
+            (1, Materials.FallingstarJawbone)
         ],
     },
     "Erdtree Greatbow": {
         "id": 4203,
         "recipe": [
             (1, Materials.GreatBowGrip),
+            (1, Materials.ErdtreeWood),
+            (1, Materials.ErdleafFlower),
+            (2, Materials.ErdtreeAmber),
         ],
     },
     "Greatbow": {
         "id": 4204,
         "recipe": [
             (1, Materials.GreatBowGrip),
+            (2, Materials.RefinedWood),
+            (2, Materials.IronPlate),
+            (3, Materials.String)
         ],
     },
     "Soldier's Crossbow": {
         "id": 4300,
         "recipe": [
             (1, Materials.TriggerMechanism),
+            (1, Materials.String),
+            (1, Materials.SoftWood),
+            (1, Materials.StoneFragment),
         ],
     },
     "Light Crossbow": {
         "id": 4302,
         "recipe": [
             (1, Materials.TriggerMechanism),
+            (1, Materials.String),
+            (1, Materials.SoftWood),
+            (2, Materials.StoneFragment),
         ],
     },
     "Heavy Crossbow": {
         "id": 4303,
         "recipe": [
             (1, Materials.TriggerMechanism),
+            (1, Materials.String),
+            (1, Materials.SoftWood),
+            (2, Materials.StoneFragment),
         ],
     },
     "Pulley Crossbow": {
         "id": 4305,
         "recipe": [
             (1, Materials.TriggerMechanism),
+            (2, Materials.String),
+            (1, Materials.RefinedWood),
+            (1, Materials.IronPlate),
         ],
     },
     "Full Moon Crossbow": {
         "id": 4306,
         "recipe": [
             (1, Materials.TriggerMechanism),
+            (1, Materials.String),
+            (2, Materials.RefinedWood),
+            (1, Materials.SomberStoneFragment),
         ],
     },
     "Arbalest": {
         "id": 4308,
         "recipe": [
             (1, Materials.TriggerMechanism),
+            (2, Materials.String),
+            (2, Materials.RefinedWood),
         ],
     },
     "Crepus's Black-Key Crossbow": {
         "id": 4311,
         "recipe": [
             (1, Materials.TriggerMechanism),
+            (1, Materials.IronPlate),
+            (2, Materials.RefinedWood),
+            (2, Materials.String),
         ],
     },
     "Hand Ballista": {
         "id": 4400,
         "recipe": [
             (1, Materials.TriggerMechanism),
+            (3, Materials.RefinedWood),
+            (4, Materials,String),
+            (2, Materials.IronPlate),
         ],
     },
     "Jar Cannon": {
         "id": 4401,
         "recipe": [
             (1, Materials.TriggerMechanism),
+            (2, Materials.SomberStoneFragment),
+            (2, Materials.IronPlate),
+            (4, Materials.LivingJarShard),
         ],
     },
 }
