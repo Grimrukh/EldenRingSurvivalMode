@@ -2351,7 +2351,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.StaffPole),
             (1, Materials.RefinedWood),
-            (1, Materials.meteorchuck),
+            (1, Materials.MeteoriteChunk),
         ],
     },
     "Staff of the Guilty": {
