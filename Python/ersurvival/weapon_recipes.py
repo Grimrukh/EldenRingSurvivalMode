@@ -2220,7 +2220,7 @@ WEAPON_RECIPES = {
         "id": 3300,
         "recipe": [
             (1, Materials.StaffPole),
-            (2, Materials.GlintstoneDust),
+            (2, Materials.CrystalBud),
         ],
     },
     "Crystal Staff": {
@@ -2228,7 +2228,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.StaffPole),
             (5, Materials.SomberStoneFragment),
-            (6, Materials.GlintstoneDust),
+            (1, Materials.GlintstoneDust),
             (2, Materials.GlintstoneFirefly),
             (5, Materials.CrackedCrystal),
         ],
@@ -2239,7 +2239,7 @@ WEAPON_RECIPES = {
             (1, Materials.StaffPole),
             (5, Materials.VolcanicStone),
             (2, Materials.SomberStoneFragment),
-            (4, Materials.GlintstoneDust),
+            (1, Materials.GlintstoneDust),
             (4, Materials.ErdtreeAmber),
         ],
     },
@@ -2248,7 +2248,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.StaffPole),
             (1, Materials.SomberStoneFragment),
-            (2, Materials.GlintstoneDust),
+            (2, Materials.CrystalBud),
             (2, Materials.StoneFragment),
         ],
     },
@@ -2256,10 +2256,10 @@ WEAPON_RECIPES = {
         "id": 3309,
         "recipe": [
             (1, Materials.StaffPole),
-            (7, Materials.SomberStoneFragment),
-            (20, Materials.GlintstoneDust),
-            (8, Materials.GlintstoneFirefly),
-            (10, Materials.CrackedCrystal),
+            (4, Materials.SomberStoneFragment),
+            (3, Materials.GlintstoneDust),
+            (5, Materials.GlintstoneFirefly),
+            (6, Materials.CrackedCrystal),
         ],
     },
     "Digger's Staff": {
@@ -2267,7 +2267,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.StaffPole),
             (2, Materials.SoftWood),
-            (3, Materials.GlintstoneDust),
+            (3, Materials.CrystalBud),
         ],
     },
     "Astrologer's Staff": {
@@ -2275,7 +2275,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.StaffPole),
             (1, Materials.SoftWood),
-            (2, Materials.GlintstoneDust),
+            (2, Materials.CrackedCrystal)
         ],
     },
     "Carian Glintblade Staff": {
@@ -2283,7 +2283,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.StaffPole),
             (2, Materials.StoneFragment),
-            (3, Materials.GlintstoneDust),
+            (3, Materials.CrystalBud),
             (1, Materials.GlintstoneFirefly)
         ],
     },
@@ -2294,8 +2294,8 @@ WEAPON_RECIPES = {
             (3, Materials.SomberStoneFragment),
             (1, Materials.BuddingHorn),
             (3, Materials.HumanBoneShard),
-            (2, Materials.GlintstoneDust),
-            (2, Materials.ErdtreeAmber),
+            (1, Materials.GlintstoneDust),
+            (1, Materials.ErdtreeAmber),
         ],
     },
     "Albinauric Staff": {
@@ -2312,7 +2312,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.StaffPole),
             (2, Materials.SoftWood),
-            (5, Materials.GlintstoneDust),
+            (1, Materials.CrackedCrystal),
             (2, Materials.GlintstoneFirefly),
         ],
     },
@@ -2321,7 +2321,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.StaffPole),
             (1, Materials.RefinedWood),
-            (5, Materials.GlintstoneDust),
+            (1, Materials.CrackedCrystal),
             (2, Materials.GlintstoneFirefly),
         ],
     },
@@ -2329,21 +2329,21 @@ WEAPON_RECIPES = {
         "id": 3323,
         "recipe": [
             (1, Materials.StaffPole),
-            (6, Materials.SomberStoneFragment),
-            (15, Materials.GlintstoneDust),
-            (6, Materials.GlintstoneFirefly),
-            (4, Materials.CrystalBud),
-            (4, Materials.CrystalCaveMoss),
+            (4, Materials.SomberStoneFragment),
+            (2, Materials.GlintstoneDust),
+            (4, Materials.GlintstoneFirefly),
+            (3, Materials.CrystalBud),
+            (3, Materials.CrystalCaveMoss),
         ],
     },
     "Lusat's Glintstone Staff": {
         "id": 3324,
         "recipe": [
             (1, Materials.StaffPole),
-            (5, Materials.SomberStoneFragment),
-            (15, Materials.GlintstoneDust),
-            (6, Materials.GlintstoneFirefly),
-            (4, Materials.CrystalBud),
+            (4, Materials.SomberStoneFragment),
+            (2, Materials.GlintstoneDust),
+            (7, Materials.GlintstoneFirefly),
+            (5, Materials.CrystalBud),
         ],
     },
     "Meteorite Staff": {
@@ -2351,8 +2351,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.StaffPole),
             (1, Materials.RefinedWood),
-            (2, Materials.GlintstoneDust),
-            (1, Materials.MeteoriteChunk),
+            (1, Materials.meteorchuck),
         ],
     },
     "Staff of the Guilty": {
@@ -2368,7 +2367,6 @@ WEAPON_RECIPES = {
         "id": 3327,
         "recipe": [
             (1, Materials.StaffPole),
-            (4, Materials.GlintstoneDust),
             (3, Materials.CrystalBud),
             (4, Materials.AeonianButterfly),
             (2, Materials.GruesomeBone),
@@ -2380,7 +2378,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.StaffPole),
             (1, Materials.RefinedWood),
-            (2, Materials.CrackedCrystal),
+            (4, Materials.CrackedCrystal),
         ],
     },
     "Finger Seal": {
