@@ -5,7 +5,7 @@ Tier1Mat = .2 # Early game/Common vanilla Materials
 Tier2Mat = .75 # Mid Game/Uncommon vanilla Materials
 Tier3Mat = 2 # Late game/Rare vanilla materials
 
-StoneFragment = .25
+StoneFragment = .4
 SomberStoneFragment = .75
 IronShards = .75
 SoftWood = 1
@@ -122,7 +122,8 @@ class Materials(IntEnum):
         # Common. Base material for most weapons
         # More for heavier weapons types (1 dagger -> 2 straight sword -> 3 greatsword -> etc)
         # More for STR weapons vs Iron Shards
-    LiquidMetal = 21006
+    LiquidMetal = 21006 # Fancy Metal
+        # Rename to [some sort of Fancy Metal]
         # Rare. Used for Nox weapons and weird weapons
         # Possibly replace usage with silver tear husks?
     DragonTeeth = 21007

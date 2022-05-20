@@ -693,6 +693,7 @@ WEAPON_RECIPES = {
             (1, Materials.GiantHilt),
             (20, Materials.StoneFragment),
             (16, Materials.GravelStone),
+            # Potential use for DragonTeeth
         ],
     },
     # endregion
@@ -747,6 +748,7 @@ WEAPON_RECIPES = {
             (1, Materials.CurvedHilt),
             (6, Materials.StoneFragment),
             (4, Materials.VolcanicStone),
+            # Potential use for DragonTeeth
         ],
     },
     "Flowing Curved Sword": {
@@ -846,6 +848,7 @@ WEAPON_RECIPES = {
             (3, Materials.StoneFragment),
             (3, Materials.SomberStoneFragment),
             (4, Materials.VolcanicStone),
+            # Potential use for DragonTeeth
         ],
     },
     "Zamor Curved Sword": {
@@ -902,48 +905,71 @@ WEAPON_RECIPES = {
         "id": 900,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (2, Materials.IronPlate),
+            (2, Materials.StoneFragment),
         ],
     },
     "Nagakiba": {
         "id": 901,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (3, Materials.IronPlate),
+            (4, Materials.StoneFragment),
+            (2, Materials.FourToedFowlFoot),
         ],
     },
     "Hand of Malenia": {
         "id": 902,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (4, Materials.RefinedWood),
+            (2, Materials.LiquidMetal),
+            (8, Materials.MiquellasLily),
         ],
     },
     "Meteoric Ore Blade": {
         "id": 903,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (2, Materials.SomberStoneFragment),
+            (1, Materials.MeteoriteChunk),
         ],
     },
     "Rivers of Blood": {
         "id": 904,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (1, Materials.RefinedWood),
+            (2, Materials.IronPlate),
+            (2, Materials.GruesomeBone),
+            (6, Materials.Bloodrose),
         ],
     },
     "Moonveil": {
         "id": 906,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (4, Materials.SomberStoneFragment),
+            (4, Materials.GlintstoneDust),
+            (6, Materials.NascentButterfly),
         ],
     },
     "Dragonscale Blade": {
         "id": 907,
         "recipe": [
             (1, Materials.CurvedHilt),
+            (10, Materials.SomberStoneFragment),
+            (4, Materials.GravelStone),
+            # Potential use for DragonTeeth
         ],
     },
     "Serpentbone Blade": {
         "id": 908,
         "recipe": [
-            (1, Materials.CurvedHilt),
+            (1, Materials.StandardHilt),
+            (4, Materials.IronShards),
+            (8, Materials.MirandaPowder),
+            (16, Materials.Poisonbloom),
         ],
     },
     # endregion
@@ -952,37 +978,49 @@ WEAPON_RECIPES = {
     "Twinblade": {
         "id": 1000,
         "recipe": [
-            (1, Materials.StandardHilt),
+            (2, Materials.StandardHilt),
+            (2, Materials.IronPlate),
+            (2, Materials.IronShards),
         ],
     },
     "Godskin Peeler": {
         "id": 1001,
         "recipe": [
-            (1, Materials.StandardHilt),
+            (2, Materials.StandardHilt),
+            (2, Materials.IronPlate),
+            (1, Materials.BlackMark),
         ],
     },
     "Twinned Knight Swords": {
         "id": 1003,
         "recipe": [
-            (1, Materials.StandardHilt),
+            (2, Materials.StandardHilt),
+            (3, Materials.IronPlate),
+            (2, Materials.MeltedMushroom),
         ],
     },
     "Eleonora's Poleblade": {
         "id": 1005,
         "recipe": [
-            (1, Materials.StandardHilt),
+            (2, Materials.StandardHilt),
+            (3, Materials.IronPlate),
+            (8, Materials.Bloodrose),
         ],
     },
     "Gargoyle's Twinblade": {
         "id": 1008,
         "recipe": [
-            (1, Materials.StandardHilt),
+            (2, Materials.StandardHilt),
+            (3, Materials.IronPlate),
+            (6, Materials.StoneFragment),
         ],
     },
     "Gargoyle's Black Blades": {
         "id": 1009,
         "recipe": [
-            (1, Materials.StandardHilt),
+            (2, Materials.StandardHilt),
+            (3, Materials.IronPlate),
+            (1, Materials.ErdtreeAmber),
         ],
     },
     # endregion
@@ -1564,6 +1602,7 @@ WEAPON_RECIPES = {
         "id": 1814,
         "recipe": [
             (1, Materials.SpearShaft),
+            # Potential use for DragonTeeth
         ],
     },
     "Gargoyle's Halberd": {
@@ -1662,7 +1701,7 @@ WEAPON_RECIPES = {
     "Grafted Dragon": {
         "id": 2106,
         "recipe": [
-
+            # Potential use for DragonTeeth
         ],
     },
     "Iron Ball": {
@@ -1728,7 +1767,7 @@ WEAPON_RECIPES = {
     "Prelate's Inferno Crozier": {
         "id": 2300,
         "recipe": [
-
+            (1, Materials.StaffPole),
         ],
     },
     # endregion
@@ -1737,85 +1776,86 @@ WEAPON_RECIPES = {
     "Watchdog's Staff": {
         "id": 2301,
         "recipe": [
-
+            (1, Materials.StaffPole),
         ],
     },
     "Great Club": {
         "id": 2302,
         "recipe": [
-
+            (1, Materials.StaffPole),
         ],
     },
     "Envoy's Greathorn": {
         "id": 2303,
         "recipe": [
-
+            (1, Materials.StaffPole),
         ],
     },
     "Duelist Greataxe": {
         "id": 2304,
         "recipe": [
-
+            (1, Materials.StaffPole),
         ],
     },
     "Axe of Godfrey": {
         "id": 2305,
         "recipe": [
-
+            (1, Materials.StaffPole),
         ],
     },
     "Dragon Greatclaw": {
         "id": 2306,
         "recipe": [
-
+            (1, Materials.StaffPole),
+            # Potential use for DragonTeeth
         ],
     },
     "Staff of the Avatar": {
         "id": 2307,
         "recipe": [
-
+            (1, Materials.StaffPole),
         ],
     },
     "Fallingstar Beast Jaw": {
         "id": 2308,
         "recipe": [
-
+            (1, Materials.StaffPole),
         ],
     },
     "Ghiza's Wheel": {
         "id": 2310,
         "recipe": [
-
+            (1, Materials.StaffPole),
         ],
     },
     "Giant-Crusher": {
         "id": 2311,
         "recipe": [
-
+            (1, Materials.StaffPole),
         ],
     },
     "Golem's Halberd": {
         "id": 2312,
         "recipe": [
-
+            (1, Materials.StaffPole),
         ],
     },
     "Troll's Hammer": {
         "id": 2313,
         "recipe": [
-
+            (1, Materials.StaffPole),
         ],
     },
     "Rotten Staff": {
         "id": 2314,
         "recipe": [
-
+            (1, Materials.StaffPole),
         ],
     },
     "Rotten Greataxe": {
         "id": 2315,
         "recipe": [
-
+            (1, Materials.StaffPole),
         ],
     },
     # endregion
@@ -2480,6 +2520,7 @@ WEAPON_RECIPES = {
             (2, Materials.StoneFragment),
             (2, Materials.AltusBloom),
             (6, Materials.GravelStone),
+            # Potential use for DragonTeeth
         ],
     },
     "Clawmark Seal": {
@@ -2515,6 +2556,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (4, Materials.SomberStoneFragment),
             (6, Materials.StoneFragment),
+            # Potential use for DragonTeeth
         ],
     },
     "Frenzied Flame Seal": {
