@@ -898,8 +898,6 @@ WEAPON_RECIPES = {
     },
     # endregion
 
-    #bookmark
-
     # region Katanas
     "Uchigatana": {
         "id": 900,
@@ -1030,66 +1028,89 @@ WEAPON_RECIPES = {
         "id": 1100,
         "recipe": [
             (1, Materials.AxeHandle),
+            (1, Materials.IronPlate),
+            (2, Materials.IronShards),
         ],
     },
     "Club": {
         "id": 1101,
         "recipe": [
             (1, Materials.AxeHandle),
+            (2, Materials.SoftWood),
         ],
     },
     "Curved Club": {
         "id": 1103,
         "recipe": [
             (1, Materials.AxeHandle),
+            (1, Materials.RefinedWood),
+            (1, Materials.SoftWood),
         ],
     },
     "Warpick": {
         "id": 1104,
         "recipe": [
             (1, Materials.AxeHandle),
+            (2, Materials.IronPlate),
         ],
     },
     "Morning Star": {
         "id": 1105,
         "recipe": [
             (1, Materials.AxeHandle),
+            (2, Materials.IronPlate),
+            (2, Materials.IronShards),
+            (6, Materials.StoneFragment),
         ],
     },
     "Varre's Bouquet": {
         "id": 1106,
         "recipe": [
             (1, Materials.AxeHandle),
+            (4, Materials.IronShards),
+            (8, Materials.Bloodrose),
         ],
     },
     "Spiked Club": {
         "id": 1107,
         "recipe": [
             (1, Materials.AxeHandle),
+            (1, Materials.RefinedWood),
+            (4, Materials.OldFang),
         ],
     },
     "Hammer": {
         "id": 1108,
         "recipe": [
             (1, Materials.AxeHandle),
+            (4, Materials.StoneFragment),
+            (8, Materials.SanctuaryStone),
         ],
     },
     "Monk's Flamemace": {
         "id": 1109,
         "recipe": [
             (1, Materials.AxeHandle),
+            (1, Materials.IronPlate),
+            (4, Materials.IronShards),
+            (2, Materials.SomberStoneFragment),
         ],
     },
     "Envoy's Horn": {
         "id": 1110,
         "recipe": [
             (1, Materials.AxeHandle),
+            (2, Materials.IronPlate),
+            (6, Materials.AltusBloom),
         ],
     },
     "Scepter of the All-Knowing": {
         "id": 1111,
         "recipe": [
             (1, Materials.AxeHandle),
+            (2, Materials.IronPlate),
+            (1, Materials.AlbinauricBloodclot),
+            (2, Materials.SilverFirefly),
         ],
     },
     "Nox Flowing Hammer": {
@@ -1104,102 +1125,111 @@ WEAPON_RECIPES = {
         "id": 1113,
         "recipe": [
             (1, Materials.AxeHandle),
+            (1, Materials.LiquidMetal),
+            (10, Materials.LivingJarShard),
+            (6, Materials.LumpOfFlesh),
+            (4, Materials.BeastBlood),
         ],
     },
     "Stone Club": {
         "id": 1114,
         "recipe": [
             (1, Materials.AxeHandle),
+            (6, Materials.SomberStoneFragment),
+            (2, Materials.GlintstoneDust),
         ],
     },
     "Marika's Hammer": {
         "id": 1115,
         "recipe": [
             (1, Materials.AxeHandle),
+            (4, Materials.ErdtreeAmber),
+            (10, Materials.SomberStoneFragment),
         ],
     },
+    #bookmark
     "Large Club": {
         "id": 1200,
         "recipe": [
-            (1, Materials.AxeHandle),
+            (1, Materials.StaffPole),
         ],
     },
     "Greathorn Hammer": {
         "id": 1201,
         "recipe": [
-            (1, Materials.AxeHandle),
+            (1, Materials.StaffPole),
         ],
     },
     "Battle Hammer": {
         "id": 1202,
         "recipe": [
-            (1, Materials.AxeHandle),
+            (1, Materials.StaffPole),
         ],
     },
     "Great Mace": {
         "id": 1206,
         "recipe": [
-            (1, Materials.AxeHandle),
+            (1, Materials.StaffPole),
         ],
     },
     "Curved Great Club": {
         "id": 1208,
         "recipe": [
-            (1, Materials.AxeHandle),
+            (1, Materials.StaffPole),
         ],
     },
     "Celebrant's Skull": {
         "id": 1213,
         "recipe": [
-            (1, Materials.AxeHandle),
+            (1, Materials.StaffPole),
         ],
     },
     "Pickaxe": {
         "id": 1214,
         "recipe": [
-            (1, Materials.AxeHandle),
+            (1, Materials.StaffPole),
         ],
     },
     "Beastclaw Greathammer": {
         "id": 1215,
         "recipe": [
-            (1, Materials.AxeHandle),
+            (1, Materials.StaffPole),
         ],
     },
     "Envoy's Long Horn": {
         "id": 1216,
         "recipe": [
-            (1, Materials.AxeHandle),
+            (1, Materials.StaffPole),
         ],
     },
     "Cranial Vessel Candlestand": {
         "id": 1217,
         "recipe": [
-            (1, Materials.AxeHandle),
+            (1, Materials.StaffPole),
         ],
     },
     "Great Stars": {
         "id": 1218,
         "recipe": [
-            (1, Materials.AxeHandle),
+            (1, Materials.StaffPole),
         ],
     },
     "Brick Hammer": {
         "id": 1219,
         "recipe": [
-            (1, Materials.AxeHandle),
+            (1, Materials.StaffPole),
         ],
     },
     "Devourer's Scepter": {
         "id": 1220,
         "recipe": [
-            (1, Materials.AxeHandle),
+            (1, Materials.StaffPole),
         ],
     },
     "Rotten Battle Hammer": {
         "id": 1221,
         "recipe": [
-            (1, Materials.AxeHandle),
+            (1, Materials.StaffPole),
         ],
     },
     # endregion / Great Hammers
