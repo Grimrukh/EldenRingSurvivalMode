@@ -2220,108 +2220,167 @@ WEAPON_RECIPES = {
         "id": 3300,
         "recipe": [
             (1, Materials.StaffPole),
+            (2, Materials.GlintstoneDust),
         ],
     },
     "Crystal Staff": {
         "id": 3304,
         "recipe": [
             (1, Materials.StaffPole),
+            (5, Materials.SomberStoneFragment),
+            (6, Materials.GlintstoneDust),
+            (2, Materials.GlintstoneFirefly),
+            (5, Materials.CrackedCrystal),
         ],
     },
     "Gelmir Glintstone Staff": {
         "id": 3305,
         "recipe": [
             (1, Materials.StaffPole),
+            (5, Materials.VolcanicStone),
+            (2, Materials.SomberStoneFragment),
+            (4, Materials.GlintstoneDust),
+            (4, Materials.ErdtreeAmber),
         ],
     },
     "Demi-Human Queen's Staff": {
         "id": 3306,
         "recipe": [
             (1, Materials.StaffPole),
+            (1, Materials.SomberStoneFragment),
+            (2, Materials.GlintstoneDust),
+            (2, Materials.StoneFragment),
         ],
     },
     "Carian Regal Scepter": {
         "id": 3309,
         "recipe": [
             (1, Materials.StaffPole),
+            (7, Materials.SomberStoneFragment),
+            (20, Materials.GlintstoneDust),
+            (8, Materials.GlintstoneFirefly),
+            (10, Materials.CrackedCrystal),
         ],
     },
     "Digger's Staff": {
         "id": 3312,
         "recipe": [
             (1, Materials.StaffPole),
+            (2, Materials.SoftWood),
+            (3, Materials.GlintstoneDust),
         ],
     },
     "Astrologer's Staff": {
         "id": 3313,
         "recipe": [
             (1, Materials.StaffPole),
+            (1, Materials.SoftWood),
+            (2, Materials.GlintstoneDust),
         ],
     },
     "Carian Glintblade Staff": {
         "id": 3317,
         "recipe": [
             (1, Materials.StaffPole),
+            (2, Materials.StoneFragment),
+            (3, Materials.GlintstoneDust),
+            (1, Materials.GlintstoneFirefly)
         ],
     },
     "Prince of Death's Staff": {
         "id": 3318,
         "recipe": [
             (1, Materials.StaffPole),
+            (3, Materials.SomberStoneFragment),
+            (1, Materials.BuddingHorn),
+            (3, Materials.HumanBoneShard),
+            (2, Materials.GlintstoneDust),
+            (2, Materials.ErdtreeAmber),
         ],
     },
     "Albinauric Staff": {
         "id": 3319,
         "recipe": [
             (1, Materials.StaffPole),
+            (2, Materials.RefinedWood)
+            (3, Materials.GruesomeBone),
+            (1, Materials.SomberStoneFragment),
         ],
     },
     "Academy Glintstone Staff": {
         "id": 3320,
         "recipe": [
             (1, Materials.StaffPole),
+            (2, Materials.SoftWood),
+            (5, Materials.GlintstoneDust),
+            (2, Materials.GlintstoneFirefly),
         ],
     },
     "Carian Glintstone Staff": {
         "id": 3321,
         "recipe": [
             (1, Materials.StaffPole),
+            (1, Materials.RefinedWood),
+            (5, Materials.GlintstoneDust),
+            (2, Materials.GlintstoneFirefly),
         ],
     },
     "Azur's Glintstone Staff": {
         "id": 3323,
         "recipe": [
             (1, Materials.StaffPole),
+            (6, Materials.SomberStoneFragment),
+            (15, Materials.GlintstoneDust),
+            (6, Materials.GlintstoneFirefly),
+            (4, Materials.CrystalBud),
+            (4, Materials.CrystalCaveMoss),
         ],
     },
     "Lusat's Glintstone Staff": {
         "id": 3324,
         "recipe": [
             (1, Materials.StaffPole),
+            (5, Materials.SomberStoneFragment),
+            (15, Materials.GlintstoneDust),
+            (6, Materials.GlintstoneFirefly),
+            (4, Materials.CrystalBud),
         ],
     },
     "Meteorite Staff": {
         "id": 3325,
         "recipe": [
             (1, Materials.StaffPole),
+            (1, Materials.RefinedWood),
+            (2, Materials.GlintstoneDust),
+            (1, Materials.MeteoriteChunk),
         ],
     },
     "Staff of the Guilty": {
         "id": 3326,
         "recipe": [
             (1, Materials.StaffPole),
+            (1, Materials.RefinedWood),
+            (5, Materials.Bloodrose),
+            (2, Materials.BloodTaintedExcrement),
         ],
     },
     "Rotten Crystal Staff": {
         "id": 3327,
         "recipe": [
             (1, Materials.StaffPole),
+            (4, Materials.GlintstoneDust),
+            (3, Materials.CrystalBud),
+            (4, Materials.AeonianButterfly),
+            (2, Materials.GruesomeBone),
+            (1, Materials.FadedErdleafFlower),
         ],
     },
     "Staff of Loss": {
         "id": 3328,
         "recipe": [
             (1, Materials.StaffPole),
+            (1, Materials.RefinedWood),
+            (2, Materials.CrackedCrystal),
         ],
     },
     "Finger Seal": {
