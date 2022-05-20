@@ -1,7 +1,12 @@
-"""Lists the recipes for weapons."""
+"""Lists the recipes for weapons.
+
+TODO: Everything between Katanas and Greatshields below.
+"""
 from crafting import Materials
 
 WEAPON_RECIPES = {
+
+    # region Daggers
     "Dagger": {
         "id": 100,
         "recipe": [
@@ -134,7 +139,11 @@ WEAPON_RECIPES = {
             (5, Materials.ArteriaLeaf),
         ],
     },
+    # endregion
+
     # OG Grim recipes end here
+
+    # region Straight Swords
     "Longsword": {
         "id": 200,
         "recipe": [
@@ -197,7 +206,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.CurvedHilt),
             (1, Materials.LiquidMetal),
-            (2, Materials.SilverTearHusk), #?
+            (2, Materials.SilverTearHusk),  # ?
         ],
     },
     "Inseparable Sword": {
@@ -314,6 +323,9 @@ WEAPON_RECIPES = {
             (10, Materials.CrackedCrystal),
         ],
     },
+    # endregion
+
+    # region Greatswords
     "Bastard Sword": {
         "id": 300,
         "recipe": [
@@ -584,6 +596,9 @@ WEAPON_RECIPES = {
             (2, Materials.GlintstoneFirefly),
         ],
     },
+    # endregion
+
+    # region Thrusting Swords
     "Estoc": {
         "id": 500,
         "recipe": [
@@ -664,7 +679,7 @@ WEAPON_RECIPES = {
             (4, Materials.StripOfWhiteFlesh),
         ],
     },
-    "Great epee": {
+    "Great epee": {  # NOTE: Typo in name is from Yapped (leave it)
         "id": 602,
         "recipe": [
             (1, Materials.GiantHilt),
@@ -680,6 +695,9 @@ WEAPON_RECIPES = {
             (16, Materials.GravelStone),
         ],
     },
+    # endregion
+
+    # region Curved Swords / Curved Greatswords
     "Falchion": {
         "id": 700,
         "recipe": [
@@ -875,7 +893,11 @@ WEAPON_RECIPES = {
             (6, Materials.ArteriaLeaf),
         ],
     },
+    # endregion
+
     #bookmark
+
+    # region Katanas
     "Uchigatana": {
         "id": 900,
         "recipe": [
@@ -924,6 +946,9 @@ WEAPON_RECIPES = {
             (1, Materials.CurvedHilt),
         ],
     },
+    # endregion
+
+    # region Twinblades
     "Twinblade": {
         "id": 1000,
         "recipe": [
@@ -960,6 +985,9 @@ WEAPON_RECIPES = {
             (1, Materials.StandardHilt),
         ],
     },
+    # endregion
+
+    # region Hammers / Greathammers
     "Mace": {
         "id": 1100,
         "recipe": [
@@ -1031,7 +1059,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.AxeHandle),
             (1, Materials.LiquidMetal),
-            (4, Materials.SilverTearHusk), #?
+            (4, Materials.SilverTearHusk),  # ?
         ],
     },
     "Ringed Finger": {
@@ -1136,6 +1164,9 @@ WEAPON_RECIPES = {
             (1, Materials.AxeHandle),
         ],
     },
+    # endregion / Great Hammers
+
+    # region Flails
     "Nightrider Flail": {
         "id": 1300,
         "recipe": [
@@ -1166,6 +1197,9 @@ WEAPON_RECIPES = {
             (1, Materials.AxeHandle),
         ],
     },
+    # endregion
+
+    # region Axes / Greataxes
     "Battle Axe": {
         "id": 1400,
         "recipe": [
@@ -1310,6 +1344,9 @@ WEAPON_RECIPES = {
             (1, Materials.AxeHandle),
         ],
     },
+    # endregion
+
+    # region Spears
     "Short Spear": {
         "id": 1600,
         "recipe": [
@@ -1442,6 +1479,9 @@ WEAPON_RECIPES = {
             (1, Materials.SpearShaft),
         ],
     },
+    # endregion
+
+    # region Halberds
     "Halberd": {
         "id": 1800,
         "recipe": [
@@ -1538,6 +1578,9 @@ WEAPON_RECIPES = {
             (1, Materials.SpearShaft),
         ],
     },
+    # endregion
+
+    # region Reapers
     "Scythe": {
         "id": 1900,
         "recipe": [
@@ -1562,6 +1605,9 @@ WEAPON_RECIPES = {
             (1, Materials.SpearShaft),
         ],
     },
+    # endregion
+
+    # region Whips
     "Whip": {
         "id": 2000,
         "recipe": [
@@ -1598,6 +1644,9 @@ WEAPON_RECIPES = {
             (1, Materials.SmallHilt),
         ],
     },
+    # endregion
+
+    # region Fists
     "Caestus": {
         "id": 2100,
         "recipe": [
@@ -1682,6 +1731,9 @@ WEAPON_RECIPES = {
 
         ],
     },
+    # endregion
+
+    # region Colossal Weapons
     "Watchdog's Staff": {
         "id": 2301,
         "recipe": [
@@ -1766,6 +1818,9 @@ WEAPON_RECIPES = {
 
         ],
     },
+    # endregion
+
+    # region Torches
     "Torch": {
         "id": 2400,
         "recipe": [
@@ -1802,6 +1857,9 @@ WEAPON_RECIPES = {
 
         ],
     },
+    # endregion
+
+    # region Shields
     "Buckler": {
         "id": 3000,
         "recipe": [
@@ -2066,6 +2124,9 @@ WEAPON_RECIPES = {
             (1, Materials.ShieldHandle),
         ],
     },
+    # endregion
+
+    # region Greatshields
     "Dragon Towershield": {
         "id": 3200,
         "recipe": [
@@ -2216,6 +2277,9 @@ WEAPON_RECIPES = {
             (1, Materials.GreatshieldHandle),
         ],
     },
+    # endregion
+
+    # region Staffs
     "Glintstone Staff": {
         "id": 3300,
         "recipe": [
@@ -2302,7 +2366,7 @@ WEAPON_RECIPES = {
         "id": 3319,
         "recipe": [
             (1, Materials.StaffPole),
-            (2, Materials.RefinedWood)
+            (2, Materials.RefinedWood),
             (3, Materials.GruesomeBone),
             (1, Materials.SomberStoneFragment),
         ],
@@ -2381,6 +2445,9 @@ WEAPON_RECIPES = {
             (4, Materials.CrackedCrystal),
         ],
     },
+    # endregion
+
+    # region Seals
     "Finger Seal": {
         "id": 3400,
         "recipe": [
@@ -2427,7 +2494,7 @@ WEAPON_RECIPES = {
         "id": 3406,
         "recipe": [
             (5, Materials.SomberStoneFragment),
-            (2, Materials.ErdTreeAmber),
+            (2, Materials.ErdtreeAmber),
             (4, Materials.AltusBloom),
             (3, Materials.GoldFirefly),
             (3, Materials.GlintstoneFirefly),
@@ -2458,6 +2525,9 @@ WEAPON_RECIPES = {
             (5, Materials.EyeOfYelough),
         ],
     },
+    # endregion
+
+    # region Bows
     "Shortbow": {
         "id": 4000,
         "recipe": [
@@ -2471,7 +2541,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.BowGrip),
             (1, Materials.String),
-            (1, Materials.SoftWood)
+            (1, Materials.SoftWood),
             (1, Materials.ThinBeastBones),
         ],
     },
@@ -2562,13 +2632,16 @@ WEAPON_RECIPES = {
             (2, Materials.String),
         ],
     },
+    # endregion
+
+    # region Greatbows
     "Lion Greatbow": {
         "id": 4200,
         "recipe": [
             (1, Materials.GreatBowGrip),
             (2, Materials.RefinedWood),
             (2, Materials.SomberStoneFragment),
-            (2, Materials.Ironshards),
+            (2, Materials.IronShards),
             (2, Materials.String),
         ],
     },
@@ -2594,11 +2667,14 @@ WEAPON_RECIPES = {
         "id": 4204,
         "recipe": [
             (1, Materials.GreatBowGrip),
-            (3, Materials.String)
+            (3, Materials.String),
             (2, Materials.RefinedWood),
             (2, Materials.IronPlate),
         ],
     },
+    # endregion
+
+    # region Crossbows / Guns
     "Soldier's Crossbow": {
         "id": 4300,
         "recipe": [
@@ -2679,4 +2755,5 @@ WEAPON_RECIPES = {
             (4, Materials.LivingJarShard),
         ],
     },
+    # endregion
 }

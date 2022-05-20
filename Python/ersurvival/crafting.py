@@ -1,28 +1,31 @@
+"""
+Notes: material RNG weights
+
+Tier1Mat = .2 # Early game/Common vanilla Materials
+Tier2Mat = .75 # Mid Game/Uncommon vanilla Materials
+Tier3Mat = 2 # Late game/Rare vanilla materials
+
+StoneFragment = .25
+SomberStoneFragment = .75
+IronShards = .75
+SoftWood = 1
+IronPlate = 1.5
+RefinedWood = 2
+GlintstoneDust = 4
+ErdtreeAmber = 4
+LiquidMetal = 6
+GruesomeBone = 8
+MeteoriteChunk = 8
+BlackMark = 8
+DragonTeeth = 10
+
+Tier0 = 0
+Tier1 = 6
+Tier2 = 12
+Tier3 = 16
+"""
 from enum import IntEnum
 
-    #Notes: material RNG weights
-    #Tier1Mat = .2 # Early game/Common vanilla Materials
-    #Tier2Mat = .75 # Mid Game/Uncommon vanilla Materials
-    #Tier3Mat = 2 # Late game/Rare vanilla materials
-
-    #StoneFragment = .25
-    #SomberStoneFragment = .75
-    #IronShards = .75
-	#SoftWood = 1
-    #IronPlate = 1.5
-    #RefinedWood = 2
-    #GlintstoneDust = 4
-    #ErdtreeAmber = 4
-    #LiquidMetal = 6
-    #GruesomeBone = 8
-    #MeteoriteChunk = 8
-    #BlackMark = 8
-    #DragonTeeth = 10
-
-    #Tier0 = 0
-    #Tier1 = 6
-    #Tier2 = 12
-    #Tier3 = 16
 
 class Materials(IntEnum):
 
@@ -111,11 +114,11 @@ class Materials(IntEnum):
     SomberStoneFragment = 21003
         # Used for EVEN STRONGER weapons
         # Obtained by "breaking" Somber Smithing Stones
-    IronShards = 21004 # Generic metal scrap
+    IronShards = 21004  # Generic metal scrap
         # Very common. Worth a "portion" of an Iron plate
         # More for DEX weapons vs Iron Plate
         # Used for bleed/spiky weapons
-    IronPlate = 21005 # Generic metal plate
+    IronPlate = 21005  # Generic metal plate
         # Common. Base material for most weapons
         # More for heavier weapons types (1 dagger -> 2 straight sword -> 3 greatsword -> etc)
         # More for STR weapons vs Iron Shards
@@ -126,9 +129,9 @@ class Materials(IntEnum):
         # Rare. Used for Dragon weapons
     GruesomeBone = 21008
         # Rare. Used for weird weapons & Arcane weapons
-    GlintstoneDust = 0 # TODO
+    GlintstoneDust = 0  # TODO
         # Semi-rare. Int stuff.
-    ErdtreeAmber = 0 # TODO
+    ErdtreeAmber = 0  # TODO
         # Semi-rare. Faith stuff.
     
     MeteoriteChunk = 21503
