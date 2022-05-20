@@ -1147,89 +1147,123 @@ WEAPON_RECIPES = {
             (10, Materials.SomberStoneFragment),
         ],
     },
-    #bookmark
     "Large Club": {
         "id": 1200,
         "recipe": [
             (1, Materials.StaffPole),
+            (4, Materials.SoftWood),
         ],
     },
     "Greathorn Hammer": {
         "id": 1201,
         "recipe": [
             (1, Materials.StaffPole),
+            (4, Materials.StoneFragment),
+            (6, Materials.HeftyBeastBone),
         ],
     },
     "Battle Hammer": {
         "id": 1202,
         "recipe": [
             (1, Materials.StaffPole),
+            (4, Materials.IronPlate),
         ],
     },
     "Great Mace": {
         "id": 1206,
         "recipe": [
             (1, Materials.StaffPole),
+            (3, Materials.IronPlate),
+            (2, Materials.IronShards),
+            (2, Materials.SomberStoneFragment),
         ],
     },
     "Curved Great Club": {
         "id": 1208,
         "recipe": [
             (1, Materials.StaffPole),
+            (1, Materials.RefinedWood),
+            (3, Materials.SoftWood),
         ],
     },
     "Celebrant's Skull": {
         "id": 1213,
         "recipe": [
             (1, Materials.StaffPole),
+            (3, Materials.HeftyBeastBone),
+            (8, Materials.HumanBoneShard),
         ],
     },
     "Pickaxe": {
         "id": 1214,
         "recipe": [
             (1, Materials.StaffPole),
+            (1, Materials.RefinedWood),
+            (2, Materials.IronPlate),
+            (2, Materials.StoneFragment),
         ],
     },
     "Beastclaw Greathammer": {
         "id": 1215,
         "recipe": [
             (1, Materials.StaffPole),
+            (4, Materials.SomberStoneFragment),
+            (4, Materials.BeastBlood),
         ],
     },
     "Envoy's Long Horn": {
         "id": 1216,
         "recipe": [
             (1, Materials.StaffPole),
+            (3, Materials.IronPlate),
+            (1, Materials.ErdtreeAmber),
+            (6, Materials.AltusBloom),
         ],
     },
     "Cranial Vessel Candlestand": {
         "id": 1217,
         "recipe": [
             (1, Materials.StaffPole),
+            (1, Materials.GruesomeBone),
+            (12, Materials.SmolderingButterfly),
+            (4, Materials.VolcanicStone),
         ],
     },
     "Great Stars": {
         "id": 1218,
         "recipe": [
             (1, Materials.StaffPole),
+            (3, Materials.IronPlate),
+            (2, Materials.IronShards),
+            (6, Materials.SomberStoneFragment),
+            (5, Materials.BloodTaintedExcrement),
         ],
     },
     "Brick Hammer": {
         "id": 1219,
         "recipe": [
             (1, Materials.StaffPole),
+            (15, Materials.StoneFragment),
+            (15, Materials.SanctuaryStone),
+            (4, Materials.RootResin),
         ],
     },
     "Devourer's Scepter": {
         "id": 1220,
         "recipe": [
             (1, Materials.StaffPole),
+            (12, Materials.SomberStoneFragment),
+            (3, Materials.GruesomeBone),
         ],
     },
     "Rotten Battle Hammer": {
         "id": 1221,
         "recipe": [
             (1, Materials.StaffPole),
+            (4, Materials.IronPlate),
+            (10, Materials.AeonianButterfly),
+            (3, Materials.ToxicMushroom),
+            (2, Materials.RimedRowa),
         ],
     },
     # endregion / Great Hammers
