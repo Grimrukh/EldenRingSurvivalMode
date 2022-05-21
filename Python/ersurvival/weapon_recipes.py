@@ -43,7 +43,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.SmallHilt),
             (1, Materials.GruesomeBone),
-            (7, Materials.Bloodrose),
+            (4, Materials.Bloodrose),
             (2, Materials.BloodTaintedExcrement),
         ],
     },
@@ -438,16 +438,17 @@ WEAPON_RECIPES = {
             (1, Materials.GiantHilt),
             (3, Materials.IronPlate),
             (1, Materials.GruesomeBone),
-            (4, Materials.BeastBlood),
+            (6, Materials.BeastBlood),
+            (4, Materials.BloodTaintedExcrement),
         ],
     },
     "Marais Executioner's Sword": {
         "id": 315,
         "recipe": [
             (1, Materials.GiantHilt),
-            (3, Materials.IronPlate),
+            (2, Materials.IronPlate),
+            (1, Materials.LiquidMetal),
             (1, Materials.GruesomeBone),
-            (4, Materials.AeonianButterfly),
         ],
     },
     "Sword of Milos": {
@@ -638,7 +639,8 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.StandardHilt),
             (1, Materials.RefinedWood),
-            (1, Materials.GruesomeBone),
+            (1, Materials.LiquidMetal),
+            (8, Materials.ToxicMushroom),
             (4, Materials.FormicRock),
         ],
     },
@@ -721,7 +723,7 @@ WEAPON_RECIPES = {
             (1, Materials.CurvedHilt),
             (1, Materials.IronPlate),
             (2, Materials.IronShards),
-            (1, Materials.StoneFragment),
+            (2, Materials.StoneFragment),
         ],
     },
     "Shamshir": {
@@ -739,7 +741,7 @@ WEAPON_RECIPES = {
             (1, Materials.CurvedHilt),
             (2, Materials.IronPlate),
             (1, Materials.IronShards),
-            (1, Materials.GraveViolet),
+            (1, Materials.RootResin),
         ],
     },
     "Magma Blade": {
@@ -1023,7 +1025,7 @@ WEAPON_RECIPES = {
     },
     # endregion
 
-    # region Hammers / Greathammers
+    # region Hammers
     "Mace": {
         "id": 1100,
         "recipe": [
@@ -1147,6 +1149,9 @@ WEAPON_RECIPES = {
             (10, Materials.SomberStoneFragment),
         ],
     },
+    # endregion / Hammers
+
+    # region Greathammers
     "Large Club": {
         "id": 1200,
         "recipe": [
@@ -1273,30 +1278,44 @@ WEAPON_RECIPES = {
         "id": 1300,
         "recipe": [
             (1, Materials.AxeHandle),
+            (5, Materials.IronShards),
+            (2, Materials.SomberStoneFragment),
+            (2, Materials.ArteriaLeaf),
         ],
     },
     "Flail": {
         "id": 1301,
         "recipe": [
             (1, Materials.AxeHandle),
+            (2, Materials.SoftWood),
+            (2, Materials.IronShards),
         ],
     },
     "Family Heads": {
         "id": 1302,
         "recipe": [
             (1, Materials.AxeHandle),
+            (2, Materials.IronPlate),
+            (3, Materials.HumanBoneShard),
+            (6, Materials.GraveViolet),
         ],
     },
     "Bastard's Stars": {
         "id": 1303,
         "recipe": [
             (1, Materials.AxeHandle),
+            (1, Materials.LiquidMetal),
+            (1, Materials.MeteoriteChunk),
+            (1, Materials.GlintstoneDust),
         ],
     },
     "Chainlink Flail": {
         "id": 1304,
         "recipe": [
             (1, Materials.AxeHandle),
+            (1, Materials.RefinedWood),
+            (1, Materials.SoftWood),
+            (2, Materials.IronShards),
         ],
     },
     # endregion
@@ -1306,72 +1325,103 @@ WEAPON_RECIPES = {
         "id": 1400,
         "recipe": [
             (1, Materials.AxeHandle),
+            (1, Materials.IronPlate),
+            (2, Materials.IronShards),
         ],
     },
     "Forked Hatchet": {
         "id": 1401,
         "recipe": [
             (1, Materials.AxeHandle),
+            (2, Materials.IronPlate),
+            (1, Materials.IronShards),
+            (2, Materials.GraveViolet),
         ],
     },
     "Hand Axe": {
         "id": 1402,
         "recipe": [
             (1, Materials.AxeHandle),
+            (1, Materials.SoftWood),
+            (1, Materials.IronPlate),
         ],
     },
     "Jawbone Axe": {
         "id": 1403,
         "recipe": [
             (1, Materials.AxeHandle),
+            (2, Materials.RefinedWood),
+            (2, Materials.HeftyBeastBone),
         ],
     },
     "Iron Cleaver": {
         "id": 1404,
         "recipe": [
             (1, Materials.AxeHandle),
+            (3, Materials.IronPlate),
+            (2, Materials.StoneFragment),
         ],
     },
     "Ripple Blade": {
         "id": 1405,
         "recipe": [
             (1, Materials.AxeHandle),
+            (1, Materials.LiquidMetal),
+            (4, Materials.SomberStoneFragment),
+            (4, Materials.AlbinauricBloodclot),
         ],
     },
     "Celebrant's Cleaver": {
         "id": 1406,
         "recipe": [
             (1, Materials.AxeHandle),
+            (1, Materials.GruesomeBone),
+            (2, Materials.HumanBoneShard),
         ],
     },
     "Icerind Hatchet": {
         "id": 1408,
         "recipe": [
             (1, Materials.AxeHandle),
+            (1, Materials.LiquidMetal),
+            (6, Materials.RimedCrystalBud),
+            # Potential use for DragonTeeth
         ],
     },
     "Highland Axe": {
         "id": 1410,
         "recipe": [
             (1, Materials.AxeHandle),
+            (2, Materials.SoftWood),
+            (2, Materials.IronPlate),
         ],
     },
     "Sacrificial Axe": {
         "id": 1411,
         "recipe": [
             (1, Materials.AxeHandle),
+            (3, Materials.IronPlate),
+            (2, Materials.SomberStoneFragment),
+            (2, Materials.GraveViolet),
         ],
     },
     "Rosus' Axe": {
         "id": 1412,
         "recipe": [
             (1, Materials.AxeHandle),
+            (1, Materials.RefinedWood),
+            (2, Materials.IronPlate),
+            (1, Materials.GruesomeBone),
         ],
     },
     "Stormhawk Axe": {
         "id": 1414,
         "recipe": [
             (1, Materials.AxeHandle),
+            (3, Materials.IronPlate),
+            (4, Materials.Fulgurbloom),
+            (2, Materials.FourToedFowlFoot),
+            (1, Materials.StormhawkFeather),
         ],
     },
     "Greataxe": {

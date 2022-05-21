@@ -18,11 +18,20 @@ GruesomeBone = 8
 MeteoriteChunk = 8
 BlackMark = 8
 DragonTeeth = 10
+ErdtreeWood = ?
 
 Tier0 = 0
 Tier1 = 6
 Tier2 = 12
 Tier3 = 16
+
+---------
+Other notes
+ErdtreeWood: Currently used in a few bow recipes, but can probably be replaced and cut
+DragonTeeth: Currently unused, but can be squeezed into certian recipes (recipes where it'd work have been marked)
+
+
+
 """
 from enum import IntEnum
 
