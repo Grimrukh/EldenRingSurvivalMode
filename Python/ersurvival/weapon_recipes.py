@@ -483,7 +483,9 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.GiantHilt),
             (3, Materials.IronPlate),
-            (1, Materials.BlackMark),
+            (12, Materials.StoneFragment),
+            (4, Materials.RootResin),
+            (4, Materials.MeltedMushroom),
         ],
     },
     "Death's Poker": {
@@ -502,6 +504,7 @@ WEAPON_RECIPES = {
             (2, Materials.IronPlate),
             (1, Materials.BlackMark),
             (1, Materials.ErdtreeAmber),
+            (2, Materials.MeltedMushroom),
         ],
     },
     "Greatsword": {
@@ -526,7 +529,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.GiantHilt),
             (4, Materials.IronPlate),
-            (9, Materials.SomberStoneFragment),
+            (14, Materials.SomberStoneFragment),
             (2, Materials.BlackMark),
             (4, Materials.OldFang),
         ],
@@ -1012,7 +1015,9 @@ WEAPON_RECIPES = {
         "recipe": [
             (2, Materials.StandardHilt),
             (3, Materials.IronPlate),
-            (6, Materials.StoneFragment),
+            (12, Materials.StoneFragment),
+            (2, Materials.RootResin),
+            (4, Materials.MeltedMushroom),
         ],
     },
     "Gargoyle's Black Blades": {
@@ -1020,7 +1025,9 @@ WEAPON_RECIPES = {
         "recipe": [
             (2, Materials.StandardHilt),
             (3, Materials.IronPlate),
+            (1, Materials.BlackMark),
             (1, Materials.ErdtreeAmber),
+            (2, Materials.MeltedMushroom),
         ],
     },
     # endregion
@@ -1428,72 +1435,105 @@ WEAPON_RECIPES = {
         "id": 1500,
         "recipe": [
             (1, Materials.AxeHandle),
+            (2, Materials.SoftWood),
+            (2, Materials.IronPlate),
         ],
     },
     "Warped Axe": {
         "id": 1501,
         "recipe": [
             (1, Materials.AxeHandle),
+            (4, Materials.IronPlate),
+            (2, Materials.RootResin),
         ],
     },
     "Great Omenkiller Cleaver": {
         "id": 1502,
         "recipe": [
             (1, Materials.AxeHandle),
+            (2, Materials.RefinedWood),
+            (2, Materials.StoneFragment),
+            (4, Materials.BuddingHorn),
         ],
     },
     "Crescent Moon Axe": {
         "id": 1503,
         "recipe": [
             (1, Materials.AxeHandle),
+            (2, Materials.SoftWood),
+            (1, Materials.IronPlate),
+            (2, Materials.IronShards),
         ],
     },
     "Axe of Godrick": {
         "id": 1504,
         "recipe": [
             (1, Materials.AxeHandle),
+            (4, Materials.IronPlate),
+            (4, Materials.GoldenRowa),
+            (12, Materials.ErdleafFlower),
         ],
     },
     "Longhaft Axe": {
         "id": 1505,
         "recipe": [
             (1, Materials.AxeHandle),
+            (4, Materials.IronPlate),
         ],
     },
     "Rusted Anchor": {
         "id": 1506,
         "recipe": [
             (1, Materials.AxeHandle),
+            (4, Materials.IronPlate),
+            (2, Materials.SomberStoneFragment),
+            (4, Materials.FourToedFowlFoot),
         ],
     },
     "Executioner's Greataxe": {
         "id": 1508,
         "recipe": [
             (1, Materials.AxeHandle),
+            (2, Materials.SoftWood),
+            (2, Materials.IronPlate),
+            (2, Materials.YellowEmber),
         ],
     },
     "Winged Greathorn": {
         "id": 1511,
         "recipe": [
             (1, Materials.AxeHandle),
+            (2, Materials.RefinedWood),
+            (2, Materials.BuddingHorn),
+            (1, Materials.DewkissedHerba),
         ],
     },
     "Butchering Knife": {
         "id": 1512,
         "recipe": [
             (1, Materials.AxeHandle),
+            (4, Materials.IronPlate),
+            (2, Materials.SomberStoneFragment),
         ],
     },
     "Gargoyle's Great Axe": {
         "id": 1513,
         "recipe": [
             (1, Materials.AxeHandle),
+            (3, Materials.IronPlate),
+            (10, Materials.StoneFragment),
+            (8, Materials.MeltedMushroom),
+            (3, Materials.RootResin),
         ],
     },
     "Gargoyle's Black Axe": {
         "id": 1514,
         "recipe": [
             (1, Materials.AxeHandle),
+            (3, Materials.IronPlate),
+            (1, Materials.BlackMark),
+            (1, Materials.ErdtreeAmber),
+            (2, Materials.MeltedMushroom),
         ],
     },
     # endregion
@@ -1723,12 +1763,20 @@ WEAPON_RECIPES = {
         "id": 1815,
         "recipe": [
             (1, Materials.SpearShaft),
+            (2, Materials.IronPlate),
+            (9, Materials.StoneFragment),
+            (6, Materials.RootResin),
+            (6, Materials.MeltedMushroom),
         ],
     },
     "Gargoyle's Black Halberd": {
         "id": 1816,
         "recipe": [
             (1, Materials.SpearShaft),
+            (2, Materials.IronPlate),
+            (1, Materials.BlackMark),
+            (1, Materials.ErdtreeAmber),
+            (2, Materials.MeltedMushroom),
         ],
     },
     # endregion

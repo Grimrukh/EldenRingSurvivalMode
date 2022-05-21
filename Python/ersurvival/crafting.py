@@ -1,9 +1,12 @@
 """
 Notes: material RNG weights
 
-Tier1Mat = .2 # Early game/Common vanilla Materials
-Tier2Mat = .75 # Mid Game/Uncommon vanilla Materials
-Tier3Mat = 2 # Late game/Rare vanilla materials
+# Vanilla material values. Add value for highest tier present ONCE, then multiply sum with VanillaMaterial.
+    # This part kinda sucks.
+VanillaMaterialValue = .2
+Tier1Mat = 1 # Early game/Common vanilla Materials
+Tier1Mat = 2 # Mid game/Common vanilla Materials
+Tier1Mat = 3 # FltEarly game/Common vanilla Materials
 
 StoneFragment = .4
 SomberStoneFragment = .75
