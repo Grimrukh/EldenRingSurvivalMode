@@ -1,6 +1,6 @@
 """Lists the recipes for weapons.
 
-TODO: Everything between Katanas and Greatshields below.
+TODO: Everything between [something] and Greatshields below.
 """
 from crafting import Materials
 
@@ -59,6 +59,7 @@ WEAPON_RECIPES = {
         "id": 106,
         "recipe": [
             (1, Materials.SmallHilt),
+            (2, Materials.StoneFragment),
             (4, Materials.HumanBoneShard),
             (6, Materials.TarnishedGoldenSunflower),
         ],
@@ -241,7 +242,7 @@ WEAPON_RECIPES = {
         "id": 215,
         "recipe": [
             (1, Materials.StandardHilt),
-            (3, Materials.RimedCrystalBud),
+            (1, Materials.GlintstoneDust),
             (5, Materials.CrackedCrystal),
         ],
     },
@@ -318,8 +319,8 @@ WEAPON_RECIPES = {
         "id": 226,
         "recipe": [
             (1, Materials.StandardHilt),
-            (8, Materials.SomberStoneFragment),
             (1, Materials.GruesomeBone),
+            (8, Materials.SomberStoneFragment),
             (10, Materials.CrackedCrystal),
         ],
     },
@@ -617,7 +618,7 @@ WEAPON_RECIPES = {
             (1, Materials.StandardHilt),
             (1, Materials.SoftWood),
             (2, Materials.IronPlate),
-            (1, Materials.StoneFragment),
+            (1, Materials.ErdtreeAmber),
         ],
     },
     "Rapier": {
@@ -696,9 +697,9 @@ WEAPON_RECIPES = {
         "id": 604,
         "recipe": [
             (1, Materials.GiantHilt),
-            (20, Materials.StoneFragment),
-            (16, Materials.GravelStone),
-            # Potential use for DragonTeeth
+            (2, Materials.DragonTeeth),
+            (14, Materials.StoneFragment),
+            (10, Materials.GravelStone),
         ],
     },
     # endregion
@@ -751,9 +752,8 @@ WEAPON_RECIPES = {
         "id": 705,
         "recipe": [
             (1, Materials.CurvedHilt),
-            (6, Materials.StoneFragment),
-            (4, Materials.VolcanicStone),
-            # Potential use for DragonTeeth
+            (8, Materials.StoneFragment),
+            (6, Materials.VolcanicStone),
         ],
     },
     "Flowing Curved Sword": {
@@ -850,10 +850,8 @@ WEAPON_RECIPES = {
         "id": 804,
         "recipe": [
             (1, Materials.CurvedHilt),
-            (3, Materials.StoneFragment),
-            (3, Materials.SomberStoneFragment),
+            (1, Materials.DragonTeeth),
             (4, Materials.VolcanicStone),
-            # Potential use for DragonTeeth
         ],
     },
     "Zamor Curved Sword": {
@@ -961,9 +959,9 @@ WEAPON_RECIPES = {
         "id": 907,
         "recipe": [
             (1, Materials.CurvedHilt),
-            (10, Materials.SomberStoneFragment),
+            (1, Materials.DragonTeeth),
+            (2, Materials.SomberStoneFragment),
             (4, Materials.GravelStone),
-            # Potential use for DragonTeeth
         ],
     },
     "Serpentbone Blade": {
@@ -1202,6 +1200,7 @@ WEAPON_RECIPES = {
         "id": 1213,
         "recipe": [
             (1, Materials.StaffPole),
+            (4, Materials.StoneFragment),
             (3, Materials.HeftyBeastBone),
             (8, Materials.HumanBoneShard),
         ],
@@ -1382,7 +1381,8 @@ WEAPON_RECIPES = {
         "id": 1406,
         "recipe": [
             (1, Materials.AxeHandle),
-            (1, Materials.GruesomeBone),
+            (3, Materials.StoneFragment),
+            (3, Materials.HeftyBeastBone),
             (2, Materials.HumanBoneShard),
         ],
     },
@@ -1390,9 +1390,9 @@ WEAPON_RECIPES = {
         "id": 1408,
         "recipe": [
             (1, Materials.AxeHandle),
-            (1, Materials.LiquidMetal),
-            (6, Materials.RimedCrystalBud),
-            # Potential use for DragonTeeth
+            (1, Materials.IronPlate),
+            (1, Materials.DragonTeeth),
+            (2, Materials.RimedCrystalBud),
         ],
     },
     "Highland Axe": {
@@ -1538,103 +1538,147 @@ WEAPON_RECIPES = {
     },
     # endregion
 
-    # region Spears
+    # region Spears / Great Spears
     "Short Spear": {
         "id": 1600,
         "recipe": [
             (1, Materials.SpearShaft),
+            (2, Materials.SoftWood),
+            (1, Materials.IronPlate),
         ],
     },
     "Spear": {
         "id": 1601,
         "recipe": [
             (1, Materials.SpearShaft),
+            (2, Materials.SoftWood),
+            (2, Materials.IronShards),
         ],
     },
     "Crystal Spear": {
         "id": 1602,
         "recipe": [
             (1, Materials.SpearShaft),
+            (1, Materials.GlintstoneDust),
+            (7, Materials.CrackedCrystal),
         ],
     },
     "Clayman's Harpoon": {
         "id": 1603,
         "recipe": [
             (1, Materials.SpearShaft),
+            (2, Materials.SoftWood),
+            (1, Materials.MeteoriteChunk),
         ],
     },
     "Cleanrot Spear": {
         "id": 1604,
         "recipe": [
             (1, Materials.SpearShaft),
+            (2, Materials.IronPlate),
+            (2, Materials.ErdtreeAmber),
+            (6, Materials.CrystalCaveMoss),
         ],
     },
     "Partisan": {
         "id": 1605,
         "recipe": [
             (1, Materials.SpearShaft),
+            (1, Materials.RefinedWood),
+            (1, Materials.SoftWood),
+            (1, Materials.IronPlate),
+            (1, Materials.IronShards),
         ],
     },
     "Celebrant's Rib-Rake": {
         "id": 1606,
         "recipe": [
             (1, Materials.SpearShaft),
+            (2, Materials.StoneFragment),
+            (6, Materials.ThinBeastBones),
+            (4, Materials.HumanBoneShard),
         ],
     },
     "Pike": {
         "id": 1607,
         "recipe": [
             (1, Materials.SpearShaft),
+            (4, Materials.IronPlate),
+            (4, Materials.StoneFragment),
         ],
     },
     "Torchpole": {
         "id": 1608,
         "recipe": [
             (1, Materials.SpearShaft),
+            (2, Materials.SoftWood),
+            (1, Materials.RootResin),
+            (6, Materials.SmolderingButterfly),
         ],
     },
     "Bolt of Gransax": {
         "id": 1609,
         "recipe": [
             (1, Materials.SpearShaft),
+            (1, Materials.DragonTeeth),
+            (1, Materials.LiquidMetal),
+            (4, Materials.GravelStone),
         ],
     },
     "Cross-Naginata": {
         "id": 1611,
         "recipe": [
             (1, Materials.SpearShaft),
+            (2, Materials.RefinedWood),
+            (2, Materials.IronPlate),
+            (3, Materials.StoneFragment),
         ],
     },
     "Death Ritual Spear": {
         "id": 1612,
         "recipe": [
             (1, Materials.SpearShaft),
+            (1, Materials.LiquidMetal),
+            (4, Materials.SomberStoneFragment),
+            (3, Materials.GraveViolet),
         ],
     },
     "Inquisitor's Girandole": {
         "id": 1613,
         "recipe": [
             (1, Materials.SpearShaft),
+            (6, Materials.IronShards),
+            (3, Materials.SmolderingButterfly),
+            (2, Materials.VolcanicStone),
         ],
     },
     "Spiked Spear": {
         "id": 1614,
         "recipe": [
             (1, Materials.SpearShaft),
+            (3, Materials.SoftWood),
+            (1, Materials.IronShards),
         ],
     },
     "Iron Spear": {
         "id": 1615,
         "recipe": [
             (1, Materials.SpearShaft),
+            (3, Materials.SoftWood),
+            (2, Materials.IronShards),
+            (1, Materials.RootResin),
         ],
     },
     "Rotten Crystal Spear": {
         "id": 1616,
         "recipe": [
             (1, Materials.SpearShaft),
+            (1, Materials.GruesomeBone),
+            (7, Materials.SomberStoneFragment),
+            (10, Materials.CrackedCrystal),
         ],
     },
+    #bookmark
     "Sacred Mohgwyn's Spear": {
         "id": 1701,
         "recipe": [
