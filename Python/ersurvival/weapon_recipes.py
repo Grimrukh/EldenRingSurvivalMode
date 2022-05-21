@@ -44,7 +44,6 @@ WEAPON_RECIPES = {
             (1, Materials.SmallHilt),
             (1, Materials.GruesomeBone),
             (4, Materials.Bloodrose),
-            (2, Materials.BloodTaintedExcrement),
         ],
     },
     "Crystal Knife": {
@@ -895,7 +894,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.CurvedHilt),
             (1, Materials.GruesomeBone),
-            (4, Materials.BloodTaintedExcrement),
+            (4, Materials.BeastBlood),
             (6, Materials.ArteriaLeaf),
         ],
     },
@@ -1219,7 +1218,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.StaffPole),
             (4, Materials.SomberStoneFragment),
-            (4, Materials.BeastBlood),
+            (3, Materials.BeastBlood),
         ],
     },
     "Envoy's Long Horn": {
@@ -1678,41 +1677,58 @@ WEAPON_RECIPES = {
             (10, Materials.CrackedCrystal),
         ],
     },
-    #bookmark
     "Sacred Mohgwyn's Spear": {
         "id": 1701,
         "recipe": [
             (1, Materials.SpearShaft),
+            (2, Materials.LiquidMetal),
+            (1, Materials.GruesomeBone),
+            (10, Materials.BloodTaintedExcrement),
         ],
     },
     "Siluria's Tree": {
         "id": 1702,
         "recipe": [
             (1, Materials.SpearShaft),
+            (1, Materials.RefinedWood),
+            (2, Materials.IronPlate),
+            (2, Materials.ErdtreeAmber),
         ],
     },
     "Serpent-Hunter": {
         "id": 1703,
         "recipe": [
             (1, Materials.SpearShaft),
+            (1, Materials.DragonTeeth),
+            (4, Materials.SomberStoneFragment),
+            (6, Materials.LivingJarShard),
         ],
     },
     "Vyke's War Spear": {
         "id": 1705,
         "recipe": [
             (1, Materials.SpearShaft),
+            (3, Materials.IronPlate),
+            (4, Materials.StoneFragment),
+            (6, Materials.YellowEmber),
+            (10, Materials.EyeOfYelough),
         ],
     },
     "Lance": {
         "id": 1706,
         "recipe": [
             (1, Materials.SpearShaft),
+            (1, Materials.SoftWood),
+            (3, Materials.IronPlate),
         ],
     },
     "Treespear": {
         "id": 1707,
         "recipe": [
             (1, Materials.SpearShaft),
+            (3, Materials.IronPlate),
+            (2, Materials.StoneFragment),
+            (1, Materials.ErdtreeAmber),
         ],
     },
     # endregion
@@ -1722,85 +1738,132 @@ WEAPON_RECIPES = {
         "id": 1800,
         "recipe": [
             (1, Materials.SpearShaft),
+            (2, Materials.SoftWood),
+            (1, Materials.IronPlate),
+            (1, Materials.IronShards),
         ],
     },
     "Pest's Glaive": {
         "id": 1801,
         "recipe": [
             (1, Materials.SpearShaft),
+            (6, Materials.StoneFragment),
+            (4, Materials.TurtleNeckMeat),
+            (3, Materials.GoldenCentipede),
         ],
     },
     "Lucerne": {
         "id": 1802,
         "recipe": [
             (1, Materials.SpearShaft),
+            (2, Materials.SoftWood),
+            (2, Materials.StoneFragment),
+            (1, Materials.IronPlate),
+            (1, Materials.IronShards),
         ],
     },
     "Banished Knight's Halberd": {
         "id": 1803,
         "recipe": [
             (1, Materials.SpearShaft),
+            (1, Materials.RefinedWood),
+            (1, Materials.SoftWood),
+            (2, Materials.IronPlate),
+            (6, Materials.FlightPinion),
         ],
     },
     "Commander's Standard": {
         "id": 1804,
         "recipe": [
             (1, Materials.SpearShaft),
+            (2, Materials.RefinedWood),
+            (2, Materials.IronPlate),
+            (4, Materials.SomberStoneFragment),
+            (10, Materials.CaveMoss),
         ],
     },
     "Nightrider Glaive": {
         "id": 1805,
         "recipe": [
             (1, Materials.SpearShaft),
+            (4, Materials.IronPlate),
+            (5, Materials.SomberStoneFragment),
+            (4, Materials.ArteriaLeaf),
         ],
     },
     "Ripple Crescent Halberd": {
         "id": 1806,
         "recipe": [
             (1, Materials.SpearShaft),
+            (1, Materials.LiquidMetal),
+            (4, Materials.StoneFragment),
+            (6, Materials.AlbinauricBloodclot),
         ],
     },
     "Vulgar Militia Saw": {
         "id": 1807,
         "recipe": [
             (1, Materials.SpearShaft),
+            (1, Materials.RefinedWood),
+            (1, Materials.SoftWood),
+            (3, Materials.IronShards),
+            (4, Materials.StoneFragment),
         ],
     },
     "Golden Halberd": {
         "id": 1808,
         "recipe": [
             (1, Materials.SpearShaft),
+            (4, Materials.IronPlate),
+            (1, Materials.ErdtreeAmber),
+            (6, Materials.GoldenRowa),
         ],
     },
     "Glaive": {
         "id": 1809,
         "recipe": [
             (1, Materials.SpearShaft),
+            (2, Materials.SoftWood),
+            (2, Materials.IronPlate),
+            (2, Materials.RootResin),
         ],
     },
     "Loretta's War Sickle": {
         "id": 1810,
         "recipe": [
             (1, Materials.SpearShaft),
+            (2, Materials.LiquidMetal),
+            (2, Materials.IronPlate),
+            (4, Materials.GoldFirefly),
+            (3, Materials.SilverTearHusk),
         ],
     },
     "Guardian's Swordspear": {
         "id": 1811,
         "recipe": [
             (1, Materials.SpearShaft),
+            (3, Materials.RefinedWood),
+            (1, Materials.ErdtreeAmber),
+            (10, Materials.ErdleafFlower),
         ],
     },
     "Vulgar Militia Shotel": {
         "id": 1813,
         "recipe": [
             (1, Materials.SpearShaft),
+            (1, Materials.RefinedWood),
+            (1, Materials.SoftWood),
+            (1, Materials.IronPlate),
+            (1, Materials.IronShards),
         ],
     },
     "Dragon Halberd": {
         "id": 1814,
         "recipe": [
             (1, Materials.SpearShaft),
-            # Potential use for DragonTeeth
+            (1, Materials.SoftWood),
+            (2, Materials.IronPlate),
+            (1, Materials.DragonTeeth),
         ],
     },
     "Gargoyle's Halberd": {
@@ -1830,24 +1893,38 @@ WEAPON_RECIPES = {
         "id": 1900,
         "recipe": [
             (1, Materials.SpearShaft),
+            (2, Materials.RefinedWood),
+            (1, Materials.IronPlate),
+            (2, Materials.StoneFragment),
         ],
     },
     "Grave Scythe": {
         "id": 1901,
         "recipe": [
             (1, Materials.SpearShaft),
+            (2, Materials.SoftWood),
+            (1, Materials.IronPlate),
+            (1, Materials.GraveViolet),
         ],
     },
     "Halo Scythe": {
         "id": 1902,
         "recipe": [
             (1, Materials.SpearShaft),
+            (2, Materials.RefinedWood),
+            (1, Materials.IronPlate),
+            (1, Materials.ErdtreeAmber),
+            (6, Materials.SomberStoneFragment),
         ],
     },
     "Winged Scythe": {
         "id": 1906,
         "recipe": [
             (1, Materials.SpearShaft),
+            (2, Materials.SoftWood),
+            (1, Materials.IronPlate),
+            (1, Materials.ErdtreeAmber),
+            (6, Materials.FlightPinion),
         ],
     },
     # endregion

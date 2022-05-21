@@ -1,39 +1,47 @@
 """
-Notes: material RNG weights
+Notes: RNG weights
 
 # Vanilla material values. Add value for highest tier present ONCE, then multiply sum with VanillaMaterial.
     # This part kinda sucks.
-VanillaMaterialValue = .2
-Tier1Mat = 1 # Early game/Common vanilla Materials
-Tier1Mat = 2 # Mid game/Common vanilla Materials
-Tier1Mat = 3 # FltEarly game/Common vanilla Materials
+    VanillaMat_Per = .25
+    Tier1Mat = 1 # Early game/Common vanilla Materials
+    Tier2Mat = 2 # Mid game or Uncommon vanilla Materials
+    Tier3Mat = 4 # Late game or Rare vanilla Materials
 
-StoneFragment = .4
-SomberStoneFragment = .75
-IronShards = .75
-SoftWood = 1
-IronPlate = 1.5
-RefinedWood = 2
-GlintstoneDust = 4
-ErdtreeAmber = 4
-LiquidMetal = 6
-GruesomeBone = 8
-MeteoriteChunk = 8
-BlackMark = 8
-DragonTeeth = 10
-ErdtreeWood = ?
+    StoneFragment = .4
+    SomberStoneFragment = .75
+    IronShards = .75
+    SoftWood = 1
+    IronPlate = 1.5
+    RefinedWood = 2
+    GlintstoneDust = 4
+    ErdtreeAmber = 4
+    LiquidMetal = 6
+    GruesomeBone = 8
+    MeteoriteChunk = 8
+    BlackMark = 8
+    DragonTeeth = 10
+    ErdtreeWood = ?
 
-Tier0 = 0
-Tier1 = 6
-Tier2 = 12
-Tier3 = 16
+    # Tier thresholds (Probably worthless now. Instead, order a list by material cost?)
+    Tier0 = 0
+    Tier1 = 6
+    Tier2 = 12
+    Tier3 = 16
+
+---------
+Logic notes
+
+Things to calculate around:
+    Material value total
+    Stat requirements
+    Base scaling?? 
+        This is questionable you remember infusions exist
+        But at the same time, things would be less inconsistent for int/faith/arc builds
 
 ---------
 Other notes
-ErdtreeWood: Currently used in a few bow recipes, but can probably be replaced and cut
-DragonTeeth: Currently unused, but can be squeezed into certian recipes (recipes where it'd work have been marked)
-
-
+    ErdtreeWood: Currently used in a few bow recipes, but can probably be replaced and cut
 
 """
 from enum import IntEnum
