@@ -1,0 +1,432 @@
+# Daggers
+Dagger
+    Great Knife
+        Parrying Dagger
+            Misericorde
+                Scorpion's Stinger
+                    Cinquedea
+        Erdsteel Dagger
+            Blade of Calling
+                Black Knife
+        Wakizashi
+            Crystal Knife
+                Glintstone Kris
+            Bloodstained Dagger
+                Reduvia
+            Celebrant's Sickle+8
+                Ivory Sickle
+
+# Straight Swords
+Dagger -> Short Sword
+    Weathered Straight Sword
+        Noble's Slender Sword
+            Cane Sword
+                Warhawk's Talon
+                    Regalia of Eochaid
+        Longsword
+            Broadsword
+                Lordsworn's Straight Sword
+                    Ornamental Straight Sword
+                        Coded Sword
+                            Golden Epitaph
+                                Miquellan Knight's Sword
+            Crystal Sword
+                Rotten Crystal Sword
+                    Lazuli Glintstone Sword
+                        Sword of St. Trina
+                            Carian Knight's Sword
+                                Sword of Night and Flame
+
+# Greatswords
+Broadsword -> Bastard Sword
+    Claymore
+        Lordsworn's Greatsword
+            Banished Knight's Greatsword
+                Iron Greatsword  # goes to Ultra Greatswords
+            Knight's Greatsword
+                Gargoyle's Greatsword
+                    Gargoyle's Blackblade
+                Blasphemous Blade  # STR/FAI
+                    Ordovis's Greatsword
+                Onyx Lord's Sword  # typo of Alabaster Lord's Sword
+                    Helphen's Steeple  # INT
+                        Dark Moon Greatsword
+                Marais Executioner's Sword  # STR/ARC
+        Forked Greatsword
+            Flamberge
+                Sword of Milos  # DEX
+                    Death's Poker  # DEX/INT
+                Inseparable Sword  # STR/DEX/FAI
+                    Golden Order Greatsword
+                    Sacred Relic Sword
+
+# Ultra Greatswords
+Iron Greatsword -> Zweihander
+    Watchdog's Greatsword  # more STR
+        Greatsword
+            Grafted Blade Greatsword
+            Ruins Greatsword
+        Starscourge Greatsword
+        Maliketh's Black Blade
+    Troll's Golden Sword  # less STR
+        Troll Knight's Sword
+            Royal Greatsword
+            Godslayer's Greatsword
+
+# Thrusting Swords
+Longsword -> Rapier
+    Noble's Estoc
+        Estoc
+            Cleanrot Knight's Sword  # to Heavy Thrusting Swords
+            Rogier's Rapier
+                Antspur Rapier
+                    Frozen Needle
+
+# Heavy Thrusting Swords
+Cleanrot Knight's Sword -> Great epee
+    Godskin Stitcher
+        Bloody Helice
+            Dragon King's Cragblade
+
+# Curved Swords
+Short Sword -> Falchion
+    Beastman's Curved Sword
+    Shotel
+    Shamshir
+    Bandit's Curved Sword
+    Magma Blade
+    Flowing Curved Sword
+    Wing of Astel
+    Scavenger's Curved Sword
+    Eclipse Shotel
+    Serpent-God's Curved Sword
+    Mantis Blade
+    Scimitar
+    Grossmesser
+    Nox Flowing Sword
+
+# Curved Greatswords
+Scimitar -> Dismounter
+    Onyx Lord's Greatsword
+    Bloodhound's Fang
+    Magma Wyrm's Scalesword
+    Zamor Curved Sword
+    Omen Cleaver
+    Monk's Flameblade
+    Beastman's Cleaver
+    Morgott's Cursed Sword
+
+# Katanas
+Longsword -> Uchigatana
+    Nagakiba
+    Hand of Malenia
+    Meteoric Ore Blade
+    Rivers of Blood
+    Moonveil
+    Dragonscale Blade
+    Serpentbone Blade
+
+# Twinblades
+Longsword -> Twinblade
+    Godskin Peeler
+    Twinned Knight Swords
+    Eleonora's Poleblade
+    Gargoyle's Twinblade
+    Gargoyle's Black Blades
+
+# Hammers
+Club
+    Mace
+    Curved Club
+    Warpick
+    Morning Star
+    Varre's Bouquet
+    Spiked Club
+    Hammer
+    Monk's Flamemace
+    Envoy's Horn
+    Scepter of the All-Knowing
+    Nox Flowing Hammer
+    Ringed Finger
+    Stone Club
+    Marika's Hammer
+
+# Greathammers
+Club -> Large Club
+    Greathorn Hammer
+    Battle Hammer
+    Great Mace
+    Curved Great Club
+    Celebrant's Skull
+    Pickaxe
+    Beastclaw Greathammer
+    Envoy's Long Horn
+    Cranial Vessel Candlestand
+    Great Stars
+    Brick Hammer
+    Devourer's Scepter
+    Rotten Battle Hammer
+    Great Club  # COLOSSAL
+    Troll's Hammer  # COLOSSAL
+    Envoy's Greathorn  # COLOSSAL
+    Giant-Crusher  # COLOSSAL
+    Watchdog's Staff  # COLOSSAL
+    Staff of the Avatar  # COLOSSAL
+    Rotten Staff  # COLOSSAL
+
+# Flails
+Spiked Club -> Flail
+    Chainlink Flail  # STR
+    Nightrider Flail  # DEX
+    Family Heads  # INT
+        Bastard's Stars
+
+# Axes
+Hand Axe
+    Battle Axe
+    Forked Hatchet
+    Jawbone Axe
+    Iron Cleaver
+    Ripple Blade
+    Celebrant's Cleaver
+    Icerind Hatchet
+    Highland Axe
+    Sacrificial Axe
+    Rosus' Axe
+    Stormhawk Axe
+
+# Greataxes
+Battle Axe -> Greataxe
+    Warped Axe
+    Great Omenkiller Cleaver
+    Crescent Moon Axe
+    Axe of Godrick
+    Longhaft Axe
+    Rusted Anchor
+    Executioner's Greataxe
+    Winged Greathorn
+    Butchering Knife
+    Gargoyle's Great Axe
+    Gargoyle's Black Axe
+    Duelist Greataxe  # COLOSSAL
+    Axe of Godfrey  # COLOSSAL
+    Dragon Greatclaw  # COLOSSAL
+    Rotten Greataxe  # COLOSSAL
+
+# Spears
+Dagger -> Short Spear
+    Spear
+    Crystal Spear
+    Clayman's Harpoon
+    Cleanrot Spear
+    Partisan
+    Celebrant's Rib-Rake
+    Pike
+    Torchpole
+    Bolt of Gransax
+    Cross-Naginata
+    Death Ritual Spear
+    Inquisitor's Girandole
+    Spiked Spear
+    Iron Spear
+    Rotten Crystal Spear
+    Sacred Mohgwyn's Spear
+    Siluria's Tree
+    Serpent-Hunter
+    Vyke's War Spear
+    Lance
+    Treespear
+    Fallingstar Beast Jaw  # COLOSSAL
+
+# Halberds
+Pike -> Halberd
+    Pest's Glaive
+    Lucerne
+    Banished Knight's Halberd
+    Commander's Standard
+    Nightrider Glaive
+    Ripple Crescent Halberd
+    Vulgar Militia Saw
+    Golden Halberd
+    Glaive
+    Loretta's War Sickle
+    Guardian's Swordspear
+    Vulgar Militia Shotel
+    Dragon Halberd
+    Gargoyle's Halberd
+    Gargoyle's Black Halberd
+    Golem's Halberd  # COLOSSAL
+
+# Reapers
+Halberd -> Scythe
+    Grave Scythe
+    Halo Scythe
+    Winged Scythe
+    Ghiza's Wheel  # COLOSSAL
+
+# Whips
+Whip
+    Thorned Whip
+    Magma Whip Candlestick
+    Hoslow's Petal Whip
+    Giant's Red Braid
+    Urumi
+
+# Fists
+Caestus
+    Spiked Caestus
+    Grafted Dragon
+    Iron Ball
+    Star Fist
+    Katar
+    Clinging Bone
+    Veteran's Prosthesis
+    Cipher Pata
+    Hookclaws
+    Venomous Fang
+    Bloodhound Claws
+    Raptor Talons
+    Prelate's Inferno Crozier
+
+# Torches
+Torch
+    Steel-Wire Torch
+    St. Trina's Torch
+    Ghostflame Torch
+    Beast-Repellent Torch
+    Sentry's Torch
+
+# Small/Medium Shields
+Rickety Shield
+    Buckler
+    Perfumer's Shield
+    Man-Serpent's Shield
+    Pillory Shield
+    Beastman's Jar-Shield
+    Red Thorn Roundshield
+    Marred Wooden Shield
+        Scripture Wooden Shield
+        Riveted Wooden Shield
+        Blue-White Wooden Shield
+        Horse Crest Wooden Shield
+        Candletree Wooden Shield
+        Flame Crest Wooden Shield
+        Hawk Crest Wooden Shield
+    Marred Leather Shield
+        Large Leather Shield
+        Black Leather Shield
+    Rift Shield
+        Iron Roundshield
+        Gilded Iron Shield
+        Ice Crest Shield
+        Smoldering Shield
+        Spiralhorn Shield
+        Coil Shield
+        Kite Shield
+            Scorpion Kite Shield
+            Twinbird Kite Shield
+            Blue-Gold Kite Shield
+        Banished Knight's Shield
+        Albinauric Shield
+        Sun Realm Shield
+        Silver Mirrorshield
+        Round Shield
+        Brass Shield
+        Great Turtle Shell
+        Shield of the Guilty
+        Carian Knight's Shield
+        Heater Shield
+            Beast Crest Heater Shield
+            Red Crest Heater Shield
+            Blue Crest Heater Shield
+            Eclipse Crest Heater Shield
+            Inverted Hawk Heater Shield
+
+# Greatshields
+Iron Roundshield -> Wooden Greatshield
+    Dragon Towershield
+    Distinguished Greatshield
+    Crucible Hornshield
+    Dragonclaw Shield
+    Briar Greatshield
+    Erdtree Greatshield
+    Golden Beast Crest Shield
+    Jellyfish Shield
+    Fingerprint Stone Shield
+    Icon Shield
+    One-Eyed Shield
+    Visage Shield
+    Spiked Palisade Shield
+    Manor Towershield
+    Crossed-Tree Towershield
+    Inverted Hawk Towershield
+    Ant's Skull Plate
+    Redmane Greatshield
+    Eclipse Crest Greatshield
+    Cuckoo Greatshield
+    Golden Greatshield
+    Gilded Greatshield
+    Haligtree Crest Greatshield
+    Lordsworn's Shield
+
+# Staffs
+Glintstone Staff
+    Crystal Staff
+    Gelmir Glintstone Staff
+    Demi-Human Queen's Staff
+    Carian Regal Scepter
+    Digger's Staff
+    Astrologer's Staff
+    Carian Glintblade Staff
+    Prince of Death's Staff
+    Albinauric Staff
+    Academy Glintstone Staff
+    Carian Glintstone Staff
+    Azur's Glintstone Staff
+    Lusat's Glintstone Staff
+    Meteorite Staff
+    Staff of the Guilty
+    Rotten Crystal Staff
+    Staff of Loss
+
+# Seals
+Finger Seal
+    Godslayer's Seal
+    Giant's Seal
+    Gravel Stone Seal
+    Clawmark Seal
+    Golden Order Seal
+    Erdtree Seal
+    Dragon Communion Seal
+    Frenzied Flame Seal
+
+# Bows
+Shortbow
+    Misbegotten Shortbow
+    Red Branch Shortbow
+    Harp Bow
+    Composite Bow
+    Longbow
+        Albinauric Bow
+        Horn Bow
+        Erdtree Bow
+        Serpent Bow
+        Pulley Bow
+        Black Bow
+
+# Greatbows
+Longbow -> Greatbow
+    Lion Greatbow
+    Golem Greatbow
+    Erdtree Greatbow
+
+# Crossbows/Guns
+Longbow -> Soldier's Crossbow
+    Light Crossbow
+    Heavy Crossbow
+    Pulley Crossbow
+    Full Moon Crossbow
+    Arbalest
+    Crepus's Black-Key Crossbow
+    Hand Ballista
+    Jar Cannon

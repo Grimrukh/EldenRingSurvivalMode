@@ -1,6 +1,8 @@
 """Lists the recipes for weapons.
 
 TODO: Everything between Katanas and Greatshields below.
+
+Each weapon has a tier (0-10) and requires a specific previous weapon to craft.
 """
 from crafting import Materials
 
@@ -24,6 +26,8 @@ WEAPON_RECIPES = {
     },
     "Parrying Dagger": {
         "id": 102,
+        "tier": 1,
+        "previous": "Dagger",
         "recipe": [
             (1, Materials.SmallHilt),
             (1, Materials.IronPlate),
@@ -1864,126 +1868,164 @@ WEAPON_RECIPES = {
         "id": 3000,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (1, Materials.IronPlate),
+            (2, Materials.StoneFragment),
         ],
     },
     "Perfumer's Shield": {
         "id": 3001,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (1, Materials.IronPlate),
+            (1, Materials.ErdtreeAmber),
         ],
     },
     "Man-Serpent's Shield": {
         "id": 3002,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (1, Materials.IronPlate),
+            (4, Materials.VolcanicStone),
         ],
     },
     "Rickety Shield": {
         "id": 3003,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (2, Materials.SoftWood),
         ],
     },
     "Pillory Shield": {
         "id": 3004,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (1, Materials.RefinedWood),
         ],
     },
     "Beastman's Jar-Shield": {
         "id": 3006,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (3, Materials.LivingJarShard),
+            (1, Materials.HeftyBeastBone),
         ],
     },
     "Red Thorn Roundshield": {
         "id": 3007,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (2, Materials.SoftWood),
+            (2, Materials.RootResin),
         ],
     },
     "Scripture Wooden Shield": {
         "id": 3008,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (2, Materials.SoftWood),
+            (5, Materials.ErdleafFlower),
         ],
     },
     "Riveted Wooden Shield": {
         "id": 3009,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (2, Materials.SoftWood),
+            (3, Materials.IronShards),
         ],
     },
     "Blue-White Wooden Shield": {
         "id": 3010,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (2, Materials.SoftWood),
+            (1, Materials.AlbinauricBloodclot),
         ],
     },
     "Rift Shield": {
         "id": 3011,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (1, Materials.IronPlate),
+            (2, Materials.IronShards),
+            (3, Materials.StoneFragment),
         ],
     },
     "Iron Roundshield": {
         "id": 3012,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (1, Materials.IronPlate),
+            (2, Materials.StoneFragment),
         ],
     },
     "Gilded Iron Shield": {
         "id": 3013,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (1, Materials.IronPlate),
+            (3, Materials.GoldenSunflower),
         ],
     },
     "Ice Crest Shield": {
         "id": 3014,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (1, Materials.IronPlate),
+            (1, Materials.GlintstoneDust),
+            (4, Materials.SilverFirefly),
         ],
     },
     "Smoldering Shield": {
         "id": 3015,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (6, Materials.VolcanicStone),
         ],
     },
     "Spiralhorn Shield": {
         "id": 3019,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (5, Materials.BuddingHorn),
         ],
     },
     "Coil Shield": {
         "id": 3020,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (5, Materials.BuddingHorn),
         ],
     },
     "Kite Shield": {
         "id": 3100,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (2, Materials.IronPlate),
         ],
     },
     "Marred Leather Shield": {
         "id": 3101,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (1, Materials.LumpOfFlesh),
+            (3, Materials.TarnishedGoldenSunflower),
         ],
     },
     "Marred Wooden Shield": {
         "id": 3102,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (3, Materials.SoftWood),
+            (3, Materials.TarnishedGoldenSunflower),
         ],
     },
     "Banished Knight's Shield": {
         "id": 3103,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (2, Materials.IronPlate),
+            (2, Materials.IronPlate),
         ],
     },
     "Albinauric Shield": {
@@ -2020,6 +2062,9 @@ WEAPON_RECIPES = {
         "id": 3109,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (2, Materials.IronPlate),
+            (5, Materials.FlightPinion),
+            (3, Materials.StormhawkFeather),
         ],
     },
     "Blue-Gold Kite Shield": {

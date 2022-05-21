@@ -5,6 +5,8 @@ Modifies CSV files exported by Yapped (Rune Bear), which that program can then r
 from __future__ import annotations
 
 import csv
+import random
+import re
 from pathlib import Path
 
 from Python.ersurvival.crafting import Materials
@@ -37,6 +39,8 @@ class YappedRow(dict):
         if key == "Row ID":
             super().__setitem__(key, value)
         else:  # convert to string for CSV
+            if isinstance(value, IntEnum):
+                value = value.value
             super().__setitem__(key, str(value))
 
     @property
@@ -660,9 +664,137 @@ def generate_new_materials(goods_param: YappedParam):
         new_material.name = good_name
 
 
+def replace_weapon_item_lots(item_lots_param: YappedParam, weapons_param: YappedParam):
+    """Replace all (non-ammo) weapons in given ItemLotParam with components.
+
+    TODO: Decide how the drop count will be determined (always one? randomly reduced?)
+    TODO: Skip Serpent-Hunter treasure?
+    """
+    for row in item_lots_param.rows:
+        for slot in range(1, 9):  # TODO: confirm slot number
+            item_id = row[f"itemId{slot:02d}"]
+            item_type = row[f"itemType{slot:02d}"]
+            item_count = row[f"numItem{slot:02d}"]
+            # drop rate isn't changed
+            if item_type != 0:
+                # Ignore non-weapons.
+                continue
+            if item_count <= 0:
+                # Ignore empty counts.
+                continue
+
+            weapon_row = weapons_param[item_id]
+            if weapon_row["weaponType"] in {13, 14}:
+                # Ignore ammo.
+                continue
+
+            # Get base weapon ID (round down to nearest 10000).
+            base_weapon_id = 10000 * (item_id // 10000)
+            weapon_row = weapons_param[base_weapon_id]
+
+            if not weapon_row.name:
+                # Ignore unused weapon drops.
+                continue
+
+            # Look up recipe here.
+            try:
+                weapon_recipe = WEAPON_RECIPES[weapon_row.name]
+            except KeyError:
+                raise KeyError(f"Missing weapon recipe for name: '{weapon_row.name}' (item lot {row.row_id})")
+
+            # Get a random recipe ingredient (including its count), excluding "grip" items.
+            ingredients = [ing for ing in weapon_recipe["recipe"] if ing not in range(21600, 21620)]
+            if not ingredients:
+                print(f"Recipe for weapon '{weapon_row.name}' has no non-base ingredients. Skipping item lot.")
+                continue
+            good_count, good_id = random.choice(ingredients)
+
+            # Replace item lot slot.
+            row[f"itemId{slot:02d}"] = good_id
+            row[f"itemType{slot:02d}"] = 4  # TODO: confirm this is Goods
+            row[f"numItem{slot:02d}"] = good_count  # TODO: randomly reduced count of them...? Maybe always 1 only?
+
+
+def set_weapon_levels():
+    """
+    TODO: What's the best way to do this?
+
+    Reinforced weapons, as usual, do not have their own param rows.
+
+    The easiest solution is actually just to use the reinforced weapons themselves. I can even keep the levels in the
+    names so the player knows what power level to expect (as some might jump more levels than others).
+    """
+
+
+def parse_weapon_tiers():
+    """Parses `weapon_tiers.txt` and returns a dictionary mapping weapon names to weapon ID and previous weapon ID (for
+    recipe)."""
+    tiers_dict = {}
+    line_re = re.compile(r"^( *)(.*) *$")
+
+    tiers = (Path(__file__).parent / "weapon_tiers.txt").read_text()
+    previous_weapons = []  # weapon ID and indent level
+    for i, line in enumerate(tiers.split("\n")):
+        if not line.strip() or line.startswith("#"):
+            continue  # comment/empty line
+        match = line_re.match(line)
+        if not match:
+            raise ValueError(f"Invalid line {i} in 'weapon_tiers.txt': {line}")
+        indent = len(match.group(1))
+        weapon_name = match.group(2)
+
+        if "#" in weapon_name:
+            weapon_name = weapon_name.split("#")[0].strip()  # remove end-line comment
+
+        if "->" in weapon_name:  # manually specified previous weapon
+            if indent != 0:
+                raise ValueError(f"Invalid line {i} in 'weapons_tiers.txt'. Cannot use '->' with an indent.")
+            previous_weapon_name, weapon_name = weapon_name.split("->")
+
+            previous_weapon_name = previous_weapon_name.strip()
+            if "+" in previous_weapon_name:
+                name, level_str = previous_weapon_name.split("+")
+                previous_weapon_name = name.strip()
+                previous_weapon_level = int(level_str.strip())
+            else:
+                previous_weapon_level = 0
+            previous_weapon_id = WEAPON_RECIPES[previous_weapon_name]["id"] * 10000 + previous_weapon_level
+            previous_weapons.clear()
+            weapon_name = weapon_name.strip()
+        else:
+            if indent > 0 and not previous_weapons:
+                raise ValueError(
+                    f"Weapon '{weapon_name}' has an indent but there are no previous weapons on the stack.")
+            while previous_weapons and indent <= previous_weapons[-1][1]:
+                # Pop last previous weapon.
+                previous_weapons.pop()
+            if previous_weapons:
+                previous_weapon_id, _ = previous_weapons[-1]
+            else:
+                previous_weapon_id = None
+
+        if "+" in weapon_name:
+            name, level_str = weapon_name.split("+")
+            weapon_name = name.strip()
+            weapon_level = int(level_str.strip())
+        else:
+            weapon_level = 0
+
+        try:
+            weapon_id = WEAPON_RECIPES[weapon_name]["id"] * 10000 + weapon_level
+        except KeyError:
+            raise KeyError(f"No weapon recipe for name '{weapon_name}'.")
+
+        tiers_dict[weapon_name] = (weapon_id, previous_weapon_id)
+        previous_weapons.append((weapon_id, indent))
+
+    return tiers_dict
+
+
 def generate_all():
     goods = read_param_csv("EquipParamGoods_vanilla.csv")
     weapons = read_param_csv("EquipParamWeapon_vanilla.csv")
+    item_lots_enemy = read_param_csv("ItemLotParam_enemy_vanilla.csv")
     item_lots_map = read_param_csv("ItemLotParam_map_vanilla.csv")
     mtrl = read_param_csv("EquipMtrlSetParam_vanilla.csv")
     shop_recipe = read_param_csv("ShopLineupParam_Recipe_vanilla.csv")
@@ -672,4 +804,7 @@ def generate_all():
 
 
 if __name__ == '__main__':
-    generate_all()
+    # generate_all()
+    _tiers = parse_weapon_tiers()
+    for _name, _info in _tiers.items():
+        print(f"{_name}: {_info}")
