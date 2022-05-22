@@ -2110,7 +2110,6 @@ WEAPON_RECIPES = {
     "Bloodhound Claws": {
         "id": 2202,
         "recipe": [
-            (1, Materials.SoftWood),
             (3, Materials.IronPlate),
             (10, Materials.StoneFragment),
             (6, Materials.LandOctopusOvary),
