@@ -2875,14 +2875,12 @@ WEAPON_RECIPES = {
             (1, Materials.RefinedWood),
             (3, Materials.IronPlate),
             (4, Materials.GoldenCentipede),
-            (1, Materials.FireBlossom),
         ],
     },
     "Gilded Greatshield": {
         "id": 3227,
         "recipe": [
             (1, Materials.GreatshieldHandle),
-            (2, Materials.SoftWood),
             (2, Materials.RefinedWood),
             (2, Materials.IronPlate),
             (1, Materials.GoldenRowa),
@@ -2930,7 +2928,6 @@ WEAPON_RECIPES = {
             (1, Materials.StaffPole),
             (5, Materials.SomberStoneFragment),
             (1, Materials.GlintstoneDust),
-            (2, Materials.GlintstoneFirefly),
             (5, Materials.CrackedCrystal),
         ],
     },
@@ -2941,7 +2938,6 @@ WEAPON_RECIPES = {
             (5, Materials.VolcanicStone),
             (2, Materials.SomberStoneFragment),
             (1, Materials.GlintstoneDust),
-            (4, Materials.ErdtreeAmber),
         ],
     },
     "Demi-Human Queen's Staff": {
@@ -2960,7 +2956,6 @@ WEAPON_RECIPES = {
             (4, Materials.SomberStoneFragment),
             (3, Materials.GlintstoneDust),
             (5, Materials.GlintstoneFirefly),
-            (6, Materials.CrackedCrystal),
         ],
     },
     "Digger's Staff": {
@@ -2993,8 +2988,6 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.StaffPole),
             (3, Materials.SomberStoneFragment),
-            (1, Materials.BuddingHorn),
-            (3, Materials.HumanBoneShard),
             (1, Materials.GlintstoneDust),
             (1, Materials.ErdtreeAmber),
         ],
@@ -3032,9 +3025,7 @@ WEAPON_RECIPES = {
             (1, Materials.StaffPole),
             (4, Materials.SomberStoneFragment),
             (2, Materials.GlintstoneDust),
-            (4, Materials.GlintstoneFirefly),
-            (3, Materials.CrystalBud),
-            (3, Materials.CrystalCaveMoss),
+            (7, Materials.GlintstoneFirefly),
         ],
     },
     "Lusat's Glintstone Staff": {
@@ -3044,7 +3035,6 @@ WEAPON_RECIPES = {
             (4, Materials.SomberStoneFragment),
             (2, Materials.GlintstoneDust),
             (7, Materials.GlintstoneFirefly),
-            (5, Materials.CrystalBud),
         ],
     },
     "Meteorite Staff": {
@@ -3071,7 +3061,6 @@ WEAPON_RECIPES = {
             (3, Materials.CrystalBud),
             (4, Materials.AeonianButterfly),
             (2, Materials.GruesomeBone),
-            (1, Materials.FadedErdleafFlower),
         ],
     },
     "Staff of Loss": {
@@ -3133,10 +3122,8 @@ WEAPON_RECIPES = {
         "recipe": [
             (5, Materials.SomberStoneFragment),
             (2, Materials.ErdtreeAmber),
-            (4, Materials.AltusBloom),
             (3, Materials.GoldFirefly),
             (3, Materials.GlintstoneFirefly),
-            (4, Materials.CrystalBud),
         ],
     },
     "Erdtree Seal": {
@@ -3277,10 +3264,9 @@ WEAPON_RECIPES = {
     "Lion Greatbow": {
         "id": 4200,
         "recipe": [
-            (1, Materials.GreatBowGrip),
-            (2, Materials.RefinedWood),
+            (1, Materials.GreatBowGrip)
             (2, Materials.SomberStoneFragment),
-            (2, Materials.IronShards),
+            (3, Materials.IronPlate),
             (2, Materials.String),
         ],
     },
