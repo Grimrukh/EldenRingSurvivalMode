@@ -401,6 +401,7 @@ WEAPON_RECIPES = {
     "Sacred Relic Sword": {
         "id": 310,
         "recipe": [
+            (1, Materials.Remembrance_EldenBeast),
             (6, Materials.ErdtreeAmber),
             (20, Materials.LumpOfFlesh),
             (14, Materials.GoldenCentipede),
@@ -1053,6 +1054,7 @@ WEAPON_RECIPES = {
     "Marika's Hammer": {
         "id": 1115,
         "recipe": [
+            (1, Materials.Remembrance_EldenBeast),
             (4, Materials.ErdtreeAmber),
             (10, Materials.SomberStoneFragment),
         ],
@@ -1195,6 +1197,7 @@ WEAPON_RECIPES = {
     "Bastard's Stars": {
         "id": 1303,
         "recipe": [
+            (1, Materials.Remembrance_Astel),
             (1, Materials.LiquidMetal),
             (1, Materials.MeteoriteChunk),
             (1, Materials.GlintstoneDust),
@@ -1367,6 +1370,7 @@ WEAPON_RECIPES = {
     "Winged Greathorn": {
         "id": 1511,
         "recipe": [
+            (1, Materials.Remembrance_RegalAncestor),
             (2, Materials.RefinedWood),
             (2, Materials.BuddingHorn),
             (1, Materials.DewkissedHerba),
@@ -1787,7 +1791,7 @@ WEAPON_RECIPES = {
     "Giant's Red Braid": {
         "id": 2006,
         "recipe": [
-            (1, Materials.GruesomeBone),
+            (1, Materials.Remembrance_FireGiant),
             (4, Materials.SomberStoneFragment),
             (8, Materials.TarnishedGoldenSunflower),
             (4, Materials.SilverTearHusk),
@@ -2725,7 +2729,7 @@ WEAPON_RECIPES = {
     "Carian Regal Scepter": {
         "id": 3309,
         "recipe": [
-            (1, Materials.StaffPole),
+            (1, Materials.Remembrance_Rennala),
             (4, Materials.SomberStoneFragment),
             (3, Materials.GlintstoneDust),
             (5, Materials.GlintstoneFirefly),
