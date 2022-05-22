@@ -50,7 +50,7 @@ Broadsword+8 -> Bastard Sword+9
                         Gargoyle's Blackblade+10  # MAX
                     Blasphemous Blade+9  # STR/FAI
                         Ordovis's Greatsword+10  # MAX
-                    Onyx Lord's Sword+8  # typo of Alabaster Lord's Sword
+                    Alabaster Lord's Sword+8  # originally had a typo as Onyx Lord
                         Helphen's Steeple+9  # INT
                             Dark Moon Greatsword+10  # MAX
                     Marais Executioner's Sword+10  # STR/ARC, MAX
@@ -80,13 +80,13 @@ Longsword+6 -> Rapier+8
     Noble's Estoc+10
         Estoc+12
             Cleanrot Knight's Sword+14
-                # -> Great epee (Heavy Thrusting Swords)
+                # -> Great Epee (Heavy Thrusting Swords)
             Rogier's Rapier+14
                 Antspur Rapier+17
                     Frozen Needle+10  # MAX
 
 # Heavy Thrusting Swords (Done)
-Cleanrot Knight's Sword+14 -> Great epee+16
+Cleanrot Knight's Sword+14 -> Great Epee+16
     Godskin Stitcher+17
         Bloody Helice+10  # MAX
         Dragon King's Cragblade+10  # MAX
@@ -252,7 +252,7 @@ Pike+14 -> Lance+16
     Treespear+18  # FAI
         Siluria's Tree+10  # MAX
     Fallingstar Beast Jaw+10  # COLOSSAL, MAX
-    Sacred Mohgwyn's Spear+10  # MAX
+    Mohgwyn's Sacred Spear+10  # MAX
 Inquisitor's Girandole+9 -> Vyke's War Spear+10  # MAX
     # Serpent-Hunter  # TODO: craftable from scratch, or just left on ground as-is
 

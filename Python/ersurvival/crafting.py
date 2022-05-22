@@ -49,7 +49,25 @@ from enum import IntEnum
 
 class Materials(IntEnum):
 
-    # Vanilla items.
+    # region Remembrances
+    Remembrance_Godrick = 2950
+    Remembrance_Radahn = 2951
+    Remembrance_Morgott = 2952
+    Remembrance_Rykard = 2953
+    Remembrance_Malenia = 2954
+    Remembrance_Mohg = 2955
+    Remembrance_Maliketh = 2956
+    Remembrance_HoarahLoux = 2957
+    Remembrance_Dragonlord = 2958
+    Remembrance_Rennala = 2959
+    Remembrance_Fortissax = 2960
+    Remembrance_FireGiant = 2961
+    Remembrance_RegalAncestor = 2962
+    Remembrance_EldenBeast = 2963
+    Remembrance_Astel = 2964
+    # endregion
+
+    # region Vanilla items
     SliverOfMeat = 15000
     BeastLiver = 15010
     LumpOfFlesh = 15020
@@ -117,23 +135,15 @@ class Materials(IntEnum):
     VolcanicStone = 20850
     FormicRock = 20852
     GravelStone = 20855
+    # endregion
 
     # NEW ITEMS
 
     # Basic equipment components.
-        # Guidelines are in progress
-    SoftWood = 21000
-        # Very Common. Weapons with wood
-        # Weaker weapons/arrows
-    RefinedWood = 21001
-        # Uncommon? Weapons with wood
-        # Stronger weapons/arrows
-    StoneFragment = 21002
-        # Used for stronger weapons
-        # Obtained by "breaking" Smithing Stones
-    SomberStoneFragment = 21003
-        # Used for EVEN STRONGER weapons
-        # Obtained by "breaking" Somber Smithing Stones
+    SoftWood = 21000  # Very Common. Weapons with wood. Weaker weapons/arrows.
+    RefinedWood = 21001  # Uncommon? Weapons with wood. Stronger weapons/arrows.
+    StoneFragment = 21002  # Used for stronger weapons. Replaces many Smithing Stone drops.
+    SomberStoneFragment = 21003  # Used for EVEN STRONGER weapons. Replaces many Somber Smithing Stone drops.
     IronShards = 21004  # Generic metal scrap
         # Very common. Worth a "portion" of an Iron plate
         # More for DEX weapons vs Iron Plate
@@ -142,46 +152,15 @@ class Materials(IntEnum):
         # Common. Base material for most weapons
         # More for heavier weapons types (1 dagger -> 2 straight sword -> 3 greatsword -> etc)
         # More for STR weapons vs Iron Shards
-    LiquidMetal = 21006 # Fancy Metal
-        # Rename to [some sort of Fancy Metal]
-        # Rare. Used for Nox weapons and weird weapons
-        # Possibly replace usage with silver tear husks?
-    DragonTeeth = 21007
-        # Rare. Used for Dragon weapons
-    GruesomeBone = 21008
-        # Rare. Used for weird weapons & Arcane weapons
-    GlintstoneDust = 0  # TODO
-        # Semi-rare. Int stuff.
-    ErdtreeAmber = 0  # TODO
-        # Semi-rare. Faith stuff.
-    
-    MeteoriteChunk = 21503
-        # Rare. Used for outer space stuff
-    BlackMark = 21506 
-        # Rare. Used for Mark of Death stuff 
-            # Black Knife assassins, gargoyles, godskin/blackflame
-    
-    # Special equipment components. These are all quite rare.
-        # Probably don't use these at the moment until their fate is decided
-    Chain = 21500  # rare drop from Iron Virgin; rare treasure
-    ErdtreeWood = 21501  # mainly from defeating Erdtree Avatars
-    FallingstarJawbone = 21502  # reward from Fallingstar Beast
-    # MeteoriteChunk = 21503 # moved to the above section
-    GrindingWheel = 21504  # for Ghiza's Wheel only (replaces that item)
-    DragonspearChunk = 21505  # for Bolt of Gransax only (replaces that item)
-    # BlackMark = 21506 # moved to the above section
+    LiquidMetal = 21006  # Rare. Used for Nox weapons and weird weapons. TODO: rename to something more generic?
+    DragonTeeth = 21007  # Rare. Used for Dragon weapons
+    GruesomeBone = 21008  # Rare. Used for weird weapons & Arcane weapons
+    GlintstoneDust = 21009  # Semi-rare. Int stuff.
+    ErdtreeAmber = 21010  # Semi-rare. Faith stuff.
+    MeteoriteChunk = 21011  # Rare. Used for outer space stuff
+    BlackMark = 21012  # Rare. Used for Mark of Death stuff. Black Knife assassins, gargoyles, godskin/blackflame
+    ErdtreeWood = 21013  # mainly from defeating Erdtree Avatars
 
-    # Required single base components. These are all rare treasure or bought from merchants.
-    SmallHilt = 21600  # daggers, whips
-    StandardHilt = 21601  # straight swords, thrusting swords, katanas
-    CurvedHilt = 21602  # curved swords, curved greatswords, katanas
-    GiantHilt = 21603  # greatswords, colossal swords
-    SpearShaft = 21604  # spears, halberds, reapers
-    AxeHandle = 21605  # axes, greataxes, hammers, flails
-    BowGrip = 21606  # bows
-    GreatBowGrip = 21607  # greatbows
-    TriggerMechanism = 21608  # crossbows, guns/cannons
-    StaffPole = 21609  # glintstone staves
-    ShieldHandle = 21610  # small/medium shields
-    GreatshieldHandle = 21611  # greatshields
-    # No base component for Seals or Fists (just varying recipes).
+    # Required single base components for Staffs and Shields.
+    StaffPole = 21100
+    ShieldGrip = 21101  # 1 for small shields, 2 for medium shields, 3 for greatshields

@@ -160,7 +160,11 @@ class SurvivalFlags(Flag):
     TimeEventValue = 15003400  # 4 flags
 
     # For crafting weapons.
-    WeaponCraftingBase = 15004000  # 377 slots
+    CraftDummyWeaponBase = 15004000  # 377 slots
+
+    # For monitoring possession of base weapons in recipes.
+    MonitorWeaponPossessionBase = 15004500  # 377 slots (event slot)
+    WeaponMonitorBase = 19004000  # 377 slots (actual flag)
 
 
 class VanillaCharacters(Character):

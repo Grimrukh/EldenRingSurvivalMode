@@ -417,8 +417,8 @@ WEAPON_RECIPES = {
     "Blasphemous Blade": {
         "id": 314,
         "recipe": [
+            (1, Materials.Remembrance_Rykard),
             (3, Materials.IronPlate),
-            (1, Materials.GruesomeBone),
             (6, Materials.BeastBlood),
             (4, Materials.BloodTaintedExcrement),
         ],
@@ -499,10 +499,10 @@ WEAPON_RECIPES = {
     "Maliketh's Black Blade": {
         "id": 402,
         "recipe": [
+            (1, Materials.Remembrance_Maliketh),
             (4, Materials.IronPlate),
             (14, Materials.SomberStoneFragment),
             (2, Materials.BlackMark),
-            (4, Materials.OldFang),
         ],
     },
     "Troll's Golden Sword": {
@@ -522,6 +522,7 @@ WEAPON_RECIPES = {
     "Starscourge Greatsword": {
         "id": 405,
         "recipe": [
+            (1, Materials.Remembrance_Radahn),
             (3, Materials.IronPlate),
             (2, Materials.LiquidMetal),
             (1, Materials.GlintstoneDust),
@@ -648,6 +649,7 @@ WEAPON_RECIPES = {
     "Dragon King's Cragblade": {
         "id": 604,
         "recipe": [
+            (1, Materials.Remembrance_Dragonlord),
             (2, Materials.DragonTeeth),
             (14, Materials.StoneFragment),
             (10, Materials.GravelStone),
@@ -822,6 +824,7 @@ WEAPON_RECIPES = {
     "Morgott's Cursed Sword": {
         "id": 810,
         "recipe": [
+            (1, Materials.Remembrance_Morgott),
             (1, Materials.GruesomeBone),
             (4, Materials.BeastBlood),
             (6, Materials.ArteriaLeaf),
@@ -848,6 +851,7 @@ WEAPON_RECIPES = {
     "Hand of Malenia": {
         "id": 902,
         "recipe": [
+            (1, Materials.Remembrance_Malenia),
             (4, Materials.RefinedWood),
             (2, Materials.LiquidMetal),
             (8, Materials.MiquellasLily),
@@ -1332,6 +1336,7 @@ WEAPON_RECIPES = {
     "Axe of Godrick": {
         "id": 1504,
         "recipe": [
+            (1, Materials.Remembrance_Godrick),
             (4, Materials.IronPlate),
             (4, Materials.GoldenRowa),
             (12, Materials.ErdleafFlower),
@@ -1521,6 +1526,7 @@ WEAPON_RECIPES = {
     "Mohgwyn's Sacred Spear": {
         "id": 1701,
         "recipe": [
+            (1, Materials.Remembrance_Mohg),
             (2, Materials.LiquidMetal),
             (1, Materials.GruesomeBone),
             (10, Materials.BloodTaintedExcrement),
@@ -1815,6 +1821,7 @@ WEAPON_RECIPES = {
     "Grafted Dragon": {
         "id": 2106,
         "recipe": [
+            (1, Materials.Remembrance_Godrick),
             (1, Materials.DragonTeeth),
             (4, Materials.BeastLiver),
         ],
@@ -1947,6 +1954,7 @@ WEAPON_RECIPES = {
     "Axe of Godfrey": {
         "id": 2305,
         "recipe": [
+            (1, Materials.Remembrance_HoarahLoux),
             (2, Materials.RefinedWood),
             (3, Materials.IronPlate),
             (6, Materials.SomberStoneFragment),
@@ -2086,7 +2094,7 @@ WEAPON_RECIPES = {
     "Buckler": {
         "id": 3000,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (1, Materials.ShieldGrip),
             (1, Materials.IronPlate),
             (2, Materials.StoneFragment),
         ],
@@ -2094,7 +2102,7 @@ WEAPON_RECIPES = {
     "Perfumer's Shield": {
         "id": 3001,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (1, Materials.ShieldGrip),
             (1, Materials.IronPlate),
             (1, Materials.ErdtreeAmber),
         ],
@@ -2102,7 +2110,7 @@ WEAPON_RECIPES = {
     "Man-Serpent's Shield": {
         "id": 3002,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (1, Materials.ShieldGrip),
             (1, Materials.IronPlate),
             (4, Materials.VolcanicStone),
         ],
@@ -2110,21 +2118,21 @@ WEAPON_RECIPES = {
     "Rickety Shield": {
         "id": 3003,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (1, Materials.ShieldGrip),
             (2, Materials.SoftWood),
         ],
     },
     "Pillory Shield": {
         "id": 3004,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (1, Materials.ShieldGrip),
             (1, Materials.RefinedWood),
         ],
     },
     "Beastman's Jar-Shield": {
         "id": 3006,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (3, Materials.LivingJarShard),
             (1, Materials.HeftyBeastBone),
         ],
@@ -2132,7 +2140,7 @@ WEAPON_RECIPES = {
     "Red Thorn Roundshield": {
         "id": 3007,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (1, Materials.ShieldGrip),
             (2, Materials.SoftWood),
             (2, Materials.RootResin),
         ],
@@ -2140,7 +2148,7 @@ WEAPON_RECIPES = {
     "Scripture Wooden Shield": {
         "id": 3008,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (1, Materials.ShieldGrip),
             (2, Materials.SoftWood),
             (5, Materials.ErdleafFlower),
         ],
@@ -2148,7 +2156,7 @@ WEAPON_RECIPES = {
     "Riveted Wooden Shield": {
         "id": 3009,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (1, Materials.ShieldGrip),
             (2, Materials.SoftWood),
             (3, Materials.IronShards),
         ],
@@ -2156,7 +2164,7 @@ WEAPON_RECIPES = {
     "Blue-White Wooden Shield": {
         "id": 3010,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (1, Materials.ShieldGrip),
             (2, Materials.SoftWood),
             (1, Materials.AlbinauricBloodclot),
         ],
@@ -2164,7 +2172,7 @@ WEAPON_RECIPES = {
     "Rift Shield": {
         "id": 3011,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (1, Materials.ShieldGrip),
             (1, Materials.IronPlate),
             (2, Materials.IronShards),
             (3, Materials.StoneFragment),
@@ -2173,7 +2181,7 @@ WEAPON_RECIPES = {
     "Iron Roundshield": {
         "id": 3012,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (1, Materials.ShieldGrip),
             (1, Materials.IronPlate),
             (2, Materials.StoneFragment),
         ],
@@ -2181,7 +2189,7 @@ WEAPON_RECIPES = {
     "Gilded Iron Shield": {
         "id": 3013,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (1, Materials.ShieldGrip),
             (1, Materials.IronPlate),
             (3, Materials.GoldenSunflower),
         ],
@@ -2189,7 +2197,7 @@ WEAPON_RECIPES = {
     "Ice Crest Shield": {
         "id": 3014,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (1, Materials.ShieldGrip),
             (1, Materials.IronPlate),
             (1, Materials.GlintstoneDust),
             (4, Materials.SilverFirefly),
@@ -2198,35 +2206,36 @@ WEAPON_RECIPES = {
     "Smoldering Shield": {
         "id": 3015,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (1, Materials.ShieldGrip),
             (6, Materials.VolcanicStone),
         ],
     },
     "Spiralhorn Shield": {
         "id": 3019,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (1, Materials.ShieldGrip),
             (5, Materials.BuddingHorn),
         ],
     },
     "Coil Shield": {
         "id": 3020,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (1, Materials.ShieldGrip),
             (5, Materials.BuddingHorn),
         ],
     },
+    # Medium shields generally start here
     "Kite Shield": {
         "id": 3100,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (2, Materials.IronPlate),
         ],
     },
     "Marred Leather Shield": {
         "id": 3101,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (1, Materials.LumpOfFlesh),
             (3, Materials.TarnishedGoldenSunflower),
             (1, Materials.Bloodrose),
@@ -2235,7 +2244,7 @@ WEAPON_RECIPES = {
     "Marred Wooden Shield": {
         "id": 3102,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (3, Materials.SoftWood),
             (3, Materials.TarnishedGoldenSunflower),
         ],
@@ -2243,7 +2252,7 @@ WEAPON_RECIPES = {
     "Banished Knight's Shield": {
         "id": 3103,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (2, Materials.IronPlate),
             (2, Materials.IronPlate),
         ],
@@ -2251,7 +2260,7 @@ WEAPON_RECIPES = {
     "Albinauric Shield": {
         "id": 3104,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (2, Materials.CrystalBud),
             (2, Materials.IronPlate),
             (1, Materials.AlbinauricBloodclot),
@@ -2260,7 +2269,7 @@ WEAPON_RECIPES = {
     "Sun Realm Shield": {
         "id": 3105,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (2, Materials.IronPlate),
             (1, Materials.SoftWood),
         ],
@@ -2268,7 +2277,7 @@ WEAPON_RECIPES = {
     "Silver Mirrorshield": {
         "id": 3106,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (2, Materials.SilverTearHusk),
             (1, Materials.AlbinauricBloodclot),
             (5, Materials.IronPlate),
@@ -2278,7 +2287,7 @@ WEAPON_RECIPES = {
     "Round Shield": {
         "id": 3107,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (2, Materials.RefinedWood),
             (2, Materials.IronShards),
         ],
@@ -2286,7 +2295,7 @@ WEAPON_RECIPES = {
     "Scorpion Kite Shield": {
         "id": 3108,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (1, Materials.IronPlate),
             (2, Materials.RefinedWood),
         ],
@@ -2294,7 +2303,7 @@ WEAPON_RECIPES = {
     "Twinbird Kite Shield": {
         "id": 3109,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (2, Materials.IronPlate),
             (5, Materials.FlightPinion),
             (3, Materials.StormhawkFeather),
@@ -2303,7 +2312,7 @@ WEAPON_RECIPES = {
     "Blue-Gold Kite Shield": {
         "id": 3110,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (2, Materials.IronShards),
             (2, Materials.SoftWood),
         ],
@@ -2311,7 +2320,7 @@ WEAPON_RECIPES = {
     "Brass Shield": {
         "id": 3113,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (3, Materials.IronPlate),
             (2, Materials.GoldenSunflower),
         ],
@@ -2319,7 +2328,7 @@ WEAPON_RECIPES = {
     "Great Turtle Shell": {
         "id": 3114,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (4, Materials.TurtleNeckMeat),
             (4, Materials.CaveMoss),
             (4, Materials.HeftyBeastBone),
@@ -2328,7 +2337,7 @@ WEAPON_RECIPES = {
     "Shield of the Guilty": {
         "id": 3117,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (2, Materials.IronPlate),
             (4, Materials.Bloodrose),
             (1, Materials.GruesomeBone),
@@ -2337,7 +2346,7 @@ WEAPON_RECIPES = {
     "Carian Knight's Shield": {
         "id": 3119,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (5, Materials.IronPlate),
             (5, Materials.GlintstoneFirefly),
             (1, Materials.GoldenSunflower),
@@ -2346,7 +2355,7 @@ WEAPON_RECIPES = {
     "Large Leather Shield": {
         "id": 3123,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (2, Materials.RefinedWood),
             (4, Materials.String),
         ],
@@ -2354,7 +2363,7 @@ WEAPON_RECIPES = {
     "Horse Crest Wooden Shield": {
         "id": 3124,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (3, Materials.RefinedWood),
             (3, Materials.RowaFruit),
             (1, Materials.Herba),
@@ -2363,7 +2372,7 @@ WEAPON_RECIPES = {
     "Candletree Wooden Shield": {
         "id": 3125,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (3, Materials.RefinedWood),
             (2, Materials.RimedRowa),
         ],
@@ -2371,7 +2380,7 @@ WEAPON_RECIPES = {
     "Flame Crest Wooden Shield": {
         "id": 3126,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (3, Materials.RefinedWood),
             (1, Materials.IronShards),
             (1, Materials.YellowEmber),
@@ -2380,7 +2389,7 @@ WEAPON_RECIPES = {
     "Hawk Crest Wooden Shield": {
         "id": 3127,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (3, Materials.RefinedWood),
             (1, Materials.IronShards),
         ],
@@ -2388,7 +2397,7 @@ WEAPON_RECIPES = {
     "Beast Crest Heater Shield": {
         "id": 3128,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (3, Materials.IronPlate),
             (1, Materials.ThinBeastBones),
         ],
@@ -2396,7 +2405,7 @@ WEAPON_RECIPES = {
     "Red Crest Heater Shield": {
         "id": 3129,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (3, Materials.IronPlate),
             (2, Materials.RowaFruit),
         ],
@@ -2404,14 +2413,14 @@ WEAPON_RECIPES = {
     "Blue Crest Heater Shield": {
         "id": 3130,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (3, Materials.IronPlate),
         ],
     },
     "Eclipse Crest Heater Shield": {
         "id": 3131,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (3, Materials.IronPlate),
             (1, Materials.RowaFruit),
         ],
@@ -2419,21 +2428,21 @@ WEAPON_RECIPES = {
     "Inverted Hawk Heater Shield": {
         "id": 3132,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (3, Materials.IronPlate),
         ],
     },
     "Heater Shield": {
         "id": 3133,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (2, Materials.IronPlate),
         ],
     },
     "Black Leather Shield": {
         "id": 3134,
         "recipe": [
-            (1, Materials.ShieldHandle),
+            (2, Materials.ShieldGrip),
             (3, Materials.RefinedWood),
             (1, Materials.IronPlate),
             (1, Materials.CaveMoss),
@@ -2446,7 +2455,7 @@ WEAPON_RECIPES = {
     "Dragon Towershield": {
         "id": 3200,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (2, Materials.IronShards),
             (10, Materials.IronPlate),
             (1, Materials.DragonTeeth),
@@ -2455,7 +2464,7 @@ WEAPON_RECIPES = {
     "Distinguished Greatshield": {
         "id": 3202,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (2, Materials.RefinedWood),
             (6, Materials.IronPlate),
         ],
@@ -2463,7 +2472,7 @@ WEAPON_RECIPES = {
     "Crucible Hornshield": {
         "id": 3203,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (12, Materials.BuddingHorn),
             (5, Materials.SomberStoneFragment),
             (1, Materials.ErdtreeAmber),
@@ -2473,7 +2482,7 @@ WEAPON_RECIPES = {
     "Dragonclaw Shield": {
         "id": 3204,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (3, Materials.SomberStoneFragment),
             (8, Materials.GravelStone),
             (2, Materials.DragonTeeth),
@@ -2482,7 +2491,7 @@ WEAPON_RECIPES = {
     "Briar Greatshield": {
         "id": 3205,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (15, Materials.RefinedWood),
             (3, Materials.IronPlate),
             (6, Materials.Bloodrose),
@@ -2492,7 +2501,7 @@ WEAPON_RECIPES = {
     "Erdtree Greatshield": {
         "id": 3208,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (3, Materials.IronPlate),
             (5, Materials.ErdtreeWood),
             (3, Materials.ErdtreeAmber),
@@ -2502,7 +2511,7 @@ WEAPON_RECIPES = {
     "Golden Beast Crest Shield": {
         "id": 3209,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (10, Materials.RefinedWood),
             (2, Materials.GoldenSunflower),
             (4, Materials.ErdleafFlower),
@@ -2511,7 +2520,7 @@ WEAPON_RECIPES = {
     "Jellyfish Shield": {
         "id": 3212,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (2, Materials.SomberStoneFragment),
             (1, Materials.GruesomeBone),
             (1, Materials.LumpOfFlesh),
@@ -2520,7 +2529,7 @@ WEAPON_RECIPES = {
     "Fingerprint Stone Shield": {
         "id": 3213,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (4, Materials.IronPlate),
             (8, Materials.SomberStoneFragment),
             (6, Materials.YellowEmber),
@@ -2530,7 +2539,7 @@ WEAPON_RECIPES = {
     "Icon Shield": {
         "id": 3214,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (2, Materials.IronShards),
             (8, Materials.RefinedWood),
             (6, Materials.ErdleafFlower),
@@ -2540,7 +2549,7 @@ WEAPON_RECIPES = {
     "One-Eyed Shield": {
         "id": 3215,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (2, Materials.SomberStoneFragment),
             (2, Materials.IronPlate),
             (8, Materials.StoneFragment),
@@ -2551,7 +2560,7 @@ WEAPON_RECIPES = {
     "Visage Shield": {
         "id": 3216,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (4, Materials.SomberStoneFragment),
             (3, Materials.IronPlate),
             (10, Materials.StoneFragment),
@@ -2562,7 +2571,7 @@ WEAPON_RECIPES = {
     "Spiked Palisade Shield": {
         "id": 3217,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (5, Materials.RefinedWood),
             (5, Materials.IronShards),
             (3, Materials.Bloodrose),
@@ -2571,7 +2580,7 @@ WEAPON_RECIPES = {
     "Manor Towershield": {
         "id": 3219,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (5, Materials.IronPlate),
             (1, Materials.LivingJarShard),
         ],
@@ -2579,7 +2588,7 @@ WEAPON_RECIPES = {
     "Crossed-Tree Towershield": {
         "id": 3220,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (2, Materials.IronShards),
             (3, Materials.IronPlate),
             (7, Materials.Herba),
@@ -2588,7 +2597,7 @@ WEAPON_RECIPES = {
     "Inverted Hawk Towershield": {
         "id": 3221,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (4, Materials.IronShards),
             (3, Materials.IronPlate),
             (1, Materials.SomberStoneFragment),
@@ -2597,7 +2606,7 @@ WEAPON_RECIPES = {
     "Ant's Skull Plate": {
         "id": 3222,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (1, Materials.SomberStoneFragment),
             (4, Materials.BuddingHorn),
             (6, Materials.HeftyBeastBone),
@@ -2608,7 +2617,7 @@ WEAPON_RECIPES = {
     "Redmane Greatshield": {
         "id": 3223,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (6, Materials.IronPlate),
             (1, Materials.SomberStoneFragment),
             (10, Materials.FireBlossom),
@@ -2617,7 +2626,7 @@ WEAPON_RECIPES = {
     "Eclipse Crest Greatshield": {
         "id": 3224,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (5, Materials.IronPlate),
             (2, Materials.SomberStoneFragment),
             (1, Materials.GruesomeBone),
@@ -2626,7 +2635,7 @@ WEAPON_RECIPES = {
     "Cuckoo Greatshield": {
         "id": 3225,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (3, Materials.RefinedWood),
             (3, Materials.SomberStoneFragment),
             (5, Materials.CrystalBud),
@@ -2635,7 +2644,7 @@ WEAPON_RECIPES = {
     "Golden Greatshield": {
         "id": 3226,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (1, Materials.RefinedWood),
             (3, Materials.IronPlate),
             (4, Materials.GoldenCentipede),
@@ -2645,7 +2654,7 @@ WEAPON_RECIPES = {
     "Gilded Greatshield": {
         "id": 3227,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (2, Materials.SoftWood),
             (2, Materials.RefinedWood),
             (2, Materials.IronPlate),
@@ -2656,7 +2665,7 @@ WEAPON_RECIPES = {
     "Haligtree Crest Greatshield": {
         "id": 3228,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (3, Materials.RefinedWood),
             (3, Materials.IronPlate),
             (3, Materials.MiquellasLily),
@@ -2665,7 +2674,7 @@ WEAPON_RECIPES = {
     "Wooden Greatshield": {
         "id": 3229,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (5, Materials.RefinedWood),
 
         ],
@@ -2673,7 +2682,7 @@ WEAPON_RECIPES = {
     "Lordsworn's Shield": {
         "id": 3230,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (3, Materials.ShieldGrip),
             (4, Materials.RefinedWood),
             (2, Materials.IronShards),
         ],
@@ -3029,9 +3038,9 @@ WEAPON_RECIPES = {
     "Lion Greatbow": {
         "id": 4200,
         "recipe": [
+            (1, Materials.Remembrance_Radahn),
             (2, Materials.RefinedWood),
             (2, Materials.SomberStoneFragment),
-            (2, Materials.IronShards),
             (2, Materials.String),
         ],
     },

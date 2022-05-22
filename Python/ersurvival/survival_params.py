@@ -147,6 +147,11 @@ class PotGroupID(IntEnum):
     RitualPot = 3
 
 
+PRESERVE_ITEM_LOTS = [
+    16000690,  # Serpent-Hunter treasure
+]
+
+
 NEW_CONSUMABLES = {
     "Raw Steak": {
         "id": 0,  # offset used in all IDs
@@ -386,68 +391,16 @@ NEW_MATERIALS = {
         "id": Materials.GruesomeBone,
         "icon": 0,  # TODO
     },
-    "Chain": {
-        "id": Materials.Chain,
-        "icon": 0,  # TODO
-    },
     "Erdtree Wood": {
         "id": Materials.ErdtreeWood,
-        "icon": 0,  # TODO
-    },
-    "Fallingstar Jawbone": {
-        "id": Materials.FallingstarJawbone,
         "icon": 0,  # TODO
     },
     "Meteorite Chunk": {
         "id": Materials.MeteoriteChunk,
         "icon": 0,  # TODO
     },
-    "Grinding Wheel": {
-        "id": Materials.GrindingWheel,
-        "icon": 0,  # TODO
-    },
-    "Dragonspear Chunk": {
-        "id": Materials.DragonspearChunk,
-        "icon": 0,  # TODO
-    },
     "Black Mark": {
         "id": Materials.BlackMark,
-        "icon": 0,  # TODO
-    },
-    "Small Hilt": {
-        "id": Materials.SmallHilt,
-        "icon": 0,  # TODO
-    },
-    "Standard Hilt": {
-        "id": Materials.StandardHilt,
-        "icon": 0,  # TODO
-    },
-    "Curved Hilt": {
-        "id": Materials.CurvedHilt,
-        "icon": 0,  # TODO
-    },
-    "Giant Hilt": {
-        "id": Materials.GiantHilt,
-        "icon": 0,  # TODO
-    },
-    "Spear Shaft": {
-        "id": Materials.SpearShaft,
-        "icon": 0,  # TODO
-    },
-    "Axe Handle": {
-        "id": Materials.AxeHandle,
-        "icon": 0,  # TODO
-    },
-    "Bow Grip": {
-        "id": Materials.BowGrip,
-        "icon": 0,  # TODO
-    },
-    "Great Bow Grip": {
-        "id": Materials.GreatBowGrip,
-        "icon": 0,  # TODO
-    },
-    "Trigger Mechanism": {
-        "id": Materials.TriggerMechanism,
         "icon": 0,  # TODO
     },
     "Staff Pole": {
@@ -455,74 +408,20 @@ NEW_MATERIALS = {
         "icon": 0,  # TODO
     },
     "Shield Handle": {
-        "id": Materials.ShieldHandle,
-        "icon": 0,  # TODO
-    },
-    "Greatshield Handle": {
-        "id": Materials.GreatshieldHandle,
+        "id": Materials.ShieldGrip,
         "icon": 0,  # TODO
     },
 }
 
 
-WEAPON_BASE_MATERIALS = {
-    WeaponType.Dagger: Materials.SmallHilt,
-    WeaponType.StraightSword: Materials.StandardHilt,
-    WeaponType.Greatsword: Materials.GiantHilt,
-    WeaponType.ColossalSword: Materials.GiantHilt,
-    WeaponType.CurvedSword: Materials.CurvedHilt,
-    WeaponType.CurvedGreatsword: Materials.CurvedHilt,
-    WeaponType.Katana: Materials.CurvedHilt,
-    WeaponType.Twinblade: Materials.StandardHilt,
-    WeaponType.ThrustingSword: Materials.StandardHilt,
-    WeaponType.HeavyThrustingSword: Materials.GiantHilt,
-    WeaponType.Axe: Materials.AxeHandle,
-    WeaponType.Greataxe: Materials.AxeHandle,
-    WeaponType.Hammer: Materials.AxeHandle,
-    WeaponType.GreatHammer: Materials.AxeHandle,
-    WeaponType.Flail: Materials.AxeHandle,
-    WeaponType.Spear: Materials.SpearShaft,
-    WeaponType.HeavySpear: Materials.SpearShaft,
-    WeaponType.Halberd: Materials.SpearShaft,
-    WeaponType.Scythe: Materials.SpearShaft,
-    WeaponType.Fist: None,
-    WeaponType.Claw: None,
-    WeaponType.Whip: Materials.SmallHilt,
-    WeaponType.ColossalWeapon: None,
-    WeaponType.LightBow: Materials.BowGrip,
-    WeaponType.Bow: Materials.BowGrip,
-    WeaponType.Greatbow: Materials.GreatBowGrip,
-    WeaponType.Crossbow: Materials.TriggerMechanism,
-    WeaponType.Ballista: Materials.TriggerMechanism,
-    WeaponType.Staff: Materials.StaffPole,
-    WeaponType.Seal: None,
-    WeaponType.SmallShield: Materials.ShieldHandle,
-    WeaponType.MediumShield: Materials.ShieldHandle,
-    WeaponType.Greatshield: Materials.GreatshieldHandle,
-    WeaponType.Torch: None,
-}
-
-
-def print_weapon_recipe_starter(row: YappedRow):
-    weapon_type = int(row["wepType"])
-    base_material = WEAPON_BASE_MATERIALS[WeaponType(weapon_type)]
-
-    base_str = "" if base_material is None else f"(1, CraftingMaterials.{base_material.name}),"
-
-    print(f"""
-    "{row.name}": {{
-        "id": {row.row_id // 10000},
-        "recipe": [
-            {base_str}
-        ],
-    }},""", end="")
+WEAPON_CRAFTING_VISIBILITY = {}  # TODO: Map shield/staff/seal/torch weapon names to "cookbook" flags.
 
 
 def generate_dummy_weapons(
     weapon_param: YappedParam,
     equip_mtrl_set_param: YappedParam,
     shop_recipe_param: YappedParam,
-    item_lots_map_param: YappedParam,
+    item_lots_map_param: YappedParam,  # assuming that this (not 'enemy') is used for EMEVD rewards but shouldn't matter
 ):
     """Generate dummy weapons for each melee weapon with type 13 (arrow).
 
@@ -535,8 +434,6 @@ def generate_dummy_weapons(
             return False  # ignore unused weapons
         if 1000000 <= weapon_row.row_id <= 47010000 and weapon_row.row_id % 10000 == 0:
             return True  # all weapons (ignoring infused)
-
-    # TODO: Be careful with Serpent-Hunter crafting.
 
     dummy_offset = 60000000
 
@@ -552,69 +449,116 @@ def generate_dummy_weapons(
     # NOTE: There are some existing high-ID weapons starting with 98990000, but these are above the highest dummy
     # weapon that will be created here (32300000 + 60000000 = 92300000).
 
-    # TODO: Specify recipes and add Mtrl and Shop rows.
-
-    # TODO: Equivalent stuff for armor (and talismans?).
+    new_weapon_indices = list(WEAPON_RECIPES.keys())
+    tiers_dict = parse_weapon_tiers()  # maps weapon names to (weapon_id, previous_id) pair
 
     slot = 0
     for row in weapon_param.rows:
         if not do_weapon(row):
             continue
-        # print_weapon_recipe_starter(row)
 
-        weapon_id = row.row_id // 10000
-        dummy_id = dummy_offset + 100 * weapon_id
-        shop_id = new_shop_offset + weapon_id
-        mtrl_id = new_mtrl_offset + 10 * weapon_id
-        item_lot_id = item_lot_offset + 100 * weapon_id
+        weapon_base_id = row.row_id // 10000
+        dummy_id = dummy_offset + 100 * weapon_base_id
+        shop_id = new_shop_offset + weapon_base_id
+        mtrl_id = new_mtrl_offset + 10 * weapon_base_id
+        item_lot_id = item_lot_offset + 100 * weapon_base_id
+
+        try:
+            true_weapon_id, previous_weapon_id = tiers_dict[row.name]
+        except KeyError:
+            # Weapon is not in the upgrade tree, and is simply crafted from scratch (Shields, Staffs, Seals, Torches)
+            true_weapon_id = row.row_id  # no upgrade level (can be upgrading normally at blacksmith)
+            previous_weapon_id = None  # no previous weapon in recipe
+
+        # Determine rune cost for crafting from upgrade level.
+        upgrade_level = true_weapon_id % 100
+        if row["materialSetId"] == "2200":
+            # Somber. 5000 runes times level.
+            rune_cost = 5000 * upgrade_level
+        elif row["materialSetId"] == "0":
+            # Standard. 2500 runes times level.
+            rune_cost = 2500 * upgrade_level
+        else:
+            raise ValueError(f"Invalid 'materialSetId' for weapon {row.name}: {row['materialSetId']}")
+
+        if rune_cost == 0:
+            # TODO: Probably want more hand-crafted costs for shields/staffs/seals/torches.
+            rune_cost = 500  # minimum rune cost (for 'from scratch' weapons)
 
         # Create dummy Weapon row.
         dummy = weapon_param.duplicate_row(row.row_id, dummy_id)
         dummy["Row Name"] += " (crafting dummy)"
         dummy["weaponCategory"] = 13  # arrow (for appearing in crafting menu)
 
-        # TODO: Create item lot for awarding real weapon.
+        # Create item lot for awarding real weapon.
         new_item_lot = item_lots_map_param.duplicate_row(item_lot_source, item_lot_id)
         new_item_lot.name = f"{row.name} (crafted)"
-        new_item_lot["lotItemId01"] = row.row_id
+        new_item_lot["lotItemId01"] = true_weapon_id  # potentially upgraded version
         new_item_lot["lotItemCategory01"] = 2  # Weapon
         new_item_lot["lotItemNum01"] = 1
-        print(f"ReplaceDummyWeapon({slot}, {dummy_id}, {item_lot_id})")
-        slot += 1
+
+        if row.name in WEAPON_CRAFTING_VISIBILITY:
+            visibility_flag = WEAPON_CRAFTING_VISIBILITY[row.name]
+        elif previous_weapon_id is None:
+            # print(f"# NOTE: Recipe for weapon '{row.name}' will always be visible.")
+            visibility_flag = 0
+        else:
+            # Visibility flag is determined by monitoring previous weapon ID.
+            previous_weapon_base_id = 10000 * (previous_weapon_id // 10000)  # ignore upgrade level
+            previous_weapon_name = weapon_param[previous_weapon_base_id].name
+            visibility_flag = SurvivalFlags.WeaponMonitorBase + new_weapon_indices.index(previous_weapon_name)
 
         # Create recipe entry.
         new_shop_row = shop_recipe_param.duplicate_row(shop_source, shop_id)
         new_shop_row.name = row.name
         new_shop_row["equipId"] = dummy_id
-        # TODO: value (rune cost)
+        new_shop_row["value"] = rune_cost
         new_shop_row["mtrlId"] = mtrl_id
-        # TODO: visibility flag (from new recipe book)
+        new_shop_row["eventFlag_forRelease"] = visibility_flag
         new_shop_row["equipType"] = 0  # Weapon
         new_shop_row["setNum"] = 1  # only one
+
+        # TODO: for common EMEVD
+        # monitor_flag = SurvivalFlags.WeaponMonitorBase + new_weapon_indices.index(row.name)
+        # print(
+        #     f"CraftDummyWeapon("
+        #     f"{slot}, "
+        #     f"{dummy_id}, "
+        #     f"weapon_item_lot={item_lot_id}, "
+        #     f"previous_weapon={previous_weapon_id if previous_weapon_id is not None else 0})"
+        # )
+        # print(
+        #     f"MonitorWeaponPossession({slot}, {true_weapon_id}, {monitor_flag})"
+        # )
+        slot += 1
 
         # Create ingredients entry.
         new_mtrl_row = equip_mtrl_set_param.duplicate_row(mtrl_source, mtrl_id)
         new_mtrl_row.name = row.name
         weapon_recipe = WEAPON_RECIPES[row.name]["recipe"]
-        if not weapon_recipe:
+        ingredients = [ing for ing in weapon_recipe["recipe"] if ing[1] < 21100]  # ignore grips
+        if not ingredients:
             # print(f"No recipe ingredients for weapon {row.name}. Skipping for now.")
             pass
         else:
-            for i, (count, ingredient) in enumerate(weapon_recipe):
+            i = 0
+            if previous_weapon_id is not None:
+                new_mtrl_row[f"materialId{i + 1:02d}"] = previous_weapon_id
+                new_mtrl_row[f"itemNum{i + 1:02d}"] = 1
+                new_mtrl_row[f"materialCate{i + 1:02d}"] = 0  # Weapon
+                i += 1
+
+            for count, ingredient in ingredients:
                 new_mtrl_row[f"materialId{i + 1:02d}"] = ingredient.value
                 new_mtrl_row[f"itemNum{i + 1:02d}"] = count
                 new_mtrl_row[f"materialCate{i + 1:02d}"] = 4  # always Goods
+                i += 1
 
 
 def generate_new_consumables(
     goods_param: YappedParam, shop_recipe_param: YappedParam, equip_mtrl_set_param: YappedParam
 ):
-    """
-    TODO: Generate 'assembly' recipes for weapons/armor.
-     These will have a real recipe book of some kind.
-    """
-
-    # Recipes for new "survival" goods (food, drink, protection).
+    """Recipes for new "survival" goods (food, drink, protection)."""
 
     # Goods
     new_good_offset = 1900
@@ -637,16 +581,16 @@ def generate_new_consumables(
         new_good_row.name = good_name
         new_good_row["refId_default"] = good["effect"]
         new_good_row["sellValue"] = -1
-        new_good_row["iconId"] = 52  # TODO: add to dictionary
+        new_good_row["iconId"] = 52  # TODO: set for each new good in its dictionary
         new_good_row["goodsUseAnim"] = good["animation"].value
         # TODO: Probably other stuff too (e.g., VFX).
 
         new_shop_row = shop_recipe_param.duplicate_row(shop_source, shop_id)
         new_shop_row.name = good_name
         new_shop_row["equipId"] = good_id
-        # TODO: value (rune cost)
+        # TODO: value (rune cost)?
         new_shop_row["mtrlId"] = mtrl_id
-        # TODO: visibility flag
+        # TODO: visibility flag?
         new_shop_row["equipType"] = 3  # always Goods
         new_shop_row["setNum"] = 1  # only one
 
@@ -666,17 +610,27 @@ def generate_new_materials(goods_param: YappedParam):
         new_material.name = good_name
 
 
-def replace_weapon_item_lots(item_lots_param: YappedParam, weapons_param: YappedParam):
+def replace_weapon_item_lots(item_lots_param: YappedParam, weapons_param: YappedParam, is_map: bool):
     """Replace all (non-ammo) weapons in given ItemLotParam with components.
 
-    TODO: Decide how the drop count will be determined (always one? randomly reduced?)
-    TODO: Skip Serpent-Hunter treasure?
+    Shields and Staffs have a chance of being replaced with a Shield Grip or Staff Pole, respectively.
+    All other weapons will be replaced with a random number of a random ingredient in that weapon's new recipe.
+    The random number can be up to half of the recipe requirement for treasure.
+
+    For enemy item lots, only "animal" materials (ID < 20000), Soft Wood, or Iron Shards can be dropped.
     """
+    shield_grip_odds = 0.1
+    staff_pole_odds = 0.15
+
     for row in item_lots_param.rows:
-        for slot in range(1, 9):  # TODO: confirm slot number
-            item_id = row[f"itemId{slot:02d}"]
-            item_type = row[f"itemType{slot:02d}"]
-            item_count = row[f"numItem{slot:02d}"]
+
+        if row.row_id in PRESERVE_ITEM_LOTS:
+            continue  # leave these item lots be (e.g., Serpent-Hunter)
+
+        for slot in range(1, 9):
+            item_id = int(row[f"lotItemId{slot:02d}"])
+            item_type = int(row[f"lotItemCategory{slot:02d}"])
+            item_count = int(row[f"lotItemNum{slot:02d}"])
             # drop rate isn't changed
             if item_type != 0:
                 # Ignore non-weapons.
@@ -686,7 +640,8 @@ def replace_weapon_item_lots(item_lots_param: YappedParam, weapons_param: Yapped
                 continue
 
             weapon_row = weapons_param[item_id]
-            if weapon_row["weaponType"] in {13, 14}:
+            weapon_type = WeaponType(weapon_row["weaponType"])
+            if weapon_type in (WeaponType.Arrow, WeaponType.Bolt):
                 # Ignore ammo.
                 continue
 
@@ -704,28 +659,51 @@ def replace_weapon_item_lots(item_lots_param: YappedParam, weapons_param: Yapped
             except KeyError:
                 raise KeyError(f"Missing weapon recipe for name: '{weapon_row.name}' (item lot {row.row_id})")
 
+            # If weapon is a shield, and this is treasure, roll for a Shield Grip drop.
+            if is_map and weapon_type in (WeaponType.SmallShield, WeaponType.MediumShield, WeaponType.Greatshield):
+                if random.random() <= shield_grip_odds:
+                    # Replace with one Shield Grip.
+                    row[f"lotItemId{slot:02d}"] = Materials.ShieldGrip
+                    row[f"lotItemCategory{slot:02d}"] = 1  # Good
+                    row[f"lotItemNum{slot:02d}"] = 1
+                    continue
+
+            # If weapon is a staff, and this is treasure, roll for a Staff Pole drop.
+            if is_map and 33000000 <= base_weapon_id <= 33300000:
+                if random.random() <= staff_pole_odds:
+                    # Replace with one Staff Pole.
+                    row[f"lotItemId{slot:02d}"] = Materials.StaffPole
+                    row[f"lotItemCategory{slot:02d}"] = 1  # Good
+                    row[f"lotItemNum{slot:02d}"] = 1
+                    continue
+
             # Get a random recipe ingredient (including its count), excluding "grip" items.
-            ingredients = [ing for ing in weapon_recipe["recipe"] if ing not in range(21600, 21620)]
-            if not ingredients:
+            ingredients = [ing for ing in weapon_recipe["recipe"] if ing[1] < 21100]
+            if not weapon_recipe["recipe"]:
                 print(f"Recipe for weapon '{weapon_row.name}' has no non-base ingredients. Skipping item lot.")
                 continue
             good_count, good_id = random.choice(ingredients)
 
+            if not is_map and good_id >= 20000 and good_id not in (Materials.SoftWood, Materials.IronShards):
+                # The only (non-animal-part) goods that enemies can drop are Soft Wood and Iron Shards.
+                # Give them ONE more chance to choose a valid drop:
+                good_count, good_id = random.choice(ingredients)
+                # If one of these was STILL not chosen, the enemy drops nothing instead.
+                if not is_map and good_id >= 20000 and good_id not in (Materials.SoftWood, Materials.IronShards):
+                    row[f"lotItemId{slot:02d}"] = 0
+                    row[f"lotItemCategory{slot:02d}"] = 0
+                    row[f"lotItemNum{slot:02d}"] = 0
+                    continue
+
             # Replace item lot slot.
-            row[f"itemId{slot:02d}"] = good_id
-            row[f"itemType{slot:02d}"] = 4  # TODO: confirm this is Goods
-            row[f"numItem{slot:02d}"] = good_count  # TODO: randomly reduced count of them...? Maybe always 1 only?
-
-
-def set_weapon_levels():
-    """
-    TODO: What's the best way to do this?
-
-    Reinforced weapons, as usual, do not have their own param rows.
-
-    The easiest solution is actually just to use the reinforced weapons themselves. I can even keep the levels in the
-    names so the player knows what power level to expect (as some might jump more levels than others).
-    """
+            if is_map:
+                # Treasure good count randomly varies between 1 and HALF the recipe count, rounded down.
+                good_count = int(max(1, int(random.random() * 0.5 * good_count)))
+            else:
+                good_count = 1  # enemies only ever drop 1
+            row[f"lotItemId{slot:02d}"] = good_id
+            row[f"lotItemCategory{slot:02d}"] = 1  # Good
+            row[f"lotItemNum{slot:02d}"] = good_count
 
 
 def parse_weapon_tiers():
@@ -805,6 +783,110 @@ def parse_weapon_tiers():
     return tiers_dict
 
 
+def create_shield_recipe_books():
+    """TODO:
+        - Assign each shield to a Nomadic Merchant (just do it manually).
+        - Create a new recipe book ID for each Nomadic Merchant.
+        - Modify shield shop lineup recipe to use that book's flag.
+
+    TODO: Should be called AFTER weapon/shield crafting recipes are done.
+    TODO: Set "has book" flags for new books in common EMEVD.
+    """
+
+
+def replace_merchant_weapons(shop_merchant_param: YappedParam, weapons_param: YappedParam):
+    """Replaces weapons sold by merchants with random components.
+
+    Functions basically the same as map item lots.
+    """
+    shield_grip_odds = 0.1
+    staff_pole_odds = 0.15
+
+    rows_to_delete = []
+    for row in shop_merchant_param.rows:
+        if row["equipType"] != "0":
+            continue  # ignore non-weapons
+
+        if row.row_id < 100500:
+            # Non-Nomadic merchant (other NPC). Continue.
+            pass
+        elif 100500 <= row.row_id < 101000:
+            # Nomadic merchant. Continue.
+            pass
+        elif 101500 <= row.row_id < 101800:
+            # Enia. Can ignore (no weapons).
+            continue
+        elif 101800 <= row.row_id < 101900:
+            # Twin Maiden Husks. Remove weapons with no replacement.
+            rows_to_delete.append(row)
+            continue
+        elif 101900 <= row.row_id < 101950:
+            # Remembrance weapons. Remove weapons with no replacement (they can be crafted directly).
+            rows_to_delete.append(row)
+            continue
+        elif 1600000 <= row.row_id:
+            # Some kind of debug rows, I think. Change them anyway.
+            pass
+        else:
+            # Skip all other ranges.
+            continue
+
+        weapon_id = int(row["equipId"])
+        weapon_row = weapons_param[weapon_id]
+        weapon_type = WeaponType(weapon_row["weaponType"])
+        if weapon_type in (WeaponType.Arrow, WeaponType.Bolt):
+            # Ignore ammo.
+            continue
+
+        # Get base weapon ID (round down to nearest 10000).
+        base_weapon_id = 10000 * (weapon_id // 10000)
+        weapon_row = weapons_param[base_weapon_id]
+
+        if not weapon_row.name:
+            # Ignore unused weapon drops.
+            continue
+
+        # Look up recipe here.
+        try:
+            weapon_recipe = WEAPON_RECIPES[weapon_row.name]
+        except KeyError:
+            raise KeyError(f"Missing weapon recipe for name: '{weapon_row.name}' (item lot {row.row_id})")
+
+        # If weapon is a shield, and this is treasure, roll for a Shield Grip drop.
+        if weapon_type in (WeaponType.SmallShield, WeaponType.MediumShield, WeaponType.Greatshield):
+            if random.random() <= shield_grip_odds:
+                # Replace with one Shield Grip.
+                row["equipId"] = Materials.ShieldGrip
+                row["equipType"] = 3  # Good
+                row["sellQuantity"] = 1
+                continue
+
+        # If weapon is a staff, and this is treasure, roll for a Staff Pole drop.
+        if 33000000 <= base_weapon_id <= 33300000:
+            if random.random() <= staff_pole_odds:
+                # Replace with one Staff Pole.
+                row["equipId"] = Materials.StaffPole
+                row["equipType"] = 3  # Good
+                row["sellQuantity"] = 1
+                continue
+
+        # Get a random recipe ingredient (including its count), excluding "grip" items.
+        ingredients = [ing for ing in weapon_recipe["recipe"] if ing not in range(21600, 21620)]
+        if not ingredients:
+            print(f"Recipe for weapon '{weapon_row.name}' has no non-base ingredients. Skipping item lot.")
+            continue
+        good_count, good_id = random.choice(ingredients)
+
+        # Treasure good count randomly varies between 1 and HALF the recipe count, rounded down.
+        good_count = int(max(1, int(random.random() * 0.5 * good_count)))
+        row["equipId"] = good_id
+        row["equipType"] = 3  # Good
+        row["sellQuantity"] = good_count
+
+    for row in rows_to_delete:
+        shop_merchant_param.rows.remove(row)
+
+
 def generate_all():
     goods = read_param_csv("EquipParamGoods_vanilla.csv")
     weapons = read_param_csv("EquipParamWeapon_vanilla.csv")
@@ -816,9 +898,14 @@ def generate_all():
 
     generate_dummy_weapons(weapons, mtrl, shop_recipe, item_lots_map)
 
+    generate_new_consumables(goods, shop_recipe, mtrl)
+
+    replace_weapon_item_lots(item_lots_enemy, weapons, is_map=False)
+    replace_weapon_item_lots(item_lots_map, weapons, is_map=True)
+    replace_merchant_weapons(shop_merchant, weapons)
+    # TODO: Notes with disease clues for merchants.
+    # TODO: New "cookbooks" for consumables, basic weapon crafting, and shield/staff/seal/torch crafting.
+
 
 if __name__ == '__main__':
-    # generate_all()
-    _tiers = parse_weapon_tiers()
-    for _name, _info in _tiers.items():
-        print(f"{_name}: {_info}")
+    generate_all()
