@@ -17,43 +17,45 @@ Dagger
                 Ivory Sickle
 
 # Straight Swords
-Dagger -> Short Sword
-    Weathered Straight Sword
-        Noble's Slender Sword
-            Cane Sword
-                Warhawk's Talon
-                    Regalia of Eochaid
-        Longsword
-            Broadsword
-                Lordsworn's Straight Sword
-                    Ornamental Straight Sword
-                        Coded Sword
-                            Golden Epitaph
-                                Miquellan Knight's Sword
-            Crystal Sword
-                Rotten Crystal Sword
-                    Lazuli Glintstone Sword
-                        Sword of St. Trina
-                            Carian Knight's Sword
-                                Sword of Night and Flame
+Dagger -> Short Sword+2
+    Weathered Straight Sword+4
+        Longsword+6
+            Broadsword+8
+                # -> Bastard Sword (Greatswords)
+                Lordsworn's Straight Sword+10
+                    Noble's Slender Sword+12
+                        Cane Sword+15
+                            Warhawk's Talon+18
+                                Regalia of Eochaid+10  # MAX
+                    Ornamental Straight Sword+6
+                        Coded Sword+8
+                            Golden Epitaph+9
+                                Miquellan Knight's Sword+10  # NAX
+            Crystal Sword+4  # INT
+                Rotten Crystal Sword+5
+                    Lazuli Glintstone Sword+6
+                        Sword of St. Trina+7
+                            Carian Knight's Sword+8
+                                Sword of Night and Flame+10  # MAX
 
 # Greatswords
-Broadsword -> Bastard Sword
-    Claymore
-        Lordsworn's Greatsword
-            Banished Knight's Greatsword
-                Iron Greatsword  # goes to Ultra Greatswords
-            Knight's Greatsword
-                Gargoyle's Greatsword
-                    Gargoyle's Blackblade
-                Blasphemous Blade  # STR/FAI
-                    Ordovis's Greatsword
-                Onyx Lord's Sword  # typo of Alabaster Lord's Sword
-                    Helphen's Steeple  # INT
-                        Dark Moon Greatsword
-                Marais Executioner's Sword  # STR/ARC
-        Forked Greatsword
-            Flamberge
+Broadsword+8 -> Bastard Sword+9
+    Claymore+10
+        Lordsworn's Greatsword+12
+            Banished Knight's Greatsword+14
+                Iron Greatsword+15
+                    # -> Zweihander (Ultra Greatswords)
+                Knight's Greatsword+15
+                    Gargoyle's Greatsword+18
+                        Gargoyle's Blackblade+10  # MAX
+                    Blasphemous Blade+9  # STR/FAI
+                        Ordovis's Greatsword+10  # MAX
+                    Onyx Lord's Sword+8  # typo of Alabaster Lord's Sword
+                        Helphen's Steeple+9  # INT
+                            Dark Moon Greatsword+10  # MAX
+                    Marais Executioner's Sword+10  # STR/ARC, MAX
+        Forked Greatsword+12
+            Flamberge+14
                 Sword of Milos  # DEX
                     Death's Poker  # DEX/INT
                 Inseparable Sword  # STR/DEX/FAI
@@ -61,17 +63,17 @@ Broadsword -> Bastard Sword
                     Sacred Relic Sword
 
 # Ultra Greatswords
-Iron Greatsword -> Zweihander
-    Watchdog's Greatsword  # more STR
-        Greatsword
-            Grafted Blade Greatsword
-            Ruins Greatsword
-        Starscourge Greatsword
-        Maliketh's Black Blade
-    Troll's Golden Sword  # less STR
-        Troll Knight's Sword
-            Royal Greatsword
-            Godslayer's Greatsword
+Iron Greatsword+15 -> Zweihander+16
+    Watchdog's Greatsword+17  # more STR
+        Greatsword+18
+            Grafted Blade Greatsword+10  # MAX
+            Ruins Greatsword+10  # MAX
+        Starscourge Greatsword+10  # MAX
+        Maliketh's Black Blade+10  # MAX
+    Troll's Golden Sword+17  # less STR
+        Troll Knight's Sword+9
+            Royal Greatsword+10  # MAX
+            Godslayer's Greatsword+10  # MAX
 
 # Thrusting Swords
 Longsword -> Rapier
@@ -95,26 +97,27 @@ Shortsword -> Scimitar
             Bandit's Curved Sword  # more STR
                 Serpent-God's Curved Sword
                     Beastman's Curved Sword
-                        Grossmesser  # to Curved Greatswords
+                        Grossmesser  # to STR-based Curved Greatswords
             Scavenger's Curved Sword  # more DEX
+                # also to Zamor Curved Sword (DEX-based Curved Greatswords)
                 Mantis Blade
                     Flowing Curved Sword
-                        Shotel
-                            Eclipse Shotel
+                        Shotel+18
+                            Eclipse Shotel+10
                         Nox Flowing Sword
                             Magma Blade
                             Wing of Astel
 
 # Curved Greatswords
-Grossmesser -> Dismounter
-    Onyx Lord's Greatsword
-    Bloodhound's Fang
-    Magma Wyrm's Scalesword
-    Zamor Curved Sword
+Grossmesser -> Dismounter  # more STR
     Omen Cleaver
+        Beastman's Cleaver  # STR
+        Onyx Lord's Greatsword  # INT
+        Magma Wyrm's Scalesword  # FAI
+Scavenger's Curved Sword -> Zamor Curved Sword  # more DEX
     Monk's Flameblade
-    Beastman's Cleaver
-    Morgott's Cursed Sword
+        Bloodhound's Fang
+            Morgott's Cursed Sword
 
 # Katanas
 Longsword -> Uchigatana

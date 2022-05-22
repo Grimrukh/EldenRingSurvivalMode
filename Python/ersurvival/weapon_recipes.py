@@ -1,6 +1,9 @@
 """Lists the recipes for weapons.
 
 TODO: Everything between [something] and Greatshields below.
+
+TODO: Weapons that need particularly difficult recipes:
+    - Marais Executioner's Sword
 """
 from crafting import Materials
 
