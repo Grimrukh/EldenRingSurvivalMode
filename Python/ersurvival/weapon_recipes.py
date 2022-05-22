@@ -3,9 +3,33 @@
 TODO: Everything between [something] and Greatshields below.
 
 TODO: Weapons that need particularly difficult recipes:
-    - Marais Executioner's Sword
+    - Spears:
+        - Spear: requires Stormveil/Liurnia/Caelid
+        - Marais Executioner's Sword: requires Mountaintops
+        - Bolt of Gransax: requires Mountaintops
+        - Cleanrot Spear: requires Haligtree
+        - Fallingstar Beast Jaw: requires Mountaintops
+        - Sacred Mohgwyn's Spear: requires Mohgwyn Palace
+        - Cipher Pata: requires Mountaintops
+    - Bows:
+        - Composite Bow: requires Caelid/Altus Plateau
+        - Erdtree Bow: requires Mountaintops
+        - Serpent Bow: requires Mountaintops
+    - Whip: big recipe, requires Caelid/Altus Plateau
+        - Magma Whip Candlestick: big recipe, requires Mountaintops
+        - Giant's Red Braid: big recipe, requires Mountaintops
 """
 from crafting import Materials
+
+SCRATCH_WEAPONS = [
+    # Weapons crafted from scratch.
+    "Dagger",
+    "Club",
+    "Hand Axe",
+    "Whip",  # +10
+    "Caestus",
+    "Shortbow",
+]
 
 WEAPON_RECIPES = {
 
