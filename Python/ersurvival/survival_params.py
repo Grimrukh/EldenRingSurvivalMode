@@ -384,59 +384,59 @@ NEW_CONSUMABLES = {
 NEW_MATERIALS = {
     "Soft Wood": {
         "id": Materials.SoftWood,
-        "icon": 0,  # TODO
+        "icon": 623,  # TODO: Bewitching Branch for now
     },
     "Refined Wood": {
         "id": Materials.RefinedWood,
-        "icon": 0,  # TODO
+        "icon": 623,  # TODO: Bewitching Branch for now
     },
     "Stone Fragment": {
         "id": Materials.StoneFragment,
-        "icon": 0,  # TODO
+        "icon": 2000,  # TODO: Smithing Stone [1] for now
     },
     "Somber Stone Fragment": {
         "id": Materials.SomberStoneFragment,
-        "icon": 0,  # TODO
+        "icon": 2010,  # TODO: Somber Smithing Stone [1] for now
     },
     "Iron Shards": {
         "id": Materials.IronShards,
-        "icon": 0,  # TODO
+        "icon": 90,  # TODO: Rainbow Stone for now
     },
     "Iron Plate": {
         "id": Materials.IronPlate,
-        "icon": 0,  # TODO
+        "icon": 210,  # TODO: Warming Stone for now
     },
     "Liquid Metal": {
         "id": Materials.LiquidMetal,
-        "icon": 0,  # TODO
+        "icon": 91,  # TODO: Glowstone for now
     },
     "Dragon Teeth": {
         "id": Materials.DragonTeeth,
-        "icon": 0,  # TODO
+        "icon": 2008,  # TODO: Ancient Dragon Smithing Stone for now
     },
     "Gruesome Bone": {
         "id": Materials.GruesomeBone,
-        "icon": 0,  # TODO
+        "icon": 1020,  # TODO: Hefty Beast Bone for now
     },
     "Erdtree Wood": {
         "id": Materials.ErdtreeWood,
-        "icon": 0,  # TODO
+        "icon": 321,  # TODO: Erdtree Codex for now
     },
     "Meteorite Chunk": {
         "id": Materials.MeteoriteChunk,
-        "icon": 0,  # TODO
+        "icon": 200,  # TODO: Gravity Stone Chunk for now
     },
     "Black Mark": {
         "id": Materials.BlackMark,
-        "icon": 0,  # TODO
+        "icon": 3228,  # TODO: Cursemark of Death for now
     },
     "Staff Pole": {
         "id": Materials.StaffPole,
-        "icon": 0,  # TODO
+        "icon": 92,  # TODO: Telescope for now
     },
     "Shield Handle": {
         "id": Materials.ShieldGrip,
-        "icon": 0,  # TODO
+        "icon": 591,  # TODO: Soft Cotton for now
     },
 }
 
@@ -567,18 +567,12 @@ def generate_dummy_weapons(
             # print(f"No recipe ingredients for weapon {row.name}. Skipping for now.")
             pass
         else:
-            i = 0
-            if previous_weapon_id is not None:
-                new_mtrl_row[f"materialId{i + 1:02d}"] = previous_weapon_id
-                new_mtrl_row[f"itemNum{i + 1:02d}"] = 1
-                new_mtrl_row[f"materialCate{i + 1:02d}"] = 0  # Weapon
-                i += 1
-
-            for count, ingredient in ingredients:
+            if len(ingredients) >= 5:
+                print(f"WARNING: More than four ingredients for weapon {row.name}. They will not be displayed.")
+            for i, (count, ingredient) in enumerate(ingredients):
                 new_mtrl_row[f"materialId{i + 1:02d}"] = ingredient.value
                 new_mtrl_row[f"itemNum{i + 1:02d}"] = count
                 new_mtrl_row[f"materialCate{i + 1:02d}"] = 4  # always Goods
-                i += 1
 
 
 def generate_new_consumables(
@@ -933,6 +927,7 @@ def generate_all():
     shop_merchant = read_param_csv("ShopLineupParam_vanilla.csv")
 
     generate_dummy_weapons(weapons, mtrl, shop_recipe, item_lots_map)
+    # TODO: Dummy names need to include required base weapon (and not 'crafting dummy').
 
     generate_new_materials(goods)
     generate_new_consumables(goods, shop_recipe, mtrl)
@@ -940,10 +935,20 @@ def generate_all():
     replace_weapon_item_lots(item_lots_enemy, weapons, is_map=False)
     replace_weapon_item_lots(item_lots_map, weapons, is_map=True)
     replace_merchant_weapons(shop_merchant, weapons)
+    # TODO: Need to set prices for merchant weapon overrides.
+    # TODO: Haven't seen more than 1 of any replacement good appear in merchants yet...
     # TODO: Notes with disease clues for merchants.
     # TODO: New "cookbooks" for consumables, basic weapon crafting, and shield/staff/seal/torch crafting.
 
-    write_param_csv(goods, "EquipParamGoods_test.csv")
+    write_param_csv(goods, "EquipParamGoods.csv")
+    write_param_csv(weapons, "EquipParamWeapon.csv")
+    write_param_csv(item_lots_enemy, "ItemLotParam_enemy.csv")
+    write_param_csv(item_lots_map, "ItemLotParam_map.csv")
+    write_param_csv(mtrl, "EquipMtrlSetParam.csv")
+    write_param_csv(shop_recipe, "ShopLineupParam_Recipe.csv")
+    write_param_csv(shop_merchant, "ShopLineupParam.csv")
+
+    print("Read, edited, and wrote all Yapped param CSVs successfully.")
 
 
 if __name__ == '__main__':

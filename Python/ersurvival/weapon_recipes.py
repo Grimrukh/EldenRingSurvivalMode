@@ -2058,7 +2058,6 @@ WEAPON_RECIPES = {
         "id": 2404,
         "recipe": [
             (2, Materials.RefinedWood),
-            (3, Materials.String),
             (1, Materials.IronPlate),
             (3, Materials.TrinasLily),
             (1, Materials.SmolderingButterfly),
@@ -2086,7 +2085,6 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.ErdtreeWood),
             (4, Materials.IronPlate),
-            (2, Materials.GoldenSunflower),
             (1, Materials.ErdtreeAmber),
             (1, Materials.SmolderingButterfly),
         ],
@@ -2612,9 +2610,7 @@ WEAPON_RECIPES = {
             (3, Materials.ShieldGrip),
             (1, Materials.SomberStoneFragment),
             (4, Materials.BuddingHorn),
-            (6, Materials.HeftyBeastBone),
-            (1, Materials.GruesomeBone),
-            (1, Materials.BeastBlood),
+            (2, Materials.GruesomeBone),
         ],
     },
     "Redmane Greatshield": {
