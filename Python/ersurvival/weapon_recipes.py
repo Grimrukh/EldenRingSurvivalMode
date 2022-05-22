@@ -3,9 +3,33 @@
 TODO: Everything between [something] and Greatshields below.
 
 TODO: Weapons that need particularly difficult recipes:
-    - Marais Executioner's Sword
+    - Spears:
+        - Spear: requires Stormveil/Liurnia/Caelid
+        - Marais Executioner's Sword: requires Mountaintops
+        - Bolt of Gransax: requires Mountaintops
+        - Cleanrot Spear: requires Haligtree
+        - Fallingstar Beast Jaw: requires Mountaintops
+        - Sacred Mohgwyn's Spear: requires Mohgwyn Palace
+        - Cipher Pata: requires Mountaintops
+    - Bows:
+        - Composite Bow: requires Caelid/Altus Plateau
+        - Erdtree Bow: requires Mountaintops
+        - Serpent Bow: requires Mountaintops
+    - Whip: big recipe, requires Caelid/Altus Plateau
+        - Magma Whip Candlestick: big recipe, requires Mountaintops
+        - Giant's Red Braid: big recipe, requires Mountaintops
 """
 from crafting import Materials
+
+SCRATCH_WEAPONS = [
+    # Weapons crafted from scratch.
+    "Dagger",
+    "Club",
+    "Hand Axe",
+    "Whip",  # +10
+    "Caestus",
+    "Shortbow",
+]
 
 WEAPON_RECIPES = {
 
@@ -2078,7 +2102,7 @@ WEAPON_RECIPES = {
         "id": 2201,
         "recipe": [
             (2, Materials.IronPlate),
-            (1, Materials.BlackMark), #? eh
+            (1, Materials.BlackMark),  # ? eh
             (6, Materials.MirandaPowder),
             (4, Materials.ToxicMushroom),
         ],
@@ -2602,7 +2626,7 @@ WEAPON_RECIPES = {
         "id": 3200,
         "recipe": [
             (1, Materials.GreatshieldHandle),
-            (2, Materials,IronShards),
+            (2, Materials.IronShards),
             (10, Materials.IronPlate),
             (1, Materials.DragonTeeth),
         ],
@@ -2659,7 +2683,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.GreatshieldHandle),
             (10, Materials.RefinedWood),
-            (2, Materials.GoldenSunFlower),
+            (2, Materials.GoldenSunflower),
             (4, Materials.ErdleafFlower),
         ],
     },
@@ -2677,8 +2701,8 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.GreatshieldHandle),
             (4, Materials.IronPlate),
-            (8, Materials.SomberStoneFragment)
-            (6. Materials.YellowEmber),
+            (8, Materials.SomberStoneFragment),
+            (6, Materials.YellowEmber),
             (25, Materials.StoneFragment),
         ],
     },
@@ -2736,7 +2760,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.GreatshieldHandle),
             (2, Materials.IronShards),
-            (3, Materials.IronPlate,
+            (3, Materials.IronPlate),
             (7, Materials.Herba),
         ],
     },
@@ -2752,7 +2776,7 @@ WEAPON_RECIPES = {
     "Ant's Skull Plate": {
         "id": 3222,
         "recipe": [
-            (1, Materials.GreatshieldHandle)
+            (1, Materials.GreatshieldHandle),
             (1, Materials.SomberStoneFragment),
             (4, Materials.BuddingHorn),
             (6, Materials.HeftyBeastBone),

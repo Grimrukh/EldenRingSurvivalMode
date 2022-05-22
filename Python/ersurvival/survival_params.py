@@ -536,6 +536,8 @@ def generate_dummy_weapons(
         if 1000000 <= weapon_row.row_id <= 47010000 and weapon_row.row_id % 10000 == 0:
             return True  # all weapons (ignoring infused)
 
+    # TODO: Be careful with Serpent-Hunter crafting.
+
     dummy_offset = 60000000
 
     new_mtrl_offset = 400000
@@ -734,17 +736,18 @@ def parse_weapon_tiers():
 
     tiers = (Path(__file__).parent / "weapon_tiers.txt").read_text()
     previous_weapons = []  # weapon ID and indent level
+    added_weapons = []  # (name, level) pairs
+
     for i, line in enumerate(tiers.split("\n")):
-        if not line.strip() or line.startswith("#"):
-            continue  # comment/empty line
+        if "#" in line:
+            line = line.split("#")[0].rstrip()  # remove end-line comment
+        if not line.strip():
+            continue  # ignore empty line
         match = line_re.match(line)
         if not match:
             raise ValueError(f"Invalid line {i} in 'weapon_tiers.txt': {line}")
         indent = len(match.group(1))
         weapon_name = match.group(2)
-
-        if "#" in weapon_name:
-            weapon_name = weapon_name.split("#")[0].strip()  # remove end-line comment
 
         if "->" in weapon_name:  # manually specified previous weapon
             if indent != 0:
@@ -758,8 +761,11 @@ def parse_weapon_tiers():
                 previous_weapon_level = int(level_str.strip())
             else:
                 previous_weapon_level = 0
-            if previous_weapon_name not in tiers_dict:
-                raise KeyError(f"Manually specified previous weapon '{previous_weapon_name}' has not been added.")
+            if (previous_weapon_name, previous_weapon_level) not in added_weapons:
+                raise KeyError(
+                    f"Line {i}: Manually specified previous weapon ('{previous_weapon_name}', {previous_weapon_level}) "
+                    f"has not been added."
+                )
             previous_weapon_id = WEAPON_RECIPES[previous_weapon_name]["id"] * 10000 + previous_weapon_level
             previous_weapons.clear()
             weapon_name = weapon_name.strip()
@@ -767,7 +773,10 @@ def parse_weapon_tiers():
             if indent > 0 and not previous_weapons:
                 raise ValueError(
                     f"Weapon '{weapon_name}' has an indent but there are no previous weapons on the stack.")
-            while previous_weapons and indent <= previous_weapons[-1][1]:
+            while previous_weapons:
+                previous_indent = previous_weapons[-1][1]
+                if indent > previous_indent:
+                    break  # found correct previous weapon
                 # Pop last previous weapon.
                 previous_weapons.pop()
             if previous_weapons:
@@ -785,12 +794,13 @@ def parse_weapon_tiers():
         try:
             weapon_id = WEAPON_RECIPES[weapon_name]["id"] * 10000 + weapon_level
         except KeyError:
-            raise KeyError(f"No weapon recipe for name '{weapon_name}'.")
+            raise KeyError(f"Line {i}: No weapon recipe for name '{weapon_name}'.")
 
         if weapon_name in tiers_dict:
-            raise KeyError(f"Weapon name '{weapon_name}' appeared multiple times in tiers.")
+            raise KeyError(f"Line {i}: Weapon name '{weapon_name}' appeared multiple times in tiers.")
         tiers_dict[weapon_name] = (weapon_id, previous_weapon_id)
         previous_weapons.append((weapon_id, indent))
+        added_weapons.append((weapon_name, weapon_level))
 
     return tiers_dict
 

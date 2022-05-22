@@ -1,22 +1,22 @@
-# Daggers
+# Daggers (Done)
 Dagger
-    Great Knife
-        Parrying Dagger
-            Misericorde
-                Scorpion's Stinger
-                    Cinquedea
-        Erdsteel Dagger
-            Blade of Calling
-                Black Knife
-        Wakizashi
-            Crystal Knife
-                Glintstone Kris
-            Bloodstained Dagger
-                Reduvia
-            Celebrant's Sickle+8
-                Ivory Sickle
+    Great Knife+3
+        Bloodstained Dagger+6
+            Misericorde+9
+                Celebrant's Sickle+12
+                    Ivory Sickle+15
+                        Scorpion's Stinger+10  # MAX
+            Parrying Dagger+9
+                Wakizashi+12
+                    Erdsteel Dagger+15  # FAI
+                        Blade of Calling+9
+                            Reduvia+10  # MAX
+                            Black Knife+10  # MAX
+                    Crystal Knife+15  # INT
+                        Glintstone Kris+10  # MAX
+                    Cinquedea+10  # MAX
 
-# Straight Swords
+# Straight Swords (Done)
 Dagger -> Short Sword+2
     Weathered Straight Sword+4
         Longsword+6
@@ -38,7 +38,7 @@ Dagger -> Short Sword+2
                             Carian Knight's Sword+8
                                 Sword of Night and Flame+10  # MAX
 
-# Greatswords
+# Greatswords (Done)
 Broadsword+8 -> Bastard Sword+9
     Claymore+10
         Lordsworn's Greatsword+12
@@ -56,13 +56,13 @@ Broadsword+8 -> Bastard Sword+9
                     Marais Executioner's Sword+10  # STR/ARC, MAX
         Forked Greatsword+12
             Flamberge+14
-                Sword of Milos  # DEX
-                    Death's Poker  # DEX/INT
-                Inseparable Sword  # STR/DEX/FAI
-                    Golden Order Greatsword
-                    Sacred Relic Sword
+                Sword of Milos+8  # DEX
+                    Death's Poker+10  # DEX/INT, MAX
+                Inseparable Sword+8  # STR/DEX/FAI
+                    Golden Order Greatsword+10
+                    Sacred Relic Sword+10
 
-# Ultra Greatswords
+# Ultra Greatswords (Done)
 Iron Greatsword+15 -> Zweihander+16
     Watchdog's Greatsword+17  # more STR
         Greatsword+18
@@ -76,360 +76,264 @@ Iron Greatsword+15 -> Zweihander+16
             Godslayer's Greatsword+10  # MAX
 
 # Thrusting Swords
-Longsword -> Rapier
-    Noble's Estoc
-        Estoc
-            Cleanrot Knight's Sword  # to Heavy Thrusting Swords
-            Rogier's Rapier
-                Antspur Rapier
-                    Frozen Needle
+Longsword+6 -> Rapier+8
+    Noble's Estoc+10
+        Estoc+12
+            Cleanrot Knight's Sword+14
+                # -> Great epee (Heavy Thrusting Swords)
+            Rogier's Rapier+14
+                Antspur Rapier+17
+                    Frozen Needle+10  # MAX
 
-# Heavy Thrusting Swords
-Cleanrot Knight's Sword -> Great epee
-    Godskin Stitcher
-        Bloody Helice
-            Dragon King's Cragblade
+# Heavy Thrusting Swords (Done)
+Cleanrot Knight's Sword+14 -> Great epee+16
+    Godskin Stitcher+17
+        Bloody Helice+10  # MAX
+        Dragon King's Cragblade+10  # MAX
 
-# Curved Swords
-Shortsword -> Scimitar
-    Shamshir
-        Falchion
-            Bandit's Curved Sword  # more STR
-                Serpent-God's Curved Sword
-                    Beastman's Curved Sword
-                        Grossmesser  # to STR-based Curved Greatswords
-            Scavenger's Curved Sword  # more DEX
-                # also to Zamor Curved Sword (DEX-based Curved Greatswords)
-                Mantis Blade
-                    Flowing Curved Sword
+# Curved Swords (Done)
+Short Sword+2 -> Scimitar+4
+    Shamshir+6
+        Bandit's Curved Sword+8  # more STR
+            Serpent-God's Curved Sword+10
+                Beastman's Curved Sword+12
+                    Grossmesser+14
+                        # -> STR-based Curved Greatswords
+        Falchion+8
+            Scavenger's Curved Sword+10  # more DEX
+                # -> Monk's Flameblade (DEX-based Curved Greatswords)
+                # -> Uchigatana (Katanas)
+                Mantis Blade+12
+                    Flowing Curved Sword+15
                         Shotel+18
-                            Eclipse Shotel+10
-                        Nox Flowing Sword
-                            Magma Blade
-                            Wing of Astel
+                            Eclipse Shotel+10  # MAX
+                        Nox Flowing Sword+9
+                            Magma Blade+10  # MAX
+                            Wing of Astel+10  # MAX
 
-# Curved Greatswords
-Grossmesser -> Dismounter  # more STR
-    Omen Cleaver
-        Beastman's Cleaver  # STR
-        Onyx Lord's Greatsword  # INT
-        Magma Wyrm's Scalesword  # FAI
-Scavenger's Curved Sword -> Zamor Curved Sword  # more DEX
-    Monk's Flameblade
-        Bloodhound's Fang
-            Morgott's Cursed Sword
+# Curved Greatswords (Done)
+Grossmesser+14 -> Dismounter+16  # more STR
+    Omen Cleaver+18
+        Beastman's Cleaver+20  # STR, MAX
+        Onyx Lord's Greatsword+10  # INT, MAX
+        Magma Wyrm's Scalesword+10  # FAI, MAX
+Scavenger's Curved Sword+10 -> Monk's Flameblade+12  # more DEX
+    Zamor Curved Sword+8
+        Bloodhound's Fang+9
+            Morgott's Cursed Sword+10  # MAX
 
-# Katanas
-Longsword -> Uchigatana
-    Nagakiba
-    Hand of Malenia
-    Meteoric Ore Blade
-    Rivers of Blood
-    Moonveil
-    Dragonscale Blade
-    Serpentbone Blade
+# Katanas (Done)
+Scavenger's Curved Sword+10 -> Uchigatana+12
+    Serpentbone Blade+15
+        Nagakiba+17
+            Hand of Malenia+10  # MAX
+        Meteoric Ore Blade+9  # INT
+            Moonveil+10
+        Dragonscale Blade+8
+            Rivers of Blood+10  # ARC, MAX
 
-# Twinblades
-Longsword -> Twinblade
-    Godskin Peeler
-    Twinned Knight Swords
-    Eleonora's Poleblade
-    Gargoyle's Twinblade
-    Gargoyle's Black Blades
+# Twinblades (Done)
+Lordsworn's Straight Sword+10 -> Twinblade+12
+    Twinned Knight Swords+14
+        Godskin Peeler+16
+            Eleonora's Poleblade+10  # MAX
+        Gargoyle's Twinblade+17
+            Gargoyle's Black Blades+10  # MAX
 
-# Hammers
-Club
-    Mace
-    Curved Club
-    Warpick
-    Morning Star
-    Varre's Bouquet
-    Spiked Club
-    Hammer
-    Monk's Flamemace
-    Envoy's Horn
-    Scepter of the All-Knowing
-    Nox Flowing Hammer
-    Ringed Finger
-    Stone Club
-    Marika's Hammer
+# Hammers (Done)
+Club  # from scratch
+    Curved Club+3
+        Spiked Club+6
+            Mace+9
+                Morning Star+12
+                    # -> Flail
+                    Monk's Flamemace+16
+                        # -> Great Stars (Great Hammer)
+                        Scepter of the All-Knowing+10  # INT
+                        Varre's Bouquet+10  # ARC
+    Warpick+3  # more STR
+        Hammer+6
+            Stone Club+9
+                # -> Large Club (Greathammers)
+                Ringed Finger+7
+                    Nox Flowing Hammer+10  # MAX
+                    Envoy's Horn+8  # FAI
+                        # -> Envoy's Long Horn
+                        Marika's Hammer+10  # MAX
 
-# Greathammers
-Club -> Large Club
-    Greathorn Hammer
-    Battle Hammer
-    Great Mace
-    Curved Great Club
-    Celebrant's Skull
-    Pickaxe
-    Beastclaw Greathammer
-    Envoy's Long Horn
-    Cranial Vessel Candlestand
-    Great Stars
-    Brick Hammer
-    Devourer's Scepter
-    Rotten Battle Hammer
-    Great Club  # COLOSSAL
-    Troll's Hammer  # COLOSSAL
-    Envoy's Greathorn  # COLOSSAL
-    Giant-Crusher  # COLOSSAL
-    Watchdog's Staff  # COLOSSAL
-    Staff of the Avatar  # COLOSSAL
-    Rotten Staff  # COLOSSAL
+# Great Hammers (Done)
+Stone Club+9 -> Large Club+10
+    Curved Great Club+12
+        Pickaxe+14
+            Battle Hammer+16
+                Rotten Battle Hammer+18
+                    Cranial Vessel Candlestand+10  # MAX, FAI
+            Greathorn Hammer+16
+                Troll's Hammer+20  # COLOSSAL, FAI
+    Great Mace+12  # more STR (28)
+        Brick Hammer+14  # 31 STR
+            Great Club+18  # COLOSSAL
+                Prelate's Inferno Crozier+20  # COLOSSAL, MAX
+                Giant-Crusher+20  # COLOSSAL, MAX
+    Celebrant's Skull+12
+        Beastclaw Greathammer+8  # FAI
+            Devourer's Scepter+10  # MAX
+        Watchdog's Staff+8  # COLOSSAL
+            Staff of the Avatar+10  # COLOSSAL, FAI, MAX
+            Rotten Staff+10  # COLOSSAL, MAX
+Monk's Flamemace+16 -> Great Stars+20  # MAX
+Envoy's Horn+8 -> Envoy's Long Horn+9
+    Envoy's Greathorn+10  # COLOSSAL, MAX
 
-# Flails
-Spiked Club -> Flail
-    Chainlink Flail  # STR
-    Nightrider Flail  # DEX
-    Family Heads  # INT
-        Bastard's Stars
+# Flails (Done)
+Morning Star+12 -> Flail+15
+    Chainlink Flail+18  # STR, MAX
+    Nightrider Flail+16  # DEX
+        Family Heads+9  # INT
+            Bastard's Stars+10  # MAX
 
-# Axes
-Hand Axe
-    Battle Axe
-    Forked Hatchet
-    Jawbone Axe
-    Iron Cleaver
-    Ripple Blade
-    Celebrant's Cleaver
-    Icerind Hatchet
-    Highland Axe
-    Sacrificial Axe
-    Rosus' Axe
-    Stormhawk Axe
+# Axes (Done)
+Hand Axe  # from scratch
+    Battle Axe+3  # STR
+        Celebrant's Cleaver+5
+            Highland Axe+8
+                Jawbone Axe+10
+                Warped Axe+10
+                    # -> Longhaft Axe
+                    Iron Cleaver+13
+                        Sacrificial Axe+15
+                            Stormhawk Axe+10  # MAX
+                            Rosus' Axe+10  # INT, MAX
+            Forked Hatchet+10  # DEX
+                Icerind Hatchet+8
+                    # -> Butchering Knife (Greataxe)
+                    Ripple Blade+10  # ARC, MAX
 
-# Greataxes
-Battle Axe -> Greataxe
-    Warped Axe
-    Great Omenkiller Cleaver
-    Crescent Moon Axe
-    Axe of Godrick
-    Longhaft Axe
-    Rusted Anchor
-    Executioner's Greataxe
-    Winged Greathorn
-    Butchering Knife
-    Gargoyle's Great Axe
-    Gargoyle's Black Axe
-    Duelist Greataxe  # COLOSSAL
-    Axe of Godfrey  # COLOSSAL
-    Dragon Greatclaw  # COLOSSAL
-    Rotten Greataxe  # COLOSSAL
+# Greataxes (Done)
+Warped Axe+10 -> Longhaft Axe+12
+    Rusted Anchor+13  # more STR (26)
+        Greataxe+14  # more STR (30)
+            Duelist Greataxe+17  # COLOSSAL
+                Rotten Greataxe+20  # COLOSSAL, MAX
+                Dragon Greatclaw+10  # COLOSSAL, MAX
+            Executioner's Greataxe+16
+                Axe of Godrick+9
+                    Axe of Godfrey+10  # COLOSSAL, MAX
+        Great Omenkiller Cleaver+15  # less STR (23)
+            Crescent Moon Axe+18  # DEX
+                Winged Greathorn+10  # MAX
+            Gargoyle's Great Axe+18
+                Gargoyle's Black Axe+10  # MAX
+Icerind Hatchet+8 -> Butchering Knife+20  # MAX
 
-# Spears
-Dagger -> Short Spear
-    Spear
-    Crystal Spear
-    Clayman's Harpoon
-    Cleanrot Spear
-    Partisan
-    Celebrant's Rib-Rake
-    Pike
-    Torchpole
-    Bolt of Gransax
-    Cross-Naginata
-    Death Ritual Spear
-    Inquisitor's Girandole
-    Spiked Spear
-    Iron Spear
-    Rotten Crystal Spear
-    Sacred Mohgwyn's Spear
-    Siluria's Tree
-    Serpent-Hunter
-    Vyke's War Spear
-    Lance
-    Treespear
-    Fallingstar Beast Jaw  # COLOSSAL
+# Spears (Done)
+Dagger -> Short Spear+3
+    Spear+6  # DEX focus
+        Celebrant's Rib-Rake+9
+            Torchpole+12
+                Spiked Spear+14
+                    Clayman's Harpoon+15  # INT
+                        Crystal Spear+8
+                            Rotten Crystal Spear+9
+                                Death Ritual Spear+10  # MAX
+                    Cross-Naginata+17
+                        Bolt of Gransax+10  # MAX
+                    Cleanrot Spear+10  # FAI, MAX
+                    Inquisitor's Girandole+9
+                        # -> Vyke's War Spear
+        Iron Spear+9  # STR focus
+            # -> Halberd
+            Partisan+12
+                Pike+14
+                    # -> Lance (Greatspears)
 
-# Halberds
-Pike -> Halberd
-    Pest's Glaive
-    Lucerne
-    Banished Knight's Halberd
-    Commander's Standard
-    Nightrider Glaive
-    Ripple Crescent Halberd
-    Vulgar Militia Saw
-    Golden Halberd
-    Glaive
-    Loretta's War Sickle
-    Guardian's Swordspear
-    Vulgar Militia Shotel
-    Dragon Halberd
-    Gargoyle's Halberd
-    Gargoyle's Black Halberd
-    Golem's Halberd  # COLOSSAL
+# Greatspears (Done)
+Pike+14 -> Lance+16
+    Treespear+18  # FAI
+        Siluria's Tree+10  # MAX
+    Fallingstar Beast Jaw+10  # COLOSSAL, MAX
+    Sacred Mohgwyn's Spear+10  # MAX
+Inquisitor's Girandole+9 -> Vyke's War Spear+10  # MAX
+    # Serpent-Hunter  # TODO: craftable from scratch, or just left on ground as-is
 
-# Reapers
-Halberd -> Scythe
-    Grave Scythe
-    Halo Scythe
-    Winged Scythe
-    Ghiza's Wheel  # COLOSSAL
+# Halberds (Done)
+Iron Spear+9 -> Halberd+10
+    Banished Knight's Halberd+12
+        Lucerne+14  # STR
+            Glaive+16
+                Nightrider Glaive+16
+                Gargoyle's Halberd+18
+                    Gargoyle's Black Halberd+20  # MAX
+            Dragon Halberd+8
+                Golden Halberd+9
+                    Golem's Halberd+10  # COLOSSAL, MAX
+            Guardian's Swordspear+17
+                Commander's Standard+10  # MAX
+    Pest's Glaive+12
+        Vulgar Militia Saw+14
+            Vulgar Militia Shotel+17
+                Ripple Crescent Halberd+20  # ARC, MAX
+                Loretta's War Sickle+10  # MAX
 
-# Whips
-Whip
-    Thorned Whip
-    Magma Whip Candlestick
-    Hoslow's Petal Whip
-    Giant's Red Braid
-    Urumi
+# Reapers (Done)
+Lucerne+14 -> Scythe+16
+    Grave Scythe+18
+        Ghiza's Wheel+10  # COLOSSAL, MAX
+    Halo Scythe+9  # FAI
+        Winged Scythe+10  # MAX
 
-# Fists
-Caestus
-    Spiked Caestus
-    Grafted Dragon
-    Iron Ball
-    Star Fist
-    Katar
-    Clinging Bone
-    Veteran's Prosthesis
-    Cipher Pata
-    Hookclaws
-    Venomous Fang
-    Bloodhound Claws
-    Raptor Talons
-    Prelate's Inferno Crozier
+# Whips (Done)
+Whip+10  # from scratch
+    Thorned Whip+13
+        Urumi+17
+            Hoslow's Petal Whip+15
+    Magma Whip Candlestick+10
+    Giant's Red Braid+10
 
-# Torches
-Torch
-    Steel-Wire Torch
-    St. Trina's Torch
-    Ghostflame Torch
-    Beast-Repellent Torch
-    Sentry's Torch
+# Fists / Claws (Done)
+Caestus  # from scratch
+    Spiked Caestus+3
+        Katar+6
+            Hookclaws+9
+                Venomous Fang+12
+                    Bloodhound Claws+15
+                        Raptor Talons+18
+                            Cipher Pata+10  # pure FAI
+                            Clinging Bone+10  # MAX
+            Iron Ball+9
+                Star Fist+12
+                    Veteran's Prosthesis+8
+                        Grafted Dragon+10  # MAX
 
-# Small/Medium Shields
-Rickety Shield
-    Buckler
-    Perfumer's Shield
-    Man-Serpent's Shield
-    Pillory Shield
-    Beastman's Jar-Shield
-    Red Thorn Roundshield
-    Marred Wooden Shield
-        Scripture Wooden Shield
-        Riveted Wooden Shield
-        Blue-White Wooden Shield
-        Horse Crest Wooden Shield
-        Candletree Wooden Shield
-        Flame Crest Wooden Shield
-        Hawk Crest Wooden Shield
-    Marred Leather Shield
-        Large Leather Shield
-        Black Leather Shield
-    Rift Shield
-        Iron Roundshield
-        Gilded Iron Shield
-        Ice Crest Shield
-        Smoldering Shield
-        Spiralhorn Shield
-        Coil Shield
-        Kite Shield
-            Scorpion Kite Shield
-            Twinbird Kite Shield
-            Blue-Gold Kite Shield
-        Banished Knight's Shield
-        Albinauric Shield
-        Sun Realm Shield
-        Silver Mirrorshield
-        Round Shield
-        Brass Shield
-        Great Turtle Shell
-        Shield of the Guilty
-        Carian Knight's Shield
-        Heater Shield
-            Beast Crest Heater Shield
-            Red Crest Heater Shield
-            Blue Crest Heater Shield
-            Eclipse Crest Heater Shield
-            Inverted Hawk Heater Shield
-
-# Greatshields
-Iron Roundshield -> Wooden Greatshield
-    Dragon Towershield
-    Distinguished Greatshield
-    Crucible Hornshield
-    Dragonclaw Shield
-    Briar Greatshield
-    Erdtree Greatshield
-    Golden Beast Crest Shield
-    Jellyfish Shield
-    Fingerprint Stone Shield
-    Icon Shield
-    One-Eyed Shield
-    Visage Shield
-    Spiked Palisade Shield
-    Manor Towershield
-    Crossed-Tree Towershield
-    Inverted Hawk Towershield
-    Ant's Skull Plate
-    Redmane Greatshield
-    Eclipse Crest Greatshield
-    Cuckoo Greatshield
-    Golden Greatshield
-    Gilded Greatshield
-    Haligtree Crest Greatshield
-    Lordsworn's Shield
-
-# Staffs
-Glintstone Staff
-    Crystal Staff
-    Gelmir Glintstone Staff
-    Demi-Human Queen's Staff
-    Carian Regal Scepter
-    Digger's Staff
-    Astrologer's Staff
-    Carian Glintblade Staff
-    Prince of Death's Staff
-    Albinauric Staff
-    Academy Glintstone Staff
-    Carian Glintstone Staff
-    Azur's Glintstone Staff
-    Lusat's Glintstone Staff
-    Meteorite Staff
-    Staff of the Guilty
-    Rotten Crystal Staff
-    Staff of Loss
-
-# Seals
-Finger Seal
-    Godslayer's Seal
-    Giant's Seal
-    Gravel Stone Seal
-    Clawmark Seal
-    Golden Order Seal
-    Erdtree Seal
-    Dragon Communion Seal
-    Frenzied Flame Seal
-
-# Bows
+# Light Bows / Bows (Done)
 Shortbow
-    Misbegotten Shortbow
-    Red Branch Shortbow
-    Harp Bow
-    Composite Bow
-    Longbow
-        Albinauric Bow
-        Horn Bow
-        Erdtree Bow
-        Serpent Bow
-        Pulley Bow
-        Black Bow
+    Misbegotten Shortbow+5  # STR
+        Pulley Bow+8
+            # -> Soldier's Crossbow
+    Harp Bow+5
+        Composite Bow+10  # STR + DEX, MAX
+        Red Branch Shortbow+8  # DEX
+            Longbow+10
+                # -> Greatbow
+                Albinauric Bow+15
+                    Black Bow+10  # MAX
+                Horn Bow+15  # INT, MAX
+                Erdtree Bow+10  # FAI, MAX
+                Serpent Bow+10  # ARC, MAX
 
-# Greatbows
-Longbow -> Greatbow
-    Lion Greatbow
-    Golem Greatbow
-    Erdtree Greatbow
+# Greatbows (Done)
+Longbow+10 -> Greatbow+14
+    Golem Greatbow+8
+        Lion Greatbow+10  # MAX
+    Erdtree Greatbow+10  # FAI, MAX
 
-# Crossbows/Guns
-Longbow -> Soldier's Crossbow
-    Light Crossbow
-    Heavy Crossbow
-    Pulley Crossbow
-    Full Moon Crossbow
-    Arbalest
-    Crepus's Black-Key Crossbow
-    Hand Ballista
-    Jar Cannon
+# Crossbows / Ballistas (Done)
+Pulley Bow+8 -> Soldier's Crossbow+10
+    Light Crossbow+13
+        Full Moon Crossbow+10  # MAX
+        Heavy Crossbow+16
+            Crepus's Black-Key Crossbow+10  # MAX
+            Pulley Crossbow+10  # MAX
+            Arbalest+18
+                Hand Ballista+20  # MAX
+                Jar Cannon+10  # MAX
