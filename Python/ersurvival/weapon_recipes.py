@@ -2407,30 +2407,43 @@ WEAPON_RECIPES = {
         "id": 3104,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (2, Materials.CrystalBud),
+            (2, Materials.IronPlate),
+            (1, Materials.AlbinauricBloodclot),
         ],
     },
     "Sun Realm Shield": {
         "id": 3105,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (2, Materials.IronPlate),
+            (1, Materials.SoftWood),
         ],
     },
     "Silver Mirrorshield": {
         "id": 3106,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (2, Materials.SilverTearHusk),
+            (1, Materials.AlbinauricBloodclot),
+            (5, Materials.IronPlate),
+            (1, Materials.SomberStoneFragment),
         ],
     },
     "Round Shield": {
         "id": 3107,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (2, Materials.RefinedWood),
+            (2, Materials.IronShards),
         ],
     },
     "Scorpion Kite Shield": {
         "id": 3108,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (1, Materials.IronPlate),
+            (2, Materials.RefinedWood),
         ],
     },
     "Twinbird Kite Shield": {
@@ -2446,102 +2459,140 @@ WEAPON_RECIPES = {
         "id": 3110,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (2, Materials.IronShards),
+            (2, Materials.SoftWood),
         ],
     },
     "Brass Shield": {
         "id": 3113,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (3, Materials.IronPlate),
+            (2, Materials.GoldenSunflower),
         ],
     },
     "Great Turtle Shell": {
         "id": 3114,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (4, Materials.TurtleNeckMeat),
+            (4, Materials.CaveMoss),
+            (4, Materials.HeftyBeastBone),
         ],
     },
     "Shield of the Guilty": {
         "id": 3117,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (2, Materials.IronPlate),
+            (4, Materials.Bloodrose),
+            (1, Materials.GruesomeBone),
         ],
     },
     "Carian Knight's Shield": {
         "id": 3119,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (5, Materials.IronPlate),
+            (5, Materials.GlintstoneFirefly),
+            (1, Materials.GoldenSunFlower),
         ],
     },
     "Large Leather Shield": {
         "id": 3123,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (2, Materials.RefinedWood),
+            (4, Materials.String),
         ],
     },
     "Horse Crest Wooden Shield": {
         "id": 3124,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (3, Materials.RefinedWood),
+            (3, Materials.RowaFruit),
+            (1, Materials.Herba),
         ],
     },
     "Candletree Wooden Shield": {
         "id": 3125,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (3, Materials.RefinedWood),
+            (2, Materials.RimedRowa),
         ],
     },
     "Flame Crest Wooden Shield": {
         "id": 3126,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (3, Materials.RefinedWood),
+            (1, Materials.IronShards),
+            (1, Materials.YellowEmber),
         ],
     },
     "Hawk Crest Wooden Shield": {
         "id": 3127,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (3, Materials.RefinedWood),
+            (1, Materials.IronShards),
         ],
     },
     "Beast Crest Heater Shield": {
         "id": 3128,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (3, Materials.IronPlate),
+            (1, Materials.ThinBeastBones),
         ],
     },
     "Red Crest Heater Shield": {
         "id": 3129,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (3, Materials.IronPlate),
+            (2, Materials.RowaFruit),
         ],
     },
     "Blue Crest Heater Shield": {
         "id": 3130,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (3, Materials.IronPlate),
         ],
     },
     "Eclipse Crest Heater Shield": {
         "id": 3131,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (3, Materials.IronPlate),
+            (1, Materials.RowaFruit),
         ],
     },
     "Inverted Hawk Heater Shield": {
         "id": 3132,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (3, Materials.IronPlate),
         ],
     },
     "Heater Shield": {
         "id": 3133,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (2, Materials.IronPlate),
         ],
     },
     "Black Leather Shield": {
         "id": 3134,
         "recipe": [
             (1, Materials.ShieldHandle),
+            (3, Materials.RefinedWood),
+            (1, Materials.IronPlate),
+            (1, Materials.CaveMoss),
+            (1, Materials.MeltedMushroom),
         ],
     },
     # endregion
