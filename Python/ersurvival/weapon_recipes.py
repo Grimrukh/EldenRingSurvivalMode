@@ -2575,150 +2575,235 @@ WEAPON_RECIPES = {
         "id": 3200,
         "recipe": [
             (1, Materials.GreatshieldHandle),
+            (2, Materials,IronShards),
+            (10, Materials.IronPlate),
+            (1, Materials.DragonTeeth),
         ],
     },
     "Distinguished Greatshield": {
         "id": 3202,
         "recipe": [
             (1, Materials.GreatshieldHandle),
+            (2, Materials.RefinedWood),
+            (6, Materials.IronPlate),
         ],
     },
     "Crucible Hornshield": {
         "id": 3203,
         "recipe": [
             (1, Materials.GreatshieldHandle),
+            (12, Materials.BuddingHorn),
+            (5, Materials.SomberStoneFragment),
+            (1, Materials.ErdtreeAmber),
+            (6, Materials.GoldTingedExcrement),
         ],
     },
     "Dragonclaw Shield": {
         "id": 3204,
         "recipe": [
             (1, Materials.GreatshieldHandle),
+            (3, Materials.SomberStoneFragment),
+            (8, Materials.GravelStone),
+            (2, Materials.DragonTeeth),
         ],
     },
     "Briar Greatshield": {
         "id": 3205,
         "recipe": [
             (1, Materials.GreatshieldHandle),
+            (15, Materials.RefinedWood),
+            (3, Materials.IronPlate),
+            (6, Materials.Bloodrose),
+            (4, Materials.IronShards),
         ],
     },
     "Erdtree Greatshield": {
         "id": 3208,
         "recipe": [
             (1, Materials.GreatshieldHandle),
+            (3, Materials.IronPlate),
+            (5, Materials.ErdtreeWood),
+            (3, Materials.ErdtreeAmber),
+            (9, Materials.ErdleafFlower),
         ],
     },
     "Golden Beast Crest Shield": {
         "id": 3209,
         "recipe": [
             (1, Materials.GreatshieldHandle),
+            (10, Materials.RefinedWood),
+            (2, Materials.GoldenSunFlower),
+            (4, Materials.ErdleafFlower),
         ],
     },
     "Jellyfish Shield": {
         "id": 3212,
         "recipe": [
             (1, Materials.GreatshieldHandle),
+            (2, Materials.SomberStoneFragment),
+            (1, Materials.GruesomeBone),
+            (1, Materials.LumpOfFlesh),
         ],
     },
     "Fingerprint Stone Shield": {
         "id": 3213,
         "recipe": [
             (1, Materials.GreatshieldHandle),
+            (4, Materials.IronPlate),
+            (8, Materials.SomberStoneFragment)
+            (6. Materials.YellowEmber),
+            (25, Materials.StoneFragment),
         ],
     },
     "Icon Shield": {
         "id": 3214,
         "recipe": [
             (1, Materials.GreatshieldHandle),
+            (2, Materials.IronShards),
+            (8, Materials.RefinedWood),
+            (6, Materials.ErdleafFlower),
+            (2, Materials.AltusBloom)
         ],
     },
     "One-Eyed Shield": {
         "id": 3215,
         "recipe": [
             (1, Materials.GreatshieldHandle),
+            (2, Materials.SomberStoneFragment),
+            (2, Materials.IronPlate),
+            (8, Materials.StoneFragment),
+            (8, Materials.FireBlossom),
+
         ],
     },
     "Visage Shield": {
         "id": 3216,
         "recipe": [
             (1, Materials.GreatshieldHandle),
+            (4, Materials.SomberStoneFragment),
+            (3, Materials.IronPlate),
+            (10, Materials.StoneFragment),
+            (10, Materials.FireBlossom),
+
         ],
     },
     "Spiked Palisade Shield": {
         "id": 3217,
         "recipe": [
             (1, Materials.GreatshieldHandle),
+            (5, Materials.RefinedWood),
+            (5, Materials.IronShards),
+            (3, Materials.Bloodrose),
         ],
     },
     "Manor Towershield": {
         "id": 3219,
         "recipe": [
             (1, Materials.GreatshieldHandle),
+            (5, Materials.IronPlate),
+            (1, Materials.LivingJarShard),
         ],
     },
     "Crossed-Tree Towershield": {
         "id": 3220,
         "recipe": [
             (1, Materials.GreatshieldHandle),
+            (2, Materials.IronShards),
+            (3, Materials.IronPlate,
+            (7, Materials.Herba),
         ],
     },
     "Inverted Hawk Towershield": {
         "id": 3221,
         "recipe": [
             (1, Materials.GreatshieldHandle),
+            (4, Materials.IronShards),
+            (3, Materials.IronPlate),
+            (1, Materials.SomberStoneFragment),
         ],
     },
     "Ant's Skull Plate": {
         "id": 3222,
         "recipe": [
-            (1, Materials.GreatshieldHandle),
+            (1, Materials.GreatshieldHandle)
+            (1, Materials.SomberStoneFragment),
+            (4, Materials.BuddingHorn),
+            (6, Materials.HeftyBeastBone),
+            (1, Materials.GruesomeBone),
+            (1, Materials.BeastBlood),
         ],
     },
     "Redmane Greatshield": {
         "id": 3223,
         "recipe": [
             (1, Materials.GreatshieldHandle),
+            (6, Materials.IronPlate),
+            (1, Materials.SomberStoneFragment),
+            (10, Materials.FireBlossom),
         ],
     },
     "Eclipse Crest Greatshield": {
         "id": 3224,
         "recipe": [
             (1, Materials.GreatshieldHandle),
+            (5, Materials.IronPlate),
+            (2, Materials.SomberStoneFragment),
+            (1, Materials.GruesomeBone),
         ],
     },
     "Cuckoo Greatshield": {
         "id": 3225,
         "recipe": [
             (1, Materials.GreatshieldHandle),
+            (3, Materials.RefinedWood),
+            (3, Materials.SomberStoneFragment),
+            (5, Materials.CrystalBud),
         ],
     },
     "Golden Greatshield": {
         "id": 3226,
         "recipe": [
             (1, Materials.GreatshieldHandle),
+            (1, Materials.RefinedWood),
+            (3, Materials.IronPlate),
+            (4, Materials.GoldenCentipede),
+            (1, Materials.FireBlossom),
         ],
     },
     "Gilded Greatshield": {
         "id": 3227,
         "recipe": [
             (1, Materials.GreatshieldHandle),
+            (2, Materials.SoftWood),
+            (2, Materials.RefinedWood),
+            (2, Materials.IronPlate),
+            (1, Materials.GoldenRowa),
+
         ],
     },
     "Haligtree Crest Greatshield": {
         "id": 3228,
         "recipe": [
             (1, Materials.GreatshieldHandle),
+            (3, Materials.RefinedWood),
+            (3, Materials.IronPlate),
+            (3, Materials.MiquellasLily),
         ],
     },
     "Wooden Greatshield": {
         "id": 3229,
         "recipe": [
             (1, Materials.GreatshieldHandle),
+            (5, Materials.RefinedWood),
+
         ],
     },
     "Lordsworn's Shield": {
         "id": 3230,
         "recipe": [
             (1, Materials.GreatshieldHandle),
+            (4, Materials.RefinedWood),
+            (2, Materials.IronShards),
         ],
     },
     # endregion
