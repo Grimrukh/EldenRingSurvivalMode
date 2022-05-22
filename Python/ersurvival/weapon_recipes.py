@@ -1934,36 +1934,55 @@ WEAPON_RECIPES = {
         "id": 2000,
         "recipe": [
             (1, Materials.SmallHilt),
+            (1, Materials.SoftWood),
+            (3, Materials.LumpOfFlesh),
+            (2, Materials.CaveMoss),
         ],
     },
     "Thorned Whip": {
         "id": 2002,
         "recipe": [
             (1, Materials.SmallHilt),
+            (2, Materials.RefinedWood),
+            (4, Materials.SomberStoneFragment),
+            (6, Materials.Bloodrose),
+            (4, Materials.BeastBlood),
         ],
     },
     "Magma Whip Candlestick": {
         "id": 2003,
         "recipe": [
             (1, Materials.SmallHilt),
+            (1, Materials.IronPlate),
+            (1, Materials.DragonTeeth),
+            (6, Materials.VolcanicStone),
         ],
     },
     "Hoslow's Petal Whip": {
         "id": 2005,
         "recipe": [
             (1, Materials.SmallHilt),
+            (6, Materials.IronShards),
+            (6, Materials.StoneFragment),
+            (2, Materials.String),
         ],
     },
     "Giant's Red Braid": {
         "id": 2006,
         "recipe": [
             (1, Materials.SmallHilt),
+            (1, Materials.GruesomeBone),
+            (4, Materials.SomberStoneFragment),
+            (8, Materials.TarnishedGoldenSunflower),
+            (4, Materials.SilverTearHusk),
         ],
     },
     "Urumi": {
         "id": 2007,
         "recipe": [
             (1, Materials.SmallHilt),
+            (1, Materials.IronPlate),
+            (2, Materials.LiquidMetal),
         ],
     },
     # endregion
@@ -1972,90 +1991,122 @@ WEAPON_RECIPES = {
     "Caestus": {
         "id": 2100,
         "recipe": [
-
+            (2, Materials.IronShards),
+            (2, Materials.LumpOfFlesh),
         ],
     },
     "Spiked Caestus": {
         "id": 2101,
         "recipe": [
-
+            (4, Materials.IronShards),
+            (2, Materials.StoneFragment),
+            (2, Materials.LumpOfFlesh),
         ],
     },
     "Grafted Dragon": {
         "id": 2106,
         "recipe": [
-            # Potential use for DragonTeeth
+            (1, Materials.DragonTeeth),
+            (4, Materials.BeastLiver),
         ],
     },
     "Iron Ball": {
         "id": 2107,
         "recipe": [
-
+            (2, Materials.IronPlate),
+            (2, Materials.SomberStoneFragment),
+            (2, Materials.StripOfWhiteFlesh),
         ],
     },
     "Star Fist": {
         "id": 2108,
         "recipe": [
-
+            (2, Materials.IronPlate),
+            (2, Materials.IronShards),
+            (2, Materials.SomberStoneFragment),
+            (6, Materials.StoneFragment),
         ],
     },
     "Katar": {
         "id": 2110,
         "recipe": [
-
+            (3, Materials.IronPlate),
+            (4, Materials.SomberStoneFragment),
+            (1, Materials.BeastBlood),
         ],
     },
     "Clinging Bone": {
         "id": 2111,
         "recipe": [
-
+            (6, Materials.StoneFragment),
+            (4, Materials.HumanBoneShard),
+            (2, Materials.LivingJarShard),
+            (5, Materials.YellowEmber),
         ],
     },
     "Veteran's Prosthesis": {
         "id": 2112,
         "recipe": [
-
+            (1, Materials.RefinedWood),
+            (2, Materials.IronPlate),
+            (8, Materials.SomberStoneFragment),
+            (8, Materials.Fulgurbloom),
         ],
     },
     "Cipher Pata": {
         "id": 2113,
         "recipe": [
-
+            (1, Materials.StandardHilt),
+            (6, Materials.SomberStoneFragment),
+            (6, Materials.GoldTingedExcrement),
         ],
     },
     "Hookclaws": {
         "id": 2200,
         "recipe": [
-
+            (1, Materials.SoftWood),
+            (2, Materials.IronPlate),
+            (5, Materials.ArteriaLeaf),
         ],
     },
     "Venomous Fang": {
         "id": 2201,
         "recipe": [
-
+            (2, Materials.IronPlate),
+            (1, Materials.BlackMark), #? eh
+            (6, Materials.MirandaPowder),
+            (4, Materials.ToxicMushroom),
         ],
     },
     "Bloodhound Claws": {
         "id": 2202,
         "recipe": [
-
+            (1, Materials.SoftWood),
+            (3, Materials.IronPlate),
+            (10, Materials.StoneFragment),
+            (6, Materials.LandOctopusOvary),
+            (3, Materials.MiquellasLily),
         ],
     },
     "Raptor Talons": {
         "id": 2203,
         "recipe": [
+            (1, Materials.IronPlate),
+            (1, Materials.LiquidMetal),
+            (4, Materials.StormhawkFeather),
+            (2, Materials.FourToedFowlFoot),
 
         ],
     },
+    # endregion
+
+    # region Colossal Weapons
     "Prelate's Inferno Crozier": {
         "id": 2300,
         "recipe": [
             (1, Materials.StaffPole),
         ],
     },
-    # endregion
-
-    # region Colossal Weapons
     "Watchdog's Staff": {
         "id": 2301,
         "recipe": [
