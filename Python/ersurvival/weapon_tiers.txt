@@ -89,24 +89,24 @@ Cleanrot Knight's Sword -> Great epee
             Dragon King's Cragblade
 
 # Curved Swords
-Short Sword -> Falchion
-    Beastman's Curved Sword
-    Shotel
+Shortsword -> Scimitar
     Shamshir
-    Bandit's Curved Sword
-    Magma Blade
-    Flowing Curved Sword
-    Wing of Astel
-    Scavenger's Curved Sword
-    Eclipse Shotel
-    Serpent-God's Curved Sword
-    Mantis Blade
-    Scimitar
-    Grossmesser
-    Nox Flowing Sword
+        Falchion
+            Bandit's Curved Sword  # more STR
+                Serpent-God's Curved Sword
+                    Beastman's Curved Sword
+                        Grossmesser  # to Curved Greatswords
+            Scavenger's Curved Sword  # more DEX
+                Mantis Blade
+                    Flowing Curved Sword
+                        Shotel
+                            Eclipse Shotel
+                        Nox Flowing Sword
+                            Magma Blade
+                            Wing of Astel
 
 # Curved Greatswords
-Scimitar -> Dismounter
+Grossmesser -> Dismounter
     Onyx Lord's Greatsword
     Bloodhound's Fang
     Magma Wyrm's Scalesword

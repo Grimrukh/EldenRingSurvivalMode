@@ -758,6 +758,8 @@ def parse_weapon_tiers():
                 previous_weapon_level = int(level_str.strip())
             else:
                 previous_weapon_level = 0
+            if previous_weapon_name not in tiers_dict:
+                raise KeyError(f"Manually specified previous weapon '{previous_weapon_name}' has not been added.")
             previous_weapon_id = WEAPON_RECIPES[previous_weapon_name]["id"] * 10000 + previous_weapon_level
             previous_weapons.clear()
             weapon_name = weapon_name.strip()
@@ -785,6 +787,8 @@ def parse_weapon_tiers():
         except KeyError:
             raise KeyError(f"No weapon recipe for name '{weapon_name}'.")
 
+        if weapon_name in tiers_dict:
+            raise KeyError(f"Weapon name '{weapon_name}' appeared multiple times in tiers.")
         tiers_dict[weapon_name] = (weapon_id, previous_weapon_id)
         previous_weapons.append((weapon_id, indent))
 
