@@ -2246,7 +2246,6 @@ WEAPON_RECIPES = {
         "recipe": [
             (2, Materials.RefinedWood),
             (3, Materials.String),
-            (2, Materials.StoneFragment),
             (1, Materials.IronPlate),
             (3, Materials.TrinasLily),
             (1, Materials.SmolderingButterfly),
