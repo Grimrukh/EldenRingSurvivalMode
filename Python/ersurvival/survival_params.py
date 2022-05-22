@@ -7,6 +7,7 @@ from __future__ import annotations
 import csv
 import random
 import re
+import shutil
 from pathlib import Path
 
 from Python.ersurvival.crafting import Materials
@@ -23,6 +24,9 @@ class YappedRow(dict):
         super().__init__(source)
         self.__initialized = True
 
+    def to_list(self):
+        return list(self.values())
+
     @property
     def row_id(self):
         return self["Row ID"]
@@ -37,7 +41,7 @@ class YappedRow(dict):
         if self.__initialized and key not in self:
             raise ValueError(f"Invalid YappedRow field: {key}")
         if key == "Row ID":
-            super().__setitem__(key, value)
+            super().__setitem__(key, int(value))
         else:  # convert to string for CSV
             if isinstance(value, IntEnum):
                 value = value.value
@@ -49,7 +53,7 @@ class YappedRow(dict):
 
     @name.setter
     def name(self, value: str):
-        super().__setitem__("Row Name", value)
+        super().__setitem__("Row Name", str(value))
 
 
 class YappedParam:
@@ -60,7 +64,7 @@ class YappedParam:
 
     def __getitem__(self, row_id: int):
         for row in self.rows:
-            if row["Row ID"] == row_id:
+            if row.row_id == int(row_id):
                 return row
         return None
 
@@ -87,7 +91,8 @@ class YappedParam:
             raise ValueError(f"Source row ID {source_row_id} is not in this param.")
         if dest_row_id in row_ids:
             raise ValueError(f"Dest row ID {dest_row_id} already exists. Delete it first if you want to replace it.")
-        new_row = YappedRow(self[source_row_id])
+        source_row = self[source_row_id]
+        new_row = YappedRow(source_row)
         new_row["Row ID"] = dest_row_id
         if "name" in kwargs:
             new_row.name = kwargs.pop("name")
@@ -95,7 +100,13 @@ class YappedParam:
             if field not in new_row:
                 raise ValueError(f"Invalid field for this param: {field}")
             new_row[field] = value
-        self.add_row(new_row, after_row_id=source_row_id)
+        # Insert at `dest_row_id`.
+        for i, row in enumerate(self.rows):
+            if row.row_id > dest_row_id:
+                self.rows.insert(i, new_row)
+                break
+        else:
+            self.rows.append(new_row)
         return new_row
 
     def get_row_ids(self) -> list[int]:
@@ -104,6 +115,18 @@ class YappedParam:
     def sort_rows(self):
         """Sort rows by row ID."""
         self.rows = sorted(self.rows, key=lambda x: x["Row ID"])
+
+    def write_csv(self, param_path: Path):
+        if param_path.exists():
+            bak_path = param_path.with_suffix(param_path.suffix + ".bak")
+            if not bak_path.is_file():
+                shutil.copy2(param_path, bak_path)
+
+        with param_path.open("w", newline="") as csvfile:
+            param_writer = csv.writer(csvfile, delimiter=';', quotechar='|')
+            param_writer.writerow(self.field_names)
+            for row in self.rows:
+                param_writer.writerow(row.to_list() + [""])  # Yapped seems to put an extra semicolon at the end.
 
     @classmethod
     def from_csv_path(cls, param_path: Path):
@@ -132,6 +155,10 @@ class YappedParam:
 
 def read_param_csv(param_name: str) -> YappedParam:
     return YappedParam.from_csv_path((CSV_PATH / param_name).with_suffix(".csv"))
+
+
+def write_param_csv(param: YappedParam, param_name: str):
+    param.write_csv((CSV_PATH / param_name).with_suffix(".csv"))
 
 
 class GoodsUseAnimation(IntEnum):
@@ -535,8 +562,7 @@ def generate_dummy_weapons(
         # Create ingredients entry.
         new_mtrl_row = equip_mtrl_set_param.duplicate_row(mtrl_source, mtrl_id)
         new_mtrl_row.name = row.name
-        weapon_recipe = WEAPON_RECIPES[row.name]["recipe"]
-        ingredients = [ing for ing in weapon_recipe["recipe"] if ing[1] < 21100]  # ignore grips
+        ingredients = [ing for ing in WEAPON_RECIPES[row.name]["recipe"] if ing[1] < 21100]  # ignore grips
         if not ingredients:
             # print(f"No recipe ingredients for weapon {row.name}. Skipping for now.")
             pass
@@ -632,22 +658,28 @@ def replace_weapon_item_lots(item_lots_param: YappedParam, weapons_param: Yapped
             item_type = int(row[f"lotItemCategory{slot:02d}"])
             item_count = int(row[f"lotItemNum{slot:02d}"])
             # drop rate isn't changed
-            if item_type != 0:
+            if item_id in {0, -1}:
+                # Ignore empty item lots.
+                continue
+            if item_type != 2:
                 # Ignore non-weapons.
                 continue
             if item_count <= 0:
                 # Ignore empty counts.
                 continue
 
-            weapon_row = weapons_param[item_id]
-            weapon_type = WeaponType(weapon_row["weaponType"])
-            if weapon_type in (WeaponType.Arrow, WeaponType.Bolt):
-                # Ignore ammo.
-                continue
-
             # Get base weapon ID (round down to nearest 10000).
             base_weapon_id = 10000 * (item_id // 10000)
             weapon_row = weapons_param[base_weapon_id]
+
+            if not weapon_row:
+                print(f"Ignoring item lot {row.row_id} with invalid weapon ID: {item_id}")
+                continue
+            weapon_category = WeaponCategory(int(weapon_row["weaponCategory"]))
+            weapon_type = WeaponType(int(weapon_row["wepType"]))
+            if weapon_category in (WeaponCategory.Arrow, WeaponCategory.Bolt):
+                # Ignore ammo.
+                continue
 
             if not weapon_row.name:
                 # Ignore unused weapon drops.
@@ -807,7 +839,7 @@ def replace_merchant_weapons(shop_merchant_param: YappedParam, weapons_param: Ya
         if row["equipType"] != "0":
             continue  # ignore non-weapons
 
-        if row.row_id < 100500:
+        if 100000 <= row.row_id < 100500:
             # Non-Nomadic merchant (other NPC). Continue.
             pass
         elif 100500 <= row.row_id < 101000:
@@ -833,8 +865,12 @@ def replace_merchant_weapons(shop_merchant_param: YappedParam, weapons_param: Ya
 
         weapon_id = int(row["equipId"])
         weapon_row = weapons_param[weapon_id]
-        weapon_type = WeaponType(weapon_row["weaponType"])
-        if weapon_type in (WeaponType.Arrow, WeaponType.Bolt):
+        if weapon_row is None:
+            print(f"Ignoring merchant shop entry {row.row_id} with invalid weapon ID: {weapon_id}")
+            continue
+        weapon_category = WeaponCategory(int(weapon_row["weaponCategory"]))
+        weapon_type = WeaponType(int(weapon_row["wepType"]))
+        if weapon_category in (WeaponCategory.Arrow, WeaponCategory.Bolt):
             # Ignore ammo.
             continue
 
@@ -898,6 +934,7 @@ def generate_all():
 
     generate_dummy_weapons(weapons, mtrl, shop_recipe, item_lots_map)
 
+    generate_new_materials(goods)
     generate_new_consumables(goods, shop_recipe, mtrl)
 
     replace_weapon_item_lots(item_lots_enemy, weapons, is_map=False)
@@ -905,6 +942,8 @@ def generate_all():
     replace_merchant_weapons(shop_merchant, weapons)
     # TODO: Notes with disease clues for merchants.
     # TODO: New "cookbooks" for consumables, basic weapon crafting, and shield/staff/seal/torch crafting.
+
+    write_param_csv(goods, "EquipParamGoods_test.csv")
 
 
 if __name__ == '__main__':
