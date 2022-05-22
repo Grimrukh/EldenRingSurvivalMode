@@ -2102,7 +2102,7 @@ WEAPON_RECIPES = {
         "id": 2201,
         "recipe": [
             (2, Materials.IronPlate),
-            (1, Materials.BlackMark), #? eh
+            (1, Materials.BlackMark),  # ? eh
             (6, Materials.MirandaPowder),
             (4, Materials.ToxicMushroom),
         ],
@@ -2575,7 +2575,7 @@ WEAPON_RECIPES = {
         "id": 3200,
         "recipe": [
             (1, Materials.GreatshieldHandle),
-            (2, Materials,IronShards),
+            (2, Materials.IronShards),
             (10, Materials.IronPlate),
             (1, Materials.DragonTeeth),
         ],
@@ -2632,7 +2632,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.GreatshieldHandle),
             (10, Materials.RefinedWood),
-            (2, Materials.GoldenSunFlower),
+            (2, Materials.GoldenSunflower),
             (4, Materials.ErdleafFlower),
         ],
     },
@@ -2650,8 +2650,8 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.GreatshieldHandle),
             (4, Materials.IronPlate),
-            (8, Materials.SomberStoneFragment)
-            (6. Materials.YellowEmber),
+            (8, Materials.SomberStoneFragment),
+            (6, Materials.YellowEmber),
             (25, Materials.StoneFragment),
         ],
     },
@@ -2709,7 +2709,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.GreatshieldHandle),
             (2, Materials.IronShards),
-            (3, Materials.IronPlate,
+            (3, Materials.IronPlate),
             (7, Materials.Herba),
         ],
     },
@@ -2725,7 +2725,7 @@ WEAPON_RECIPES = {
     "Ant's Skull Plate": {
         "id": 3222,
         "recipe": [
-            (1, Materials.GreatshieldHandle)
+            (1, Materials.GreatshieldHandle),
             (1, Materials.SomberStoneFragment),
             (4, Materials.BuddingHorn),
             (6, Materials.HeftyBeastBone),
