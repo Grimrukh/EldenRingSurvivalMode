@@ -3065,7 +3065,6 @@ WEAPON_RECIPES = {
     "Soldier's Crossbow": {
         "id": 4300,
         "recipe": [
-            (1, Materials.TriggerMechanism),
             (1, Materials.String),
             (1, Materials.SoftWood),
             (1, Materials.StoneFragment),
@@ -3074,7 +3073,6 @@ WEAPON_RECIPES = {
     "Light Crossbow": {
         "id": 4302,
         "recipe": [
-            (1, Materials.TriggerMechanism),
             (1, Materials.String),
             (1, Materials.SoftWood),
             (2, Materials.StoneFragment),
@@ -3083,7 +3081,6 @@ WEAPON_RECIPES = {
     "Heavy Crossbow": {
         "id": 4303,
         "recipe": [
-            (1, Materials.TriggerMechanism),
             (1, Materials.String),
             (3, Materials.SoftWood),
             (2, Materials.StoneFragment),
@@ -3092,7 +3089,6 @@ WEAPON_RECIPES = {
     "Pulley Crossbow": {
         "id": 4305,
         "recipe": [
-            (1, Materials.TriggerMechanism),
             (3, Materials.String),
             (2, Materials.RefinedWood),
             (1, Materials.IronPlate),
@@ -3101,7 +3097,6 @@ WEAPON_RECIPES = {
     "Full Moon Crossbow": {
         "id": 4306,
         "recipe": [
-            (1, Materials.TriggerMechanism),
             (4, Materials.String),
             (4, Materials.RefinedWood),
             (1, Materials.SomberStoneFragment),
@@ -3110,7 +3105,6 @@ WEAPON_RECIPES = {
     "Arbalest": {
         "id": 4308,
         "recipe": [
-            (1, Materials.TriggerMechanism),
             (2, Materials.String),
             (2, Materials.RefinedWood),
         ],
@@ -3118,7 +3112,6 @@ WEAPON_RECIPES = {
     "Crepus's Black-Key Crossbow": {
         "id": 4311,
         "recipe": [
-            (1, Materials.TriggerMechanism),
             (1, Materials.IronPlate),
             (2, Materials.RefinedWood),
             (2, Materials.String),
@@ -3127,7 +3120,6 @@ WEAPON_RECIPES = {
     "Hand Ballista": {
         "id": 4400,
         "recipe": [
-            (1, Materials.TriggerMechanism),
             (4, Materials.String),
             (3, Materials.RefinedWood),
             (2, Materials.IronPlate),
@@ -3136,7 +3128,6 @@ WEAPON_RECIPES = {
     "Jar Cannon": {
         "id": 4401,
         "recipe": [
-            (1, Materials.TriggerMechanism),
             (2, Materials.IronPlate),
             (2, Materials.SomberStoneFragment),
             (4, Materials.LivingJarShard),
