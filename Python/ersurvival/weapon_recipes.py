@@ -2227,37 +2227,56 @@ WEAPON_RECIPES = {
     "Torch": {
         "id": 2400,
         "recipe": [
-
+            (1, Materials.SoftWood),
+            (2, Materials.String),
+            (2, Materials.SmolderingButterfly),
         ],
     },
     "Steel-Wire Torch": {
         "id": 2402,
         "recipe": [
-
+            (1, Materials.RefinedWood),
+            (2, Materials.String),
+            (1, Materials.IronShards),
+            (2, Materials.SmolderingButterfly),
         ],
     },
     "St. Trina's Torch": {
         "id": 2404,
         "recipe": [
-
+            (2, Materials.RefinedWood),
+            (3, Materials.String),
+            (2, Materials.StoneFragment),
+            (1, Materials.IronPlate),
+            (3, Materials.TrinasLily),
+            (1, Materials.SmolderingButterfly),
         ],
     },
     "Ghostflame Torch": {
         "id": 2405,
         "recipe": [
-
+            (2, Materials.IronShards),
+            (4, Materials.StoneFragment),
+            (3, Materials.GraveViolet),
+            (1, Materials.SmolderingButterfly),
         ],
     },
     "Beast-Repellent Torch": {
         "id": 2406,
         "recipe": [
-
+            (2, Materials.RefinedWood),
+            (2, Materials.MirandaPowder),
+            (1, Materials.SmolderingButterfly),
         ],
     },
     "Sentry's Torch": {
         "id": 2407,
         "recipe": [
-
+            (1, Materials.ErdtreeWood),
+            (4, Materials.IronPlate),
+            (2, Materials.GoldenSunflower),
+            (1, Materials.ErdtreeAmber),
+            (1, Materials.SmolderingButterfly),
         ],
     },
     # endregion
