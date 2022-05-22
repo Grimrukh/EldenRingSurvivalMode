@@ -2110,7 +2110,6 @@ WEAPON_RECIPES = {
     "Bloodhound Claws": {
         "id": 2202,
         "recipe": [
-            (1, Materials.SoftWood),
             (3, Materials.IronPlate),
             (10, Materials.StoneFragment),
             (6, Materials.LandOctopusOvary),
@@ -2134,91 +2133,130 @@ WEAPON_RECIPES = {
         "id": 2300,
         "recipe": [
             (1, Materials.StaffPole),
+            (3, Materials.IronPlate),
+            (3, Materials.IronShards),
+            (8, Materials.TurtleNeckMeat),
+            (2, Materials.EyeOfYelough),
         ],
     },
     "Watchdog's Staff": {
         "id": 2301,
         "recipe": [
             (1, Materials.StaffPole),
+            (16, Materials.StoneFragment),
+            (1, Materials.GlintstoneDust),
         ],
     },
     "Great Club": {
         "id": 2302,
         "recipe": [
             (1, Materials.StaffPole),
+            (5, Materials.SoftWood),
         ],
     },
     "Envoy's Greathorn": {
         "id": 2303,
         "recipe": [
             (1, Materials.StaffPole),
+            (5, Materials.IronPlate),
+            (1, Materials.ErdtreeAmber),
+            (5, Materials.AltusBloom),
         ],
     },
     "Duelist Greataxe": {
         "id": 2304,
         "recipe": [
             (1, Materials.StaffPole),
+            (3, Materials.RefinedWood),
+            (4, Materials.IronPlate),
         ],
     },
     "Axe of Godfrey": {
         "id": 2305,
         "recipe": [
             (1, Materials.StaffPole),
+            (2, Materials.RefinedWood),
+            (3, Materials.IronPlate),
+            (6, Materials.SomberStoneFragment),
         ],
     },
     "Dragon Greatclaw": {
         "id": 2306,
         "recipe": [
             (1, Materials.StaffPole),
-            # Potential use for DragonTeeth
+            (1, Materials.DragonTeeth),
+            (5, Materials.HeftyBeastBone),
+            (2, Materials.RootResin),
         ],
     },
     "Staff of the Avatar": {
         "id": 2307,
         "recipe": [
             (1, Materials.StaffPole),
+            (4, Materials.SoftWood),
+            (2, Materials.IronPlate),
+            (2, Materials.ErdtreeAmber),
         ],
     },
     "Fallingstar Beast Jaw": {
         "id": 2308,
         "recipe": [
             (1, Materials.StaffPole),
+            (1, Materials.MeteoriteChunk),
+            (1, Materials.GruesomeBone),
+            (4, Materials.MeltedMushroom),
         ],
     },
     "Ghiza's Wheel": {
         "id": 2310,
         "recipe": [
             (1, Materials.StaffPole),
+            (2, Materials.LiquidMetal),
+            (2, Materials.IronPlate),
+            (12, Materials.IronShards),
         ],
     },
     "Giant-Crusher": {
         "id": 2311,
         "recipe": [
             (1, Materials.StaffPole),
+            (20, Materials.SomberStoneFragment),
         ],
     },
     "Golem's Halberd": {
         "id": 2312,
         "recipe": [
             (1, Materials.StaffPole),
+            (1, Materials.BlackMark),
+            (16, Materials.StoneFragment),
         ],
     },
     "Troll's Hammer": {
         "id": 2313,
         "recipe": [
             (1, Materials.StaffPole),
+            (4, Materials.SoftWood),
+            (2, Materials.ErdtreeAmber),
+            (1, Materials.GlintstoneDust),
         ],
     },
     "Rotten Staff": {
         "id": 2314,
         "recipe": [
             (1, Materials.StaffPole),
+            (4, Materials.SoftWood),
+            (2, Materials.IronPlate),
+            (2, Materials.ErdtreeAmber),
+            (9, Materials.AeonianButterfly),
         ],
     },
     "Rotten Greataxe": {
         "id": 2315,
         "recipe": [
             (1, Materials.StaffPole),
+            (2, Materials.RefinedWood),
+            (3, Materials.IronPlate),
+            (12, Materials.ToxicMushroom),
         ],
     },
     # endregion
