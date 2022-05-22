@@ -546,14 +546,14 @@ def generate_dummy_weapons(
         new_shop_row["setNum"] = 1  # only one
 
         # TODO: for common EMEVD
-        # monitor_flag = SurvivalFlags.WeaponMonitorBase + new_weapon_indices.index(row.name)
         # print(
         #     f"CraftDummyWeapon("
         #     f"{slot}, "
         #     f"{dummy_id}, "
-        #     f"weapon_item_lot={item_lot_id}, "
-        #     f"previous_weapon={previous_weapon_id if previous_weapon_id is not None else 0})"
+        #     f"{item_lot_id}, "
+        #     f"{previous_weapon_id if previous_weapon_id is not None else 0})"
         # )
+        # monitor_flag = SurvivalFlags.WeaponMonitorBase + new_weapon_indices.index(row.name)
         # print(
         #     f"MonitorWeaponPossession({slot}, {true_weapon_id}, {monitor_flag})"
         # )
