@@ -10,7 +10,6 @@ import re
 import shutil
 from pathlib import Path
 
-from survival_enums import *
 from survival_goods import *
 from survival_text import read_weapon_text, write_weapon_text
 from weapon_recipes import WEAPON_RECIPES
@@ -520,7 +519,8 @@ def replace_stone_item_lots(item_lots_param: YappedParam, is_map: bool):
 
     Ancient Dragon (max level) stones are not replaced.
     """
-    fragment_odds = 0.8
+    leave_odds = 0.2  # proportion of item lots to leave as Smithing Stones
+    fragment_odds = 0.75  # rather than Iron Shards
 
     for row in item_lots_param.rows:
         if row.row_id in PRESERVE_ITEM_LOTS:
@@ -533,9 +533,13 @@ def replace_stone_item_lots(item_lots_param: YappedParam, is_map: bool):
             item_type = int(row[f"lotItemCategory{slot:02d}"])
             item_count = int(row[f"lotItemNum{slot:02d}"])
             # drop rate isn't changed
+
             if item_type != 1 or item_count <= 0:
                 # Ignore non-Goods or empty counts
                 continue
+            if random.random() < leave_odds:
+                continue  # leave
+
             if 10100 <= item_id <= 10107:
                 good_id = Materials.StoneFragment
                 stone_level = item_id - 10100 + 1  # 1 to 8
@@ -546,11 +550,15 @@ def replace_stone_item_lots(item_lots_param: YappedParam, is_map: bool):
                 # Ignore non-Stones.
                 continue
 
+            if random.random() >= fragment_odds:
+                # Iron Shards instead
+                good_id = Materials.IronShards
+
             if random.random() > fragment_odds:
                 # Leave this Smithing Stone.
                 continue
 
-            # Number of fragments randomly varies between 1 and HALF the Smithing Stone level, rounded down.
+            # Number of fragments/shards randomly varies between 1 and HALF the Smithing Stone level, rounded down.
             if stone_level <= 3:
                 good_count = 1
             else:

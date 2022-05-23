@@ -180,6 +180,7 @@ class SurvivalFlags(Flag):
     Recipes_UncommonGreatshields_Bought = BASE_FLAG + 317
     Recipes_RareGreatshields_Bought = BASE_FLAG + 318
     Recipes_VeryRareGreatshields_Bought = BASE_FLAG + 319
+    Note_SerpentHunter = BASE_FLAG + 320
 
     # TIME FLAG. Increments by 1 every 30 in-game minutes.
     MonitorTimeFlag = 15003399

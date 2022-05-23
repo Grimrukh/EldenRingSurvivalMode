@@ -44,8 +44,6 @@ Other notes
     ErdtreeWood: Currently used in a few bow recipes, but can probably be replaced and cut
 
 """
-from enum import IntEnum
-
 from survival_enums import *
 
 
@@ -195,6 +193,8 @@ class NotesRecipes(IntEnum):
     Recipes_UncommonGreatshields = 9231
     Recipes_RareGreatshields = 9232
     Recipes_VeryRareGreatshields = 9233
+
+    Note_SerpentHunter = 8810
 
 
 # Keys are offsets used in all IDs.
@@ -530,6 +530,8 @@ NEW_MATERIALS = {
 }
 
 
+# TODO: Specify their merchant shop lineup row ID.
+#  I think some (e.g. for Kale) may have to override other shop entries.
 NEW_NOTES_RECIPES = {
     NotesRecipes.Note_CurePlague: {
         "name": "Note: Cure for Plagues",
@@ -650,6 +652,12 @@ NEW_NOTES_RECIPES = {
         "info": "",
         "caption": "",
         "bought_flag": SurvivalFlags.Recipes_VeryRareGreatshields_Bought,
+    },
+    NotesRecipes.Note_SerpentHunter: {
+        "name": "Note: The Serpent-Hunter",
+        "info": "",
+        "caption": "",
+        "bought_flag": SurvivalFlags.Note_SerpentHunter,
     },
 }
 
