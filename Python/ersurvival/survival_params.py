@@ -12,6 +12,7 @@ from pathlib import Path
 
 from Python.ersurvival.crafting import Materials
 from survival_enums import *
+from survival_text import read_weapon_text, write_weapon_text
 from weapon_recipes import WEAPON_RECIPES
 
 CSV_PATH = Path(r"C:\Dark Souls\Tools\Params\Yapped Rune Bear 2.1.4\Projects\ExampleMod\CSV\ER")
@@ -464,10 +465,10 @@ def generate_dummy_weapons(
 
     dummy_offset = 60000000
 
-    new_mtrl_offset = 400000
+    new_mtrl_offset = 330000
     mtrl_source = 320010  # 3x Thin Beast Bones
 
-    new_shop_offset = 40000
+    new_shop_offset = 33000
     shop_source = 1  # unnamed
 
     item_lot_offset = 40000000
@@ -479,16 +480,19 @@ def generate_dummy_weapons(
     new_weapon_indices = list(WEAPON_RECIPES.keys())
     tiers_dict = parse_weapon_tiers()  # maps weapon names to (weapon_id, previous_id) pair
 
+    names, infos, captions = read_weapon_text()
+
     slot = 0
     for row in weapon_param.rows:
         if not do_weapon(row):
             continue
 
-        weapon_base_id = row.row_id // 10000
-        dummy_id = dummy_offset + 100 * weapon_base_id
-        shop_id = new_shop_offset + weapon_base_id
-        mtrl_id = new_mtrl_offset + 10 * weapon_base_id
-        item_lot_id = item_lot_offset + 100 * weapon_base_id
+        weapon_root_index = row.row_id // 10000
+        dummy_id = dummy_offset + 100 * weapon_root_index
+        shop_id = new_shop_offset + weapon_root_index
+        mtrl_id = new_mtrl_offset + 10 * weapon_root_index
+        item_lot_id = item_lot_offset + 100 * weapon_root_index
+        weapon_base_id = 10000 * weapon_root_index
 
         try:
             true_weapon_id, previous_weapon_id = tiers_dict[row.name]
@@ -496,6 +500,10 @@ def generate_dummy_weapons(
             # Weapon is not in the upgrade tree, and is simply crafted from scratch (Shields, Staffs, Seals, Torches)
             true_weapon_id = row.row_id  # no upgrade level (can be upgrading normally at blacksmith)
             previous_weapon_id = None  # no previous weapon in recipe
+            remove_reinforcement = False
+        else:
+            # Remove reinforcement from tiered weapon.
+            remove_reinforcement = True
 
         # Determine rune cost for crafting from upgrade level.
         upgrade_level = true_weapon_id % 100
@@ -512,10 +520,25 @@ def generate_dummy_weapons(
             # TODO: Probably want more hand-crafted costs for shields/staffs/seals/torches.
             rune_cost = 500  # minimum rune cost (for 'from scratch' weapons)
 
+        if remove_reinforcement:
+            row["materialSetId"] = -1
+
         # Create dummy Weapon row.
         dummy = weapon_param.duplicate_row(row.row_id, dummy_id)
         dummy["Row Name"] += " (crafting dummy)"
         dummy["weaponCategory"] = 13  # arrow (for appearing in crafting menu)
+
+        # Set crafting dummy name text.
+        if previous_weapon_id is not None:
+            previous_weapon_base_id = 10000 * (previous_weapon_id // 10000)  # ignore upgrade level
+            previous_weapon_name = names[previous_weapon_base_id]
+            infos[dummy_id] = f"Upgrade {previous_weapon_name} into {names[weapon_base_id]}"
+        else:
+            infos[dummy_id] = f"Craft {names[weapon_base_id]} from raw materials"
+
+        # Copy captions.
+        names[dummy_id] = names[weapon_base_id]
+        captions[dummy_id] = captions[weapon_base_id]
 
         # Create item lot for awarding real weapon.
         new_item_lot = item_lots_map_param.duplicate_row(item_lot_source, item_lot_id)
@@ -560,6 +583,8 @@ def generate_dummy_weapons(
         slot += 1
 
         # Create ingredients entry.
+        # TODO: Staff Pole and Shield Grip are not appearing in recipes.
+        # TODO: Serpent-Hunter still has a recipe. Probably good, but need a recipe book drop (note) then.
         new_mtrl_row = equip_mtrl_set_param.duplicate_row(mtrl_source, mtrl_id)
         new_mtrl_row.name = row.name
         ingredients = [ing for ing in WEAPON_RECIPES[row.name]["recipe"] if ing[1] < 21100]  # ignore grips
@@ -573,6 +598,9 @@ def generate_dummy_weapons(
                 new_mtrl_row[f"materialId{i + 1:02d}"] = ingredient.value
                 new_mtrl_row[f"itemNum{i + 1:02d}"] = count
                 new_mtrl_row[f"materialCate{i + 1:02d}"] = 4  # always Goods
+
+    write_weapon_text(names, infos, captions)
+    print("Wrote weapon FMGs successfully.")
 
 
 def generate_new_consumables(
@@ -646,6 +674,8 @@ def replace_weapon_item_lots(item_lots_param: YappedParam, weapons_param: Yapped
 
         if row.row_id in PRESERVE_ITEM_LOTS:
             continue  # leave these item lots be (e.g., Serpent-Hunter)
+        if 40000000 <= row.row_id <= 49999999:
+            continue  # ignore my new crafting dummy item lots
 
         for slot in range(1, 9):
             item_id = int(row[f"lotItemId{slot:02d}"])
@@ -932,6 +962,7 @@ def generate_all():
     generate_new_materials(goods)
     generate_new_consumables(goods, shop_recipe, mtrl)
 
+    # TODO: Do not replace weapons with Stone Fragments. They should come from old Smithing Stone spots.
     replace_weapon_item_lots(item_lots_enemy, weapons, is_map=False)
     replace_weapon_item_lots(item_lots_map, weapons, is_map=True)
     replace_merchant_weapons(shop_merchant, weapons)
@@ -939,6 +970,7 @@ def generate_all():
     # TODO: Haven't seen more than 1 of any replacement good appear in merchants yet...
     # TODO: Notes with disease clues for merchants.
     # TODO: New "cookbooks" for consumables, basic weapon crafting, and shield/staff/seal/torch crafting.
+    # TODO: Replace ~80% of [Somber] Smithing Stone item lots with Stone Fragments.
 
     write_param_csv(goods, "EquipParamGoods.csv")
     write_param_csv(weapons, "EquipParamWeapon.csv")

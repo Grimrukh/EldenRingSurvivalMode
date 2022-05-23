@@ -1,7 +1,5 @@
 """Lists the recipes for weapons.
 
-TODO: Everything between [something] and Greatshields below.
-
 TODO: Weapons that need particularly difficult recipes:
     - Spears:
         - Spear: requires Stormveil/Liurnia/Caelid
