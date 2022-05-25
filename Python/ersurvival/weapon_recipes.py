@@ -2047,7 +2047,6 @@ WEAPON_RECIPES = {
         "recipe": [
             (2, Materials.RefinedWood),
             (3, Materials.String),
-            (1, Materials.IronPlate),
             (3, Materials.TrinasLily),
             (1, Materials.SmolderingButterfly),
         ],
@@ -2074,7 +2073,6 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.ErdtreeWood),
             (4, Materials.IronPlate),
-            (2, Materials.GoldenSunflower),
             (1, Materials.ErdtreeAmber),
             (1, Materials.SmolderingButterfly),
         ],
@@ -2268,7 +2266,6 @@ WEAPON_RECIPES = {
         "id": 3106,
         "recipe": [
             (1, Materials.ShieldHandle),
-            (2, Materials.SilverTearHusk),
             (1, Materials.AlbinauricBloodclot),
             (5, Materials.IronPlate),
             (1, Materials.SomberStoneFragment),
@@ -2435,7 +2432,6 @@ WEAPON_RECIPES = {
             (1, Materials.ShieldHandle),
             (3, Materials.RefinedWood),
             (1, Materials.IronPlate),
-            (1, Materials.CaveMoss),
             (1, Materials.MeltedMushroom),
         ],
     },
@@ -2466,7 +2462,6 @@ WEAPON_RECIPES = {
             (12, Materials.BuddingHorn),
             (5, Materials.SomberStoneFragment),
             (1, Materials.ErdtreeAmber),
-            (6, Materials.GoldTingedExcrement),
         ],
     },
     "Dragonclaw Shield": {
@@ -2482,8 +2477,7 @@ WEAPON_RECIPES = {
         "id": 3205,
         "recipe": [
             (1, Materials.GreatshieldHandle),
-            (15, Materials.RefinedWood),
-            (3, Materials.IronPlate),
+            (7, Materials.RefinedWood),
             (6, Materials.Bloodrose),
             (4, Materials.IronShards),
         ],
@@ -2495,7 +2489,6 @@ WEAPON_RECIPES = {
             (3, Materials.IronPlate),
             (5, Materials.ErdtreeWood),
             (3, Materials.ErdtreeAmber),
-            (9, Materials.ErdleafFlower),
         ],
     },
     "Golden Beast Crest Shield": {
@@ -2520,10 +2513,9 @@ WEAPON_RECIPES = {
         "id": 3213,
         "recipe": [
             (1, Materials.GreatshieldHandle),
-            (4, Materials.IronPlate),
+            (25, Materials.StoneFragment),
             (8, Materials.SomberStoneFragment),
             (6, Materials.YellowEmber),
-            (25, Materials.StoneFragment),
         ],
     },
     "Icon Shield": {
@@ -2533,7 +2525,6 @@ WEAPON_RECIPES = {
             (2, Materials.IronShards),
             (8, Materials.RefinedWood),
             (6, Materials.ErdleafFlower),
-            (2, Materials.AltusBloom)
         ],
     },
     "One-Eyed Shield": {
@@ -2541,7 +2532,6 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.GreatshieldHandle),
             (2, Materials.SomberStoneFragment),
-            (2, Materials.IronPlate),
             (8, Materials.StoneFragment),
             (8, Materials.FireBlossom),
 
@@ -2552,7 +2542,6 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.GreatshieldHandle),
             (4, Materials.SomberStoneFragment),
-            (3, Materials.IronPlate),
             (10, Materials.StoneFragment),
             (10, Materials.FireBlossom),
 
@@ -2597,11 +2586,9 @@ WEAPON_RECIPES = {
         "id": 3222,
         "recipe": [
             (1, Materials.GreatshieldHandle),
-            (1, Materials.SomberStoneFragment),
             (4, Materials.BuddingHorn),
             (6, Materials.HeftyBeastBone),
             (1, Materials.GruesomeBone),
-            (1, Materials.BeastBlood),
         ],
     },
     "Redmane Greatshield": {
