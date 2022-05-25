@@ -1,3 +1,7 @@
+from __future__ import annotations
+
+from enum import IntEnum
+
 from soulstruct.game_types import *
 
 
@@ -155,12 +159,39 @@ class SurvivalFlags(Flag):
 
     PureScarletRotOnce = BASE_FLAG + 250
 
+    # Note/Recipe sale flags.
+    Note_CurePlague_Bought = BASE_FLAG + 300
+    Note_CureToxin_Bought = BASE_FLAG + 301
+    Note_CureFever_Bought = BASE_FLAG + 302
+    Note_CureParasite_Bought = BASE_FLAG + 303
+    Recipes_CommonSurvival_Bought = BASE_FLAG + 304
+    Recipes_UncommonSurvival_Bought = BASE_FLAG + 305
+    Recipes_RareSurvival_Bought = BASE_FLAG + 306
+    Recipes_VeryRareSurvival_Bought = BASE_FLAG + 307
+    Recipes_CommonSmallShields_Bought = BASE_FLAG + 308
+    Recipes_UncommonSmallShields_Bought = BASE_FLAG + 309
+    Recipes_RareSmallShields_Bought = BASE_FLAG + 310
+    Recipes_VeryRareSmallShields_Bought = BASE_FLAG + 311
+    Recipes_CommonMediumShields_Bought = BASE_FLAG + 312
+    Recipes_UncommonMediumShields_Bought = BASE_FLAG + 313
+    Recipes_RareMediumShields_Bought = BASE_FLAG + 314
+    Recipes_VeryRareMediumShields_Bought = BASE_FLAG + 315
+    Recipes_CommonGreatshields_Bought = BASE_FLAG + 316
+    Recipes_UncommonGreatshields_Bought = BASE_FLAG + 317
+    Recipes_RareGreatshields_Bought = BASE_FLAG + 318
+    Recipes_VeryRareGreatshields_Bought = BASE_FLAG + 319
+    Note_SerpentHunter = BASE_FLAG + 320
+
     # TIME FLAG. Increments by 1 every 30 in-game minutes.
     MonitorTimeFlag = 15003399
     TimeEventValue = 15003400  # 4 flags
 
     # For crafting weapons.
-    WeaponCraftingBase = 15004000  # 377 slots
+    CraftDummyWeaponBase = 15004000  # 377 slots
+
+    # For monitoring possession of base weapons in recipes.
+    MonitorWeaponPossessionBase = 15004500  # 377 slots (event slot)
+    WeaponMonitorBase = 19004000  # 377 slots (actual flag)
 
 
 class VanillaCharacters(Character):
@@ -358,3 +389,16 @@ class WeaponType(IntEnum):
     Bolt = 85
     BallistaBolt = 86
     Torch = 87
+
+
+class GoodsUseAnimation(IntEnum):
+    ITEM_RECOVER = 0
+    ITEM_DRINK = 10
+    ITEM_EATJERKY = 26
+
+
+class PotGroupID(IntEnum):
+    NoPot = -1
+    CrackedPot = 1
+    PerfumeBottle = 2
+    RitualPot = 3
