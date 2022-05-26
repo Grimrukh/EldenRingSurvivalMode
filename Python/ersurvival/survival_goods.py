@@ -480,19 +480,19 @@ NEW_MATERIALS = {
         "icon": 19103,
     },
     Materials.IronShards: {
-        "name": "Iron Shards",
+        "name": "Iron Shards", #metal scrap? metal shards?
         "info": "Small chips of iron",
         "caption": "TODO",
         "icon": 19104,
     },
     Materials.IronPlate: {
-        "name": "Iron Plate",
+        "name": "Iron Plate", #metal plate
         "info": "Basic component of metallic weaponry",
         "caption": "TODO",
         "icon": 19105,
     },
     Materials.LiquidMetal: {
-        "name": "Liquid Metal",
+        "name": "Liquid Metal", #fancy metal
         "info": "Rare component of unusual weapons",
         "caption": "TODO",
         "icon": 19106,
@@ -517,13 +517,13 @@ NEW_MATERIALS = {
     },
     Materials.MeteoriteChunk: {
         "name": "Meteorite Chunk",
-        "info": "Resin sourced from the Erdtree",
+        "info": "Dense chunk of cosmic debris",
         "caption": "TODO",
         "icon": 19110,
     },
     Materials.BlackMark: {
         "name": "Black Mark",
-        "info": "Dense chunk of cosmic debris",
+        "info": "",
         "caption": "TODO",
         "icon": 19111,
     },
@@ -538,6 +538,18 @@ NEW_MATERIALS = {
         "info": "Sacred wood from the Erdtree",
         "caption": "TODO",
         "icon": 19113,
+    },
+    Materials.ErdtreeAmber: {
+        "name": "Erdtree Amber",
+        "info": "Resin sourced from the Erdtree",
+        "caption": "TODO",
+        "icon": 19114,
+    },
+    Materials.GlintstoneDust: {
+        "name": "Glintstone Dust",
+        "info": "Small grains of Glintstone",
+        "caption": "TODO",
+        "icon": 19115,
     },
 }
 
