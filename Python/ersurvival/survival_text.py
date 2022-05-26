@@ -68,31 +68,27 @@ EVENT_TEXT = {
     SurvivalText.MildColdWarning: "You are cold",
     SurvivalText.ModerateColdWarning: "You are very cold",
     SurvivalText.SevereColdWarning: "You are extremely cold",
-    SurvivalText.ContractedLimgraveDisease: "Infected with Limgrave plague",
-    SurvivalText.ContractedLiurniaDisease: "Infected with Liurnia toxin",
-    SurvivalText.ContractedCaelidDisease: "Infected with Caelid parasite",
-    SurvivalText.ContractedAltusDisease: "Infected with Altus fever",
-    SurvivalText.ContractedMtGelmirDisease: "Infected with Gelmir plague",
-    SurvivalText.ContractedMountaintopsDisease: "Infected with Mountaintops parasite",
-    SurvivalText.ContractedSiofraDisease: "Infected with Siofra plague",
-    SurvivalText.ContractedAinselDisease: "Infected with Ainsel toxin",
-    SurvivalText.ContractedDeeprootDisease: "Infected with Deeproot parasite",
-    SurvivalText.ContractedStormveilDisease: "Infected with Stormveil plague",
-    SurvivalText.ContractedRayaLucariaDisease: "Infected with Raya Lucaria toxin",
-    SurvivalText.ContractedRadahnDisease: "Infected with Radahn fever",
-    SurvivalText.ContractedVolcanoManorDisease: "Infected with Volcano toxin",
-    SurvivalText.ContractedLeyndellDisease: "Infected with Leyndell plague",
-    SurvivalText.ContractedSewersDisease: "Infected with Sewers parasite",
-    SurvivalText.ContractedHaligtreeDisease: "Infected with Haligtree plague",
-    SurvivalText.ContractedFarumAzulaDisease: "Infected with Farum Azula fever",
-    SurvivalText.ContractedMohgwynDisease: "Infected with Mohgwyn fever",
-    SurvivalText.ContractedCatacombsDisease: "Infected with Catacombs toxin",
-    SurvivalText.ContractedCaveDisease: "Infected with Cave parasite",
-    SurvivalText.ContractedTunnelDisease: "Infected with Tunnel fever",
-    SurvivalText.CuredPlague: "Cured plague",
-    SurvivalText.CuredToxin: "Cured toxin",
-    SurvivalText.CuredFever: "Cured fever",
-    SurvivalText.CuredParasite: "Cured parasite",
+    SurvivalText.CuredLimgraveDisease: "Cured Plague of Limgrave",
+    SurvivalText.CuredLiurniaDisease: "Cured Lake Toxin",
+    SurvivalText.CuredCaelidDisease: "Cured Scarlet Parasite",
+    SurvivalText.CuredAltusDisease: "Cured Windmill Fever",
+    SurvivalText.CuredMtGelmirDisease: "Cured Plague of Gelmir",
+    SurvivalText.CuredMountaintopsDisease: "Cured Frigid Parasite",
+    SurvivalText.CuredSiofraDisease: "Cured Plague of Nokron",
+    SurvivalText.CuredAinselDisease: "Cured Ant Toxin",
+    SurvivalText.CuredDeeprootDisease: "Cured Star-Shaped Parasite",
+    SurvivalText.CuredStormveilDisease: "Cured Grafted Plague",
+    SurvivalText.CuredRayaLucariaDisease: "Cured Infected Full Moon Fever",
+    SurvivalText.CuredRadahnDisease: "Cured Starscourge Fever",
+    SurvivalText.CuredVolcanoManorDisease: "Cured Serpent Toxin",
+    SurvivalText.CuredLeyndellDisease: "Cured Plague of Leyndell",
+    SurvivalText.CuredSewersDisease: "Cured Omen Parasite",
+    SurvivalText.CuredHaligtreeDisease: "Cured Unalloyed Plague",
+    SurvivalText.CuredFarumAzulaDisease: "Cured Infected Beastman's Fever",
+    SurvivalText.CuredMohgwynDisease: "Cured Blood Lord's Fever",
+    SurvivalText.CuredCatacombsDisease: "Cured Catacombs Toxin",
+    SurvivalText.CuredCaveDisease: "Cured Cave Parasite",
+    SurvivalText.CuredTunnelDisease: "Cured Miner's Fever",
     SurvivalText.Dehydration: "You are suffering from dehydration",
 }
 
@@ -100,17 +96,13 @@ EVENT_TEXT = {
 def set_goods_text():
     goods_name = YabberText(ITEM_PATH / "GoodsName_vanilla.fmg.xml")
     goods_info = YabberText(ITEM_PATH / "GoodsInfo_vanilla.fmg.xml")
-    goods_caption = YabberText(ITEM_PATH / "GoodsCaption_vanilla.fmg.xml")  # TODO
+    goods_caption = YabberText(ITEM_PATH / "GoodsCaption_vanilla.fmg.xml")
 
-    for good_id, good_info in NEW_CONSUMABLES.items():
-        goods_name[good_id] = good_info["name"]
-        goods_info[good_id] = good_info["info"]
-        goods_caption[good_id] = good_info["caption"]
-
-    for good_id, good_info in NEW_MATERIALS.items():
-        goods_name[good_id] = good_info["name"]
-        goods_info[good_id] = good_info["info"]
-        goods_caption[good_id] = good_info["caption"]
+    for goods_dict in (NEW_CONSUMABLES, NEW_MATERIALS, NEW_SMITHS_HAMMERS, NEW_NOTES_RECIPES):
+        for good_id, good_info in goods_dict.items():
+            goods_name[good_id] = good_info["name"]
+            goods_info[good_id] = good_info["info"]
+            goods_caption[good_id] = good_info["caption"]
 
     goods_name.write(ITEM_PATH / "GoodsName.fmg.xml")
     goods_info.write(ITEM_PATH / "GoodsInfo.fmg.xml")

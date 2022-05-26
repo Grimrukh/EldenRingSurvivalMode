@@ -5,6 +5,7 @@ my understanding of ER EMEVD instructions becomes better.
 """
 from soulstruct.eldenring.events import *
 from .survival_enums import *
+from .survival_goods import *
 
 
 @NeverRestart(0)
@@ -49,894 +50,941 @@ def Constructor():
     # region Disease checks
     GetDiseaseOverworld(
         0,
-        SurvivalEffects.LimgravePlague,
+        SurvivalEffects.LimgraveDisease,
         SurvivalFlags.PlayerInLimgrave,
         SurvivalFlags.LimgraveDiseaseOnce,
         SurvivalFlags.LimgraveDiseaseTwice,
-        SurvivalText.ContractedLimgraveDisease,
+        DiseaseIndicators.LimgraveDisease,
     )
     GetDiseaseOverworld(
         1,
-        SurvivalEffects.LiurniaToxin,
+        SurvivalEffects.LiurniaDisease,
         SurvivalFlags.PlayerInLiurnia,
         SurvivalFlags.LiurniaDiseaseOnce,
         SurvivalFlags.LiurniaDiseaseTwice,
-        SurvivalText.ContractedLiurniaDisease,
+        DiseaseIndicators.LiurniaDisease,
     )
     GetDiseaseOverworld(
         2,
-        SurvivalEffects.CaelidParasite,
+        SurvivalEffects.CaelidDisease,
         SurvivalFlags.PlayerInCaelid,
         SurvivalFlags.CaelidDiseaseOnce,
         SurvivalFlags.CaelidDiseaseTwice,
-        SurvivalText.ContractedCaelidDisease,
+        DiseaseIndicators.CaelidDisease,
     )
     GetDiseaseOverworld(
         3,
-        SurvivalEffects.AltusFever,
+        SurvivalEffects.AltusDisease,
         SurvivalFlags.PlayerInAltus,
         SurvivalFlags.AltusDiseaseOnce,
         SurvivalFlags.AltusDiseaseTwice,
-        SurvivalText.ContractedAltusDisease,
+        DiseaseIndicators.AltusDisease,
     )
     GetDiseaseOverworld(
         4,
-        SurvivalEffects.MtGelmirPlague,
+        SurvivalEffects.MtGelmirDisease,
         SurvivalFlags.PlayerInMtGelmir,
         SurvivalFlags.MtGelmirDiseaseOnce,
         SurvivalFlags.MtGelmirDiseaseTwice,
-        SurvivalText.ContractedMtGelmirDisease,
+        DiseaseIndicators.MtGelmirDisease,
     )
     GetDiseaseOverworld(
         5,
-        SurvivalEffects.MountaintopsParasite,
+        SurvivalEffects.MountaintopsDisease,
         SurvivalFlags.PlayerInMountaintops,
         SurvivalFlags.MountaintopsDiseaseOnce,
         SurvivalFlags.MountaintopsDiseaseTwice,
-        SurvivalText.ContractedMountaintopsDisease,
+        DiseaseIndicators.MountaintopsDisease,
     )
 
     GetDiseaseLegacyDungeon(
         0,
-        SurvivalEffects.StormveilPlague,
+        SurvivalEffects.StormveilDisease,
         10, 0, 0, 0,  # STORMVEIL_CASTLE
         SurvivalFlags.StormveilDiseaseOnce,
         SurvivalFlags.StormveilDiseaseTwice,
-        SurvivalText.ContractedStormveilDisease,
+        DiseaseIndicators.StormveilDisease,
     )
     GetDiseaseLegacyDungeon(
         1,
-        SurvivalEffects.RayaLucariaFever,
+        SurvivalEffects.RayaLucariaDisease,
         14, 0, 0, 0,  # RAYA_LUCARIA
         SurvivalFlags.RayaLucariaDiseaseOnce,
         SurvivalFlags.RayaLucariaDiseaseTwice,
-        SurvivalText.ContractedRayaLucariaDisease,
+        DiseaseIndicators.RayaLucariaDisease,
     )
     GetDiseaseLegacyDungeon(
         2,
-        SurvivalEffects.VolcanoManorToxin,
+        SurvivalEffects.VolcanoManorDisease,
         16, 0, 0, 0,  # VOLCANO_MANOR (does not matter if you're in the no-attack zone)
         SurvivalFlags.VolcanoManorDiseaseOnce,
         SurvivalFlags.VolcanoManorDiseaseTwice,
-        SurvivalText.ContractedVolcanoManorDisease,
+        DiseaseIndicators.VolcanoManorDisease,
     )
     GetDiseaseLegacyDungeon(
         3,
-        SurvivalEffects.LeyndellPlague,
+        SurvivalEffects.LeyndellDisease,
         11, 0, 0, 0,  # LEYNDELL_ROYAL_CAPITAL (no disease in Ashen Capital)
         SurvivalFlags.LeyndellDiseaseOnce,
         SurvivalFlags.LeyndellDiseaseTwice,
-        SurvivalText.ContractedLeyndellDisease,
+        DiseaseIndicators.LeyndellDisease,
     )
     GetDiseaseLegacyDungeon(
         4,
-        SurvivalEffects.SewersParasite,
+        SurvivalEffects.SewersDisease,
         35, 0, 0, 0,  # SHUNNING_GROUNDS
         SurvivalFlags.SewersDiseaseOnce,
         SurvivalFlags.SewersDiseaseTwice,
-        SurvivalText.ContractedSewersDisease,
+        DiseaseIndicators.SewersDisease,
     )
     GetDiseaseLegacyDungeon(
         5,
-        SurvivalEffects.HaligtreePlague,
+        SurvivalEffects.HaligtreeDisease,
         15, 0, 0, 0,  # HALIGTREE
         SurvivalFlags.HaligtreeDiseaseOnce,
         SurvivalFlags.HaligtreeDiseaseTwice,
-        SurvivalText.ContractedHaligtreeDisease,
+        DiseaseIndicators.HaligtreeDisease,
     )
     GetDiseaseLegacyDungeon(
         6,
-        SurvivalEffects.FarumAzulaFever,
+        SurvivalEffects.FarumAzulaDisease,
         13, 0, 0, 0,  # CRUMBLING_FARUM_AZULA
         SurvivalFlags.FarumAzulaDiseaseOnce,
         SurvivalFlags.FarumAzulaDiseaseTwice,
-        SurvivalText.ContractedFarumAzulaDisease,
+        DiseaseIndicators.FarumAzulaDisease,
     )
     GetDiseaseLegacyDungeon(
         7,
-        SurvivalEffects.MohgwynFever,
+        SurvivalEffects.MohgwynDisease,
         12, 5, 0, 0,  # MOHGWYN_PALACE
         SurvivalFlags.MohgwynDiseaseOnce,
         SurvivalFlags.MohgwynDiseaseTwice,
-        SurvivalText.ContractedMohgwynDisease,
+        DiseaseIndicators.MohgwynDisease,
     )
 
     GetDiseaseSiofra()
     GetDiseaseAinsel()
     GetDiseaseDeeprootAstel()
     GetDiseaseRadahn()
-
     GetDiseaseCatacombs()
     GetDiseaseCaves()
     GetDiseaseTunnels()
-
     # Skipping Pure Scarlet Rot.
     # endregion
 
-    # region Disease cure checks
-    CurePlague()
-    CureToxin()
-    CureFever()
-    CureParasite()
+    # region Disease cures
+    CureDisease(
+        0, 
+        SurvivalEffects.LimgraveDisease, 
+        SurvivalEffects.CureLimgraveDisease, 
+        DiseaseIndicators.LimgraveDisease, 
+        SurvivalText.CuredLimgraveDisease,
+    )
+    CureDisease(
+        1, 
+        SurvivalEffects.LiurniaDisease, 
+        SurvivalEffects.CureLiurniaDisease, 
+        DiseaseIndicators.LiurniaDisease, 
+        SurvivalText.CuredLiurniaDisease,
+    )
+    CureDisease(
+        2, 
+        SurvivalEffects.CaelidDisease, 
+        SurvivalEffects.CureCaelidDisease, 
+        DiseaseIndicators.CaelidDisease, 
+        SurvivalText.CuredCaelidDisease,
+    )
+    CureDisease(
+        3, 
+        SurvivalEffects.AltusDisease, 
+        SurvivalEffects.CureAltusDisease, 
+        DiseaseIndicators.AltusDisease, 
+        SurvivalText.CuredAltusDisease,
+    )
+    CureDisease(
+        4, 
+        SurvivalEffects.MtGelmirDisease, 
+        SurvivalEffects.CureMtGelmirDisease, 
+        DiseaseIndicators.MtGelmirDisease, 
+        SurvivalText.CuredMtGelmirDisease,
+    )
+    CureDisease(
+        5, 
+        SurvivalEffects.MountaintopsDisease, 
+        SurvivalEffects.CureMountaintopsDisease, 
+        DiseaseIndicators.MountaintopsDisease, 
+        SurvivalText.CuredMountaintopsDisease,
+    )
+    CureDisease(
+        6, 
+        SurvivalEffects.SiofraDisease, 
+        SurvivalEffects.CureSiofraDisease, 
+        DiseaseIndicators.SiofraDisease, 
+        SurvivalText.CuredSiofraDisease,
+    )
+    CureDisease(
+        7, 
+        SurvivalEffects.AinselDisease, 
+        SurvivalEffects.CureAinselDisease, 
+        DiseaseIndicators.AinselDisease, 
+        SurvivalText.CuredAinselDisease,
+    )
+    CureDisease(
+        8, 
+        SurvivalEffects.DeeprootDisease, 
+        SurvivalEffects.CureDeeprootDisease, 
+        DiseaseIndicators.DeeprootDisease, 
+        SurvivalText.CuredDeeprootDisease,
+    )
+    CureDisease(
+        9, 
+        SurvivalEffects.StormveilDisease, 
+        SurvivalEffects.CureStormveilDisease, 
+        DiseaseIndicators.StormveilDisease, 
+        SurvivalText.CuredStormveilDisease,
+    )
+    CureDisease(
+        10, 
+        SurvivalEffects.RayaLucariaDisease, 
+        SurvivalEffects.CureRayaLucariaDisease, 
+        DiseaseIndicators.RayaLucariaDisease, 
+        SurvivalText.CuredRayaLucariaDisease,
+    )
+    CureDisease(
+        11, 
+        SurvivalEffects.RadahnDisease, 
+        SurvivalEffects.CureRadahnDisease, 
+        DiseaseIndicators.RadahnDisease, 
+        SurvivalText.CuredRadahnDisease,
+    )
+    CureDisease(
+        12, 
+        SurvivalEffects.VolcanoManorDisease, 
+        SurvivalEffects.CureVolcanoManorDisease, 
+        DiseaseIndicators.VolcanoManorDisease, 
+        SurvivalText.CuredVolcanoManorDisease,
+    )
+    CureDisease(
+        13, 
+        SurvivalEffects.LeyndellDisease, 
+        SurvivalEffects.CureLeyndellDisease, 
+        DiseaseIndicators.LeyndellDisease, 
+        SurvivalText.CuredLeyndellDisease,
+    )
+    CureDisease(
+        14, 
+        SurvivalEffects.SewersDisease, 
+        SurvivalEffects.CureSewersDisease, 
+        DiseaseIndicators.SewersDisease, 
+        SurvivalText.CuredSewersDisease,
+    )
+    CureDisease(
+        15, 
+        SurvivalEffects.HaligtreeDisease, 
+        SurvivalEffects.CureHaligtreeDisease, 
+        DiseaseIndicators.HaligtreeDisease, 
+        SurvivalText.CuredHaligtreeDisease,
+    )
+    CureDisease(
+        16, 
+        SurvivalEffects.FarumAzulaDisease, 
+        SurvivalEffects.CureFarumAzulaDisease, 
+        DiseaseIndicators.FarumAzulaDisease, 
+        SurvivalText.CuredFarumAzulaDisease,
+    )
+    CureDisease(
+        17, 
+        SurvivalEffects.MohgwynDisease, 
+        SurvivalEffects.CureMohgwynDisease, 
+        DiseaseIndicators.MohgwynDisease, 
+        SurvivalText.CuredMohgwynDisease,
+    )
+    CureDisease(
+        18, 
+        SurvivalEffects.CatacombsDisease, 
+        SurvivalEffects.CureCatacombsDisease, 
+        DiseaseIndicators.CatacombsDisease, 
+        SurvivalText.CuredCatacombsDisease,
+    )
+    CureDisease(
+        19, 
+        SurvivalEffects.CaveDisease, 
+        SurvivalEffects.CureCaveDisease, 
+        DiseaseIndicators.CaveDisease, 
+        SurvivalText.CuredCaveDisease,
+    )
+    CureDisease(
+        20, 
+        SurvivalEffects.TunnelDisease, 
+        SurvivalEffects.CureTunnelDisease, 
+        DiseaseIndicators.TunnelDisease, 
+        SurvivalText.CuredTunnelDisease,
+    )
     # CurePureScarletRot()
     # endregion
 
-    # Swap dummy weapons for real weapons and monitor weapon possession for upgrading.
+    # Swap dummy weapons for real weapons and monitor weapon possession (plus a Smith's Hammer) for upgrading.
     # region Dummy Weapons
     CraftDummyWeapon(0, 60010000, 40010000, 0)
-    MonitorWeaponPossession(0, 1000000, 19004000)
+    AllowWeaponUpgrade(0, 1000000, 0, 19004000)
     CraftDummyWeapon(1, 60010100, 40010100, 1160009)
-    MonitorWeaponPossession(1, 1010010, 19004001)
+    AllowWeaponUpgrade(1, 1010010, 8404, 19004001)
     CraftDummyWeapon(2, 60010200, 40010200, 1140006)
-    MonitorWeaponPossession(2, 1020009, 19004002)
+    AllowWeaponUpgrade(2, 1020009, 8402, 19004002)
     CraftDummyWeapon(3, 60010300, 40010300, 1140006)
-    MonitorWeaponPossession(3, 1030009, 19004003)
+    AllowWeaponUpgrade(3, 1030009, 8402, 19004003)
     CraftDummyWeapon(4, 60010400, 40010400, 1160009)
-    MonitorWeaponPossession(4, 1040010, 19004004)
+    AllowWeaponUpgrade(4, 1040010, 8404, 19004004)
     CraftDummyWeapon(5, 60010500, 40010500, 1100012)
-    MonitorWeaponPossession(5, 1050015, 19004005)
+    AllowWeaponUpgrade(5, 1050015, 8404, 19004005)
     CraftDummyWeapon(6, 60010600, 40010600, 1030009)
-    MonitorWeaponPossession(6, 1060012, 19004006)
+    AllowWeaponUpgrade(6, 1060012, 8403, 19004006)
     CraftDummyWeapon(7, 60010700, 40010700, 1050015)
-    MonitorWeaponPossession(7, 1070010, 19004007)
+    AllowWeaponUpgrade(7, 1070010, 8404, 19004007)
     CraftDummyWeapon(8, 60010800, 40010800, 1130015)
-    MonitorWeaponPossession(8, 1080010, 19004008)
+    AllowWeaponUpgrade(8, 1080010, 8404, 19004008)
     CraftDummyWeapon(9, 60010900, 40010900, 1000000)
-    MonitorWeaponPossession(9, 1090003, 19004009)
+    AllowWeaponUpgrade(9, 1090003, 8400, 19004009)
     CraftDummyWeapon(10, 60011000, 40011000, 1020009)
-    MonitorWeaponPossession(10, 1100012, 19004010)
+    AllowWeaponUpgrade(10, 1100012, 8403, 19004010)
     CraftDummyWeapon(11, 60011100, 40011100, 1100012)
-    MonitorWeaponPossession(11, 1110010, 19004011)
+    AllowWeaponUpgrade(11, 1110010, 8404, 19004011)
     CraftDummyWeapon(12, 60011300, 40011300, 1060012)
-    MonitorWeaponPossession(12, 1130015, 19004012)
+    AllowWeaponUpgrade(12, 1130015, 8404, 19004012)
     CraftDummyWeapon(13, 60011400, 40011400, 1090003)
-    MonitorWeaponPossession(13, 1140006, 19004013)
+    AllowWeaponUpgrade(13, 1140006, 8401, 19004013)
     CraftDummyWeapon(14, 60011500, 40011500, 1100012)
-    MonitorWeaponPossession(14, 1150015, 19004014)
+    AllowWeaponUpgrade(14, 1150015, 8404, 19004014)
     CraftDummyWeapon(15, 60011600, 40011600, 1150015)
-    MonitorWeaponPossession(15, 1160009, 19004015)
+    AllowWeaponUpgrade(15, 1160009, 8404, 19004015)
     CraftDummyWeapon(16, 60020000, 40020000, 2050004)
-    MonitorWeaponPossession(16, 2000006, 19004016)
+    AllowWeaponUpgrade(16, 2000006, 8401, 19004016)
     CraftDummyWeapon(17, 60020100, 40020100, 1000000)
-    MonitorWeaponPossession(17, 2010002, 19004017)
+    AllowWeaponUpgrade(17, 2010002, 0, 19004017)
     CraftDummyWeapon(18, 60020200, 40020200, 2000006)
-    MonitorWeaponPossession(18, 2020008, 19004018)
+    AllowWeaponUpgrade(18, 2020008, 8401, 19004018)
     CraftDummyWeapon(19, 60020400, 40020400, 2020008)
-    MonitorWeaponPossession(19, 2040010, 19004019)
+    AllowWeaponUpgrade(19, 2040010, 8402, 19004019)
     CraftDummyWeapon(20, 60020500, 40020500, 2010002)
-    MonitorWeaponPossession(20, 2050004, 19004020)
+    AllowWeaponUpgrade(20, 2050004, 8400, 19004020)
     CraftDummyWeapon(21, 60020600, 40020600, 2040010)
-    MonitorWeaponPossession(21, 2060006, 19004021)
+    AllowWeaponUpgrade(21, 2060006, 8403, 19004021)
     CraftDummyWeapon(22, 60020700, 40020700, 2110008)
-    MonitorWeaponPossession(22, 2070009, 19004022)
+    AllowWeaponUpgrade(22, 2070009, 8404, 19004022)
     CraftDummyWeapon(23, 60020800, 40020800, 7060015)
-    MonitorWeaponPossession(23, 2080009, 19004023)
+    AllowWeaponUpgrade(23, 2080009, 8404, 19004023)
     CraftDummyWeapon(24, 60020900, 40020900, 3050014)
-    MonitorWeaponPossession(24, 2090008, 19004024)
+    AllowWeaponUpgrade(24, 2090008, 8404, 19004024)
     CraftDummyWeapon(25, 60021100, 40021100, 2060006)
-    MonitorWeaponPossession(25, 2110008, 19004025)
+    AllowWeaponUpgrade(25, 2110008, 8404, 19004025)
     CraftDummyWeapon(26, 60021400, 40021400, 2180008)
-    MonitorWeaponPossession(26, 2140010, 19004026)
+    AllowWeaponUpgrade(26, 2140010, 8404, 19004026)
     CraftDummyWeapon(27, 60021500, 40021500, 2000006)
-    MonitorWeaponPossession(27, 2150004, 19004027)
+    AllowWeaponUpgrade(27, 2150004, 8401, 19004027)
     CraftDummyWeapon(28, 60021800, 40021800, 2190007)
-    MonitorWeaponPossession(28, 2180008, 19004028)
+    AllowWeaponUpgrade(28, 2180008, 8404, 19004028)
     CraftDummyWeapon(29, 60021900, 40021900, 2250006)
-    MonitorWeaponPossession(29, 2190007, 19004029)
+    AllowWeaponUpgrade(29, 2190007, 8403, 19004029)
     CraftDummyWeapon(30, 60022000, 40022000, 2070009)
-    MonitorWeaponPossession(30, 2200010, 19004030)
+    AllowWeaponUpgrade(30, 2200010, 8404, 19004030)
     CraftDummyWeapon(31, 60022100, 40022100, 2230012)
-    MonitorWeaponPossession(31, 2210015, 19004031)
+    AllowWeaponUpgrade(31, 2210015, 8404, 19004031)
     CraftDummyWeapon(32, 60022200, 40022200, 2240018)
-    MonitorWeaponPossession(32, 2220010, 19004032)
+    AllowWeaponUpgrade(32, 2220010, 8404, 19004032)
     CraftDummyWeapon(33, 60022300, 40022300, 2040010)
-    MonitorWeaponPossession(33, 2230012, 19004033)
+    AllowWeaponUpgrade(33, 2230012, 8403, 19004033)
     CraftDummyWeapon(34, 60022400, 40022400, 2210015)
-    MonitorWeaponPossession(34, 2240018, 19004034)
+    AllowWeaponUpgrade(34, 2240018, 8404, 19004034)
     CraftDummyWeapon(35, 60022500, 40022500, 2260005)
-    MonitorWeaponPossession(35, 2250006, 19004035)
+    AllowWeaponUpgrade(35, 2250006, 8403, 19004035)
     CraftDummyWeapon(36, 60022600, 40022600, 2150004)
-    MonitorWeaponPossession(36, 2260005, 19004036)
+    AllowWeaponUpgrade(36, 2260005, 8402, 19004036)
     CraftDummyWeapon(37, 60030000, 40030000, 2020008)
-    MonitorWeaponPossession(37, 3000009, 19004037)
+    AllowWeaponUpgrade(37, 3000009, 8402, 19004037)
     CraftDummyWeapon(38, 60030100, 40030100, 3180010)
-    MonitorWeaponPossession(38, 3010012, 19004038)
+    AllowWeaponUpgrade(38, 3010012, 8403, 19004038)
     CraftDummyWeapon(39, 60030200, 40030200, 3080014)
-    MonitorWeaponPossession(39, 3020015, 19004039)
+    AllowWeaponUpgrade(39, 3020015, 8404, 19004039)
     CraftDummyWeapon(40, 60030300, 40030300, 3180010)
-    MonitorWeaponPossession(40, 3030012, 19004040)
+    AllowWeaponUpgrade(40, 3030012, 8403, 19004040)
     CraftDummyWeapon(41, 60030400, 40030400, 3080014)
-    MonitorWeaponPossession(41, 3040015, 19004041)
+    AllowWeaponUpgrade(41, 3040015, 8404, 19004041)
     CraftDummyWeapon(42, 60030500, 40030500, 3010012)
-    MonitorWeaponPossession(42, 3050014, 19004042)
+    AllowWeaponUpgrade(42, 3050014, 8403, 19004042)
     CraftDummyWeapon(43, 60030600, 40030600, 3140009)
-    MonitorWeaponPossession(43, 3060010, 19004043)
+    AllowWeaponUpgrade(43, 3060010, 8404, 19004043)
     CraftDummyWeapon(44, 60030700, 40030700, 3040015)
-    MonitorWeaponPossession(44, 3070008, 19004044)
+    AllowWeaponUpgrade(44, 3070008, 8404, 19004044)
     CraftDummyWeapon(45, 60030800, 40030800, 3030012)
-    MonitorWeaponPossession(45, 3080014, 19004045)
+    AllowWeaponUpgrade(45, 3080014, 8403, 19004045)
     CraftDummyWeapon(46, 60030900, 40030900, 3130009)
-    MonitorWeaponPossession(46, 3090010, 19004046)
+    AllowWeaponUpgrade(46, 3090010, 8404, 19004046)
     CraftDummyWeapon(47, 60031000, 40031000, 2090008)
-    MonitorWeaponPossession(47, 3100010, 19004047)
+    AllowWeaponUpgrade(47, 3100010, 8404, 19004047)
     CraftDummyWeapon(48, 60031300, 40031300, 3070008)
-    MonitorWeaponPossession(48, 3130009, 19004048)
+    AllowWeaponUpgrade(48, 3130009, 8404, 19004048)
     CraftDummyWeapon(49, 60031400, 40031400, 3040015)
-    MonitorWeaponPossession(49, 3140009, 19004049)
+    AllowWeaponUpgrade(49, 3140009, 8404, 19004049)
     CraftDummyWeapon(50, 60031500, 40031500, 3040015)
-    MonitorWeaponPossession(50, 3150010, 19004050)
+    AllowWeaponUpgrade(50, 3150010, 8404, 19004050)
     CraftDummyWeapon(51, 60031600, 40031600, 3050014)
-    MonitorWeaponPossession(51, 3160008, 19004051)
+    AllowWeaponUpgrade(51, 3160008, 8404, 19004051)
     CraftDummyWeapon(52, 60031700, 40031700, 2090008)
-    MonitorWeaponPossession(52, 3170010, 19004052)
+    AllowWeaponUpgrade(52, 3170010, 8404, 19004052)
     CraftDummyWeapon(53, 60031800, 40031800, 3000009)
-    MonitorWeaponPossession(53, 3180010, 19004053)
+    AllowWeaponUpgrade(53, 3180010, 8402, 19004053)
     CraftDummyWeapon(54, 60031900, 40031900, 3040015)
-    MonitorWeaponPossession(54, 3190018, 19004054)
+    AllowWeaponUpgrade(54, 3190018, 8404, 19004054)
     CraftDummyWeapon(55, 60032000, 40032000, 3160008)
-    MonitorWeaponPossession(55, 3200010, 19004055)
+    AllowWeaponUpgrade(55, 3200010, 8404, 19004055)
     CraftDummyWeapon(56, 60032100, 40032100, 3190018)
-    MonitorWeaponPossession(56, 3210010, 19004056)
+    AllowWeaponUpgrade(56, 3210010, 8404, 19004056)
     CraftDummyWeapon(57, 60040000, 40040000, 4010017)
-    MonitorWeaponPossession(57, 4000018, 19004057)
+    AllowWeaponUpgrade(57, 4000018, 8404, 19004057)
     CraftDummyWeapon(58, 60040100, 40040100, 4040016)
-    MonitorWeaponPossession(58, 4010017, 19004058)
+    AllowWeaponUpgrade(58, 4010017, 8404, 19004058)
     CraftDummyWeapon(59, 60040200, 40040200, 4010017)
-    MonitorWeaponPossession(59, 4020010, 19004059)
+    AllowWeaponUpgrade(59, 4020010, 8404, 19004059)
     CraftDummyWeapon(60, 60040300, 40040300, 4040016)
-    MonitorWeaponPossession(60, 4030017, 19004060)
+    AllowWeaponUpgrade(60, 4030017, 8404, 19004060)
     CraftDummyWeapon(61, 60040400, 40040400, 3020015)
-    MonitorWeaponPossession(61, 4040016, 19004061)
+    AllowWeaponUpgrade(61, 4040016, 8404, 19004061)
     CraftDummyWeapon(62, 60040500, 40040500, 4010017)
-    MonitorWeaponPossession(62, 4050010, 19004062)
+    AllowWeaponUpgrade(62, 4050010, 8404, 19004062)
     CraftDummyWeapon(63, 60040600, 40040600, 4110009)
-    MonitorWeaponPossession(63, 4060010, 19004063)
+    AllowWeaponUpgrade(63, 4060010, 8404, 19004063)
     CraftDummyWeapon(64, 60040700, 40040700, 4110009)
-    MonitorWeaponPossession(64, 4070010, 19004064)
+    AllowWeaponUpgrade(64, 4070010, 8404, 19004064)
     CraftDummyWeapon(65, 60040800, 40040800, 4000018)
-    MonitorWeaponPossession(65, 4080010, 19004065)
+    AllowWeaponUpgrade(65, 4080010, 8404, 19004065)
     CraftDummyWeapon(66, 60041000, 40041000, 4000018)
-    MonitorWeaponPossession(66, 4100010, 19004066)
+    AllowWeaponUpgrade(66, 4100010, 8404, 19004066)
     CraftDummyWeapon(67, 60041100, 40041100, 4030017)
-    MonitorWeaponPossession(67, 4110009, 19004067)
+    AllowWeaponUpgrade(67, 4110009, 8404, 19004067)
     CraftDummyWeapon(68, 60050000, 40050000, 5060010)
-    MonitorWeaponPossession(68, 5000012, 19004068)
+    AllowWeaponUpgrade(68, 5000012, 8403, 19004068)
     CraftDummyWeapon(69, 60050100, 40050100, 5000012)
-    MonitorWeaponPossession(69, 5010014, 19004069)
+    AllowWeaponUpgrade(69, 5010014, 8403, 19004069)
     CraftDummyWeapon(70, 60050200, 40050200, 2000006)
-    MonitorWeaponPossession(70, 5020008, 19004070)
+    AllowWeaponUpgrade(70, 5020008, 8401, 19004070)
     CraftDummyWeapon(71, 60050300, 40050300, 5000012)
-    MonitorWeaponPossession(71, 5030014, 19004071)
+    AllowWeaponUpgrade(71, 5030014, 8403, 19004071)
     CraftDummyWeapon(72, 60050400, 40050400, 5030014)
-    MonitorWeaponPossession(72, 5040017, 19004072)
+    AllowWeaponUpgrade(72, 5040017, 8404, 19004072)
     CraftDummyWeapon(73, 60050500, 40050500, 5040017)
-    MonitorWeaponPossession(73, 5050010, 19004073)
+    AllowWeaponUpgrade(73, 5050010, 8404, 19004073)
     CraftDummyWeapon(74, 60050600, 40050600, 5020008)
-    MonitorWeaponPossession(74, 5060010, 19004074)
+    AllowWeaponUpgrade(74, 5060010, 8402, 19004074)
     CraftDummyWeapon(75, 60060000, 40060000, 6010017)
-    MonitorWeaponPossession(75, 6000010, 19004075)
+    AllowWeaponUpgrade(75, 6000010, 8404, 19004075)
     CraftDummyWeapon(76, 60060100, 40060100, 6020016)
-    MonitorWeaponPossession(76, 6010017, 19004076)
+    AllowWeaponUpgrade(76, 6010017, 8404, 19004076)
     CraftDummyWeapon(77, 60060200, 40060200, 5010014)
-    MonitorWeaponPossession(77, 6020016, 19004077)
+    AllowWeaponUpgrade(77, 6020016, 8404, 19004077)
     CraftDummyWeapon(78, 60060400, 40060400, 6010017)
-    MonitorWeaponPossession(78, 6040010, 19004078)
+    AllowWeaponUpgrade(78, 6040010, 8404, 19004078)
     CraftDummyWeapon(79, 60070000, 40070000, 7030006)
-    MonitorWeaponPossession(79, 7000008, 19004079)
+    AllowWeaponUpgrade(79, 7000008, 8401, 19004079)
     CraftDummyWeapon(80, 60070100, 40070100, 7110010)
-    MonitorWeaponPossession(80, 7010012, 19004080)
+    AllowWeaponUpgrade(80, 7010012, 8403, 19004080)
     CraftDummyWeapon(81, 60070200, 40070200, 7060015)
-    MonitorWeaponPossession(81, 7020018, 19004081)
+    AllowWeaponUpgrade(81, 7020018, 8404, 19004081)
     CraftDummyWeapon(82, 60070300, 40070300, 7140004)
-    MonitorWeaponPossession(82, 7030006, 19004082)
+    AllowWeaponUpgrade(82, 7030006, 8401, 19004082)
     CraftDummyWeapon(83, 60070400, 40070400, 7030006)
-    MonitorWeaponPossession(83, 7040008, 19004083)
+    AllowWeaponUpgrade(83, 7040008, 8401, 19004083)
     CraftDummyWeapon(84, 60070500, 40070500, 2080009)
-    MonitorWeaponPossession(84, 7050010, 19004084)
+    AllowWeaponUpgrade(84, 7050010, 8404, 19004084)
     CraftDummyWeapon(85, 60070600, 40070600, 7120012)
-    MonitorWeaponPossession(85, 7060015, 19004085)
+    AllowWeaponUpgrade(85, 7060015, 8404, 19004085)
     CraftDummyWeapon(86, 60070700, 40070700, 2080009)
-    MonitorWeaponPossession(86, 7070010, 19004086)
+    AllowWeaponUpgrade(86, 7070010, 8404, 19004086)
     CraftDummyWeapon(87, 60070800, 40070800, 7000008)
-    MonitorWeaponPossession(87, 7080010, 19004087)
+    AllowWeaponUpgrade(87, 7080010, 8402, 19004087)
     CraftDummyWeapon(88, 60071000, 40071000, 7020018)
-    MonitorWeaponPossession(88, 7100010, 19004088)
+    AllowWeaponUpgrade(88, 7100010, 8404, 19004088)
     CraftDummyWeapon(89, 60071100, 40071100, 7040008)
-    MonitorWeaponPossession(89, 7110010, 19004089)
+    AllowWeaponUpgrade(89, 7110010, 8402, 19004089)
     CraftDummyWeapon(90, 60071200, 40071200, 7080010)
-    MonitorWeaponPossession(90, 7120012, 19004090)
+    AllowWeaponUpgrade(90, 7120012, 8403, 19004090)
     CraftDummyWeapon(91, 60071400, 40071400, 2010002)
-    MonitorWeaponPossession(91, 7140004, 19004091)
+    AllowWeaponUpgrade(91, 7140004, 8400, 19004091)
     CraftDummyWeapon(92, 60071500, 40071500, 7010012)
-    MonitorWeaponPossession(92, 7150014, 19004092)
+    AllowWeaponUpgrade(92, 7150014, 8403, 19004092)
     CraftDummyWeapon(93, 60080100, 40080100, 8060018)
-    MonitorWeaponPossession(93, 8010010, 19004093)
+    AllowWeaponUpgrade(93, 8010010, 8404, 19004093)
     CraftDummyWeapon(94, 60080200, 40080200, 7150014)
-    MonitorWeaponPossession(94, 8020016, 19004094)
+    AllowWeaponUpgrade(94, 8020016, 8404, 19004094)
     CraftDummyWeapon(95, 60080300, 40080300, 8050008)
-    MonitorWeaponPossession(95, 8030009, 19004095)
+    AllowWeaponUpgrade(95, 8030009, 8404, 19004095)
     CraftDummyWeapon(96, 60080400, 40080400, 8060018)
-    MonitorWeaponPossession(96, 8040010, 19004096)
+    AllowWeaponUpgrade(96, 8040010, 8404, 19004096)
     CraftDummyWeapon(97, 60080500, 40080500, 8070012)
-    MonitorWeaponPossession(97, 8050008, 19004097)
+    AllowWeaponUpgrade(97, 8050008, 8404, 19004097)
     CraftDummyWeapon(98, 60080600, 40080600, 8020016)
-    MonitorWeaponPossession(98, 8060018, 19004098)
+    AllowWeaponUpgrade(98, 8060018, 8404, 19004098)
     CraftDummyWeapon(99, 60080700, 40080700, 7080010)
-    MonitorWeaponPossession(99, 8070012, 19004099)
+    AllowWeaponUpgrade(99, 8070012, 8403, 19004099)
     CraftDummyWeapon(100, 60080800, 40080800, 8060018)
-    MonitorWeaponPossession(100, 8080020, 19004100)
+    AllowWeaponUpgrade(100, 8080020, 8404, 19004100)
     CraftDummyWeapon(101, 60081000, 40081000, 8030009)
-    MonitorWeaponPossession(101, 8100010, 19004101)
+    AllowWeaponUpgrade(101, 8100010, 8404, 19004101)
     CraftDummyWeapon(102, 60090000, 40090000, 7080010)
-    MonitorWeaponPossession(102, 9000012, 19004102)
+    AllowWeaponUpgrade(102, 9000012, 8403, 19004102)
     CraftDummyWeapon(103, 60090100, 40090100, 9080015)
-    MonitorWeaponPossession(103, 9010017, 19004103)
+    AllowWeaponUpgrade(103, 9010017, 8404, 19004103)
     CraftDummyWeapon(104, 60090200, 40090200, 9010017)
-    MonitorWeaponPossession(104, 9020010, 19004104)
+    AllowWeaponUpgrade(104, 9020010, 8404, 19004104)
     CraftDummyWeapon(105, 60090300, 40090300, 9080015)
-    MonitorWeaponPossession(105, 9030009, 19004105)
+    AllowWeaponUpgrade(105, 9030009, 8404, 19004105)
     CraftDummyWeapon(106, 60090400, 40090400, 9070008)
-    MonitorWeaponPossession(106, 9040010, 19004106)
+    AllowWeaponUpgrade(106, 9040010, 8404, 19004106)
     CraftDummyWeapon(107, 60090600, 40090600, 9030009)
-    MonitorWeaponPossession(107, 9060010, 19004107)
+    AllowWeaponUpgrade(107, 9060010, 8404, 19004107)
     CraftDummyWeapon(108, 60090700, 40090700, 9080015)
-    MonitorWeaponPossession(108, 9070008, 19004108)
+    AllowWeaponUpgrade(108, 9070008, 8404, 19004108)
     CraftDummyWeapon(109, 60090800, 40090800, 9000012)
-    MonitorWeaponPossession(109, 9080015, 19004109)
+    AllowWeaponUpgrade(109, 9080015, 8404, 19004109)
     CraftDummyWeapon(110, 60100000, 40100000, 2040010)
-    MonitorWeaponPossession(110, 10000012, 19004110)
+    AllowWeaponUpgrade(110, 10000012, 8403, 19004110)
     CraftDummyWeapon(111, 60100100, 40100100, 10030014)
-    MonitorWeaponPossession(111, 10010016, 19004111)
+    AllowWeaponUpgrade(111, 10010016, 8404, 19004111)
     CraftDummyWeapon(112, 60100300, 40100300, 10000012)
-    MonitorWeaponPossession(112, 10030014, 19004112)
+    AllowWeaponUpgrade(112, 10030014, 8403, 19004112)
     CraftDummyWeapon(113, 60100500, 40100500, 10010016)
-    MonitorWeaponPossession(113, 10050010, 19004113)
+    AllowWeaponUpgrade(113, 10050010, 8404, 19004113)
     CraftDummyWeapon(114, 60100800, 40100800, 10030014)
-    MonitorWeaponPossession(114, 10080017, 19004114)
+    AllowWeaponUpgrade(114, 10080017, 8404, 19004114)
     CraftDummyWeapon(115, 60100900, 40100900, 10080017)
-    MonitorWeaponPossession(115, 10090010, 19004115)
+    AllowWeaponUpgrade(115, 10090010, 8404, 19004115)
     CraftDummyWeapon(116, 60110000, 40110000, 11070006)
-    MonitorWeaponPossession(116, 11000009, 19004116)
+    AllowWeaponUpgrade(116, 11000009, 8402, 19004116)
     CraftDummyWeapon(117, 60110100, 40110100, 0)
-    MonitorWeaponPossession(117, 11010000, 19004117)
+    AllowWeaponUpgrade(117, 11010000, 0, 19004117)
     CraftDummyWeapon(118, 60110300, 40110300, 11010000)
-    MonitorWeaponPossession(118, 11030003, 19004118)
+    AllowWeaponUpgrade(118, 11030003, 8400, 19004118)
     CraftDummyWeapon(119, 60110400, 40110400, 11010000)
-    MonitorWeaponPossession(119, 11040003, 19004119)
+    AllowWeaponUpgrade(119, 11040003, 8400, 19004119)
     CraftDummyWeapon(120, 60110500, 40110500, 11000009)
-    MonitorWeaponPossession(120, 11050012, 19004120)
+    AllowWeaponUpgrade(120, 11050012, 8403, 19004120)
     CraftDummyWeapon(121, 60110600, 40110600, 11090016)
-    MonitorWeaponPossession(121, 11060010, 19004121)
+    AllowWeaponUpgrade(121, 11060010, 8404, 19004121)
     CraftDummyWeapon(122, 60110700, 40110700, 11030003)
-    MonitorWeaponPossession(122, 11070006, 19004122)
+    AllowWeaponUpgrade(122, 11070006, 8401, 19004122)
     CraftDummyWeapon(123, 60110800, 40110800, 11040003)
-    MonitorWeaponPossession(123, 11080006, 19004123)
+    AllowWeaponUpgrade(123, 11080006, 8401, 19004123)
     CraftDummyWeapon(124, 60110900, 40110900, 11050012)
-    MonitorWeaponPossession(124, 11090016, 19004124)
+    AllowWeaponUpgrade(124, 11090016, 8404, 19004124)
     CraftDummyWeapon(125, 60111000, 40111000, 11130007)
-    MonitorWeaponPossession(125, 11100008, 19004125)
+    AllowWeaponUpgrade(125, 11100008, 8404, 19004125)
     CraftDummyWeapon(126, 60111100, 40111100, 11090016)
-    MonitorWeaponPossession(126, 11110010, 19004126)
+    AllowWeaponUpgrade(126, 11110010, 8404, 19004126)
     CraftDummyWeapon(127, 60111200, 40111200, 11130007)
-    MonitorWeaponPossession(127, 11120010, 19004127)
+    AllowWeaponUpgrade(127, 11120010, 8404, 19004127)
     CraftDummyWeapon(128, 60111300, 40111300, 11140009)
-    MonitorWeaponPossession(128, 11130007, 19004128)
+    AllowWeaponUpgrade(128, 11130007, 8403, 19004128)
     CraftDummyWeapon(129, 60111400, 40111400, 11080006)
-    MonitorWeaponPossession(129, 11140009, 19004129)
+    AllowWeaponUpgrade(129, 11140009, 8402, 19004129)
     CraftDummyWeapon(130, 60111500, 40111500, 11100008)
-    MonitorWeaponPossession(130, 11150010, 19004130)
+    AllowWeaponUpgrade(130, 11150010, 8404, 19004130)
     CraftDummyWeapon(131, 60120000, 40120000, 11140009)
-    MonitorWeaponPossession(131, 12000010, 19004131)
+    AllowWeaponUpgrade(131, 12000010, 8402, 19004131)
     CraftDummyWeapon(132, 60120100, 40120100, 12140014)
-    MonitorWeaponPossession(132, 12010016, 19004132)
+    AllowWeaponUpgrade(132, 12010016, 8404, 19004132)
     CraftDummyWeapon(133, 60120200, 40120200, 12140014)
-    MonitorWeaponPossession(133, 12020016, 19004133)
+    AllowWeaponUpgrade(133, 12020016, 8404, 19004133)
     CraftDummyWeapon(134, 60120600, 40120600, 12000010)
-    MonitorWeaponPossession(134, 12060012, 19004134)
+    AllowWeaponUpgrade(134, 12060012, 8403, 19004134)
     CraftDummyWeapon(135, 60120800, 40120800, 12000010)
-    MonitorWeaponPossession(135, 12080012, 19004135)
+    AllowWeaponUpgrade(135, 12080012, 8403, 19004135)
     CraftDummyWeapon(136, 60121300, 40121300, 12000010)
-    MonitorWeaponPossession(136, 12130012, 19004136)
+    AllowWeaponUpgrade(136, 12130012, 8403, 19004136)
     CraftDummyWeapon(137, 60121400, 40121400, 12080012)
-    MonitorWeaponPossession(137, 12140014, 19004137)
+    AllowWeaponUpgrade(137, 12140014, 8403, 19004137)
     CraftDummyWeapon(138, 60121500, 40121500, 12130012)
-    MonitorWeaponPossession(138, 12150008, 19004138)
+    AllowWeaponUpgrade(138, 12150008, 8404, 19004138)
     CraftDummyWeapon(139, 60121600, 40121600, 11100008)
-    MonitorWeaponPossession(139, 12160009, 19004139)
+    AllowWeaponUpgrade(139, 12160009, 8404, 19004139)
     CraftDummyWeapon(140, 60121700, 40121700, 12210018)
-    MonitorWeaponPossession(140, 12170010, 19004140)
+    AllowWeaponUpgrade(140, 12170010, 8404, 19004140)
     CraftDummyWeapon(141, 60121800, 40121800, 11090016)
-    MonitorWeaponPossession(141, 12180020, 19004141)
+    AllowWeaponUpgrade(141, 12180020, 8404, 19004141)
     CraftDummyWeapon(142, 60121900, 40121900, 12060012)
-    MonitorWeaponPossession(142, 12190014, 19004142)
+    AllowWeaponUpgrade(142, 12190014, 8403, 19004142)
     CraftDummyWeapon(143, 60122000, 40122000, 12150008)
-    MonitorWeaponPossession(143, 12200010, 19004143)
+    AllowWeaponUpgrade(143, 12200010, 8404, 19004143)
     CraftDummyWeapon(144, 60122100, 40122100, 12020016)
-    MonitorWeaponPossession(144, 12210018, 19004144)
+    AllowWeaponUpgrade(144, 12210018, 8404, 19004144)
     CraftDummyWeapon(145, 60130000, 40130000, 13010015)
-    MonitorWeaponPossession(145, 13000016, 19004145)
+    AllowWeaponUpgrade(145, 13000016, 8404, 19004145)
     CraftDummyWeapon(146, 60130100, 40130100, 11050012)
-    MonitorWeaponPossession(146, 13010015, 19004146)
+    AllowWeaponUpgrade(146, 13010015, 8404, 19004146)
     CraftDummyWeapon(147, 60130200, 40130200, 13000016)
-    MonitorWeaponPossession(147, 13020009, 19004147)
+    AllowWeaponUpgrade(147, 13020009, 8404, 19004147)
     CraftDummyWeapon(148, 60130300, 40130300, 13020009)
-    MonitorWeaponPossession(148, 13030010, 19004148)
+    AllowWeaponUpgrade(148, 13030010, 8404, 19004148)
     CraftDummyWeapon(149, 60130400, 40130400, 13010015)
-    MonitorWeaponPossession(149, 13040018, 19004149)
+    AllowWeaponUpgrade(149, 13040018, 8404, 19004149)
     CraftDummyWeapon(150, 60140000, 40140000, 14020000)
-    MonitorWeaponPossession(150, 14000003, 19004150)
+    AllowWeaponUpgrade(150, 14000003, 8400, 19004150)
     CraftDummyWeapon(151, 60140100, 40140100, 14060005)
-    MonitorWeaponPossession(151, 14010010, 19004151)
+    AllowWeaponUpgrade(151, 14010010, 8402, 19004151)
     CraftDummyWeapon(152, 60140200, 40140200, 0)
-    MonitorWeaponPossession(152, 14020000, 19004152)
+    AllowWeaponUpgrade(152, 14020000, 0, 19004152)
     CraftDummyWeapon(153, 60140300, 40140300, 14100008)
-    MonitorWeaponPossession(153, 14030010, 19004153)
+    AllowWeaponUpgrade(153, 14030010, 8402, 19004153)
     CraftDummyWeapon(154, 60140400, 40140400, 15010010)
-    MonitorWeaponPossession(154, 14040013, 19004154)
+    AllowWeaponUpgrade(154, 14040013, 8403, 19004154)
     CraftDummyWeapon(155, 60140500, 40140500, 14080008)
-    MonitorWeaponPossession(155, 14050010, 19004155)
+    AllowWeaponUpgrade(155, 14050020, 8404, 19004155)
     CraftDummyWeapon(156, 60140600, 40140600, 14000003)
-    MonitorWeaponPossession(156, 14060005, 19004156)
+    AllowWeaponUpgrade(156, 14060005, 8400, 19004156)
     CraftDummyWeapon(157, 60140800, 40140800, 14010010)
-    MonitorWeaponPossession(157, 14080008, 19004157)
+    AllowWeaponUpgrade(157, 14080008, 8404, 19004157)
     CraftDummyWeapon(158, 60141000, 40141000, 14060005)
-    MonitorWeaponPossession(158, 14100008, 19004158)
+    AllowWeaponUpgrade(158, 14100008, 8401, 19004158)
     CraftDummyWeapon(159, 60141100, 40141100, 14040013)
-    MonitorWeaponPossession(159, 14110015, 19004159)
+    AllowWeaponUpgrade(159, 14110015, 8404, 19004159)
     CraftDummyWeapon(160, 60141200, 40141200, 14110015)
-    MonitorWeaponPossession(160, 14120010, 19004160)
+    AllowWeaponUpgrade(160, 14120010, 8404, 19004160)
     CraftDummyWeapon(161, 60141400, 40141400, 14110015)
-    MonitorWeaponPossession(161, 14140010, 19004161)
+    AllowWeaponUpgrade(161, 14140010, 8404, 19004161)
     CraftDummyWeapon(162, 60150000, 40150000, 15060013)
-    MonitorWeaponPossession(162, 15000014, 19004162)
+    AllowWeaponUpgrade(162, 15000014, 8403, 19004162)
     CraftDummyWeapon(163, 60150100, 40150100, 14100008)
-    MonitorWeaponPossession(163, 15010010, 19004163)
+    AllowWeaponUpgrade(163, 15010010, 8402, 19004163)
     CraftDummyWeapon(164, 60150200, 40150200, 15060013)
-    MonitorWeaponPossession(164, 15020015, 19004164)
+    AllowWeaponUpgrade(164, 15020015, 8404, 19004164)
     CraftDummyWeapon(165, 60150300, 40150300, 15020015)
-    MonitorWeaponPossession(165, 15030018, 19004165)
+    AllowWeaponUpgrade(165, 15030018, 8404, 19004165)
     CraftDummyWeapon(166, 60150400, 40150400, 15080016)
-    MonitorWeaponPossession(166, 15040009, 19004166)
+    AllowWeaponUpgrade(166, 15040009, 8404, 19004166)
     CraftDummyWeapon(167, 60150500, 40150500, 15010010)
-    MonitorWeaponPossession(167, 15050012, 19004167)
+    AllowWeaponUpgrade(167, 15050012, 8403, 19004167)
     CraftDummyWeapon(168, 60150600, 40150600, 15050012)
-    MonitorWeaponPossession(168, 15060013, 19004168)
+    AllowWeaponUpgrade(168, 15060013, 8403, 19004168)
     CraftDummyWeapon(169, 60150800, 40150800, 15000014)
-    MonitorWeaponPossession(169, 15080016, 19004169)
+    AllowWeaponUpgrade(169, 15080016, 8404, 19004169)
     CraftDummyWeapon(170, 60151100, 40151100, 15030018)
-    MonitorWeaponPossession(170, 15110010, 19004170)
+    AllowWeaponUpgrade(170, 15110010, 8404, 19004170)
     CraftDummyWeapon(171, 60151200, 40151200, 14080008)
-    MonitorWeaponPossession(171, 15120020, 19004171)
+    AllowWeaponUpgrade(171, 15120020, 8404, 19004171)
     CraftDummyWeapon(172, 60151300, 40151300, 15020015)
-    MonitorWeaponPossession(172, 15130018, 19004172)
+    AllowWeaponUpgrade(172, 15130018, 8404, 19004172)
     CraftDummyWeapon(173, 60151400, 40151400, 15130018)
-    MonitorWeaponPossession(173, 15140010, 19004173)
+    AllowWeaponUpgrade(173, 15140010, 8404, 19004173)
     CraftDummyWeapon(174, 60160000, 40160000, 1000000)
-    MonitorWeaponPossession(174, 16000003, 19004174)
+    AllowWeaponUpgrade(174, 16000003, 8400, 19004174)
     CraftDummyWeapon(175, 60160100, 40160100, 16000003)
-    MonitorWeaponPossession(175, 16010006, 19004175)
+    AllowWeaponUpgrade(175, 16010006, 8401, 19004175)
     CraftDummyWeapon(176, 60160200, 40160200, 16030015)
-    MonitorWeaponPossession(176, 16020008, 19004176)
+    AllowWeaponUpgrade(176, 16020008, 8404, 19004176)
     CraftDummyWeapon(177, 60160300, 40160300, 16140014)
-    MonitorWeaponPossession(177, 16030015, 19004177)
+    AllowWeaponUpgrade(177, 16030015, 8404, 19004177)
     CraftDummyWeapon(178, 60160400, 40160400, 16140014)
-    MonitorWeaponPossession(178, 16040010, 19004178)
+    AllowWeaponUpgrade(178, 16040010, 8404, 19004178)
     CraftDummyWeapon(179, 60160500, 40160500, 16150009)
-    MonitorWeaponPossession(179, 16050012, 19004179)
+    AllowWeaponUpgrade(179, 16050012, 8403, 19004179)
     CraftDummyWeapon(180, 60160600, 40160600, 16010006)
-    MonitorWeaponPossession(180, 16060009, 19004180)
+    AllowWeaponUpgrade(180, 16060009, 8402, 19004180)
     CraftDummyWeapon(181, 60160700, 40160700, 16050012)
-    MonitorWeaponPossession(181, 16070014, 19004181)
+    AllowWeaponUpgrade(181, 16070014, 8403, 19004181)
     CraftDummyWeapon(182, 60160800, 40160800, 16060009)
-    MonitorWeaponPossession(182, 16080012, 19004182)
+    AllowWeaponUpgrade(182, 16080012, 8403, 19004182)
     CraftDummyWeapon(183, 60160900, 40160900, 16110017)
-    MonitorWeaponPossession(183, 16090010, 19004183)
+    AllowWeaponUpgrade(183, 16090010, 8404, 19004183)
     CraftDummyWeapon(184, 60161100, 40161100, 16140014)
-    MonitorWeaponPossession(184, 16110017, 19004184)
+    AllowWeaponUpgrade(184, 16110017, 8404, 19004184)
     CraftDummyWeapon(185, 60161200, 40161200, 16160009)
-    MonitorWeaponPossession(185, 16120010, 19004185)
+    AllowWeaponUpgrade(185, 16120010, 8404, 19004185)
     CraftDummyWeapon(186, 60161300, 40161300, 16140014)
-    MonitorWeaponPossession(186, 16130009, 19004186)
+    AllowWeaponUpgrade(186, 16130009, 8404, 19004186)
     CraftDummyWeapon(187, 60161400, 40161400, 16080012)
-    MonitorWeaponPossession(187, 16140014, 19004187)
+    AllowWeaponUpgrade(187, 16140014, 8403, 19004187)
     CraftDummyWeapon(188, 60161500, 40161500, 16010006)
-    MonitorWeaponPossession(188, 16150009, 19004188)
+    AllowWeaponUpgrade(188, 16150009, 8402, 19004188)
     CraftDummyWeapon(189, 60161600, 40161600, 16020008)
-    MonitorWeaponPossession(189, 16160009, 19004189)
+    AllowWeaponUpgrade(189, 16160009, 8404, 19004189)
     CraftDummyWeapon(190, 60170100, 40170100, 17060016)
-    MonitorWeaponPossession(190, 17010010, 19004190)
+    AllowWeaponUpgrade(190, 17010010, 8404, 19004190)
     CraftDummyWeapon(191, 60170200, 40170200, 17070018)
-    MonitorWeaponPossession(191, 17020010, 19004191)
+    AllowWeaponUpgrade(191, 17020010, 8404, 19004191)
     CraftDummyWeapon(192, 60170300, 40170300, 0)
-    MonitorWeaponPossession(192, 17030000, 19004192)
     CraftDummyWeapon(193, 60170500, 40170500, 16130009)
-    MonitorWeaponPossession(193, 17050010, 19004193)
+    AllowWeaponUpgrade(193, 17050010, 8404, 19004193)
     CraftDummyWeapon(194, 60170600, 40170600, 16070014)
-    MonitorWeaponPossession(194, 17060016, 19004194)
+    AllowWeaponUpgrade(194, 17060016, 8404, 19004194)
     CraftDummyWeapon(195, 60170700, 40170700, 17060016)
-    MonitorWeaponPossession(195, 17070018, 19004195)
+    AllowWeaponUpgrade(195, 17070018, 8404, 19004195)
     CraftDummyWeapon(196, 60180000, 40180000, 16150009)
-    MonitorWeaponPossession(196, 18000010, 19004196)
+    AllowWeaponUpgrade(196, 18000010, 8402, 19004196)
     CraftDummyWeapon(197, 60180100, 40180100, 18000010)
-    MonitorWeaponPossession(197, 18010012, 19004197)
+    AllowWeaponUpgrade(197, 18010012, 8403, 19004197)
     CraftDummyWeapon(198, 60180200, 40180200, 18030012)
-    MonitorWeaponPossession(198, 18020014, 19004198)
+    AllowWeaponUpgrade(198, 18020014, 8403, 19004198)
     CraftDummyWeapon(199, 60180300, 40180300, 18000010)
-    MonitorWeaponPossession(199, 18030012, 19004199)
+    AllowWeaponUpgrade(199, 18030012, 8403, 19004199)
     CraftDummyWeapon(200, 60180400, 40180400, 18110017)
-    MonitorWeaponPossession(200, 18040010, 19004200)
+    AllowWeaponUpgrade(200, 18040010, 8404, 19004200)
     CraftDummyWeapon(201, 60180500, 40180500, 18090016)
-    MonitorWeaponPossession(201, 18050016, 19004201)
+    AllowWeaponUpgrade(201, 18050016, 8404, 19004201)
     CraftDummyWeapon(202, 60180600, 40180600, 18130017)
-    MonitorWeaponPossession(202, 18060020, 19004202)
+    AllowWeaponUpgrade(202, 18060020, 8404, 19004202)
     CraftDummyWeapon(203, 60180700, 40180700, 18010012)
-    MonitorWeaponPossession(203, 18070014, 19004203)
+    AllowWeaponUpgrade(203, 18070014, 8403, 19004203)
     CraftDummyWeapon(204, 60180800, 40180800, 18140008)
-    MonitorWeaponPossession(204, 18080009, 19004204)
+    AllowWeaponUpgrade(204, 18080009, 8404, 19004204)
     CraftDummyWeapon(205, 60180900, 40180900, 18020014)
-    MonitorWeaponPossession(205, 18090016, 19004205)
+    AllowWeaponUpgrade(205, 18090016, 8404, 19004205)
     CraftDummyWeapon(206, 60181000, 40181000, 18130017)
-    MonitorWeaponPossession(206, 18100010, 19004206)
+    AllowWeaponUpgrade(206, 18100010, 8404, 19004206)
     CraftDummyWeapon(207, 60181100, 40181100, 18020014)
-    MonitorWeaponPossession(207, 18110017, 19004207)
+    AllowWeaponUpgrade(207, 18110017, 8404, 19004207)
     CraftDummyWeapon(208, 60181300, 40181300, 18070014)
-    MonitorWeaponPossession(208, 18130017, 19004208)
+    AllowWeaponUpgrade(208, 18130017, 8404, 19004208)
     CraftDummyWeapon(209, 60181400, 40181400, 18020014)
-    MonitorWeaponPossession(209, 18140008, 19004209)
+    AllowWeaponUpgrade(209, 18140008, 8404, 19004209)
     CraftDummyWeapon(210, 60181500, 40181500, 18090016)
-    MonitorWeaponPossession(210, 18150018, 19004210)
+    AllowWeaponUpgrade(210, 18150018, 8404, 19004210)
     CraftDummyWeapon(211, 60181600, 40181600, 18150018)
-    MonitorWeaponPossession(211, 18160020, 19004211)
+    AllowWeaponUpgrade(211, 18160010, 8404, 19004211)
     CraftDummyWeapon(212, 60190000, 40190000, 18020014)
-    MonitorWeaponPossession(212, 19000016, 19004212)
+    AllowWeaponUpgrade(212, 19000016, 8404, 19004212)
     CraftDummyWeapon(213, 60190100, 40190100, 19000016)
-    MonitorWeaponPossession(213, 19010018, 19004213)
+    AllowWeaponUpgrade(213, 19010018, 8404, 19004213)
     CraftDummyWeapon(214, 60190200, 40190200, 19000016)
-    MonitorWeaponPossession(214, 19020009, 19004214)
+    AllowWeaponUpgrade(214, 19020009, 8404, 19004214)
     CraftDummyWeapon(215, 60190600, 40190600, 19020009)
-    MonitorWeaponPossession(215, 19060010, 19004215)
+    AllowWeaponUpgrade(215, 19060010, 8404, 19004215)
     CraftDummyWeapon(216, 60200000, 40200000, 0)
-    MonitorWeaponPossession(216, 20000010, 19004216)
+    AllowWeaponUpgrade(216, 20000010, 8402, 19004216)
     CraftDummyWeapon(217, 60200200, 40200200, 20000010)
-    MonitorWeaponPossession(217, 20020013, 19004217)
+    AllowWeaponUpgrade(217, 20020013, 8403, 19004217)
     CraftDummyWeapon(218, 60200300, 40200300, 20000010)
-    MonitorWeaponPossession(218, 20030010, 19004218)
+    AllowWeaponUpgrade(218, 20030010, 8404, 19004218)
     CraftDummyWeapon(219, 60200500, 40200500, 20070017)
-    MonitorWeaponPossession(219, 20050015, 19004219)
+    AllowWeaponUpgrade(219, 20050020, 8404, 19004219)
     CraftDummyWeapon(220, 60200600, 40200600, 20000010)
-    MonitorWeaponPossession(220, 20060010, 19004220)
+    AllowWeaponUpgrade(220, 20060010, 8404, 19004220)
     CraftDummyWeapon(221, 60200700, 40200700, 20020013)
-    MonitorWeaponPossession(221, 20070017, 19004221)
+    AllowWeaponUpgrade(221, 20070017, 8404, 19004221)
     CraftDummyWeapon(222, 60210000, 40210000, 0)
-    MonitorWeaponPossession(222, 21000000, 19004222)
+    AllowWeaponUpgrade(222, 21000000, 0, 19004222)
     CraftDummyWeapon(223, 60210100, 40210100, 21000000)
-    MonitorWeaponPossession(223, 21010003, 19004223)
+    AllowWeaponUpgrade(223, 21010003, 8400, 19004223)
     CraftDummyWeapon(224, 60210600, 40210600, 21120008)
-    MonitorWeaponPossession(224, 21060010, 19004224)
+    AllowWeaponUpgrade(224, 21060010, 8404, 19004224)
     CraftDummyWeapon(225, 60210700, 40210700, 21100006)
-    MonitorWeaponPossession(225, 21070009, 19004225)
+    AllowWeaponUpgrade(225, 21070009, 8402, 19004225)
     CraftDummyWeapon(226, 60210800, 40210800, 21070009)
-    MonitorWeaponPossession(226, 21080012, 19004226)
+    AllowWeaponUpgrade(226, 21080012, 8403, 19004226)
     CraftDummyWeapon(227, 60211000, 40211000, 21010003)
-    MonitorWeaponPossession(227, 21100006, 19004227)
+    AllowWeaponUpgrade(227, 21100006, 8401, 19004227)
     CraftDummyWeapon(228, 60211100, 40211100, 22030018)
-    MonitorWeaponPossession(228, 21110010, 19004228)
+    AllowWeaponUpgrade(228, 21110010, 8404, 19004228)
     CraftDummyWeapon(229, 60211200, 40211200, 21080012)
-    MonitorWeaponPossession(229, 21120008, 19004229)
+    AllowWeaponUpgrade(229, 21120008, 8404, 19004229)
     CraftDummyWeapon(230, 60211300, 40211300, 22030018)
-    MonitorWeaponPossession(230, 21130010, 19004230)
+    AllowWeaponUpgrade(230, 21130010, 8404, 19004230)
     CraftDummyWeapon(231, 60220000, 40220000, 21100006)
-    MonitorWeaponPossession(231, 22000009, 19004231)
+    AllowWeaponUpgrade(231, 22000009, 8402, 19004231)
     CraftDummyWeapon(232, 60220100, 40220100, 22000009)
-    MonitorWeaponPossession(232, 22010012, 19004232)
+    AllowWeaponUpgrade(232, 22010012, 8403, 19004232)
     CraftDummyWeapon(233, 60220200, 40220200, 22010012)
-    MonitorWeaponPossession(233, 22020015, 19004233)
+    AllowWeaponUpgrade(233, 22020015, 8404, 19004233)
     CraftDummyWeapon(234, 60220300, 40220300, 22020015)
-    MonitorWeaponPossession(234, 22030018, 19004234)
+    AllowWeaponUpgrade(234, 22030018, 8404, 19004234)
     CraftDummyWeapon(235, 60230000, 40230000, 23020018)
-    MonitorWeaponPossession(235, 23000020, 19004235)
+    AllowWeaponUpgrade(235, 23000020, 8404, 19004235)
     CraftDummyWeapon(236, 60230100, 40230100, 12130012)
-    MonitorWeaponPossession(236, 23010008, 19004236)
+    AllowWeaponUpgrade(236, 23010008, 8404, 19004236)
     CraftDummyWeapon(237, 60230200, 40230200, 12190014)
-    MonitorWeaponPossession(237, 23020018, 19004237)
+    AllowWeaponUpgrade(237, 23020018, 8404, 19004237)
     CraftDummyWeapon(238, 60230300, 40230300, 12160009)
-    MonitorWeaponPossession(238, 23030010, 19004238)
+    AllowWeaponUpgrade(238, 23030010, 8404, 19004238)
     CraftDummyWeapon(239, 60230400, 40230400, 15000014)
-    MonitorWeaponPossession(239, 23040017, 19004239)
+    AllowWeaponUpgrade(239, 23040017, 8404, 19004239)
     CraftDummyWeapon(240, 60230500, 40230500, 15040009)
-    MonitorWeaponPossession(240, 23050010, 19004240)
+    AllowWeaponUpgrade(240, 23050010, 8404, 19004240)
     CraftDummyWeapon(241, 60230600, 40230600, 23040017)
-    MonitorWeaponPossession(241, 23060010, 19004241)
+    AllowWeaponUpgrade(241, 23060010, 8404, 19004241)
     CraftDummyWeapon(242, 60230700, 40230700, 23010008)
-    MonitorWeaponPossession(242, 23070010, 19004242)
+    AllowWeaponUpgrade(242, 23070010, 8404, 19004242)
     CraftDummyWeapon(243, 60230800, 40230800, 17060016)
-    MonitorWeaponPossession(243, 23080010, 19004243)
+    AllowWeaponUpgrade(243, 23080010, 8404, 19004243)
     CraftDummyWeapon(244, 60231000, 40231000, 19010018)
-    MonitorWeaponPossession(244, 23100010, 19004244)
+    AllowWeaponUpgrade(244, 23100010, 8404, 19004244)
     CraftDummyWeapon(245, 60231100, 40231100, 23020018)
-    MonitorWeaponPossession(245, 23110020, 19004245)
+    AllowWeaponUpgrade(245, 23110020, 8404, 19004245)
     CraftDummyWeapon(246, 60231200, 40231200, 18080009)
-    MonitorWeaponPossession(246, 23120010, 19004246)
+    AllowWeaponUpgrade(246, 23120020, 8404, 19004246)
     CraftDummyWeapon(247, 60231300, 40231300, 12010016)
-    MonitorWeaponPossession(247, 23130020, 19004247)
+    AllowWeaponUpgrade(247, 23130020, 8404, 19004247)
     CraftDummyWeapon(248, 60231400, 40231400, 23010008)
-    MonitorWeaponPossession(248, 23140010, 19004248)
+    AllowWeaponUpgrade(248, 23140010, 8404, 19004248)
     CraftDummyWeapon(249, 60231500, 40231500, 23040017)
-    MonitorWeaponPossession(249, 23150020, 19004249)
+    AllowWeaponUpgrade(249, 23150020, 8404, 19004249)
     CraftDummyWeapon(250, 60240000, 40240000, 0)
-    MonitorWeaponPossession(250, 24000000, 19004250)
     CraftDummyWeapon(251, 60240200, 40240200, 0)
-    MonitorWeaponPossession(251, 24020000, 19004251)
     CraftDummyWeapon(252, 60240400, 40240400, 0)
-    MonitorWeaponPossession(252, 24040000, 19004252)
     CraftDummyWeapon(253, 60240500, 40240500, 0)
-    MonitorWeaponPossession(253, 24050000, 19004253)
     CraftDummyWeapon(254, 60240600, 40240600, 0)
-    MonitorWeaponPossession(254, 24060000, 19004254)
     CraftDummyWeapon(255, 60240700, 40240700, 0)
-    MonitorWeaponPossession(255, 24070000, 19004255)
     CraftDummyWeapon(256, 60300000, 40300000, 0)
-    MonitorWeaponPossession(256, 30000000, 19004256)
     CraftDummyWeapon(257, 60300100, 40300100, 0)
-    MonitorWeaponPossession(257, 30010000, 19004257)
     CraftDummyWeapon(258, 60300200, 40300200, 0)
-    MonitorWeaponPossession(258, 30020000, 19004258)
     CraftDummyWeapon(259, 60300300, 40300300, 0)
-    MonitorWeaponPossession(259, 30030000, 19004259)
     CraftDummyWeapon(260, 60300400, 40300400, 0)
-    MonitorWeaponPossession(260, 30040000, 19004260)
     CraftDummyWeapon(261, 60300600, 40300600, 0)
-    MonitorWeaponPossession(261, 30060000, 19004261)
     CraftDummyWeapon(262, 60300700, 40300700, 0)
-    MonitorWeaponPossession(262, 30070000, 19004262)
     CraftDummyWeapon(263, 60300800, 40300800, 0)
-    MonitorWeaponPossession(263, 30080000, 19004263)
     CraftDummyWeapon(264, 60300900, 40300900, 0)
-    MonitorWeaponPossession(264, 30090000, 19004264)
     CraftDummyWeapon(265, 60301000, 40301000, 0)
-    MonitorWeaponPossession(265, 30100000, 19004265)
     CraftDummyWeapon(266, 60301100, 40301100, 0)
-    MonitorWeaponPossession(266, 30110000, 19004266)
     CraftDummyWeapon(267, 60301200, 40301200, 0)
-    MonitorWeaponPossession(267, 30120000, 19004267)
     CraftDummyWeapon(268, 60301300, 40301300, 0)
-    MonitorWeaponPossession(268, 30130000, 19004268)
     CraftDummyWeapon(269, 60301400, 40301400, 0)
-    MonitorWeaponPossession(269, 30140000, 19004269)
     CraftDummyWeapon(270, 60301500, 40301500, 0)
-    MonitorWeaponPossession(270, 30150000, 19004270)
     CraftDummyWeapon(271, 60301900, 40301900, 0)
-    MonitorWeaponPossession(271, 30190000, 19004271)
     CraftDummyWeapon(272, 60302000, 40302000, 0)
-    MonitorWeaponPossession(272, 30200000, 19004272)
     CraftDummyWeapon(273, 60310000, 40310000, 0)
-    MonitorWeaponPossession(273, 31000000, 19004273)
     CraftDummyWeapon(274, 60310100, 40310100, 0)
-    MonitorWeaponPossession(274, 31010000, 19004274)
     CraftDummyWeapon(275, 60310200, 40310200, 0)
-    MonitorWeaponPossession(275, 31020000, 19004275)
     CraftDummyWeapon(276, 60310300, 40310300, 0)
-    MonitorWeaponPossession(276, 31030000, 19004276)
     CraftDummyWeapon(277, 60310400, 40310400, 0)
-    MonitorWeaponPossession(277, 31040000, 19004277)
     CraftDummyWeapon(278, 60310500, 40310500, 0)
-    MonitorWeaponPossession(278, 31050000, 19004278)
     CraftDummyWeapon(279, 60310600, 40310600, 0)
-    MonitorWeaponPossession(279, 31060000, 19004279)
     CraftDummyWeapon(280, 60310700, 40310700, 0)
-    MonitorWeaponPossession(280, 31070000, 19004280)
     CraftDummyWeapon(281, 60310800, 40310800, 0)
-    MonitorWeaponPossession(281, 31080000, 19004281)
     CraftDummyWeapon(282, 60310900, 40310900, 0)
-    MonitorWeaponPossession(282, 31090000, 19004282)
     CraftDummyWeapon(283, 60311000, 40311000, 0)
-    MonitorWeaponPossession(283, 31100000, 19004283)
     CraftDummyWeapon(284, 60311300, 40311300, 0)
-    MonitorWeaponPossession(284, 31130000, 19004284)
     CraftDummyWeapon(285, 60311400, 40311400, 0)
-    MonitorWeaponPossession(285, 31140000, 19004285)
     CraftDummyWeapon(286, 60311700, 40311700, 0)
-    MonitorWeaponPossession(286, 31170000, 19004286)
     CraftDummyWeapon(287, 60311900, 40311900, 0)
-    MonitorWeaponPossession(287, 31190000, 19004287)
     CraftDummyWeapon(288, 60312300, 40312300, 0)
-    MonitorWeaponPossession(288, 31230000, 19004288)
     CraftDummyWeapon(289, 60312400, 40312400, 0)
-    MonitorWeaponPossession(289, 31240000, 19004289)
     CraftDummyWeapon(290, 60312500, 40312500, 0)
-    MonitorWeaponPossession(290, 31250000, 19004290)
     CraftDummyWeapon(291, 60312600, 40312600, 0)
-    MonitorWeaponPossession(291, 31260000, 19004291)
     CraftDummyWeapon(292, 60312700, 40312700, 0)
-    MonitorWeaponPossession(292, 31270000, 19004292)
     CraftDummyWeapon(293, 60312800, 40312800, 0)
-    MonitorWeaponPossession(293, 31280000, 19004293)
     CraftDummyWeapon(294, 60312900, 40312900, 0)
-    MonitorWeaponPossession(294, 31290000, 19004294)
     CraftDummyWeapon(295, 60313000, 40313000, 0)
-    MonitorWeaponPossession(295, 31300000, 19004295)
     CraftDummyWeapon(296, 60313100, 40313100, 0)
-    MonitorWeaponPossession(296, 31310000, 19004296)
     CraftDummyWeapon(297, 60313200, 40313200, 0)
-    MonitorWeaponPossession(297, 31320000, 19004297)
     CraftDummyWeapon(298, 60313300, 40313300, 0)
-    MonitorWeaponPossession(298, 31330000, 19004298)
     CraftDummyWeapon(299, 60313400, 40313400, 0)
-    MonitorWeaponPossession(299, 31340000, 19004299)
     CraftDummyWeapon(300, 60320000, 40320000, 0)
-    MonitorWeaponPossession(300, 32000000, 19004300)
     CraftDummyWeapon(301, 60320200, 40320200, 0)
-    MonitorWeaponPossession(301, 32020000, 19004301)
     CraftDummyWeapon(302, 60320300, 40320300, 0)
-    MonitorWeaponPossession(302, 32030000, 19004302)
     CraftDummyWeapon(303, 60320400, 40320400, 0)
-    MonitorWeaponPossession(303, 32040000, 19004303)
     CraftDummyWeapon(304, 60320500, 40320500, 0)
-    MonitorWeaponPossession(304, 32050000, 19004304)
     CraftDummyWeapon(305, 60320800, 40320800, 0)
-    MonitorWeaponPossession(305, 32080000, 19004305)
     CraftDummyWeapon(306, 60320900, 40320900, 0)
-    MonitorWeaponPossession(306, 32090000, 19004306)
     CraftDummyWeapon(307, 60321200, 40321200, 0)
-    MonitorWeaponPossession(307, 32120000, 19004307)
     CraftDummyWeapon(308, 60321300, 40321300, 0)
-    MonitorWeaponPossession(308, 32130000, 19004308)
     CraftDummyWeapon(309, 60321400, 40321400, 0)
-    MonitorWeaponPossession(309, 32140000, 19004309)
     CraftDummyWeapon(310, 60321500, 40321500, 0)
-    MonitorWeaponPossession(310, 32150000, 19004310)
     CraftDummyWeapon(311, 60321600, 40321600, 0)
-    MonitorWeaponPossession(311, 32160000, 19004311)
     CraftDummyWeapon(312, 60321700, 40321700, 0)
-    MonitorWeaponPossession(312, 32170000, 19004312)
     CraftDummyWeapon(313, 60321900, 40321900, 0)
-    MonitorWeaponPossession(313, 32190000, 19004313)
     CraftDummyWeapon(314, 60322000, 40322000, 0)
-    MonitorWeaponPossession(314, 32200000, 19004314)
     CraftDummyWeapon(315, 60322100, 40322100, 0)
-    MonitorWeaponPossession(315, 32210000, 19004315)
     CraftDummyWeapon(316, 60322200, 40322200, 0)
-    MonitorWeaponPossession(316, 32220000, 19004316)
     CraftDummyWeapon(317, 60322300, 40322300, 0)
-    MonitorWeaponPossession(317, 32230000, 19004317)
     CraftDummyWeapon(318, 60322400, 40322400, 0)
-    MonitorWeaponPossession(318, 32240000, 19004318)
     CraftDummyWeapon(319, 60322500, 40322500, 0)
-    MonitorWeaponPossession(319, 32250000, 19004319)
     CraftDummyWeapon(320, 60322600, 40322600, 0)
-    MonitorWeaponPossession(320, 32260000, 19004320)
     CraftDummyWeapon(321, 60322700, 40322700, 0)
-    MonitorWeaponPossession(321, 32270000, 19004321)
     CraftDummyWeapon(322, 60322800, 40322800, 0)
-    MonitorWeaponPossession(322, 32280000, 19004322)
     CraftDummyWeapon(323, 60322900, 40322900, 0)
-    MonitorWeaponPossession(323, 32290000, 19004323)
     CraftDummyWeapon(324, 60323000, 40323000, 0)
-    MonitorWeaponPossession(324, 32300000, 19004324)
     CraftDummyWeapon(325, 60330000, 40330000, 0)
-    MonitorWeaponPossession(325, 33000000, 19004325)
     CraftDummyWeapon(326, 60330400, 40330400, 0)
-    MonitorWeaponPossession(326, 33040000, 19004326)
     CraftDummyWeapon(327, 60330500, 40330500, 0)
-    MonitorWeaponPossession(327, 33050000, 19004327)
     CraftDummyWeapon(328, 60330600, 40330600, 0)
-    MonitorWeaponPossession(328, 33060000, 19004328)
     CraftDummyWeapon(329, 60330900, 40330900, 0)
-    MonitorWeaponPossession(329, 33090000, 19004329)
     CraftDummyWeapon(330, 60331200, 40331200, 0)
-    MonitorWeaponPossession(330, 33120000, 19004330)
     CraftDummyWeapon(331, 60331300, 40331300, 0)
-    MonitorWeaponPossession(331, 33130000, 19004331)
     CraftDummyWeapon(332, 60331700, 40331700, 0)
-    MonitorWeaponPossession(332, 33170000, 19004332)
     CraftDummyWeapon(333, 60331800, 40331800, 0)
-    MonitorWeaponPossession(333, 33180000, 19004333)
     CraftDummyWeapon(334, 60331900, 40331900, 0)
-    MonitorWeaponPossession(334, 33190000, 19004334)
     CraftDummyWeapon(335, 60332000, 40332000, 0)
-    MonitorWeaponPossession(335, 33200000, 19004335)
     CraftDummyWeapon(336, 60332100, 40332100, 0)
-    MonitorWeaponPossession(336, 33210000, 19004336)
     CraftDummyWeapon(337, 60332300, 40332300, 0)
-    MonitorWeaponPossession(337, 33230000, 19004337)
     CraftDummyWeapon(338, 60332400, 40332400, 0)
-    MonitorWeaponPossession(338, 33240000, 19004338)
     CraftDummyWeapon(339, 60332500, 40332500, 0)
-    MonitorWeaponPossession(339, 33250000, 19004339)
     CraftDummyWeapon(340, 60332600, 40332600, 0)
-    MonitorWeaponPossession(340, 33260000, 19004340)
     CraftDummyWeapon(341, 60332700, 40332700, 0)
-    MonitorWeaponPossession(341, 33270000, 19004341)
     CraftDummyWeapon(342, 60332800, 40332800, 0)
-    MonitorWeaponPossession(342, 33280000, 19004342)
     CraftDummyWeapon(343, 60340000, 40340000, 0)
-    MonitorWeaponPossession(343, 34000000, 19004343)
     CraftDummyWeapon(344, 60340100, 40340100, 0)
-    MonitorWeaponPossession(344, 34010000, 19004344)
     CraftDummyWeapon(345, 60340200, 40340200, 0)
-    MonitorWeaponPossession(345, 34020000, 19004345)
     CraftDummyWeapon(346, 60340300, 40340300, 0)
-    MonitorWeaponPossession(346, 34030000, 19004346)
     CraftDummyWeapon(347, 60340400, 40340400, 0)
-    MonitorWeaponPossession(347, 34040000, 19004347)
     CraftDummyWeapon(348, 60340600, 40340600, 0)
-    MonitorWeaponPossession(348, 34060000, 19004348)
     CraftDummyWeapon(349, 60340700, 40340700, 0)
-    MonitorWeaponPossession(349, 34070000, 19004349)
     CraftDummyWeapon(350, 60340800, 40340800, 0)
-    MonitorWeaponPossession(350, 34080000, 19004350)
     CraftDummyWeapon(351, 60340900, 40340900, 0)
-    MonitorWeaponPossession(351, 34090000, 19004351)
     CraftDummyWeapon(352, 60400000, 40400000, 0)
-    MonitorWeaponPossession(352, 40000000, 19004352)
+    AllowWeaponUpgrade(352, 40000000, 0, 19004352)
     CraftDummyWeapon(353, 60400100, 40400100, 40000000)
-    MonitorWeaponPossession(353, 40010005, 19004353)
-    CraftDummyWeapon(354, 60400200, 40400200, 40030005)
-    MonitorWeaponPossession(354, 40020008, 19004354)
+    AllowWeaponUpgrade(353, 40010005, 8400, 19004353)
+    CraftDummyWeapon(354, 60400200, 40400200, 40030003)
+    AllowWeaponUpgrade(354, 40020008, 8401, 19004354)
     CraftDummyWeapon(355, 60400300, 40400300, 40000000)
-    MonitorWeaponPossession(355, 40030005, 19004355)
-    CraftDummyWeapon(356, 60400500, 40400500, 40030005)
-    MonitorWeaponPossession(356, 40050010, 19004356)
+    AllowWeaponUpgrade(355, 40030003, 8401, 19004355)
+    CraftDummyWeapon(356, 60400500, 40400500, 40030003)
+    AllowWeaponUpgrade(356, 40050010, 8402, 19004356)
     CraftDummyWeapon(357, 60410000, 40410000, 40020008)
-    MonitorWeaponPossession(357, 41000010, 19004357)
+    AllowWeaponUpgrade(357, 41000010, 8402, 19004357)
     CraftDummyWeapon(358, 60410100, 40410100, 41000010)
-    MonitorWeaponPossession(358, 41010015, 19004358)
+    AllowWeaponUpgrade(358, 41010015, 8404, 19004358)
     CraftDummyWeapon(359, 60410200, 40410200, 41000010)
-    MonitorWeaponPossession(359, 41020015, 19004359)
+    AllowWeaponUpgrade(359, 41020015, 8404, 19004359)
     CraftDummyWeapon(360, 60410300, 40410300, 41000010)
-    MonitorWeaponPossession(360, 41030010, 19004360)
+    AllowWeaponUpgrade(360, 41030010, 8404, 19004360)
     CraftDummyWeapon(361, 60410400, 40410400, 41000010)
-    MonitorWeaponPossession(361, 41040010, 19004361)
+    AllowWeaponUpgrade(361, 41040010, 8404, 19004361)
     CraftDummyWeapon(362, 60410600, 40410600, 40010005)
-    MonitorWeaponPossession(362, 41060008, 19004362)
+    AllowWeaponUpgrade(362, 41060008, 8404, 19004362)
     CraftDummyWeapon(363, 60410700, 40410700, 41010015)
-    MonitorWeaponPossession(363, 41070010, 19004363)
+    AllowWeaponUpgrade(363, 41070010, 8404, 19004363)
     CraftDummyWeapon(364, 60420000, 40420000, 42010008)
-    MonitorWeaponPossession(364, 42000010, 19004364)
+    AllowWeaponUpgrade(364, 42000010, 8404, 19004364)
     CraftDummyWeapon(365, 60420100, 40420100, 42040014)
-    MonitorWeaponPossession(365, 42010008, 19004365)
+    AllowWeaponUpgrade(365, 42010008, 8404, 19004365)
     CraftDummyWeapon(366, 60420300, 40420300, 42040014)
-    MonitorWeaponPossession(366, 42030010, 19004366)
+    AllowWeaponUpgrade(366, 42030010, 8404, 19004366)
     CraftDummyWeapon(367, 60420400, 40420400, 41000010)
-    MonitorWeaponPossession(367, 42040014, 19004367)
+    AllowWeaponUpgrade(367, 42040014, 8403, 19004367)
     CraftDummyWeapon(368, 60430000, 40430000, 41060008)
-    MonitorWeaponPossession(368, 43000010, 19004368)
+    AllowWeaponUpgrade(368, 43000010, 8402, 19004368)
     CraftDummyWeapon(369, 60430200, 40430200, 43000010)
-    MonitorWeaponPossession(369, 43020013, 19004369)
+    AllowWeaponUpgrade(369, 43020013, 8403, 19004369)
     CraftDummyWeapon(370, 60430300, 40430300, 43020013)
-    MonitorWeaponPossession(370, 43030016, 19004370)
+    AllowWeaponUpgrade(370, 43030016, 8404, 19004370)
     CraftDummyWeapon(371, 60430500, 40430500, 43030016)
-    MonitorWeaponPossession(371, 43050010, 19004371)
+    AllowWeaponUpgrade(371, 43050010, 8404, 19004371)
     CraftDummyWeapon(372, 60430600, 40430600, 43020013)
-    MonitorWeaponPossession(372, 43060010, 19004372)
+    AllowWeaponUpgrade(372, 43060010, 8404, 19004372)
     CraftDummyWeapon(373, 60430800, 40430800, 43030016)
-    MonitorWeaponPossession(373, 43080018, 19004373)
+    AllowWeaponUpgrade(373, 43080018, 8404, 19004373)
     CraftDummyWeapon(374, 60431100, 40431100, 43030016)
-    MonitorWeaponPossession(374, 43110010, 19004374)
+    AllowWeaponUpgrade(374, 43110010, 8404, 19004374)
     CraftDummyWeapon(375, 60440000, 40440000, 43080018)
-    MonitorWeaponPossession(375, 44000020, 19004375)
+    AllowWeaponUpgrade(375, 44000020, 8404, 19004375)
     CraftDummyWeapon(376, 60440100, 40440100, 43080018)
-    MonitorWeaponPossession(376, 44010010, 19004376)
+    AllowWeaponUpgrade(376, 44010010, 8404, 19004376)
+    # endregion
+    
+    # Monitor possession of Smith's Hammers for recipe appearance.
+    # region Smith's Hammer possession
+    MonitorSmithsHammerPossession(0, SmithsHammers.NoviceSmithsHammer, SurvivalFlags.HasNoviceSmithsHammer)
+    MonitorSmithsHammerPossession(1, SmithsHammers.ApprenticeSmithsHammer, SurvivalFlags.HasApprenticeSmithsHammer)
+    MonitorSmithsHammerPossession(2, SmithsHammers.JourneymanSmithsHammer, SurvivalFlags.HasJourneymanSmithsHammer)
+    MonitorSmithsHammerPossession(3, SmithsHammers.ExpertSmithsHammer, SurvivalFlags.HasExpertSmithsHammer)
+    MonitorSmithsHammerPossession(4, SmithsHammers.MasterSmithsHammer, SurvivalFlags.HasMasterSmithsHammer)
     # endregion
 
 
@@ -2438,7 +2486,7 @@ def SevereColdWarning():
 
 @NeverRestart(SurvivalFlags.GetDiseaseOverworld)
 def GetDiseaseOverworld(
-    _, disease_effect: int, location_flag: Flag, had_once_flag: Flag, had_twice_flag: Flag, text: int
+    _, disease_effect: int, location_flag: Flag, had_once_flag: Flag, had_twice_flag: Flag, item_lot: int
 ):
     EndIfFlagOn(had_twice_flag)
 
@@ -2465,7 +2513,7 @@ def GetDiseaseOverworld(
     DisableFlag(SurvivalFlags.DiseaseRollLock)
 
     AddSpecialEffect(PLAYER, disease_effect)
-    DisplayDialog(text)
+    AwardItemLot(item_lot)  # disease indicator
 
     SkipLinesIfFlagOn(2, had_once_flag)
     EnableFlag(had_once_flag)
@@ -2475,7 +2523,15 @@ def GetDiseaseOverworld(
 
 @NeverRestart(SurvivalFlags.GetDiseaseLegacyDungeon)
 def GetDiseaseLegacyDungeon(
-    _, disease_effect: int, a: uchar, b: uchar, c: uchar, d: uchar, had_once_flag: Flag, had_twice_flag: Flag, text: int
+    _,
+    disease_effect: int,
+    a: uchar,
+    b: uchar, 
+    c: uchar, 
+    d: uchar, 
+    had_once_flag: Flag, 
+    had_twice_flag: Flag, 
+    item_lot: int,
 ):
     """Same as overworld check, but checks if player is in map (a, b, c, d) instead."""
     EndIfFlagOn(had_twice_flag)
@@ -2504,7 +2560,7 @@ def GetDiseaseLegacyDungeon(
     DisableFlag(SurvivalFlags.DiseaseRollLock)
 
     AddSpecialEffect(PLAYER, disease_effect)
-    DisplayDialog(text)
+    AwardItemLot(item_lot)  # disease indicator
 
     SkipLinesIfFlagOn(2, had_once_flag)
     EnableFlag(had_once_flag)
@@ -2523,7 +2579,7 @@ def GetDiseaseSiofra():
     IfInsideMap(-1, SIOFRA_RIVER_START)
     IfConditionTrue(1, -1)
     IfAttackedWithDamageType(1, PLAYER, -1, DamageType.Unspecified)
-    IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.SiofraPlague)
+    IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.SiofraDisease)
     IfFlagOff(1, SurvivalFlags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
@@ -2543,8 +2599,8 @@ def GetDiseaseSiofra():
 
     DisableFlag(SurvivalFlags.DiseaseRollLock)
 
-    AddSpecialEffect(PLAYER, SurvivalEffects.SiofraPlague)
-    DisplayDialog(SurvivalText.ContractedSiofraDisease)
+    AddSpecialEffect(PLAYER, SurvivalEffects.SiofraDisease)
+    AwardItemLot(DiseaseIndicators.SiofraDisease)
 
     SkipLinesIfFlagOn(2, SurvivalFlags.SiofraDiseaseOnce)
     EnableFlag(SurvivalFlags.SiofraDiseaseOnce)
@@ -2558,7 +2614,7 @@ def GetDiseaseAinsel():
 
     IfInsideMap(1, AINSEL_RIVER)
     IfAttackedWithDamageType(1, PLAYER, -1, DamageType.Unspecified)
-    IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.AinselToxin)
+    IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.AinselDisease)
     IfFlagOff(1, SurvivalFlags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
@@ -2578,8 +2634,8 @@ def GetDiseaseAinsel():
 
     DisableFlag(SurvivalFlags.DiseaseRollLock)
 
-    AddSpecialEffect(PLAYER, SurvivalEffects.AinselToxin)
-    DisplayDialog(SurvivalText.ContractedAinselDisease)
+    AddSpecialEffect(PLAYER, SurvivalEffects.AinselDisease)
+    AwardItemLot(DiseaseIndicators.AinselDisease)
 
     SkipLinesIfFlagOn(2, SurvivalFlags.AinselDiseaseOnce)
     EnableFlag(SurvivalFlags.AinselDiseaseOnce)
@@ -2595,7 +2651,7 @@ def GetDiseaseDeeprootAstel():
     IfInsideMap(-1, ASTEL_ARENA)
     IfConditionTrue(1, -1)
     IfAttackedWithDamageType(1, PLAYER, -1, DamageType.Unspecified)
-    IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.DeeprootParasite)
+    IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.DeeprootDisease)
     IfFlagOff(1, SurvivalFlags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
@@ -2615,8 +2671,8 @@ def GetDiseaseDeeprootAstel():
 
     DisableFlag(SurvivalFlags.DiseaseRollLock)
 
-    AddSpecialEffect(PLAYER, SurvivalEffects.DeeprootParasite)
-    DisplayDialog(SurvivalText.ContractedDeeprootDisease)
+    AddSpecialEffect(PLAYER, SurvivalEffects.DeeprootDisease)
+    AwardItemLot(DiseaseIndicators.DeeprootDisease)
 
     SkipLinesIfFlagOn(2, SurvivalFlags.DeeprootDiseaseOnce)
     EnableFlag(SurvivalFlags.DeeprootDiseaseOnce)
@@ -2630,7 +2686,7 @@ def GetDiseaseRadahn():
     EndIfFlagOn(SurvivalFlags.RadahnDiseaseTwice)
 
     IfAttackedWithDamageType(1, PLAYER, VanillaCharacters.Radahn, DamageType.Unspecified)
-    IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.RadahnFever)
+    IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.RadahnDisease)
     IfFlagOff(1, SurvivalFlags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
@@ -2650,8 +2706,8 @@ def GetDiseaseRadahn():
 
     DisableFlag(SurvivalFlags.DiseaseRollLock)
 
-    AddSpecialEffect(PLAYER, SurvivalEffects.RadahnFever)
-    DisplayDialog(SurvivalText.ContractedRadahnDisease)
+    AddSpecialEffect(PLAYER, SurvivalEffects.RadahnDisease)
+    AwardItemLot(DiseaseIndicators.RadahnDisease)
 
     SkipLinesIfFlagOn(2, SurvivalFlags.RadahnDiseaseOnce)
     EnableFlag(SurvivalFlags.RadahnDiseaseOnce)
@@ -2668,7 +2724,7 @@ def GetDiseaseCatacombs():
 
     IfInsideMap(1, (30, 255, 255, 255))  # ANY Catacombs
     IfAttackedWithDamageType(1, PLAYER, -1, DamageType.Unspecified)
-    IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.CatacombsToxin)
+    IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.CatacombsDisease)
     IfFlagOff(1, SurvivalFlags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
@@ -2688,8 +2744,8 @@ def GetDiseaseCatacombs():
 
     DisableFlag(SurvivalFlags.DiseaseRollLock)
 
-    AddSpecialEffect(PLAYER, SurvivalEffects.CatacombsToxin)
-    DisplayDialog(SurvivalText.ContractedCatacombsDisease)
+    AddSpecialEffect(PLAYER, SurvivalEffects.CatacombsDisease)
+    AwardItemLot(DiseaseIndicators.CatacombsDisease)
 
     SkipLinesIfFlagOn(2, SurvivalFlags.CatacombsDiseaseOnce)
     EnableFlag(SurvivalFlags.CatacombsDiseaseOnce)
@@ -2703,7 +2759,7 @@ def GetDiseaseCaves():
 
     IfInsideMap(1, (31, 255, 255, 255))  # ANY Cave
     IfAttackedWithDamageType(1, PLAYER, -1, DamageType.Unspecified)
-    IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.CaveParasite)
+    IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.CaveDisease)
     IfFlagOff(1, SurvivalFlags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
@@ -2723,8 +2779,8 @@ def GetDiseaseCaves():
 
     DisableFlag(SurvivalFlags.DiseaseRollLock)
 
-    AddSpecialEffect(PLAYER, SurvivalEffects.CaveParasite)
-    DisplayDialog(SurvivalText.ContractedCaveDisease)
+    AddSpecialEffect(PLAYER, SurvivalEffects.CaveDisease)
+    AwardItemLot(DiseaseIndicators.CaveDisease)
 
     SkipLinesIfFlagOn(2, SurvivalFlags.CaveDiseaseOnce)
     EnableFlag(SurvivalFlags.CaveDiseaseOnce)
@@ -2738,7 +2794,7 @@ def GetDiseaseTunnels():
 
     IfInsideMap(1, (32, 255, 255, 255))  # ANY Tunnel
     IfAttackedWithDamageType(1, PLAYER, -1, DamageType.Unspecified)
-    IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.TunnelFever)
+    IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.TunnelDisease)
     IfFlagOff(1, SurvivalFlags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
@@ -2758,8 +2814,8 @@ def GetDiseaseTunnels():
 
     DisableFlag(SurvivalFlags.DiseaseRollLock)
 
-    AddSpecialEffect(PLAYER, SurvivalEffects.TunnelFever)
-    DisplayDialog(SurvivalText.ContractedTunnelDisease)
+    AddSpecialEffect(PLAYER, SurvivalEffects.TunnelDisease)
+    AwardItemLot(DiseaseIndicators.TunnelDisease)
 
     SkipLinesIfFlagOn(2, SurvivalFlags.TunnelDiseaseOnce)
     EnableFlag(SurvivalFlags.TunnelDiseaseOnce)
@@ -2783,123 +2839,17 @@ def GetPureScarletRot():
 # --- DISEASE CURES ---
 
 
-@NeverRestart(SurvivalFlags.CurePlague)
-def CurePlague():
-    IfPlayerHasSpecialEffect(1, SurvivalEffects.PlagueCure)
-
-    IfPlayerHasSpecialEffect(-1, SurvivalEffects.LimgravePlague)
-    IfPlayerHasSpecialEffect(-1, SurvivalEffects.SiofraPlague)
-    IfPlayerHasSpecialEffect(-1, SurvivalEffects.LeyndellPlague)
-    IfPlayerHasSpecialEffect(-1, SurvivalEffects.HaligtreePlague)
-    IfPlayerHasSpecialEffect(-1, SurvivalEffects.StormveilPlague)
-    IfConditionTrue(1, -1)
-
+@NeverRestart(SurvivalFlags.CureDisease)
+def CureDisease(_, disease_effect: int, cure_effect: int, disease_item: int, cure_text: int):
+    IfPlayerHasSpecialEffect(1, cure_effect)
+    IfPlayerHasSpecialEffect(1, disease_effect)
     IfConditionTrue(0, 1)
 
-    CancelSpecialEffect(PLAYER, SurvivalEffects.LimgravePlague)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.SiofraPlague)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.LeyndellPlague)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.HaligtreePlague)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.StormveilPlague)
+    CancelSpecialEffect(PLAYER, disease_effect)
+    DisplayDialog(cure_text)
+    RemoveGoodFromPlayer(disease_item, 99)
 
-    DisplayDialog(SurvivalText.CuredPlague)
-
-    IfPlayerDoesNotHaveSpecialEffect(0, SurvivalEffects.PlagueCure)
-
-    return RESTART
-
-
-@NeverRestart(SurvivalFlags.CureToxin)
-def CureToxin():
-    IfPlayerHasSpecialEffect(1, SurvivalEffects.ToxinCure)
-
-    IfPlayerHasSpecialEffect(-1, SurvivalEffects.LiurniaToxin)
-    IfPlayerHasSpecialEffect(-1, SurvivalEffects.CatacombsToxin)
-    IfPlayerHasSpecialEffect(-1, SurvivalEffects.AinselToxin)
-    IfPlayerHasSpecialEffect(-1, SurvivalEffects.RayaLucariaFever)
-    IfPlayerHasSpecialEffect(-1, SurvivalEffects.VolcanoManorToxin)
-    IfConditionTrue(1, -1)
-
-    IfConditionTrue(0, 1)
-
-    CancelSpecialEffect(PLAYER, SurvivalEffects.LiurniaToxin)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.CatacombsToxin)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.AinselToxin)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.RayaLucariaFever)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.VolcanoManorToxin)
-
-    DisplayDialog(SurvivalText.CuredToxin)
-
-    IfPlayerDoesNotHaveSpecialEffect(0, SurvivalEffects.ToxinCure)
-
-    return RESTART
-
-
-@NeverRestart(SurvivalFlags.CureFever)
-def CureFever():
-    IfPlayerHasSpecialEffect(1, SurvivalEffects.FeverCure)
-
-    IfPlayerHasSpecialEffect(-1, SurvivalEffects.AltusFever)
-    IfPlayerHasSpecialEffect(-1, SurvivalEffects.TunnelFever)
-    IfPlayerHasSpecialEffect(-1, SurvivalEffects.RadahnFever)
-    IfPlayerHasSpecialEffect(-1, SurvivalEffects.FarumAzulaFever)
-    IfPlayerHasSpecialEffect(-1, SurvivalEffects.MohgwynFever)
-    IfConditionTrue(1, -1)
-
-    IfConditionTrue(0, 1)
-
-    CancelSpecialEffect(PLAYER, SurvivalEffects.AltusFever)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.TunnelFever)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.RadahnFever)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.FarumAzulaFever)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.MohgwynFever)
-
-    DisplayDialog(SurvivalText.CuredFever)
-
-    IfPlayerDoesNotHaveSpecialEffect(0, SurvivalEffects.FeverCure)
-
-    return RESTART
-
-
-@NeverRestart(SurvivalFlags.CureParasite)
-def CureParasite():
-    IfPlayerHasSpecialEffect(1, SurvivalEffects.ParasiteCure)
-
-    IfPlayerHasSpecialEffect(-1, SurvivalEffects.CaveParasite)
-    IfPlayerHasSpecialEffect(-1, SurvivalEffects.CaelidParasite)
-    IfPlayerHasSpecialEffect(-1, SurvivalEffects.SewersParasite)
-    IfPlayerHasSpecialEffect(-1, SurvivalEffects.MountaintopsParasite)
-    IfPlayerHasSpecialEffect(-1, SurvivalEffects.DeeprootParasite)
-    IfConditionTrue(1, -1)
-
-    IfConditionTrue(0, 1)
-
-    CancelSpecialEffect(PLAYER, SurvivalEffects.CaveParasite)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.CaelidParasite)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.SewersParasite)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.MountaintopsParasite)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.DeeprootParasite)
-
-    DisplayDialog(SurvivalText.CuredParasite)
-
-    IfPlayerDoesNotHaveSpecialEffect(0, SurvivalEffects.ParasiteCure)
-
-    return RESTART
-
-
-@NeverRestart(SurvivalFlags.CurePureScarletRot)
-def CurePureScarletRot():
-    IfPlayerHasSpecialEffect(1, SurvivalEffects.PureScarletRotCure)
-    IfPlayerHasSpecialEffect(1, SurvivalEffects.PureScarletRot)
-
-    IfConditionTrue(0, 1)
-
-    CancelSpecialEffect(PLAYER, SurvivalEffects.PureScarletRot)
-
-    # TODO: Award Pure Scarlet Rot self-affliction item if not already given.
-
-    IfPlayerDoesNotHaveSpecialEffect(0, SurvivalEffects.PureScarletRotCure)
-
+    IfPlayerDoesNotHaveSpecialEffect(0, cure_effect)
     return RESTART
 
 
@@ -3128,11 +3078,31 @@ def CraftDummyWeapon(_, dummy_weapon_id: int, weapon_item_lot: int, previous_wea
 
 
 @NeverRestart(SurvivalFlags.MonitorWeaponPossessionBase)
-def MonitorWeaponPossession(_, weapon_id: int, possession_flag: int):
-    """Enable `possession_flag` as long as player has exactly `weapon_id`. This possession flag is used to enable
-    the visibility of upgrade recipes that require this weapon."""
+def AllowWeaponUpgrade(_, weapon_id: int, hammer_id: int, upgrade_visible_flag: int):
+    """Enable `upgrade_visible_flag` as long as player has exactly `weapon_id` AND (if non-zero) `hammer_id`.
+
+    This flag is used to enable the visibility of upgrade recipes that require this weapon.
+    """
+    DisableFlag(upgrade_visible_flag)
+    IfPlayerHasWeapon(1, weapon_id)
+    SkipLinesIfEqual(1, hammer_id, 0)
+    IfPlayerHasGood(1, hammer_id)
+    IfConditionTrue(0, 1)
+
+    EnableFlag(upgrade_visible_flag)  # recipes upgrading from this weapon will be visible
+
+    IfPlayerDoesNotHaveWeapon(-1, weapon_id)
+    SkipLinesIfEqual(1, hammer_id, 0)
+    IfPlayerDoesNotHaveGood(-1, hammer_id)
+    IfConditionTrue(0, -1)
+
+    return RESTART
+
+
+@NeverRestart(SurvivalFlags.MonitorSmithsHammerPossession)
+def MonitorSmithsHammerPossession(_, hammer_id: int, possession_flag: int):
     DisableFlag(possession_flag)
-    IfPlayerHasWeapon(0, weapon_id)
-    EnableFlag(possession_flag)  # future recipes will be visible
-    IfPlayerDoesNotHaveWeapon(0, weapon_id)
+    IfPlayerHasGood(0, hammer_id)
+    EnableFlag(possession_flag)
+    IfPlayerDoesNotHaveGood(0, hammer_id)  # will never happen, but whatever
     return RESTART

@@ -16,33 +16,28 @@ class SurvivalText(IntEnum):
     ModerateColdWarning = 50004
     SevereColdWarning = 50005
 
-    ContractedLimgraveDisease = 50010
-    ContractedLiurniaDisease = 50011
-    ContractedCaelidDisease = 50012
-    ContractedAltusDisease = 50013
-    ContractedMtGelmirDisease = 50014
-    ContractedMountaintopsDisease = 50015
-    ContractedSiofraDisease = 50016
-    ContractedAinselDisease = 50017
-    ContractedDeeprootDisease = 50018
-    ContractedStormveilDisease = 50019
-    ContractedRayaLucariaDisease = 50020
-    ContractedRadahnDisease = 50021
-    ContractedVolcanoManorDisease = 50022
-    ContractedLeyndellDisease = 50023
-    ContractedSewersDisease = 50024
-    ContractedHaligtreeDisease = 50025
-    ContractedFarumAzulaDisease = 50026
-    ContractedMohgwynDisease = 50027
-    ContractedCatacombsDisease = 50028
-    ContractedCaveDisease = 50029
-    ContractedTunnelDisease = 50030
-
-    # Message shared between all diseases of the given type
-    CuredPlague = 50040
-    CuredToxin = 50041
-    CuredFever = 50042
-    CuredParasite = 50043
+    # Dialog for disease cure usage
+    CuredLimgraveDisease = 50010
+    CuredLiurniaDisease = 50011
+    CuredCaelidDisease = 50012
+    CuredAltusDisease = 50013
+    CuredMtGelmirDisease = 50014
+    CuredMountaintopsDisease = 50015
+    CuredSiofraDisease = 50016
+    CuredAinselDisease = 50017
+    CuredDeeprootDisease = 50018
+    CuredStormveilDisease = 50019
+    CuredRayaLucariaDisease = 50020
+    CuredRadahnDisease = 50021
+    CuredVolcanoManorDisease = 50022
+    CuredLeyndellDisease = 50023
+    CuredSewersDisease = 50024
+    CuredHaligtreeDisease = 50025
+    CuredFarumAzulaDisease = 50026
+    CuredMohgwynDisease = 50027
+    CuredCatacombsDisease = 50028
+    CuredCaveDisease = 50029
+    CuredTunnelDisease = 50030
 
     Dehydration = 50050
 
@@ -101,12 +96,6 @@ class SurvivalFlags(Flag):
     GetDiseaseCaves = BASE_FLAG + 85
     GetDiseaseTunnels = BASE_FLAG + 86
     GetPureScarletRot = BASE_FLAG + 87
-
-    CurePlague = BASE_FLAG + 90
-    CureToxin = BASE_FLAG + 91
-    CureFever = BASE_FLAG + 92
-    CureParasite = BASE_FLAG + 93
-    CurePureScarletRot = BASE_FLAG + 94
 
     DiseaseRollLock = BASE_FLAG + 99
     DiseaseRollFirst = BASE_FLAG + 100
@@ -238,7 +227,7 @@ class SurvivalFlags(Flag):
     Recipes_VeryRareStaffs_Bought = BASE_FLAG + 373
 
     # Seal recipe books
-    Recipes_CommonSeals_Bought = BASE_FLAG + 380
+    # Recipes_CommonSeals_Bought = BASE_FLAG + 380  # not used
     Recipes_UncommonSeals_Bought = BASE_FLAG + 381
     Recipes_RareSeals_Bought = BASE_FLAG + 382
     Recipes_VeryRareSeals_Bought = BASE_FLAG + 383
@@ -253,6 +242,17 @@ class SurvivalFlags(Flag):
     # TIME FLAG. Increments by 1 every 30 in-game minutes.
     MonitorTimeFlag = 15003399
     TimeEventValue = 15003400  # 4 flags
+    
+    # Monitor Smith's Hammer possession for recipe appearance.
+    MonitorSmithsHammerPossession = BASE_FLAG + 450  # five slots
+    HasNoviceSmithsHammer = BASE_FLAG + 460
+    HasApprenticeSmithsHammer = BASE_FLAG + 461
+    HasJourneymanSmithsHammer = BASE_FLAG + 462
+    HasExpertSmithsHammer = BASE_FLAG + 463
+    HasMasterSmithsHammer = BASE_FLAG + 464
+    
+    # Disease cures (not enough space above for all of them).
+    CureDisease = BASE_FLAG + 500  # 21 slots
 
     # For crafting weapons.
     CraftDummyWeaponBase = 15004000  # 377 slots
@@ -330,31 +330,31 @@ class SurvivalEffects(SpecialEffectParam):
     #  Pure Scarlet Rot's cure can be found in a particular dungeon, with a hint to it sold by a merchant in Caelid.
 
     # Overworld diseases
-    LimgravePlague = 53000
-    LiurniaToxin = 53001
-    CaelidParasite = 53002
-    AltusFever = 53003
-    MtGelmirPlague = 53004
-    MountaintopsParasite = 53005
-    SiofraPlague = 53006  # also Nokron
-    AinselToxin = 53007  # also Nokstella
-    DeeprootParasite = 53008  # also Astel arena
+    LimgraveDisease = 53000
+    LiurniaDisease = 53001
+    CaelidDisease = 53002
+    AltusDisease = 53003
+    MtGelmirDisease = 53004
+    MountaintopsDisease = 53005
+    SiofraDisease = 53006  # also Nokron
+    AinselDisease = 53007  # also Nokstella
+    DeeprootDisease = 53008  # also Astel arena
 
     # Legacy dungeon diseases
-    StormveilPlague = 53009
-    RayaLucariaFever = 53010  # maybe also Caria Manor
-    RadahnFever = 53011  # only afflicted by Radahn; higher proc chance
-    VolcanoManorToxin = 53012
-    LeyndellPlague = 53013  # no disease in Ashen Capital
-    SewersParasite = 53014
-    HaligtreePlague = 53015
-    FarumAzulaFever = 53016
-    MohgwynFever = 53017
+    StormveilDisease = 53009
+    RayaLucariaDisease = 53010  # maybe also Caria Manor
+    RadahnDisease = 53011  # only afflicted by Radahn; higher proc chance
+    VolcanoManorDisease = 53012
+    LeyndellDisease = 53013  # no disease in Ashen Capital
+    SewersDisease = 53014
+    HaligtreeDisease = 53015
+    FarumAzulaDisease = 53016
+    MohgwynDisease = 53017
 
     # Generic dungeon diseases
-    CatacombsToxin = 53018
-    CaveParasite = 53019
-    TunnelFever = 53020  # relatively harmless, as it may take a while to find a cure for Fever
+    CatacombsDisease = 53018
+    CaveDisease = 53019
+    TunnelDisease = 53020  # relatively harmless, as it may take a while to find a cure for Fever
     # No Divine Tower disease.
     # TODO: Maybe some special exceptions, like a Frenzy disease in Yelough Anix Tunnel, etc.
 
@@ -363,15 +363,29 @@ class SurvivalEffects(SpecialEffectParam):
     PureScarletRotItem = 53051  # player re-infects themselves with item
 
     # Disease cures
-    PlagueCure = 53100
-    ToxinCure = 53101
-    FeverCure = 53102
-    ParasiteCure = 53103
-    PureScarletRotCure = 53104
+    CureLimgraveDisease = 53100
+    CureLiurniaDisease = 53101
+    CureCaelidDisease = 53102
+    CureAltusDisease = 53103
+    CureMtGelmirDisease = 53104
+    CureMountaintopsDisease = 53105
+    CureSiofraDisease = 53106
+    CureAinselDisease = 53107
+    CureDeeprootDisease = 53108
+    CureStormveilDisease = 53109
+    CureRayaLucariaDisease = 53110
+    CureRadahnDisease = 53111
+    CureVolcanoManorDisease = 53112
+    CureLeyndellDisease = 53113
+    CureSewersDisease = 53114
+    CureHaligtreeDisease = 53115
+    CureFarumAzulaDisease = 53116
+    CureMohgwynDisease = 53117
+    CureCatacombsDisease = 53118
+    CureCaveDisease = 53119
+    CureTunnelDisease = 53120
 
     # TODO: Effects for all the different new items, as well as crafting recipes.
-    # TODO: EMEVD also checks for existing effects (e.g., cured meat) to change hunger/thirst.
-    # TODO: Merchant slots for recipe items.
 
     # Hunger/thirst only.
     RawSteak = 51900  # 3x Sliver of Meat. Sold by first merchant (Kale). -3 hunger

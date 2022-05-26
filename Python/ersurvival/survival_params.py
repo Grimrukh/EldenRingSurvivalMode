@@ -161,11 +161,6 @@ def write_param_csv(param: YappedParam, param_name: str):
     param.write_csv((CSV_PATH / param_name).with_suffix(".csv"))
 
 
-PRESERVE_ITEM_LOTS = [
-    16000690,  # Serpent-Hunter treasure
-]
-
-
 # Mostly boss rewards. These will be replaced if they exist, or added otherwise.
 MANUAL_ITEM_LOTS = {
     # Bosses
@@ -296,9 +291,6 @@ MANUAL_ITEM_LOTS = {
 }
 
 
-WEAPON_CRAFTING_VISIBILITY = {}  # TODO: Map shield/staff/seal/torch weapon names to "cookbook" flags.
-
-
 def generate_dummy_weapons(
     weapon_param: YappedParam,
     equip_mtrl_set_param: YappedParam,
@@ -341,7 +333,7 @@ def generate_dummy_weapons(
         if not do_weapon(row):
             continue
 
-        weapon_root_index = row.row_id // 10000
+        weapon_root_index = row.row_id // 10000  # e.g., 1000 for Dagger
         dummy_id = dummy_offset + 100 * weapon_root_index
         shop_id = new_shop_offset + weapon_root_index
         mtrl_id = new_mtrl_offset + 10 * weapon_root_index
@@ -349,32 +341,63 @@ def generate_dummy_weapons(
         weapon_base_id = 10000 * weapon_root_index
 
         try:
+            recipe_info = WEAPON_RECIPES[row.name]
+        except KeyError:
+            raise KeyError(f"Weapon '{row.name}' is missing from WEAPON_RECIPES.")
+
+        try:
             true_weapon_id, previous_weapon_id = tiers_dict[row.name]
         except KeyError:
-            # Weapon is not in the upgrade tree, and is simply crafted from scratch (Shields, Staffs, Seals, Torches)
+            # Weapon is not in the upgrade tree, and is simply crafted from scratch (Shields, Staffs, Seals, Torches).
             true_weapon_id = row.row_id  # no upgrade level (can be upgrading normally at blacksmith)
             previous_weapon_id = None  # no previous weapon in recipe
-            remove_reinforcement = False
+            hammer_id = -1  # 'AllowWeaponUpgrade' event not needed
+            try:
+                visibility_flag = recipe_info["visibility_flag"]
+            except KeyError:
+                raise KeyError(f"Non-tiered weapon '{row.name}' does not have a 'visibility_flag' in recipe dict.")
+            try:
+                rune_cost = recipe_info["cost"]
+            except KeyError:
+                raise KeyError(f"Non-tiered weapon '{row.name}' does not have a 'cost' in recipe dict.")
         else:
-            # Remove reinforcement from tiered weapon.
-            remove_reinforcement = True
+            tier = recipe_info["tier"]
+            if previous_weapon_id is None:
+                # Recipe must have a 'visibility_flag' (usually zero).
+                try:
+                    visibility_flag = recipe_info["visibility_flag"]
+                except KeyError:
+                    raise KeyError(f"Basic weapon '{row.name}' does not have a 'visibility_flag' in recipe dict.")
+                try:
+                    rune_cost = recipe_info["cost"]
+                except KeyError:
+                    raise KeyError(f"Basic weapon '{row.name}' does not have a 'cost' in recipe dict.")
+            else:
+                # Visibility flag is determined by monitoring previous weapon ID (and potentially a Smith's Hammer).
+                previous_weapon_base_id = 10000 * (previous_weapon_id // 10000)  # ignore upgrade level
+                previous_weapon_name = weapon_param[previous_weapon_base_id].name
+                visibility_flag = SurvivalFlags.WeaponMonitorBase + new_weapon_indices.index(previous_weapon_name)
 
-        # Determine rune cost for crafting from upgrade level.
-        upgrade_level = true_weapon_id % 100
-        if row["materialSetId"] == "2200":
-            # Somber. 5000 runes times level.
-            rune_cost = 5000 * upgrade_level
-        elif row["materialSetId"] == "0":
-            # Standard. 2500 runes times level.
-            rune_cost = 2500 * upgrade_level
-        else:
-            raise ValueError(f"Invalid 'materialSetId' for weapon {row.name}: {row['materialSetId']}")
+                # Determine rune cost for crafting from upgrade level.
+                rune_cost = tier * 2000
 
-        if rune_cost == 0:
-            # TODO: Probably want more hand-crafted costs for shields/staffs/seals/torches.
-            rune_cost = 500  # minimum rune cost (for 'from scratch' weapons)
+            # Determine Hammer required to upgrade weapon from its tier (for EMEVD printing only).
+            if 0 <= tier <= 2:
+                hammer_id = 0  # no hammer required
+            elif 3 <= tier <= 5:
+                hammer_id = SmithsHammers.NoviceSmithsHammer.value
+            elif 6 <= tier <= 8:
+                hammer_id = SmithsHammers.ApprenticeSmithsHammer.value
+            elif 9 <= tier <= 11:
+                hammer_id = SmithsHammers.JourneymanSmithsHammer.value
+            elif 12 <= tier <= 14:
+                hammer_id = SmithsHammers.ExpertSmithsHammer.value
+            elif 15 <= tier:
+                hammer_id = SmithsHammers.MasterSmithsHammer.value
+            else:
+                raise ValueError(f"Invalid tier for weapon '{row.name}': {tier}")
 
-        if remove_reinforcement:
+            # Tiered weapon cannot be reinforced.
             row["materialSetId"] = -1
 
         # Create dummy Weapon row.
@@ -390,9 +413,17 @@ def generate_dummy_weapons(
         else:
             infos[dummy_id] = f"Craft {names[weapon_base_id]} from raw materials"
 
-        # Copy captions.
+        # Copy FMG names and captions (but add Hammer to both captions if required).
         names[dummy_id] = names[weapon_base_id]
-        captions[dummy_id] = captions[weapon_base_id]
+        if hammer_id > 0:
+            hammer_name = NEW_SMITHS_HAMMERS[hammer_id]["name"]
+            new_caption = f"{captions[weapon_base_id]}\n\n{hammer_name} is required to upgrade it."
+        elif hammer_id == 0:
+            new_caption = f"{captions[weapon_base_id]}\n\nCan be upgraded without a Smith's Hammer."
+        else:  # standard reinforcement
+            new_caption = captions[weapon_base_id]
+        captions[dummy_id] = captions[weapon_base_id] = new_caption
+        # TODO: Haven't checked that all weapon captions can support two extra lines, but I'm optimistic.
 
         # Create item lot for awarding real weapon.
         new_item_lot = item_lots_map_param.duplicate_row(item_lot_source, item_lot_id)
@@ -400,17 +431,6 @@ def generate_dummy_weapons(
         new_item_lot["lotItemId01"] = true_weapon_id  # potentially upgraded version
         new_item_lot["lotItemCategory01"] = 2  # Weapon
         new_item_lot["lotItemNum01"] = 1
-
-        if row.name in WEAPON_CRAFTING_VISIBILITY:
-            visibility_flag = WEAPON_CRAFTING_VISIBILITY[row.name]
-        elif previous_weapon_id is None:
-            # print(f"# NOTE: Recipe for weapon '{row.name}' will always be visible.")
-            visibility_flag = 0
-        else:
-            # Visibility flag is determined by monitoring previous weapon ID.
-            previous_weapon_base_id = 10000 * (previous_weapon_id // 10000)  # ignore upgrade level
-            previous_weapon_name = weapon_param[previous_weapon_base_id].name
-            visibility_flag = SurvivalFlags.WeaponMonitorBase + new_weapon_indices.index(previous_weapon_name)
 
         # Create recipe entry.
         new_shop_row = shop_recipe_param.duplicate_row(shop_source, shop_id)
@@ -431,14 +451,13 @@ def generate_dummy_weapons(
         #     f"{previous_weapon_id if previous_weapon_id is not None else 0})"
         # )
         # monitor_flag = SurvivalFlags.WeaponMonitorBase + new_weapon_indices.index(row.name)
-        # print(
-        #     f"MonitorWeaponPossession({slot}, {true_weapon_id}, {monitor_flag})"
-        # )
+        # if hammer_id != -1:
+        #     print(
+        #         f"AllowWeaponUpgrade({slot}, {true_weapon_id}, {hammer_id}, {monitor_flag})"
+        #     )
         slot += 1
 
         # Create ingredients entry.
-        # TODO: Staff Pole and Shield Grip are not appearing in recipes.
-        # TODO: Serpent-Hunter still has a recipe. Probably good, but need a recipe book drop (note) then.
         new_mtrl_row = equip_mtrl_set_param.duplicate_row(mtrl_source, mtrl_id)
         new_mtrl_row.name = row.name
         ingredients = [ing for ing in WEAPON_RECIPES[row.name]["recipe"] if ing[1] < 21100]  # ignore grips
@@ -455,6 +474,49 @@ def generate_dummy_weapons(
 
     write_weapon_text(names, infos, captions)
     print("Wrote weapon FMGs successfully.")
+
+
+def generate_smiths_hammers(
+    goods_param: YappedParam, shop_recipe_param: YappedParam, equip_mtrl_set_param: YappedParam
+):
+    """Recipes for new Smith's Hammers, which allow further weapon upgrades."""
+
+    # Goods
+    new_good_offset = SmithsHammers.NoviceSmithsHammer
+    goods_source = 8590  # Whetstone Knife
+
+    # "Shop" lineup entries
+    new_shop_offset = 32600
+    shop_source = 1  # unnamed
+
+    # Ingredients
+    new_mtrl_offset = 326000
+    mtrl_source = 320010  # 3x Thin Beast Bones
+
+    for good_base_id, good_info in NEW_SMITHS_HAMMERS.items():
+        good_id = new_good_offset + good_base_id
+        shop_id = new_shop_offset + good_base_id
+        mtrl_id = new_mtrl_offset + 10 * good_base_id
+
+        new_good_row = goods_param.duplicate_row(goods_source, good_id)
+        new_good_row.name = good_info["name"]
+        new_good_row["iconId"] = good_info["icon"]
+        # TODO: Sort ID?
+
+        new_shop_row = shop_recipe_param.duplicate_row(shop_source, shop_id)
+        new_shop_row.name = good_info["name"]
+        new_shop_row["equipId"] = good_id
+        new_shop_row["mtrlId"] = mtrl_id
+        new_shop_row["eventFlag_forRelease"] = good_info["recipe_visibility_flag"]
+        new_shop_row["equipType"] = 3  # always Goods
+        new_shop_row["setNum"] = 1  # only one
+
+        new_mtrl_row = equip_mtrl_set_param.duplicate_row(mtrl_source, mtrl_id)
+        new_mtrl_row.name = good_info["name"]
+        for i, (count, ingredient) in enumerate(good_info["recipe"]):
+            new_mtrl_row[f"materialId{i + 1:02d}"] = ingredient.value
+            new_mtrl_row[f"itemNum{i + 1:02d}"] = count
+            new_mtrl_row[f"materialCate{i + 1:02d}"] = 4  # always Goods
 
 
 def generate_new_consumables(
@@ -474,8 +536,8 @@ def generate_new_consumables(
     new_mtrl_offset = 325000
     mtrl_source = 320010  # 3x Thin Beast Bones
 
-    for good_base_id, good_info in NEW_CONSUMABLES.items():
-        good_id = new_good_offset + good_base_id
+    for good_id, good_info in NEW_CONSUMABLES.items():
+        good_base_id = good_id - new_good_offset
         shop_id = new_shop_offset + good_base_id
         mtrl_id = new_mtrl_offset + 10 * good_base_id
 
@@ -483,16 +545,17 @@ def generate_new_consumables(
         new_good_row.name = good_info["name"]
         new_good_row["refId_default"] = good_info["effect"]
         new_good_row["sellValue"] = -1
-        new_good_row["iconId"] = 52  # TODO: set for each new good in its dictionary
+        new_good_row["iconId"] = good_info["icon"]
         new_good_row["goodsUseAnim"] = good_info["animation"].value
         # TODO: Probably other stuff too (e.g., VFX).
+        # TODO: Sort ID?
 
         new_shop_row = shop_recipe_param.duplicate_row(shop_source, shop_id)
         new_shop_row.name = good_info["name"]
         new_shop_row["equipId"] = good_id
-        # TODO: value (rune cost)?
+        new_shop_row["value"] = 0  # no rune cost for these
         new_shop_row["mtrlId"] = mtrl_id
-        # TODO: visibility flag?
+        new_shop_row["eventFlag_forRelease"] = good_info["recipe_visibility_flag"]
         new_shop_row["equipType"] = 3  # always Goods
         new_shop_row["setNum"] = 1  # only one
 
@@ -508,8 +571,9 @@ def generate_new_materials(goods_param: YappedParam):
     """Add new crafting material Goods. Relatively simple."""
     source_row = 15000  # Sliver of Meat
     for good_id, good_info in NEW_MATERIALS.items():
-        new_material = goods_param.duplicate_row(source_row, good_id, iconId=good_info["icon"])
+        new_material = goods_param.duplicate_row(source_row, good_id)
         new_material.name = good_info["name"]
+        new_material["iconId"] = good_info["icon"]
 
 
 def replace_stone_item_lots(item_lots_param: YappedParam, is_map: bool):
@@ -523,8 +587,6 @@ def replace_stone_item_lots(item_lots_param: YappedParam, is_map: bool):
     fragment_odds = 0.75  # rather than Iron Shards
 
     for row in item_lots_param.rows:
-        if row.row_id in PRESERVE_ITEM_LOTS:
-            continue  # leave these item lots be (e.g., Serpent-Hunter)
         if row.row_id in MANUAL_ITEM_LOTS:
             continue  # handled already in weapon replacement function
 
@@ -589,8 +651,6 @@ def replace_weapon_item_lots(item_lots_param: YappedParam, weapons_param: Yapped
 
     for row in item_lots_param.rows:
 
-        if row.row_id in PRESERVE_ITEM_LOTS:
-            continue  # leave these item lots be (e.g., Serpent-Hunter)
         if 40000000 <= row.row_id <= 49999999:
             continue  # ignore my new crafting dummy item lots
 
@@ -739,17 +799,6 @@ def parse_weapon_tiers():
     return tiers_dict
 
 
-def create_shield_recipe_books():
-    """TODO:
-        - Assign each shield to a Nomadic Merchant (just do it manually).
-        - Create a new recipe book ID for each Nomadic Merchant.
-        - Modify shield shop lineup recipe to use that book's flag.
-
-    TODO: Should be called AFTER weapon/shield crafting recipes are done.
-    TODO: Set "has book" flags for new books in common EMEVD.
-    """
-
-
 def get_random_material() -> tuple[Materials, int]:
     """Get a random material and drop count based on above dictionary."""
     materials = list(MATERIAL_RARITY_COUNT.keys())
@@ -762,6 +811,8 @@ def replace_merchant_weapons(shop_merchant_param: YappedParam, weapons_param: Ya
     """Replaces weapons sold by merchants with random components.
 
     Functions basically the same as map item lots.
+
+    NOTE: Manual merchant slot replacements may overwrite these again. No big deal.
     """
     price_weight_range = (0.75, 1.25)
     price_m = price_weight_range[1] - price_weight_range[0]
@@ -831,8 +882,83 @@ def replace_merchant_weapons(shop_merchant_param: YappedParam, weapons_param: Ya
         shop_merchant_param.rows.remove(row)
 
 
-def create_notes_books(goods_param: YappedParam, shop_merchant_param: YappedParam):
+def generate_notes_recipes(goods_param: YappedParam, shop_merchant_param: YappedParam, item_lot_map: YappedParam):
     """Create new notes and recipe books and add them to merchant lineup."""
+
+    goods_source = 8700  # Note: Hidden Cave
+    shop_source = 1  # unnamed
+    item_lot_source = 10000  # Margit reward
+
+    added_shop_rows = []
+
+    def create_shop_row(_row_id, _good_id, _info):
+        if _row_id in added_shop_rows:
+            raise ValueError(f"Shop row ID used more than once: {_row_id}")
+        added_shop_rows.append(_row_id)
+        new_row = shop_merchant_param.duplicate_row(shop_source, _row_id)
+        new_row.name = f"[Shop] {_info['name']}"
+        new_row["equipId"] = _good_id
+        try:
+            new_row["value"] = _info["cost"]
+        except KeyError:
+            raise KeyError(f"No 'cost' for good ID {_good_id}")
+        new_row["eventFlag_forStock"] = _info["bought_flag"]
+        new_row["equipType"] = 3  # Good
+        new_row["setNum"] = 1  # only one
+
+    def create_item_lot(_row_id, _good_id, _info):
+        new_row = item_lot_map.duplicate_row(item_lot_source, _row_id)
+        new_row.name = f"[Treasure] {_info['name']}"
+        new_row["lotItemId01"] = _good_id
+        new_row["lotItemCategory01"] = 1  # Good
+        new_row["lotItemNum01"] = 1
+        new_row["getItemFlagId"] = _info["bought_flag"]  # bought == found
+
+    for good_id, good_info in NEW_NOTES_RECIPES.items():
+
+        # Create good.
+        new_good_row = goods_param.duplicate_row(goods_source, good_id)
+        new_good_row.name = good_info["name"]
+        new_good_row["iconId"] = good_info["icon"]
+
+        if "shop_row" in good_info:
+            create_shop_row(good_info["shop_row"], good_id, good_info)
+        elif "shop_rows" in good_info:
+            for shop_row_id in good_info["shop_rows"]:  # quantity flag shared
+                create_shop_row(shop_row_id, good_id, good_info)
+        elif "item_lot" in good_info:
+            create_item_lot(good_info["item_lot"], good_id, good_info)
+        elif "item_lots" in good_info:
+            for item_lot_id in good_info["item_lots"]:  # acquisition flag shared
+                create_item_lot(item_lot_id, good_id, good_info)
+        else:
+            raise KeyError(f"Note/recipe {good_id} does not have a 'shop_row(s)' or 'item_lot(s)' field.")
+
+
+def generate_disease_indicators(goods: YappedParam, item_lots_map: YappedParam):
+    """Item lot IDs for disease indicators are identical to the goods themselves."""
+    goods_source = 8010  # Rusty Key
+    item_lot_source = 10000  # Margit reward
+
+    for good_id, good_info in DISEASE_INDICATORS.items():
+        # Indicator Key Item
+        new_good = goods.duplicate_row(goods_source, good_id)
+        new_good.name = good_info["name"]
+        new_good["iconId"] = good_info["icon"]
+
+        # Item Lot (same ID)
+        new_item_lot = item_lots_map.duplicate_row(item_lot_source, good_id)
+        new_item_lot.name = good_info["name"]
+        new_item_lot["lotItemId01"] = good_id
+        new_item_lot["lotItemCategory01"] = 1  # Good
+        new_item_lot["lotItemNum01"] = 1
+        new_item_lot["getItemFlagId"] = 0  # no acquirement flag
+
+
+def modify_torrent(npc_param: YappedParam):
+    """Make some changes to Torrent's NPC values."""
+    torrent = npc_param[80000000]
+    torrent["hp"] = 500  # down from 1939
 
 
 def test_item_lots(item_lots_map: YappedParam):
@@ -853,41 +979,29 @@ def generate_all():
     item_lots_enemy = read_param_csv("ItemLotParam_enemy_vanilla.csv")
     item_lots_map = read_param_csv("ItemLotParam_map_vanilla.csv")
     mtrl = read_param_csv("EquipMtrlSetParam_vanilla.csv")
+    npc = read_param_csv("NpcParam_vanilla.csv")
     shop_recipe = read_param_csv("ShopLineupParam_Recipe_vanilla.csv")
     shop_merchant = read_param_csv("ShopLineupParam_vanilla.csv")
+
+    # Delete Serpent-Hunter item lot (it will be replaced with a new recipe below).
+    item_lots_map.rows.remove(item_lots_map[16000690])
 
     generate_dummy_weapons(weapons, mtrl, shop_recipe, item_lots_map)
 
     generate_new_materials(goods)
     generate_new_consumables(goods, shop_recipe, mtrl)
-
-    # TODO: Levelled "Smithing Hammers" (crafted with Smithing Stones) that unlock weapon recipe tiers.
-    #  - Novice Smithing Hammer: allows upgrading from weapons with tier 4-7
-    #       - Six each of stones [1], [2], [3]
-    #       - Three each of Somber stones of same levels
-    #  - Journeyman Smithing Hammer: allows upgrading from weapons with tier 8-11
-    #       - Six each of stones [4], [5], [6]
-    #       - Three each of Somber stones of same levels
-    #  - Expert Smithing Hammer: allows upgrading from weapons with tier 12-15
-    #       - Nine each of stones [7], [8]
-    #       - Nine each of Somber stones of same levels
-    #  - Legendary Smithing Hammer: allows upgrading from weapons with tier 16+
-    #       - One Ancient Dragon Smithing Stone
-    #       - One Somber Ancient Dragon Smithing Stone
-    #       - One Meteorite Chunk
+    generate_smiths_hammers(goods, shop_recipe, mtrl)
+    generate_notes_recipes(goods, shop_merchant, item_lots_map)
+    generate_disease_indicators(goods, item_lots_map)
 
     replace_weapon_item_lots(item_lots_enemy, weapons, is_map=False)
     replace_weapon_item_lots(item_lots_map, weapons, is_map=True)
     replace_stone_item_lots(item_lots_enemy, is_map=False)
     replace_stone_item_lots(item_lots_map, is_map=True)
     replace_merchant_weapons(shop_merchant, weapons)
-    # TODO: Notes with disease clues for merchants.
-    # TODO: New "cookbooks" for consumables, basic weapon crafting, and shield/staff/seal/torch crafting.
-    # TODO: Remove class starting weapons and add some starting components instead.
 
-    # TODO: Edit Torrent (NPC param 80000000).
-    #  - Less HP.
-    #  - Stop Flask of Crimson Tears from healing him.
+    modify_torrent(npc)
+    # NOTE: SpEffects 501075-501087 have had their healing effects and VFX (5030) removed.
 
     # TODO: Remove in final release.
     print("\nNOTE: Debugging item lots created.")
