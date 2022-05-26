@@ -458,61 +458,61 @@ NEW_MATERIALS = {
     Materials.SoftWood: {
         "name": "Soft Wood",
         "info": "Unremarkable piece of wood",
-        "caption": "TODO",
+        "caption": "Inferior quality wood, fit for cinder.\nCommon material for crafting survival items.\n",
         "icon": 19100,
     },
     Materials.RefinedWood: {
         "name": "Refined Wood",
         "info": "Robust piece of wood",
-        "caption": "TODO",
+        "caption": "Superior quality wood that has been treated.\nMaterial for crafting survival items.\n",
         "icon": 19101,
     },
     Materials.StoneFragment: {
         "name": "Stone Fragment",
         "info": "Fragment of simple colored stone",
-        "caption": "TODO",
+        "caption": "Fragment of an extremely durable stone.\nMaterial for crafting survival items.\n",
         "icon": 19102,
     },
     Materials.SomberStoneFragment: {
         "name": "Somber Stone Fragment",
         "info": "Fragment of rare colorless stone",
-        "caption": "TODO",
+        "caption": "Fragment of an extremely durable stone.\nMaterial for crafting survival items.\n",
         "icon": 19103,
     },
     Materials.IronShards: {
-        "name": "Iron Shards", #metal scrap? metal shards?
-        "info": "Small chips of iron",
-        "caption": "TODO",
+        "name": "Metal Shards",
+        "info": "Shards of metal for forging",
+        "caption": "Shards of metal that came from a larger piece.\nMaterial for crafting survival items.\n",
         "icon": 19104,
     },
     Materials.IronPlate: {
-        "name": "Iron Plate", #metal plate
-        "info": "Basic component of metallic weaponry",
-        "caption": "TODO",
+        "name": "Metal Plate", #metal plate
+        "info": "Sheet of metal for forging",
+        "caption": "Sheet of metal perfect for forging metal weapons.\nMaterial for crafting survival items.\n",
         "icon": 19105,
     },
     Materials.LiquidMetal: {
-        "name": "Liquid Metal", #fancy metal
-        "info": "Rare component of unusual weapons",
-        "caption": "TODO",
+        "name": "Pliable Metal",
+        "info": "Rare metal used for forging",
+        "caption": "Prized metal that bends, but never breaks.\nMaterial for crafting survival items.\n",
         "icon": 19106,
     },
     Materials.DragonTeeth: {
         "name": "Dragon Teeth",
-        "info": "",
-        "caption": "TODO",
+        "info": "Collection of small dragon teeth",
+        "caption": "Small dragon teeth with latent power, perfect for forging dragon weapons.\nMaterial for crafting survival items.\n", #\nSuch small teeth for such large beasts... perhaps draconic youth shed their teeth?
         "icon": 19107,
     },
     Materials.GruesomeBone: {
         "name": "Gruesome Bone",
-        "info": "",
-        "caption": "TODO",
+        "info": "Digusting, large bone used for forging",
+        "caption": "Very large, disturbing bone prized by arcane smiths for its unique properties.\nMaterial for crafting survival items.\n", #\nSome try these bones to their stock out of hunger.
         "icon": 19108,
     },
     Materials.ErdtreeWood: {
         "name": "Erdtree Wood",
-        "info": "",
-        "caption": "TODO",
+        "info": "Holy wood from the Erdtree",
+        "caption": "Wood highly prized by craftsmen. Very light, but quite tough.\nMaterial for crafting survival items.\n",
         "icon": 19109,
     },
     Materials.MeteoriteChunk: {
