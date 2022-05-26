@@ -1,49 +1,3 @@
-"""
-Notes: RNG weights
-
-# Vanilla material values. Add value for highest tier present ONCE, then multiply sum with VanillaMaterial.
-    # This part kinda sucks.
-    VanillaMat_Per = .25
-    Tier1Mat = 1 # Early game/Common vanilla Materials
-    Tier2Mat = 2 # Mid game or Uncommon vanilla Materials
-    Tier3Mat = 4 # Late game or Rare vanilla Materials
-
-    StoneFragment = .4
-    SomberStoneFragment = .75
-    IronShards = .75
-    SoftWood = 1
-    IronPlate = 1.5
-    RefinedWood = 2
-    GlintstoneDust = 4
-    ErdtreeAmber = 4
-    LiquidMetal = 6
-    GruesomeBone = 8
-    MeteoriteChunk = 8
-    BlackMark = 8
-    DragonTeeth = 10
-    ErdtreeWood = ?
-
-    # Tier thresholds (Probably worthless now. Instead, order a list by material cost?)
-    Tier0 = 0
-    Tier1 = 6
-    Tier2 = 12
-    Tier3 = 16
-
----------
-Logic notes
-
-Things to calculate around:
-    Material value total
-    Stat requirements
-    Base scaling?? 
-        This is questionable you remember infusions exist
-        But at the same time, things would be less inconsistent for int/faith/arc builds
-
----------
-Other notes
-    ErdtreeWood: Currently used in a few bow recipes, but can probably be replaced and cut
-
-"""
 from survival_enums import *
 
 
@@ -234,11 +188,12 @@ class NotesRecipes(IntEnum):
 
 
 # Keys are offsets used in all IDs.
+    # George: I marked things with XXXX that need to be updated.
 NEW_CONSUMABLES = {
     0: {
         "name": "Raw Steak",
         "info": "Basic raw meal crafted by hunters",
-        "caption": "TODO",
+        "caption": "Raw cut of meat prepared from scraps of flesh.\nCraftable survival item.\n\nConsume to relieve hunger, but not without risk.",
         "recipe": [  # for `EquipMtrlSetParam`
             (3, Materials.SliverOfMeat),
         ],
@@ -249,7 +204,7 @@ NEW_CONSUMABLES = {
     1: {
         "name": "Seared Steak",
         "info": "Basic cooked meal crafted by hunters",
-        "caption": "TODO",
+        "caption": "Cooked cut of meat prepared from scraps of flesh. Smells delicious.\nCraftable survival item.\n\nConsume to relieve hunger.",
         "recipe": [
             (3, Materials.SliverOfMeat),
             (2, Materials.SmolderingButterfly),
@@ -261,7 +216,7 @@ NEW_CONSUMABLES = {
     2: {
         "name": "Raw Liver Steak",
         "info": "Raw meal crafted by expert hunters",
-        "caption": "TODO",
+        "caption": "Raw cut of meat prepared from scraps of flesh and liver.\nCraftable survival item.\n\nConsume to relieve hunger, but not without risk.",
         "recipe": [
             (2, Materials.SliverOfMeat),
             (1, Materials.BeastLiver),
@@ -273,7 +228,7 @@ NEW_CONSUMABLES = {
     3: {
         "name": "Seared Liver Steak",
         "info": "Cooked meal crafted by expert hunters",
-        "caption": "TODO",
+        "caption": "Cooked cut of meat prepared from scraps of flesh and liver. Smells delicious.\nCraftable survival item.\n\nConsume to relieve hunger.",
         "recipe": [
             (2, Materials.SliverOfMeat),
             (1, Materials.BeastLiver),
@@ -286,7 +241,7 @@ NEW_CONSUMABLES = {
     4: {
         "name": "Bone Broth",
         "info": "Light broth to ward off thirst",
-        "caption": "TODO",
+        "caption": "Delicious broth prepared from bones.\nCraftable survival item.\n\nConsume to relieve thirst.",
         "recipe": [
             (5, Materials.ThinBeastBones),
         ],
@@ -298,7 +253,7 @@ NEW_CONSUMABLES = {
     5: {
         "name": "Great Bone Broth",
         "info": "Hearty broth to ward off thirst",
-        "caption": "TODO",
+        "caption": "Delicious hearty broth prepared from large bones.\nCraftable survival item.\n\nConsume to relieve thirst.",
         "recipe": [
             (3, Materials.HeftyBeastBone),
         ],
@@ -310,7 +265,7 @@ NEW_CONSUMABLES = {
     6: {
         "name": "Blood Broth",
         "info": "Broth preferred by bloodthirsty hunters",
-        "caption": "TODO",
+        "caption": "Odorous broth prepared from bones and blood. A delicacy, for some.\nCraftable survival item.\n\nConsume to XXXX.",
         "recipe": [
             (3, Materials.ThinBeastBones),
             (2, Materials.BeastBlood),
@@ -323,7 +278,7 @@ NEW_CONSUMABLES = {
     7: {
         "name": "Forest Berry Medley",
         "info": "Medley of berries from the lower lands",
-        "caption": "TODO",
+        "caption": "Prepared fruits picked from rowa shrubs. Tannic, but delicious.\nCraftable survival item.\n\nConsume to relieve hunger and thirst.",
         "recipe": [
             (10, Materials.RowaFruit),
         ],
@@ -334,7 +289,7 @@ NEW_CONSUMABLES = {
     8: {
         "name": "Plateau Berry Medley",
         "info": "Medley of berries from the plateau",
-        "caption": "TODO",
+        "caption": "Prepared fruits picked from golden rowa shrubs. Sweet and delicious.\nCraftable survival item.\n\nConsume to relieve hunger and thirst.",
         "recipe": [
             (10, Materials.GoldenRowa),
         ],
@@ -345,7 +300,7 @@ NEW_CONSUMABLES = {
     9: {
         "name": "Mountain Berry Medley",
         "info": "Medley of berries from the mountains",
-        "caption": "TODO",
+        "caption": "Prepared fruits picked from rimed rowa shrubs. Slightly bitter, but uniquely delicious.\nCraftable survival item.\n\nConsume to relieve hunger and thirst.",
         "recipe": [
             (10, Materials.RimedRowa),
         ],
@@ -356,7 +311,7 @@ NEW_CONSUMABLES = {
     10: {
         "name": "Mushroom Stew",
         "info": "Basic mushroom stew",
-        "caption": "TODO",
+        "caption": "Simple, but tasty stew prepared from mushrooms and herba.\nCraftable survival item.\n\nConsume to relieve hunger and thirst.",
         "recipe": [
             (3, Materials.Mushroom),
             (3, Materials.Herba),
@@ -368,8 +323,8 @@ NEW_CONSUMABLES = {
     },
     11: {
         "name": "Melted Mushroom Stew",
-        "info": "Delicious mushroom stew",
-        "caption": "TODO",
+        "info": "Thick mushroom stew",
+        "caption": "Thick stew prepared from mushrooms and herba. Unusual texture, but incredible taste.\nCraftable survival item.\n\nConsume to relieve hunger and thirst.",
         "recipe": [
             (3, Materials.MeltedMushroom),
             (3, Materials.DewkissedHerba),
@@ -382,7 +337,7 @@ NEW_CONSUMABLES = {
     12: {
         "name": "Draught of Satiation",
         "info": "Prevents hunter temporarily",
-        "caption": "TODO",
+        "caption": "Outlawed concotion made from XXXX. Smells terrible.\nCraftable survival item.\n\nConsume to prevent hunger temporarily.",
         "recipe": [
             (3, Materials.GraveViolet),
             # TODO: More ingredients.
@@ -395,7 +350,7 @@ NEW_CONSUMABLES = {
     13: {
         "name": "Draught of Silver Tears",
         "info": "Prevents thirst temporarily",
-        "caption": "TODO",
+        "caption": "Outlawed concotion made from XXXX. Smells awful.\nCraftable survival item.\n\nConsume to prevent thirst temporarily.",
         "recipe": [
             (7, Materials.SilverTearHusk),
             # TODO: More ingredients.
@@ -407,8 +362,8 @@ NEW_CONSUMABLES = {
     },
     14: {
         "name": "Mossdew Soup",
-        "info": "Soup with mild heat protected",
-        "caption": "TODO",
+        "info": "Soup with mild heat protection",
+        "caption": "Simple medicinal soup. Tastes very bitter.\nCraftable survival item.\n\nConsume for mild heat protection. XXXX MECHANIC INFO NEEDED",
         "recipe": [
             (3, Materials.CaveMoss),
             (4, Materials.DewkissedHerba),
@@ -421,7 +376,7 @@ NEW_CONSUMABLES = {
     15: {
         "name": "Crystal Shard Soup",
         "info": "Soup with moderate heat protection",
-        "caption": "TODO",
+        "caption": "Complex medicinal soup. Tastes slightly sweet.\nCraftable survival item.\n\nConsume for moderate heat protection. XXXX MECHANIC INFO NEEDED",
         "recipe": [
             (2, Materials.BuddingCaveMoss),
             (5, Materials.CrackedCrystal),
@@ -434,11 +389,11 @@ NEW_CONSUMABLES = {
     16: {
         "name": "Giant's Soup",
         "info": "Soup with great heat protection",
-        "caption": "TODO",
+        "caption": "Masterful medicinal soup. Tastes pretty good.\nCraftable survival item.\n\nConsume for great heat protection. XXXX MECHANIC INFO NEEDED",
         "recipe": [
             (5, Materials.RimedRowa),
             (2, Materials.CrystalCaveMoss),
-            (2, Materials.RimedRowa),
+            (2, Materials.RimedRowa), #XXXX dupe ingredient whoopsie?
         ],
         "effect": SurvivalEffects.GiantsSoup,
         "animation": GoodsUseAnimation.ITEM_DRINK,
@@ -448,7 +403,7 @@ NEW_CONSUMABLES = {
     17: {
         "name": "Amber-Eye Brew",
         "info": "Brew with mild cold protection",
-        "caption": "TODO",
+        "caption": "Simple medicinal brew. Rather intoxicating.\nCraftable survival item.\n\nConsume for mild cold protection. XXXX MECHANIC INFO NEEDED",
         "recipe": [
             (3, Materials.EyeOfYelough),
             (1, Materials.YellowEmber),
@@ -462,7 +417,7 @@ NEW_CONSUMABLES = {
     18: {
         "name": "Magmatic Brew",
         "info": "Brew with moderate cold protection",
-        "caption": "TODO",
+        "caption": "Complex medicinal brew. Makes your tongue feel like it's on fire!\nCraftable survival item.\n\nConsume for moderate cold protection. XXXX MECHANIC INFO NEEDED",
         "recipe": [
             (4, Materials.VolcanicStone),
             (3, Materials.TarnishedGoldenSunflower),
@@ -475,7 +430,7 @@ NEW_CONSUMABLES = {
     19: {
         "name": "Blossom Brew",
         "info": "Brew with great cold protection",
-        "caption": "TODO",
+        "caption": "Masterful medicinal brew. Very acidic, and strangely addictive.\nCraftable survival item.\n\nConsume for great cold protection. XXXX MECHANIC INFO NEEDED",
         "recipe": [
             (5, Materials.FireBlossom),
             (3, Materials.FormicRock),
@@ -488,7 +443,7 @@ NEW_CONSUMABLES = {
     20: {
         "name": "Jar Brittle",
         "info": "Crunchy brittle from living jars",
-        "caption": "TODO",
+        "caption": "Aberrant food prepared from the flesh of living jars.\nMost find it abhorrent, but others swear it has a taste like no other.\nCraftable survival item.\n\nConsume to relieve hunger, gain mild heat & cold protection, but increaes thirst.",
         "recipe": [
             (5, Materials.LivingJarShard),
         ],
