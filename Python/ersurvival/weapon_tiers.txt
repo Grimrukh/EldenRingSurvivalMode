@@ -207,7 +207,7 @@ Hand Axe  # from scratch
             Forked Hatchet+10  # DEX
                 Icerind Hatchet+8
                     # -> Butchering Knife (Greataxe)
-                    Ripple Blade+10  # ARC, MAX
+                    Ripple Blade+20  # ARC, MAX
 
 # Greataxes (Done)
 Warped Axe+10 -> Longhaft Axe+12
@@ -263,10 +263,10 @@ Iron Spear+9 -> Halberd+10
             Glaive+16
                 Nightrider Glaive+16
                 Gargoyle's Halberd+18
-                    Gargoyle's Black Halberd+20  # MAX
+                    Gargoyle's Black Halberd+10  # MAX
             Dragon Halberd+8
                 Golden Halberd+9
-                    Golem's Halberd+10  # COLOSSAL, MAX
+                    Golem's Halberd+20  # COLOSSAL, MAX
             Guardian's Swordspear+17
                 Commander's Standard+10  # MAX
     Pest's Glaive+12
@@ -286,7 +286,7 @@ Lucerne+14 -> Scythe+16
 Whip+10  # from scratch
     Thorned Whip+13
         Urumi+17
-            Hoslow's Petal Whip+15
+            Hoslow's Petal Whip+20
     Magma Whip Candlestick+10
     Giant's Red Braid+10
 
@@ -310,7 +310,7 @@ Shortbow
     Misbegotten Shortbow+5  # STR
         Pulley Bow+8
             # -> Soldier's Crossbow
-    Harp Bow+5
+    Harp Bow+3
         Composite Bow+10  # STR + DEX, MAX
         Red Branch Shortbow+8  # DEX
             Longbow+10

@@ -835,6 +835,18 @@ def create_notes_books(goods_param: YappedParam, shop_merchant_param: YappedPara
     """Create new notes and recipe books and add them to merchant lineup."""
 
 
+def test_item_lots(item_lots_map: YappedParam):
+    """Debugging item lots."""
+    item_lots_map[100].name = "Test: Shield Grip"
+    item_lots_map[100]["lotItemId01"] = Materials.ShieldGrip
+    item_lots_map[100]["lotItemNum01"] = 1
+
+    # cat = item_lots_map.duplicate_row(100, 101, name="Test: Longtail Cat Talisman", )
+    # cat["lotItemId01"] = 6040
+    # cat["lotItemCategory01"] = 4  # Accessory
+    # cat["lotItemNum01"] = 1
+
+
 def generate_all():
     goods = read_param_csv("EquipParamGoods_vanilla.csv")
     weapons = read_param_csv("EquipParamWeapon_vanilla.csv")
@@ -849,6 +861,21 @@ def generate_all():
     generate_new_materials(goods)
     generate_new_consumables(goods, shop_recipe, mtrl)
 
+    # TODO: Levelled "Smithing Hammers" (crafted with Smithing Stones) that unlock weapon recipe tiers.
+    #  - Novice Smithing Hammer: allows upgrading from weapons with tier 4-7
+    #       - Six each of stones [1], [2], [3]
+    #       - Three each of Somber stones of same levels
+    #  - Journeyman Smithing Hammer: allows upgrading from weapons with tier 8-11
+    #       - Six each of stones [4], [5], [6]
+    #       - Three each of Somber stones of same levels
+    #  - Expert Smithing Hammer: allows upgrading from weapons with tier 12-15
+    #       - Nine each of stones [7], [8]
+    #       - Nine each of Somber stones of same levels
+    #  - Legendary Smithing Hammer: allows upgrading from weapons with tier 16+
+    #       - One Ancient Dragon Smithing Stone
+    #       - One Somber Ancient Dragon Smithing Stone
+    #       - One Meteorite Chunk
+
     replace_weapon_item_lots(item_lots_enemy, weapons, is_map=False)
     replace_weapon_item_lots(item_lots_map, weapons, is_map=True)
     replace_stone_item_lots(item_lots_enemy, is_map=False)
@@ -856,6 +883,11 @@ def generate_all():
     replace_merchant_weapons(shop_merchant, weapons)
     # TODO: Notes with disease clues for merchants.
     # TODO: New "cookbooks" for consumables, basic weapon crafting, and shield/staff/seal/torch crafting.
+    # TODO: Remove class starting weapons and add some starting components instead.
+
+    # TODO: Remove in final release.
+    print("\nNOTE: Debugging item lots created.")
+    test_item_lots(item_lots_map)
 
     write_param_csv(goods, "EquipParamGoods.csv")
     write_param_csv(weapons, "EquipParamWeapon.csv")

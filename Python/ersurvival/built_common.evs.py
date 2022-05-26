@@ -405,6 +405,7 @@ def Constructor():
     RunEvent(9943)
     RunEvent(9940)
     RunEvent(1700)
+    AwardItemLot(100, host_only=True)
     SkipIfCharacterDoesNotHaveSpecialEffect(2, character=PLAYER, special_effect=40029)
     CancelSpecialEffect(PLAYER, 40029)
     AddSpecialEffect(PLAYER, 40028)

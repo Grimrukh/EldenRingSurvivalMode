@@ -11,6 +11,9 @@ from .survival_enums import *
 def Constructor():
     """Will be merged with vanilla Common."""
 
+    # TODO: Debugging. Remove for release.
+    AwardItemLot(100)
+
     # If player is maximally thirsty on load, replace with second-to-max.
     # TODO: Actually, this should only apply AFTER DEATH.
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Thirst9)
@@ -91,7 +94,7 @@ def Constructor():
     )
     GetDiseaseLegacyDungeon(
         1,
-        SurvivalEffects.RayaLucariaToxin,
+        SurvivalEffects.RayaLucariaFever,
         14, 0, 0, 0,  # RAYA_LUCARIA
         SurvivalFlags.RayaLucariaDiseaseOnce,
         SurvivalFlags.RayaLucariaDiseaseTwice,
@@ -930,7 +933,7 @@ def GrowingHunger():
     """Hunger ticks up every 60 seconds."""
 
     # Hunger cannot grow while Draught of the Undining is active (or hunger is at max).
-    IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.DraughtOfTheUndining)
+    IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.DraughtOfSatiation)
     IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Hunger15)
     IfConditionTrue(0, 1)
 
@@ -1719,7 +1722,7 @@ def CureToxin():
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.LiurniaToxin)
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.CatacombsToxin)
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.AinselToxin)
-    IfPlayerHasSpecialEffect(-1, SurvivalEffects.RayaLucariaToxin)
+    IfPlayerHasSpecialEffect(-1, SurvivalEffects.RayaLucariaFever)
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.VolcanoManorToxin)
     IfConditionTrue(1, -1)
 
@@ -1728,7 +1731,7 @@ def CureToxin():
     CancelSpecialEffect(PLAYER, SurvivalEffects.LiurniaToxin)
     CancelSpecialEffect(PLAYER, SurvivalEffects.CatacombsToxin)
     CancelSpecialEffect(PLAYER, SurvivalEffects.AinselToxin)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.RayaLucariaToxin)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.RayaLucariaFever)
     CancelSpecialEffect(PLAYER, SurvivalEffects.VolcanoManorToxin)
 
     DisplayDialog(SurvivalText.CuredToxin)
