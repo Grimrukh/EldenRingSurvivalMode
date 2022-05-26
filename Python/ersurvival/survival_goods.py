@@ -387,7 +387,7 @@ NEW_CONSUMABLES = {
     20: {
         "name": "Jar Brittle",
         "info": "Crunchy brittle from living jars",
-        "caption": "Aberrant food prepared from the flesh of living jars.\nMost find it abhorrent, but others swear it has a taste like no other.\nCraftable survival item.\n\nConsume to relieve hunger, gain mild heat & cold protection, but increaes thirst.",
+        "caption": "Aberrant food prepared from the flesh of living jars.\nMost find it abhorrent, but others swear it has a taste like no other.\nCraftable survival item.\n\nConsume to relieve hunger and gain mild heat & cold protection.\nHowever, it increases thirst.",
         "recipe": [
             (5, Materials.LivingJarShard),
         ],
