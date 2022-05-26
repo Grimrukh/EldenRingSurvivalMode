@@ -885,6 +885,10 @@ def generate_all():
     # TODO: New "cookbooks" for consumables, basic weapon crafting, and shield/staff/seal/torch crafting.
     # TODO: Remove class starting weapons and add some starting components instead.
 
+    # TODO: Edit Torrent (NPC param 80000000).
+    #  - Less HP.
+    #  - Stop Flask of Crimson Tears from healing him.
+
     # TODO: Remove in final release.
     print("\nNOTE: Debugging item lots created.")
     test_item_lots(item_lots_map)

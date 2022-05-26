@@ -51,30 +51,31 @@ class SurvivalFlags(Flag):
     """NEW flags and events used by Survival Mode."""
     GrowingHunger = BASE_FLAG + 0
     GrowingThirst = BASE_FLAG + 1
+    ReduceThirstOnDeath = BASE_FLAG + 2
 
-    CheckMildHeatArea = BASE_FLAG + 10
-    MildHeatWarning = BASE_FLAG + 11
-    ShowMildHeatWarning = BASE_FLAG + 12
+    CheckMildHeatArea = BASE_FLAG + 20
+    MildHeatWarning = BASE_FLAG + 21
+    ShowMildHeatWarning = BASE_FLAG + 22
 
-    CheckModerateHeatArea = BASE_FLAG + 13
-    ModerateHeatWarning = BASE_FLAG + 14
-    ShowModerateHeatWarning = BASE_FLAG + 15
+    CheckModerateHeatArea = BASE_FLAG + 23
+    ModerateHeatWarning = BASE_FLAG + 24
+    ShowModerateHeatWarning = BASE_FLAG + 25
 
-    CheckSevereHeatArea = BASE_FLAG + 16
-    SevereHeatWarning = BASE_FLAG + 17
-    ShowSevereHeatWarning = BASE_FLAG + 18
+    CheckSevereHeatArea = BASE_FLAG + 26
+    SevereHeatWarning = BASE_FLAG + 27
+    ShowSevereHeatWarning = BASE_FLAG + 28
 
-    CheckMildColdArea = BASE_FLAG + 19
-    MildColdWarning = BASE_FLAG + 20
-    ShowMildColdWarning = BASE_FLAG + 21
+    CheckMildColdArea = BASE_FLAG + 29
+    MildColdWarning = BASE_FLAG + 30
+    ShowMildColdWarning = BASE_FLAG + 31
 
-    CheckModerateColdArea = BASE_FLAG + 22
-    ModerateColdWarning = BASE_FLAG + 23
-    ShowModerateColdWarning = BASE_FLAG + 24
+    CheckModerateColdArea = BASE_FLAG + 32
+    ModerateColdWarning = BASE_FLAG + 33
+    ShowModerateColdWarning = BASE_FLAG + 34
 
-    CheckSevereColdArea = BASE_FLAG + 25
-    SevereColdWarning = BASE_FLAG + 26
-    ShowSevereColdWarning = BASE_FLAG + 27
+    CheckSevereColdArea = BASE_FLAG + 35
+    SevereColdWarning = BASE_FLAG + 36
+    ShowSevereColdWarning = BASE_FLAG + 37
 
     # Overworld area monitoring
     MonitorInLimgrave = BASE_FLAG + 40
@@ -157,6 +158,25 @@ class SurvivalFlags(Flag):
     TunnelDiseaseTwice = BASE_FLAG + 243
 
     PureScarletRotOnce = BASE_FLAG + 250
+
+    RelieveHunger_1 = BASE_FLAG + 260
+    RelieveHunger_2 = BASE_FLAG + 261
+    RelieveHunger_3 = BASE_FLAG + 262
+    RelieveHunger_4 = BASE_FLAG + 263
+    RelieveHunger_5 = BASE_FLAG + 264
+    RelieveHunger_6 = BASE_FLAG + 265
+    RelieveHunger_7 = BASE_FLAG + 266
+    RelieveHunger_8 = BASE_FLAG + 267
+
+    RelieveThirst_1 = BASE_FLAG + 270
+    RelieveThirst_2 = BASE_FLAG + 271
+    RelieveThirst_3 = BASE_FLAG + 272
+    RelieveThirst_4 = BASE_FLAG + 273
+    RelieveThirst_5 = BASE_FLAG + 274
+    RelieveThirst_6 = BASE_FLAG + 275
+    RelieveThirst_7 = BASE_FLAG + 276
+    IncreaseThirst_1 = BASE_FLAG + 277
+    IncreaseThirst_3 = BASE_FLAG + 278
 
     # Disease note/cures
     Note_CuringDiseases_Bought = BASE_FLAG + 299
@@ -354,29 +374,52 @@ class SurvivalEffects(SpecialEffectParam):
     # TODO: Merchant slots for recipe items.
 
     # Hunger/thirst only.
-    RawSteak = 51900  # 3x Sliver of Meat. Sold by first merchant (Kale).
-    SearedSteak = 51901  # 3x Sliver of Meat, 2x Smoldering Butterfly. Sold by first merchant (Kale).
-    RawLiverSteak = 51902  # 2x Sliver of Meat, 1x Beast Liver. Sold by ???.
-    SearedLiverSteak = 51903  # 2x Sliver of Meat, 1x Beast Liver, 2x Smoldering Butterfly. Sold by ???.
-    BoneBroth = 51904  # 5x Thin Beast Bones, Cracked Pot.
-    GreatBoneBroth = 51905  # 3x Hefty Beast Bones, Ritual Pot.
-    BloodBroth = 51906  # 2x Beast Blood, Ritual Pot.
-    BerryMedley1 = 51907  # 10x Rowa Fruit, ???.
-    BerryMedley2 = 51908  # 10x Golden Rowa, ???.
-    BerryMedley3 = 51909  # 10x Rimed Rowa, ???.
-    MushroomStew = 51910  # 3x Mushroom, 1x Herba, Cracked Pot.
-    MeltedMushroomStew = 51911  # 3x Melted Mushroom, ???, Cracked Pot.
-    DraughtOfSatiation = 51912  # ???, 3x Grave Violet, ???, Ritual Pot.
-    DraughtOfSilverTears = 51913  # 5x Silver Tear Husk, ???, Ritual Pot.
+    RawSteak = 51900  # 3x Sliver of Meat. Sold by first merchant (Kale). -3 hunger
+    SearedSteak = 51901  # 3x Sliver of Meat, 2x Smoldering Butterfly. Sold by first merchant (Kale). -5 hunger
+    RawLiverSteak = 51902  # 2x Sliver of Meat, 1x Beast Liver. Sold by ???. -6 hunger
+    SearedLiverSteak = 51903  # 2x Sliver of Meat, 1x Beast Liver, 2x Smoldering Butterfly. Sold by ???. -8 hunger
+    BoneBroth = 51904  # 5x Thin Beast Bones, Cracked Pot. -2 hunger, -3 thirst
+    GreatBoneBroth = 51905  # 3x Hefty Beast Bones, Ritual Pot. -4 hunger, -5 thirst
+    BloodBroth = 51906  # 2x Beast Blood, Ritual Pot. -1 hunger, -4 thirst, bonus effect
+    BerryMedley1 = 51907  # 10x Rowa Fruit, ???. -2 hunger, -1 thirst
+    BerryMedley2 = 51908  # 10x Golden Rowa, ???. -3 hunger, -2 thirst
+    BerryMedley3 = 51909  # 10x Rimed Rowa, ???. -4 hunger, -3 thirst
+    MushroomStew = 51910  # 3x Mushroom, 1x Herba, Cracked Pot. -2 hunger, -2 thirst
+    MeltedMushroomStew = 51911  # 3x Melted Mushroom, ???, Cracked Pot. -4 hunger, -3 thirst
+    DraughtOfSatiation = 51912  # ???, 3x Grave Violet, ???, Ritual Pot. -8 hunger, bonus effect
+    DraughtOfSilverTears = 51913  # 5x Silver Tear Husk, ???, Ritual Pot. -7 thirst, bonus effect
 
     # Temperature protection.
-    MossdewSoup = 51914  # 3x Cave Moss, 5x Dewkissed Herba, Cracked Pot.
-    CrystalShardSoup = 51915  # 5x Cracked Crystal, ???, Cracked Pot.
-    GiantsSoup = 51916  # 5x Rimed Rowa, 2x Crystal Cave Moss, 2x Rimed Crystal Bud, Ritual Pot.
-    AmberEyeBrew = 51917  # 3x Eye of Yelough, 1x Yellow Amber, 3x Herba, Cracked Pot.
-    MagmaticBrew = 51918  # 4x Volcanic Stone, 3x Tarnished Golden Sunflowers, Cracked Pot.
-    BlossomBrew = 51919  # 5x Fire Blossom, 3x Formic Rock, Ritual Pot.
-    JarBrittle = 51920  # 5x Living Jar Shards, ???. (no pot)
+    MossdewSoup = 51914  # 3x Cave Moss, 5x Dewkissed Herba, Cracked Pot. -1 thirst, other effects
+    CrystalShardSoup = 51915  # 5x Cracked Crystal, ???, Cracked Pot. -1 thirst, other effects
+    GiantsSoup = 51916  # 5x Rimed Rowa, 2x Crystal Cave Moss, 2x Rimed Crystal Bud, Ritual Pot. -1 thirst, other
+    AmberEyeBrew = 51917  # 3x Eye of Yelough, 1x Yellow Amber, 3x Herba, Cracked Pot. -1 thirst, other
+    MagmaticBrew = 51918  # 4x Volcanic Stone, 3x Tarnished Golden Sunflowers, Cracked Pot. -1 thirst, other
+    BlossomBrew = 51919  # 5x Fire Blossom, 3x Formic Rock, Ritual Pot. -1 thirst, other
+    JarBrittle = 51920  # 5x Living Jar Shards, ???. (no pot) -3 hunger, +3 thirst, other
+
+    # Vanilla item effects (in order they appear in Goods param)
+    BoiledCrab = 500820  # -2 hunger
+    BoiledPrawn = 500830  # -1 hunger
+    PickledTurtleNeck = 3953  # -2 hunger
+    ImmunizingCuredMeat = 3960  # -3 hunger, +1 thirst
+    InvigoratingCuredMeat = 3961  # -3 hunger, +1 thirst
+    ClarifyingCuredMeat = 3962  # -3 hunger, +1 thirst
+    DappledCuredMeat = 3963  # -3 hunger, +1 thirst
+    SpellproofDriedLiver = 3910  # -3 hunger, +1 thirst
+    FireproofDriedLiver = 3920  # -3 hunger, +1 thirst
+    LightningproofDriedLiver = 3930  # -3 hunger, +1 thirst
+    HolyproofDriedLiver = 501180  # -3 hunger, +1 thirst
+    SilverPickledFowlFoot = 3970  # -3 hunger
+    GoldPickledFowlFoot = 3971  # -3 hunger
+    ExaltedFlesh = 3950  # -4 hunger
+    # DeathsbaneJerky = 501220  # CUT CONTENT
+    RawMeatDumpling = 501235  # -3 hunger
+    ImmunizingWhiteCuredMeat = 501310  # -3 hunger, +1 thirst
+    InvigoratingWhiteCuredMeat = 501320  # -3 hunger, +1 thirst
+    ClarifyingWhiteCuredMeat = 501330  # -3 hunger, +1 thirst
+    DappledWhiteCuredMeat = 501340  # -3 hunger, +1 thirst
+    # DeathsbaneWhiteJerky = 501350  # CUT CONTENT
 
 
 class WeaponCategory(IntEnum):
