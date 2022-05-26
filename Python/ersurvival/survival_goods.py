@@ -976,61 +976,61 @@ NEW_MATERIALS = {
     Materials.SoftWood: {
         "name": "Soft Wood",
         "info": "Unremarkable piece of wood",
-        "caption": "Inferior quality wood, fit for cinder.\nCommon material for crafting survival items.\n",
+        "caption": "Inferior quality wood, fit for cinder.\nCommon material for crafting weapons and shields.\n",
         "icon": 19036,
     },
     Materials.RefinedWood: {
         "name": "Refined Wood",
         "info": "Robust piece of wood",
-        "caption": "Superior quality wood that has been treated.\nMaterial for crafting survival items.\n",
+        "caption": "Superior quality wood that has been treated.\nMaterial for crafting weapons and shields.\n",
         "icon": 19037,
     },
     Materials.StoneFragment: {
         "name": "Stone Fragment",
         "info": "Fragment of simple colored stone",
-        "caption": "Fragment of an extremely durable stone.\nMaterial for crafting survival items.\n",
+        "caption": "Fragment of an extremely durable stone.\nMaterial for crafting weapons and shields.\n",
         "icon": 19038,
     },
     Materials.SomberStoneFragment: {
         "name": "Somber Stone Fragment",
         "info": "Fragment of rare colorless stone",
-        "caption": "Fragment of an extremely durable stone.\nMaterial for crafting survival items.\n",
+        "caption": "Fragment of an extremely durable white stone.\nMaterial for crafting weapons and shields.\n",
         "icon": 19039,
     },
     Materials.IronShards: {
         "name": "Metal Shards",
         "info": "Shards of metal for forging",
-        "caption": "Shards of metal that came from a larger piece.\nMaterial for crafting survival items.\n",
+        "caption": "Shards of metal that came from a larger piece.\nMaterial for crafting weapons and shields.\n",
         "icon": 19040,
     },
     Materials.IronPlate: {
-        "name": "Metal Plate", #metal plate
+        "name": "Metal Plate",
         "info": "Sheet of metal for forging",
-        "caption": "Sheet of metal perfect for forging metal weapons.\nMaterial for crafting survival items.\n",
+        "caption": "Sheet of metal perfect for forging metal weapons.\nMaterial for crafting weapons and shields.\n",
         "icon": 19041,
     },
     Materials.LiquidMetal: {
         "name": "Pliable Metal",
         "info": "Rare metal used for forging",
-        "caption": "Prized metal that bends, but never breaks.\nMaterial for crafting survival items.\n",
+        "caption": "Prized metal that bends, but never breaks.\nMaterial for crafting weapons and shields.\n",
         "icon": 19042,
     },
     Materials.DragonTeeth: {
         "name": "Dragon Teeth",
         "info": "Collection of small dragon teeth",
-        "caption": "Small dragon teeth with latent power, perfect for forging dragon weapons.\nMaterial for crafting survival items.\n", #\nSuch small teeth for such large beasts... perhaps draconic youth shed their teeth?
+        "caption": "Small dragon teeth with latent power, perfect for forging dragon weapons.\nMaterial for crafting weapons and shields.\n", #\nSuch small teeth for such large beasts... perhaps draconic youth shed their teeth?
         "icon": 19043,
     },
     Materials.GruesomeBone: {
         "name": "Gruesome Bone",
         "info": "Digusting, large bone used for forging",
-        "caption": "Very large, disturbing bone prized by arcane smiths for its unique properties.\nMaterial for crafting survival items.\n", #\nSome try these bones to their stock out of hunger.
+        "caption": "Very large, disturbing bone prized by arcane smiths for its unique properties.\nMaterial for crafting weapons and shields.\n", #\nSome try these bones to their stock out of hunger.
         "icon": 19044,
     },
     Materials.ErdtreeWood: {
         "name": "Erdtree Wood",
         "info": "Holy wood from the Erdtree",
-        "caption": "Wood highly prized by craftsmen. Very light, but quite tough.\nMaterial for crafting survival items.\n",
+        "caption": "Wood highly prized by craftsmen. Very light, but quite tough.\nMaterial for crafting weapons and shields.\n",
         "icon": 19045,
     },
     Materials.MeteoriteChunk: {
