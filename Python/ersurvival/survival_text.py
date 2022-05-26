@@ -96,17 +96,13 @@ EVENT_TEXT = {
 def set_goods_text():
     goods_name = YabberText(ITEM_PATH / "GoodsName_vanilla.fmg.xml")
     goods_info = YabberText(ITEM_PATH / "GoodsInfo_vanilla.fmg.xml")
-    goods_caption = YabberText(ITEM_PATH / "GoodsCaption_vanilla.fmg.xml")  # TODO
+    goods_caption = YabberText(ITEM_PATH / "GoodsCaption_vanilla.fmg.xml")
 
-    for good_id, good_info in NEW_CONSUMABLES.items():
-        goods_name[good_id] = good_info["name"]
-        goods_info[good_id] = good_info["info"]
-        goods_caption[good_id] = good_info["caption"]
-
-    for good_id, good_info in NEW_MATERIALS.items():
-        goods_name[good_id] = good_info["name"]
-        goods_info[good_id] = good_info["info"]
-        goods_caption[good_id] = good_info["caption"]
+    for goods_dict in (NEW_CONSUMABLES, NEW_MATERIALS, NEW_SMITHS_HAMMERS, NEW_NOTES_RECIPES):
+        for good_id, good_info in goods_dict.items():
+            goods_name[good_id] = good_info["name"]
+            goods_info[good_id] = good_info["info"]
+            goods_caption[good_id] = good_info["caption"]
 
     goods_name.write(ITEM_PATH / "GoodsName.fmg.xml")
     goods_info.write(ITEM_PATH / "GoodsInfo.fmg.xml")

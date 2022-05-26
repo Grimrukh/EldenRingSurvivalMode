@@ -173,7 +173,7 @@ class Materials(IntEnum):
     SomberStoneFragment = 21003  # Used for EVEN STRONGER weapons. Replaces many Somber Smithing Stone drops.
     IronShards = 21004  # Generic metal scrap. Very common. Worth a "portion" of an Iron plate. More for DEX/bleed.
     IronPlate = 21005  # Generic metal plate. Base material for most metal weapons. More for STR/heft.
-    LiquidMetal = 21006  # Rare. Used for Nox weapons and weird weapons. TODO: rename to something more generic?
+    LiquidMetal = 21006  # Rare. Used for Nox weapons and weird weapons.
     DragonTeeth = 21007  # Rare. Used for Dragon weapons
     GruesomeBone = 21008  # Rare. Used for weird weapons & Arcane weapons
     GlintstoneDust = 21009  # Semi-rare. Int stuff.
@@ -403,7 +403,7 @@ NEW_CONSUMABLES = {
         "caption": "Odorous broth prepared from bones and blood. A delicacy, for some.\n"
                    "Craftable survival item.\n\n"
                    ""
-                   "Consume to XXXX.",
+                   "Consume to relieve thirst and temporarily boost attack and lower defense.",
         "recipe": [
             (3, Materials.ThinBeastBones),
             (2, Materials.BeastBlood),
@@ -496,13 +496,15 @@ NEW_CONSUMABLES = {
     Consumables.DraughtOfSatiation: {
         "name": "Draught of Satiation",
         "info": "Prevents hunter temporarily",
-        "caption": "Outlawed concotion made from XXXX. Smells terrible.\n"
+        "caption": "Outlawed concotion once consumed by those seeking to reunite with the dead. Smells terrible.\n"
                    "Craftable survival item.\n\n"
                    ""
-                   "Consume to prevent hunger temporarily.",
+                   "Consume to relieve hunger and prevent it from growing temporarily.",
         "recipe": [
-            (3, Materials.GraveViolet),
-            # TODO: More ingredients.
+            (5, Materials.GraveViolet),
+            (3, Materials.CrabEggs),
+            (3, Materials.BloodTaintedExcrement),
+            (2, Materials.MirandaPowder),
         ],
         "recipe_visibility_flag": SurvivalFlags.Recipes_VeryRareSurvival_Bought,
         "effect": SurvivalEffects.DraughtOfSatiation,
@@ -513,13 +515,15 @@ NEW_CONSUMABLES = {
     Consumables.DraughtOfSilverTears: {
         "name": "Draught of Silver Tears",
         "info": "Prevents thirst temporarily",
-        "caption": "Outlawed concotion made from XXXX. Smells awful.\n"
+        "caption": "Outlawed concotion once consumed in a ritual of the Eternal City. Smells awful.\n"
                    "Craftable survival item.\n\n"
                    ""
-                   "Consume to prevent thirst temporarily.",
+                   "Consume to relieve thirst and prevent it from growing temporarily.",
         "recipe": [
             (7, Materials.SilverTearHusk),
-            # TODO: More ingredients.
+            (3, Materials.LandOctopusOvary),
+            (3, Materials.RimedRowa),
+            (2, Materials.AeonianButterfly),
         ],
         "recipe_visibility_flag": SurvivalFlags.Recipes_VeryRareSurvival_Bought,
         "effect": SurvivalEffects.DraughtOfSilverTears,
@@ -533,7 +537,7 @@ NEW_CONSUMABLES = {
         "caption": "Simple medicinal soup. Tastes very bitter.\n"
                    "Craftable survival item.\n\n"
                    ""
-                   "Consume for mild heat protection. XXXX MECHANIC INFO NEEDED",
+                   "Consume for mild protection from heat, which may otherwise drain away health.",
         "recipe": [
             (3, Materials.CaveMoss),
             (4, Materials.DewkissedHerba),
@@ -550,7 +554,7 @@ NEW_CONSUMABLES = {
         "caption": "Complex medicinal soup. Tastes slightly sweet.\n"
                    "Craftable survival item.\n\n"
                    ""
-                   "Consume for moderate heat protection. XXXX MECHANIC INFO NEEDED",
+                   "Consume for moderate protection from heat, which may otherwise drain away health.",
         "recipe": [
             (2, Materials.BuddingCaveMoss),
             (5, Materials.CrackedCrystal),
@@ -567,11 +571,11 @@ NEW_CONSUMABLES = {
         "caption": "Masterful medicinal soup. Tastes pretty good.\n"
                    "Craftable survival item.\n\n"
                    ""
-                   "Consume for great heat protection. XXXX MECHANIC INFO NEEDED",
+                   "Consume for great protection from heat, which may otherwise drain away health.",
         "recipe": [
             (5, Materials.RimedRowa),
             (2, Materials.CrystalCaveMoss),
-            (2, Materials.RimedRowa), #XXXX dupe ingredient whoopsie?
+            (2, Materials.RimedCrystalBud),
         ],
         "recipe_visibility_flag": SurvivalFlags.Recipes_RareSurvival_Bought,
         "effect": SurvivalEffects.GiantsSoup,
@@ -585,7 +589,7 @@ NEW_CONSUMABLES = {
         "caption": "Simple medicinal brew. Rather intoxicating.\n"
                    "Craftable survival item.\n\n"
                    ""
-                   "Consume for mild cold protection. XXXX MECHANIC INFO NEEDED",
+                   "Consume for mild protection from the cold, which may otherwise cripple.",
         "recipe": [
             (3, Materials.EyeOfYelough),
             (1, Materials.YellowEmber),
@@ -603,7 +607,7 @@ NEW_CONSUMABLES = {
         "caption": "Complex medicinal brew. Makes your tongue feel like it's on fire!\n"
                    "Craftable survival item.\n\n"
                    ""
-                   "Consume for moderate cold protection. XXXX MECHANIC INFO NEEDED",
+                   "Consume for moderate protection from the cold, which may otherwise cripple.",
         "recipe": [
             (4, Materials.VolcanicStone),
             (3, Materials.TarnishedGoldenSunflower),
@@ -620,7 +624,7 @@ NEW_CONSUMABLES = {
         "caption": "Masterful medicinal brew. Very acidic, and strangely addictive.\n"
                    "Craftable survival item.\n\n"
                    ""
-                   "Consume for great cold protection. XXXX MECHANIC INFO NEEDED",
+                   "Consume for great protection from the cold, which may otherwise cripple.",
         "recipe": [
             (5, Materials.FireBlossom),
             (3, Materials.FormicRock),
@@ -1018,19 +1022,24 @@ NEW_MATERIALS = {
     Materials.DragonTeeth: {
         "name": "Dragon Teeth",
         "info": "Collection of small dragon teeth",
-        "caption": "Small dragon teeth with latent power, perfect for forging dragon weapons.\nMaterial for crafting weapons and shields.\n", #\nSuch small teeth for such large beasts... perhaps draconic youth shed their teeth?
+        "caption": "Small dragon teeth with latent power, perfect for forging dragon weapons.\n"
+                   "Material for crafting weapons and shields.\n"
+                   "",  #\nSuch small teeth for such large beasts... perhaps draconic youth shed their teeth?
         "icon": 19043,
     },
     Materials.GruesomeBone: {
         "name": "Gruesome Bone",
         "info": "Digusting, large bone used for forging",
-        "caption": "Very large, disturbing bone prized by arcane smiths for its unique properties.\nMaterial for crafting weapons and shields.\n", #\nSome try these bones to their stock out of hunger.
+        "caption": "Very large, disturbing bone prized by arcane smiths for its unique properties.\n"
+                   "Material for crafting weapons and shields.\n"
+                   "",  #\nSome try these bones to their stock out of hunger.
         "icon": 19044,
     },
     Materials.ErdtreeWood: {
         "name": "Erdtree Wood",
         "info": "Holy wood from the Erdtree",
-        "caption": "Wood highly prized by craftsmen. Very light, but quite tough.\nMaterial for crafting weapons and shields.\n",
+        "caption": "Wood highly prized by craftsmen. Very light, but quite tough.\n"
+                   "Material for crafting weapons and shields.\n",
         "icon": 19045,
     },
     Materials.MeteoriteChunk: {
@@ -1270,8 +1279,6 @@ DISEASE_INDICATORS = {
 }
 
 
-# TODO: Specify their merchant shop lineup row ID.
-#  I think some (e.g. for Kale) may have to override other shop entries.
 NEW_NOTES_RECIPES = {
     # region Disease Cures
     NotesRecipes.Note_CuringDiseases : {
@@ -1499,7 +1506,7 @@ NEW_NOTES_RECIPES = {
         "info": "",
         "caption": "",
         "icon": 3122,  # Missionary's Cookbook [1]
-        "shop_row": 100521,  # Kale TODO: if this is out of range, replace Note: Flask of Wondrous Physick (100500)
+        "shop_row": 100521,  # Kale
         "cost": 300,
         "bought_flag": SurvivalFlags.Recipes_CommonSurvival_Bought,
     },
