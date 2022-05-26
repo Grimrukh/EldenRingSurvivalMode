@@ -658,7 +658,10 @@ NEW_CONSUMABLES = {
         "info": "",
         "caption": "",
         "recipe": [
-            # TODO
+            (10, Materials.RowaFruit),
+            (8, Materials.Poisonbloom),
+            (8, Materials.CaveMoss),
+            (6, Materials.CrabEggs),
         ],
         "recipe_visibility_flag": SurvivalFlags.Recipe_LimgraveDiseaseCure_Bought,
         "effect": SurvivalEffects.CureLimgraveDisease,
@@ -670,7 +673,10 @@ NEW_CONSUMABLES = {
         "info": "",
         "caption": "",
         "recipe": [
-            # TODO
+            (13, Materials.Mushroom),
+            (12, Materials.SilverFirefly),
+            (5, Materials.BuddingCaveMoss),
+            (5, Materials.AlbinauricBloodclot),
         ],
         "recipe_visibility_flag": SurvivalFlags.Recipe_LiurniaDiseaseCure_Bought,
         "effect": SurvivalEffects.CureLiurniaDisease,
@@ -682,7 +688,10 @@ NEW_CONSUMABLES = {
         "info": "",
         "caption": "",
         "recipe": [
-            # TODO
+            (15, Materials.FadedErdleafFlower),
+            (11, Materials.ToxicMushroom),
+            (7, Materials.BuddingCaveMoss),
+            (7, Materials.SacramentalBud),
         ],
         "recipe_visibility_flag": SurvivalFlags.Recipe_CaelidDiseaseCure_Bought,
         "effect": SurvivalEffects.CureCaelidDisease,
@@ -694,7 +703,10 @@ NEW_CONSUMABLES = {
         "info": "",
         "caption": "",
         "recipe": [
-            # TODO
+            (20, Materials.AltusBloom),
+            (10, Materials.GoldenSunflower),
+            (10, Materials.Fulgurbloom),
+            (7, Materials.NascentButterfly),
         ],
         "recipe_visibility_flag": SurvivalFlags.Recipe_AltusDiseaseCure_Bought,
         "effect": SurvivalEffects.CureAltusDisease,
@@ -706,7 +718,10 @@ NEW_CONSUMABLES = {
         "info": "",
         "caption": "",
         "recipe": [
-            # TODO
+            (18, Materials.GoldenRowa),
+            (15, Materials.MeltedMushroom),
+            (9, Materials.MiquellasLily),
+            (4, Materials.FormicRock),
         ],
         "recipe_visibility_flag": SurvivalFlags.Recipe_MtGelmirDiseaseCure_Bought,
         "effect": SurvivalEffects.CureMtGelmirDisease,
@@ -718,7 +733,10 @@ NEW_CONSUMABLES = {
         "info": "",
         "caption": "",
         "recipe": [
-            # TODO
+            (20, Materials.VolcanicStone),
+            (15, Materials.DewkissedHerba),
+            (10, Materials.CrystalCaveMoss),
+            (5, Materials.AeonianButterfly),
         ],
         "recipe_visibility_flag": SurvivalFlags.Recipe_MountaintopsDiseaseCure_Bought,
         "effect": SurvivalEffects.CureMountaintopsDisease,
@@ -730,7 +748,10 @@ NEW_CONSUMABLES = {
         "info": "",
         "caption": "",
         "recipe": [
-            # TODO
+            (15, Materials.TarnishedGoldenSunflower),
+            (12, Materials.CrystalBud),
+            (10, Materials.CaveMoss),
+            (6, Materials.MirandaPowder),
         ],
         "recipe_visibility_flag": SurvivalFlags.Recipe_SiofraDiseaseCure_Bought,
         "effect": SurvivalEffects.CureSiofraDisease,
@@ -742,7 +763,10 @@ NEW_CONSUMABLES = {
         "info": "",
         "caption": "",
         "recipe": [
-            # TODO
+            (30, Materials.Herba),
+            (10, Materials.LandOctopusOvary),
+            (8, Materials.NascentButterfly),
+            (5, Materials.RimedCrystalBud),
         ],
         "recipe_visibility_flag": SurvivalFlags.Recipe_AinselDiseaseCure_Bought,
         "effect": SurvivalEffects.CureAinselDisease,
@@ -754,7 +778,10 @@ NEW_CONSUMABLES = {
         "info": "",
         "caption": "",
         "recipe": [
-            # TODO
+            (25, Materials.SmolderingButterfly),
+            (12, Materials.CrystalCaveMoss),
+            (10, Materials.FourToedFowlFoot),
+            (10, Materials.CrabEggs),
         ],
         "recipe_visibility_flag": SurvivalFlags.Recipe_DeeprootDiseaseCure_Bought,
         "effect": SurvivalEffects.CureDeeprootDisease,
@@ -766,7 +793,10 @@ NEW_CONSUMABLES = {
         "info": "",
         "caption": "",
         "recipe": [
-            # TODO
+            (20, Materials.ErdleafFlower),
+            (12, Materials.CaveMoss),
+            (10, Materials.FlightPinion),
+            (10, Materials.Poisonbloom),
         ],
         "recipe_visibility_flag": SurvivalFlags.Recipe_StormveilDiseaseCure_Bought,
         "effect": SurvivalEffects.CureStormveilDisease,
@@ -778,7 +808,10 @@ NEW_CONSUMABLES = {
         "info": "",
         "caption": "",
         "recipe": [
-            # TODO
+            (10, Materials.CrystalBud),
+            (12, Materials.TrinasLily),
+            (7, Materials.ArteriaLeaf),
+            (7, Materials.FormicRock),
         ],
         "recipe_visibility_flag": SurvivalFlags.Recipe_RayaLucariaDiseaseCure_Bought,
         "effect": SurvivalEffects.CureRayaLucariaDisease,
@@ -790,7 +823,10 @@ NEW_CONSUMABLES = {
         "info": "",
         "caption": "",
         "recipe": [
-            # TODO
+            (20, Materials.SilverTearHusk),
+            (15, Materials.MeltedMushroom),
+            (9, Materials.TrinasLily),
+            (5, Materials.GravelStone),
         ],
         "recipe_visibility_flag": SurvivalFlags.Recipe_RadahnDiseaseCure_Bought,
         "effect": SurvivalEffects.CureRadahnDisease,
@@ -802,7 +838,10 @@ NEW_CONSUMABLES = {
         "info": "",
         "caption": "",
         "recipe": [
-            # TODO
+            (20, Materials.Fulgurbloom),
+            (12, Materials.GoldTingedExcrement),
+            (9, Materials.ArteriaLeaf),
+            (5, Materials.FormicRock),
         ],
         "recipe_visibility_flag": SurvivalFlags.Recipe_VolcanoManorDiseaseCure_Bought,
         "effect": SurvivalEffects.CureVolcanoManorDisease,
@@ -814,7 +853,10 @@ NEW_CONSUMABLES = {
         "info": "",
         "caption": "",
         "recipe": [
-            # TODO
+            (12, Materials.SacramentalBud),
+            (10, Materials.FourToedFowlFoot),
+            (10, Materials.StormhawkFeather),
+            (5, Materials.GoldenCentipede),
         ],
         "recipe_visibility_flag": SurvivalFlags.Recipe_LeyndellDiseaseCure_Bought,
         "effect": SurvivalEffects.CureLeyndellDisease,
@@ -826,7 +868,10 @@ NEW_CONSUMABLES = {
         "info": "",
         "caption": "",
         "recipe": [
-            # TODO
+            (30, Materials.Mushroom),
+            (10, Materials.FireBlossom),
+            (10, Materials.MirandaPowder),
+            (8, Materials.LandOctopusOvary),
         ],
         "recipe_visibility_flag": SurvivalFlags.Recipe_SewersDiseaseCure_Bought,
         "effect": SurvivalEffects.CureSewersDisease,
@@ -838,7 +883,10 @@ NEW_CONSUMABLES = {
         "info": "",
         "caption": "",
         "recipe": [
-            # TODO
+            (15, Materials.MiquellasLily),
+            (10, Materials.ArteriaLeaf),
+            (10, Materials.BloodTaintedExcrement),
+            (10, Materials.AlbinauricBloodclot),
         ],
         "recipe_visibility_flag": SurvivalFlags.Recipe_HaligtreeDiseaseCure_Bought,
         "effect": SurvivalEffects.CureHaligtreeDisease,
@@ -850,7 +898,10 @@ NEW_CONSUMABLES = {
         "info": "",
         "caption": "",
         "recipe": [
-            # TODO
+            (20, Materials.GoldFirefly),
+            (15, Materials.CrystalCaveMoss),
+            (15, Materials.FlightPinion),
+            (10, Materials.GravelStone),
         ],
         "recipe_visibility_flag": SurvivalFlags.Recipe_FarumAzulaDiseaseCure_Bought,
         "effect": SurvivalEffects.CureFarumAzulaDisease,
@@ -862,7 +913,10 @@ NEW_CONSUMABLES = {
         "info": "",
         "caption": "",
         "recipe": [
-            # TODO
+            (20, Materials.ThinBeastBones),
+            (20, Materials.HeftyBeastBone),
+            (20, Materials.BeastLiver),
+            (20, Materials.BeastBlood),
         ],
         "recipe_visibility_flag": SurvivalFlags.Recipe_MohgwynDiseaseCure_Bought,
         "effect": SurvivalEffects.CureMohgwynDisease,
@@ -874,7 +928,10 @@ NEW_CONSUMABLES = {
         "info": "",
         "caption": "",
         "recipe": [
-            # TODO
+            (20, Materials.CaveMoss),
+            (15, Materials.TarnishedGoldenSunflower),
+            (10, Materials.MeltedMushroom),
+            (8, Materials.BeastLiver),
         ],
         "recipe_visibility_flag": SurvivalFlags.Recipe_CatacombsDiseaseCure_Bought,
         "effect": SurvivalEffects.CureCatacombsDisease,
@@ -886,7 +943,10 @@ NEW_CONSUMABLES = {
         "info": "",
         "caption": "",
         "recipe": [
-            # TODO
+            (10, Materials.FlightPinion),
+            (10, Materials.FadedErdleafFlower),
+            (5, Materials.ArteriaLeaf),
+            (5, Materials.CrystalBud),
         ],
         "recipe_visibility_flag": SurvivalFlags.Recipe_CaveDiseaseCure_Bought,
         "effect": SurvivalEffects.CureCaveDisease,
@@ -898,7 +958,10 @@ NEW_CONSUMABLES = {
         "info": "",
         "caption": "",
         "recipe": [
-            # TODO
+            (15, Materials.ThinBeastBones),
+            (10, Materials.GoldTingedExcrement),
+            (10, Materials.DewkissedHerba),
+            (7, Materials.BeastBlood),
         ],
         "recipe_visibility_flag": SurvivalFlags.Recipe_TunnelDiseaseCure_Bought,
         "effect": SurvivalEffects.CureTunnelDisease,
