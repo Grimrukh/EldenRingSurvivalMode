@@ -60,4 +60,5 @@ def find_good_icon_id(goods_param: YappedParam, icon_id: int):
 
 
 if __name__ == '__main__':
-    print_layout_entries()
+    # print_layout_entries()
+    find_good_icon_id(read_param_csv("EquipParamGoods_vanilla.csv"), 3739)
