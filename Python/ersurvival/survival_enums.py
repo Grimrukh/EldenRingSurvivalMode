@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from enum import IntEnum
-
 from soulstruct.game_types import *
 
 
@@ -40,6 +38,7 @@ class SurvivalText(IntEnum):
     ContractedCaveDisease = 50029
     ContractedTunnelDisease = 50030
 
+    # Message shared between all diseases of the given type
     CuredPlague = 50040
     CuredToxin = 50041
     CuredFever = 50042
@@ -52,30 +51,31 @@ class SurvivalFlags(Flag):
     """NEW flags and events used by Survival Mode."""
     GrowingHunger = BASE_FLAG + 0
     GrowingThirst = BASE_FLAG + 1
+    ReduceThirstOnDeath = BASE_FLAG + 2
 
-    CheckMildHeatArea = BASE_FLAG + 10
-    MildHeatWarning = BASE_FLAG + 11
-    ShowMildHeatWarning = BASE_FLAG + 12
+    CheckMildHeatArea = BASE_FLAG + 20
+    MildHeatWarning = BASE_FLAG + 21
+    ShowMildHeatWarning = BASE_FLAG + 22
 
-    CheckModerateHeatArea = BASE_FLAG + 13
-    ModerateHeatWarning = BASE_FLAG + 14
-    ShowModerateHeatWarning = BASE_FLAG + 15
+    CheckModerateHeatArea = BASE_FLAG + 23
+    ModerateHeatWarning = BASE_FLAG + 24
+    ShowModerateHeatWarning = BASE_FLAG + 25
 
-    CheckSevereHeatArea = BASE_FLAG + 16
-    SevereHeatWarning = BASE_FLAG + 17
-    ShowSevereHeatWarning = BASE_FLAG + 18
+    CheckSevereHeatArea = BASE_FLAG + 26
+    SevereHeatWarning = BASE_FLAG + 27
+    ShowSevereHeatWarning = BASE_FLAG + 28
 
-    CheckMildColdArea = BASE_FLAG + 19
-    MildColdWarning = BASE_FLAG + 20
-    ShowMildColdWarning = BASE_FLAG + 21
+    CheckMildColdArea = BASE_FLAG + 29
+    MildColdWarning = BASE_FLAG + 30
+    ShowMildColdWarning = BASE_FLAG + 31
 
-    CheckModerateColdArea = BASE_FLAG + 22
-    ModerateColdWarning = BASE_FLAG + 23
-    ShowModerateColdWarning = BASE_FLAG + 24
+    CheckModerateColdArea = BASE_FLAG + 32
+    ModerateColdWarning = BASE_FLAG + 33
+    ShowModerateColdWarning = BASE_FLAG + 34
 
-    CheckSevereColdArea = BASE_FLAG + 25
-    SevereColdWarning = BASE_FLAG + 26
-    ShowSevereColdWarning = BASE_FLAG + 27
+    CheckSevereColdArea = BASE_FLAG + 35
+    SevereColdWarning = BASE_FLAG + 36
+    ShowSevereColdWarning = BASE_FLAG + 37
 
     # Overworld area monitoring
     MonitorInLimgrave = BASE_FLAG + 40
@@ -159,28 +159,96 @@ class SurvivalFlags(Flag):
 
     PureScarletRotOnce = BASE_FLAG + 250
 
-    # Note/Recipe sale flags.
-    Note_CurePlague_Bought = BASE_FLAG + 300
-    Note_CureToxin_Bought = BASE_FLAG + 301
-    Note_CureFever_Bought = BASE_FLAG + 302
-    Note_CureParasite_Bought = BASE_FLAG + 303
-    Recipes_CommonSurvival_Bought = BASE_FLAG + 304
-    Recipes_UncommonSurvival_Bought = BASE_FLAG + 305
-    Recipes_RareSurvival_Bought = BASE_FLAG + 306
-    Recipes_VeryRareSurvival_Bought = BASE_FLAG + 307
-    Recipes_CommonSmallShields_Bought = BASE_FLAG + 308
-    Recipes_UncommonSmallShields_Bought = BASE_FLAG + 309
-    Recipes_RareSmallShields_Bought = BASE_FLAG + 310
-    Recipes_VeryRareSmallShields_Bought = BASE_FLAG + 311
-    Recipes_CommonMediumShields_Bought = BASE_FLAG + 312
-    Recipes_UncommonMediumShields_Bought = BASE_FLAG + 313
-    Recipes_RareMediumShields_Bought = BASE_FLAG + 314
-    Recipes_VeryRareMediumShields_Bought = BASE_FLAG + 315
-    Recipes_CommonGreatshields_Bought = BASE_FLAG + 316
-    Recipes_UncommonGreatshields_Bought = BASE_FLAG + 317
-    Recipes_RareGreatshields_Bought = BASE_FLAG + 318
-    Recipes_VeryRareGreatshields_Bought = BASE_FLAG + 319
-    Note_SerpentHunter = BASE_FLAG + 320
+    RelieveHunger_1 = BASE_FLAG + 260
+    RelieveHunger_2 = BASE_FLAG + 261
+    RelieveHunger_3 = BASE_FLAG + 262
+    RelieveHunger_4 = BASE_FLAG + 263
+    RelieveHunger_5 = BASE_FLAG + 264
+    RelieveHunger_6 = BASE_FLAG + 265
+    RelieveHunger_7 = BASE_FLAG + 266
+    RelieveHunger_8 = BASE_FLAG + 267
+
+    RelieveThirst_1 = BASE_FLAG + 270
+    RelieveThirst_2 = BASE_FLAG + 271
+    RelieveThirst_3 = BASE_FLAG + 272
+    RelieveThirst_4 = BASE_FLAG + 273
+    RelieveThirst_5 = BASE_FLAG + 274
+    RelieveThirst_6 = BASE_FLAG + 275
+    RelieveThirst_7 = BASE_FLAG + 276
+    IncreaseThirst_1 = BASE_FLAG + 277
+    IncreaseThirst_3 = BASE_FLAG + 278
+
+    # Disease note/cures
+    Note_CuringDiseases_Bought = BASE_FLAG + 299
+    Recipe_LimgraveDiseaseCure_Bought = BASE_FLAG + 300
+    Recipe_LiurniaDiseaseCure_Bought = BASE_FLAG + 301
+    Recipe_CaelidDiseaseCure_Bought = BASE_FLAG + 302
+    Recipe_AltusDiseaseCure_Bought = BASE_FLAG + 303
+    Recipe_MtGelmirDiseaseCure_Bought = BASE_FLAG + 304
+    Recipe_MountaintopsDiseaseCure_Bought = BASE_FLAG + 305
+    Recipe_SiofraDiseaseCure_Bought = BASE_FLAG + 306
+    Recipe_AinselDiseaseCure_Bought = BASE_FLAG + 307
+    Recipe_DeeprootDiseaseCure_Bought = BASE_FLAG + 308
+    Recipe_StormveilDiseaseCure_Bought = BASE_FLAG + 309
+    Recipe_RayaLucariaDiseaseCure_Bought = BASE_FLAG + 310
+    Recipe_RadahnDiseaseCure_Bought = BASE_FLAG + 311
+    Recipe_VolcanoManorDiseaseCure_Bought = BASE_FLAG + 312
+    Recipe_LeyndellDiseaseCure_Bought = BASE_FLAG + 313
+    Recipe_SewersDiseaseCure_Bought = BASE_FLAG + 314
+    Recipe_HaligtreeDiseaseCure_Bought = BASE_FLAG + 315
+    Recipe_FarumAzulaDiseaseCure_Bought = BASE_FLAG + 316
+    Recipe_MohgwynDiseaseCure_Bought = BASE_FLAG + 317
+    Recipe_CatacombsDiseaseCure_Bought = BASE_FLAG + 318
+    Recipe_CaveDiseaseCure_Bought = BASE_FLAG + 319
+    Recipe_TunnelDiseaseCure_Bought = BASE_FLAG + 320
+
+    # Other notes
+    Note_SerpentHunter_Bought = BASE_FLAG + 330  # found, not bought
+    # TODO: Place Whip note somewhere in treasure (late Liurnia or early Altus).
+    Note_Whip_Bought = BASE_FLAG + 331  # found, not bought
+    # TODO: Meteor Chuck
+
+    # Survival recipes
+    Recipes_CommonSurvival_Bought = BASE_FLAG + 340
+    Recipes_UncommonSurvival_Bought = BASE_FLAG + 341
+    Recipes_RareSurvival_Bought = BASE_FLAG + 342
+    Recipes_VeryRareSurvival_Bought = BASE_FLAG + 343
+
+    # Shield recipe books
+    Recipes_WoodenSmallShields_Bought = BASE_FLAG + 350
+    Recipes_MetalSmallShields_Bought = BASE_FLAG + 351
+    Recipes_RareSmallShields_Bought = BASE_FLAG + 352
+    Recipes_VeryRareSmallShields_Bought = BASE_FLAG + 353
+
+    Recipes_CommonMediumShields_Bought = BASE_FLAG + 354
+    Recipes_WoodenMediumShields_Bought = BASE_FLAG + 355
+    Recipes_HeaterMediumShields_Bought = BASE_FLAG + 356
+    Recipes_KiteMediumShields_Bought = BASE_FLAG + 357
+    Recipes_RareMediumShields_Bought = BASE_FLAG + 358
+
+    Recipes_CommonGreatshields_Bought = BASE_FLAG + 359
+    Recipes_UncommonGreatshields_Bought = BASE_FLAG + 360
+    Recipes_RareGreatshields_Bought = BASE_FLAG + 361
+    Recipes_VeryRareGreatshields_Bought = BASE_FLAG + 362
+
+    # Staff recipe books
+    Recipes_CommonStaffs_Bought = BASE_FLAG + 370
+    Recipes_UncommonStaffs_Bought = BASE_FLAG + 371
+    Recipes_RareStaffs_Bought = BASE_FLAG + 372
+    Recipes_VeryRareStaffs_Bought = BASE_FLAG + 373
+
+    # Seal recipe books
+    Recipes_CommonSeals_Bought = BASE_FLAG + 380
+    Recipes_UncommonSeals_Bought = BASE_FLAG + 381
+    Recipes_RareSeals_Bought = BASE_FLAG + 382
+    Recipes_VeryRareSeals_Bought = BASE_FLAG + 383
+
+    # Torch recipe notes (actually found, not bought)
+    Recipe_SteelWireTorch_Bought = BASE_FLAG + 390
+    Recipe_StTrinasTorch_Bought = BASE_FLAG + 391
+    Recipe_GhostflameTorch_Bought = BASE_FLAG + 392
+    Recipe_BeastRepellentTorch_Bought = BASE_FLAG + 393
+    Recipe_SentrysTorch_Bought = BASE_FLAG + 394
 
     # TIME FLAG. Increments by 1 every 30 in-game minutes.
     MonitorTimeFlag = 15003399
@@ -274,7 +342,7 @@ class SurvivalEffects(SpecialEffectParam):
 
     # Legacy dungeon diseases
     StormveilPlague = 53009
-    RayaLucariaToxin = 53010  # maybe also Caria Manor
+    RayaLucariaFever = 53010  # maybe also Caria Manor
     RadahnFever = 53011  # only afflicted by Radahn; higher proc chance
     VolcanoManorToxin = 53012
     LeyndellPlague = 53013  # no disease in Ashen Capital
@@ -306,29 +374,52 @@ class SurvivalEffects(SpecialEffectParam):
     # TODO: Merchant slots for recipe items.
 
     # Hunger/thirst only.
-    RawSteak = 51900  # 3x Sliver of Meat. Sold by first merchant (Kale).
-    SearedSteak = 51901  # 3x Sliver of Meat, 2x Smoldering Butterfly. Sold by first merchant (Kale).
-    RawLiverSteak = 51902  # 2x Sliver of Meat, 1x Beast Liver. Sold by ???.
-    SearedLiverSteak = 51903  # 2x Sliver of Meat, 1x Beast Liver, 2x Smoldering Butterfly. Sold by ???.
-    BoneBroth = 51904  # 5x Thin Beast Bones, Cracked Pot.
-    GreatBoneBroth = 51905  # 3x Hefty Beast Bones, Ritual Pot.
-    BloodBroth = 51906  # 2x Beast Blood, Ritual Pot.
-    BerryMedley1 = 51907  # 10x Rowa Fruit, ???.
-    BerryMedley2 = 51908  # 10x Golden Rowa, ???.
-    BerryMedley3 = 51909  # 10x Rimed Rowa, ???.
-    MushroomStew = 51910  # 3x Mushroom, 1x Herba, Cracked Pot.
-    MeltedMushroomStew = 51911  # 3x Melted Mushroom, ???, Cracked Pot.
-    DraughtOfTheUndining = 51912  # ???, 3x Grave Violet, ???, Ritual Pot.
-    DraughtOfSilverTears = 51913  # 5x Silver Tear Husk, ???, Ritual Pot.
+    RawSteak = 51900  # 3x Sliver of Meat. Sold by first merchant (Kale). -3 hunger
+    SearedSteak = 51901  # 3x Sliver of Meat, 2x Smoldering Butterfly. Sold by first merchant (Kale). -5 hunger
+    RawLiverSteak = 51902  # 2x Sliver of Meat, 1x Beast Liver. Sold by ???. -6 hunger
+    SearedLiverSteak = 51903  # 2x Sliver of Meat, 1x Beast Liver, 2x Smoldering Butterfly. Sold by ???. -8 hunger
+    BoneBroth = 51904  # 5x Thin Beast Bones, Cracked Pot. -2 hunger, -3 thirst
+    GreatBoneBroth = 51905  # 3x Hefty Beast Bones, Ritual Pot. -4 hunger, -5 thirst
+    BloodBroth = 51906  # 2x Beast Blood, Ritual Pot. -1 hunger, -4 thirst, bonus effect
+    BerryMedley1 = 51907  # 10x Rowa Fruit, ???. -2 hunger, -1 thirst
+    BerryMedley2 = 51908  # 10x Golden Rowa, ???. -3 hunger, -2 thirst
+    BerryMedley3 = 51909  # 10x Rimed Rowa, ???. -4 hunger, -3 thirst
+    MushroomStew = 51910  # 3x Mushroom, 1x Herba, Cracked Pot. -2 hunger, -2 thirst
+    MeltedMushroomStew = 51911  # 3x Melted Mushroom, ???, Cracked Pot. -4 hunger, -3 thirst
+    DraughtOfSatiation = 51912  # ???, 3x Grave Violet, ???, Ritual Pot. -8 hunger, bonus effect
+    DraughtOfSilverTears = 51913  # 5x Silver Tear Husk, ???, Ritual Pot. -7 thirst, bonus effect
 
     # Temperature protection.
-    MossdewSoup = 51914  # 3x Cave Moss, 5x Dewkissed Herba, Cracked Pot.
-    CrystalShardSoup = 51915  # 5x Cracked Crystal, ???, Cracked Pot.
-    GiantsSoup = 51916  # 5x Rimed Rowa, 2x Crystal Cave Moss, 2x Rimed Crystal Bud, Ritual Pot.
-    AmberEyeBrew = 51917  # 3x Eye of Yelough, 1x Yellow Amber, 3x Herba, Cracked Pot.
-    MagmaticBrew = 51918  # 4x Volcanic Stone, 3x Tarnished Golden Sunflowers, Cracked Pot.
-    BlossomBrew = 51919  # 5x Fire Blossom, 3x Formic Rock, Ritual Pot.
-    JarBrittle = 51920  # 5x Living Jar Shards, ???. (no pot)
+    MossdewSoup = 51914  # 3x Cave Moss, 5x Dewkissed Herba, Cracked Pot. -1 thirst, other effects
+    CrystalShardSoup = 51915  # 5x Cracked Crystal, ???, Cracked Pot. -1 thirst, other effects
+    GiantsSoup = 51916  # 5x Rimed Rowa, 2x Crystal Cave Moss, 2x Rimed Crystal Bud, Ritual Pot. -1 thirst, other
+    AmberEyeBrew = 51917  # 3x Eye of Yelough, 1x Yellow Amber, 3x Herba, Cracked Pot. -1 thirst, other
+    MagmaticBrew = 51918  # 4x Volcanic Stone, 3x Tarnished Golden Sunflowers, Cracked Pot. -1 thirst, other
+    BlossomBrew = 51919  # 5x Fire Blossom, 3x Formic Rock, Ritual Pot. -1 thirst, other
+    JarBrittle = 51920  # 5x Living Jar Shards, ???. (no pot) -3 hunger, +3 thirst, other
+
+    # Vanilla item effects (in order they appear in Goods param)
+    BoiledCrab = 500820  # -2 hunger
+    BoiledPrawn = 500830  # -1 hunger
+    PickledTurtleNeck = 3953  # -2 hunger
+    ImmunizingCuredMeat = 3960  # -3 hunger, +1 thirst
+    InvigoratingCuredMeat = 3961  # -3 hunger, +1 thirst
+    ClarifyingCuredMeat = 3962  # -3 hunger, +1 thirst
+    DappledCuredMeat = 3963  # -3 hunger, +1 thirst
+    SpellproofDriedLiver = 3910  # -3 hunger, +1 thirst
+    FireproofDriedLiver = 3920  # -3 hunger, +1 thirst
+    LightningproofDriedLiver = 3930  # -3 hunger, +1 thirst
+    HolyproofDriedLiver = 501180  # -3 hunger, +1 thirst
+    SilverPickledFowlFoot = 3970  # -3 hunger
+    GoldPickledFowlFoot = 3971  # -3 hunger
+    ExaltedFlesh = 3950  # -4 hunger
+    # DeathsbaneJerky = 501220  # CUT CONTENT
+    RawMeatDumpling = 501235  # -3 hunger
+    ImmunizingWhiteCuredMeat = 501310  # -3 hunger, +1 thirst
+    InvigoratingWhiteCuredMeat = 501320  # -3 hunger, +1 thirst
+    ClarifyingWhiteCuredMeat = 501330  # -3 hunger, +1 thirst
+    DappledWhiteCuredMeat = 501340  # -3 hunger, +1 thirst
+    # DeathsbaneWhiteJerky = 501350  # CUT CONTENT
 
 
 class WeaponCategory(IntEnum):

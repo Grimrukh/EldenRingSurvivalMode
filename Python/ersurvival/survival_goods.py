@@ -1,49 +1,3 @@
-"""
-Notes: RNG weights
-
-# Vanilla material values. Add value for highest tier present ONCE, then multiply sum with VanillaMaterial.
-    # This part kinda sucks.
-    VanillaMat_Per = .25
-    Tier1Mat = 1 # Early game/Common vanilla Materials
-    Tier2Mat = 2 # Mid game or Uncommon vanilla Materials
-    Tier3Mat = 4 # Late game or Rare vanilla Materials
-
-    StoneFragment = .4
-    SomberStoneFragment = .75
-    IronShards = .75
-    SoftWood = 1
-    IronPlate = 1.5
-    RefinedWood = 2
-    GlintstoneDust = 4
-    ErdtreeAmber = 4
-    LiquidMetal = 6
-    GruesomeBone = 8
-    MeteoriteChunk = 8
-    BlackMark = 8
-    DragonTeeth = 10
-    ErdtreeWood = ?
-
-    # Tier thresholds (Probably worthless now. Instead, order a list by material cost?)
-    Tier0 = 0
-    Tier1 = 6
-    Tier2 = 12
-    Tier3 = 16
-
----------
-Logic notes
-
-Things to calculate around:
-    Material value total
-    Stat requirements
-    Base scaling?? 
-        This is questionable you remember infusions exist
-        But at the same time, things would be less inconsistent for int/faith/arc builds
-
----------
-Other notes
-    ErdtreeWood: Currently used in a few bow recipes, but can probably be replaced and cut
-
-"""
 from survival_enums import *
 
 
@@ -165,12 +119,33 @@ class NotesRecipes(IntEnum):
 
     Some 'notes' here actually serve as recipes (i.e., their 'bought' flag enables a recipe).
     """
-    Note_CurePlague = 8800
-    Note_CureToxin = 8801
-    Note_CureFever = 8802
-    Note_CureParasite = 8803
+    Note_CuringDiseases = 8799
+    Recipe_LimgraveDiseaseCure = 8800
+    Recipe_LiurniaDiseaseCure = 8801
+    Recipe_CaelidDiseaseCure = 8802
+    Recipe_AltusDiseaseCure = 8803
+    Recipe_MtGelmirDiseaseCure = 8804
+    Recipe_MountaintopsDiseaseCure = 8805
+    Recipe_SiofraDiseaseCure = 8806
+    Recipe_AinselDiseaseCure = 8807
+    Recipe_DeeprootDiseaseCure = 8808
+    Recipe_StormveilDiseaseCure = 8809
+    Recipe_RayaLucariaDiseaseCure = 8810
+    Recipe_RadahnDiseaseCure = 8811
+    Recipe_VolcanoManorDiseaseCure = 8812
+    Recipe_LeyndellDiseaseCure = 8813
+    Recipe_SewersDiseaseCure = 8814
+    Recipe_HaligtreeDiseaseCure = 8815
+    Recipe_FarumAzulaDiseaseCure = 8816
+    Recipe_MohgwynDiseaseCure = 8817
+    Recipe_CatacombsDiseaseCure = 8818
+    Recipe_CaveDiseaseCure = 8819
+    Recipe_TunnelDiseaseCure = 8820
 
+    Note_SerpentHunter = 8830
+    Note_Whip = 8831
     # TODO: Meteor Chuck note...
+    # NOTE: Vanilla IDs start at 8850.
 
     Recipes_CommonSurvival = 9200  # sold by Kale  TODO: ensure he drops it on death
     # TODO: Give these to multiple merchants with the same purchase flag.
@@ -179,62 +154,81 @@ class NotesRecipes(IntEnum):
     Recipes_VeryRareSurvival = 9203
 
     # TODO: Assign rarity to each shield in recipe, which (with its type) determines its recipe visibility flag.
-    Recipes_CommonSmallShields = 9210  # sold by Kale  TODO: ensure he drops it on death
-    Recipes_UncommonSmallShields = 9211
+    Recipes_WoodenSmallShields = 9210  # sold by Kale  TODO: ensure he drops it on death
+    Recipes_MetalSmallShields = 9211
     Recipes_RareSmallShields = 9212
     Recipes_VeryRareSmallShields = 9213
 
     Recipes_CommonMediumShields = 9220  # sold by Kale  TODO: ensure he drops it on death
-    Recipes_UncommonMediumShields = 9221
-    Recipes_RareMediumShields = 9222
-    Recipes_VeryRareMediumShields = 9223
+    Recipes_WoodenMediumShields = 9221  # sold by Kale  TODO: ensure he drops it on death
+    Recipes_HeaterMediumShields = 9222
+    Recipes_KiteMediumShields = 9223
+    Recipes_RareMediumShields = 9224
 
     Recipes_CommonGreatshields = 9230  # sold by Kale  TODO: ensure he drops it on death
     Recipes_UncommonGreatshields = 9231
     Recipes_RareGreatshields = 9232
     Recipes_VeryRareGreatshields = 9233
 
-    Note_SerpentHunter = 8810
+    Recipes_CommonStaffs = 9240
+    Recipes_UncommonStaffs = 9241
+    Recipes_RareStaffs = 9242
+    Recipes_VeryRareStaffs = 9243
+
+    Recipes_CommonSeals = 9250
+    Recipes_UncommonSeals = 9251
+    Recipes_RareSeals = 9252
+    Recipes_VeryRareSeals = 9253
+
+    Recipe_SteelWireTorch = 9260
+    Recipe_StTrinasTorch = 9261
+    Recipe_GhostflameTorch = 9262
+    Recipe_BeastRepellentTorch = 9263
+    Recipe_SentrysTorch = 9264
 
 
 # Keys are offsets used in all IDs.
+    # George: I marked things with XXXX that need to be updated.
 NEW_CONSUMABLES = {
     0: {
         "name": "Raw Steak",
         "info": "Basic raw meal crafted by hunters",
-        "caption": "TODO",
+        "caption": "Raw cut of meat prepared from scraps of flesh.\nCraftable survival item.\n\nConsume to relieve hunger, but not without risk.",
         "recipe": [  # for `EquipMtrlSetParam`
             (3, Materials.SliverOfMeat),
         ],
         "effect": SurvivalEffects.RawSteak,  # for `EquipGoodsParam`
         "animation": GoodsUseAnimation.ITEM_EATJERKY,  # for `EquipGoodsParam`
+        "icon": 19000,
     },
     1: {
         "name": "Seared Steak",
         "info": "Basic cooked meal crafted by hunters",
-        "caption": "TODO",
+        "caption": "Cooked cut of meat prepared from scraps of flesh. Smells delicious.\nCraftable survival item.\n\nConsume to relieve hunger.",
         "recipe": [
             (3, Materials.SliverOfMeat),
             (2, Materials.SmolderingButterfly),
         ],
         "effect": SurvivalEffects.SearedSteak,
         "animation": GoodsUseAnimation.ITEM_EATJERKY,
+        "icon": 19001,
     },
     2: {
         "name": "Raw Liver Steak",
         "info": "Raw meal crafted by expert hunters",
-        "caption": "TODO",
+        "caption": "Raw cut of meat prepared from scraps of flesh and liver.\nCraftable survival item.\n\nConsume to relieve hunger, but not without risk.",
         "recipe": [
             (2, Materials.SliverOfMeat),
             (1, Materials.BeastLiver),
         ],
         "effect": SurvivalEffects.RawLiverSteak,
         "animation": GoodsUseAnimation.ITEM_EATJERKY,
+        "icon": 19002,
     },
     3: {
         "name": "Seared Liver Steak",
         "info": "Cooked meal crafted by expert hunters",
-        "caption": "TODO",
+        "caption": "Cooked cut of meat prepared from scraps of flesh and liver. Smells delicious.\nCraftable survival item.\n\nConsume to relieve hunger.",
         "recipe": [
             (2, Materials.SliverOfMeat),
             (1, Materials.BeastLiver),
@@ -242,33 +236,36 @@ NEW_CONSUMABLES = {
         ],
         "effect": SurvivalEffects.SearedLiverSteak,
         "animation": GoodsUseAnimation.ITEM_EATJERKY,
+        "icon": 19003,
     },
     4: {
         "name": "Bone Broth",
         "info": "Light broth to ward off thirst",
-        "caption": "TODO",
+        "caption": "Delicious broth prepared from bones.\nCraftable survival item.\n\nConsume to relieve thirst.",
         "recipe": [
             (5, Materials.ThinBeastBones),
         ],
         "effect": SurvivalEffects.BoneBroth,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.CrackedPot,
+        "icon": 19004,
     },
     5: {
         "name": "Great Bone Broth",
         "info": "Hearty broth to ward off thirst",
-        "caption": "TODO",
+        "caption": "Delicious hearty broth prepared from large bones.\nCraftable survival item.\n\nConsume to relieve thirst.",
         "recipe": [
             (3, Materials.HeftyBeastBone),
         ],
         "effect": SurvivalEffects.GreatBoneBroth,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.RitualPot,
+        "icon": 19005,
     },
     6: {
         "name": "Blood Broth",
         "info": "Broth preferred by bloodthirsty hunters",
-        "caption": "TODO",
+        "caption": "Odorous broth prepared from bones and blood. A delicacy, for some.\nCraftable survival item.\n\nConsume to XXXX.",
         "recipe": [
             (3, Materials.ThinBeastBones),
             (2, Materials.BeastBlood),
@@ -276,41 +273,45 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.BloodBroth,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.RitualPot,
+        "icon": 19006,
     },
     7: {
         "name": "Forest Berry Medley",
         "info": "Medley of berries from the lower lands",
-        "caption": "TODO",
+        "caption": "Prepared fruits picked from rowa shrubs. Tannic, but delicious.\nCraftable survival item.\n\nConsume to relieve hunger and thirst.",
         "recipe": [
             (10, Materials.RowaFruit),
         ],
         "effect": SurvivalEffects.BerryMedley1,
         "animation": GoodsUseAnimation.ITEM_EATJERKY,
+        "icon": 19007,
     },
     8: {
         "name": "Plateau Berry Medley",
         "info": "Medley of berries from the plateau",
-        "caption": "TODO",
+        "caption": "Prepared fruits picked from golden rowa shrubs. Sweet and delicious.\nCraftable survival item.\n\nConsume to relieve hunger and thirst.",
         "recipe": [
             (10, Materials.GoldenRowa),
         ],
         "effect": SurvivalEffects.BerryMedley2,
         "animation": GoodsUseAnimation.ITEM_EATJERKY,
+        "icon": 19008,
     },
     9: {
         "name": "Mountain Berry Medley",
         "info": "Medley of berries from the mountains",
-        "caption": "TODO",
+        "caption": "Prepared fruits picked from rimed rowa shrubs. Slightly bitter, but uniquely delicious.\nCraftable survival item.\n\nConsume to relieve hunger and thirst.",
         "recipe": [
             (10, Materials.RimedRowa),
         ],
         "effect": SurvivalEffects.BerryMedley3,
         "animation": GoodsUseAnimation.ITEM_EATJERKY,
+        "icon": 19009,
     },
     10: {
         "name": "Mushroom Stew",
         "info": "Basic mushroom stew",
-        "caption": "TODO",
+        "caption": "Simple, but tasty stew prepared from mushrooms and herba.\nCraftable survival item.\n\nConsume to relieve hunger and thirst.",
         "recipe": [
             (3, Materials.Mushroom),
             (3, Materials.Herba),
@@ -318,11 +319,12 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.MushroomStew,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.CrackedPot,
+        "icon": 19010,
     },
     11: {
         "name": "Melted Mushroom Stew",
-        "info": "Delicious mushroom stew",
-        "caption": "TODO",
+        "info": "Thick mushroom stew",
+        "caption": "Thick stew prepared from mushrooms and herba. Unusual texture, but incredible taste.\nCraftable survival item.\n\nConsume to relieve hunger and thirst.",
         "recipe": [
             (3, Materials.MeltedMushroom),
             (3, Materials.DewkissedHerba),
@@ -330,23 +332,25 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.MeltedMushroomStew,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.CrackedPot,
+        "icon": 19011,
     },
     12: {
-        "name": "Draught of the Undining",
+        "name": "Draught of Satiation",
         "info": "Prevents hunter temporarily",
-        "caption": "TODO",
+        "caption": "Outlawed concotion made from XXXX. Smells terrible.\nCraftable survival item.\n\nConsume to prevent hunger temporarily.",
         "recipe": [
             (3, Materials.GraveViolet),
             # TODO: More ingredients.
         ],
-        "effect": SurvivalEffects.DraughtOfTheUndining,
+        "effect": SurvivalEffects.DraughtOfSatiation,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.RitualPot,
+        "icon": 19012,
     },
     13: {
         "name": "Draught of Silver Tears",
         "info": "Prevents thirst temporarily",
-        "caption": "TODO",
+        "caption": "Outlawed concotion made from XXXX. Smells awful.\nCraftable survival item.\n\nConsume to prevent thirst temporarily.",
         "recipe": [
             (7, Materials.SilverTearHusk),
             # TODO: More ingredients.
@@ -354,11 +358,12 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.DraughtOfSilverTears,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.RitualPot,
+        "icon": 19013,
     },
     14: {
         "name": "Mossdew Soup",
-        "info": "Soup with mild heat protected",
-        "caption": "TODO",
+        "info": "Soup with mild heat protection",
+        "caption": "Simple medicinal soup. Tastes very bitter.\nCraftable survival item.\n\nConsume for mild heat protection. XXXX MECHANIC INFO NEEDED",
         "recipe": [
             (3, Materials.CaveMoss),
             (4, Materials.DewkissedHerba),
@@ -366,11 +371,12 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.MossdewSoup,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.CrackedPot,
+        "icon": 19014,
     },
     15: {
         "name": "Crystal Shard Soup",
         "info": "Soup with moderate heat protection",
-        "caption": "TODO",
+        "caption": "Complex medicinal soup. Tastes slightly sweet.\nCraftable survival item.\n\nConsume for moderate heat protection. XXXX MECHANIC INFO NEEDED",
         "recipe": [
             (2, Materials.BuddingCaveMoss),
             (5, Materials.CrackedCrystal),
@@ -378,24 +384,26 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.CrystalShardSoup,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.CrackedPot,
+        "icon": 19015,
     },
     16: {
         "name": "Giant's Soup",
         "info": "Soup with great heat protection",
-        "caption": "TODO",
+        "caption": "Masterful medicinal soup. Tastes pretty good.\nCraftable survival item.\n\nConsume for great heat protection. XXXX MECHANIC INFO NEEDED",
         "recipe": [
             (5, Materials.RimedRowa),
             (2, Materials.CrystalCaveMoss),
-            (2, Materials.RimedRowa),
+            (2, Materials.RimedRowa), #XXXX dupe ingredient whoopsie?
         ],
         "effect": SurvivalEffects.GiantsSoup,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.RitualPot,
+        "icon": 19016,
     },
     17: {
         "name": "Amber-Eye Brew",
         "info": "Brew with mild cold protection",
-        "caption": "TODO",
+        "caption": "Simple medicinal brew. Rather intoxicating.\nCraftable survival item.\n\nConsume for mild cold protection. XXXX MECHANIC INFO NEEDED",
         "recipe": [
             (3, Materials.EyeOfYelough),
             (1, Materials.YellowEmber),
@@ -404,11 +412,12 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.AmberEyeBrew,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.CrackedPot,
+        "icon": 19017,
     },
     18: {
         "name": "Magmatic Brew",
         "info": "Brew with moderate cold protection",
-        "caption": "TODO",
+        "caption": "Complex medicinal brew. Makes your tongue feel like it's on fire!\nCraftable survival item.\n\nConsume for moderate cold protection. XXXX MECHANIC INFO NEEDED",
         "recipe": [
             (4, Materials.VolcanicStone),
             (3, Materials.TarnishedGoldenSunflower),
@@ -416,11 +425,12 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.MagmaticBrew,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.CrackedPot,
+        "icon": 19018,
     },
     19: {
         "name": "Blossom Brew",
         "info": "Brew with great cold protection",
-        "caption": "TODO",
+        "caption": "Masterful medicinal brew. Very acidic, and strangely addictive.\nCraftable survival item.\n\nConsume for great cold protection. XXXX MECHANIC INFO NEEDED",
         "recipe": [
             (5, Materials.FireBlossom),
             (3, Materials.FormicRock),
@@ -428,16 +438,18 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.BlossomBrew,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.RitualPot,
+        "icon": 19019,
     },
     20: {
         "name": "Jar Brittle",
         "info": "Crunchy brittle from living jars",
-        "caption": "TODO",
+        "caption": "Aberrant food prepared from the flesh of living jars.\nMost find it abhorrent, but others swear it has a taste like no other.\nCraftable survival item.\n\nConsume to relieve hunger and gain mild heat & cold protection.\nHowever, it increases thirst.",
         "recipe": [
             (5, Materials.LivingJarShard),
         ],
         "effect": SurvivalEffects.JarBrittle,
         "animation": GoodsUseAnimation.ITEM_EATJERKY,
+        "icon": 19020,
     },
 }
 
@@ -447,116 +459,264 @@ NEW_MATERIALS = {
         "name": "Soft Wood",
         "info": "Unremarkable piece of wood",
         "caption": "TODO",
-        "icon": 623,  # TODO: Bewitching Branch for now
+        "icon": 19100,
     },
     Materials.RefinedWood: {
         "name": "Refined Wood",
         "info": "Robust piece of wood",
         "caption": "TODO",
-        "icon": 623,  # TODO: Bewitching Branch for now
+        "icon": 19101,
     },
     Materials.StoneFragment: {
         "name": "Stone Fragment",
         "info": "Fragment of simple colored stone",
         "caption": "TODO",
-        "icon": 2000,  # TODO: Smithing Stone [1] for now
+        "icon": 19102,
     },
     Materials.SomberStoneFragment: {
         "name": "Somber Stone Fragment",
         "info": "Fragment of rare colorless stone",
         "caption": "TODO",
-        "icon": 2010,  # TODO: Somber Smithing Stone [1] for now
+        "icon": 19103,
     },
     Materials.IronShards: {
-        "name": "Iron Shards",
+        "name": "Iron Shards", #metal scrap? metal shards?
         "info": "Small chips of iron",
         "caption": "TODO",
-        "icon": 90,  # TODO: Rainbow Stone for now
+        "icon": 19104,
     },
     Materials.IronPlate: {
-        "name": "Iron Plate",
+        "name": "Iron Plate", #metal plate
         "info": "Basic component of metallic weaponry",
         "caption": "TODO",
-        "icon": 210,  # TODO: Warming Stone for now
+        "icon": 19105,
     },
     Materials.LiquidMetal: {
-        "name": "Liquid Metal",
+        "name": "Liquid Metal", #fancy metal
         "info": "Rare component of unusual weapons",
         "caption": "TODO",
-        "icon": 91,  # TODO: Glowstone for now
+        "icon": 19106,
     },
     Materials.DragonTeeth: {
         "name": "Dragon Teeth",
         "info": "",
         "caption": "TODO",
-        "icon": 2008,  # TODO: Ancient Dragon Smithing Stone for now
+        "icon": 19107,
     },
     Materials.GruesomeBone: {
         "name": "Gruesome Bone",
         "info": "",
         "caption": "TODO",
-        "icon": 1020,  # TODO: Hefty Beast Bone for now
+        "icon": 19108,
     },
     Materials.ErdtreeWood: {
         "name": "Erdtree Wood",
         "info": "",
         "caption": "TODO",
-        "icon": 321,  # TODO: Erdtree Codex for now
+        "icon": 19109,
     },
     Materials.MeteoriteChunk: {
         "name": "Meteorite Chunk",
-        "info": "Resin sourced from the Erdtree",
+        "info": "Dense chunk of cosmic debris",
         "caption": "TODO",
-        "icon": 200,  # TODO: Gravity Stone Chunk for now
+        "icon": 19110,
     },
     Materials.BlackMark: {
         "name": "Black Mark",
-        "info": "Dense chunk of cosmic debris",
+        "info": "",
         "caption": "TODO",
-        "icon": 3228,  # TODO: Cursemark of Death for now
+        "icon": 19111,
     },
     Materials.StaffPole: {
         "name": "Staff Pole",
         "info": "",
         "caption": "TODO",
-        "icon": 92,  # TODO: Telescope for now
+        "icon": 19112,
     },
     Materials.ShieldGrip: {
         "name": "Shield Handle",
         "info": "Sacred wood from the Erdtree",
         "caption": "TODO",
-        "icon": 591,  # TODO: Soft Cotton for now
+        "icon": 19113,
+    },
+    Materials.ErdtreeAmber: {
+        "name": "Erdtree Amber",
+        "info": "Resin sourced from the Erdtree",
+        "caption": "TODO",
+        "icon": 19114,
+    },
+    Materials.GlintstoneDust: {
+        "name": "Glintstone Dust",
+        "info": "Small grains of Glintstone",
+        "caption": "TODO",
+        "icon": 19115,
     },
 }
+
+
+# TODO: New key items: indicators that you have a disease.
 
 
 # TODO: Specify their merchant shop lineup row ID.
 #  I think some (e.g. for Kale) may have to override other shop entries.
 NEW_NOTES_RECIPES = {
-    NotesRecipes.Note_CurePlague: {
-        "name": "Note: Cure for Plagues",
+    # region Disease Cures
+    NotesRecipes.Note_CuringDiseases : {
+        "name": "Note: Finding Disease Cures",
         "info": "",
         "caption": "",
-        "bought_flag": SurvivalFlags.Note_CurePlague_Bought,
+        "shop_row": 100521,  # Kale. TODO: Confirm this shop row appears (as with the rest).
+        "bought_flag": SurvivalFlags.Note_CuringDiseases_Bought,
     },
-    NotesRecipes.Note_CureToxin: {
-        "name": "Note: Cure for Toxins",
+    NotesRecipes.Recipe_LimgraveDiseaseCure : {
+        "name": "Cure: Plague of Limgrave",
         "info": "",
         "caption": "",
-        "bought_flag": SurvivalFlags.Note_CureToxin_Bought,
+        "shop_row": 100596,  # Coastal Cave merchant
+        "bought_flag": SurvivalFlags.Recipe_LimgraveDiseaseCure_Bought,
     },
-    NotesRecipes.Note_CureFever: {
-        "name": "Note: Cure for Fever",
+    NotesRecipes.Recipe_LiurniaDiseaseCure : {
+        "name": "Cure: Lake Toxin",
         "info": "",
         "caption": "",
-        "bought_flag": SurvivalFlags.Note_CureFever_Bought,
+        "shop_row": 100697,  # Academy of Raya Lucaria merchant
+        "bought_flag": SurvivalFlags.Recipe_LiurniaDiseaseCure_Bought,
     },
-    NotesRecipes.Note_CureParasite: {
-        "name": "Note: Cure for Parasites",
+    NotesRecipes.Recipe_CaelidDiseaseCure : {
+        "name": "Cure: Scarlet Parasite",
         "info": "",
         "caption": "",
-        "bought_flag": SurvivalFlags.Note_CureParasite_Bought,
+        "shop_row": 100894,  # Dragonbarrow merchant
+        "bought_flag": SurvivalFlags.Recipe_CaelidDiseaseCure_Bought,
     },
+    NotesRecipes.Recipe_AltusDiseaseCure : {
+        "name": "Cure: Windmill Fever",
+        "info": "",
+        "caption": "",
+        "shop_row": 100772,  # Altus Plateau merchant
+        "bought_flag": SurvivalFlags.Recipe_AltusDiseaseCure_Bought,
+    },
+    NotesRecipes.Recipe_MtGelmirDiseaseCure : {
+        "name": "Cure: Plague of Gelmir",
+        "info": "",
+        "caption": "",
+        "shop_row": 100799,  # Mt. Gelmir merchant
+        "bought_flag": SurvivalFlags.Recipe_MtGelmirDiseaseCure_Bought,
+    },
+    NotesRecipes.Recipe_MountaintopsDiseaseCure : {
+        "name": "Cure: Frigid Parasite",
+        "info": "",
+        "caption": "",
+        "shop_row": 100919,  # Mountaintops merchant
+        "bought_flag": SurvivalFlags.Recipe_MountaintopsDiseaseCure_Bought,
+    },
+    NotesRecipes.Recipe_SiofraDiseaseCure : {
+        "name": "Cure: Plague of Nokron",
+        "info": "",
+        "caption": "",
+        "shop_row": 100942,  # Siofra merchant
+        "bought_flag": SurvivalFlags.Recipe_SiofraDiseaseCure_Bought,
+    },
+    NotesRecipes.Recipe_AinselDiseaseCure : {
+        "name": "Cure: Ant Toxin",
+        "info": "",
+        "caption": "",
+        "shop_row": 100968,  # Ainsel merchant
+        "bought_flag": SurvivalFlags.Recipe_AinselDiseaseCure_Bought,
+    },
+    NotesRecipes.Recipe_DeeprootDiseaseCure : {
+        "name": "Cure: Star-Shaped Parasite",
+        "info": "",
+        "caption": "",
+        "item_lot": -1,  # TODO
+        "bought_flag": SurvivalFlags.Recipe_DeeprootDiseaseCure_Bought,
+    },
+    NotesRecipes.Recipe_StormveilDiseaseCure : {
+        "name": "Cure: Grafted Plague",
+        "info": "",
+        "caption": "",
+        "item_lot": -1,  # TODO
+        "bought_flag": SurvivalFlags.Recipe_StormveilDiseaseCure_Bought,
+    },
+    NotesRecipes.Recipe_RayaLucariaDiseaseCure : {
+        "name": "Cure: Full Moon Fever",
+        "info": "",
+        "caption": "",
+        "item_lot": -1,  # TODO
+        "bought_flag": SurvivalFlags.Recipe_RayaLucariaDiseaseCure_Bought,
+    },
+    NotesRecipes.Recipe_RadahnDiseaseCure : {
+        "name": "Cure: Starscourge Fever",
+        "info": "",
+        "caption": "",
+        "item_lot": -1,  # TODO
+        "bought_flag": SurvivalFlags.Recipe_RadahnDiseaseCure_Bought,
+    },
+    NotesRecipes.Recipe_VolcanoManorDiseaseCure : {
+        "name": "Cure: Serpent Toxin",
+        "info": "",
+        "caption": "",
+        "item_lot": -1,  # TODO
+        "bought_flag": SurvivalFlags.Recipe_VolcanoManorDiseaseCure_Bought,
+    },
+    NotesRecipes.Recipe_LeyndellDiseaseCure : {
+        "name": "Cure: Plague of Leyndell",
+        "info": "",
+        "caption": "",
+        "item_lot": -1,  # TODO
+        "bought_flag": SurvivalFlags.Recipe_LeyndellDiseaseCure_Bought,
+    },
+    NotesRecipes.Recipe_SewersDiseaseCure : {
+        "name": "Cure: Omen Parasite",
+        "info": "",
+        "caption": "",
+        "item_lot": -1,  # TODO
+        "bought_flag": SurvivalFlags.Recipe_SewersDiseaseCure_Bought,
+    },
+    NotesRecipes.Recipe_HaligtreeDiseaseCure : {
+        "name": "Cure: Unalloyed Plague",
+        "info": "",
+        "caption": "",
+        "item_lot": -1,  # TODO
+        "bought_flag": SurvivalFlags.Recipe_HaligtreeDiseaseCure_Bought,
+    },
+    NotesRecipes.Recipe_FarumAzulaDiseaseCure : {
+        "name": "Cure: Beastman's Fever",
+        "info": "",
+        "caption": "",
+        "item_lot": -1,  # TODO
+        "bought_flag": SurvivalFlags.Recipe_FarumAzulaDiseaseCure_Bought,
+    },
+    NotesRecipes.Recipe_MohgwynDiseaseCure : {
+        "name": "Cure: Blood Lord's Fever",
+        "info": "",
+        "caption": "",
+        "shop_row": 100987,  # Mohgwyn merchant
+        "bought_flag": SurvivalFlags.Recipe_MohgwynDiseaseCure_Bought,
+    },
+    NotesRecipes.Recipe_CatacombsDiseaseCure : {
+        "name": "Cure: Catacombs Toxin",
+        "info": "",
+        "caption": "",
+        "item_lot": -1,  # TODO
+        "bought_flag": SurvivalFlags.Recipe_CatacombsDiseaseCure_Bought,
+    },
+    NotesRecipes.Recipe_CaveDiseaseCure : {
+        "name": "Cure: Cave Parasite",
+        "info": "",
+        "caption": "",
+        "item_lot": -1,  # TODO
+        "bought_flag": SurvivalFlags.Recipe_CaveDiseaseCure_Bought,
+    },
+    NotesRecipes.Recipe_TunnelDiseaseCure : {
+        "name": "Cure: Miner's Fever",
+        "info": "",
+        "caption": "",
+        "item_lot": -1,  # TODO
+        "bought_flag": SurvivalFlags.Recipe_TunnelDiseaseCure_Bought,
+    },
+    # endregion
+    # region Survival Recipes
     NotesRecipes.Recipes_CommonSurvival: {
         "name": "Survivalist's Cookbook [1]",
         "info": "",
@@ -581,54 +741,64 @@ NEW_NOTES_RECIPES = {
         "caption": "",
         "bought_flag": SurvivalFlags.Recipes_VeryRareSurvival_Bought,
     },
-    NotesRecipes.Recipes_CommonSmallShields: {
-        "name": "Small Shield Smithbook [1]",
+    # endregion
+    # region Shield Recipes
+    NotesRecipes.Recipes_WoodenSmallShields: {
+        "name": "Wooden Small Shield Smithbook",
         "info": "",
         "caption": "",
-        "bought_flag": SurvivalFlags.Recipes_CommonSmallShields_Bought,
+        "bought_flag": SurvivalFlags.Recipes_WoodenSmallShields_Bought,
     },
-    NotesRecipes.Recipes_UncommonSmallShields: {
-        "name": "Small Shield Smithbook [2]",
+    NotesRecipes.Recipes_MetalSmallShields: {
+        "name": "Metal Small Shield Smithbook",
         "info": "",
         "caption": "",
-        "bought_flag": SurvivalFlags.Recipes_UncommonSmallShields_Bought,
+        "bought_flag": SurvivalFlags.Recipes_MetalSmallShields_Bought,
     },
     NotesRecipes.Recipes_RareSmallShields: {
-        "name": "Small Shield Smithbook [3]",
+        "name": "Rare Small Shield Smithbook",
         "info": "",
         "caption": "",
         "bought_flag": SurvivalFlags.Recipes_RareSmallShields_Bought,
     },
     NotesRecipes.Recipes_VeryRareSmallShields: {
-        "name": "Small Shield Smithbook [4]",
+        "name": "Very Rare Small Shield Smithbook",
         "info": "",
         "caption": "",
         "bought_flag": SurvivalFlags.Recipes_VeryRareSmallShields_Bought,
     },
+
     NotesRecipes.Recipes_CommonMediumShields: {
-        "name": "Medium Shield Smithbook [1]",
+        "name": "Common Medium Shield Smithbook",
         "info": "",
         "caption": "",
         "bought_flag": SurvivalFlags.Recipes_CommonMediumShields_Bought,
     },
-    NotesRecipes.Recipes_UncommonMediumShields: {
-        "name": "Medium Shield Smithbook [2]",
+    NotesRecipes.Recipes_WoodenMediumShields: {
+        "name": "Wooden Medium Shield Smithbook",
         "info": "",
         "caption": "",
-        "bought_flag": SurvivalFlags.Recipes_UncommonMediumShields_Bought,
+        "bought_flag": SurvivalFlags.Recipes_WoodenMediumShields_Bought,
+    },
+    NotesRecipes.Recipes_HeaterMediumShields: {
+        "name": "Heater Medium Shield Smithbook",
+        "info": "",
+        "caption": "",
+        "bought_flag": SurvivalFlags.Recipes_HeaterMediumShields_Bought,
+    },
+    NotesRecipes.Recipes_KiteMediumShields: {
+        "name": "Kite Medium Shield Smithbook",
+        "info": "",
+        "caption": "",
+        "bought_flag": SurvivalFlags.Recipes_KiteMediumShields_Bought,
     },
     NotesRecipes.Recipes_RareMediumShields: {
-        "name": "Medium Shield Smithbook [3]",
+        "name": "Rare Medium Shield Smithbook",
         "info": "",
         "caption": "",
         "bought_flag": SurvivalFlags.Recipes_RareMediumShields_Bought,
     },
-    NotesRecipes.Recipes_VeryRareMediumShields: {
-        "name": "Medium Shield Smithbook [4]",
-        "info": "",
-        "caption": "",
-        "bought_flag": SurvivalFlags.Recipes_VeryRareMediumShields_Bought,
-    },
+
     NotesRecipes.Recipes_CommonGreatshields: {
         "name": "Greatshield Smithbook [1]",
         "info": "",
@@ -653,11 +823,12 @@ NEW_NOTES_RECIPES = {
         "caption": "",
         "bought_flag": SurvivalFlags.Recipes_VeryRareGreatshields_Bought,
     },
+    # endregion
     NotesRecipes.Note_SerpentHunter: {
         "name": "Note: The Serpent-Hunter",
         "info": "",
         "caption": "",
-        "bought_flag": SurvivalFlags.Note_SerpentHunter,
+        "bought_flag": SurvivalFlags.Note_SerpentHunter_Bought,
     },
 }
 
