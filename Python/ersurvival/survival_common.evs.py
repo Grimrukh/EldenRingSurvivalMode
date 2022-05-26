@@ -36,7 +36,6 @@ def Constructor():
     # RelieveThirst_7()  # no items that relieve 7 thirst
     IncreaseThirst_1()  # dried/cured vanilla meats
     IncreaseThirst_3()  # Jar Brittle
-    # TODO: More hunger/thirst relief items from crab eggs, white meat, etc?
 
     # region Temperature effect checks
     CheckMildHeatArea()
@@ -2536,7 +2535,6 @@ def GetDiseaseLegacyDungeon(
     """Same as overworld check, but checks if player is in map (a, b, c, d) instead."""
     EndIfFlagOn(had_twice_flag)
 
-    # TODO: Not sure my system can support this map argument, but it should if not.
     IfInsideMap(1, (a, b, c, d))
     IfAttackedWithDamageType(1, PLAYER, -1, DamageType.Unspecified)
     IfPlayerDoesNotHaveSpecialEffect(1, disease_effect)
@@ -2832,7 +2830,7 @@ def GetPureScarletRot():
 
     100% chance if you are in the Lake of Rot (checking if you're in Ainsel River is sufficient).
     """
-    # TODO: Not bothering with this for now.
+    # Not bothering with this for now.
     End()
 
 

@@ -436,6 +436,7 @@ def generate_dummy_weapons(
         new_shop_row = shop_recipe_param.duplicate_row(shop_source, shop_id)
         new_shop_row.name = row.name
         new_shop_row["equipId"] = dummy_id
+        new_shop_row["sellQuantity"] = 1  # only one
         new_shop_row["value"] = rune_cost
         new_shop_row["mtrlId"] = mtrl_id
         new_shop_row["eventFlag_forRelease"] = visibility_flag
@@ -506,6 +507,7 @@ def generate_smiths_hammers(
         new_shop_row = shop_recipe_param.duplicate_row(shop_source, shop_id)
         new_shop_row.name = good_info["name"]
         new_shop_row["equipId"] = good_id
+        new_shop_row["sellQuantity"] = 1  # only one
         new_shop_row["mtrlId"] = mtrl_id
         new_shop_row["eventFlag_forRelease"] = good_info["recipe_visibility_flag"]
         new_shop_row["equipType"] = 3  # always Goods
@@ -553,6 +555,7 @@ def generate_new_consumables(
         new_shop_row = shop_recipe_param.duplicate_row(shop_source, shop_id)
         new_shop_row.name = good_info["name"]
         new_shop_row["equipId"] = good_id
+        new_shop_row["sellQuantity"] = 1  # only one
         new_shop_row["value"] = 0  # no rune cost for these
         new_shop_row["mtrlId"] = mtrl_id
         new_shop_row["eventFlag_forRelease"] = good_info["recipe_visibility_flag"]
@@ -898,13 +901,14 @@ def generate_notes_recipes(goods_param: YappedParam, shop_merchant_param: Yapped
         new_row = shop_merchant_param.duplicate_row(shop_source, _row_id)
         new_row.name = f"[Shop] {_info['name']}"
         new_row["equipId"] = _good_id
+        new_row["sellQuantity"] = 1  # sell one
         try:
             new_row["value"] = _info["cost"]
         except KeyError:
             raise KeyError(f"No 'cost' for good ID {_good_id}")
         new_row["eventFlag_forStock"] = _info["bought_flag"]
         new_row["equipType"] = 3  # Good
-        new_row["setNum"] = 1  # only one
+        new_row["setNum"] = 1  # receive one
 
     def create_item_lot(_row_id, _good_id, _info):
         new_row = item_lot_map.duplicate_row(item_lot_source, _row_id)
@@ -963,17 +967,20 @@ def modify_torrent(npc_param: YappedParam):
 
 def test_item_lots(item_lots_map: YappedParam):
     """Debugging item lots."""
-    item_lots_map[100].name = "Test: Shield Grip"
-    item_lots_map[100]["lotItemId01"] = Materials.ShieldGrip
-    item_lots_map[100]["lotItemNum01"] = 1
+    item_lots_map[100].name = "Test: Lord's Rune"
+    item_lots_map[100]["lotItemId01"] = 2919
+    item_lots_map[100]["lotItemNum01"] = 5
 
-    # cat = item_lots_map.duplicate_row(100, 101, name="Test: Longtail Cat Talisman", )
-    # cat["lotItemId01"] = 6040
-    # cat["lotItemCategory01"] = 4  # Accessory
-    # cat["lotItemNum01"] = 1
+    for i, test_good in enumerate(
+        (Materials.IronPlate, Materials.IronShards, Materials.StoneFragment, Materials.SomberStoneFragment)
+    ):
+        row = item_lots_map.duplicate_row(100, 101 + i, name=f"Test: {test_good.name}")
+        row["lotItemId01"] = test_good
+        row["lotItemCategory01"] = 1  # Good
+        row["lotItemNum01"] = 10
 
 
-def generate_all():
+def generate_all_params():
     goods = read_param_csv("EquipParamGoods_vanilla.csv")
     weapons = read_param_csv("EquipParamWeapon_vanilla.csv")
     item_lots_enemy = read_param_csv("ItemLotParam_enemy_vanilla.csv")
@@ -1007,16 +1014,17 @@ def generate_all():
     print("\nNOTE: Debugging item lots created.")
     test_item_lots(item_lots_map)
 
+    write_param_csv(mtrl, "EquipMtrlSetParam.csv")
     write_param_csv(goods, "EquipParamGoods.csv")
     write_param_csv(weapons, "EquipParamWeapon.csv")
     write_param_csv(item_lots_enemy, "ItemLotParam_enemy.csv")
     write_param_csv(item_lots_map, "ItemLotParam_map.csv")
-    write_param_csv(mtrl, "EquipMtrlSetParam.csv")
-    write_param_csv(shop_recipe, "ShopLineupParam_Recipe.csv")
+    write_param_csv(npc, "NpcParam.csv")
     write_param_csv(shop_merchant, "ShopLineupParam.csv")
+    write_param_csv(shop_recipe, "ShopLineupParam_Recipe.csv")
 
     print("Read, edited, and wrote all Yapped param CSVs successfully.")
 
 
 if __name__ == '__main__':
-    generate_all()
+    generate_all_params()

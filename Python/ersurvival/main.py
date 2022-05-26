@@ -1,7 +1,56 @@
+"""INSTALLATION INSTRUCTIONS (for me):
+
+- Run `install_evs()`, `generate_all_params()`, and `set_all_text()` here.
+    - This will generate the final `common.emevd.dcx`, `item.msgbnd.dcx`, and `menu.msgbnd.dcx`.
+- In Yapped, import all the CSV param files generated from here:
+    - EquipMtrlSetParam
+    - EquipParamGoods
+    - EquipParamWeapon
+    - ItemLotParam_enemy
+    - ItemLotParam_map
+    - Npc_Param
+    - ShopLineupParam
+    - ShopLineupParam_Recipe
+- Ensure that manually-set Yapped tables are also imported:
+    - CharaInitParam
+    - SpEffectParam
+- Save Yapped to generate final `regulation.bin`.
+
+TODO (BUGS):
+    - Hunger isn't setting in (thirst is, though).
+    - Survival recipes aren't appearing with Common Cookbook.
+    - Getting a weird reinforcement option for Dagger still, using an unnamed material.
+    - New recipes should be Key Items, not Info items. Separate dictionaries.
+    - New material icons are not showing, despite being added to TPF.
+    - I think crafting materials need text for the "Obtained" section.
+    - Hide 'x1' crafted quantity for weapon dummies, if possible.
+    - 2000 runes per tier is too much. Try 1000. Or, don't scale linearly (maybe triangular numbers?).
+    - Set material subtype for Material goods (currently bundled with Bones they're copied from).
+        - In fact, I could technically move them into Bolstering Materials. Then they wouldn't need "Obtained" either.
+    - ABUSE: Because the crafting menu doesn't update when you craft an item, you can craft multiple upgrades from the
+      same base weapon before the game "realizes" that you lack the base weapon.
+        - I could require the base weapon to be present before replacing the dummy with the real weapon, but then
+          there's a chance the player could waste ingredients accidentally. Probably still better than abuse, though.
+    - Need a more reliable source of Soft Wood than just serendipitous enemy weapon-drop replacements.
+        - Add a decent drop rate to some basic enemies. Should be relatively scriptable based on enemy model IDs.
+
+TODO:
+    - Disease effects in SpEffectParam (manual).
+    - Remaining icons from Thens into TPF.
+    - Darkness hook in C#.
+        - Need to go back to JZ's tips for detecting in-game time.
+        - Need to customize it to make torches more useful.
+    - Permanently disable 'Pass Time' grace menu option.
+        - Night-only enemies will be harder to find, but so be it.
+    - TESTING.
+"""
 import shutil
 import subprocess as sp
 from pathlib import Path
 from soulstruct.eldenring.events import EMEVD
+
+from survival_params import generate_all_params
+from survival_text import set_all_text
 
 
 VANILLA_PATH = Path("C:/Steam/steamapps/common/ELDEN RING (Vanilla)/Game")
@@ -62,3 +111,6 @@ def install():
 
 if __name__ == '__main__':
     install_evs()
+    generate_all_params()
+    set_all_text()
+    print("Full SurvivalMode Python installation complete. (Now use Yapped to convert CSVs to `regulation.bin`.")
