@@ -297,6 +297,30 @@ class DiseaseIndicators(IntEnum):
     TunnelDisease = 8430
 
 
+class DiseaseItemLots(IntEnum):
+    LimgraveDisease = 10 * DiseaseIndicators.LimgraveDisease
+    LiurniaDisease = 10 * DiseaseIndicators.LiurniaDisease
+    CaelidDisease = 10 * DiseaseIndicators.CaelidDisease
+    AltusDisease = 10 * DiseaseIndicators.AltusDisease
+    MtGelmirDisease = 10 * DiseaseIndicators.MtGelmirDisease
+    MountaintopsDisease = 10 * DiseaseIndicators.MountaintopsDisease
+    SiofraDisease = 10 * DiseaseIndicators.SiofraDisease
+    AinselDisease = 10 * DiseaseIndicators.AinselDisease
+    DeeprootDisease = 10 * DiseaseIndicators.DeeprootDisease
+    StormveilDisease = 10 * DiseaseIndicators.StormveilDisease
+    RayaLucariaDisease = 10 * DiseaseIndicators.RayaLucariaDisease
+    RadahnDisease = 10 * DiseaseIndicators.RadahnDisease
+    VolcanoManorDisease = 10 * DiseaseIndicators.VolcanoManorDisease
+    LeyndellDisease = 10 * DiseaseIndicators.LeyndellDisease
+    SewersDisease = 10 * DiseaseIndicators.SewersDisease
+    HaligtreeDisease = 10 * DiseaseIndicators.HaligtreeDisease
+    FarumAzulaDisease = 10 * DiseaseIndicators.FarumAzulaDisease
+    MohgwynDisease = 10 * DiseaseIndicators.MohgwynDisease
+    CatacombsDisease = 10 * DiseaseIndicators.CatacombsDisease
+    CaveDisease = 10 * DiseaseIndicators.CaveDisease
+    TunnelDisease = 10 * DiseaseIndicators.TunnelDisease
+
+
 # Keys are offsets used in all IDs.
     # George: I marked things with XXXX that need to be updated.
 NEW_CONSUMABLES = {

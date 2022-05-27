@@ -955,8 +955,8 @@ def generate_disease_indicators(goods: YappedParam, item_lots_map: YappedParam):
         new_good.name = good_info["name"]
         new_good["iconId"] = good_info["icon"]
 
-        # Item Lot (same ID)
-        new_item_lot = item_lots_map.duplicate_row(item_lot_source, good_id)
+        # Item Lot (good ID * 10)
+        new_item_lot = item_lots_map.duplicate_row(item_lot_source, 10 * good_id)
         new_item_lot.name = good_info["name"]
         new_item_lot["lotItemId01"] = good_id
         new_item_lot["lotItemCategory01"] = 1  # Good
@@ -983,6 +983,12 @@ def test_item_lots(item_lots_map: YappedParam):
         row["lotItemId01"] = test_good
         row["lotItemCategory01"] = 1  # Good
         row["lotItemNum01"] = 3
+
+    # For quick hunger/thirst management.
+    food_row = item_lots_map.duplicate_row(100, 500, name=f"Test: Great Bone Broth")
+    food_row["lotItemId01"] = Consumables.GreatBoneBroth
+    food_row["lotItemCategory01"] = 1  # Good
+    food_row["lotItemNum01"] = 3
 
 
 def generate_all_params():

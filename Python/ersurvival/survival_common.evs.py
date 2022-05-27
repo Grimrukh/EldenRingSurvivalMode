@@ -13,7 +13,29 @@ def Constructor():
     """Will be merged with vanilla Common."""
 
     # TODO: Debugging. Remove for release.
-    # AwardItemLot(100)
+    # AwardItemLot(500)
+    # RemoveGoodFromPlayer(DiseaseIndicators.LimgraveDisease, 1)
+    # RemoveGoodFromPlayer(DiseaseIndicators.LiurniaDisease, 1)
+    # RemoveGoodFromPlayer(DiseaseIndicators.CaelidDisease, 1)
+    # RemoveGoodFromPlayer(DiseaseIndicators.AltusDisease, 1)
+    # RemoveGoodFromPlayer(DiseaseIndicators.MtGelmirDisease, 1)
+    # RemoveGoodFromPlayer(DiseaseIndicators.MountaintopsDisease, 1)
+    # RemoveGoodFromPlayer(DiseaseIndicators.SiofraDisease, 1)
+    # RemoveGoodFromPlayer(DiseaseIndicators.AinselDisease, 1)
+    # RemoveGoodFromPlayer(DiseaseIndicators.DeeprootDisease, 1)
+    # RemoveGoodFromPlayer(DiseaseIndicators.StormveilDisease, 1)
+    # RemoveGoodFromPlayer(DiseaseIndicators.RayaLucariaDisease, 1)
+    # RemoveGoodFromPlayer(DiseaseIndicators.RadahnDisease, 1)
+    # RemoveGoodFromPlayer(DiseaseIndicators.VolcanoManorDisease, 1)
+    # RemoveGoodFromPlayer(DiseaseIndicators.LeyndellDisease, 1)
+    # RemoveGoodFromPlayer(DiseaseIndicators.SewersDisease, 1)
+    # RemoveGoodFromPlayer(DiseaseIndicators.HaligtreeDisease, 1)
+    # RemoveGoodFromPlayer(DiseaseIndicators.FarumAzulaDisease, 1)
+    # RemoveGoodFromPlayer(DiseaseIndicators.MohgwynDisease, 1)
+    # RemoveGoodFromPlayer(DiseaseIndicators.CatacombsDisease, 1)
+    # RemoveGoodFromPlayer(DiseaseIndicators.CaveDisease, 1)
+    # RemoveGoodFromPlayer(DiseaseIndicators.TunnelDisease, 1)
+    # DisableFlagRange((Flags.LimgraveDiseaseOnce, Flags.TunnelDiseaseTwice))
 
     GrowingHunger()
     GrowingThirst()
@@ -70,6 +92,7 @@ def Constructor():
         Flags.LimgraveDiseaseOnce,
         Flags.LimgraveDiseaseTwice,
         DiseaseIndicators.LimgraveDisease,
+        DiseaseItemLots.LimgraveDisease,
     )
     GetDiseaseOverworld(
         1,
@@ -78,6 +101,7 @@ def Constructor():
         Flags.LiurniaDiseaseOnce,
         Flags.LiurniaDiseaseTwice,
         DiseaseIndicators.LiurniaDisease,
+        DiseaseItemLots.LiurniaDisease,
     )
     GetDiseaseOverworld(
         2,
@@ -86,6 +110,7 @@ def Constructor():
         Flags.CaelidDiseaseOnce,
         Flags.CaelidDiseaseTwice,
         DiseaseIndicators.CaelidDisease,
+        DiseaseItemLots.CaelidDisease,
     )
     GetDiseaseOverworld(
         3,
@@ -94,6 +119,7 @@ def Constructor():
         Flags.AltusDiseaseOnce,
         Flags.AltusDiseaseTwice,
         DiseaseIndicators.AltusDisease,
+        DiseaseItemLots.AltusDisease,
     )
     GetDiseaseOverworld(
         4,
@@ -102,6 +128,7 @@ def Constructor():
         Flags.MtGelmirDiseaseOnce,
         Flags.MtGelmirDiseaseTwice,
         DiseaseIndicators.MtGelmirDisease,
+        DiseaseItemLots.MtGelmirDisease,
     )
     GetDiseaseOverworld(
         5,
@@ -110,6 +137,7 @@ def Constructor():
         Flags.MountaintopsDiseaseOnce,
         Flags.MountaintopsDiseaseTwice,
         DiseaseIndicators.MountaintopsDisease,
+        DiseaseItemLots.MountaintopsDisease,
     )
 
     GetDiseaseLegacyDungeon(
@@ -119,6 +147,7 @@ def Constructor():
         Flags.StormveilDiseaseOnce,
         Flags.StormveilDiseaseTwice,
         DiseaseIndicators.StormveilDisease,
+        DiseaseItemLots.StormveilDisease,
     )
     GetDiseaseLegacyDungeon(
         1,
@@ -127,6 +156,7 @@ def Constructor():
         Flags.RayaLucariaDiseaseOnce,
         Flags.RayaLucariaDiseaseTwice,
         DiseaseIndicators.RayaLucariaDisease,
+        DiseaseItemLots.RayaLucariaDisease,
     )
     GetDiseaseLegacyDungeon(
         2,
@@ -135,6 +165,7 @@ def Constructor():
         Flags.VolcanoManorDiseaseOnce,
         Flags.VolcanoManorDiseaseTwice,
         DiseaseIndicators.VolcanoManorDisease,
+        DiseaseItemLots.VolcanoManorDisease,
     )
     GetDiseaseLegacyDungeon(
         3,
@@ -143,6 +174,7 @@ def Constructor():
         Flags.LeyndellDiseaseOnce,
         Flags.LeyndellDiseaseTwice,
         DiseaseIndicators.LeyndellDisease,
+        DiseaseItemLots.LeyndellDisease,
     )
     GetDiseaseLegacyDungeon(
         4,
@@ -151,6 +183,7 @@ def Constructor():
         Flags.SewersDiseaseOnce,
         Flags.SewersDiseaseTwice,
         DiseaseIndicators.SewersDisease,
+        DiseaseItemLots.SewersDisease,
     )
     GetDiseaseLegacyDungeon(
         5,
@@ -159,6 +192,7 @@ def Constructor():
         Flags.HaligtreeDiseaseOnce,
         Flags.HaligtreeDiseaseTwice,
         DiseaseIndicators.HaligtreeDisease,
+        DiseaseItemLots.HaligtreeDisease,
     )
     GetDiseaseLegacyDungeon(
         6,
@@ -167,6 +201,7 @@ def Constructor():
         Flags.FarumAzulaDiseaseOnce,
         Flags.FarumAzulaDiseaseTwice,
         DiseaseIndicators.FarumAzulaDisease,
+        DiseaseItemLots.FarumAzulaDisease,
     )
     GetDiseaseLegacyDungeon(
         7,
@@ -175,6 +210,7 @@ def Constructor():
         Flags.MohgwynDiseaseOnce,
         Flags.MohgwynDiseaseTwice,
         DiseaseIndicators.MohgwynDisease,
+        DiseaseItemLots.MohgwynDisease,
     )
 
     GetDiseaseSiofra()
@@ -2655,8 +2691,13 @@ def SevereColdWarning():
 
 @NeverRestart(Flags.GetDiseaseOverworld)
 def GetDiseaseOverworld(
-    _, disease_effect: int, location_flag: Flag, had_once_flag: Flag, had_twice_flag: Flag, item_lot: int
+    _, disease_effect: int, location_flag: Flag, had_once_flag: Flag, had_twice_flag: Flag, item: int, item_lot: int
 ):
+    IfPlayerHasGood(7, item)
+    SkipLinesIfConditionFalse(2, 7)  # just re-apply effect and end
+    AddSpecialEffect(PLAYER, disease_effect)
+    End()
+
     EndIfFlagOn(had_twice_flag)
 
     IfFlagOn(1, location_flag)
@@ -2668,7 +2709,7 @@ def GetDiseaseOverworld(
 
     EnableFlag(Flags.DiseaseRollLock)
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
-    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollSecond))  # TODO: Last
 
     IfFlagOn(-2, Flags.DiseaseRollFirst)
     IfFlagOff(2, had_once_flag)
@@ -2681,12 +2722,12 @@ def GetDiseaseOverworld(
 
     DisableFlag(Flags.DiseaseRollLock)
 
-    AddSpecialEffect(PLAYER, disease_effect)
     AwardItemLot(item_lot)  # disease indicator
+    AddSpecialEffect(PLAYER, disease_effect)
 
     SkipLinesIfFlagOn(2, had_once_flag)
     EnableFlag(had_once_flag)
-    End()
+    SkipLines(1)
     EnableFlag(had_twice_flag)
 
 
@@ -2699,10 +2740,16 @@ def GetDiseaseLegacyDungeon(
     c: uchar, 
     d: uchar, 
     had_once_flag: Flag, 
-    had_twice_flag: Flag, 
+    had_twice_flag: Flag,
+    item: int,
     item_lot: int,
 ):
     """Same as overworld check, but checks if player is in map (a, b, c, d) instead."""
+    IfPlayerHasGood(7, item)
+    SkipLinesIfConditionFalse(2, 7)  # just re-apply disease effect and end
+    AddSpecialEffect(PLAYER, disease_effect)
+    End()
+
     EndIfFlagOn(had_twice_flag)
 
     IfInsideMap(1, (a, b, c, d))
@@ -2741,6 +2788,11 @@ def GetDiseaseLegacyDungeon(
 
 @NeverRestart(Flags.GetDiseaseSiofra)
 def GetDiseaseSiofra():
+    IfPlayerHasGood(7, DiseaseIndicators.SiofraDisease)
+    SkipLinesIfConditionFalse(2, 7)  # just re-apply disease effect and end
+    AddSpecialEffect(PLAYER, SurvivalEffects.SiofraDisease)
+    End()
+
     EndIfFlagOn(Flags.SiofraDiseaseTwice)
 
     IfInsideMap(-1, SIOFRA_RIVER)
@@ -2778,6 +2830,11 @@ def GetDiseaseSiofra():
 
 @NeverRestart(Flags.GetDiseaseAinsel)
 def GetDiseaseAinsel():
+    IfPlayerHasGood(7, DiseaseIndicators.AinselDisease)
+    SkipLinesIfConditionFalse(2, 7)  # just re-apply disease effect and end
+    AddSpecialEffect(PLAYER, SurvivalEffects.AinselDisease)
+    End()
+
     EndIfFlagOn(Flags.AinselDiseaseTwice)
 
     IfInsideMap(1, AINSEL_RIVER)
@@ -2813,6 +2870,11 @@ def GetDiseaseAinsel():
 
 @NeverRestart(Flags.GetDiseaseDeeprootAstel)
 def GetDiseaseDeeprootAstel():
+    IfPlayerHasGood(7, DiseaseIndicators.DeeprootDisease)
+    SkipLinesIfConditionFalse(2, 7)  # just re-apply disease effect and end
+    AddSpecialEffect(PLAYER, SurvivalEffects.DeeprootDisease)
+    End()
+
     EndIfFlagOn(Flags.DeeprootDiseaseTwice)
 
     IfInsideMap(-1, DEEPROOT_DEPTHS)
@@ -2851,6 +2913,11 @@ def GetDiseaseDeeprootAstel():
 @NeverRestart(Flags.GetDiseaseRadahn)
 def GetDiseaseRadahn():
     """Only afflicted by Radahn himself."""
+    IfPlayerHasGood(7, DiseaseIndicators.RadahnDisease)
+    SkipLinesIfConditionFalse(2, 7)  # just re-apply disease effect and end
+    AddSpecialEffect(PLAYER, SurvivalEffects.RadahnDisease)
+    End()
+
     EndIfFlagOn(Flags.RadahnDiseaseTwice)
 
     IfAttackedWithDamageType(1, PLAYER, VanillaCharacters.Radahn, DamageType.Unspecified)
@@ -2888,6 +2955,11 @@ def GetDiseaseRadahn():
 
 @NeverRestart(Flags.GetDiseaseCatacombs)
 def GetDiseaseCatacombs():
+    IfPlayerHasGood(7, DiseaseIndicators.CatacombsDisease)
+    SkipLinesIfConditionFalse(2, 7)  # just re-apply disease effect and end
+    AddSpecialEffect(PLAYER, SurvivalEffects.CatacombsDisease)
+    End()
+
     EndIfFlagOn(Flags.CatacombsDiseaseTwice)
 
     IfInsideMap(1, (30, 255, 255, 255))  # ANY Catacombs
@@ -2923,6 +2995,11 @@ def GetDiseaseCatacombs():
 
 @NeverRestart(Flags.GetDiseaseCaves)
 def GetDiseaseCaves():
+    IfPlayerHasGood(7, DiseaseIndicators.CaveDisease)
+    SkipLinesIfConditionFalse(2, 7)  # just re-apply disease effect and end
+    AddSpecialEffect(PLAYER, SurvivalEffects.CaveDisease)
+    End()
+
     EndIfFlagOn(Flags.CaveDiseaseTwice)
 
     IfInsideMap(1, (31, 255, 255, 255))  # ANY Cave
@@ -2958,6 +3035,11 @@ def GetDiseaseCaves():
 
 @NeverRestart(Flags.GetDiseaseTunnels)
 def GetDiseaseTunnels():
+    IfPlayerHasGood(7, DiseaseIndicators.TunnelDisease)
+    SkipLinesIfConditionFalse(2, 7)  # just re-apply disease effect and end
+    AddSpecialEffect(PLAYER, SurvivalEffects.TunnelDisease)
+    End()
+
     EndIfFlagOn(Flags.TunnelDiseaseTwice)
 
     IfInsideMap(1, (32, 255, 255, 255))  # ANY Tunnel

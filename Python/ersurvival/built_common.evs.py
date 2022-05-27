@@ -405,6 +405,7 @@ def Constructor():
     RunEvent(9943)
     RunEvent(9940)
     RunEvent(1700)
+    AwardItemLot(500, host_only=True)
     RunEvent(19001000)
     RunEvent(19001001)
     RunEvent(19001489)
@@ -442,20 +443,20 @@ def Constructor():
     RunEvent(19001033)
     RunEvent(19001035)
     RunEvent(19001036)
-    RunEvent(19001060, slot=0, args=(53000, 19001050, 19001200, 19001201, 8410), arg_types="iIIIi")
-    RunEvent(19001060, slot=1, args=(53001, 19001051, 19001202, 19001203, 8411), arg_types="iIIIi")
-    RunEvent(19001060, slot=2, args=(53002, 19001052, 19001204, 19001205, 8412), arg_types="iIIIi")
-    RunEvent(19001060, slot=3, args=(53003, 19001053, 19001206, 19001207, 8413), arg_types="iIIIi")
-    RunEvent(19001060, slot=4, args=(53004, 19001054, 19001208, 19001209, 8414), arg_types="iIIIi")
-    RunEvent(19001060, slot=5, args=(53005, 19001055, 19001210, 19001211, 8415), arg_types="iIIIi")
-    RunEvent(19001070, slot=0, args=(53009, 10, 0, 0, 0, 19001220, 19001221, 8419), arg_types="iBBBBIIi")
-    RunEvent(19001070, slot=1, args=(53010, 14, 0, 0, 0, 19001222, 19001223, 8420), arg_types="iBBBBIIi")
-    RunEvent(19001070, slot=2, args=(53012, 16, 0, 0, 0, 19001226, 19001227, 8422), arg_types="iBBBBIIi")
-    RunEvent(19001070, slot=3, args=(53013, 11, 0, 0, 0, 19001228, 19001229, 8423), arg_types="iBBBBIIi")
-    RunEvent(19001070, slot=4, args=(53014, 35, 0, 0, 0, 19001230, 19001231, 8424), arg_types="iBBBBIIi")
-    RunEvent(19001070, slot=5, args=(53015, 15, 0, 0, 0, 19001232, 19001233, 8425), arg_types="iBBBBIIi")
-    RunEvent(19001070, slot=6, args=(53016, 13, 0, 0, 0, 19001234, 19001235, 8426), arg_types="iBBBBIIi")
-    RunEvent(19001070, slot=7, args=(53017, 12, 5, 0, 0, 19001236, 19001237, 8427), arg_types="iBBBBIIi")
+    RunEvent(19001060, slot=0, args=(53000, 19001050, 19001200, 19001201, 8410, 84100), arg_types="iIIIii")
+    RunEvent(19001060, slot=1, args=(53001, 19001051, 19001202, 19001203, 8411, 84110), arg_types="iIIIii")
+    RunEvent(19001060, slot=2, args=(53002, 19001052, 19001204, 19001205, 8412, 84120), arg_types="iIIIii")
+    RunEvent(19001060, slot=3, args=(53003, 19001053, 19001206, 19001207, 8413, 84130), arg_types="iIIIii")
+    RunEvent(19001060, slot=4, args=(53004, 19001054, 19001208, 19001209, 8414, 84140), arg_types="iIIIii")
+    RunEvent(19001060, slot=5, args=(53005, 19001055, 19001210, 19001211, 8415, 84150), arg_types="iIIIii")
+    RunEvent(19001070, slot=0, args=(53009, 10, 0, 0, 0, 19001220, 19001221, 8419, 84190), arg_types="iBBBBIIii")
+    RunEvent(19001070, slot=1, args=(53010, 14, 0, 0, 0, 19001222, 19001223, 8420, 84200), arg_types="iBBBBIIii")
+    RunEvent(19001070, slot=2, args=(53012, 16, 0, 0, 0, 19001226, 19001227, 8422, 84220), arg_types="iBBBBIIii")
+    RunEvent(19001070, slot=3, args=(53013, 11, 0, 0, 0, 19001228, 19001229, 8423, 84230), arg_types="iBBBBIIii")
+    RunEvent(19001070, slot=4, args=(53014, 35, 0, 0, 0, 19001230, 19001231, 8424, 84240), arg_types="iBBBBIIii")
+    RunEvent(19001070, slot=5, args=(53015, 15, 0, 0, 0, 19001232, 19001233, 8425, 84250), arg_types="iBBBBIIii")
+    RunEvent(19001070, slot=6, args=(53016, 13, 0, 0, 0, 19001234, 19001235, 8426, 84260), arg_types="iBBBBIIii")
+    RunEvent(19001070, slot=7, args=(53017, 12, 5, 0, 0, 19001236, 19001237, 8427, 84270), arg_types="iBBBBIIii")
     RunEvent(19001080)
     RunEvent(19001081)
     RunEvent(19001082)
@@ -9956,8 +9957,12 @@ def Event19001036():
 
 
 @NeverRestart(19001060)
-def Event19001060(_, arg_0_3: int, arg_4_7: uint, arg_8_11: uint, arg_12_15: uint, arg_16_19: int):
+def Event19001060(_, arg_0_3: int, arg_4_7: uint, arg_8_11: uint, arg_12_15: uint, arg_16_19: int, arg_20_23: int):
     """Event 19001060"""
+    IfPlayerHasGood(7, arg_16_19, including_box=True)
+    SkipLinesIfConditionFalse(2, 7)
+    AddSpecialEffect(PLAYER, arg_0_3)
+    End()
     EndIfFlagOn(arg_12_15)
     IfFlagOn(1, arg_4_7)
     IfAttackedWithDamageType(1, attacked_entity=PLAYER, attacker=-1)
@@ -9975,11 +9980,11 @@ def Event19001060(_, arg_0_3: int, arg_4_7: uint, arg_8_11: uint, arg_12_15: uin
     DisableFlag(19001099)
     Restart()
     DisableFlag(19001099)
+    AwardItemLot(arg_20_23, host_only=True)
     AddSpecialEffect(PLAYER, arg_0_3)
-    AwardItemLot(arg_16_19, host_only=True)
     SkipLinesIfFlagOn(2, arg_8_11)
     EnableFlag(arg_8_11)
-    End()
+    SkipLines(1)
     EnableFlag(arg_12_15)
 
 
@@ -9994,8 +9999,13 @@ def Event19001070(
     arg_8_11: uint,
     arg_12_15: uint,
     arg_16_19: int,
+    arg_20_23: int,
 ):
     """Event 19001070"""
+    IfPlayerHasGood(7, arg_16_19, including_box=True)
+    SkipLinesIfConditionFalse(2, 7)
+    AddSpecialEffect(PLAYER, arg_0_3)
+    End()
     EndIfFlagOn(arg_12_15)
     IfInsideMap(1, game_map=(arg_4_4, arg_5_5, arg_6_6, arg_7_7))
     IfAttackedWithDamageType(1, attacked_entity=PLAYER, attacker=-1)
@@ -10014,7 +10024,7 @@ def Event19001070(
     Restart()
     DisableFlag(19001099)
     AddSpecialEffect(PLAYER, arg_0_3)
-    AwardItemLot(arg_16_19, host_only=True)
+    AwardItemLot(arg_20_23, host_only=True)
     SkipLinesIfFlagOn(2, arg_8_11)
     EnableFlag(arg_8_11)
     End()
@@ -10024,6 +10034,10 @@ def Event19001070(
 @NeverRestart(19001080)
 def Event19001080():
     """Event 19001080"""
+    IfPlayerHasGood(7, 8416, including_box=True)
+    SkipLinesIfConditionFalse(2, 7)
+    AddSpecialEffect(PLAYER, 53006)
+    End()
     EndIfFlagOn(19001215)
     IfInsideMap(-1, game_map=SIOFRA_RIVER)
     IfInsideMap(-1, game_map=SIOFRA_RIVER_START)
@@ -10054,6 +10068,10 @@ def Event19001080():
 @NeverRestart(19001081)
 def Event19001081():
     """Event 19001081"""
+    IfPlayerHasGood(7, 8417, including_box=True)
+    SkipLinesIfConditionFalse(2, 7)
+    AddSpecialEffect(PLAYER, 53007)
+    End()
     EndIfFlagOn(19001217)
     IfInsideMap(1, game_map=AINSEL_RIVER)
     IfAttackedWithDamageType(1, attacked_entity=PLAYER, attacker=-1)
@@ -10082,6 +10100,10 @@ def Event19001081():
 @NeverRestart(19001082)
 def Event19001082():
     """Event 19001082"""
+    IfPlayerHasGood(7, 8418, including_box=True)
+    SkipLinesIfConditionFalse(2, 7)
+    AddSpecialEffect(PLAYER, 53008)
+    End()
     EndIfFlagOn(19001219)
     IfInsideMap(-1, game_map=DEEPROOT_DEPTHS)
     IfInsideMap(-1, game_map=ASTEL_ARENA)
@@ -10112,6 +10134,10 @@ def Event19001082():
 @NeverRestart(19001083)
 def Event19001083():
     """Event 19001083"""
+    IfPlayerHasGood(7, 8421, including_box=True)
+    SkipLinesIfConditionFalse(2, 7)
+    AddSpecialEffect(PLAYER, 53011)
+    End()
     EndIfFlagOn(19001225)
     IfAttackedWithDamageType(1, attacked_entity=PLAYER, attacker=1052380800)
     IfCharacterDoesNotHaveSpecialEffect(1, PLAYER, 53011)
@@ -10139,6 +10165,10 @@ def Event19001083():
 @NeverRestart(19001084)
 def Event19001084():
     """Event 19001084"""
+    IfPlayerHasGood(7, 8428, including_box=True)
+    SkipLinesIfConditionFalse(2, 7)
+    AddSpecialEffect(PLAYER, 53018)
+    End()
     EndIfFlagOn(19001239)
     IfInsideMap(1, game_map=(30, 255, 255, 255))
     IfAttackedWithDamageType(1, attacked_entity=PLAYER, attacker=-1)
@@ -10167,6 +10197,10 @@ def Event19001084():
 @NeverRestart(19001085)
 def Event19001085():
     """Event 19001085"""
+    IfPlayerHasGood(7, 8429, including_box=True)
+    SkipLinesIfConditionFalse(2, 7)
+    AddSpecialEffect(PLAYER, 53019)
+    End()
     EndIfFlagOn(19001241)
     IfInsideMap(1, game_map=(31, 255, 255, 255))
     IfAttackedWithDamageType(1, attacked_entity=PLAYER, attacker=-1)
@@ -10195,6 +10229,10 @@ def Event19001085():
 @NeverRestart(19001086)
 def Event19001086():
     """Event 19001086"""
+    IfPlayerHasGood(7, 8430, including_box=True)
+    SkipLinesIfConditionFalse(2, 7)
+    AddSpecialEffect(PLAYER, 53020)
+    End()
     EndIfFlagOn(19001243)
     IfInsideMap(1, game_map=(32, 255, 255, 255))
     IfAttackedWithDamageType(1, attacked_entity=PLAYER, attacker=-1)

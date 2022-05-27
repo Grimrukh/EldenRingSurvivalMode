@@ -17,15 +17,9 @@
 - Save Yapped to generate final `regulation.bin`.
 
 TODO (BUGS):
-    - Dying at thirst 9 seems to clear thirst entirely, not put it at thirst 8.
-    - Can't craft Novice hammer.
-        - I put the shop recipes at 41000, which I believe we already know doesn't work.
-        - Should be fixed.
-    - After making the disease odds 100% and taking a hit in Caelid, I acquired 12 diseases at once.
-        - Must be something wrong with the map checks, or the IDs, or the arguments...
-    - New recipes should be Key Items, not Info items. Separate dictionaries.
+    - Hammer items are currently labelled "reusable". They should be key items like Whetstone Knife.
+    - New recipes should be Key Items, not Info items (like Notes). Separate dictionaries.
     - I think crafting materials need text for the "Obtained" section.
-    - Hide 'x1' crafted quantity for weapon dummies, if possible.
     - Set material subtype for Material goods (currently bundled with Bones they're copied from).
         - In fact, I could technically move them into Bolstering Materials. Then they wouldn't need "Obtained" either.
     - ABUSE: Because the crafting menu doesn't update when you craft an item, you can craft multiple upgrades from the
@@ -36,19 +30,16 @@ TODO (BUGS):
         - Add a decent drop rate to some basic enemies. Should be relatively scriptable based on enemy model IDs.
 
 TODO:
-    - TEST DISEASE CONTRACTION.
+    - Load BonfireWarpParam and set all required warp flags to 0 for TESTING.
+    - TEST DISEASE CONTRACTION in all maps and dungeons.
     - Disease effects in SpEffectParam (manual).
+    - Hide 'x1' crafted quantity for weapon dummies, if possible. (I don't think it is, but that's OK.)
     - HUD icons for effects (heat, cold, diseases).
-    - Not sure I figured out how to keep diseases after death.
-        - Events could check for disease indicator possession to skip all the checks and re-apply it.
-        - Use `RestartOnRest` in this case.
-    - Remaining icons from Thens into TPF.
     - Darkness hook in C#.
         - Need to go back to JZ's tips for detecting in-game time.
         - Need to customize it to make torches more useful.
     - Permanently disable 'Pass Time' grace menu option.
         - Night-only enemies will be harder to find, but so be it.
-    - TESTING.
 
 TODO (Notes for Player):
     - If you "infuse" a weapon (Heavy, Keen, Fire, etc.) then you will not be able to upgrade it. For now, it's
