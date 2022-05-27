@@ -496,7 +496,7 @@ NEW_CONSUMABLES = {
     Consumables.DraughtOfSatiation: {
         "name": "Draught of Satiation",
         "info": "Prevents hunter temporarily",
-        "caption": "Outlawed concotion once consumed by those seeking to reunite with the dead. Smells terrible.\n"
+        "caption": "Outlawed concoction once consumed by those seeking to reunite with the dead. Smells terrible.\n"
                    "Craftable survival item.\n\n"
                    ""
                    "Consume to relieve hunger and prevent it from growing temporarily.",
@@ -1029,7 +1029,7 @@ NEW_MATERIALS = {
     },
     Materials.GruesomeBone: {
         "name": "Gruesome Bone",
-        "info": "Digusting, large bone used for forging",
+        "info": "Disgusting large bone used for forging",
         "caption": "Very large, disturbing bone prized by arcane smiths for its unique properties.\n"
                    "Material for crafting weapons and shields.\n"
                    "",  #\nSome try these bones to their stock out of hunger.
@@ -1069,7 +1069,7 @@ NEW_MATERIALS = {
     Materials.ErdtreeAmber: {
         "name": "Erdtree Amber",
         "info": "Amber formed from the Erdtree's resin",
-        "caption": "Holy amber that came from Erdtree resin highly sought by craftsmen.\nMaterial for crafting weapons and shields.\n",
+        "caption": "Holy amber that came from Erdtree resin, a highly sought-after material.\nMaterial for crafting weapons and shields.\n",
         "icon": 19050,
     },
     Materials.GlintstoneDust: {
