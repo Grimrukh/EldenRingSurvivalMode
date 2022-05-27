@@ -35,17 +35,17 @@ LAYOUT_TEMPLATE = (
 def print_layout_entries():
     x, y = X_START, Y_START
     row = 0  # max index is 11
-    for goods_dict in (NEW_CONSUMABLES, NEW_MATERIALS):
-        for good in goods_dict.values():
-            icon_id = good["icon"]
-            print(LAYOUT_TEMPLATE.format(id=icon_id, x=x, y=y))
-            row += 1
-            if row > 11:  # new column
-                row = 0
-                y = 0
-                x += DIM + PAD
-            else:  # go down same column
-                y += DIM + PAD
+    icon_id = BASE_ID  # first ID
+    for _ in range(60):
+        print(LAYOUT_TEMPLATE.format(id=icon_id, x=x, y=y))
+        row += 1
+        icon_id += 1
+        if row > 11:  # new column
+            row = 0
+            y = 0
+            x += DIM + PAD
+        else:  # go down same column
+            y += DIM + PAD
 
 
 def find_good_icon_id(goods_param: YappedParam, icon_id: int):
@@ -60,5 +60,5 @@ def find_good_icon_id(goods_param: YappedParam, icon_id: int):
 
 
 if __name__ == '__main__':
-    # print_layout_entries()
-    find_good_icon_id(read_param_csv("EquipParamGoods_vanilla.csv"), 3739)
+    print_layout_entries()
+    # find_good_icon_id(read_param_csv("EquipParamGoods_vanilla.csv"), 3739)

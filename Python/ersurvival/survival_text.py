@@ -98,7 +98,7 @@ def set_goods_text():
     goods_info = YabberText(ITEM_PATH / "GoodsInfo_vanilla.fmg.xml")
     goods_caption = YabberText(ITEM_PATH / "GoodsCaption_vanilla.fmg.xml")
 
-    for goods_dict in (NEW_CONSUMABLES, NEW_MATERIALS, NEW_SMITHS_HAMMERS, NEW_NOTES_RECIPES):
+    for goods_dict in (NEW_CONSUMABLES, NEW_MATERIALS, NEW_SMITHS_HAMMERS, NEW_NOTES_RECIPES, DISEASE_INDICATORS):
         for good_id, good_info in goods_dict.items():
             goods_name[good_id] = good_info["name"]
             goods_info[good_id] = good_info["info"]

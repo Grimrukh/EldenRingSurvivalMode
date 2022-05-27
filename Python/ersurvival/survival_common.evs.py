@@ -13,11 +13,12 @@ def Constructor():
     """Will be merged with vanilla Common."""
 
     # TODO: Debugging. Remove for release.
-    AwardItemLot(100)
+    # AwardItemLot(100)
 
     GrowingHunger()
     GrowingThirst()
-    ReduceThirstOnDeath()
+    SaveHungerAfterDeath()
+    SaveThirstAfterDeath()
 
     RelieveHunger_1()
     RelieveHunger_2()
@@ -37,62 +38,77 @@ def Constructor():
     IncreaseThirst_1()  # dried/cured vanilla meats
     IncreaseThirst_3()  # Jar Brittle
 
+    # region Map area checks
+    MonitorInLimgrave()
+    MonitorInLiurnia()
+    MonitorInCaelid()
+    MonitorInAltus()
+    MonitorInMtGelmir()
+    MonitorInMountaintops()
+    # endregion
+
     # region Temperature effect checks
     CheckMildHeatArea()
+    MildHeatWarning()
     CheckModerateHeatArea()
+    ModerateHeatWarning()
     CheckSevereHeatArea()
+    SevereHeatWarning()
     CheckMildColdArea()
+    MildColdWarning()
     CheckModerateColdArea()
+    ModerateColdWarning()
     CheckSevereColdArea()
+    SevereColdWarning()
     # endregion
 
     # region Disease checks
     GetDiseaseOverworld(
         0,
         SurvivalEffects.LimgraveDisease,
-        SurvivalFlags.PlayerInLimgrave,
-        SurvivalFlags.LimgraveDiseaseOnce,
-        SurvivalFlags.LimgraveDiseaseTwice,
+        Flags.PlayerInLimgrave,
+        Flags.LimgraveDiseaseOnce,
+        Flags.LimgraveDiseaseTwice,
         DiseaseIndicators.LimgraveDisease,
     )
     GetDiseaseOverworld(
         1,
         SurvivalEffects.LiurniaDisease,
-        SurvivalFlags.PlayerInLiurnia,
-        SurvivalFlags.LiurniaDiseaseOnce,
-        SurvivalFlags.LiurniaDiseaseTwice,
+        Flags.PlayerInLiurnia,
+        Flags.LiurniaDiseaseOnce,
+        Flags.LiurniaDiseaseTwice,
         DiseaseIndicators.LiurniaDisease,
     )
     GetDiseaseOverworld(
         2,
         SurvivalEffects.CaelidDisease,
-        SurvivalFlags.PlayerInCaelid,
-        SurvivalFlags.CaelidDiseaseOnce,
-        SurvivalFlags.CaelidDiseaseTwice,
+        Flags.PlayerInCaelid,
+        Flags.CaelidDiseaseOnce,
+        Flags.CaelidDiseaseTwice,
         DiseaseIndicators.CaelidDisease,
     )
     GetDiseaseOverworld(
         3,
         SurvivalEffects.AltusDisease,
-        SurvivalFlags.PlayerInAltus,
-        SurvivalFlags.AltusDiseaseOnce,
-        SurvivalFlags.AltusDiseaseTwice,
+        Flags.PlayerInAltus,
+        Flags.AltusDiseaseOnce,
+        Flags.AltusDiseaseTwice,
         DiseaseIndicators.AltusDisease,
     )
     GetDiseaseOverworld(
         4,
         SurvivalEffects.MtGelmirDisease,
-        SurvivalFlags.PlayerInMtGelmir,
-        SurvivalFlags.MtGelmirDiseaseOnce,
-        SurvivalFlags.MtGelmirDiseaseTwice,
+        Flags.PlayerInMtGelmir,
+        Flags.MtGelmirDiseaseOnce,
+        Flags.MtGelmirDiseaseTwice,
         DiseaseIndicators.MtGelmirDisease,
     )
     GetDiseaseOverworld(
         5,
         SurvivalEffects.MountaintopsDisease,
-        SurvivalFlags.PlayerInMountaintops,
-        SurvivalFlags.MountaintopsDiseaseOnce,
-        SurvivalFlags.MountaintopsDiseaseTwice,
+        Flags.PlayerInMountaintops,
+        Flags.MountaintopsDiseaseOnce,
+        Flags.MountaintopsDiseaseTwice,
         DiseaseIndicators.MountaintopsDisease,
     )
 
@@ -100,64 +116,64 @@ def Constructor():
         0,
         SurvivalEffects.StormveilDisease,
         10, 0, 0, 0,  # STORMVEIL_CASTLE
-        SurvivalFlags.StormveilDiseaseOnce,
-        SurvivalFlags.StormveilDiseaseTwice,
+        Flags.StormveilDiseaseOnce,
+        Flags.StormveilDiseaseTwice,
         DiseaseIndicators.StormveilDisease,
     )
     GetDiseaseLegacyDungeon(
         1,
         SurvivalEffects.RayaLucariaDisease,
         14, 0, 0, 0,  # RAYA_LUCARIA
-        SurvivalFlags.RayaLucariaDiseaseOnce,
-        SurvivalFlags.RayaLucariaDiseaseTwice,
+        Flags.RayaLucariaDiseaseOnce,
+        Flags.RayaLucariaDiseaseTwice,
         DiseaseIndicators.RayaLucariaDisease,
     )
     GetDiseaseLegacyDungeon(
         2,
         SurvivalEffects.VolcanoManorDisease,
         16, 0, 0, 0,  # VOLCANO_MANOR (does not matter if you're in the no-attack zone)
-        SurvivalFlags.VolcanoManorDiseaseOnce,
-        SurvivalFlags.VolcanoManorDiseaseTwice,
+        Flags.VolcanoManorDiseaseOnce,
+        Flags.VolcanoManorDiseaseTwice,
         DiseaseIndicators.VolcanoManorDisease,
     )
     GetDiseaseLegacyDungeon(
         3,
         SurvivalEffects.LeyndellDisease,
         11, 0, 0, 0,  # LEYNDELL_ROYAL_CAPITAL (no disease in Ashen Capital)
-        SurvivalFlags.LeyndellDiseaseOnce,
-        SurvivalFlags.LeyndellDiseaseTwice,
+        Flags.LeyndellDiseaseOnce,
+        Flags.LeyndellDiseaseTwice,
         DiseaseIndicators.LeyndellDisease,
     )
     GetDiseaseLegacyDungeon(
         4,
         SurvivalEffects.SewersDisease,
         35, 0, 0, 0,  # SHUNNING_GROUNDS
-        SurvivalFlags.SewersDiseaseOnce,
-        SurvivalFlags.SewersDiseaseTwice,
+        Flags.SewersDiseaseOnce,
+        Flags.SewersDiseaseTwice,
         DiseaseIndicators.SewersDisease,
     )
     GetDiseaseLegacyDungeon(
         5,
         SurvivalEffects.HaligtreeDisease,
         15, 0, 0, 0,  # HALIGTREE
-        SurvivalFlags.HaligtreeDiseaseOnce,
-        SurvivalFlags.HaligtreeDiseaseTwice,
+        Flags.HaligtreeDiseaseOnce,
+        Flags.HaligtreeDiseaseTwice,
         DiseaseIndicators.HaligtreeDisease,
     )
     GetDiseaseLegacyDungeon(
         6,
         SurvivalEffects.FarumAzulaDisease,
         13, 0, 0, 0,  # CRUMBLING_FARUM_AZULA
-        SurvivalFlags.FarumAzulaDiseaseOnce,
-        SurvivalFlags.FarumAzulaDiseaseTwice,
+        Flags.FarumAzulaDiseaseOnce,
+        Flags.FarumAzulaDiseaseTwice,
         DiseaseIndicators.FarumAzulaDisease,
     )
     GetDiseaseLegacyDungeon(
         7,
         SurvivalEffects.MohgwynDisease,
         12, 5, 0, 0,  # MOHGWYN_PALACE
-        SurvivalFlags.MohgwynDiseaseOnce,
-        SurvivalFlags.MohgwynDiseaseTwice,
+        Flags.MohgwynDiseaseOnce,
+        Flags.MohgwynDiseaseTwice,
         DiseaseIndicators.MohgwynDisease,
     )
 
@@ -979,15 +995,15 @@ def Constructor():
     
     # Monitor possession of Smith's Hammers for recipe appearance.
     # region Smith's Hammer possession
-    MonitorSmithsHammerPossession(0, SmithsHammers.NoviceSmithsHammer, SurvivalFlags.HasNoviceSmithsHammer)
-    MonitorSmithsHammerPossession(1, SmithsHammers.ApprenticeSmithsHammer, SurvivalFlags.HasApprenticeSmithsHammer)
-    MonitorSmithsHammerPossession(2, SmithsHammers.JourneymanSmithsHammer, SurvivalFlags.HasJourneymanSmithsHammer)
-    MonitorSmithsHammerPossession(3, SmithsHammers.ExpertSmithsHammer, SurvivalFlags.HasExpertSmithsHammer)
-    MonitorSmithsHammerPossession(4, SmithsHammers.MasterSmithsHammer, SurvivalFlags.HasMasterSmithsHammer)
+    MonitorSmithsHammerPossession(0, SmithsHammers.NoviceSmithsHammer, Flags.HasNoviceSmithsHammer)
+    MonitorSmithsHammerPossession(1, SmithsHammers.ApprenticeSmithsHammer, Flags.HasApprenticeSmithsHammer)
+    MonitorSmithsHammerPossession(2, SmithsHammers.JourneymanSmithsHammer, Flags.HasJourneymanSmithsHammer)
+    MonitorSmithsHammerPossession(3, SmithsHammers.ExpertSmithsHammer, Flags.HasExpertSmithsHammer)
+    MonitorSmithsHammerPossession(4, SmithsHammers.MasterSmithsHammer, Flags.HasMasterSmithsHammer)
     # endregion
 
 
-@NeverRestart(SurvivalFlags.GrowingHunger)
+@NeverRestart(Flags.GrowingHunger)
 def GrowingHunger():
     """Hunger ticks up every 60 seconds."""
 
@@ -1074,11 +1090,11 @@ def GrowingHunger():
     Restart()
 
 
-@NeverRestart(SurvivalFlags.GrowingThirst)
+@NeverRestart(Flags.GrowingThirst)
 def GrowingThirst():
     """Thirst ticks up every 100 seconds."""
 
-    # Hunger cannot grow while Draught of the Undining is active (or hunger is at max).
+    # Thirst cannot grow while Draught of Silver Tears is active (or thirst is at max).
     IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.DraughtOfSilverTears)
     IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Thirst9)
     IfConditionTrue(0, 1)
@@ -1132,20 +1148,173 @@ def GrowingThirst():
     Restart()
 
 
-@NeverRestart(SurvivalFlags.ReduceThirstOnDeath)
-def ReduceThirstOnDeath():
-    """When the player dies while at maximum (health-draining) thirst, they go back to thirst level 8."""
-    IfPlayerHasSpecialEffect(1, SurvivalEffects.Thirst9)
-    IfHealthLessThanOrEqual(1, PLAYER, 0)
-    IfConditionTrue(0, 1)
+@NeverRestart(Flags.SaveHungerAfterDeath)
+def SaveHungerAfterDeath():
+    """Synchronizes hunger state across death using flags."""
 
-    # Reduce thirst.
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst9)
+    # First, if any hunger state flags are enabled, resolve them (apply effect and disable flag).
+    SkipLinesIfFlagOff(2, Flags.HasHunger1)
+    DisableFlag(Flags.HasHunger1)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger1)
+
+    SkipLinesIfFlagOff(2, Flags.HasHunger2)
+    DisableFlag(Flags.HasHunger2)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger2)
+
+    SkipLinesIfFlagOff(2, Flags.HasHunger3)
+    DisableFlag(Flags.HasHunger3)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger3)
+
+    SkipLinesIfFlagOff(2, Flags.HasHunger4)
+    DisableFlag(Flags.HasHunger4)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger4)
+
+    SkipLinesIfFlagOff(2, Flags.HasHunger5)
+    DisableFlag(Flags.HasHunger5)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger5)
+
+    SkipLinesIfFlagOff(2, Flags.HasHunger6)
+    DisableFlag(Flags.HasHunger6)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
+
+    SkipLinesIfFlagOff(2, Flags.HasHunger7)
+    DisableFlag(Flags.HasHunger7)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
+
+    SkipLinesIfFlagOff(2, Flags.HasHunger8)
+    DisableFlag(Flags.HasHunger8)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
+
+    SkipLinesIfFlagOff(2, Flags.HasHunger9)
+    DisableFlag(Flags.HasHunger9)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
+
+    SkipLinesIfFlagOff(2, Flags.HasHunger10)
+    DisableFlag(Flags.HasHunger10)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
+
+    SkipLinesIfFlagOff(2, Flags.HasHunger11)
+    DisableFlag(Flags.HasHunger11)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
+
+    SkipLinesIfFlagOff(2, Flags.HasHunger12)
+    DisableFlag(Flags.HasHunger12)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
+
+    SkipLinesIfFlagOff(2, Flags.HasHunger13)
+    DisableFlag(Flags.HasHunger13)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
+
+    SkipLinesIfFlagOff(2, Flags.HasHunger14)
+    DisableFlag(Flags.HasHunger14)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
+
+    SkipLinesIfFlagOff(2, Flags.HasHunger15)
+    DisableFlag(Flags.HasHunger15)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
+
+    # Now, wait for player to die, then enable the appropriate flag for this event to work on next load.
+    IfHealthLessThanOrEqual(0, PLAYER, 0)
+
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Hunger1)
+    EnableFlag(Flags.HasHunger1)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Hunger2)
+    EnableFlag(Flags.HasHunger2)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Hunger3)
+    EnableFlag(Flags.HasHunger3)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Hunger4)
+    EnableFlag(Flags.HasHunger4)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Hunger5)
+    EnableFlag(Flags.HasHunger5)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Hunger6)
+    EnableFlag(Flags.HasHunger6)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Hunger7)
+    EnableFlag(Flags.HasHunger7)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Hunger8)
+    EnableFlag(Flags.HasHunger8)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Hunger9)
+    EnableFlag(Flags.HasHunger9)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Hunger10)
+    EnableFlag(Flags.HasHunger10)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Hunger11)
+    EnableFlag(Flags.HasHunger11)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Hunger12)
+    EnableFlag(Flags.HasHunger12)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Hunger13)
+    EnableFlag(Flags.HasHunger13)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Hunger14)
+    EnableFlag(Flags.HasHunger14)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Hunger15)
+    EnableFlag(Flags.HasHunger15)
+    return
+
+
+@NeverRestart(Flags.SaveThirstAfterDeath)
+def SaveThirstAfterDeath():
+    """Synchronizes thirst state across death using flags."""
+
+    # First, if any thirst state flags are enabled, resolve them (apply effect and disable flag).
+    SkipLinesIfFlagOff(2, Flags.HasThirst1)
+    DisableFlag(Flags.HasThirst1)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Thirst1)
+
+    SkipLinesIfFlagOff(2, Flags.HasThirst2)
+    DisableFlag(Flags.HasThirst2)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Thirst2)
+
+    SkipLinesIfFlagOff(2, Flags.HasThirst3)
+    DisableFlag(Flags.HasThirst3)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
+
+    SkipLinesIfFlagOff(2, Flags.HasThirst4)
+    DisableFlag(Flags.HasThirst4)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
+
+    SkipLinesIfFlagOff(2, Flags.HasThirst5)
+    DisableFlag(Flags.HasThirst5)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
+
+    SkipLinesIfFlagOff(2, Flags.HasThirst6)
+    DisableFlag(Flags.HasThirst6)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
+
+    SkipLinesIfFlagOff(2, Flags.HasThirst7)
+    DisableFlag(Flags.HasThirst7)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
+
+    SkipLinesIfFlagOff(2, Flags.HasThirst8)
+    DisableFlag(Flags.HasThirst8)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
-    # No point restarting.
+
+    SkipLinesIfFlagOff(2, Flags.HasThirst9)
+    DisableFlag(Flags.HasThirst9)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Thirst9)
+
+    # Now, wait for player to die, then enable the appropriate flag for this event to work on next load.
+    IfHealthLessThanOrEqual(0, PLAYER, 0)
+
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Thirst1)
+    EnableFlag(Flags.HasThirst1)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Thirst2)
+    EnableFlag(Flags.HasThirst2)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Thirst3)
+    EnableFlag(Flags.HasThirst3)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Thirst4)
+    EnableFlag(Flags.HasThirst4)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Thirst5)
+    EnableFlag(Flags.HasThirst5)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Thirst6)
+    EnableFlag(Flags.HasThirst6)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Thirst7)
+    EnableFlag(Flags.HasThirst7)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Thirst8)
+    EnableFlag(Flags.HasThirst8)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Thirst9)
+    EnableFlag(Flags.HasThirst8)  # NOTE: Thirst 9 on death leads to thirst 8 on reload.
+    return
 
 
-@NeverRestart(SurvivalFlags.RelieveHunger_1)
+@NeverRestart(Flags.RelieveHunger_1)
 def RelieveHunger_1():
     """Monitors for numerous different "food eaten" special effects and reduces hunger level by 1."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.BloodBroth)
@@ -1231,7 +1400,7 @@ def RelieveHunger_1():
     Restart()
 
 
-@NeverRestart(SurvivalFlags.RelieveHunger_2)
+@NeverRestart(Flags.RelieveHunger_2)
 def RelieveHunger_2():
     """Monitors for numerous different "food eaten" special effects and reduces hunger level by 2."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.BoneBroth)
@@ -1322,7 +1491,7 @@ def RelieveHunger_2():
     Restart()
 
 
-@NeverRestart(SurvivalFlags.RelieveHunger_3)
+@NeverRestart(Flags.RelieveHunger_3)
 def RelieveHunger_3():
     """Monitors for numerous different "food eaten" special effects and reduces hunger level by 3."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.RawSteak)
@@ -1410,7 +1579,7 @@ def RelieveHunger_3():
     Restart()
 
 
-@NeverRestart(SurvivalFlags.RelieveHunger_4)
+@NeverRestart(Flags.RelieveHunger_4)
 def RelieveHunger_4():
     """Monitors for numerous different "food eaten" special effects and reduces hunger level by 4."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.GreatBoneBroth)
@@ -1420,7 +1589,7 @@ def RelieveHunger_4():
     IfPlayerHasSpecialEffect(-2, SurvivalEffects.GreatBoneBroth)
     IfPlayerHasSpecialEffect(-2, SurvivalEffects.BerryMedley3)
     IfPlayerHasSpecialEffect(-2, SurvivalEffects.MeltedMushroomStew)
-    IfConditionFalse(0, -2)
+    IfConditionTrue(0, -2)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger1)
     CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger1)  # no replacement effect
@@ -1497,7 +1666,7 @@ def RelieveHunger_4():
     Restart()
 
 
-@NeverRestart(SurvivalFlags.RelieveHunger_5)
+@NeverRestart(Flags.RelieveHunger_5)
 def RelieveHunger_5():
     """Monitors for numerous different "food eaten" special effects and reduces hunger level by 5."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.SearedSteak)
@@ -1579,7 +1748,7 @@ def RelieveHunger_5():
     Restart()
 
 
-@NeverRestart(SurvivalFlags.RelieveHunger_6)
+@NeverRestart(Flags.RelieveHunger_6)
 def RelieveHunger_6():
     """Monitors for numerous different "food eaten" special effects and reduces hunger level by 6."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.RawLiverSteak)
@@ -1660,7 +1829,7 @@ def RelieveHunger_6():
     Restart()
 
 
-@NeverRestart(SurvivalFlags.RelieveHunger_8)
+@NeverRestart(Flags.RelieveHunger_8)
 def RelieveHunger_8():
     """Monitors for numerous different "food eaten" special effects and reduces hunger level by 8."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.SearedLiverSteak)
@@ -1741,7 +1910,7 @@ def RelieveHunger_8():
     Restart()
 
 
-@NeverRestart(SurvivalFlags.RelieveThirst_1)
+@NeverRestart(Flags.RelieveThirst_1)
 def RelieveThirst_1():
     """Monitors for numerous different "drink consumed" special effects and reduces thirst level by 1."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.BerryMedley1)
@@ -1809,7 +1978,7 @@ def RelieveThirst_1():
     Restart()
 
 
-@NeverRestart(SurvivalFlags.RelieveThirst_2)
+@NeverRestart(Flags.RelieveThirst_2)
 def RelieveThirst_2():
     """Monitors for numerous different "drink consumed" special effects and reduces thirst level by 2."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.BerryMedley2)
@@ -1866,7 +2035,7 @@ def RelieveThirst_2():
     Restart()
 
 
-@NeverRestart(SurvivalFlags.RelieveThirst_3)
+@NeverRestart(Flags.RelieveThirst_3)
 def RelieveThirst_3():
     """Monitors for numerous different "drink consumed" special effects and reduces thirst level by 3."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.BoneBroth)
@@ -1924,7 +2093,7 @@ def RelieveThirst_3():
     Restart()
 
 
-@NeverRestart(SurvivalFlags.RelieveThirst_4)
+@NeverRestart(Flags.RelieveThirst_4)
 def RelieveThirst_4():
     """Monitors for numerous different "drink consumed" special effects and reduces thirst level by 4."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.BloodBroth)
@@ -1977,7 +2146,7 @@ def RelieveThirst_4():
     Restart()
 
 
-@NeverRestart(SurvivalFlags.RelieveThirst_5)
+@NeverRestart(Flags.RelieveThirst_5)
 def RelieveThirst_5():
     """Monitors for numerous different "drink consumed" special effects and reduces thirst level by 5."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.GreatBoneBroth)
@@ -2029,7 +2198,7 @@ def RelieveThirst_5():
     Restart()
 
 
-@NeverRestart(SurvivalFlags.RelieveThirst_6)
+@NeverRestart(Flags.RelieveThirst_6)
 def RelieveThirst_6():
     """Monitors for numerous different "drink consumed" special effects and reduces thirst level by 6."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.DraughtOfSilverTears)
@@ -2080,7 +2249,7 @@ def RelieveThirst_6():
     Restart()
 
 
-@NeverRestart(SurvivalFlags.IncreaseThirst_1)
+@NeverRestart(Flags.IncreaseThirst_1)
 def IncreaseThirst_1():
     """Various dried/cured meats make you MORE thirsty."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.ImmunizingCuredMeat)
@@ -2158,7 +2327,7 @@ def IncreaseThirst_1():
     Restart()
 
 
-@NeverRestart(SurvivalFlags.IncreaseThirst_3)
+@NeverRestart(Flags.IncreaseThirst_3)
 def IncreaseThirst_3():
     """Jar Brittle makes you MORE thirsty."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.JarBrittle)
@@ -2214,21 +2383,21 @@ def IncreaseThirst_3():
     Restart()
 
 
-@NeverRestart(SurvivalFlags.CheckMildHeatArea)
+@NeverRestart(Flags.CheckMildHeatArea)
 def CheckMildHeatArea():
     """Checks if mild heat should be applied to the player due to current time and place."""
 
     # --- CAELID / ALTUS / LEYNDELL in MIDDLE OF DAY ---
     IfTimeOfDay(1, (10, 0, 0), (17, 0, 0))
-    IfFlagOn(-1, SurvivalFlags.PlayerInCaelid)
-    IfFlagOn(-1, SurvivalFlags.PlayerInAltus)
+    IfFlagOn(-1, Flags.PlayerInCaelid)
+    IfFlagOn(-1, Flags.PlayerInAltus)
     IfInsideMap(-1, LEYNDELL_ROYAL_CAPITAL)
     IfInsideMap(-1, LEYNDELL_ASHEN_CAPITAL)
     IfConditionTrue(1, -1)
 
     # --- MT. GELMIR at NIGHT ---
     IfTimeOfDay(2, (18, 0, 0), (8, 0, 0))
-    IfFlagOn(2, SurvivalFlags.PlayerInMtGelmir)
+    IfFlagOn(2, Flags.PlayerInMtGelmir)
 
     # -3: Player is in right time and place.
     IfConditionTrue(-3, 1)
@@ -2243,20 +2412,20 @@ def CheckMildHeatArea():
     # MAIN
     IfConditionTrue(0, 3)
 
-    EnableFlag(SurvivalFlags.ShowMildHeatWarning)
+    EnableFlag(Flags.ShowMildHeatWarning)
     AddSpecialEffect(PLAYER, SurvivalEffects.Heat_Mild)
     Wait(3.0)
-    DisableFlag(SurvivalFlags.ShowMildHeatWarning)
+    DisableFlag(Flags.ShowMildHeatWarning)
     return RESTART
 
 
-@NeverRestart(SurvivalFlags.CheckModerateHeatArea)
+@NeverRestart(Flags.CheckModerateHeatArea)
 def CheckModerateHeatArea():
     """Checks if moderate heat should be applied to the player due to current time and place."""
 
     # --- MT.GELMIR at DAY ---
     IfTimeOfDay(1, (8, 0, 0), (18, 0, 0))
-    IfFlagOn(1, SurvivalFlags.PlayerInMtGelmir)
+    IfFlagOn(1, Flags.PlayerInMtGelmir)
 
     # --- VOLCANO MANOR at NIGHT ---
     IfTimeOfDay(2, (18, 0, 0), (8, 0, 0))
@@ -2275,18 +2444,18 @@ def CheckModerateHeatArea():
     # MAIN
     IfConditionTrue(0, 3)
 
-    EnableFlag(SurvivalFlags.ShowModerateHeatWarning)
+    EnableFlag(Flags.ShowModerateHeatWarning)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.HeatProtection_Mild)
     AddSpecialEffect(PLAYER, SurvivalEffects.Heat_Mild)
     SkipLines(1)
     AddSpecialEffect(PLAYER, SurvivalEffects.Heat_Moderate)
     Wait(3.0)
-    DisableFlag(SurvivalFlags.ShowModerateHeatWarning)
+    DisableFlag(Flags.ShowModerateHeatWarning)
     return RESTART
 
 
-@NeverRestart(SurvivalFlags.CheckSevereHeatArea)
+@NeverRestart(Flags.CheckSevereHeatArea)
 def CheckSevereHeatArea():
     """Checks if severe heat should be applied to the player due to current time and place."""
 
@@ -2309,7 +2478,7 @@ def CheckSevereHeatArea():
     # MAIN
     IfConditionTrue(0, 3)
 
-    EnableFlag(SurvivalFlags.ShowSevereHeatWarning)
+    EnableFlag(Flags.ShowSevereHeatWarning)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.HeatProtection_Moderate)
     AddSpecialEffect(PLAYER, SurvivalEffects.Heat_Mild)
@@ -2320,17 +2489,17 @@ def CheckSevereHeatArea():
     AddSpecialEffect(PLAYER, SurvivalEffects.Heat_Severe)
 
     Wait(3.0)
-    DisableFlag(SurvivalFlags.ShowSevereHeatWarning)
+    DisableFlag(Flags.ShowSevereHeatWarning)
     return RESTART
 
 
-@NeverRestart(SurvivalFlags.CheckMildColdArea)
+@NeverRestart(Flags.CheckMildColdArea)
 def CheckMildColdArea():
 
     # --- NIGHT ---
     IfTimeOfDay(1, (18, 0, 0), (8, 0, 0))
 
-    IfFlagOn(-1, SurvivalFlags.PlayerInLiurnia)
+    IfFlagOn(-1, Flags.PlayerInLiurnia)
     IfInsideMap(-1, RAYA_LUCARIA)
 
     IfConditionTrue(1, -1)
@@ -2355,19 +2524,19 @@ def CheckMildColdArea():
     # MAIN
     IfConditionTrue(0, 3)
 
-    EnableFlag(SurvivalFlags.ShowMildColdWarning)
+    EnableFlag(Flags.ShowMildColdWarning)
 
     AddSpecialEffect(PLAYER, SurvivalEffects.Cold_Mild)
     Wait(3.0)
-    DisableFlag(SurvivalFlags.ShowMildColdWarning)
+    DisableFlag(Flags.ShowMildColdWarning)
     return RESTART
 
 
-@NeverRestart(SurvivalFlags.CheckModerateColdArea)
+@NeverRestart(Flags.CheckModerateColdArea)
 def CheckModerateColdArea():
     # --- MOUNTAINTOPS in DAY ---
     IfTimeOfDay(1, (8, 0, 0), (18, 0, 0))
-    IfFlagOn(1, SurvivalFlags.PlayerInMountaintops)
+    IfFlagOn(1, Flags.PlayerInMountaintops)
 
     # --- AINSEL RIVER / DEEPROOT DEPTHS at ANY TIME ---
 
@@ -2388,22 +2557,22 @@ def CheckModerateColdArea():
     # MAIN
     IfConditionTrue(0, 3)
 
-    EnableFlag(SurvivalFlags.ShowModerateColdWarning)
+    EnableFlag(Flags.ShowModerateColdWarning)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.ColdProtection_Mild)
     AddSpecialEffect(PLAYER, SurvivalEffects.Cold_Mild)
     SkipLines(1)
     AddSpecialEffect(PLAYER, SurvivalEffects.Cold_Moderate)
     Wait(3.0)
-    DisableFlag(SurvivalFlags.ShowModerateColdWarning)
+    DisableFlag(Flags.ShowModerateColdWarning)
     return RESTART
 
 
-@NeverRestart(SurvivalFlags.CheckSevereColdArea)
+@NeverRestart(Flags.CheckSevereColdArea)
 def CheckSevereColdArea():
     # --- MOUNTAINTOPS / FARUM AZULA at NIGHT ---
     IfTimeOfDay(1, (18, 0, 0), (8, 0, 0))
-    IfFlagOn(-1, SurvivalFlags.PlayerInMountaintops)
+    IfFlagOn(-1, Flags.PlayerInMountaintops)
     IfInsideMap(-1, CRUMBLING_FARUM_AZULA)
     IfConditionTrue(1, -1)
 
@@ -2421,7 +2590,7 @@ def CheckSevereColdArea():
     # MAIN
     IfConditionTrue(0, 3)
 
-    EnableFlag(SurvivalFlags.ShowSevereColdWarning)
+    EnableFlag(Flags.ShowSevereColdWarning)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.ColdProtection_Moderate)
     AddSpecialEffect(PLAYER, SurvivalEffects.Cold_Mild)
@@ -2431,59 +2600,60 @@ def CheckSevereColdArea():
     SkipLines(1)
     AddSpecialEffect(PLAYER, SurvivalEffects.Cold_Severe)
     Wait(3.0)
-    DisableFlag(SurvivalFlags.ShowSevereColdWarning)
+    DisableFlag(Flags.ShowSevereColdWarning)
     return RESTART
 
 
-@NeverRestart(SurvivalFlags.MildHeatWarning)
+@NeverRestart(Flags.MildHeatWarning)
 def MildHeatWarning():
-    IfFlagOn(0, SurvivalFlags.ShowMildHeatWarning)
+    Wait(5.0)
+    IfFlagOn(0, Flags.ShowMildHeatWarning)
     DisplayDialog(SurvivalText.MildHeatWarning)
-    Wait(60.0)
+    Wait(55.0)
     return RESTART
 
 
-@NeverRestart(SurvivalFlags.ModerateHeatWarning)
+@NeverRestart(Flags.ModerateHeatWarning)
 def ModerateHeatWarning():
-    IfFlagOn(0, SurvivalFlags.ShowModerateHeatWarning)
+    IfFlagOn(0, Flags.ShowModerateHeatWarning)
     DisplayDialog(SurvivalText.ModerateHeatWarning)
     Wait(60.0)
     return RESTART
 
 
-@NeverRestart(SurvivalFlags.SevereHeatWarning)
+@NeverRestart(Flags.SevereHeatWarning)
 def SevereHeatWarning():
-    IfFlagOn(0, SurvivalFlags.ShowSevereHeatWarning)
+    IfFlagOn(0, Flags.ShowSevereHeatWarning)
     DisplayDialog(SurvivalText.SevereHeatWarning)
     Wait(60.0)
     return RESTART
 
 
-@NeverRestart(SurvivalFlags.MildColdWarning)
+@NeverRestart(Flags.MildColdWarning)
 def MildColdWarning():
-    IfFlagOn(0, SurvivalFlags.ShowMildColdWarning)
+    IfFlagOn(0, Flags.ShowMildColdWarning)
     DisplayDialog(SurvivalText.MildColdWarning)
     Wait(60.0)
     return RESTART
 
 
-@NeverRestart(SurvivalFlags.ModerateColdWarning)
+@NeverRestart(Flags.ModerateColdWarning)
 def ModerateColdWarning():
-    IfFlagOn(0, SurvivalFlags.ShowModerateColdWarning)
+    IfFlagOn(0, Flags.ShowModerateColdWarning)
     DisplayDialog(SurvivalText.ModerateColdWarning)
     Wait(60.0)
     return RESTART
 
 
-@NeverRestart(SurvivalFlags.SevereColdWarning)
+@NeverRestart(Flags.SevereColdWarning)
 def SevereColdWarning():
-    IfFlagOn(0, SurvivalFlags.ShowSevereColdWarning)
+    IfFlagOn(0, Flags.ShowSevereColdWarning)
     DisplayDialog(SurvivalText.SevereColdWarning)
     Wait(60.0)
     return RESTART
 
 
-@NeverRestart(SurvivalFlags.GetDiseaseOverworld)
+@NeverRestart(Flags.GetDiseaseOverworld)
 def GetDiseaseOverworld(
     _, disease_effect: int, location_flag: Flag, had_once_flag: Flag, had_twice_flag: Flag, item_lot: int
 ):
@@ -2492,24 +2662,24 @@ def GetDiseaseOverworld(
     IfFlagOn(1, location_flag)
     IfAttackedWithDamageType(1, PLAYER, -1, DamageType.Unspecified)
     IfPlayerDoesNotHaveSpecialEffect(1, disease_effect)
-    IfFlagOff(1, SurvivalFlags.DiseaseRollLock)
+    IfFlagOff(1, Flags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
 
-    EnableFlag(SurvivalFlags.DiseaseRollLock)
-    DisableFlagRange((SurvivalFlags.DiseaseRollFirst, SurvivalFlags.DiseaseRollLast))
-    EnableRandomFlagInRange((SurvivalFlags.DiseaseRollFirst, SurvivalFlags.DiseaseRollLast))
+    EnableFlag(Flags.DiseaseRollLock)
+    DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
-    IfFlagOn(-2, SurvivalFlags.DiseaseRollFirst)
+    IfFlagOn(-2, Flags.DiseaseRollFirst)
     IfFlagOff(2, had_once_flag)
-    IfFlagOn(2, SurvivalFlags.DiseaseRollSecond)
+    IfFlagOn(2, Flags.DiseaseRollSecond)
     IfConditionTrue(-2, 2)
 
     SkipLinesIfConditionTrue(2, -2)
-    DisableFlag(SurvivalFlags.DiseaseRollLock)
+    DisableFlag(Flags.DiseaseRollLock)
     Restart()  # no proc, try again next time
 
-    DisableFlag(SurvivalFlags.DiseaseRollLock)
+    DisableFlag(Flags.DiseaseRollLock)
 
     AddSpecialEffect(PLAYER, disease_effect)
     AwardItemLot(item_lot)  # disease indicator
@@ -2520,7 +2690,7 @@ def GetDiseaseOverworld(
     EnableFlag(had_twice_flag)
 
 
-@NeverRestart(SurvivalFlags.GetDiseaseLegacyDungeon)
+@NeverRestart(Flags.GetDiseaseLegacyDungeon)
 def GetDiseaseLegacyDungeon(
     _,
     disease_effect: int,
@@ -2538,24 +2708,24 @@ def GetDiseaseLegacyDungeon(
     IfInsideMap(1, (a, b, c, d))
     IfAttackedWithDamageType(1, PLAYER, -1, DamageType.Unspecified)
     IfPlayerDoesNotHaveSpecialEffect(1, disease_effect)
-    IfFlagOff(1, SurvivalFlags.DiseaseRollLock)
+    IfFlagOff(1, Flags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
 
-    EnableFlag(SurvivalFlags.DiseaseRollLock)
-    DisableFlagRange((SurvivalFlags.DiseaseRollFirst, SurvivalFlags.DiseaseRollLast))
-    EnableRandomFlagInRange((SurvivalFlags.DiseaseRollFirst, SurvivalFlags.DiseaseRollLast))
+    EnableFlag(Flags.DiseaseRollLock)
+    DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
-    IfFlagOn(-2, SurvivalFlags.DiseaseRollFirst)
+    IfFlagOn(-2, Flags.DiseaseRollFirst)
     IfFlagOff(2, had_once_flag)
-    IfFlagOn(2, SurvivalFlags.DiseaseRollSecond)
+    IfFlagOn(2, Flags.DiseaseRollSecond)
     IfConditionTrue(-2, 2)
 
     SkipLinesIfConditionTrue(2, -2)
-    DisableFlag(SurvivalFlags.DiseaseRollLock)
+    DisableFlag(Flags.DiseaseRollLock)
     Restart()  # no proc, try again next time
 
-    DisableFlag(SurvivalFlags.DiseaseRollLock)
+    DisableFlag(Flags.DiseaseRollLock)
 
     AddSpecialEffect(PLAYER, disease_effect)
     AwardItemLot(item_lot)  # disease indicator
@@ -2569,262 +2739,262 @@ def GetDiseaseLegacyDungeon(
 # --- SPECIFIC DISEASE EVENTS ---
 
 
-@NeverRestart(SurvivalFlags.GetDiseaseSiofra)
+@NeverRestart(Flags.GetDiseaseSiofra)
 def GetDiseaseSiofra():
-    EndIfFlagOn(SurvivalFlags.SiofraDiseaseTwice)
+    EndIfFlagOn(Flags.SiofraDiseaseTwice)
 
     IfInsideMap(-1, SIOFRA_RIVER)
     IfInsideMap(-1, SIOFRA_RIVER_START)
     IfConditionTrue(1, -1)
     IfAttackedWithDamageType(1, PLAYER, -1, DamageType.Unspecified)
     IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.SiofraDisease)
-    IfFlagOff(1, SurvivalFlags.DiseaseRollLock)
+    IfFlagOff(1, Flags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
 
-    EnableFlag(SurvivalFlags.DiseaseRollLock)
-    DisableFlagRange((SurvivalFlags.DiseaseRollFirst, SurvivalFlags.DiseaseRollLast))
-    EnableRandomFlagInRange((SurvivalFlags.DiseaseRollFirst, SurvivalFlags.DiseaseRollLast))
+    EnableFlag(Flags.DiseaseRollLock)
+    DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
-    IfFlagOn(-2, SurvivalFlags.DiseaseRollFirst)
-    IfFlagOff(2, SurvivalFlags.SiofraDiseaseOnce)
-    IfFlagOn(2, SurvivalFlags.DiseaseRollSecond)
+    IfFlagOn(-2, Flags.DiseaseRollFirst)
+    IfFlagOff(2, Flags.SiofraDiseaseOnce)
+    IfFlagOn(2, Flags.DiseaseRollSecond)
     IfConditionTrue(-2, 2)
 
     SkipLinesIfConditionTrue(2, -2)
-    DisableFlag(SurvivalFlags.DiseaseRollLock)
+    DisableFlag(Flags.DiseaseRollLock)
     Restart()  # no proc, try again next time
 
-    DisableFlag(SurvivalFlags.DiseaseRollLock)
+    DisableFlag(Flags.DiseaseRollLock)
 
     AddSpecialEffect(PLAYER, SurvivalEffects.SiofraDisease)
     AwardItemLot(DiseaseIndicators.SiofraDisease)
 
-    SkipLinesIfFlagOn(2, SurvivalFlags.SiofraDiseaseOnce)
-    EnableFlag(SurvivalFlags.SiofraDiseaseOnce)
+    SkipLinesIfFlagOn(2, Flags.SiofraDiseaseOnce)
+    EnableFlag(Flags.SiofraDiseaseOnce)
     End()
-    EnableFlag(SurvivalFlags.SiofraDiseaseTwice)
+    EnableFlag(Flags.SiofraDiseaseTwice)
 
 
-@NeverRestart(SurvivalFlags.GetDiseaseAinsel)
+@NeverRestart(Flags.GetDiseaseAinsel)
 def GetDiseaseAinsel():
-    EndIfFlagOn(SurvivalFlags.AinselDiseaseTwice)
+    EndIfFlagOn(Flags.AinselDiseaseTwice)
 
     IfInsideMap(1, AINSEL_RIVER)
     IfAttackedWithDamageType(1, PLAYER, -1, DamageType.Unspecified)
     IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.AinselDisease)
-    IfFlagOff(1, SurvivalFlags.DiseaseRollLock)
+    IfFlagOff(1, Flags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
 
-    EnableFlag(SurvivalFlags.DiseaseRollLock)
-    DisableFlagRange((SurvivalFlags.DiseaseRollFirst, SurvivalFlags.DiseaseRollLast))
-    EnableRandomFlagInRange((SurvivalFlags.DiseaseRollFirst, SurvivalFlags.DiseaseRollLast))
+    EnableFlag(Flags.DiseaseRollLock)
+    DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
-    IfFlagOn(-2, SurvivalFlags.DiseaseRollFirst)
-    IfFlagOff(2, SurvivalFlags.AinselDiseaseOnce)
-    IfFlagOn(2, SurvivalFlags.DiseaseRollSecond)
+    IfFlagOn(-2, Flags.DiseaseRollFirst)
+    IfFlagOff(2, Flags.AinselDiseaseOnce)
+    IfFlagOn(2, Flags.DiseaseRollSecond)
     IfConditionTrue(-2, 2)
 
     SkipLinesIfConditionTrue(2, -2)
-    DisableFlag(SurvivalFlags.DiseaseRollLock)
+    DisableFlag(Flags.DiseaseRollLock)
     Restart()  # no proc, try again next time
 
-    DisableFlag(SurvivalFlags.DiseaseRollLock)
+    DisableFlag(Flags.DiseaseRollLock)
 
     AddSpecialEffect(PLAYER, SurvivalEffects.AinselDisease)
     AwardItemLot(DiseaseIndicators.AinselDisease)
 
-    SkipLinesIfFlagOn(2, SurvivalFlags.AinselDiseaseOnce)
-    EnableFlag(SurvivalFlags.AinselDiseaseOnce)
+    SkipLinesIfFlagOn(2, Flags.AinselDiseaseOnce)
+    EnableFlag(Flags.AinselDiseaseOnce)
     End()
-    EnableFlag(SurvivalFlags.AinselDiseaseTwice)
+    EnableFlag(Flags.AinselDiseaseTwice)
 
 
-@NeverRestart(SurvivalFlags.GetDiseaseDeeprootAstel)
+@NeverRestart(Flags.GetDiseaseDeeprootAstel)
 def GetDiseaseDeeprootAstel():
-    EndIfFlagOn(SurvivalFlags.DeeprootDiseaseTwice)
+    EndIfFlagOn(Flags.DeeprootDiseaseTwice)
 
     IfInsideMap(-1, DEEPROOT_DEPTHS)
     IfInsideMap(-1, ASTEL_ARENA)
     IfConditionTrue(1, -1)
     IfAttackedWithDamageType(1, PLAYER, -1, DamageType.Unspecified)
     IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.DeeprootDisease)
-    IfFlagOff(1, SurvivalFlags.DiseaseRollLock)
+    IfFlagOff(1, Flags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
 
-    EnableFlag(SurvivalFlags.DiseaseRollLock)
-    DisableFlagRange((SurvivalFlags.DiseaseRollFirst, SurvivalFlags.DiseaseRollLast))
-    EnableRandomFlagInRange((SurvivalFlags.DiseaseRollFirst, SurvivalFlags.DiseaseRollLast))
+    EnableFlag(Flags.DiseaseRollLock)
+    DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
-    IfFlagOn(-2, SurvivalFlags.DiseaseRollFirst)
-    IfFlagOff(2, SurvivalFlags.DeeprootDiseaseOnce)
-    IfFlagOn(2, SurvivalFlags.DiseaseRollSecond)
+    IfFlagOn(-2, Flags.DiseaseRollFirst)
+    IfFlagOff(2, Flags.DeeprootDiseaseOnce)
+    IfFlagOn(2, Flags.DiseaseRollSecond)
     IfConditionTrue(-2, 2)
 
     SkipLinesIfConditionTrue(2, -2)
-    DisableFlag(SurvivalFlags.DiseaseRollLock)
+    DisableFlag(Flags.DiseaseRollLock)
     Restart()  # no proc, try again next time
 
-    DisableFlag(SurvivalFlags.DiseaseRollLock)
+    DisableFlag(Flags.DiseaseRollLock)
 
     AddSpecialEffect(PLAYER, SurvivalEffects.DeeprootDisease)
     AwardItemLot(DiseaseIndicators.DeeprootDisease)
 
-    SkipLinesIfFlagOn(2, SurvivalFlags.DeeprootDiseaseOnce)
-    EnableFlag(SurvivalFlags.DeeprootDiseaseOnce)
+    SkipLinesIfFlagOn(2, Flags.DeeprootDiseaseOnce)
+    EnableFlag(Flags.DeeprootDiseaseOnce)
     End()
-    EnableFlag(SurvivalFlags.DeeprootDiseaseTwice)
+    EnableFlag(Flags.DeeprootDiseaseTwice)
 
 
-@NeverRestart(SurvivalFlags.GetDiseaseRadahn)
+@NeverRestart(Flags.GetDiseaseRadahn)
 def GetDiseaseRadahn():
     """Only afflicted by Radahn himself."""
-    EndIfFlagOn(SurvivalFlags.RadahnDiseaseTwice)
+    EndIfFlagOn(Flags.RadahnDiseaseTwice)
 
     IfAttackedWithDamageType(1, PLAYER, VanillaCharacters.Radahn, DamageType.Unspecified)
     IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.RadahnDisease)
-    IfFlagOff(1, SurvivalFlags.DiseaseRollLock)
+    IfFlagOff(1, Flags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
 
-    EnableFlag(SurvivalFlags.DiseaseRollLock)
-    DisableFlagRange((SurvivalFlags.DiseaseRollFirst, SurvivalFlags.DiseaseRollLast))
-    EnableRandomFlagInRange((SurvivalFlags.DiseaseRollFirst, SurvivalFlags.DiseaseRollLast))
+    EnableFlag(Flags.DiseaseRollLock)
+    DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
-    IfFlagOn(-2, SurvivalFlags.DiseaseRollFirst)
-    IfFlagOff(2, SurvivalFlags.RadahnDiseaseOnce)
-    IfFlagOn(2, SurvivalFlags.DiseaseRollSecond)
+    IfFlagOn(-2, Flags.DiseaseRollFirst)
+    IfFlagOff(2, Flags.RadahnDiseaseOnce)
+    IfFlagOn(2, Flags.DiseaseRollSecond)
     IfConditionTrue(-2, 2)
 
     SkipLinesIfConditionTrue(2, -2)
-    DisableFlag(SurvivalFlags.DiseaseRollLock)
+    DisableFlag(Flags.DiseaseRollLock)
     Restart()  # no proc, try again next time
 
-    DisableFlag(SurvivalFlags.DiseaseRollLock)
+    DisableFlag(Flags.DiseaseRollLock)
 
     AddSpecialEffect(PLAYER, SurvivalEffects.RadahnDisease)
     AwardItemLot(DiseaseIndicators.RadahnDisease)
 
-    SkipLinesIfFlagOn(2, SurvivalFlags.RadahnDiseaseOnce)
-    EnableFlag(SurvivalFlags.RadahnDiseaseOnce)
+    SkipLinesIfFlagOn(2, Flags.RadahnDiseaseOnce)
+    EnableFlag(Flags.RadahnDiseaseOnce)
     End()
-    EnableFlag(SurvivalFlags.RadahnDiseaseTwice)
+    EnableFlag(Flags.RadahnDiseaseTwice)
 
 
 # --- GENERIC DUNGEON DISEASES ---
 
 
-@NeverRestart(SurvivalFlags.GetDiseaseCatacombs)
+@NeverRestart(Flags.GetDiseaseCatacombs)
 def GetDiseaseCatacombs():
-    EndIfFlagOn(SurvivalFlags.CatacombsDiseaseTwice)
+    EndIfFlagOn(Flags.CatacombsDiseaseTwice)
 
     IfInsideMap(1, (30, 255, 255, 255))  # ANY Catacombs
     IfAttackedWithDamageType(1, PLAYER, -1, DamageType.Unspecified)
     IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.CatacombsDisease)
-    IfFlagOff(1, SurvivalFlags.DiseaseRollLock)
+    IfFlagOff(1, Flags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
 
-    EnableFlag(SurvivalFlags.DiseaseRollLock)
-    DisableFlagRange((SurvivalFlags.DiseaseRollFirst, SurvivalFlags.DiseaseRollLast))
-    EnableRandomFlagInRange((SurvivalFlags.DiseaseRollFirst, SurvivalFlags.DiseaseRollLast))
+    EnableFlag(Flags.DiseaseRollLock)
+    DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
-    IfFlagOn(-2, SurvivalFlags.DiseaseRollFirst)
-    IfFlagOff(2, SurvivalFlags.CatacombsDiseaseOnce)
-    IfFlagOn(2, SurvivalFlags.DiseaseRollSecond)
+    IfFlagOn(-2, Flags.DiseaseRollFirst)
+    IfFlagOff(2, Flags.CatacombsDiseaseOnce)
+    IfFlagOn(2, Flags.DiseaseRollSecond)
     IfConditionTrue(-2, 2)
 
     SkipLinesIfConditionTrue(2, -2)
-    DisableFlag(SurvivalFlags.DiseaseRollLock)
+    DisableFlag(Flags.DiseaseRollLock)
     Restart()  # no proc, try again next time
 
-    DisableFlag(SurvivalFlags.DiseaseRollLock)
+    DisableFlag(Flags.DiseaseRollLock)
 
     AddSpecialEffect(PLAYER, SurvivalEffects.CatacombsDisease)
     AwardItemLot(DiseaseIndicators.CatacombsDisease)
 
-    SkipLinesIfFlagOn(2, SurvivalFlags.CatacombsDiseaseOnce)
-    EnableFlag(SurvivalFlags.CatacombsDiseaseOnce)
+    SkipLinesIfFlagOn(2, Flags.CatacombsDiseaseOnce)
+    EnableFlag(Flags.CatacombsDiseaseOnce)
     End()
-    EnableFlag(SurvivalFlags.CatacombsDiseaseTwice)
+    EnableFlag(Flags.CatacombsDiseaseTwice)
 
 
-@NeverRestart(SurvivalFlags.GetDiseaseCaves)
+@NeverRestart(Flags.GetDiseaseCaves)
 def GetDiseaseCaves():
-    EndIfFlagOn(SurvivalFlags.CaveDiseaseTwice)
+    EndIfFlagOn(Flags.CaveDiseaseTwice)
 
     IfInsideMap(1, (31, 255, 255, 255))  # ANY Cave
     IfAttackedWithDamageType(1, PLAYER, -1, DamageType.Unspecified)
     IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.CaveDisease)
-    IfFlagOff(1, SurvivalFlags.DiseaseRollLock)
+    IfFlagOff(1, Flags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
 
-    EnableFlag(SurvivalFlags.DiseaseRollLock)
-    DisableFlagRange((SurvivalFlags.DiseaseRollFirst, SurvivalFlags.DiseaseRollLast))
-    EnableRandomFlagInRange((SurvivalFlags.DiseaseRollFirst, SurvivalFlags.DiseaseRollLast))
+    EnableFlag(Flags.DiseaseRollLock)
+    DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
-    IfFlagOn(-2, SurvivalFlags.DiseaseRollFirst)
-    IfFlagOff(2, SurvivalFlags.CaveDiseaseOnce)
-    IfFlagOn(2, SurvivalFlags.DiseaseRollSecond)
+    IfFlagOn(-2, Flags.DiseaseRollFirst)
+    IfFlagOff(2, Flags.CaveDiseaseOnce)
+    IfFlagOn(2, Flags.DiseaseRollSecond)
     IfConditionTrue(-2, 2)
 
     SkipLinesIfConditionTrue(2, -2)
-    DisableFlag(SurvivalFlags.DiseaseRollLock)
+    DisableFlag(Flags.DiseaseRollLock)
     Restart()  # no proc, try again next time
 
-    DisableFlag(SurvivalFlags.DiseaseRollLock)
+    DisableFlag(Flags.DiseaseRollLock)
 
     AddSpecialEffect(PLAYER, SurvivalEffects.CaveDisease)
     AwardItemLot(DiseaseIndicators.CaveDisease)
 
-    SkipLinesIfFlagOn(2, SurvivalFlags.CaveDiseaseOnce)
-    EnableFlag(SurvivalFlags.CaveDiseaseOnce)
+    SkipLinesIfFlagOn(2, Flags.CaveDiseaseOnce)
+    EnableFlag(Flags.CaveDiseaseOnce)
     End()
-    EnableFlag(SurvivalFlags.CaveDiseaseTwice)
+    EnableFlag(Flags.CaveDiseaseTwice)
 
 
-@NeverRestart(SurvivalFlags.GetDiseaseTunnels)
+@NeverRestart(Flags.GetDiseaseTunnels)
 def GetDiseaseTunnels():
-    EndIfFlagOn(SurvivalFlags.TunnelDiseaseTwice)
+    EndIfFlagOn(Flags.TunnelDiseaseTwice)
 
     IfInsideMap(1, (32, 255, 255, 255))  # ANY Tunnel
     IfAttackedWithDamageType(1, PLAYER, -1, DamageType.Unspecified)
     IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.TunnelDisease)
-    IfFlagOff(1, SurvivalFlags.DiseaseRollLock)
+    IfFlagOff(1, Flags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
 
-    EnableFlag(SurvivalFlags.DiseaseRollLock)
-    DisableFlagRange((SurvivalFlags.DiseaseRollFirst, SurvivalFlags.DiseaseRollLast))
-    EnableRandomFlagInRange((SurvivalFlags.DiseaseRollFirst, SurvivalFlags.DiseaseRollLast))
+    EnableFlag(Flags.DiseaseRollLock)
+    DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
-    IfFlagOn(-2, SurvivalFlags.DiseaseRollFirst)
-    IfFlagOff(2, SurvivalFlags.TunnelDiseaseOnce)
-    IfFlagOn(2, SurvivalFlags.DiseaseRollSecond)
+    IfFlagOn(-2, Flags.DiseaseRollFirst)
+    IfFlagOff(2, Flags.TunnelDiseaseOnce)
+    IfFlagOn(2, Flags.DiseaseRollSecond)
     IfConditionTrue(-2, 2)
 
     SkipLinesIfConditionTrue(2, -2)
-    DisableFlag(SurvivalFlags.DiseaseRollLock)
+    DisableFlag(Flags.DiseaseRollLock)
     Restart()  # no proc, try again next time
 
-    DisableFlag(SurvivalFlags.DiseaseRollLock)
+    DisableFlag(Flags.DiseaseRollLock)
 
     AddSpecialEffect(PLAYER, SurvivalEffects.TunnelDisease)
     AwardItemLot(DiseaseIndicators.TunnelDisease)
 
-    SkipLinesIfFlagOn(2, SurvivalFlags.TunnelDiseaseOnce)
-    EnableFlag(SurvivalFlags.TunnelDiseaseOnce)
+    SkipLinesIfFlagOn(2, Flags.TunnelDiseaseOnce)
+    EnableFlag(Flags.TunnelDiseaseOnce)
     End()
-    EnableFlag(SurvivalFlags.TunnelDiseaseTwice)
+    EnableFlag(Flags.TunnelDiseaseTwice)
 
 
 # --- PURE SCARLET ROT ---
 
 
-@NeverRestart(SurvivalFlags.GetPureScarletRot)
+@NeverRestart(Flags.GetPureScarletRot)
 def GetPureScarletRot():
     """Chance of proccing each time you get normal scarlet rot.
 
@@ -2837,7 +3007,7 @@ def GetPureScarletRot():
 # --- DISEASE CURES ---
 
 
-@NeverRestart(SurvivalFlags.CureDisease)
+@NeverRestart(Flags.CureDisease)
 def CureDisease(_, disease_effect: int, cure_effect: int, disease_item: int, cure_text: int):
     IfPlayerHasSpecialEffect(1, cure_effect)
     IfPlayerHasSpecialEffect(1, disease_effect)
@@ -2854,9 +3024,9 @@ def CureDisease(_, disease_effect: int, cure_effect: int, disease_item: int, cur
 # --- MAP CHECKS ---
 
 
-@NeverRestart(SurvivalFlags.MonitorInLimgrave)
+@NeverRestart(Flags.MonitorInLimgrave)
 def MonitorInLimgrave():
-    DisableFlag(SurvivalFlags.PlayerInLimgrave)
+    DisableFlag(Flags.PlayerInLimgrave)
 
     # LIMGRAVE (including Weeping Peninsula)
     IfInsideMapTile(-1, (60, 10, 9, 2))
@@ -2872,7 +3042,7 @@ def MonitorInLimgrave():
 
     IfConditionTrue(0, -1)
 
-    EnableFlag(SurvivalFlags.PlayerInLimgrave)
+    EnableFlag(Flags.PlayerInLimgrave)
 
     IfInsideMapTile(-2, (60, 10, 9, 2))
     IfInsideMapTile(-2, (60, 10, 8, 2))
@@ -2890,9 +3060,9 @@ def MonitorInLimgrave():
     return RESTART
 
 
-@NeverRestart(SurvivalFlags.MonitorInLiurnia)
+@NeverRestart(Flags.MonitorInLiurnia)
 def MonitorInLiurnia():
-    DisableFlag(SurvivalFlags.PlayerInLiurnia)
+    DisableFlag(Flags.PlayerInLiurnia)
 
     IfInsideMapTile(-1, SOUTHWEST_LIURNIA)
     IfInsideMapTile(-1, WEST_LIURNIA)
@@ -2910,7 +3080,7 @@ def MonitorInLiurnia():
 
     IfConditionTrue(0, -1)
 
-    EnableFlag(SurvivalFlags.PlayerInLiurnia)
+    EnableFlag(Flags.PlayerInLiurnia)
 
     IfInsideMapTile(-2, SOUTHWEST_LIURNIA)
     IfInsideMapTile(-2, WEST_LIURNIA)
@@ -2931,9 +3101,9 @@ def MonitorInLiurnia():
     return RESTART
 
 
-@NeverRestart(SurvivalFlags.MonitorInCaelid)
+@NeverRestart(Flags.MonitorInCaelid)
 def MonitorInCaelid():
-    DisableFlag(SurvivalFlags.PlayerInCaelid)
+    DisableFlag(Flags.PlayerInCaelid)
 
     IfInsideMapTile(-1, NORTH_CAELID)
     IfInsideMapTile(-1, SOUTH_CAELID)
@@ -2948,7 +3118,7 @@ def MonitorInCaelid():
 
     IfConditionTrue(0, -1)
 
-    EnableFlag(SurvivalFlags.PlayerInCaelid)
+    EnableFlag(Flags.PlayerInCaelid)
 
     IfInsideMapTile(-2, NORTH_CAELID)
     IfInsideMapTile(-2, SOUTH_CAELID)
@@ -2966,10 +3136,10 @@ def MonitorInCaelid():
     return RESTART
 
 
-@NeverRestart(SurvivalFlags.MonitorInAltus)
+@NeverRestart(Flags.MonitorInAltus)
 def MonitorInAltus():
     """Does NOT include Mt. Gelmir."""
-    DisableFlag(SurvivalFlags.PlayerInAltus)
+    DisableFlag(Flags.PlayerInAltus)
 
     IfInsideMapTile(-1, (60, 10, 12, 2))
     IfInsideMapTile(-1, (60, 10, 13, 2))
@@ -3002,10 +3172,10 @@ def MonitorInAltus():
     return RESTART
 
 
-@NeverRestart(SurvivalFlags.MonitorInMtGelmir)
+@NeverRestart(Flags.MonitorInMtGelmir)
 def MonitorInMtGelmir():
     """Does NOT include rest of Altus."""
-    DisableFlag(SurvivalFlags.PlayerInMtGelmir)
+    DisableFlag(Flags.PlayerInMtGelmir)
 
     IfInsideMapTile(-1, (60, 17, 26, 1))
     IfInsideMapTile(-1, (60, 17, 27, 1))
@@ -3032,9 +3202,9 @@ def MonitorInMtGelmir():
     return RESTART
 
 
-@NeverRestart(SurvivalFlags.MonitorInMountaintops)
+@NeverRestart(Flags.MonitorInMountaintops)
 def MonitorInMountaintops():
-    DisableFlag(SurvivalFlags.PlayerInMountaintops)
+    DisableFlag(Flags.PlayerInMountaintops)
 
     IfInsideMapTile(-1, WEST_CONSECRATED_SNOWFIELD)
     IfInsideMapTile(-1, NORTHWEST_MOUNTAINTOPS)
@@ -3047,7 +3217,7 @@ def MonitorInMountaintops():
 
     IfConditionTrue(0, -1)
 
-    EnableFlag(SurvivalFlags.PlayerInMountaintops)
+    EnableFlag(Flags.PlayerInMountaintops)
 
     IfInsideMapTile(-2, WEST_CONSECRATED_SNOWFIELD)
     IfInsideMapTile(-2, NORTHWEST_MOUNTAINTOPS)
@@ -3063,7 +3233,7 @@ def MonitorInMountaintops():
     return RESTART
 
 
-@NeverRestart(SurvivalFlags.CraftDummyWeaponBase)
+@NeverRestart(Flags.CraftDummyWeaponBase)
 def CraftDummyWeapon(_, dummy_weapon_id: int, weapon_item_lot: int, previous_weapon: int):
     """Wait for player to obtain a crafted dummy weapon, then remove it, remove the previous "required" weapon in
     the recipe (if nonzero), and award the real item."""
@@ -3075,7 +3245,7 @@ def CraftDummyWeapon(_, dummy_weapon_id: int, weapon_item_lot: int, previous_wea
     return RESTART
 
 
-@NeverRestart(SurvivalFlags.MonitorWeaponPossessionBase)
+@NeverRestart(Flags.MonitorWeaponPossessionBase)
 def AllowWeaponUpgrade(_, weapon_id: int, hammer_id: int, upgrade_visible_flag: int):
     """Enable `upgrade_visible_flag` as long as player has exactly `weapon_id` AND (if non-zero) `hammer_id`.
 
@@ -3097,7 +3267,7 @@ def AllowWeaponUpgrade(_, weapon_id: int, hammer_id: int, upgrade_visible_flag: 
     return RESTART
 
 
-@NeverRestart(SurvivalFlags.MonitorSmithsHammerPossession)
+@NeverRestart(Flags.MonitorSmithsHammerPossession)
 def MonitorSmithsHammerPossession(_, hammer_id: int, possession_flag: int):
     DisableFlag(possession_flag)
     IfPlayerHasGood(0, hammer_id)

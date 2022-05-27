@@ -3,8 +3,9 @@ from __future__ import annotations
 from soulstruct.game_types import *
 
 
-# Haligtree 3000 range
-BASE_FLAG = 15003000
+# Stone Platform 1000 range
+# TODO: There are a few vanilla flags in this range that need to be avoided.
+BASE_FLAG = 19001000
 
 
 class SurvivalText(IntEnum):
@@ -42,11 +43,10 @@ class SurvivalText(IntEnum):
     Dehydration = 50050
 
 
-class SurvivalFlags(Flag):
+class Flags(Flag):
     """NEW flags and events used by Survival Mode."""
     GrowingHunger = BASE_FLAG + 0
     GrowingThirst = BASE_FLAG + 1
-    ReduceThirstOnDeath = BASE_FLAG + 2
 
     CheckMildHeatArea = BASE_FLAG + 20
     MildHeatWarning = BASE_FLAG + 21
@@ -193,7 +193,6 @@ class SurvivalFlags(Flag):
 
     # Other notes
     Note_SerpentHunter_Bought = BASE_FLAG + 330  # found, not bought
-    # TODO: Place Whip note somewhere in treasure (late Liurnia or early Altus).
     Note_Whip_Bought = BASE_FLAG + 331  # found, not bought
     # TODO: Meteor Chuck
 
@@ -240,8 +239,9 @@ class SurvivalFlags(Flag):
     Recipe_SentrysTorch_Bought = BASE_FLAG + 394
 
     # TIME FLAG. Increments by 1 every 30 in-game minutes.
-    MonitorTimeFlag = 15003399
-    TimeEventValue = 15003400  # 4 flags
+    # TODO: Not implemented and would rather not implement it (read time out of memory instead).
+    MonitorTimeFlag = BASE_FLAG + 399
+    TimeEventValue = BASE_FLAG + 400  # 4 flags
     
     # Monitor Smith's Hammer possession for recipe appearance.
     MonitorSmithsHammerPossession = BASE_FLAG + 450  # five slots
@@ -250,16 +250,44 @@ class SurvivalFlags(Flag):
     HasJourneymanSmithsHammer = BASE_FLAG + 462
     HasExpertSmithsHammer = BASE_FLAG + 463
     HasMasterSmithsHammer = BASE_FLAG + 464
-    
+
+    # For saving hunger/thirst state on death. (Only used to record info across deaths.)
+    HasHunger1 = BASE_FLAG + 470
+    HasHunger2 = BASE_FLAG + 471
+    HasHunger3 = BASE_FLAG + 472
+    HasHunger4 = BASE_FLAG + 473
+    HasHunger5 = BASE_FLAG + 474
+    HasHunger6 = BASE_FLAG + 475
+    HasHunger7 = BASE_FLAG + 476
+    HasHunger8 = BASE_FLAG + 477
+    HasHunger9 = BASE_FLAG + 478
+    HasHunger10 = BASE_FLAG + 479
+    HasHunger11 = BASE_FLAG + 480
+    HasHunger12 = BASE_FLAG + 481
+    HasHunger13 = BASE_FLAG + 482
+    HasHunger14 = BASE_FLAG + 483
+    HasHunger15 = BASE_FLAG + 484
+    SaveHungerAfterDeath = BASE_FLAG + 489
+    HasThirst1 = BASE_FLAG + 490
+    HasThirst2 = BASE_FLAG + 491
+    HasThirst3 = BASE_FLAG + 492
+    HasThirst4 = BASE_FLAG + 493
+    HasThirst5 = BASE_FLAG + 494
+    HasThirst6 = BASE_FLAG + 495
+    HasThirst7 = BASE_FLAG + 496
+    HasThirst8 = BASE_FLAG + 497
+    HasThirst9 = BASE_FLAG + 498
+    SaveThirstAfterDeath = BASE_FLAG + 499
+
     # Disease cures (not enough space above for all of them).
     CureDisease = BASE_FLAG + 500  # 21 slots
 
     # For crafting weapons.
-    CraftDummyWeaponBase = 15004000  # 377 slots
+    CraftDummyWeaponBase = BASE_FLAG + 1000  # 377 slots
 
     # For monitoring possession of base weapons in recipes.
-    MonitorWeaponPossessionBase = 15004500  # 377 slots (event slot)
-    WeaponMonitorBase = 19004000  # 377 slots (actual flag)
+    MonitorWeaponPossessionBase = BASE_FLAG + 1500  # 377 slots (event slot)
+    WeaponMonitorBase = BASE_FLAG + 2000  # 377 slots (actual flag)
 
 
 class VanillaCharacters(Character):

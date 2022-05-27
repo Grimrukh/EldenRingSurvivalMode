@@ -376,10 +376,10 @@ def generate_dummy_weapons(
                 # Visibility flag is determined by monitoring previous weapon ID (and potentially a Smith's Hammer).
                 previous_weapon_base_id = 10000 * (previous_weapon_id // 10000)  # ignore upgrade level
                 previous_weapon_name = weapon_param[previous_weapon_base_id].name
-                visibility_flag = SurvivalFlags.WeaponMonitorBase + new_weapon_indices.index(previous_weapon_name)
+                visibility_flag = Flags.WeaponMonitorBase + new_weapon_indices.index(previous_weapon_name)
 
                 # Determine rune cost for crafting from upgrade level.
-                rune_cost = tier * 2000
+                rune_cost = tier * 1000
 
             # Determine Hammer required to upgrade weapon from its tier (for EMEVD printing only).
             if 0 <= tier <= 2:
@@ -397,8 +397,14 @@ def generate_dummy_weapons(
             else:
                 raise ValueError(f"Invalid tier for weapon '{row.name}': {tier}")
 
-            # Tiered weapon cannot be reinforced.
+            # Tiered weapon cannot be reinforced (including infused/affinity variants).
             row["materialSetId"] = -1
+            for infusion_variant in range(0, 1201, 100):
+                infusion_row = weapon_param[weapon_base_id + infusion_variant]
+                if infusion_row is not None:  # many weapons cannot be infused (ignore these)
+                    for origin_level in range(26):
+                        origin_field = "originEquipWep" if origin_level == 0 else f"originEquipWep{origin_level}"
+                        infusion_row[origin_field] = -1
 
         # Create dummy Weapon row.
         dummy = weapon_param.duplicate_row(row.row_id, dummy_id)
@@ -494,10 +500,9 @@ def generate_smiths_hammers(
     new_mtrl_offset = 326000
     mtrl_source = 320010  # 3x Thin Beast Bones
 
-    for good_base_id, good_info in NEW_SMITHS_HAMMERS.items():
-        good_id = new_good_offset + good_base_id
-        shop_id = new_shop_offset + good_base_id
-        mtrl_id = new_mtrl_offset + 10 * good_base_id
+    for i, (good_id, good_info) in enumerate(NEW_SMITHS_HAMMERS.items()):
+        shop_id = new_shop_offset + i
+        mtrl_id = new_mtrl_offset + 10 * i
 
         new_good_row = goods_param.duplicate_row(goods_source, good_id)
         new_good_row.name = good_info["name"]
@@ -515,10 +520,10 @@ def generate_smiths_hammers(
 
         new_mtrl_row = equip_mtrl_set_param.duplicate_row(mtrl_source, mtrl_id)
         new_mtrl_row.name = good_info["name"]
-        for i, (count, ingredient) in enumerate(good_info["recipe"]):
-            new_mtrl_row[f"materialId{i + 1:02d}"] = ingredient.value
-            new_mtrl_row[f"itemNum{i + 1:02d}"] = count
-            new_mtrl_row[f"materialCate{i + 1:02d}"] = 4  # always Goods
+        for j, (count, ingredient) in enumerate(good_info["recipe"]):
+            new_mtrl_row[f"materialId{j + 1:02d}"] = ingredient.value
+            new_mtrl_row[f"itemNum{j + 1:02d}"] = count
+            new_mtrl_row[f"materialCate{j + 1:02d}"] = 4  # always Goods
 
 
 def generate_new_consumables(
@@ -977,7 +982,7 @@ def test_item_lots(item_lots_map: YappedParam):
         row = item_lots_map.duplicate_row(100, 101 + i, name=f"Test: {test_good.name}")
         row["lotItemId01"] = test_good
         row["lotItemCategory01"] = 1  # Good
-        row["lotItemNum01"] = 10
+        row["lotItemNum01"] = 3
 
 
 def generate_all_params():

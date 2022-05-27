@@ -59,7 +59,7 @@ TODO: Region tier guidelines.
             BloodTaintedExcrement
 """
 from survival_goods import Materials
-from survival_enums import SurvivalFlags
+from survival_enums import Flags
 
 
 # Weapons crafted from scratch. The Whip+10 requires a note, but the others can be crafted immediately.
@@ -2350,7 +2350,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Serpent-Hunter": {
-        "visibility_flag": SurvivalFlags.Note_SerpentHunter_Bought,
+        "visibility_flag": Flags.Note_SerpentHunter_Bought,
         "id": 1703,
         "recipe": [
             (3, Materials.IronPlate),
@@ -2646,7 +2646,7 @@ WEAPON_RECIPES = {
 
     # region Whips
     "Whip": {
-        "visibility_flag": SurvivalFlags.Note_Whip_Bought,
+        "visibility_flag": Flags.Note_Whip_Bought,
         "previous": None,
         "tier": 10,
         "somber": False,
@@ -3069,7 +3069,7 @@ WEAPON_RECIPES = {
         "cost": 50,
     },
     "Steel-Wire Torch": {
-        "visibility_flag": SurvivalFlags.Recipe_SteelWireTorch_Bought,
+        "visibility_flag": Flags.Recipe_SteelWireTorch_Bought,
         "id": 2402,
         "recipe": [
             (1, Materials.RefinedWood),
@@ -3080,7 +3080,7 @@ WEAPON_RECIPES = {
         "cost": 1000,
     },
     "St. Trina's Torch": {
-        "visibility_flag": SurvivalFlags.Recipe_StTrinasTorch_Bought,
+        "visibility_flag": Flags.Recipe_StTrinasTorch_Bought,
         "id": 2404,
         "recipe": [
             (1, Materials.IronPlate),
@@ -3091,7 +3091,7 @@ WEAPON_RECIPES = {
         "cost": 5000,
     },
     "Ghostflame Torch": {
-        "visibility_flag": SurvivalFlags.Recipe_GhostflameTorch_Bought,
+        "visibility_flag": Flags.Recipe_GhostflameTorch_Bought,
         "id": 2405,
         "recipe": [
             (1, Materials.IronPlate),
@@ -3102,7 +3102,7 @@ WEAPON_RECIPES = {
         "cost": 3000,
     },
     "Beast-Repellent Torch": {
-        "visibility_flag": SurvivalFlags.Recipe_BeastRepellentTorch_Bought,
+        "visibility_flag": Flags.Recipe_BeastRepellentTorch_Bought,
         "id": 2406,
         "recipe": [
             (2, Materials.RefinedWood),
@@ -3113,7 +3113,7 @@ WEAPON_RECIPES = {
         "cost": 4000,
     },
     "Sentry's Torch": {
-        "visibility_flag": SurvivalFlags.Recipe_SentrysTorch_Bought,
+        "visibility_flag": Flags.Recipe_SentrysTorch_Bought,
         "id": 2407,
         "recipe": [
             (1, Materials.ErdtreeWood),
@@ -3129,7 +3129,7 @@ WEAPON_RECIPES = {
     # NOTE: Shield of the Guilty (a Small Shield) is missing here, and instead appears in Medium Shields below.
     # region Small Shields
     "Buckler": {
-        "visibility_flag": SurvivalFlags.Recipes_MetalSmallShields_Bought,
+        "visibility_flag": Flags.Recipes_MetalSmallShields_Bought,
         "cost": 4000,
         "id": 3000,
         "recipe": [
@@ -3139,7 +3139,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Perfumer's Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_RareSmallShields_Bought,
+        "visibility_flag": Flags.Recipes_RareSmallShields_Bought,
         "cost": 8000,
         "id": 3001,
         "recipe": [
@@ -3150,7 +3150,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Man-Serpent's Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_MetalSmallShields_Bought,
+        "visibility_flag": Flags.Recipes_MetalSmallShields_Bought,
         "cost": 4000,
         "id": 3002,
         "recipe": [
@@ -3169,7 +3169,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Pillory Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_WoodenSmallShields_Bought,
+        "visibility_flag": Flags.Recipes_WoodenSmallShields_Bought,
         "cost": 1000,
         "id": 3004,
         "recipe": [
@@ -3179,7 +3179,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Beastman's Jar-Shield": {  # NOTE: this is the one Medium Shield buried among otherwise contiguous Small Shields
-        "visibility_flag": SurvivalFlags.Recipes_RareMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_RareMediumShields_Bought,
         "cost": 10000,
         "id": 3006,
         "recipe": [
@@ -3189,7 +3189,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Red Thorn Roundshield": {
-        "visibility_flag": SurvivalFlags.Recipes_WoodenSmallShields_Bought,
+        "visibility_flag": Flags.Recipes_WoodenSmallShields_Bought,
         "cost": 1000,
         "id": 3007,
         "recipe": [
@@ -3199,7 +3199,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Scripture Wooden Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_WoodenSmallShields_Bought,
+        "visibility_flag": Flags.Recipes_WoodenSmallShields_Bought,
         "cost": 1000,
         "id": 3008,
         "recipe": [
@@ -3209,7 +3209,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Riveted Wooden Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_WoodenSmallShields_Bought,
+        "visibility_flag": Flags.Recipes_WoodenSmallShields_Bought,
         "cost": 1000,
         "id": 3009,
         "recipe": [
@@ -3219,7 +3219,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Blue-White Wooden Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_WoodenSmallShields_Bought,
+        "visibility_flag": Flags.Recipes_WoodenSmallShields_Bought,
         "cost": 1000,
         "id": 3010,
         "recipe": [
@@ -3230,7 +3230,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Rift Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_MetalSmallShields_Bought,
+        "visibility_flag": Flags.Recipes_MetalSmallShields_Bought,
         "cost": 4000,
         "id": 3011,
         "recipe": [
@@ -3241,7 +3241,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Iron Roundshield": {
-        "visibility_flag": SurvivalFlags.Recipes_MetalSmallShields_Bought,
+        "visibility_flag": Flags.Recipes_MetalSmallShields_Bought,
         "cost": 4000,
         "id": 3012,
         "recipe": [
@@ -3252,7 +3252,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Gilded Iron Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_MetalSmallShields_Bought,
+        "visibility_flag": Flags.Recipes_MetalSmallShields_Bought,
         "cost": 4000,
         "id": 3013,
         "recipe": [
@@ -3262,7 +3262,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Ice Crest Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_MetalSmallShields_Bought,
+        "visibility_flag": Flags.Recipes_MetalSmallShields_Bought,
         "cost": 4000,
         "id": 3014,
         "recipe": [
@@ -3273,7 +3273,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Smoldering Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_RareSmallShields_Bought,
+        "visibility_flag": Flags.Recipes_RareSmallShields_Bought,
         "cost": 8000,
         "id": 3015,
         "recipe": [
@@ -3283,7 +3283,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Spiralhorn Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_RareSmallShields_Bought,
+        "visibility_flag": Flags.Recipes_RareSmallShields_Bought,
         "cost": 8000,
         "id": 3019,
         "recipe": [
@@ -3293,7 +3293,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Coil Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_RareSmallShields_Bought,
+        "visibility_flag": Flags.Recipes_RareSmallShields_Bought,
         "cost": 8000,
         "id": 3020,
         "recipe": [
@@ -3309,7 +3309,7 @@ WEAPON_RECIPES = {
     # NOTE: Beastman's Jar-Shield (a Medium Shield) is missing here, and instead appears in Small Shields above.
     # region Medium Shields
     "Kite Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_KiteMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_KiteMediumShields_Bought,
         "cost": 6000,
         "id": 3100,
         "recipe": [
@@ -3318,7 +3318,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Marred Leather Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_CommonMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_CommonMediumShields_Bought,
         "cost": 1000,
         "id": 3101,
         "recipe": [
@@ -3328,7 +3328,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Marred Wooden Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_WoodenMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_WoodenMediumShields_Bought,
         "cost": 2000,
         "id": 3102,
         "recipe": [
@@ -3338,7 +3338,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Banished Knight's Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_RareMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_RareMediumShields_Bought,
         "cost": 10000,
         "id": 3103,
         "recipe": [
@@ -3348,7 +3348,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Albinauric Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_RareMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_RareMediumShields_Bought,
         "cost": 10000,
         "id": 3104,
         "recipe": [
@@ -3359,7 +3359,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Sun Realm Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_CommonMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_CommonMediumShields_Bought,
         "cost": 1000,
         "id": 3105,
         "recipe": [
@@ -3369,7 +3369,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Silver Mirrorshield": {
-        "visibility_flag": SurvivalFlags.Recipes_RareMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_RareMediumShields_Bought,
         "cost": 10000,
         "id": 3106,
         "recipe": [
@@ -3380,7 +3380,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Round Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_CommonMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_CommonMediumShields_Bought,
         "cost": 1000,
         "id": 3107,
         "recipe": [
@@ -3391,7 +3391,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Scorpion Kite Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_KiteMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_KiteMediumShields_Bought,
         "cost": 6000,
         "id": 3108,
         "recipe": [
@@ -3401,7 +3401,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Twinbird Kite Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_KiteMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_KiteMediumShields_Bought,
         "cost": 6000,
         "id": 3109,
         "recipe": [
@@ -3412,7 +3412,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Blue-Gold Kite Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_KiteMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_KiteMediumShields_Bought,
         "cost": 6000,
         "id": 3110,
         "recipe": [
@@ -3423,7 +3423,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Brass Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_RareMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_RareMediumShields_Bought,
         "cost": 10000,
         "id": 3113,
         "recipe": [
@@ -3434,7 +3434,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Great Turtle Shell": {
-        "visibility_flag": SurvivalFlags.Recipes_RareMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_RareMediumShields_Bought,
         "cost": 10000,
         "id": 3114,
         "recipe": [
@@ -3445,7 +3445,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Shield of the Guilty": {  # SMALL SHIELD
-        "visibility_flag": SurvivalFlags.Recipes_RareSmallShields_Bought,
+        "visibility_flag": Flags.Recipes_RareSmallShields_Bought,
         "cost": 8000,
         "id": 3117,
         "recipe": [
@@ -3456,7 +3456,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Carian Knight's Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_RareMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_RareMediumShields_Bought,
         "cost": 10000,
         "id": 3119,
         "recipe": [
@@ -3467,7 +3467,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Large Leather Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_CommonMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_CommonMediumShields_Bought,
         "cost": 1000,
         "id": 3123,
         "recipe": [
@@ -3478,7 +3478,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Horse Crest Wooden Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_WoodenMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_WoodenMediumShields_Bought,
         "cost": 2000,
         "id": 3124,
         "recipe": [
@@ -3488,7 +3488,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Candletree Wooden Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_WoodenMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_WoodenMediumShields_Bought,
         "cost": 2000,
         "id": 3125,
         "recipe": [
@@ -3498,7 +3498,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Flame Crest Wooden Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_WoodenMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_WoodenMediumShields_Bought,
         "cost": 2000,
         "id": 3126,
         "recipe": [
@@ -3509,7 +3509,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Hawk Crest Wooden Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_WoodenMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_WoodenMediumShields_Bought,
         "cost": 2000,
         "id": 3127,
         "recipe": [
@@ -3519,7 +3519,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Beast Crest Heater Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_HeaterMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_HeaterMediumShields_Bought,
         "cost": 5000,
         "id": 3128,
         "recipe": [
@@ -3529,7 +3529,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Red Crest Heater Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_HeaterMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_HeaterMediumShields_Bought,
         "cost": 5000,
         "id": 3129,
         "recipe": [
@@ -3539,7 +3539,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Blue Crest Heater Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_HeaterMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_HeaterMediumShields_Bought,
         "cost": 5000,
         "id": 3130,
         "recipe": [
@@ -3550,7 +3550,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Eclipse Crest Heater Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_HeaterMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_HeaterMediumShields_Bought,
         "cost": 5000,
         "id": 3131,
         "recipe": [
@@ -3560,7 +3560,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Inverted Hawk Heater Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_HeaterMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_HeaterMediumShields_Bought,
         "cost": 5000,
         "id": 3132,
         "recipe": [
@@ -3570,7 +3570,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Heater Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_HeaterMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_HeaterMediumShields_Bought,
         "cost": 5000,
         "id": 3133,
         "recipe": [
@@ -3580,7 +3580,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Black Leather Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_CommonMediumShields_Bought,
+        "visibility_flag": Flags.Recipes_CommonMediumShields_Bought,
         "cost": 1000,
         "id": 3134,
         "recipe": [
@@ -3594,7 +3594,7 @@ WEAPON_RECIPES = {
 
     # region Greatshields
     "Dragon Towershield": {
-        "visibility_flag": SurvivalFlags.Recipes_RareGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_RareGreatshields_Bought,
         "cost": 15000,
         "id": 3200,
         "recipe": [
@@ -3605,7 +3605,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Distinguished Greatshield": {
-        "visibility_flag": SurvivalFlags.Recipes_CommonGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_CommonGreatshields_Bought,
         "cost": 5000,
         "id": 3202,
         "recipe": [
@@ -3616,7 +3616,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Crucible Hornshield": {
-        "visibility_flag": SurvivalFlags.Recipes_UncommonGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_UncommonGreatshields_Bought,
         "cost": 10000,
         "id": 3203,
         "recipe": [
@@ -3627,7 +3627,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Dragonclaw Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_RareGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_RareGreatshields_Bought,
         "cost": 15000,
         "id": 3204,
         "recipe": [
@@ -3638,7 +3638,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Briar Greatshield": {
-        "visibility_flag": SurvivalFlags.Recipes_UncommonGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_UncommonGreatshields_Bought,
         "cost": 10000,
         "id": 3205,
         "recipe": [
@@ -3649,7 +3649,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Erdtree Greatshield": {
-        "visibility_flag": SurvivalFlags.Recipes_RareGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_RareGreatshields_Bought,
         "cost": 15000,
         "id": 3208,
         "recipe": [
@@ -3660,7 +3660,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Golden Beast Crest Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_UncommonGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_UncommonGreatshields_Bought,
         "cost": 10000,
         "id": 3209,
         "recipe": [
@@ -3671,7 +3671,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Jellyfish Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_RareGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_RareGreatshields_Bought,
         "cost": 15000,
         "id": 3212,
         "recipe": [
@@ -3682,7 +3682,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Fingerprint Stone Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_RareGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_RareGreatshields_Bought,
         "cost": 15000,
         "id": 3213,
         "recipe": [
@@ -3693,7 +3693,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Icon Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_UncommonGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_UncommonGreatshields_Bought,
         "cost": 10000,
         "id": 3214,
         "recipe": [
@@ -3704,7 +3704,7 @@ WEAPON_RECIPES = {
         ],
     },
     "One-Eyed Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_VeryRareGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_VeryRareGreatshields_Bought,
         "cost": 20000,
         "id": 3215,
         "recipe": [
@@ -3715,7 +3715,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Visage Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_RareGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_RareGreatshields_Bought,
         "cost": 15000,
         "id": 3216,
         "recipe": [
@@ -3726,7 +3726,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Spiked Palisade Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_UncommonGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_UncommonGreatshields_Bought,
         "cost": 10000,
         "id": 3217,
         "recipe": [
@@ -3737,7 +3737,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Manor Towershield": {
-        "visibility_flag": SurvivalFlags.Recipes_CommonGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_CommonGreatshields_Bought,
         "cost": 5000,
         "id": 3219,
         "recipe": [
@@ -3748,7 +3748,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Crossed-Tree Towershield": {
-        "visibility_flag": SurvivalFlags.Recipes_UncommonGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_UncommonGreatshields_Bought,
         "cost": 10000,
         "id": 3220,
         "recipe": [
@@ -3759,7 +3759,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Inverted Hawk Towershield": {
-        "visibility_flag": SurvivalFlags.Recipes_UncommonGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_UncommonGreatshields_Bought,
         "cost": 10000,
         "id": 3221,
         "recipe": [
@@ -3770,7 +3770,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Ant's Skull Plate": {
-        "visibility_flag": SurvivalFlags.Recipes_RareGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_RareGreatshields_Bought,
         "cost": 15000,
         "id": 3222,
         "recipe": [
@@ -3781,7 +3781,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Redmane Greatshield": {
-        "visibility_flag": SurvivalFlags.Recipes_UncommonGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_UncommonGreatshields_Bought,
         "cost": 10000,
         "id": 3223,
         "recipe": [
@@ -3792,7 +3792,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Eclipse Crest Greatshield": {
-        "visibility_flag": SurvivalFlags.Recipes_RareGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_RareGreatshields_Bought,
         "cost": 15000,
         "id": 3224,
         "recipe": [
@@ -3803,7 +3803,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Cuckoo Greatshield": {
-        "visibility_flag": SurvivalFlags.Recipes_UncommonGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_UncommonGreatshields_Bought,
         "cost": 10000,
         "id": 3225,
         "recipe": [
@@ -3814,7 +3814,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Golden Greatshield": {
-        "visibility_flag": SurvivalFlags.Recipes_UncommonGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_UncommonGreatshields_Bought,
         "cost": 10000,
         "id": 3226,
         "recipe": [
@@ -3825,7 +3825,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Gilded Greatshield": {
-        "visibility_flag": SurvivalFlags.Recipes_CommonGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_CommonGreatshields_Bought,
         "cost": 5000,
         "id": 3227,
         "recipe": [
@@ -3836,7 +3836,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Haligtree Crest Greatshield": {
-        "visibility_flag": SurvivalFlags.Recipes_VeryRareGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_VeryRareGreatshields_Bought,
         "cost": 20000,
         "id": 3228,
         "recipe": [
@@ -3847,7 +3847,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Wooden Greatshield": {
-        "visibility_flag": SurvivalFlags.Recipes_CommonGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_CommonGreatshields_Bought,
         "cost": 5000,
         "id": 3229,
         "recipe": [
@@ -3858,7 +3858,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Lordsworn's Shield": {
-        "visibility_flag": SurvivalFlags.Recipes_CommonGreatshields_Bought,
+        "visibility_flag": Flags.Recipes_CommonGreatshields_Bought,
         "cost": 5000,
         "id": 3230,
         "recipe": [
@@ -3881,7 +3881,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Crystal Staff": {
-        "visibility_flag": SurvivalFlags.Recipes_RareStaffs_Bought,
+        "visibility_flag": Flags.Recipes_RareStaffs_Bought,
         "cost": 15000,
         "id": 3304,
         "recipe": [
@@ -3892,7 +3892,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Gelmir Glintstone Staff": {
-        "visibility_flag": SurvivalFlags.Recipes_UncommonStaffs_Bought,
+        "visibility_flag": Flags.Recipes_UncommonStaffs_Bought,
         "cost": 10000,
         "id": 3305,
         "recipe": [
@@ -3903,7 +3903,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Demi-Human Queen's Staff": {
-        "visibility_flag": SurvivalFlags.Recipes_CommonStaffs_Bought,
+        "visibility_flag": Flags.Recipes_CommonStaffs_Bought,
         "cost": 5000,
         "id": 3306,
         "recipe": [
@@ -3913,7 +3913,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Carian Regal Scepter": {
-        "visibility_flag": SurvivalFlags.Recipes_VeryRareStaffs_Bought,
+        "visibility_flag": Flags.Recipes_VeryRareStaffs_Bought,
         "cost": 20000,
         "id": 3309,
         "recipe": [
@@ -3924,7 +3924,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Digger's Staff": {
-        "visibility_flag": SurvivalFlags.Recipes_UncommonStaffs_Bought,
+        "visibility_flag": Flags.Recipes_UncommonStaffs_Bought,
         "cost": 10000,
         "id": 3312,
         "recipe": [
@@ -3935,7 +3935,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Astrologer's Staff": {
-        "visibility_flag": SurvivalFlags.Recipes_CommonStaffs_Bought,
+        "visibility_flag": Flags.Recipes_CommonStaffs_Bought,
         "cost": 5000,
         "id": 3313,
         "recipe": [
@@ -3945,7 +3945,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Carian Glintblade Staff": {
-        "visibility_flag": SurvivalFlags.Recipes_UncommonStaffs_Bought,
+        "visibility_flag": Flags.Recipes_UncommonStaffs_Bought,
         "cost": 10000,
         "id": 3317,
         "recipe": [
@@ -3956,7 +3956,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Prince of Death's Staff": {
-        "visibility_flag": SurvivalFlags.Recipes_RareStaffs_Bought,
+        "visibility_flag": Flags.Recipes_RareStaffs_Bought,
         "cost": 15000,
         "id": 3318,
         "recipe": [
@@ -3967,7 +3967,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Albinauric Staff": {
-        "visibility_flag": SurvivalFlags.Recipes_RareStaffs_Bought,
+        "visibility_flag": Flags.Recipes_RareStaffs_Bought,
         "cost": 15000,
         "id": 3319,
         "recipe": [
@@ -3978,7 +3978,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Academy Glintstone Staff": {
-        "visibility_flag": SurvivalFlags.Recipes_UncommonStaffs_Bought,
+        "visibility_flag": Flags.Recipes_UncommonStaffs_Bought,
         "cost": 10000,
         "id": 3320,
         "recipe": [
@@ -3989,7 +3989,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Carian Glintstone Staff": {
-        "visibility_flag": SurvivalFlags.Recipes_UncommonStaffs_Bought,
+        "visibility_flag": Flags.Recipes_UncommonStaffs_Bought,
         "cost": 10000,
         "id": 3321,
         "recipe": [
@@ -4000,7 +4000,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Azur's Glintstone Staff": {
-        "visibility_flag": SurvivalFlags.Recipes_VeryRareStaffs_Bought,
+        "visibility_flag": Flags.Recipes_VeryRareStaffs_Bought,
         "cost": 20000,
         "id": 3323,
         "recipe": [
@@ -4011,7 +4011,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Lusat's Glintstone Staff": {
-        "visibility_flag": SurvivalFlags.Recipes_VeryRareStaffs_Bought,
+        "visibility_flag": Flags.Recipes_VeryRareStaffs_Bought,
         "cost": 20000,
         "id": 3324,
         "recipe": [
@@ -4022,7 +4022,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Meteorite Staff": {
-        "visibility_flag": SurvivalFlags.Recipes_RareStaffs_Bought,
+        "visibility_flag": Flags.Recipes_RareStaffs_Bought,
         "cost": 15000,
         "id": 3325,
         "recipe": [
@@ -4032,7 +4032,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Staff of the Guilty": {
-        "visibility_flag": SurvivalFlags.Recipes_UncommonStaffs_Bought,
+        "visibility_flag": Flags.Recipes_UncommonStaffs_Bought,
         "cost": 10000,
         "id": 3326,
         "recipe": [
@@ -4043,7 +4043,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Rotten Crystal Staff": {
-        "visibility_flag": SurvivalFlags.Recipes_RareStaffs_Bought,
+        "visibility_flag": Flags.Recipes_RareStaffs_Bought,
         "cost": 15000,
         "id": 3327,
         "recipe": [
@@ -4054,7 +4054,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Staff of Loss": {
-        "visibility_flag": SurvivalFlags.Recipes_RareStaffs_Bought,
+        "visibility_flag": Flags.Recipes_RareStaffs_Bought,
         "cost": 15000,
         "id": 3328,
         "recipe": [
@@ -4077,7 +4077,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Godslayer's Seal": {
-        "visibility_flag": SurvivalFlags.Recipes_RareSeals_Bought,
+        "visibility_flag": Flags.Recipes_RareSeals_Bought,
         "cost": 15000,
         "id": 3401,
         "recipe": [
@@ -4087,7 +4087,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Giant's Seal": {
-        "visibility_flag": SurvivalFlags.Recipes_UncommonSeals_Bought,
+        "visibility_flag": Flags.Recipes_UncommonSeals_Bought,
         "cost": 10000,
         "id": 3402,
         "recipe": [
@@ -4098,7 +4098,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Gravel Stone Seal": {
-        "visibility_flag": SurvivalFlags.Recipes_RareSeals_Bought,
+        "visibility_flag": Flags.Recipes_RareSeals_Bought,
         "cost": 15000,
         "id": 3403,
         "recipe": [
@@ -4108,7 +4108,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Clawmark Seal": {
-        "visibility_flag": SurvivalFlags.Recipes_UncommonSeals_Bought,
+        "visibility_flag": Flags.Recipes_UncommonSeals_Bought,
         "cost": 10000,
         "id": 3404,
         "recipe": [
@@ -4119,7 +4119,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Golden Order Seal": {
-        "visibility_flag": SurvivalFlags.Recipes_RareSeals_Bought,
+        "visibility_flag": Flags.Recipes_RareSeals_Bought,
         "cost": 15000,
         "id": 3406,
         "recipe": [
@@ -4129,7 +4129,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Erdtree Seal": {
-        "visibility_flag": SurvivalFlags.Recipes_VeryRareSeals_Bought,
+        "visibility_flag": Flags.Recipes_VeryRareSeals_Bought,
         "cost": 20000,
         "id": 3407,
         "recipe": [
@@ -4139,7 +4139,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Dragon Communion Seal": {
-        "visibility_flag": SurvivalFlags.Recipes_UncommonSeals_Bought,
+        "visibility_flag": Flags.Recipes_UncommonSeals_Bought,
         "cost": 10000,
         "id": 3408,
         "recipe": [
@@ -4149,7 +4149,7 @@ WEAPON_RECIPES = {
         ],
     },
     "Frenzied Flame Seal": {
-        "visibility_flag": SurvivalFlags.Recipes_VeryRareSeals_Bought,
+        "visibility_flag": Flags.Recipes_VeryRareSeals_Bought,
         "cost": 20000,
         "id": 3409,
         "recipe": [
