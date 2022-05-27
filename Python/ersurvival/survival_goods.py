@@ -1045,37 +1045,37 @@ NEW_MATERIALS = {
     Materials.MeteoriteChunk: {
         "name": "Meteorite Chunk",
         "info": "Dense chunk of cosmic debris",
-        "caption": "Very heavy chunk of metal of cosmic origin.\nMaterial for crafting survival items.\n",
+        "caption": "Very heavy chunk of metal of cosmic origin.\nMaterial for crafting weapons and shields.\n",
         "icon": 19046,
     },
     Materials.BlackMark: {
         "name": "Black Mark",
         "info": "Residue from the stolen Rune of Death",
-        "caption": "Faint remnant of death scattered when the Rune of Death was stolen\nMaterial for crafting survival items.\n",
+        "caption": "Faint remnant of death scattered when the Rune of Death was stolen\nMaterial for crafting weapons and shields.\n",
         "icon": 19047,
     },
     Materials.StaffPole: {
         "name": "Staff Pole",
         "info": "Wooden staff perfect for a magic catalyst",
-        "caption": "Intricately prepared wooden staff perfect for creating a catalyst.\nMaterial for crafting survival items.\n",
+        "caption": "Intricately prepared wooden staff perfect for creating a catalyst.\nMaterial for crafting weapons and shields.\n",
         "icon": 19048,
     },
     Materials.ShieldGrip: {
         "name": "Shield Handle",
         "info": "Sturdy handle perfect for a shield",
-        "caption": "Heavy-duty handle designed to withstand large impacts, perfect for any shield.\nMaterial for crafting survival items.\n",
+        "caption": "Heavy-duty handle designed to withstand large impacts, perfect for any shield.\nMaterial for crafting weapons and shields.\n",
         "icon": 19049,
     },
     Materials.ErdtreeAmber: {
         "name": "Erdtree Amber",
         "info": "Amber formed from the Erdtree's resin",
-        "caption": "Holy amber that came from Erdtree resin highly sought by craftsmen.\nMaterial for crafting survival items.\n",
+        "caption": "Holy amber that came from Erdtree resin highly sought by craftsmen.\nMaterial for crafting weapons and shields.\n",
         "icon": 19050,
     },
     Materials.GlintstoneDust: {
         "name": "Glintstone Dust",
         "info": "Fine grains of purified Glintstone",
-        "caption": "Small amount of purified glintstone, ground into a powder specifically for crafting.\nMaterial for crafting survival items.\n",
+        "caption": "Small amount of purified glintstone, ground into a powder specifically for crafting.\nMaterial for crafting weapons and shields.\n",
         "icon": 19051,
     },
 }
