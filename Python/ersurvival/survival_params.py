@@ -12,6 +12,7 @@ from pathlib import Path
 
 from survival_goods import *
 from survival_text import read_weapon_text, write_weapon_text
+from enemy_ids import EXTRA_ENEMY_DROPS
 from weapon_recipes import WEAPON_RECIPES
 
 CSV_PATH = Path(r"C:\Dark Souls\Tools\Params\Yapped Rune Bear 2.1.4\Projects\ExampleMod\CSV\ER")
@@ -489,7 +490,7 @@ def generate_smiths_hammers(
     """Recipes for new Smith's Hammers, which allow further weapon upgrades."""
 
     # Goods
-    new_good_offset = SmithsHammers.NoviceSmithsHammer
+    # TODO: This is definitely a Key Item, but Hammers appear as 'reusable' in crafting menu. Probably no solution.
     goods_source = 8590  # Whetstone Knife
 
     # "Shop" lineup entries
@@ -532,7 +533,6 @@ def generate_new_consumables(
     """Recipes for new "survival" goods (food, drink, protection)."""
 
     # Goods
-    new_good_offset = 1900
     goods_source = 1110  # Immunizing Cured Meat
 
     # "Shop" lineup entries
@@ -543,10 +543,9 @@ def generate_new_consumables(
     new_mtrl_offset = 325000
     mtrl_source = 320010  # 3x Thin Beast Bones
 
-    for good_id, good_info in NEW_CONSUMABLES.items():
-        good_base_id = good_id - new_good_offset
-        shop_id = new_shop_offset + good_base_id
-        mtrl_id = new_mtrl_offset + 10 * good_base_id
+    for i, (good_id, good_info) in enumerate(NEW_CONSUMABLES.items()):
+        shop_id = new_shop_offset + i
+        mtrl_id = new_mtrl_offset + 10 * i
 
         new_good_row = goods_param.duplicate_row(goods_source, good_id)
         new_good_row.name = good_info["name"]
@@ -569,10 +568,10 @@ def generate_new_consumables(
 
         new_mtrl_row = equip_mtrl_set_param.duplicate_row(mtrl_source, mtrl_id)
         new_mtrl_row.name = good_info["name"]
-        for i, (count, ingredient) in enumerate(good_info["recipe"]):
-            new_mtrl_row[f"materialId{i + 1:02d}"] = ingredient.value
-            new_mtrl_row[f"itemNum{i + 1:02d}"] = count
-            new_mtrl_row[f"materialCate{i + 1:02d}"] = 4  # always Goods
+        for j, (count, ingredient) in enumerate(good_info["recipe"]):
+            new_mtrl_row[f"materialId{j + 1:02d}"] = ingredient.value
+            new_mtrl_row[f"itemNum{j + 1:02d}"] = count
+            new_mtrl_row[f"materialCate{j + 1:02d}"] = 4  # always Goods
 
 
 def generate_new_materials(goods_param: YappedParam):
@@ -582,6 +581,9 @@ def generate_new_materials(goods_param: YappedParam):
         new_material = goods_param.duplicate_row(source_row, good_id)
         new_material.name = good_info["name"]
         new_material["iconId"] = good_info["icon"]
+        # TODO: Trying a new sort group ID for these 'weapon component' materials.
+        #  If it doesn't work, use 30.
+        new_material["sortGroupId"] = 40
 
 
 def replace_stone_item_lots(item_lots_param: YappedParam, is_map: bool):
@@ -644,15 +646,112 @@ def replace_stone_item_lots(item_lots_param: YappedParam, is_map: bool):
             )
 
 
+def fix_enemy_item_lots(item_lots_param: YappedParam, weapons_param: YappedParam):
+
+    item_lot_source = 227000000  # Giant Crab (Crab Eggs)
+
+    def find_item_lot(first_item_lot: int):
+        """Find item lot to use for new drop, which must be within 10 of `first_item_lot`."""
+        for i in range(11):
+            item_lot = item_lots_param[first_item_lot + i]
+            if item_lot is None:
+                # Use this lot (new ID).
+                return item_lots_param.duplicate_row(item_lot_source, first_item_lot + i)
+            else:
+                if int(item_lot["lotItemCategory01"]) == 0 and int(item_lot["lotItemCategory02"]) == 2:
+                    # Replace non-guaranteed weapon (it will be deleted later otherwise anyway).
+                    return item_lot
+                elif all(int(item_lot[f"lotItemCategory{s:02d}"]) == 0 for s in range(1, 9)):
+                    # Replace empty item lot.
+                    return item_lot
+        else:
+            raise ValueError(f"Could not find a free item lot within 10 of: {first_item_lot}")
+
+    for good_id, enemies in EXTRA_ENEMY_DROPS.items():
+        # Find every "base" item lot for this enemy (row IDs that are zero modulo 100).
+        for (model_id, odds) in enemies:
+            first_lot = model_id * 100000
+            enemy_base_lots = [
+                row for row in item_lots_param.rows
+                if first_lot <= row.row_id <= first_lot + 99999
+                and row.row_id % 100 == 0
+            ]
+            for base_lot in enemy_base_lots:
+                row = find_item_lot(base_lot.row_id)
+
+                if base_lot.name:
+                    row.name = base_lot.name.split("]")[0] + "]" + f" {good_id.name}"
+                else:
+                    row.name = f"[Drop] {good_id.name}"
+
+                # First slot: no drop.
+                row["lotItemId01"] = 0
+                row["lotItemCategory01"] = 0  # None
+                row["lotItemNum01"] = 0
+                row["lotItemBasePoint01"] = 1000 - odds
+
+                # Second slot: drop.
+                row["lotItemId02"] = good_id
+                row["lotItemCategory02"] = 1  # Good
+                row["lotItemNum02"] = 1
+                row["lotItemBasePoint02"] = odds
+
+                # Remaining slots: empty.
+                for slot in range(3, 9):
+                    row[f"lotItemId{slot:02d}"] = 0
+                    row[f"lotItemCategory{slot:02d}"] = 0  # None
+                    row[f"lotItemNum{slot:02d}"] = 0
+                    row[f"lotItemBasePoint{slot:02d}"] = 0
+
+                # Remove any acquisition flag.
+                row["getItemFlagId"] = 0
+
+    # Now nullify all remaining enemy weapon drops.
+    for row in item_lots_param.rows:
+
+        row_name = row.name
+
+        for slot in range(1, 9):
+            item_id = int(row[f"lotItemId{slot:02d}"])
+            item_type = int(row[f"lotItemCategory{slot:02d}"])
+            item_count = int(row[f"lotItemNum{slot:02d}"])
+            # drop rate isn't changed
+            if item_id in {0, -1}:
+                # Ignore empty item lots.
+                continue
+            if item_type not in {2, 6}:
+                # Ignore non-weapons (but do replace custom weapons, type 6).
+                continue
+            if item_count <= 0:
+                # Ignore empty counts.
+                continue
+
+            # Get base weapon ID (round down to nearest 10000).
+            base_weapon_id = 10000 * (item_id // 10000)
+            weapon_row = weapons_param[base_weapon_id]
+
+            if not weapon_row:
+                print(f"Ignoring item lot {row.row_id} with invalid weapon ID: {item_id}")
+                continue
+            weapon_category = WeaponCategory(int(weapon_row["weaponCategory"]))
+            if weapon_category in (WeaponCategory.Arrow, WeaponCategory.Bolt):
+                # Ignore ammo.
+                continue
+
+            # Nullify drop slot.
+            row[f"lotItemId{slot:02d}"] = 0
+            row[f"lotItemCategory{slot:02d}"] = 0  # None
+            row[f"lotItemNum{slot:02d}"] = 0
+            row[f"lotItemBasePoint{slot:02d}"] = 0
+
+            # If ANY slot is a weapon, also nullify drop flag and remove name.
+            row["getItemFlagId"] = 0
+            row.name = f"{row_name} (Removed)"
+
+
 def replace_weapon_item_lots(item_lots_param: YappedParam, weapons_param: YappedParam, is_map: bool):
-    """Replace all (non-ammo) weapons in given ItemLotParam with components.
+    """Replace all (non-ammo) weapons in given ItemLotParam with components."""
 
-    Shields and Staffs have a chance of being replaced with a Shield Grip or Staff Pole, respectively.
-    All other weapons will be replaced with a random number of a random ingredient in that weapon's new recipe.
-    The random number can be up to half of the recipe requirement for treasure.
-
-    For enemy item lots, only "animal" materials (ID < 20000), Soft Wood, or Iron Shards can be dropped.
-    """
     soft_wood_odds = 0.2  # for enemies (vs. Iron Shards)
 
     manual_item_lots = MANUAL_ITEM_LOTS.copy() if is_map else {}
@@ -893,7 +992,8 @@ def replace_merchant_weapons(shop_merchant_param: YappedParam, weapons_param: Ya
 def generate_notes_recipes(goods_param: YappedParam, shop_merchant_param: YappedParam, item_lot_map: YappedParam):
     """Create new notes and recipe books and add them to merchant lineup."""
 
-    goods_source = 8700  # Note: Hidden Cave
+    note_source = 8700  # Note: Hidden Cave
+    recipe_source = 9300  # Nomadic Warrior's Cookbook
     shop_source = 1  # unnamed
     item_lot_source = 10000  # Margit reward
 
@@ -923,25 +1023,28 @@ def generate_notes_recipes(goods_param: YappedParam, shop_merchant_param: Yapped
         new_row["lotItemNum01"] = 1
         new_row["getItemFlagId"] = _info["bought_flag"]  # bought == found
 
-    for good_id, good_info in NEW_NOTES_RECIPES.items():
+    for item_dict, good_source in zip(
+        (NEW_NOTES, NEW_RECIPE_BOOKS),
+        (note_source, recipe_source),
+    ):
+        for good_id, good_info in item_dict.items():
+            # Create good.
+            new_good_row = goods_param.duplicate_row(good_source, good_id)
+            new_good_row.name = good_info["name"]
+            new_good_row["iconId"] = good_info["icon"]
 
-        # Create good.
-        new_good_row = goods_param.duplicate_row(goods_source, good_id)
-        new_good_row.name = good_info["name"]
-        new_good_row["iconId"] = good_info["icon"]
-
-        if "shop_row" in good_info:
-            create_shop_row(good_info["shop_row"], good_id, good_info)
-        elif "shop_rows" in good_info:
-            for shop_row_id in good_info["shop_rows"]:  # quantity flag shared
-                create_shop_row(shop_row_id, good_id, good_info)
-        elif "item_lot" in good_info:
-            create_item_lot(good_info["item_lot"], good_id, good_info)
-        elif "item_lots" in good_info:
-            for item_lot_id in good_info["item_lots"]:  # acquisition flag shared
-                create_item_lot(item_lot_id, good_id, good_info)
-        else:
-            raise KeyError(f"Note/recipe {good_id} does not have a 'shop_row(s)' or 'item_lot(s)' field.")
+            if "shop_row" in good_info:
+                create_shop_row(good_info["shop_row"], good_id, good_info)
+            elif "shop_rows" in good_info:
+                for shop_row_id in good_info["shop_rows"]:  # quantity flag shared
+                    create_shop_row(shop_row_id, good_id, good_info)
+            elif "item_lot" in good_info:
+                create_item_lot(good_info["item_lot"], good_id, good_info)
+            elif "item_lots" in good_info:
+                for item_lot_id in good_info["item_lots"]:  # acquisition flag shared
+                    create_item_lot(item_lot_id, good_id, good_info)
+            else:
+                raise KeyError(f"Note/recipe {good_id} does not have a 'shop_row(s)' or 'item_lot(s)' field.")
 
 
 def generate_disease_indicators(goods: YappedParam, item_lots_map: YappedParam):
@@ -991,7 +1094,15 @@ def test_item_lots(item_lots_map: YappedParam):
     food_row["lotItemNum01"] = 3
 
 
+def enable_all_warps(bonfire_warp_param: YappedParam):
+    for row in bonfire_warp_param.rows:
+        if row.row_id < 100000:
+            continue
+        row["eventflagId"] = 0  # warp will always be enabled
+
+
 def generate_all_params():
+    bonfire_warp = read_param_csv("BonfireWarpParam_vanilla.csv")
     goods = read_param_csv("EquipParamGoods_vanilla.csv")
     weapons = read_param_csv("EquipParamWeapon_vanilla.csv")
     item_lots_enemy = read_param_csv("ItemLotParam_enemy_vanilla.csv")
@@ -1012,7 +1123,7 @@ def generate_all_params():
     generate_notes_recipes(goods, shop_merchant, item_lots_map)
     generate_disease_indicators(goods, item_lots_map)
 
-    replace_weapon_item_lots(item_lots_enemy, weapons, is_map=False)
+    fix_enemy_item_lots(item_lots_enemy, weapons)
     replace_weapon_item_lots(item_lots_map, weapons, is_map=True)
     replace_stone_item_lots(item_lots_enemy, is_map=False)
     replace_stone_item_lots(item_lots_map, is_map=True)
@@ -1024,7 +1135,10 @@ def generate_all_params():
     # TODO: Remove in final release.
     print("\nNOTE: Debugging item lots created.")
     test_item_lots(item_lots_map)
+    print("\nNOTE: All Site of Grace warps enabled.")
+    enable_all_warps(bonfire_warp)
 
+    write_param_csv(bonfire_warp, "BonfireWarpParam.csv")
     write_param_csv(mtrl, "EquipMtrlSetParam.csv")
     write_param_csv(goods, "EquipParamGoods.csv")
     write_param_csv(weapons, "EquipParamWeapon.csv")
@@ -1033,6 +1147,7 @@ def generate_all_params():
     write_param_csv(npc, "NpcParam.csv")
     write_param_csv(shop_merchant, "ShopLineupParam.csv")
     write_param_csv(shop_recipe, "ShopLineupParam_Recipe.csv")
+    # NOTE: SpEffectParam edited manually in Yapped.
 
     print("Read, edited, and wrote all Yapped param CSVs successfully.")
 

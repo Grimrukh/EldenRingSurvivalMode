@@ -1004,43 +1004,57 @@ NEW_MATERIALS = {
     Materials.SoftWood: {
         "name": "Soft Wood",
         "info": "Unremarkable piece of wood",
-        "caption": "Inferior quality wood, fit for cinder.\nCommon material for crafting weapons and shields.\n",
+        "caption": "Inferior quality wood, fit for cinder.\n"
+                   "Common material for crafting weapons and shields.\n",
+        "material_info": "Found commonly as loot or dropped by foes",
         "icon": 19036,
     },
     Materials.RefinedWood: {
         "name": "Refined Wood",
         "info": "Robust piece of wood",
-        "caption": "Superior quality wood that has been treated.\nMaterial for crafting weapons and shields.\n",
+        "caption": "Superior quality wood that has been treated.\n"
+                   "Material for crafting weapons and shields.\n",
+        "material_info": "Found sometimes as loot",
         "icon": 19037,
     },
     Materials.StoneFragment: {
         "name": "Stone Fragment",
         "info": "Fragment of simple colored stone",
-        "caption": "Fragment of an extremely durable stone.\nMaterial for crafting weapons and shields.\n",
+        "caption": "Fragment of an extremely durable stone.\n"
+                   "Material for crafting weapons and shields.\n",
+        "material_info": "Found commonly in mines",
         "icon": 19038,
     },
     Materials.SomberStoneFragment: {
         "name": "Somber Stone Fragment",
         "info": "Fragment of rare colorless stone",
-        "caption": "Fragment of an extremely durable white stone.\nMaterial for crafting weapons and shields.\n",
+        "caption": "Fragment of an extremely durable white stone.\n"
+                   "Material for crafting weapons and shields.\n",
+        "material_info": "Found sometimes in mines",
         "icon": 19039,
     },
     Materials.IronShards: {
         "name": "Metal Shards",
         "info": "Shards of metal for forging",
-        "caption": "Shards of metal that came from a larger piece.\nMaterial for crafting weapons and shields.\n",
+        "caption": "Shards of metal that came from a larger piece.\n"
+                   "Material for crafting weapons and shields.\n",
+        "material_info": "Found commonly as loot or dropped by foes",
         "icon": 19040,
     },
     Materials.IronPlate: {
         "name": "Metal Plate",
         "info": "Sheet of metal for forging",
-        "caption": "Sheet of metal perfect for forging metal weapons.\nMaterial for crafting weapons and shields.\n",
+        "caption": "Sheet of metal perfect for forging metal weapons.\n"
+                   "Material for crafting weapons and shields.\n",
+        "material_info": "Found sometimes as loot",
         "icon": 19041,
     },
     Materials.LiquidMetal: {
         "name": "Pliable Metal",
         "info": "Rare metal used for forging",
-        "caption": "Prized metal that bends, but never breaks.\nMaterial for crafting weapons and shields.\n",
+        "caption": "Prized metal that bends, but never breaks.\n"
+                   "Material for crafting weapons and shields.\n",
+        "material_info": "Found rarely as loot",
         "icon": 19042,
     },
     Materials.DragonTeeth: {
@@ -1048,7 +1062,8 @@ NEW_MATERIALS = {
         "info": "Collection of small dragon teeth",
         "caption": "Small dragon teeth with latent power, perfect for forging dragon weapons.\n"
                    "Material for crafting weapons and shields.\n"
-                   "",  #\nSuch small teeth for such large beasts... perhaps draconic youth shed their teeth?
+                   "",  # \nSuch small teeth for such large beasts... perhaps draconic youth shed their teeth?
+        "material_info": "Found rarely as loot or dropped by dragons",
         "icon": 19043,
     },
     Materials.GruesomeBone: {
@@ -1056,7 +1071,8 @@ NEW_MATERIALS = {
         "info": "Disgusting large bone used for forging",
         "caption": "Very large, disturbing bone prized by arcane smiths for its unique properties.\n"
                    "Material for crafting weapons and shields.\n"
-                   "",  #\nSome try these bones to their stock out of hunger.
+                   "",  # \nSome try adding these bones to their stock out of hunger.
+        "material_info": "Found rarely as loot",
         "icon": 19044,
     },
     Materials.ErdtreeWood: {
@@ -1064,42 +1080,55 @@ NEW_MATERIALS = {
         "info": "Holy wood from the Erdtree",
         "caption": "Wood highly prized by craftsmen. Very light, but quite tough.\n"
                    "Material for crafting weapons and shields.\n",
+        "material_info": "Found rarely as loot",
         "icon": 19045,
     },
     Materials.MeteoriteChunk: {
         "name": "Meteorite Chunk",
         "info": "Dense chunk of cosmic debris",
-        "caption": "Very heavy chunk of metal of cosmic origin.\nMaterial for crafting weapons and shields.\n",
+        "caption": "Very heavy chunk of metal of cosmic origin.\n"
+                   "Material for crafting weapons and shields.\n",
+        "material_info": "Found rarely as loot",
         "icon": 19046,
     },
     Materials.BlackMark: {
         "name": "Black Mark",
         "info": "Residue from the stolen Rune of Death",
-        "caption": "Faint remnant of death scattered when the Rune of Death was stolen\nMaterial for crafting weapons and shields.\n",
+        "caption": "Faint remnant of death scattered when the Rune of Death was stolen\n"
+                   "Material for crafting weapons and shields.\n",
+        "material_info": "Found very rarely as loot",
         "icon": 19047,
     },
     Materials.StaffPole: {
         "name": "Staff Pole",
         "info": "Wooden staff perfect for a magic catalyst",
-        "caption": "Intricately prepared wooden staff perfect for creating a catalyst.\nMaterial for crafting weapons and shields.\n",
+        "caption": "Intricately prepared wooden staff perfect for creating a catalyst.\n"
+                   "Material for crafting weapons and shields.\n",
+        "material_info": "Found rarely as loot",
         "icon": 19048,
     },
     Materials.ShieldGrip: {
         "name": "Shield Handle",
         "info": "Sturdy handle perfect for a shield",
-        "caption": "Heavy-duty handle designed to withstand large impacts, perfect for any shield.\nMaterial for crafting weapons and shields.\n",
+        "caption": "Heavy-duty handle designed to withstand large impacts, perfect for any shield.\n"
+                   "Material for crafting weapons and shields.\n",
+        "material_info": "Found sometimes as loot",
         "icon": 19049,
     },
     Materials.ErdtreeAmber: {
         "name": "Erdtree Amber",
         "info": "Amber formed from the Erdtree's resin",
-        "caption": "Holy amber that came from Erdtree resin, a highly sought-after material.\nMaterial for crafting weapons and shields.\n",
+        "caption": "Holy amber that came from Erdtree resin, a highly sought-after material.\n"
+                   "Material for crafting weapons and shields.\n",
+        "material_info": "Found very rarely as loot",
         "icon": 19050,
     },
     Materials.GlintstoneDust: {
         "name": "Glintstone Dust",
         "info": "Fine grains of purified Glintstone",
-        "caption": "Small amount of purified glintstone, ground into a powder specifically for crafting.\nMaterial for crafting weapons and shields.\n",
+        "caption": "Small amount of purified glintstone, ground into a powder specifically for crafting.\n"
+                   "Material for crafting weapons and shields.\n",
+        "material_info": "Found sometimes as loot",
         "icon": 19051,
     },
 }
@@ -1172,6 +1201,7 @@ NEW_SMITHS_HAMMERS = {
         ],
     },
 }
+
 
 DISEASE_INDICATORS = {
     DiseaseIndicators.LimgraveDisease: {
@@ -1303,7 +1333,7 @@ DISEASE_INDICATORS = {
 }
 
 
-NEW_NOTES_RECIPES = {
+NEW_NOTES = {
     # region Disease Cures
     NotesRecipes.Note_CuringDiseases : {
         "name": "Note: Finding Disease Cures",
@@ -1524,6 +1554,72 @@ NEW_NOTES_RECIPES = {
         "bought_flag": Flags.Recipe_TunnelDiseaseCure_Bought,
     },
     # endregion
+
+    # region Weapon Recipe Notes
+    NotesRecipes.Note_SerpentHunter: {
+        "name": "Note: The Serpent-Hunter",
+        "info": "",
+        "caption": "",
+        "icon": 294,  # Note: Below the Capital
+        "item_lot": 16000690,  # old Serpent-Hunter location (deleted prior to this addition)
+        "bought_flag": Flags.Note_SerpentHunter_Bought,
+    },
+    NotesRecipes.Note_Whip: {
+        "name": "Note: Whip",
+        "info": "",
+        "caption": "",
+        "icon": 294,  # Note: Below the Capital
+        "item_lot": 16000611,  # with former Smoldering Shield
+        "bought_flag": Flags.Note_Whip_Bought,
+    },
+    NotesRecipes.Recipe_SteelWireTorch: {
+        "name": "Note: Steel-Wire Torch",
+        "info": "",
+        "caption": "",
+        "icon": 294,
+        "shop_rows": [
+            100003,  # Gostoc
+        ],
+        "cost": 800,
+        "bought_flag": Flags.Recipe_SteelWireTorch_Bought,
+    },
+    NotesRecipes.Recipe_StTrinasTorch: {
+        "name": "Note: St. Trina's Torch",
+        "info": "",
+        "caption": "",
+        "icon": 294,
+        "item_lot": 1047400911,  # with former Sword of St. Trina
+        "bought_flag": Flags.Recipe_StTrinasTorch_Bought,
+    },
+    NotesRecipes.Recipe_GhostflameTorch: {
+        "name": "Note: Ghostflame Torch",
+        "info": "",
+        "caption": "",
+        "icon": 294,
+        "item_lot": 12070501,  # with former Ghostflame Torch
+        "bought_flag": Flags.Recipe_GhostflameTorch_Bought,
+    },
+    NotesRecipes.Recipe_BeastRepellentTorch: {
+        "name": "Note: Beast-Repellent Torch",
+        "info": "",
+        "caption": "",
+        "icon": 294,
+        "item_lot": 1047380701,  # with Ash of War: Lion's Claw
+        "bought_flag": Flags.Recipe_BeastRepellentTorch_Bought,
+    },
+    NotesRecipes.Recipe_SentrysTorch: {
+        "name": "Note: Sentry's Torch",
+        "info": "",
+        "caption": "",
+        "icon": 294,
+        "item_lot": 1048550601,  # with Stalwart Horn Charm +1
+        "bought_flag": Flags.Recipe_SentrysTorch_Bought,
+    },
+    # endregion
+}
+
+
+NEW_RECIPE_BOOKS = {
     # region Survival Recipes
     NotesRecipes.Recipes_CommonSurvival: {
         "name": "Survivalist's Cookbook [1]",
@@ -1572,6 +1668,7 @@ NEW_NOTES_RECIPES = {
         "bought_flag": Flags.Recipes_VeryRareSurvival_Bought,
     },
     # endregion
+
     # region Shield Recipes
     NotesRecipes.Recipes_WoodenSmallShields: {
         "name": "Small Shield Smithbook [1]",
@@ -1798,69 +1895,6 @@ NEW_NOTES_RECIPES = {
         "bought_flag": Flags.Recipes_VeryRareSeals_Bought,
     },
     # endregion
-
-    # region Torches
-    NotesRecipes.Recipe_SteelWireTorch: {
-        "name": "Recipe: Steel-Wire Torch",
-        "info": "",
-        "caption": "",
-        "icon": 3120,
-        "shop_rows": [
-            100003,  # Gostoc
-        ],
-        "cost": 800,
-        "bought_flag": Flags.Recipe_SteelWireTorch_Bought,
-    },
-    NotesRecipes.Recipe_StTrinasTorch: {
-        "name": "Recipe: St. Trina's Torch",
-        "info": "",
-        "caption": "",
-        "icon": 3120,
-        "item_lot": 1047400911,  # with former Sword of St. Trina
-        "bought_flag": Flags.Recipe_StTrinasTorch_Bought,
-    },
-    NotesRecipes.Recipe_GhostflameTorch: {
-        "name": "Recipe: Ghostflame Torch",
-        "info": "",
-        "caption": "",
-        "icon": 3120,
-        "item_lot": 12070501,  # with former Ghostflame Torch
-        "bought_flag": Flags.Recipe_GhostflameTorch_Bought,
-    },
-    NotesRecipes.Recipe_BeastRepellentTorch: {
-        "name": "Recipe: Beast-Repellent Torch",
-        "info": "",
-        "caption": "",
-        "icon": 3120,
-        "item_lot": 1047380701,  # with Ash of War: Lion's Claw
-        "bought_flag": Flags.Recipe_BeastRepellentTorch_Bought,
-    },
-    NotesRecipes.Recipe_SentrysTorch: {
-        "name": "Recipe: Sentry's Torch",
-        "info": "",
-        "caption": "",
-        "icon": 3120,
-        "item_lot": 1048550601,  # with Stalwart Horn Charm +1
-        "bought_flag": Flags.Recipe_SentrysTorch_Bought,
-    },
-    # endregion
-
-    NotesRecipes.Note_SerpentHunter: {
-        "name": "Note: The Serpent-Hunter",
-        "info": "",
-        "caption": "",
-        "icon": 294,  # Note: Below the Capital
-        "item_lot": 16000690,  # old Serpent-Hunter location (deleted prior to this addition)
-        "bought_flag": Flags.Note_SerpentHunter_Bought,
-    },
-    NotesRecipes.Note_Whip: {
-        "name": "Recipe: Whip",
-        "info": "",
-        "caption": "",
-        "icon": 294,  # Note: Below the Capital
-        "item_lot": 16000611,  # with former Smoldering Shield
-        "bought_flag": Flags.Note_Whip_Bought,
-    }
 }
 
 
@@ -1911,3 +1945,12 @@ MATERIAL_RARITY_COUNT = {
     Materials.StaffPole: (MaterialRarity.Rare, 1),
     Materials.ShieldGrip: (MaterialRarity.Uncommon, 1),
 }
+
+
+ALL_GOODS_DICTS = (
+    NEW_CONSUMABLES,
+    NEW_MATERIALS,
+    NEW_NOTES,
+    NEW_RECIPE_BOOKS,
+    DISEASE_INDICATORS,
+)

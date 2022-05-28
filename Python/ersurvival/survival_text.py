@@ -1,15 +1,13 @@
 """Loads Yapped FMG XML and makes some simple changes."""
-import subprocess as sp
 from xml.etree import ElementTree
 from pathlib import Path
 
-from survival_enums import *
 from survival_goods import *
+from yabber import yabber
 
 GAME_ROOT = Path(r"C:\Steam\steamapps\common\ELDEN RING (Modding)\Game")
 ITEM_PATH = GAME_ROOT / r"msg\engus\item-msgbnd-dcx\GR\data\INTERROOT_win64\msg\engUS"
 MENU_PATH = GAME_ROOT / r"msg\engus\menu-msgbnd-dcx\GR\data\INTERROOT_win64\msg\engUS"
-YABBER_PATH = Path(r"C:\Dark Souls\Tools\Unpackers\Yabber 1.3.1\Yabber.exe")
 
 
 class YabberText:
@@ -56,9 +54,9 @@ def write_weapon_text(name: YabberText, info: YabberText, caption: YabberText):
     info.write(ITEM_PATH / "WeaponInfo.fmg.xml")
     caption.write(ITEM_PATH / "WeaponCaption.fmg.xml")
 
-    sp.call([YABBER_PATH, str(ITEM_PATH / "WeaponName.fmg.xml")])
-    sp.call([YABBER_PATH, str(ITEM_PATH / "WeaponInfo.fmg.xml")])
-    sp.call([YABBER_PATH, str(ITEM_PATH / "WeaponCaption.fmg.xml")])
+    yabber(ITEM_PATH / "WeaponName.fmg.xml")
+    yabber(ITEM_PATH / "WeaponInfo.fmg.xml")
+    yabber(ITEM_PATH / "WeaponCaption.fmg.xml")
 
 
 EVENT_TEXT = {
@@ -96,21 +94,37 @@ EVENT_TEXT = {
 def set_goods_text():
     goods_name = YabberText(ITEM_PATH / "GoodsName_vanilla.fmg.xml")
     goods_info = YabberText(ITEM_PATH / "GoodsInfo_vanilla.fmg.xml")
+    goods_material_info = YabberText(ITEM_PATH / "GoodsInfo2_vanilla.fmg.xml")
     goods_caption = YabberText(ITEM_PATH / "GoodsCaption_vanilla.fmg.xml")
 
-    for goods_dict in (NEW_CONSUMABLES, NEW_MATERIALS, NEW_SMITHS_HAMMERS, NEW_NOTES_RECIPES, DISEASE_INDICATORS):
+    for goods_dict in ALL_GOODS_DICTS:
         for good_id, good_info in goods_dict.items():
             goods_name[good_id] = good_info["name"]
             goods_info[good_id] = good_info["info"]
             goods_caption[good_id] = good_info["caption"]
+            if "material_info" in good_info:
+                goods_material_info[good_id] = good_info["material_info"]
+
+    # Modify String description to note new drop from Marionettes.
+    goods_material_info[15400] = "Often carried by demi-humans and marionettes"
+    goods_caption[15400] = (
+        "Boasting no special qualities, this is merely a goodly length of string.\n"
+        "\n"
+        "Material used for crafting items.\n"
+        "Often carried by demi-humans and marionettes.\n"
+        "\n"
+        "Used to make certain items easier to use.\n"
+    )
 
     goods_name.write(ITEM_PATH / "GoodsName.fmg.xml")
     goods_info.write(ITEM_PATH / "GoodsInfo.fmg.xml")
+    goods_material_info.write(ITEM_PATH / "GoodsInfo2.fmg.xml")
     goods_caption.write(ITEM_PATH / "GoodsCaption.fmg.xml")
 
-    sp.call([YABBER_PATH, str(ITEM_PATH / "GoodsName.fmg.xml")])
-    sp.call([YABBER_PATH, str(ITEM_PATH / "GoodsInfo.fmg.xml")])
-    sp.call([YABBER_PATH, str(ITEM_PATH / "GoodsCaption.fmg.xml")])
+    yabber(ITEM_PATH / "GoodsName.fmg.xml")
+    yabber(ITEM_PATH / "GoodsInfo.fmg.xml")
+    yabber(ITEM_PATH / "GoodsInfo2.fmg.xml")
+    yabber(ITEM_PATH / "GoodsCaption.fmg.xml")
 
 
 def set_event_text():
@@ -120,7 +134,7 @@ def set_event_text():
         event_text[text_id] = text
 
     event_text.write(MENU_PATH / "EventTextForMap.fmg.xml")
-    sp.call([YABBER_PATH, str(MENU_PATH / "EventTextForMap.fmg.xml")])
+    yabber(MENU_PATH / "EventTextForMap.fmg.xml")
 
 
 def set_menu_text():
@@ -130,7 +144,7 @@ def set_menu_text():
     # menu_text[40511] = "Weapons/Ammo"
 
     menu_text.write(MENU_PATH / "GR_MenuText.fmg.xml")
-    sp.call([YABBER_PATH, str(MENU_PATH / "GR_MenuText.fmg.xml")])
+    yabber(MENU_PATH / "GR_MenuText.fmg.xml")
 
 
 def set_all_text():
@@ -139,8 +153,8 @@ def set_all_text():
     # set_menu_text()
 
     # Pack up MSGBNDs with Yabber when done with FMGs.
-    sp.call([YABBER_PATH, str(GAME_ROOT / "msg/engus/item-msgbnd-dcx")])
-    sp.call([YABBER_PATH, str(GAME_ROOT / "msg/engus/menu-msgbnd-dcx")])
+    yabber(GAME_ROOT / "msg/engus/item-msgbnd-dcx")
+    yabber(GAME_ROOT / "msg/engus/menu-msgbnd-dcx")
 
 
 if __name__ == '__main__':

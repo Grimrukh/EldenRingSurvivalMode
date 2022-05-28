@@ -405,7 +405,6 @@ def Constructor():
     RunEvent(9943)
     RunEvent(9940)
     RunEvent(1700)
-    AwardItemLot(500, host_only=True)
     RunEvent(19001000)
     RunEvent(19001001)
     RunEvent(19001489)

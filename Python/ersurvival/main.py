@@ -17,24 +17,36 @@
 - Save Yapped to generate final `regulation.bin`.
 
 TODO (BUGS):
-    - Hammer items are currently labelled "reusable". They should be key items like Whetstone Knife.
-    - New recipes should be Key Items, not Info items (like Notes). Separate dictionaries.
-    - I think crafting materials need text for the "Obtained" section.
-    - Set material subtype for Material goods (currently bundled with Bones they're copied from).
-        - In fact, I could technically move them into Bolstering Materials. Then they wouldn't need "Obtained" either.
     - ABUSE: Because the crafting menu doesn't update when you craft an item, you can craft multiple upgrades from the
       same base weapon before the game "realizes" that you lack the base weapon.
         - I could require the base weapon to be present before replacing the dummy with the real weapon, but then
           there's a chance the player could waste ingredients accidentally. Probably still better than abuse, though.
-    - Need a more reliable source of Soft Wood than just serendipitous enemy weapon-drop replacements.
-        - Add a decent drop rate to some basic enemies. Should be relatively scriptable based on enemy model IDs.
 
 TODO:
-    - Load BonfireWarpParam and set all required warp flags to 0 for TESTING.
     - TEST DISEASE CONTRACTION in all maps and dungeons.
+        X Limgrave
+        X Liurnia
+        Caelid
+        Altus
+        MtGelmir
+        Mountaintops
+        Siofra
+        Ainsel
+        Deeproot
+        Stormveil
+        RayaLucaria
+        Radahn
+        VolcanoManor
+        Leyndell
+        Sewers
+        Haligtree
+        FarumAzula
+        Mohgwyn
+        Catacombs
+        Cave - doesn't work
+        Tunnel
     - Disease effects in SpEffectParam (manual).
-    - Hide 'x1' crafted quantity for weapon dummies, if possible. (I don't think it is, but that's OK.)
-    - HUD icons for effects (heat, cold, diseases).
+    - HUD icons for effects (heat, cold, diseases, draughts).
     - Darkness hook in C#.
         - Need to go back to JZ's tips for detecting in-game time.
         - Need to customize it to make torches more useful.
@@ -49,17 +61,16 @@ TODO (Notes for Player):
       has not refreshed), the ingredients you put into it will be wasted.
 """
 import shutil
-import subprocess as sp
 from pathlib import Path
 from soulstruct.eldenring.events import EMEVD
 
 from survival_params import generate_all_params
 from survival_text import set_all_text
+from yabber import yabber
 
 
 VANILLA_PATH = Path("C:/Steam/steamapps/common/ELDEN RING (Vanilla)/Game")
 MODDING_PATH = Path("C:/Steam/steamapps/common/ELDEN RING (Modding)/Game")
-YABBER_DCX_PATH = Path(r"C:\Dark Souls\Tools\Unpackers\Yabber 1.3.1\Yabber.DCX.exe")
 
 
 def vanilla_common_emevd_to_evs():
@@ -101,7 +112,7 @@ def install_evs():
 
     # Call Yabber to apply DCX
     write_yabber_dcx_xml()
-    sp.call([YABBER_DCX_PATH, str(MODDING_PATH / "event/common.emevd")])
+    yabber(MODDING_PATH / "event/common.emevd", dcx_only=True)
 
 
 def install():
@@ -115,6 +126,6 @@ def install():
 
 if __name__ == '__main__':
     install_evs()
-    # generate_all_params()
-    # set_all_text()
+    generate_all_params()
+    set_all_text()
     print("Full SurvivalMode Python installation complete. (Now use Yapped to convert CSVs to `regulation.bin`.")
