@@ -42,6 +42,7 @@ def Constructor():
     # RelieveThirst_7()  # no items that relieve 7 thirst
     IncreaseThirst_1()  # dried/cured vanilla meats
     IncreaseThirst_3()  # Jar Brittle
+    JarBrittleEffects()
     # endregion
 
     # region Map area checks
@@ -211,6 +212,7 @@ def Constructor():
     GetDiseaseCatacombs()
     GetDiseaseCaves()
     GetDiseaseTunnels()
+    CaveDiseaseInDaylight()
     # Skipping Pure Scarlet Rot.
     # endregion
 
@@ -1039,6 +1041,9 @@ def GrowingHunger():
     IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Hunger15)
     IfConditionTrue(0, 1)
 
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.LimgraveDisease)
+    Wait(54.0)  # 10% faster
+    SkipLines(1)
     Wait(60.0)
 
     # INCREMENT HUNGER
@@ -1126,6 +1131,9 @@ def GrowingThirst():
     IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Thirst9)
     IfConditionTrue(0, 1)
 
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.LimgraveDisease)
+    Wait(90.0)  # 10% faster
+    SkipLines(1)
     Wait(100.0)
 
     # INCREMENT THIRST
@@ -2410,6 +2418,16 @@ def IncreaseThirst_3():
     Restart()
 
 
+@NeverRestart(Flags.JarBrittleEffects)
+def JarBrittleEffects():
+    """Manually chains Jar Brittle SpEffect (which handles hunger/thirst) into temperature protection."""
+    IfPlayerHasSpecialEffect(0, SurvivalEffects.JarBrittle)
+    IfPlayerDoesNotHaveSpecialEffect(0, SurvivalEffects.JarBrittle)
+    AddSpecialEffect(SurvivalEffects.HeatProtection_Moderate)
+    AddSpecialEffect(SurvivalEffects.ColdProtection_Moderate)
+    return RESTART
+
+
 @NeverRestart(Flags.CheckMildHeatArea)
 def CheckMildHeatArea():
     """Checks if mild heat should be applied to the player due to current time and place."""
@@ -3113,6 +3131,23 @@ def GetDiseaseTunnels():
     EnableFlag(Flags.TunnelDiseaseOnce)
     End()
     EnableFlag(Flags.TunnelDiseaseTwice)
+
+
+@RestartOnRest(Flags.CaveDiseaseInDaylight)
+def CaveDiseaseInDaylight():
+    CancelSpecialEffect(PLAYER, SurvivalEffects.CaveDiseaseDaylight)
+
+    IfPlayerHasSpecialEffect(1, SurvivalEffects.CaveDisease)
+    IfTimeOfDay(1, (6, 0, 0), (19, 0, 0))
+    IfConditionTrue(0, 1)
+
+    AddSpecialEffect(PLAYER, SurvivalEffects.CaveDiseaseDaylight)
+
+    IfPlayerHasSpecialEffect(2, SurvivalEffects.CaveDisease)
+    IfTimeOfDay(2, (6, 0, 0), (19, 0, 0))
+    IfConditionFalse(0, 2)
+
+    return RESTART
 
 
 # --- PURE SCARLET ROT ---

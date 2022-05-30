@@ -96,6 +96,7 @@ class Flags(Flag):
     GetDiseaseCaves = BASE_FLAG + 85
     GetDiseaseTunnels = BASE_FLAG + 86
     GetPureScarletRot = BASE_FLAG + 87
+    CaveDiseaseInDaylight = BASE_FLAG + 88
 
     DiseaseRollLock = BASE_FLAG + 99
     DiseaseRollFirst = BASE_FLAG + 100
@@ -166,6 +167,8 @@ class Flags(Flag):
     RelieveThirst_7 = BASE_FLAG + 276
     IncreaseThirst_1 = BASE_FLAG + 277
     IncreaseThirst_3 = BASE_FLAG + 278
+
+    JarBrittleEffects = BASE_FLAG + 280
 
     # Disease note/cures
     Note_CuringDiseases_Bought = BASE_FLAG + 299
@@ -382,9 +385,9 @@ class SurvivalEffects(SpecialEffectParam):
     # Generic dungeon diseases
     CatacombsDisease = 53018
     CaveDisease = 53019
-    TunnelDisease = 53020  # relatively harmless, as it may take a while to find a cure for Fever
-    # No Divine Tower disease.
-    # TODO: Maybe some special exceptions, like a Frenzy disease in Yelough Anix Tunnel, etc.
+    TunnelDisease = 53020
+    CaveDiseaseDaylight = 53030
+    # No Ruin-Strewn Precipice or Divine Tower diseases.
 
     # Pure Scarlet Rot
     PureScarletRot = 53050
@@ -535,3 +538,19 @@ class PotGroupID(IntEnum):
     CrackedPot = 1
     PerfumeBottle = 2
     RitualPot = 3
+
+
+class HudIcons(IntEnum):
+    HeatProtection = 20032
+    ColdProtection = 20033
+    Dehydration = 20034
+    DiseasePlague = 20035
+    DiseaseParasite = 20036
+    DiseaseToxin = 20037
+    DiseaseFever = 20038
+    Heat_Mild = 20039
+    Heat_Moderate = 20040
+    Heat_Severe = 20041
+    Cold_Mild = 20042
+    Cold_Moderate = 20043
+    Cold_Severe = 20044
