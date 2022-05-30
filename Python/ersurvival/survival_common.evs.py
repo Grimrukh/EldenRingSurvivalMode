@@ -14,29 +14,12 @@ def Constructor():
 
     # TODO: Debugging. Remove for release.
     # AwardItemLot(500)
-    # RemoveGoodFromPlayer(DiseaseIndicators.LimgraveDisease, 1)
-    # RemoveGoodFromPlayer(DiseaseIndicators.LiurniaDisease, 1)
-    # RemoveGoodFromPlayer(DiseaseIndicators.CaelidDisease, 1)
-    # RemoveGoodFromPlayer(DiseaseIndicators.AltusDisease, 1)
-    # RemoveGoodFromPlayer(DiseaseIndicators.MtGelmirDisease, 1)
-    # RemoveGoodFromPlayer(DiseaseIndicators.MountaintopsDisease, 1)
-    # RemoveGoodFromPlayer(DiseaseIndicators.SiofraDisease, 1)
-    # RemoveGoodFromPlayer(DiseaseIndicators.AinselDisease, 1)
-    # RemoveGoodFromPlayer(DiseaseIndicators.DeeprootDisease, 1)
-    # RemoveGoodFromPlayer(DiseaseIndicators.StormveilDisease, 1)
-    # RemoveGoodFromPlayer(DiseaseIndicators.RayaLucariaDisease, 1)
-    # RemoveGoodFromPlayer(DiseaseIndicators.RadahnDisease, 1)
-    # RemoveGoodFromPlayer(DiseaseIndicators.VolcanoManorDisease, 1)
-    # RemoveGoodFromPlayer(DiseaseIndicators.LeyndellDisease, 1)
-    # RemoveGoodFromPlayer(DiseaseIndicators.SewersDisease, 1)
-    # RemoveGoodFromPlayer(DiseaseIndicators.HaligtreeDisease, 1)
-    # RemoveGoodFromPlayer(DiseaseIndicators.FarumAzulaDisease, 1)
-    # RemoveGoodFromPlayer(DiseaseIndicators.MohgwynDisease, 1)
-    # RemoveGoodFromPlayer(DiseaseIndicators.CatacombsDisease, 1)
-    # RemoveGoodFromPlayer(DiseaseIndicators.CaveDisease, 1)
-    # RemoveGoodFromPlayer(DiseaseIndicators.TunnelDisease, 1)
-    # DisableFlagRange((Flags.LimgraveDiseaseOnce, Flags.TunnelDiseaseTwice))
+    AddSpecialEffect(PLAYER, 39999)  # SUPER DEFENSE
+    DEBUG_ResetDiseases()
+    DEBUG_GetAllMaps()
+    DEBUG_GetDectusMedallions()
 
+    # region Hunger/Thirst
     GrowingHunger()
     GrowingThirst()
     SaveHungerAfterDeath()
@@ -59,6 +42,7 @@ def Constructor():
     # RelieveThirst_7()  # no items that relieve 7 thirst
     IncreaseThirst_1()  # dried/cured vanilla meats
     IncreaseThirst_3()  # Jar Brittle
+    # endregion
 
     # region Map area checks
     MonitorInLimgrave()
@@ -67,9 +51,15 @@ def Constructor():
     MonitorInAltus()
     MonitorInMtGelmir()
     MonitorInMountaintops()
+    MonitorInGenericDungeon()
+    MonitorInLegacyDungeon()
     # endregion
 
     # region Temperature effect checks
+
+    # Disable all warning trigger flags on map load (in case you quit the game while one was enabled).
+    DisableFlagRange((Flags.ShowMildHeatWarning, Flags.ShowSevereColdWarning))
+
     CheckMildHeatArea()
     MildHeatWarning()
     CheckModerateHeatArea()
@@ -85,6 +75,7 @@ def Constructor():
     # endregion
 
     # region Disease checks
+    DisableFlag(Flags.DiseaseRollLock)
     GetDiseaseOverworld(
         0,
         SurvivalEffects.LimgraveDisease,
@@ -2645,6 +2636,7 @@ def MildHeatWarning():
     Wait(5.0)
     IfFlagOn(0, Flags.ShowMildHeatWarning)
     DisplayDialog(SurvivalText.MildHeatWarning)
+    DisableFlag(Flags.ShowMildHeatWarning)
     Wait(55.0)
     return RESTART
 
@@ -2653,6 +2645,7 @@ def MildHeatWarning():
 def ModerateHeatWarning():
     IfFlagOn(0, Flags.ShowModerateHeatWarning)
     DisplayDialog(SurvivalText.ModerateHeatWarning)
+    DisableFlag(Flags.ShowModerateHeatWarning)
     Wait(60.0)
     return RESTART
 
@@ -2661,6 +2654,7 @@ def ModerateHeatWarning():
 def SevereHeatWarning():
     IfFlagOn(0, Flags.ShowSevereHeatWarning)
     DisplayDialog(SurvivalText.SevereHeatWarning)
+    DisableFlag(Flags.ShowSevereHeatWarning)
     Wait(60.0)
     return RESTART
 
@@ -2669,6 +2663,7 @@ def SevereHeatWarning():
 def MildColdWarning():
     IfFlagOn(0, Flags.ShowMildColdWarning)
     DisplayDialog(SurvivalText.MildColdWarning)
+    DisableFlag(Flags.ShowMildColdWarning)
     Wait(60.0)
     return RESTART
 
@@ -2677,6 +2672,7 @@ def MildColdWarning():
 def ModerateColdWarning():
     IfFlagOn(0, Flags.ShowModerateColdWarning)
     DisplayDialog(SurvivalText.ModerateColdWarning)
+    DisableFlag(Flags.ShowModerateColdWarning)
     Wait(60.0)
     return RESTART
 
@@ -2685,6 +2681,7 @@ def ModerateColdWarning():
 def SevereColdWarning():
     IfFlagOn(0, Flags.ShowSevereColdWarning)
     DisplayDialog(SurvivalText.SevereColdWarning)
+    DisableFlag(Flags.ShowSevereColdWarning)
     Wait(60.0)
     return RESTART
 
@@ -2761,7 +2758,7 @@ def GetDiseaseLegacyDungeon(
 
     EnableFlag(Flags.DiseaseRollLock)
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
-    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollSecond))  # TODO: Last
 
     IfFlagOn(-2, Flags.DiseaseRollFirst)
     IfFlagOff(2, had_once_flag)
@@ -2806,7 +2803,7 @@ def GetDiseaseSiofra():
 
     EnableFlag(Flags.DiseaseRollLock)
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
-    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollSecond))  # TODO: Last
 
     IfFlagOn(-2, Flags.DiseaseRollFirst)
     IfFlagOff(2, Flags.SiofraDiseaseOnce)
@@ -2820,7 +2817,7 @@ def GetDiseaseSiofra():
     DisableFlag(Flags.DiseaseRollLock)
 
     AddSpecialEffect(PLAYER, SurvivalEffects.SiofraDisease)
-    AwardItemLot(DiseaseIndicators.SiofraDisease)
+    AwardItemLot(DiseaseItemLots.SiofraDisease)
 
     SkipLinesIfFlagOn(2, Flags.SiofraDiseaseOnce)
     EnableFlag(Flags.SiofraDiseaseOnce)
@@ -2846,7 +2843,7 @@ def GetDiseaseAinsel():
 
     EnableFlag(Flags.DiseaseRollLock)
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
-    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollSecond))  # TODO: Last
 
     IfFlagOn(-2, Flags.DiseaseRollFirst)
     IfFlagOff(2, Flags.AinselDiseaseOnce)
@@ -2860,7 +2857,7 @@ def GetDiseaseAinsel():
     DisableFlag(Flags.DiseaseRollLock)
 
     AddSpecialEffect(PLAYER, SurvivalEffects.AinselDisease)
-    AwardItemLot(DiseaseIndicators.AinselDisease)
+    AwardItemLot(DiseaseItemLots.AinselDisease)
 
     SkipLinesIfFlagOn(2, Flags.AinselDiseaseOnce)
     EnableFlag(Flags.AinselDiseaseOnce)
@@ -2888,7 +2885,7 @@ def GetDiseaseDeeprootAstel():
 
     EnableFlag(Flags.DiseaseRollLock)
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
-    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollSecond))  # TODO: Last
 
     IfFlagOn(-2, Flags.DiseaseRollFirst)
     IfFlagOff(2, Flags.DeeprootDiseaseOnce)
@@ -2902,7 +2899,7 @@ def GetDiseaseDeeprootAstel():
     DisableFlag(Flags.DiseaseRollLock)
 
     AddSpecialEffect(PLAYER, SurvivalEffects.DeeprootDisease)
-    AwardItemLot(DiseaseIndicators.DeeprootDisease)
+    AwardItemLot(DiseaseItemLots.DeeprootDisease)
 
     SkipLinesIfFlagOn(2, Flags.DeeprootDiseaseOnce)
     EnableFlag(Flags.DeeprootDiseaseOnce)
@@ -2928,7 +2925,7 @@ def GetDiseaseRadahn():
 
     EnableFlag(Flags.DiseaseRollLock)
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
-    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollSecond))  # TODO: Last
 
     IfFlagOn(-2, Flags.DiseaseRollFirst)
     IfFlagOff(2, Flags.RadahnDiseaseOnce)
@@ -2942,7 +2939,7 @@ def GetDiseaseRadahn():
     DisableFlag(Flags.DiseaseRollLock)
 
     AddSpecialEffect(PLAYER, SurvivalEffects.RadahnDisease)
-    AwardItemLot(DiseaseIndicators.RadahnDisease)
+    AwardItemLot(DiseaseItemLots.RadahnDisease)
 
     SkipLinesIfFlagOn(2, Flags.RadahnDiseaseOnce)
     EnableFlag(Flags.RadahnDiseaseOnce)
@@ -2962,7 +2959,25 @@ def GetDiseaseCatacombs():
 
     EndIfFlagOn(Flags.CatacombsDiseaseTwice)
 
-    IfInsideMap(1, (30, 255, 255, 255))  # ANY Catacombs
+    # NOTE: Excludes Hero's Graves, just because I personally think they're distinct.
+    IfInsideMap(-1, TOMBSWARD_CATACOMBS)
+    IfInsideMap(-1, IMPALERS_CATACOMBS)
+    IfInsideMap(-1, STORMFOOT_CATACOMBS)
+    IfInsideMap(-1, ROADS_END_CATACOMBS)
+    IfInsideMap(-1, MURKWATER_CATACOMBS)
+    IfInsideMap(-1, BLACK_KNIFE_CATACOMBS)
+    IfInsideMap(-1, CLIFFBOTTOM_CATACOMBS)
+    IfInsideMap(-1, WYNDHAM_CATACOMBS)
+    IfInsideMap(-1, DEATHTOUCHED_CATACOMBS)
+    IfInsideMap(-1, UNSIGHTLY_CATACOMBS)
+    IfInsideMap(-1, AURIZA_SIDE_TOMB)
+    IfInsideMap(-1, MINOR_ERDTREE_CATACOMBS)
+    IfInsideMap(-1, CAELID_CATACOMBS)
+    IfInsideMap(-1, WAR_DEAD_CATACOMBS)
+    IfInsideMap(-1, GIANTS_MOUNTAINTOP_CATACOMBS)
+    IfInsideMap(-1, CONSECRATED_SNOWFIELD_CATACOMBS)
+    IfInsideMap(-1, HIDDEN_PATH_TO_THE_HALIGTREE)
+    IfConditionTrue(1, -1)
     IfAttackedWithDamageType(1, PLAYER, -1, DamageType.Unspecified)
     IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.CatacombsDisease)
     IfFlagOff(1, Flags.DiseaseRollLock)
@@ -2971,7 +2986,7 @@ def GetDiseaseCatacombs():
 
     EnableFlag(Flags.DiseaseRollLock)
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
-    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollSecond))  # TODO: Last
 
     IfFlagOn(-2, Flags.DiseaseRollFirst)
     IfFlagOff(2, Flags.CatacombsDiseaseOnce)
@@ -2985,7 +3000,7 @@ def GetDiseaseCatacombs():
     DisableFlag(Flags.DiseaseRollLock)
 
     AddSpecialEffect(PLAYER, SurvivalEffects.CatacombsDisease)
-    AwardItemLot(DiseaseIndicators.CatacombsDisease)
+    AwardItemLot(DiseaseItemLots.CatacombsDisease)
 
     SkipLinesIfFlagOn(2, Flags.CatacombsDiseaseOnce)
     EnableFlag(Flags.CatacombsDiseaseOnce)
@@ -3002,7 +3017,26 @@ def GetDiseaseCaves():
 
     EndIfFlagOn(Flags.CaveDiseaseTwice)
 
-    IfInsideMap(1, (31, 255, 255, 255))  # ANY Cave
+    IfInsideMap(-1, MURKWATER_CAVE)
+    IfInsideMap(-1, EARTHBORE_CAVE)
+    IfInsideMap(-1, TOMBSWARD_CAVE)
+    IfInsideMap(-1, GROVESIDE_CAVE)
+    IfInsideMap(-1, STILLWATER_CAVE)
+    IfInsideMap(-1, LAKESIDE_CRYSTAL_CAVE)
+    IfInsideMap(-1, ACADEMY_CRYSTAL_CAVE)
+    IfInsideMap(-1, SEETHEWATER_CAVE)
+    IfInsideMap(-1, VOLCANO_CAVE)
+    IfInsideMap(-1, DRAGONBARROW_CAVE)
+    IfInsideMap(-1, SELLIA_HIDEAWAY)
+    IfInsideMap(-1, CAVE_OF_THE_FORLORN)
+    IfInsideMap(-1, COASTAL_CAVE)
+    IfInsideMap(-1, HIGHROAD_CAVE)
+    IfInsideMap(-1, PERFUMERS_GROTTO)
+    IfInsideMap(-1, SAGES_CAVE)
+    IfInsideMap(-1, ABANDONED_CAVE)
+    IfInsideMap(-1, GAOL_CAVE)
+    IfInsideMap(-1, SPIRITCALLER_CAVE)
+    IfConditionTrue(1, -1)
     IfAttackedWithDamageType(1, PLAYER, -1, DamageType.Unspecified)
     IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.CaveDisease)
     IfFlagOff(1, Flags.DiseaseRollLock)
@@ -3011,7 +3045,7 @@ def GetDiseaseCaves():
 
     EnableFlag(Flags.DiseaseRollLock)
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
-    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollSecond))  # TODO: Last
 
     IfFlagOn(-2, Flags.DiseaseRollFirst)
     IfFlagOff(2, Flags.CaveDiseaseOnce)
@@ -3025,7 +3059,7 @@ def GetDiseaseCaves():
     DisableFlag(Flags.DiseaseRollLock)
 
     AddSpecialEffect(PLAYER, SurvivalEffects.CaveDisease)
-    AwardItemLot(DiseaseIndicators.CaveDisease)
+    AwardItemLot(DiseaseItemLots.CaveDisease)
 
     SkipLinesIfFlagOn(2, Flags.CaveDiseaseOnce)
     EnableFlag(Flags.CaveDiseaseOnce)
@@ -3042,7 +3076,15 @@ def GetDiseaseTunnels():
 
     EndIfFlagOn(Flags.TunnelDiseaseTwice)
 
-    IfInsideMap(1, (32, 255, 255, 255))  # ANY Tunnel
+    IfInsideMap(-1, MORNE_TUNNEL)
+    IfInsideMap(-1, LIMGRAVE_TUNNELS)
+    IfInsideMap(-1, RAYA_LUCARIA_CRYSTAL_TUNNEL)
+    IfInsideMap(-1, OLD_ALTUS_TUNNEL)
+    IfInsideMap(-1, ALTUS_TUNNEL)
+    IfInsideMap(-1, GAEL_TUNNEL)
+    IfInsideMap(-1, SELLIA_CRYSTAL_TUNNEL)
+    IfInsideMap(-1, YELOUGH_ANIX_TUNNEL)
+    IfConditionTrue(1, -1)
     IfAttackedWithDamageType(1, PLAYER, -1, DamageType.Unspecified)
     IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.TunnelDisease)
     IfFlagOff(1, Flags.DiseaseRollLock)
@@ -3051,7 +3093,7 @@ def GetDiseaseTunnels():
 
     EnableFlag(Flags.DiseaseRollLock)
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
-    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollSecond))  # TODO: Last
 
     IfFlagOn(-2, Flags.DiseaseRollFirst)
     IfFlagOff(2, Flags.TunnelDiseaseOnce)
@@ -3065,7 +3107,7 @@ def GetDiseaseTunnels():
     DisableFlag(Flags.DiseaseRollLock)
 
     AddSpecialEffect(PLAYER, SurvivalEffects.TunnelDisease)
-    AwardItemLot(DiseaseIndicators.TunnelDisease)
+    AwardItemLot(DiseaseItemLots.TunnelDisease)
 
     SkipLinesIfFlagOn(2, Flags.TunnelDiseaseOnce)
     EnableFlag(Flags.TunnelDiseaseOnce)
@@ -3110,34 +3152,47 @@ def CureDisease(_, disease_effect: int, cure_effect: int, disease_item: int, cur
 def MonitorInLimgrave():
     DisableFlag(Flags.PlayerInLimgrave)
 
-    # LIMGRAVE (including Weeping Peninsula)
-    IfInsideMapTile(-1, (60, 10, 9, 2))
-    IfInsideMapTile(-1, (60, 10, 8, 2))
-    IfInsideMapTile(-1, (60, 10, 7, 2))
-    IfInsideMapTile(-1, (60, 11, 7, 2))
-    IfInsideMapTile(-1, (60, 11, 8, 2))
-    IfInsideMapTile(-1, (60, 22, 19, 1))  # Caelid border
-    IfInsideMapTile(-1, (60, 22, 18, 1))
-    IfInsideMapTile(-1, (60, 46, 36, 0))
-    IfInsideMapTile(-1, (60, 46, 37, 0))
-    IfInsideMapTile(-1, (60, 46, 38, 0))
+    # Most of Limgrave:
+    for b in range(40, 46):
+        for c in range(30, 40):
+            IfInsideMap(-1, (60, b, c, 0))
+    # Divine Tower Bridge:
+    IfInsideMap(-1, (60, 42, 40, 0))
+    IfInsideMap(-1, (60, 43, 40, 0))
+    IfInsideMap(-1, (60, 44, 40, 0))
+    # Far east:
+    IfInsideMap(-1, (60, 46, 36, 0))
+    IfInsideMap(-1, (60, 46, 37, 0))
+    IfInsideMap(-1, (60, 46, 38, 0))
+    # (46, 39) overlaps with Caelid too much.
 
-    IfConditionTrue(0, -1)
+    IfConditionTrue(1, -1)
+    IfFlagOff(1, Flags.PlayerInLegacyDungeon)
+    IfFlagOff(1, Flags.PlayerInGenericDungeon)
+
+    IfConditionTrue(0, 1)
 
     EnableFlag(Flags.PlayerInLimgrave)
 
-    IfInsideMapTile(-2, (60, 10, 9, 2))
-    IfInsideMapTile(-2, (60, 10, 8, 2))
-    IfInsideMapTile(-2, (60, 10, 7, 2))
-    IfInsideMapTile(-2, (60, 11, 7, 2))
-    IfInsideMapTile(-2, (60, 11, 8, 2))
-    IfInsideMapTile(-2, (60, 22, 19, 1))  # Caelid border
-    IfInsideMapTile(-2, (60, 22, 18, 1))
-    IfInsideMapTile(-2, (60, 46, 36, 0))
-    IfInsideMapTile(-2, (60, 46, 37, 0))
-    IfInsideMapTile(-2, (60, 46, 38, 0))
+    # Most of Limgrave:
+    for b in range(40, 46):
+        for c in range(30, 40):
+            IfInsideMap(-2, (60, b, c, 0))
+    # Divine Tower Bridge:
+    IfInsideMap(-2, (60, 42, 40, 0))
+    IfInsideMap(-2, (60, 43, 40, 0))
+    IfInsideMap(-2, (60, 44, 40, 0))
+    # Far east:
+    IfInsideMap(-2, (60, 46, 36, 0))
+    IfInsideMap(-2, (60, 46, 37, 0))
+    IfInsideMap(-2, (60, 46, 38, 0))
+    # (46, 39) overlaps with Caelid too much.
 
-    IfConditionFalse(0, -2)
+    IfConditionTrue(2, -2)
+    IfFlagOff(2, Flags.PlayerInLegacyDungeon)
+    IfFlagOff(2, Flags.PlayerInGenericDungeon)
+
+    IfConditionFalse(0, 2)
 
     return RESTART
 
@@ -3146,39 +3201,53 @@ def MonitorInLimgrave():
 def MonitorInLiurnia():
     DisableFlag(Flags.PlayerInLiurnia)
 
-    IfInsideMapTile(-1, SOUTHWEST_LIURNIA)
-    IfInsideMapTile(-1, WEST_LIURNIA)
-    IfInsideMapTile(-1, NORTHWEST_LIURNIA)
-    IfInsideMapTile(-1, EAST_LIURNIA)
-    IfInsideMapTile(-1, (60, 18, 20, 1))  # entrance from Stormveil
-    IfInsideMapTile(-1, (60, 18, 21, 1))
-    IfInsideMapTile(-1, (60, 19, 21, 1))
-    IfInsideMapTile(-1, (60, 38, 40, 0))
-    IfInsideMapTile(-1, (60, 38, 41, 0))
-    IfInsideMapTile(-1, (60, 39, 41, 0))
-    IfInsideMapTile(-1, (60, 18, 24, 1))  # approach to Dectus
-    IfInsideMapTile(-1, (60, 19, 24, 1))
-    IfInsideMapTile(-1, (60, 36, 50, 0))
+    # Most of Liurnia can be captured in one rectangle of small maps.
+    for b in range(32, 39):
+        for c in range(40, 50):
+            IfInsideMap(-1, (60, b, c, 0))
+    # Caria Manor:
+    IfInsideMap(-1, (60, 34, 50, 0))
+    IfInsideMap(-1, (60, 35, 50, 0))
+    IfInsideMap(-1, (60, 36, 50, 0))
+    IfInsideMap(-1, (60, 34, 51, 0))
+    IfInsideMap(-1, (60, 35, 51, 0))
+    # (37, 50) overlaps Altus too much.
 
-    IfConditionTrue(0, -1)
+    # Far east (b = 39), excluding Stormveil Castle:
+    for c in range(41, 50):
+        IfInsideMap(-1, (60, 39, c, 0))
+
+    IfConditionTrue(1, -1)
+    IfFlagOff(1, Flags.PlayerInLegacyDungeon)
+    IfFlagOff(1, Flags.PlayerInGenericDungeon)
+
+    IfConditionTrue(0, 1)
+
+    DisplayBanner(BannerType.BloodyFingerVanquished)
 
     EnableFlag(Flags.PlayerInLiurnia)
 
-    IfInsideMapTile(-2, SOUTHWEST_LIURNIA)
-    IfInsideMapTile(-2, WEST_LIURNIA)
-    IfInsideMapTile(-2, NORTHWEST_LIURNIA)
-    IfInsideMapTile(-2, EAST_LIURNIA)
-    IfInsideMapTile(-2, (60, 18, 20, 1))  # entrance from Stormveil
-    IfInsideMapTile(-2, (60, 18, 21, 1))
-    IfInsideMapTile(-2, (60, 19, 21, 1))
-    IfInsideMapTile(-2, (60, 38, 40, 0))
-    IfInsideMapTile(-2, (60, 38, 41, 0))
-    IfInsideMapTile(-2, (60, 39, 41, 0))
-    IfInsideMapTile(-2, (60, 18, 24, 1))  # approach to Dectus
-    IfInsideMapTile(-2, (60, 19, 24, 1))
-    IfInsideMapTile(-2, (60, 36, 50, 0))
+    # Most of Liurnia can be captured in one rectangle of small maps.
+    for b in range(32, 39):
+        for c in range(40, 50):
+            IfInsideMap(-2, (60, b, c, 0))
+    # Caria Manor:
+    IfInsideMap(-2, (60, 34, 50, 0))
+    IfInsideMap(-2, (60, 35, 50, 0))
+    IfInsideMap(-2, (60, 36, 50, 0))
+    IfInsideMap(-2, (60, 34, 51, 0))
+    IfInsideMap(-2, (60, 35, 51, 0))
+    # (37, 50) overlaps Altus too much.
 
-    IfConditionFalse(0, -2)
+    # Far east (b = 39), excluding Stormveil Castle:
+    for c in range(41, 50):
+        IfInsideMap(-2, (60, 39, c, 0))
+
+    IfConditionTrue(2, -2)
+    IfFlagOff(2, Flags.PlayerInLegacyDungeon)
+    IfFlagOff(2, Flags.PlayerInGenericDungeon)
+
+    IfConditionFalse(0, 2)
 
     return RESTART
 
@@ -3187,33 +3256,67 @@ def MonitorInLiurnia():
 def MonitorInCaelid():
     DisableFlag(Flags.PlayerInCaelid)
 
-    IfInsideMapTile(-1, NORTH_CAELID)
-    IfInsideMapTile(-1, SOUTH_CAELID)
-    IfInsideMapTile(-1, NORTHEAST_CAELID)
-    IfInsideMapTile(-1, SOUTHEAST_CAELID)
-    IfInsideMapTile(-1, FAR_SOUTH_CAELID)  # just water and a sliver of Redmane Castle
-    IfInsideMapTile(-1, (60, 23, 20, 1))
-    IfInsideMapTile(-1, (60, 23, 21, 1))
-    IfInsideMapTile(-1, (60, 47, 37, 0))
-    IfInsideMapTile(-1, (60, 47, 38, 0))
-    IfInsideMapTile(-1, (60, 47, 39, 0))
+    # Most of Caelid:
+    for b in range(47, 50):
+        for c in range(36, 42):
+            IfInsideMap(-1, (60, b, c, 0))
+    # Redmane Castle:
+    IfInsideMap(-1, (60, 50, 36, 0))
+    IfInsideMap(-1, (60, 51, 36, 0))
+    IfInsideMap(-1, (60, 51, 35, 0))
+    # Great Jar:
+    IfInsideMap(-1, (60, 47, 42, 0))
+    # (46, 40) is too close to Limgrave.
+    # Sellia/Dragonbarrow:
+    IfInsideMap(-1, (60, 50, 39, 0))
+    IfInsideMap(-1, (60, 50, 40, 0))
+    IfInsideMap(-1, (60, 50, 41, 0))
+    IfInsideMap(-1, (60, 51, 40, 0))
+    IfInsideMap(-1, (60, 51, 41, 0))
+    IfInsideMap(-1, (60, 51, 42, 0))
+    IfInsideMap(-1, (60, 51, 43, 0))
+    IfInsideMap(-1, (60, 52, 41, 0))
+    IfInsideMap(-1, (60, 52, 42, 0))
+    IfInsideMap(-1, (60, 52, 43, 0))
+    # (51, 39) contains too much of the Wailing Dunes.
 
-    IfConditionTrue(0, -1)
+    IfConditionTrue(1, -1)
+    IfFlagOff(1, Flags.PlayerInLegacyDungeon)
+    IfFlagOff(1, Flags.PlayerInGenericDungeon)
+
+    IfConditionTrue(0, 1)
 
     EnableFlag(Flags.PlayerInCaelid)
 
-    IfInsideMapTile(-2, NORTH_CAELID)
-    IfInsideMapTile(-2, SOUTH_CAELID)
-    IfInsideMapTile(-2, NORTHEAST_CAELID)
-    IfInsideMapTile(-2, SOUTHEAST_CAELID)
-    IfInsideMapTile(-2, FAR_SOUTH_CAELID)  # just water and a sliver of Redmane Castle
-    IfInsideMapTile(-2, (60, 23, 20, 1))
-    IfInsideMapTile(-2, (60, 23, 21, 1))
-    IfInsideMapTile(-2, (60, 47, 37, 0))
-    IfInsideMapTile(-2, (60, 47, 38, 0))
-    IfInsideMapTile(-2, (60, 47, 39, 0))
+    # Most of Caelid:
+    for b in range(47, 50):
+        for c in range(36, 42):
+            IfInsideMap(-2, (60, b, c, 0))
+    # Redmane Castle:
+    IfInsideMap(-2, (60, 50, 36, 0))
+    IfInsideMap(-2, (60, 51, 36, 0))
+    IfInsideMap(-2, (60, 51, 35, 0))
+    # Great Jar:
+    IfInsideMap(-2, (60, 47, 42, 0))
+    # (46, 40) is too close to Limgrave.
+    # Sellia/Dragonbarrow:
+    IfInsideMap(-2, (60, 50, 39, 0))
+    IfInsideMap(-2, (60, 50, 40, 0))
+    IfInsideMap(-2, (60, 50, 41, 0))
+    IfInsideMap(-2, (60, 51, 40, 0))
+    IfInsideMap(-2, (60, 51, 41, 0))
+    IfInsideMap(-2, (60, 51, 42, 0))
+    IfInsideMap(-2, (60, 51, 43, 0))
+    IfInsideMap(-2, (60, 52, 41, 0))
+    IfInsideMap(-2, (60, 52, 42, 0))
+    IfInsideMap(-2, (60, 52, 43, 0))
+    # (51, 39) contains too much of the Wailing Dunes.
 
-    IfConditionFalse(0, -2)
+    IfConditionTrue(2, -2)
+    IfFlagOff(2, Flags.PlayerInLegacyDungeon)
+    IfFlagOff(2, Flags.PlayerInGenericDungeon)
+
+    IfConditionFalse(0, 2)
 
     return RESTART
 
@@ -3223,33 +3326,41 @@ def MonitorInAltus():
     """Does NOT include Mt. Gelmir."""
     DisableFlag(Flags.PlayerInAltus)
 
-    IfInsideMapTile(-1, (60, 10, 12, 2))
-    IfInsideMapTile(-1, (60, 10, 13, 2))
-    IfInsideMapTile(-1, (60, 22, 26, 1))
-    IfInsideMapTile(-1, (60, 36, 51, 0))
-    IfInsideMapTile(-1, (60, 37, 51, 0))
-    IfInsideMapTile(-1, (60, 38, 51, 0))
-    IfInsideMapTile(-1, (60, 39, 50, 0))
-    IfInsideMapTile(-1, (60, 39, 51, 0))
-    IfInsideMapTile(-1, (60, 39, 52, 0))
-    IfInsideMapTile(-1, (60, 39, 53, 0))
-    IfInsideMapTile(-1, (60, 39, 54, 0))  # Shaded Castle
+    # Most of Altus:
+    for b in range(39, 44):
+        for c in range(50, 56):
+            IfInsideMap(-1, (60, b, c, 0))
+    # Ignoring western lake (too close to Liurnia and Mt. Gelmir).
+    # Far east:
+    IfInsideMapTile(-1, (60, 44, 52, 0))
+    IfInsideMapTile(-1, (60, 44, 53, 0))
+    IfInsideMapTile(-1, (60, 45, 52, 0))
+    IfInsideMapTile(-1, (60, 45, 53, 0))
 
-    IfConditionTrue(0, -1)
+    IfConditionTrue(1, -1)
+    IfFlagOff(1, Flags.PlayerInLegacyDungeon)
+    IfFlagOff(1, Flags.PlayerInGenericDungeon)
 
-    IfInsideMapTile(-2, (60, 10, 12, 2))
-    IfInsideMapTile(-2, (60, 10, 13, 2))
-    IfInsideMapTile(-2, (60, 22, 26, 1))
-    IfInsideMapTile(-2, (60, 36, 51, 0))
-    IfInsideMapTile(-2, (60, 37, 51, 0))
-    IfInsideMapTile(-2, (60, 38, 51, 0))
-    IfInsideMapTile(-2, (60, 39, 50, 0))
-    IfInsideMapTile(-2, (60, 39, 51, 0))
-    IfInsideMapTile(-2, (60, 39, 52, 0))
-    IfInsideMapTile(-2, (60, 39, 53, 0))
-    IfInsideMapTile(-2, (60, 39, 54, 0))  # Shaded Castle
+    IfConditionTrue(0, 1)
 
-    IfConditionFalse(0, -2)
+    EnableFlag(Flags.PlayerInAltus)
+
+    # Most of Altus:
+    for b in range(39, 44):
+        for c in range(50, 56):
+            IfInsideMap(-2, (60, b, c, 0))
+    # Ignoring western lake (too close to Liurnia and Mt. Gelmir).
+    # Far east:
+    IfInsideMapTile(-2, (60, 44, 52, 0))
+    IfInsideMapTile(-2, (60, 44, 53, 0))
+    IfInsideMapTile(-2, (60, 45, 52, 0))
+    IfInsideMapTile(-2, (60, 45, 53, 0))
+
+    IfConditionTrue(2, -2)
+    IfFlagOff(2, Flags.PlayerInLegacyDungeon)
+    IfFlagOff(2, Flags.PlayerInGenericDungeon)
+
+    IfConditionFalse(0, 2)
 
     return RESTART
 
@@ -3259,25 +3370,35 @@ def MonitorInMtGelmir():
     """Does NOT include rest of Altus."""
     DisableFlag(Flags.PlayerInMtGelmir)
 
-    IfInsideMapTile(-1, (60, 17, 26, 1))
-    IfInsideMapTile(-1, (60, 17, 27, 1))
-    IfInsideMapTile(-1, (60, 18, 26, 1))
-    IfInsideMapTile(-1, (60, 18, 27, 1))
-    IfInsideMapTile(-1, (60, 38, 52, 0))
+    # Most of Mt. Gelmir:
+    for b in range(34, 38):
+        for c in range(52, 56):
+            IfInsideMap(-1, (60, b, c, 0))
+    # Western side:
     IfInsideMapTile(-1, (60, 38, 52, 0))
     IfInsideMapTile(-1, (60, 38, 53, 0))
     IfInsideMapTile(-1, (60, 38, 54, 0))
 
-    IfConditionTrue(0, -1)
+    IfConditionTrue(1, -1)
+    IfFlagOff(1, Flags.PlayerInLegacyDungeon)
+    IfFlagOff(1, Flags.PlayerInGenericDungeon)
 
-    IfInsideMapTile(-2, (60, 17, 26, 1))
-    IfInsideMapTile(-2, (60, 17, 27, 1))
-    IfInsideMapTile(-2, (60, 18, 26, 1))
-    IfInsideMapTile(-2, (60, 18, 27, 1))
-    IfInsideMapTile(-2, (60, 38, 52, 0))
+    IfConditionTrue(0, 1)
+
+    EnableFlag(Flags.PlayerInMtGelmir)
+
+    # Most of Mt. Gelmir:
+    for b in range(34, 38):
+        for c in range(52, 56):
+            IfInsideMap(-2, (60, b, c, 0))
+    # Western side:
     IfInsideMapTile(-2, (60, 38, 52, 0))
     IfInsideMapTile(-2, (60, 38, 53, 0))
     IfInsideMapTile(-2, (60, 38, 54, 0))
+
+    IfConditionTrue(2, -2)
+    IfFlagOff(2, Flags.PlayerInLegacyDungeon)
+    IfFlagOff(2, Flags.PlayerInGenericDungeon)
 
     IfConditionFalse(0, -2)
 
@@ -3288,27 +3409,208 @@ def MonitorInMtGelmir():
 def MonitorInMountaintops():
     DisableFlag(Flags.PlayerInMountaintops)
 
-    IfInsideMapTile(-1, WEST_CONSECRATED_SNOWFIELD)
-    IfInsideMapTile(-1, NORTHWEST_MOUNTAINTOPS)
-    IfInsideMapTile(-1, NORTHEAST_MOUNTAINTOPS)
-    IfInsideMapTile(-1, SOUTHEAST_MOUNTAINTOPS)
-    IfInsideMapTile(-1, (60, 24, 27, 1))
-    IfInsideMapTile(-1, (60, 25, 26, 1))  # entrance from Rold
-    IfInsideMapTile(-1, (60, 25, 27, 1))
-    IfInsideMapTile(-1, (60, 23, 27, 1))  # edge facing Leyndell
+    # Most of Mountaintops:
+    for b in range(47, 54):
+        for c in range(53, 59):
+            IfInsideMap(-1, (60, b, c, 0))
+    # Fire Giant arena:
+    IfInsideMap(-1, (60, 52, 52, 0))
+    IfInsideMap(-1, (60, 53, 52, 0))
 
-    IfConditionTrue(0, -1)
+    IfConditionTrue(1, -1)
+    IfFlagOff(1, Flags.PlayerInLegacyDungeon)
+    IfFlagOff(1, Flags.PlayerInGenericDungeon)
+
+    IfConditionTrue(0, 1)
 
     EnableFlag(Flags.PlayerInMountaintops)
 
-    IfInsideMapTile(-2, WEST_CONSECRATED_SNOWFIELD)
-    IfInsideMapTile(-2, NORTHWEST_MOUNTAINTOPS)
-    IfInsideMapTile(-2, NORTHEAST_MOUNTAINTOPS)
-    IfInsideMapTile(-2, SOUTHEAST_MOUNTAINTOPS)
-    IfInsideMapTile(-2, (60, 24, 27, 1))
-    IfInsideMapTile(-2, (60, 25, 26, 1))  # entrance from Rold
-    IfInsideMapTile(-2, (60, 25, 27, 1))
-    IfInsideMapTile(-2, (60, 23, 27, 1))  # edge facing Leyndell
+    # Most of Mountaintops:
+    for b in range(47, 54):
+        for c in range(53, 59):
+            IfInsideMap(-2, (60, b, c, 0))
+    # Fire Giant arena:
+    IfInsideMap(-2, (60, 52, 52, 0))
+    IfInsideMap(-2, (60, 53, 52, 0))
+
+    IfConditionTrue(2, -2)
+    IfFlagOff(2, Flags.PlayerInLegacyDungeon)
+    IfFlagOff(2, Flags.PlayerInGenericDungeon)
+
+    IfConditionFalse(0, 2)
+
+    return RESTART
+
+
+@NeverRestart(Flags.MonitorInGenericDungeon)
+def MonitorInGenericDungeon():
+    DisableFlag(Flags.PlayerInGenericDungeon)
+
+    IfInsideMap(-1, TOMBSWARD_CATACOMBS)
+    IfInsideMap(-1, IMPALERS_CATACOMBS)
+    IfInsideMap(-1, STORMFOOT_CATACOMBS)
+    IfInsideMap(-1, ROADS_END_CATACOMBS)
+    IfInsideMap(-1, MURKWATER_CATACOMBS)
+    IfInsideMap(-1, BLACK_KNIFE_CATACOMBS)
+    IfInsideMap(-1, CLIFFBOTTOM_CATACOMBS)
+    IfInsideMap(-1, WYNDHAM_CATACOMBS)
+    IfInsideMap(-1, DEATHTOUCHED_CATACOMBS)
+    IfInsideMap(-1, UNSIGHTLY_CATACOMBS)
+    IfInsideMap(-1, AURIZA_SIDE_TOMB)
+    IfInsideMap(-1, MINOR_ERDTREE_CATACOMBS)
+    IfInsideMap(-1, CAELID_CATACOMBS)
+    IfInsideMap(-1, WAR_DEAD_CATACOMBS)
+    IfInsideMap(-1, GIANTS_MOUNTAINTOP_CATACOMBS)
+    IfInsideMap(-1, CONSECRATED_SNOWFIELD_CATACOMBS)
+    IfInsideMap(-1, HIDDEN_PATH_TO_THE_HALIGTREE)
+
+    IfInsideMap(-1, SAINTED_HEROS_GRAVE)
+    IfInsideMap(-1, GELMIR_HEROS_GRAVE)
+    IfInsideMap(-1, AURIZA_HEROS_GRAVE)
+    IfInsideMap(-1, GIANT_CONQUERING_HEROS_GRAVE)
+
+    IfInsideMap(-1, MURKWATER_CAVE)
+    IfInsideMap(-1, EARTHBORE_CAVE)
+    IfInsideMap(-1, TOMBSWARD_CAVE)
+    IfInsideMap(-1, GROVESIDE_CAVE)
+    IfInsideMap(-1, STILLWATER_CAVE)
+    IfInsideMap(-1, LAKESIDE_CRYSTAL_CAVE)
+    IfInsideMap(-1, ACADEMY_CRYSTAL_CAVE)
+    IfInsideMap(-1, SEETHEWATER_CAVE)
+    IfInsideMap(-1, VOLCANO_CAVE)
+    IfInsideMap(-1, DRAGONBARROW_CAVE)
+    IfInsideMap(-1, SELLIA_HIDEAWAY)
+    IfInsideMap(-1, CAVE_OF_THE_FORLORN)
+    IfInsideMap(-1, COASTAL_CAVE)
+    IfInsideMap(-1, HIGHROAD_CAVE)
+    IfInsideMap(-1, PERFUMERS_GROTTO)
+    IfInsideMap(-1, SAGES_CAVE)
+    IfInsideMap(-1, ABANDONED_CAVE)
+    IfInsideMap(-1, GAOL_CAVE)
+    IfInsideMap(-1, SPIRITCALLER_CAVE)
+
+    IfInsideMap(-1, MORNE_TUNNEL)
+    IfInsideMap(-1, LIMGRAVE_TUNNELS)
+    IfInsideMap(-1, RAYA_LUCARIA_CRYSTAL_TUNNEL)
+    IfInsideMap(-1, OLD_ALTUS_TUNNEL)
+    IfInsideMap(-1, ALTUS_TUNNEL)
+    IfInsideMap(-1, GAEL_TUNNEL)
+    IfInsideMap(-1, SELLIA_CRYSTAL_TUNNEL)
+    IfInsideMap(-1, YELOUGH_ANIX_TUNNEL)
+
+    IfConditionTrue(0, -1)
+
+    EnableFlag(Flags.PlayerInGenericDungeon)
+
+    IfInsideMap(-2, TOMBSWARD_CATACOMBS)
+    IfInsideMap(-2, IMPALERS_CATACOMBS)
+    IfInsideMap(-2, STORMFOOT_CATACOMBS)
+    IfInsideMap(-2, ROADS_END_CATACOMBS)
+    IfInsideMap(-2, MURKWATER_CATACOMBS)
+    IfInsideMap(-2, BLACK_KNIFE_CATACOMBS)
+    IfInsideMap(-2, CLIFFBOTTOM_CATACOMBS)
+    IfInsideMap(-2, WYNDHAM_CATACOMBS)
+    IfInsideMap(-2, DEATHTOUCHED_CATACOMBS)
+    IfInsideMap(-2, UNSIGHTLY_CATACOMBS)
+    IfInsideMap(-2, AURIZA_SIDE_TOMB)
+    IfInsideMap(-2, MINOR_ERDTREE_CATACOMBS)
+    IfInsideMap(-2, CAELID_CATACOMBS)
+    IfInsideMap(-2, WAR_DEAD_CATACOMBS)
+    IfInsideMap(-2, GIANTS_MOUNTAINTOP_CATACOMBS)
+    IfInsideMap(-2, CONSECRATED_SNOWFIELD_CATACOMBS)
+    IfInsideMap(-2, HIDDEN_PATH_TO_THE_HALIGTREE)
+
+    IfInsideMap(-2, SAINTED_HEROS_GRAVE)
+    IfInsideMap(-2, GELMIR_HEROS_GRAVE)
+    IfInsideMap(-2, AURIZA_HEROS_GRAVE)
+    IfInsideMap(-2, GIANT_CONQUERING_HEROS_GRAVE)
+
+    IfInsideMap(-2, MURKWATER_CAVE)
+    IfInsideMap(-2, EARTHBORE_CAVE)
+    IfInsideMap(-2, TOMBSWARD_CAVE)
+    IfInsideMap(-2, GROVESIDE_CAVE)
+    IfInsideMap(-2, STILLWATER_CAVE)
+    IfInsideMap(-2, LAKESIDE_CRYSTAL_CAVE)
+    IfInsideMap(-2, ACADEMY_CRYSTAL_CAVE)
+    IfInsideMap(-2, SEETHEWATER_CAVE)
+    IfInsideMap(-2, VOLCANO_CAVE)
+    IfInsideMap(-2, DRAGONBARROW_CAVE)
+    IfInsideMap(-2, SELLIA_HIDEAWAY)
+    IfInsideMap(-2, CAVE_OF_THE_FORLORN)
+    IfInsideMap(-2, COASTAL_CAVE)
+    IfInsideMap(-2, HIGHROAD_CAVE)
+    IfInsideMap(-2, PERFUMERS_GROTTO)
+    IfInsideMap(-2, SAGES_CAVE)
+    IfInsideMap(-2, ABANDONED_CAVE)
+    IfInsideMap(-2, GAOL_CAVE)
+    IfInsideMap(-2, SPIRITCALLER_CAVE)
+
+    IfInsideMap(-2, MORNE_TUNNEL)
+    IfInsideMap(-2, LIMGRAVE_TUNNELS)
+    IfInsideMap(-2, RAYA_LUCARIA_CRYSTAL_TUNNEL)
+    IfInsideMap(-2, OLD_ALTUS_TUNNEL)
+    IfInsideMap(-2, ALTUS_TUNNEL)
+    IfInsideMap(-2, GAEL_TUNNEL)
+    IfInsideMap(-2, SELLIA_CRYSTAL_TUNNEL)
+    IfInsideMap(-2, YELOUGH_ANIX_TUNNEL)
+
+    IfConditionFalse(0, -2)
+
+    return RESTART
+
+
+@NeverRestart(Flags.MonitorInLegacyDungeon)
+def MonitorInLegacyDungeon():
+    """Includes underground rivers - basically anywhere except an m60 map tile."""
+    DisableFlag(Flags.PlayerInLegacyDungeon)
+
+    IfInsideMap(-1, STORMVEIL_CASTLE)
+    IfInsideMap(-1, CHAPEL_OF_ANTICIPATION)
+    IfInsideMap(-1, LEYNDELL_ROYAL_CAPITAL)
+    IfInsideMap(-1, LEYNDELL_ASHEN_CAPITAL)
+    IfInsideMap(-1, ROUNDTABLE_HOLD)
+    IfInsideMap(-1, AINSEL_RIVER)
+    IfInsideMap(-1, SIOFRA_RIVER)
+    IfInsideMap(-1, DEEPROOT_DEPTHS)
+    IfInsideMap(-1, ASTEL_ARENA)
+    IfInsideMap(-1, MOHGWYN_PALACE)
+    IfInsideMap(-1, SIOFRA_RIVER_START)
+    IfInsideMap(-1, REGAL_ANCESTOR_LOWER)
+    IfInsideMap(-1, REGAL_ANCESTOR_UPPER)
+    IfInsideMap(-1, CRUMBLING_FARUM_AZULA)
+    IfInsideMap(-1, RAYA_LUCARIA)
+    IfInsideMap(-1, HALIGTREE)
+    IfInsideMap(-1, VOLCANO_MANOR)
+    IfInsideMap(-1, STRANDED_GRAVEYARD)
+    IfInsideMap(-1, STONE_PLATFORM)
+    IfInsideMap(-1, SHUNNING_GROUNDS)
+    IfInsideMap(-1, RUIN_STREWN_PRECIPICE)
+
+    IfConditionTrue(0, -1)
+
+    EnableFlag(Flags.PlayerInLegacyDungeon)
+
+    IfInsideMap(-2, STORMVEIL_CASTLE)
+    IfInsideMap(-2, CHAPEL_OF_ANTICIPATION)
+    IfInsideMap(-2, LEYNDELL_ROYAL_CAPITAL)
+    IfInsideMap(-2, LEYNDELL_ASHEN_CAPITAL)
+    IfInsideMap(-2, ROUNDTABLE_HOLD)
+    IfInsideMap(-2, AINSEL_RIVER)
+    IfInsideMap(-2, SIOFRA_RIVER)
+    IfInsideMap(-2, DEEPROOT_DEPTHS)
+    IfInsideMap(-2, ASTEL_ARENA)
+    IfInsideMap(-2, MOHGWYN_PALACE)
+    IfInsideMap(-2, SIOFRA_RIVER_START)
+    IfInsideMap(-2, REGAL_ANCESTOR_LOWER)
+    IfInsideMap(-2, REGAL_ANCESTOR_UPPER)
+    IfInsideMap(-2, CRUMBLING_FARUM_AZULA)
+    IfInsideMap(-2, RAYA_LUCARIA)
+    IfInsideMap(-2, HALIGTREE)
+    IfInsideMap(-2, VOLCANO_MANOR)
+    IfInsideMap(-2, STRANDED_GRAVEYARD)
+    IfInsideMap(-2, STONE_PLATFORM)
+    IfInsideMap(-2, SHUNNING_GROUNDS)
+    IfInsideMap(-2, RUIN_STREWN_PRECIPICE)
 
     IfConditionFalse(0, -2)
 
@@ -3356,3 +3658,62 @@ def MonitorSmithsHammerPossession(_, hammer_id: int, possession_flag: int):
     EnableFlag(possession_flag)
     IfPlayerDoesNotHaveGood(0, hammer_id)  # will never happen, but whatever
     return RESTART
+
+
+@NeverRestart(15003999)
+def DEBUG_ResetDiseases():
+    """Debug event for removing all disease indicators and disabling immunity flags."""
+    RemoveGoodFromPlayer(DiseaseIndicators.LimgraveDisease, 99)
+    RemoveGoodFromPlayer(DiseaseIndicators.LiurniaDisease, 99)
+    RemoveGoodFromPlayer(DiseaseIndicators.CaelidDisease, 99)
+    RemoveGoodFromPlayer(DiseaseIndicators.AltusDisease, 99)
+    RemoveGoodFromPlayer(DiseaseIndicators.MtGelmirDisease, 99)
+    RemoveGoodFromPlayer(DiseaseIndicators.MountaintopsDisease, 99)
+    RemoveGoodFromPlayer(DiseaseIndicators.SiofraDisease, 99)
+    RemoveGoodFromPlayer(DiseaseIndicators.AinselDisease, 99)
+    RemoveGoodFromPlayer(DiseaseIndicators.DeeprootDisease, 99)
+    RemoveGoodFromPlayer(DiseaseIndicators.StormveilDisease, 99)
+    RemoveGoodFromPlayer(DiseaseIndicators.RayaLucariaDisease, 99)
+    RemoveGoodFromPlayer(DiseaseIndicators.RadahnDisease, 99)
+    RemoveGoodFromPlayer(DiseaseIndicators.VolcanoManorDisease, 99)
+    RemoveGoodFromPlayer(DiseaseIndicators.LeyndellDisease, 99)
+    RemoveGoodFromPlayer(DiseaseIndicators.SewersDisease, 99)
+    RemoveGoodFromPlayer(DiseaseIndicators.HaligtreeDisease, 99)
+    RemoveGoodFromPlayer(DiseaseIndicators.FarumAzulaDisease, 99)
+    RemoveGoodFromPlayer(DiseaseIndicators.MohgwynDisease, 99)
+    RemoveGoodFromPlayer(DiseaseIndicators.CatacombsDisease, 99)
+    RemoveGoodFromPlayer(DiseaseIndicators.CaveDisease, 99)
+    RemoveGoodFromPlayer(DiseaseIndicators.TunnelDisease, 99)
+    DisableFlagRange((Flags.LimgraveDiseaseOnce, Flags.TunnelDiseaseTwice))
+
+
+@NeverRestart(15003998)
+def DEBUG_GetAllMaps():
+    """Award all map item lots."""
+    AwardItemLot(12010000)
+    AwardItemLot(12010010)
+    AwardItemLot(12020060)
+    AwardItemLot(12030000)
+    AwardItemLot(12050000)
+    AwardItemLot(1034480200)
+    AwardItemLot(1035450100)
+    AwardItemLot(1036540500)
+    AwardItemLot(1037440210)
+    AwardItemLot(1038410200)
+    AwardItemLot(1040520500)
+    AwardItemLot(1042370200)
+    AwardItemLot(1042510500)
+    AwardItemLot(1044320000)
+    AwardItemLot(1045370020)
+    AwardItemLot(1048560700)
+    AwardItemLot(1049370500)
+    AwardItemLot(1049400500)
+    AwardItemLot(1049530700)
+    AwardItemLot(1052540700)
+
+
+@NeverRestart(15003997)
+def DEBUG_GetDectusMedallions():
+    """Award Dectus item lots."""
+    AwardItemLot(1046360500)
+    AwardItemLot(1051390900)

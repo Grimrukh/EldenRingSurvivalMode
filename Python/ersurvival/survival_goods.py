@@ -1206,128 +1206,211 @@ NEW_SMITHS_HAMMERS = {
 DISEASE_INDICATORS = {
     DiseaseIndicators.LimgraveDisease: {
         "name": "Disease: Plague of Limgrave",
-        "info": "",
-        "caption": "",
+        "info": "Disease contracted in the hills of Limgrave",
+        "caption": "Illness not uncommon in the lower lands.\n"
+                   "Accelerates the effects of thirst and hunger.\n"
+                   "\n"
+                   "Some believe this plague was spread to Limgrave intentionally, to inflict even more suffering upon "
+                   "the scattered crucified.",
         "icon": 3739,  # faded skull in Icon_02_A
     },
     DiseaseIndicators.LiurniaDisease: {
         "name": "Disease: Lake Toxin",
-        "info": "",
-        "caption": "",
+        "info": "Disease contracted in the lakes of Liurnia",
+        "caption": "Mild toxin found in and around the lakes of Liurnia.\n"
+                   "Lowers intelligence and arcane ability.\n"
+                   "\n"
+                   "The Carian royals blame the glintstone sorcerers of Raya Lucaria for creating this poison, and "
+                   "vice versa. Perhaps only the crayfish know the truth.",
         "icon": 3735,  # faded skull in Icon_02_A
     },
     DiseaseIndicators.CaelidDisease: {
         "name": "Disease: Scarlet Parasite",
-        "info": "",
-        "caption": "",
+        "info": "Disease contracted in the wastes of Caelid",
+        "caption": "Malicious red parasite borne of blood and war.\n"
+                   "Halves the effectiveness of Crimson Tears.\n"
+                   "\n"
+                   "These vermin line the throat and subsist on stolen restorative tears. Though they have the same "
+                   "hue as scarlet rot, any relation between the two is unclear, aside from their shared breeding of "
+                   "misery.",
         "icon": 3736,  # faded skull in Icon_02_A
     },
     DiseaseIndicators.AltusDisease: {
         "name": "Disease: Windmill Fever",
-        "info": "",
-        "caption": "",
+        "info": "Disease contracted on the Altus Plateau",
+        "caption": "Illness not uncommon in the upper lands.\n"
+                   "Greatly reduces poise.\n"
+                   "\n"
+                   "Cryptic illness first observed in commoners who stared too long at windmills, though it has since "
+                   "become more widely endemic in the hills surrounding the Royal Capital.",
         "icon": 3734,  # faded skull in Icon_02_A
     },
     DiseaseIndicators.MtGelmirDisease: {
         "name": "Disease: Plague of Gelmir",
-        "info": "",
-        "caption": "",
+        "info": "Disease contracted atop Mt. Gelmir",
+        "caption": "Rare disease bred only in the warm rocks of Mt. Gelmir.\n"
+                   "Greatly reduces hemorrhage resistance.\n"
+                   "\n"
+                   "This high-altitude illness thins the blood, making one more vulnerable to cutting attacks.",
         "icon": 3739,  # faded skull in Icon_02_A
     },
     DiseaseIndicators.MountaintopsDisease: {
         "name": "Disease: Frigid Parasite",
-        "info": "",
-        "caption": "",
+        "info": "Disease contracted upon the Mountaintops",
+        "caption": "Ice-blue tick originating in the mountaintops far above Leyndell.\n"
+                   "Greatly reduces stamina recovery speed.\n"
+                   "\n"
+                   "Mercifully, this aberrant lifeform breeds only in the frozen peaks of the Giants. It is "
+                   "customary in Leyndell to execute any traveller suspected of carrying it.",
         "icon": 3736,  # faded skull in Icon_02_A
     },
     DiseaseIndicators.SiofraDisease: {
         "name": "Disease: Plague of Nokron",
-        "info": "",
-        "caption": "",
+        "info": "Disease contracted near the Eternal City of Nokron",
+        "caption": "Illness found in the underground silver city of Nokron.\n"
+                   "Greatly reduces magic defense.\n"
+                   "\n"
+                   "This disease originated in the poorest areas of the Eternal City of Nokron, and was carried "
+                   "further downstream by the Siofra River.",
         "icon": 3739,  # faded skull in Icon_02_A
     },
     DiseaseIndicators.AinselDisease: {
         "name": "Disease: Ant Toxin",
-        "info": "",
-        "caption": "",
+        "info": "Disease contracted from the nests of the Ainsel River",
+        "caption": "Numbing venom originating from ants along the Ainsel River.\n"
+                   "Lowers mind and endurance.\n"
+                   "\n"
+                   "Rarely, claymen have been seen aggravating the giant ants intentionally. Perhaps they simply wish "
+                   "to feel something.",
         "icon": 3735,  # faded skull in Icon_02_A
     },
     DiseaseIndicators.DeeprootDisease: {
         "name": "Disease: Star-Shaped Parasite",
-        "info": "",
-        "caption": "",
+        "info": "Disease contracted from the roots deep below the Royal Capital",
+        "caption": "Eldritch spider-like entity found only in the nameless eternal city.\n"
+                   "Lowers FP to essentially nothing.\n"
+                   "\n"
+                   "This creature sits in the ear canal and whispers the incomprehensible words of an outer god, "
+                   "making it extremely difficult to focus on anything else.",
         "icon": 3736,  # faded skull in Icon_02_A
     },
     DiseaseIndicators.StormveilDisease: {
         "name": "Disease: Grafted Plague",
-        "info": "",
-        "caption": "",
+        "info": "Disease contracted from Stormveil Castle",
+        "caption": "Illness borne from the failed experiments of Godrick.\n"
+                   "Greatly reduces poison and scarlet rot resistance.\n"
+                   "\n"
+                   "Additional limbs may improve battle prowess for some, but for many, it does little beyond increase "
+                   "vulnerability to other afflictions.",
         "icon": 3739,  # faded skull in Icon_02_A
     },
     DiseaseIndicators.RayaLucariaDisease: {
         "name": "Disease: Full Moon Fever",
-        "info": "",
-        "caption": "",
+        "info": "Disease contracted from the Academy of Raya Lucaria",
+        "caption": "Affliction that spreads within the Academy of Raya Lucaria.\n"
+                   "Greatly reduces equip load.\n"
+                   "\n"
+                   "After Queen Rennala was sealed inside the library, a growing number of new pupils found themselves "
+                   "transfixed by the full moon and burdened by its implications.",
         "icon": 3734,  # faded skull in Icon_02_A
     },
     DiseaseIndicators.RadahnDisease: {
         "name": "Disease: Starscourge Fever",
-        "info": "",
-        "caption": "",
+        "info": "Disease contracted from Starscourge Radahn",
+        "caption": "Mad battle fever that afflicts General Radahn.\n"
+                   "Makes it difficult to take enemies by surprise.\n"
+                   "\n"
+                   "The Red Lion General is not known for his subtlety, and those infected by his lust for battle may "
+                   "find it equally difficult to approach foes unannounced.",
         "icon": 3734,  # faded skull in Icon_02_A
     },
     DiseaseIndicators.VolcanoManorDisease: {
         "name": "Disease: Serpent Toxin",
-        "info": "",
-        "caption": "",
+        "info": "Disease contracted from the Volcano Manor",
+        "caption": "Paralyzing venom spread by the serpents of the Volcano Manor.\n"
+                   "Reduces strength and dexterity.\n"
+                   "\n"
+                   "This powerful toxin is said to originate from Praetor Rykard himself, though in truth, it likely "
+                   "predates his fateful encounter with the Serpent-God.",
         "icon": 3735,  # faded skull in Icon_02_A
     },
     DiseaseIndicators.LeyndellDisease: {
         "name": "Disease: Plague of Leyndell",
-        "info": "",
-        "caption": "",
+        "info": "Disease contracted from the Royal Capital",
+        "caption": "Illness that is increasingly pervasive in Leyndell.\n"
+                   "Greatly reduces resistance to death blight.\n"
+                   "\n"
+                   "Plague of unknown origin that has been slowly spreading in Leyndell. Some blame the Omen sealed "
+                   "beneath the city, but others believe it is a manifestation of the Erdtree's decay.",
         "icon": 3739,  # faded skull in Icon_02_A
     },
     DiseaseIndicators.SewersDisease: {
         "name": "Disease: Omen Parasite",
-        "info": "",
-        "caption": "",
+        "info": "Disease contracted from the tunnels beneath Leyndell",
+        "caption": "Horned insect that resides in the shunning-grounds beneath the Royal Capital.\n"
+                   "Halves runes gained from felling enemies.\n"
+                   "\n"
+                   "Many Omen beneath the Capital have formed a pair-bond with this light-feeding creature, but "
+                   "it shows no interest in pursuing any sort of symbiosis with lowly Tarnished.",
         "icon": 3736,  # faded skull in Icon_02_A
     },
     DiseaseIndicators.HaligtreeDisease: {
         "name": "Disease: Unalloyed Plague",
-        "info": "",
-        "caption": "",
+        "info": "Disease contracted from Miquella's Haligtree",
+        "caption": "Disease that sometimes manifests among the unalloyed of the Haligtree.\n"
+                   "Greatly reduces fire and lightning defense.\n"
+                   "\n"
+                   "Miquella's attempts to resist the afflictions of the outer gods were noble, but unalloyed gold "
+                   "is a poor defense against the elements of the ancient dragons.",
         "icon": 3739,  # faded skull in Icon_02_A
     },
     DiseaseIndicators.FarumAzulaDisease: {
         "name": "Disease: Beastman's Fever",
-        "info": "",
-        "caption": "",
+        "info": "Disease contracted from Farum Azula",
+        "caption": "Illness common among the beastmen of crumbling Farum Azula.\n"
+                   "Reduces physical attack power.\n"
+                   "\n"
+                   "Among the thick-skinned beastmen, this disease is considered fairly harmless.",
         "icon": 3734,  # faded skull in Icon_02_A
     },
     DiseaseIndicators.MohgwynDisease: {
         "name": "Disease: Blood Lord's Fever",
-        "info": "",
-        "caption": "",
+        "info": "Disease contracted from Mohgwyn Dynasty Palace",
+        "caption": "Deadly affliction originating in the Blood Lord's palace.\n"
+                   "Causes gradual bleed build-up.\n"
+                   "\n"
+                   "To be marked with the blood of Mohgwyn is to be marked with death. For the truly devout, it is an "
+                   "honor beyond words.",
         "icon": 3734,  # faded skull in Icon_02_A
     },
     DiseaseIndicators.CatacombsDisease: {
         "name": "Disease: Catacombs Toxin",
-        "info": "",
-        "caption": "",
+        "info": "Disease contracted from a sealed crypt",
+        "caption": "Haunting poison that can be found in catacombs across the Lands Between.\n"
+                   "Reduces vigor and faith.\n"
+                   "\n"
+                   "This dark substance coats many statues and bones in crypts. Death comes more swiftly for any who "
+                   "touch it, as does despair.",
         "icon": 3735,  # faded skull in Icon_02_A
     },
     DiseaseIndicators.CaveDisease: {
         "name": "Disease: Cave Parasite",
-        "info": "",
-        "caption": "",
+        "info": "Disease contracted from a dark cave",
+        "caption": "Tiny organism that breeds in cave moss.\n"
+                   "Reduces all defenses during daylight.\n"
+                   "\n"
+                   "Travellers who spend too long underground are known to become nocturnal, perhaps through no "
+                   "fault of their own.",
         "icon": 3736,  # faded skull in Icon_02_A
     },
     DiseaseIndicators.TunnelDisease: {
         "name": "Disease: Miner's Fever",
-        "info": "",
-        "caption": "",
+        "info": "Disease contracted from a mining tunnel",
+        "caption": "Illness not uncommon among miners.\n"
+                   "Greatly reduces madness resistance.\n"
+                   "\n"
+                   "Touching too much unrefined glintstone is a hazard for miners, but most are given little choice "
+                   "but to risk it.",
         "icon": 3734,  # faded skull in Icon_02_A
     },
 }

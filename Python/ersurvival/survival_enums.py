@@ -50,26 +50,22 @@ class Flags(Flag):
 
     CheckMildHeatArea = BASE_FLAG + 20
     MildHeatWarning = BASE_FLAG + 21
-    ShowMildHeatWarning = BASE_FLAG + 22
+    CheckModerateHeatArea = BASE_FLAG + 22
+    ModerateHeatWarning = BASE_FLAG + 23
+    CheckSevereHeatArea = BASE_FLAG + 24
+    SevereHeatWarning = BASE_FLAG + 25
+    CheckMildColdArea = BASE_FLAG + 26
+    MildColdWarning = BASE_FLAG + 27
+    CheckModerateColdArea = BASE_FLAG + 28
+    ModerateColdWarning = BASE_FLAG + 29
+    CheckSevereColdArea = BASE_FLAG + 30
+    SevereColdWarning = BASE_FLAG + 31
 
-    CheckModerateHeatArea = BASE_FLAG + 23
-    ModerateHeatWarning = BASE_FLAG + 24
-    ShowModerateHeatWarning = BASE_FLAG + 25
-
-    CheckSevereHeatArea = BASE_FLAG + 26
-    SevereHeatWarning = BASE_FLAG + 27
-    ShowSevereHeatWarning = BASE_FLAG + 28
-
-    CheckMildColdArea = BASE_FLAG + 29
-    MildColdWarning = BASE_FLAG + 30
-    ShowMildColdWarning = BASE_FLAG + 31
-
-    CheckModerateColdArea = BASE_FLAG + 32
-    ModerateColdWarning = BASE_FLAG + 33
-    ShowModerateColdWarning = BASE_FLAG + 34
-
-    CheckSevereColdArea = BASE_FLAG + 35
-    SevereColdWarning = BASE_FLAG + 36
+    ShowMildHeatWarning = BASE_FLAG + 32
+    ShowModerateHeatWarning = BASE_FLAG + 33
+    ShowSevereHeatWarning = BASE_FLAG + 34
+    ShowMildColdWarning = BASE_FLAG + 35
+    ShowModerateColdWarning = BASE_FLAG + 36
     ShowSevereColdWarning = BASE_FLAG + 37
 
     # Overworld area monitoring
@@ -79,12 +75,16 @@ class Flags(Flag):
     MonitorInAltus = BASE_FLAG + 43
     MonitorInMtGelmir = BASE_FLAG + 44
     MonitorInMountaintops = BASE_FLAG + 45
+    MonitorInGenericDungeon = BASE_FLAG + 46
+    MonitorInLegacyDungeon = BASE_FLAG + 47
     PlayerInLimgrave = BASE_FLAG + 50
     PlayerInLiurnia = BASE_FLAG + 51
     PlayerInCaelid = BASE_FLAG + 52
     PlayerInAltus = BASE_FLAG + 53
     PlayerInMtGelmir = BASE_FLAG + 54
     PlayerInMountaintops = BASE_FLAG + 55
+    PlayerInGenericDungeon = BASE_FLAG + 56
+    PlayerInLegacyDungeon = BASE_FLAG + 57
 
     GetDiseaseOverworld = BASE_FLAG + 60  # 10 slots
     GetDiseaseLegacyDungeon = BASE_FLAG + 70  # 10 slots

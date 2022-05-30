@@ -26,25 +26,27 @@ TODO:
     - TEST DISEASE CONTRACTION in all maps and dungeons.
         X Limgrave
         X Liurnia
-        Caelid
-        Altus
-        MtGelmir
-        Mountaintops
-        Siofra
-        Ainsel
-        Deeproot
-        Stormveil
-        RayaLucaria
-        Radahn
-        VolcanoManor
-        Leyndell
-        Sewers
-        Haligtree
-        FarumAzula
-        Mohgwyn
-        Catacombs
-        Cave - doesn't work
-        Tunnel
+        X Caelid
+             - Reduce scarlet rot resistance?
+        X Altus
+        X MtGelmir
+        X Mountaintops
+        X Siofra
+        X Ainsel
+        X Deeproot/Astel
+        X Stormveil
+        X RayaLucaria
+            - Reduce magic defense?
+        X Radahn
+        X VolcanoManor
+        X Leyndell
+        X Sewers
+        X Haligtree
+        X FarumAzula
+        X Mohgwyn
+        X Catacombs
+        X Cave
+        X Tunnel
     - Disease effects in SpEffectParam (manual).
     - HUD icons for effects (heat, cold, diseases, draughts).
     - Darkness hook in C#.
@@ -126,6 +128,6 @@ def install():
 
 if __name__ == '__main__':
     install_evs()
-    generate_all_params()
-    set_all_text()
+    # generate_all_params()
+    # set_all_text()
     print("Full SurvivalMode Python installation complete. (Now use Yapped to convert CSVs to `regulation.bin`.")
