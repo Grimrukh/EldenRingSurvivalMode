@@ -2732,7 +2732,7 @@ def GetDiseaseOverworld(
 
     EnableFlag(Flags.DiseaseRollLock)
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
-    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollSecond))  # TODO: Last
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
     IfFlagOn(-2, Flags.DiseaseRollFirst)
     IfFlagOff(2, had_once_flag)
@@ -2784,7 +2784,7 @@ def GetDiseaseLegacyDungeon(
 
     EnableFlag(Flags.DiseaseRollLock)
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
-    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollSecond))  # TODO: Last
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
     IfFlagOn(-2, Flags.DiseaseRollFirst)
     IfFlagOff(2, had_once_flag)
@@ -2829,7 +2829,7 @@ def GetDiseaseSiofra():
 
     EnableFlag(Flags.DiseaseRollLock)
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
-    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollSecond))  # TODO: Last
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
     IfFlagOn(-2, Flags.DiseaseRollFirst)
     IfFlagOff(2, Flags.SiofraDiseaseOnce)
@@ -2869,7 +2869,7 @@ def GetDiseaseAinsel():
 
     EnableFlag(Flags.DiseaseRollLock)
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
-    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollSecond))  # TODO: Last
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
     IfFlagOn(-2, Flags.DiseaseRollFirst)
     IfFlagOff(2, Flags.AinselDiseaseOnce)
@@ -2911,7 +2911,7 @@ def GetDiseaseDeeprootAstel():
 
     EnableFlag(Flags.DiseaseRollLock)
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
-    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollSecond))  # TODO: Last
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
     IfFlagOn(-2, Flags.DiseaseRollFirst)
     IfFlagOff(2, Flags.DeeprootDiseaseOnce)
@@ -2951,7 +2951,7 @@ def GetDiseaseRadahn():
 
     EnableFlag(Flags.DiseaseRollLock)
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
-    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollSecond))  # TODO: Last
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
     IfFlagOn(-2, Flags.DiseaseRollFirst)
     IfFlagOff(2, Flags.RadahnDiseaseOnce)
@@ -3012,7 +3012,7 @@ def GetDiseaseCatacombs():
 
     EnableFlag(Flags.DiseaseRollLock)
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
-    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollSecond))  # TODO: Last
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
     IfFlagOn(-2, Flags.DiseaseRollFirst)
     IfFlagOff(2, Flags.CatacombsDiseaseOnce)
@@ -3071,7 +3071,7 @@ def GetDiseaseCaves():
 
     EnableFlag(Flags.DiseaseRollLock)
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
-    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollSecond))  # TODO: Last
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
     IfFlagOn(-2, Flags.DiseaseRollFirst)
     IfFlagOff(2, Flags.CaveDiseaseOnce)
@@ -3119,7 +3119,7 @@ def GetDiseaseTunnels():
 
     EnableFlag(Flags.DiseaseRollLock)
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
-    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollSecond))  # TODO: Last
+    EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
     IfFlagOn(-2, Flags.DiseaseRollFirst)
     IfFlagOff(2, Flags.TunnelDiseaseOnce)
