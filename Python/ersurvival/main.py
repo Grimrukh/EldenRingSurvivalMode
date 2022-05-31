@@ -16,18 +16,20 @@
     - SpEffectParam
 - Save Yapped to generate final `regulation.bin`.
 
-TODO (BUGS):
-    - ABUSE: Because the crafting menu doesn't update when you craft an item, you can craft multiple upgrades from the
-      same base weapon before the game "realizes" that you lack the base weapon.
-        - I could require the base weapon to be present before replacing the dummy with the real weapon, but then
-          there's a chance the player could waste ingredients accidentally. Probably still better than abuse, though.
+TODO (TEST):
+    - All disease recipe locations.
+        - Make sure recipe appears in crafting menu.
 
 TODO:
+    - New icons do not appear in zoomed view.
+    - Refined Wood icon is now too red.
+    - Sacred Tear crafting?
     - Darkness hook in C#.
         - Need to go back to JZ's tips for detecting in-game time.
         - Need to customize it to make torches more useful.
     - Permanently disable 'Pass Time' grace menu option.
         - Night-only enemies will be harder to find, but so be it.
+    - Don't forget to change disease odds back to normal.
 
 TODO (Notes for Player):
     - If you "infuse" a weapon (Heavy, Keen, Fire, etc.) then you will not be able to upgrade it. For now, it's

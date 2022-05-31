@@ -329,8 +329,8 @@ NEW_CONSUMABLES = {
         "name": "Raw Steak",
         "info": "Basic raw meal crafted by hunters",
         "caption": "Raw cut of meat prepared from scraps of flesh.\n"
-                   "Craftable survival item.\n\n"
-                   ""
+                   "Craftable survival item.\n"
+                   "\n"
                    "Consume to relieve hunger, but not without risk.",
         "recipe": [  # for `EquipMtrlSetParam`
             (3, Materials.SliverOfMeat),
@@ -344,8 +344,8 @@ NEW_CONSUMABLES = {
         "name": "Seared Steak",
         "info": "Basic cooked meal crafted by hunters",
         "caption": "Cooked cut of meat prepared from scraps of flesh. Smells delicious.\n"
-                   "Craftable survival item.\n\n"
-                   ""
+                   "Craftable survival item.\n"
+                   "\n"
                    "Consume to relieve hunger.",
         "recipe": [
             (3, Materials.SliverOfMeat),
@@ -360,8 +360,8 @@ NEW_CONSUMABLES = {
         "name": "Raw Liver Steak",
         "info": "Raw meal crafted by expert hunters",
         "caption": "Raw cut of meat prepared from scraps of flesh and liver.\n"
-                   "Craftable survival item.\n\n"
-                   ""
+                   "Craftable survival item.\n"
+                   "\n"
                    "Consume to relieve hunger, but not without risk.",
         "recipe": [
             (2, Materials.SliverOfMeat),
@@ -376,8 +376,8 @@ NEW_CONSUMABLES = {
         "name": "Seared Liver Steak",
         "info": "Cooked meal crafted by expert hunters",
         "caption": "Cooked cut of meat prepared from scraps of flesh and liver. Smells delicious.\n"
-                   "Craftable survival item.\n\n"
-                   ""
+                   "Craftable survival item.\n"
+                   "\n"
                    "Consume to relieve hunger.",
         "recipe": [
             (2, Materials.SliverOfMeat),
@@ -393,8 +393,8 @@ NEW_CONSUMABLES = {
         "name": "Bone Broth",
         "info": "Light broth to ward off thirst",
         "caption": "Delicious broth prepared from bones.\n"
-                   "Craftable survival item.\n\n"
-                   ""
+                   "Craftable survival item.\n"
+                   "\n"
                    "Consume to relieve thirst.",
         "recipe": [
             (5, Materials.ThinBeastBones),
@@ -409,8 +409,8 @@ NEW_CONSUMABLES = {
         "name": "Great Bone Broth",
         "info": "Hearty broth to ward off thirst",
         "caption": "Delicious hearty broth prepared from large bones.\n"
-                   "Craftable survival item.\n\n"
-                   ""
+                   "Craftable survival item.\n"
+                   "\n"
                    "Consume to relieve thirst.",
         "recipe": [
             (3, Materials.HeftyBeastBone),
@@ -425,8 +425,8 @@ NEW_CONSUMABLES = {
         "name": "Blood Broth",
         "info": "Broth preferred by bloodthirsty hunters",
         "caption": "Odorous broth prepared from bones and blood. A delicacy, for some.\n"
-                   "Craftable survival item.\n\n"
-                   ""
+                   "Craftable survival item.\n"
+                   "\n"
                    "Consume to relieve thirst and temporarily boost attack and lower defense.",
         "recipe": [
             (3, Materials.ThinBeastBones),
@@ -442,8 +442,8 @@ NEW_CONSUMABLES = {
         "name": "Forest Berry Medley",
         "info": "Medley of berries from the lower lands",
         "caption": "Prepared fruits picked from rowa shrubs. Tannic, but delicious.\n"
-                   "Craftable survival item.\n\n"
-                   ""
+                   "Craftable survival item.\n"
+                   "\n"
                    "Consume to relieve hunger and thirst.",
         "recipe": [
             (10, Materials.RowaFruit),
@@ -457,8 +457,8 @@ NEW_CONSUMABLES = {
         "name": "Plateau Berry Medley",
         "info": "Medley of berries from the plateau",
         "caption": "Prepared fruits picked from golden rowa shrubs. Sweet and delicious.\n"
-                   "Craftable survival item.\n\n"
-                   ""
+                   "Craftable survival item.\n"
+                   "\n"
                    "Consume to relieve hunger and thirst.",
         "recipe": [
             (10, Materials.GoldenRowa),
@@ -472,8 +472,8 @@ NEW_CONSUMABLES = {
         "name": "Mountain Berry Medley",
         "info": "Medley of berries from the mountains",
         "caption": "Prepared fruits picked from rimed rowa shrubs. Slightly bitter, but uniquely delicious.\n"
-                   "Craftable survival item.\n\n"
-                   ""
+                   "Craftable survival item.\n"
+                   "\n"
                    "Consume to relieve hunger and thirst.",
         "recipe": [
             (10, Materials.RimedRowa),
@@ -487,8 +487,8 @@ NEW_CONSUMABLES = {
         "name": "Mushroom Stew",
         "info": "Basic mushroom stew",
         "caption": "Simple, but tasty stew prepared from mushrooms and herba.\n"
-                   "Craftable survival item.\n\n"
-                   ""
+                   "Craftable survival item.\n"
+                   "\n"
                    "Consume to relieve hunger and thirst.",
         "recipe": [
             (3, Materials.Mushroom),
@@ -504,8 +504,8 @@ NEW_CONSUMABLES = {
         "name": "Melted Mushroom Stew",
         "info": "Thick mushroom stew",
         "caption": "Thick stew prepared from mushrooms and herba. Unusual texture, but incredible taste.\n"
-                   "Craftable survival item.\n\n"
-                   ""
+                   "Craftable survival item.\n"
+                   "\n"
                    "Consume to relieve hunger and thirst.",
         "recipe": [
             (3, Materials.MeltedMushroom),
@@ -521,8 +521,8 @@ NEW_CONSUMABLES = {
         "name": "Draught of Satiation",
         "info": "Prevents hunter temporarily",
         "caption": "Outlawed concoction once consumed by those seeking to reunite with the dead. Smells terrible.\n"
-                   "Craftable survival item.\n\n"
-                   ""
+                   "Craftable survival item.\n"
+                   "\n"
                    "Consume to relieve hunger and prevent it from growing temporarily.",
         "recipe": [
             (5, Materials.GraveViolet),
@@ -540,8 +540,8 @@ NEW_CONSUMABLES = {
         "name": "Draught of Silver Tears",
         "info": "Prevents thirst temporarily",
         "caption": "Outlawed concotion once consumed in a ritual of the Eternal City. Smells awful.\n"
-                   "Craftable survival item.\n\n"
-                   ""
+                   "Craftable survival item.\n"
+                   "\n"
                    "Consume to relieve thirst and prevent it from growing temporarily.",
         "recipe": [
             (7, Materials.SilverTearHusk),
@@ -559,8 +559,8 @@ NEW_CONSUMABLES = {
         "name": "Mossdew Soup",
         "info": "Soup with mild heat protection",
         "caption": "Simple medicinal soup. Tastes very bitter.\n"
-                   "Craftable survival item.\n\n"
-                   ""
+                   "Craftable survival item.\n"
+                   "\n"
                    "Consume for mild protection from heat, which may otherwise drain away health.",
         "recipe": [
             (3, Materials.CaveMoss),
@@ -576,8 +576,8 @@ NEW_CONSUMABLES = {
         "name": "Crystal Shard Soup",
         "info": "Soup with moderate heat protection",
         "caption": "Complex medicinal soup. Tastes slightly sweet.\n"
-                   "Craftable survival item.\n\n"
-                   ""
+                   "Craftable survival item.\n"
+                   "\n"
                    "Consume for moderate protection from heat, which may otherwise drain away health.",
         "recipe": [
             (2, Materials.BuddingCaveMoss),
@@ -593,8 +593,8 @@ NEW_CONSUMABLES = {
         "name": "Giant's Soup",
         "info": "Soup with great heat protection",
         "caption": "Masterful medicinal soup. Tastes pretty good.\n"
-                   "Craftable survival item.\n\n"
-                   ""
+                   "Craftable survival item.\n"
+                   "\n"
                    "Consume for great protection from heat, which may otherwise drain away health.",
         "recipe": [
             (5, Materials.RimedRowa),
@@ -611,8 +611,8 @@ NEW_CONSUMABLES = {
         "name": "Amber-Eye Brew",
         "info": "Brew with mild cold protection",
         "caption": "Simple medicinal brew. Rather intoxicating.\n"
-                   "Craftable survival item.\n\n"
-                   ""
+                   "Craftable survival item.\n"
+                   "\n"
                    "Consume for mild protection from the cold, which may otherwise cripple.",
         "recipe": [
             (3, Materials.EyeOfYelough),
@@ -629,8 +629,8 @@ NEW_CONSUMABLES = {
         "name": "Magmatic Brew",
         "info": "Brew with moderate cold protection",
         "caption": "Complex medicinal brew. Makes your tongue feel like it's on fire!\n"
-                   "Craftable survival item.\n\n"
-                   ""
+                   "Craftable survival item.\n"
+                   "\n"
                    "Consume for moderate protection from the cold, which may otherwise cripple.",
         "recipe": [
             (4, Materials.VolcanicStone),
@@ -646,8 +646,8 @@ NEW_CONSUMABLES = {
         "name": "Blossom Brew",
         "info": "Brew with great cold protection",
         "caption": "Masterful medicinal brew. Very acidic, and strangely addictive.\n"
-                   "Craftable survival item.\n\n"
-                   ""
+                   "Craftable survival item.\n"
+                   "\n"
                    "Consume for great protection from the cold, which may otherwise cripple.",
         "recipe": [
             (5, Materials.FireBlossom),
@@ -664,14 +664,14 @@ NEW_CONSUMABLES = {
         "info": "Crunchy brittle from living jars",
         "caption": "Aberrant food prepared from the flesh of living jars.\n"
                    "Most find it abhorrent, but others swear it has a taste like no other.\n"
-                   "Craftable survival item.\n\n"
-                   ""
+                   "Craftable survival item.\n"
+                   "\n"
                    "Consume to relieve hunger and gain mild heat & cold protection.\n"
                    "However, it increases thirst.",
         "recipe": [
             (5, Materials.LivingJarShard),
         ],
-        "recipe_visibility_flag": Flags.Recipes_RareSurvival_Bought,
+        "recipe_visibility_flag": Flags.Recipes_UncommonSurvival_Bought,
         "effect": SurvivalEffects.JarBrittle,
         "animation": GoodsUseAnimation.ITEM_EATJERKY,
         "icon": 19020,
@@ -683,8 +683,11 @@ NEW_CONSUMABLES = {
     # region Disease Cures
     Consumables.LimgraveDiseaseCure: {
         "name": "Cure for Plague of Limgrave",
-        "info": "",
-        "caption": "",
+        "info": "Single-use cure for Plague of Limgrave",
+        "caption": "Foul-tasting concoction that will cure the Plague of Limgrave.\n"
+                   "\n"
+                   "Diseases cured once are less likely to be caught a second time, and a second cure will bestow "
+                   "full immunity.",
         "recipe": [
             (10, Materials.RowaFruit),
             (8, Materials.Poisonbloom),
@@ -698,8 +701,11 @@ NEW_CONSUMABLES = {
     },
     Consumables.LiurniaDiseaseCure: {
         "name": "Cure for Lake Toxin",
-        "info": "",
-        "caption": "",
+        "info": "Single-use cure for Lake Toxin",
+        "caption": "Foul-tasting concoction that will cure Lake Toxin.\n"
+                   "\n"
+                   "Diseases cured once are less likely to be caught a second time, and a second cure will bestow "
+                   "full immunity.",
         "recipe": [
             (13, Materials.Mushroom),
             (12, Materials.SilverFirefly),
@@ -713,8 +719,11 @@ NEW_CONSUMABLES = {
     },
     Consumables.CaelidDiseaseCure: {
         "name": "Cure for Scarlet Parasite",
-        "info": "",
-        "caption": "",
+        "info": "Single-use cure for Scarlet Parasite",
+        "caption": "Foul-tasting concoction that will kill the Scarlet Parasite.\n"
+                   "\n"
+                   "Diseases cured once are less likely to be caught a second time, and a second cure will bestow "
+                   "full immunity.",
         "recipe": [
             (15, Materials.FadedErdleafFlower),
             (11, Materials.ToxicMushroom),
@@ -728,8 +737,11 @@ NEW_CONSUMABLES = {
     },
     Consumables.AltusDiseaseCure: {
         "name": "Cure for Windmill Fever",
-        "info": "",
-        "caption": "",
+        "info": "Single-use cure for Windmill Fever",
+        "caption": "Foul-tasting concoction that will cure Windmill Fever.\n"
+                   "\n"
+                   "Diseases cured once are less likely to be caught a second time, and a second cure will bestow "
+                   "full immunity.",
         "recipe": [
             (20, Materials.AltusBloom),
             (10, Materials.GoldenSunflower),
@@ -743,8 +755,11 @@ NEW_CONSUMABLES = {
     },
     Consumables.MtGelmirDiseaseCure: {
         "name": "Cure for Plague of Gelmir",
-        "info": "",
-        "caption": "",
+        "info": "Single-use cure for Plague of Gelmir",
+        "caption": "Foul-tasting concoction that will cure the Plague of Gelmir.\n"
+                   "\n"
+                   "Diseases cured once are less likely to be caught a second time, and a second cure will bestow "
+                   "full immunity.",
         "recipe": [
             (18, Materials.GoldenRowa),
             (15, Materials.MeltedMushroom),
@@ -758,8 +773,11 @@ NEW_CONSUMABLES = {
     },
     Consumables.MountaintopsDiseaseCure: {
         "name": "Cure for Frigid Parasite",
-        "info": "",
-        "caption": "",
+        "info": "Single-use cure for Frigid Parasite",
+        "caption": "Foul-tasting concoction that will kill the Frigid Parasite.\n"
+                   "\n"
+                   "Diseases cured once are less likely to be caught a second time, and a second cure will bestow "
+                   "full immunity.",
         "recipe": [
             (20, Materials.VolcanicStone),
             (15, Materials.DewkissedHerba),
@@ -773,8 +791,11 @@ NEW_CONSUMABLES = {
     },
     Consumables.SiofraDiseaseCure: {
         "name": "Cure for Plague of Nokron",
-        "info": "",
-        "caption": "",
+        "info": "Single-use cure for Plague of Nokron",
+        "caption": "Foul-tasting concoction that will cure the Plague of Nokron.\n"
+                   "\n"
+                   "Diseases cured once are less likely to be caught a second time, and a second cure will bestow "
+                   "full immunity.",
         "recipe": [
             (15, Materials.TarnishedGoldenSunflower),
             (12, Materials.CrystalBud),
@@ -788,8 +809,11 @@ NEW_CONSUMABLES = {
     },
     Consumables.AinselDiseaseCure: {
         "name": "Cure for Ant Toxin",
-        "info": "",
-        "caption": "",
+        "info": "Single-use cure for Ant Toxin",
+        "caption": "Foul-tasting concoction that will cure Ant Toxin.\n"
+                   "\n"
+                   "Diseases cured once are less likely to be caught a second time, and a second cure will bestow "
+                   "full immunity.",
         "recipe": [
             (30, Materials.Herba),
             (10, Materials.LandOctopusOvary),
@@ -803,8 +827,11 @@ NEW_CONSUMABLES = {
     },
     Consumables.DeeprootDiseaseCure: {
         "name": "Cure for Star-Shaped Parasite",
-        "info": "",
-        "caption": "",
+        "info": "Single-use cure for Star-Shaped Parasite",
+        "caption": "Foul-tasting concoction that will kill the Star-Shaped Parasite.\n"
+                   "\n"
+                   "Diseases cured once are less likely to be caught a second time, and a second cure will bestow "
+                   "full immunity.",
         "recipe": [
             (25, Materials.SmolderingButterfly),
             (12, Materials.CrystalCaveMoss),
@@ -818,8 +845,11 @@ NEW_CONSUMABLES = {
     },
     Consumables.StormveilDiseaseCure: {
         "name": "Cure for Grafted Plague",
-        "info": "",
-        "caption": "",
+        "info": "Single-use cure for Grafted Plague",
+        "caption": "Foul-tasting concoction that will cure Grafted Plague.\n"
+                   "\n"
+                   "Diseases cured once are less likely to be caught a second time, and a second cure will bestow "
+                   "full immunity.",
         "recipe": [
             (20, Materials.ErdleafFlower),
             (12, Materials.CaveMoss),
@@ -833,8 +863,11 @@ NEW_CONSUMABLES = {
     },
     Consumables.RayaLucariaDiseaseCure: {
         "name": "Cure for Full Moon Fever",
-        "info": "",
-        "caption": "",
+        "info": "Single-use cure for Full Moon Fever",
+        "caption": "Foul-tasting concoction that will cure Full Moon Fever.\n"
+                   "\n"
+                   "Diseases cured once are less likely to be caught a second time, and a second cure will bestow "
+                   "full immunity.",
         "recipe": [
             (10, Materials.CrystalBud),
             (12, Materials.TrinasLily),
@@ -848,8 +881,11 @@ NEW_CONSUMABLES = {
     },
     Consumables.RadahnDiseaseCure: {
         "name": "Cure for Starscourge Fever",
-        "info": "",
-        "caption": "",
+        "info": "Single-use cure for Starscourge Fever",
+        "caption": "Foul-tasting concoction that will cure Starscourge Fever.\n"
+                   "\n"
+                   "Diseases cured once are less likely to be caught a second time, and a second cure will bestow "
+                   "full immunity.",
         "recipe": [
             (20, Materials.SilverTearHusk),
             (15, Materials.MeltedMushroom),
@@ -863,8 +899,11 @@ NEW_CONSUMABLES = {
     },
     Consumables.VolcanoManorDiseaseCure: {
         "name": "Cure for Serpent Toxin",
-        "info": "",
-        "caption": "",
+        "info": "Single-use cure for Serpent Toxin",
+        "caption": "Foul-tasting concoction that will cure Serpent Toxin.\n"
+                   "\n"
+                   "Diseases cured once are less likely to be caught a second time, and a second cure will bestow "
+                   "full immunity.",
         "recipe": [
             (20, Materials.Fulgurbloom),
             (12, Materials.GoldTingedExcrement),
@@ -878,8 +917,11 @@ NEW_CONSUMABLES = {
     },
     Consumables.LeyndellDiseaseCure: {
         "name": "Cure for Plague of Leyndell",
-        "info": "",
-        "caption": "",
+        "info": "Single-use cure for Plague of Leyndell",
+        "caption": "Foul-tasting concoction that will cure the Plague of Leyndell.\n"
+                   "\n"
+                   "Diseases cured once are less likely to be caught a second time, and a second cure will bestow "
+                   "full immunity.",
         "recipe": [
             (12, Materials.SacramentalBud),
             (10, Materials.FourToedFowlFoot),
@@ -893,8 +935,11 @@ NEW_CONSUMABLES = {
     },
     Consumables.SewersDiseaseCure: {
         "name": "Cure for Omen Parasite",
-        "info": "",
-        "caption": "",
+        "info": "Single-use cure for Omen Parasite",
+        "caption": "Foul-tasting concoction that will kill the Omen Parasite.\n"
+                   "\n"
+                   "Diseases cured once are less likely to be caught a second time, and a second cure will bestow "
+                   "full immunity.",
         "recipe": [
             (30, Materials.Mushroom),
             (10, Materials.FireBlossom),
@@ -908,8 +953,11 @@ NEW_CONSUMABLES = {
     },
     Consumables.HaligtreeDiseaseCure: {
         "name": "Cure for Unalloyed Plague",
-        "info": "",
-        "caption": "",
+        "info": "Single-use cure for Unalloyed Plague",
+        "caption": "Foul-tasting concoction that will cure the Unalloyed Plague.\n"
+                   "\n"
+                   "Diseases cured once are less likely to be caught a second time, and a second cure will bestow "
+                   "full immunity.",
         "recipe": [
             (15, Materials.MiquellasLily),
             (10, Materials.ArteriaLeaf),
@@ -923,8 +971,11 @@ NEW_CONSUMABLES = {
     },
     Consumables.FarumAzulaDiseaseCure: {
         "name": "Cure for Beastman's Fever",
-        "info": "",
-        "caption": "",
+        "info": "Single-use cure for Beastman's Fever",
+        "caption": "Foul-tasting concoction that will cure Beastman's Fever.\n"
+                   "\n"
+                   "Diseases cured once are less likely to be caught a second time, and a second cure will bestow "
+                   "full immunity.",
         "recipe": [
             (20, Materials.GoldFirefly),
             (15, Materials.CrystalCaveMoss),
@@ -938,13 +989,16 @@ NEW_CONSUMABLES = {
     },
     Consumables.MohgwynDiseaseCure: {
         "name": "Cure for Blood Lord's Fever",
-        "info": "",
-        "caption": "",
-        "recipe": [
-            (20, Materials.ThinBeastBones),
-            (20, Materials.HeftyBeastBone),
-            (20, Materials.BeastLiver),
-            (20, Materials.BeastBlood),
+        "info": "Single-use cure for Blood Lord's Fever",
+        "caption": "Foul-tasting concoction that will cure the Blood Lord's Fever.\n"
+                   "\n"
+                   "Diseases cured once are less likely to be caught a second time, and a second cure will bestow "
+                   "full immunity.",
+        "recipe": [  # a bit easier than most due to the brutal nature of the disease
+            (10, Materials.ThinBeastBones),
+            (10, Materials.HeftyBeastBone),
+            (10, Materials.BeastLiver),
+            (10, Materials.BeastBlood),
         ],
         "recipe_visibility_flag": Flags.Recipe_MohgwynDiseaseCure_Bought,
         "effect": SurvivalEffects.CureMohgwynDisease,
@@ -953,8 +1007,11 @@ NEW_CONSUMABLES = {
     },
     Consumables.CatacombsDiseaseCure: {
         "name": "Cure for Catacombs Toxin",
-        "info": "",
-        "caption": "",
+        "info": "Single-use cure for Catacombs Toxin",
+        "caption": "Foul-tasting concoction that will cure Catacombs Toxin.\n"
+                   "\n"
+                   "Diseases cured once are less likely to be caught a second time, and a second cure will bestow "
+                   "full immunity.",
         "recipe": [
             (20, Materials.CaveMoss),
             (15, Materials.TarnishedGoldenSunflower),
@@ -968,8 +1025,11 @@ NEW_CONSUMABLES = {
     },
     Consumables.CaveDiseaseCure: {
         "name": "Cure for Cave Parasite",
-        "info": "",
-        "caption": "",
+        "info": "Single-use cure for Cave Parasite",
+        "caption": "Foul-tasting concoction that will kill the Cave Parasite.\n"
+                   "\n"
+                   "Diseases cured once are less likely to be caught a second time, and a second cure will bestow "
+                   "full immunity.",
         "recipe": [
             (10, Materials.FlightPinion),
             (10, Materials.FadedErdleafFlower),
@@ -983,8 +1043,11 @@ NEW_CONSUMABLES = {
     },
     Consumables.TunnelDiseaseCure: {
         "name": "Cure for Miner's Fever",
-        "info": "",
-        "caption": "",
+        "info": "Single-use cure for Miner's Fever",
+        "caption": "Foul-tasting concoction that will cure Miner's Fever.\n"
+                   "\n"
+                   "Diseases cured once are less likely to be caught a second time, and a second cure will bestow "
+                   "full immunity.",
         "recipe": [
             (15, Materials.ThinBeastBones),
             (10, Materials.GoldTingedExcrement),
@@ -1005,7 +1068,7 @@ NEW_MATERIALS = {
         "name": "Soft Wood",
         "info": "Unremarkable piece of wood",
         "caption": "Inferior quality wood, fit for cinder.\n"
-                   "Common material for crafting weapons and shields.\n",
+                   "Common material for crafting weapons and shields.",
         "material_info": "Found commonly as loot or dropped by foes",
         "icon": 19036,
     },
@@ -1013,7 +1076,7 @@ NEW_MATERIALS = {
         "name": "Refined Wood",
         "info": "Robust piece of wood",
         "caption": "Superior quality wood that has been treated.\n"
-                   "Material for crafting weapons and shields.\n",
+                   "Uncommon material for crafting weapons and shields.",
         "material_info": "Found sometimes as loot",
         "icon": 19037,
     },
@@ -1021,7 +1084,7 @@ NEW_MATERIALS = {
         "name": "Stone Fragment",
         "info": "Fragment of simple colored stone",
         "caption": "Fragment of an extremely durable stone.\n"
-                   "Material for crafting weapons and shields.\n",
+                   "Common material for crafting weapons and shields.",
         "material_info": "Found commonly in mines",
         "icon": 19038,
     },
@@ -1029,7 +1092,7 @@ NEW_MATERIALS = {
         "name": "Somber Stone Fragment",
         "info": "Fragment of rare colorless stone",
         "caption": "Fragment of an extremely durable white stone.\n"
-                   "Material for crafting weapons and shields.\n",
+                   "Uncommon material for crafting weapons and shields.",
         "material_info": "Found sometimes in mines",
         "icon": 19039,
     },
@@ -1037,15 +1100,15 @@ NEW_MATERIALS = {
         "name": "Metal Shards",
         "info": "Shards of metal for forging",
         "caption": "Shards of metal that came from a larger piece.\n"
-                   "Material for crafting weapons and shields.\n",
+                   "Common material for crafting weapons and shields.",
         "material_info": "Found commonly as loot or dropped by foes",
         "icon": 19040,
     },
     Materials.IronPlate: {
         "name": "Metal Plate",
         "info": "Sheet of metal for forging",
-        "caption": "Sheet of metal perfect for forging metal weapons.\n"
-                   "Material for crafting weapons and shields.\n",
+        "caption": "Sheet of metal perfect for forging metallic weapons.\n"
+                   "Uncommon material for crafting weapons and shields.",
         "material_info": "Found sometimes as loot",
         "icon": 19041,
     },
@@ -1053,7 +1116,7 @@ NEW_MATERIALS = {
         "name": "Pliable Metal",
         "info": "Rare metal used for forging",
         "caption": "Prized metal that bends, but never breaks.\n"
-                   "Material for crafting weapons and shields.\n",
+                   "Rare material for crafting weapons and shields.",
         "material_info": "Found rarely as loot",
         "icon": 19042,
     },
@@ -1061,8 +1124,7 @@ NEW_MATERIALS = {
         "name": "Dragon Teeth",
         "info": "Collection of small dragon teeth",
         "caption": "Small dragon teeth with latent power, perfect for forging dragon weapons.\n"
-                   "Material for crafting weapons and shields.\n"
-                   "",  # \nSuch small teeth for such large beasts... perhaps draconic youth shed their teeth?
+                   "Very rare material for crafting weapons and shields.",
         "material_info": "Found rarely as loot or dropped by dragons",
         "icon": 19043,
     },
@@ -1070,8 +1132,7 @@ NEW_MATERIALS = {
         "name": "Gruesome Bone",
         "info": "Disgusting large bone used for forging",
         "caption": "Very large, disturbing bone prized by arcane smiths for its unique properties.\n"
-                   "Material for crafting weapons and shields.\n"
-                   "",  # \nSome try adding these bones to their stock out of hunger.
+                   "Rare material for crafting weapons and shields.",
         "material_info": "Found rarely as loot",
         "icon": 19044,
     },
@@ -1079,7 +1140,7 @@ NEW_MATERIALS = {
         "name": "Erdtree Wood",
         "info": "Holy wood from the Erdtree",
         "caption": "Wood highly prized by craftsmen. Very light, but quite tough.\n"
-                   "Material for crafting weapons and shields.\n",
+                   "Rare material for crafting weapons and shields.",
         "material_info": "Found rarely as loot",
         "icon": 19045,
     },
@@ -1087,39 +1148,39 @@ NEW_MATERIALS = {
         "name": "Meteorite Chunk",
         "info": "Dense chunk of cosmic debris",
         "caption": "Very heavy chunk of metal of cosmic origin.\n"
-                   "Material for crafting weapons and shields.\n",
+                   "Rare material for crafting weapons and shields.",
         "material_info": "Found rarely as loot",
         "icon": 19046,
     },
     Materials.BlackMark: {
         "name": "Black Mark",
         "info": "Residue from the stolen Rune of Death",
-        "caption": "Faint remnant of death scattered when the Rune of Death was stolen\n"
-                   "Material for crafting weapons and shields.\n",
+        "caption": "Faint remnant of death scattered when the Rune of Death was stolen.\n"
+                   "Very rare material for crafting weapons and shields.",
         "material_info": "Found very rarely as loot",
         "icon": 19047,
     },
     Materials.StaffPole: {
         "name": "Staff Pole",
         "info": "Wooden staff perfect for a magic catalyst",
-        "caption": "Intricately prepared wooden staff perfect for creating a catalyst.\n"
-                   "Material for crafting weapons and shields.\n",
+        "caption": "Intricately prepared wooden branch perfect for creating a glintstone staff.\n"
+                   "Rare material for crafting weapons and shields.",
         "material_info": "Found rarely as loot",
         "icon": 19048,
     },
     Materials.ShieldGrip: {
         "name": "Shield Handle",
         "info": "Sturdy handle perfect for a shield",
-        "caption": "Heavy-duty handle designed to withstand large impacts, perfect for any shield.\n"
-                   "Material for crafting weapons and shields.\n",
+        "caption": "Reliable handle designed to withstand large impacts, perfect for any shield.\n"
+                   "Uncommon material for crafting weapons and shields.",
         "material_info": "Found sometimes as loot",
         "icon": 19049,
     },
     Materials.ErdtreeAmber: {
         "name": "Erdtree Amber",
         "info": "Amber formed from the Erdtree's resin",
-        "caption": "Holy amber that came from Erdtree resin, a highly sought-after material.\n"
-                   "Material for crafting weapons and shields.\n",
+        "caption": "Holy amber that came from Erdtree resin. Highly prized by the Golden Order.\n"
+                   "Very rare material for crafting weapons and shields.",
         "material_info": "Found very rarely as loot",
         "icon": 19050,
     },
@@ -1127,7 +1188,7 @@ NEW_MATERIALS = {
         "name": "Glintstone Dust",
         "info": "Fine grains of purified Glintstone",
         "caption": "Small amount of purified glintstone, ground into a powder specifically for crafting.\n"
-                   "Material for crafting weapons and shields.\n",
+                   "Rare material for crafting weapons and shields.",
         "material_info": "Found sometimes as loot",
         "icon": 19051,
     },
@@ -1137,8 +1198,10 @@ NEW_MATERIALS = {
 NEW_SMITHS_HAMMERS = {
     SmithsHammers.NoviceSmithsHammer: {
         "name": "Novice Smith's Hammer",
-        "info": "",
-        "caption": "",
+        "info": "Hammer required for weapon upgrades",
+        "caption": "Craftable hammer that can be used in the field.\n"
+                   "\n"
+                   "Allows basic weapons to be upgraded into more powerful tools of battle.",
         "icon": 10407,  # Hammer weapon
         "recipe_visibility_flag": 0,  # always craftable
         "recipe": [
@@ -1150,8 +1213,10 @@ NEW_SMITHS_HAMMERS = {
     },
     SmithsHammers.ApprenticeSmithsHammer: {
         "name": "Apprentice Smith's Hammer",
-        "info": "",
-        "caption": "",
+        "info": "Hammer required for weapon upgrades",
+        "caption": "Craftable hammer that can be used in the field.\n"
+                   "\n"
+                   "Allows slightly advanced weapons to be upgraded into more powerful tools of battle.",
         "icon": 10407,  # Hammer weapon
         "recipe_visibility_flag": Flags.HasNoviceSmithsHammer,
         "recipe": [
@@ -1163,8 +1228,10 @@ NEW_SMITHS_HAMMERS = {
     },
     SmithsHammers.JourneymanSmithsHammer: {
         "name": "Journeyman Smith's Hammer",
-        "info": "",
-        "caption": "",
+        "info": "Hammer required for weapon upgrades",
+        "caption": "Craftable hammer that can be used in the field.\n"
+                   "\n"
+                   "Allows moderately advanced weapons to be upgraded into more powerful tools of battle.",
         "icon": 10407,  # Hammer weapon
         "recipe_visibility_flag": Flags.HasApprenticeSmithsHammer,
         "recipe": [
@@ -1176,8 +1243,10 @@ NEW_SMITHS_HAMMERS = {
     },
     SmithsHammers.ExpertSmithsHammer: {
         "name": "Expert Smith's Hammer",
-        "info": "",
-        "caption": "",
+        "info": "Hammer required for weapon upgrades",
+        "caption": "Craftable hammer that can be used in the field.\n"
+                   "\n"
+                   "Allows greatly advanced weapons to be upgraded into more powerful tools of battle.",
         "icon": 10407,  # Hammer weapon
         "recipe_visibility_flag": Flags.HasJourneymanSmithsHammer,
         "recipe": [
@@ -1189,8 +1258,10 @@ NEW_SMITHS_HAMMERS = {
     },
     SmithsHammers.MasterSmithsHammer: {
         "name": "Master Smith's Hammer",
-        "info": "",
-        "caption": "",
+        "info": "Hammer required for weapon upgrades",
+        "caption": "Craftable hammer that can be used in the field.\n"
+                   "\n"
+                   "Allows extremely advanced weapons to be transformed into legendary armaments.",
         "icon": 10414,  # Marika's Hammer weapon
         "recipe_visibility_flag": Flags.HasExpertSmithsHammer,
         "recipe": [
@@ -1419,9 +1490,15 @@ DISEASE_INDICATORS = {
 NEW_NOTES = {
     # region Disease Cures
     NotesRecipes.Note_CuringDiseases : {
-        "name": "Note: Finding Disease Cures",
-        "info": "",
-        "caption": "",
+        "name": "Note: Surviving in the Lands Between",
+        "info": "Note imparting knowledge in brief",
+        "caption": "Note sold by a nomadic merchant imparting knowledge in brief.\n"
+                   "\n"
+                   "\"Survival is difficult in the Lands Between. Maintain a supply of food and drink to stave off "
+                   "hunger and thirst. Soups and brews can resist the effects of extreme temperatures.\n"
+                   "\n"
+                   "Beware of the varying diseases across different regions. Recipes for cures may be found or sold "
+                   "somewhere in the same area or the same type of underground dungeon.\"",
         "icon": 298,  # Note: Hidden Cave
         "shop_row": 100509,  # Kale
         "cost": 200,
@@ -1429,17 +1506,21 @@ NEW_NOTES = {
     },
     NotesRecipes.Recipe_LimgraveDiseaseCure : {
         "name": "Cure: Plague of Limgrave",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting a disease cure recipe",
+        "caption": "Torn page revealing a recipe for curing the Plague of Limgrave.\n"
+                   "\n"
+                   "Complete the recipe to obtain a single-use cure for the disease.",
         "icon": 288,  # Note: Flask of Wondrous Physick
-        "shop_row": 100596,  # Coastal Cave merchant
+        "shop_row": 100596,  # Coastal Cave merchant (TESTED)
         "cost": 2000,
         "bought_flag": Flags.Recipe_LimgraveDiseaseCure_Bought,
     },
     NotesRecipes.Recipe_LiurniaDiseaseCure : {
         "name": "Cure: Lake Toxin",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting a disease cure recipe",
+        "caption": "Torn page revealing a recipe for cleansing lake toxins.\n"
+                   "\n"
+                   "Complete the recipe to obtain a single-use cure for the disease.",
         "icon": 288,  # Note: Flask of Wondrous Physick
         "shop_row": 100697,  # Academy of Raya Lucaria merchant
         "cost": 3000,
@@ -1447,8 +1528,10 @@ NEW_NOTES = {
     },
     NotesRecipes.Recipe_CaelidDiseaseCure : {
         "name": "Cure: Scarlet Parasite",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting a disease cure recipe",
+        "caption": "Torn page revealing a recipe for exterminating scarlet parasites.\n"
+                   "\n"
+                   "Complete the recipe to obtain a single-use cure for the disease.",
         "icon": 288,  # Note: Flask of Wondrous Physick
         "shop_row": 100894,  # Dragonbarrow merchant
         "cost": 4000,
@@ -1456,8 +1539,10 @@ NEW_NOTES = {
     },
     NotesRecipes.Recipe_AltusDiseaseCure : {
         "name": "Cure: Windmill Fever",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting a disease cure recipe",
+        "caption": "Torn page revealing a recipe for curing Windmill Fever.\n"
+                   "\n"
+                   "Complete the recipe to obtain a single-use cure for the disease.",
         "icon": 288,  # Note: Flask of Wondrous Physick
         "shop_row": 100756,  # Altus Plateau merchant
         "cost": 4000,
@@ -1465,8 +1550,10 @@ NEW_NOTES = {
     },
     NotesRecipes.Recipe_MtGelmirDiseaseCure : {
         "name": "Cure: Plague of Gelmir",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting a disease cure recipe",
+        "caption": "Torn page revealing a recipe for curing the Plague of Gelmir.\n"
+                   "\n"
+                   "Complete the recipe to obtain a single-use cure for the disease.",
         "icon": 288,  # Note: Flask of Wondrous Physick
         "shop_row": 100799,  # Mt. Gelmir merchant
         "cost": 4000,
@@ -1474,8 +1561,10 @@ NEW_NOTES = {
     },
     NotesRecipes.Recipe_MountaintopsDiseaseCure : {
         "name": "Cure: Frigid Parasite",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting a disease cure recipe",
+        "caption": "Torn page revealing a recipe for exterminating frigid parasites.\n"
+                   "\n"
+                   "Complete the recipe to obtain a single-use cure for the disease.",
         "icon": 288,  # Note: Flask of Wondrous Physick
         "shop_row": 100919,  # Mountaintops merchant
         "cost": 5000,
@@ -1483,8 +1572,10 @@ NEW_NOTES = {
     },
     NotesRecipes.Recipe_SiofraDiseaseCure : {
         "name": "Cure: Plague of Nokron",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting a disease cure recipe",
+        "caption": "Torn page revealing a recipe for curing the Plague of Nokron.\n"
+                   "\n"
+                   "Complete the recipe to obtain a single-use cure for the disease.",
         "icon": 288,  # Note: Flask of Wondrous Physick
         "shop_row": 100942,  # Siofra merchant
         "cost": 2000,
@@ -1492,8 +1583,10 @@ NEW_NOTES = {
     },
     NotesRecipes.Recipe_AinselDiseaseCure : {
         "name": "Cure: Ant Toxin",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting a disease cure recipe",
+        "caption": "Torn page revealing a recipe for ant antivenom.\n"
+                   "\n"
+                   "Complete the recipe to obtain a single-use cure for the disease.",
         "icon": 288,  # Note: Flask of Wondrous Physick
         "shop_row": 100968,  # Ainsel merchant
         "cost": 3000,
@@ -1501,80 +1594,100 @@ NEW_NOTES = {
     },
     NotesRecipes.Recipe_DeeprootDiseaseCure : {
         "name": "Cure: Star-Shaped Parasite",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting a disease cure recipe",
+        "caption": "Torn page revealing a recipe for exterminating star-shaped parasites.\n"
+                   "\n"
+                   "Complete the recipe to obtain a single-use cure for the disease.",
         "icon": 288,  # Note: Flask of Wondrous Physick
         "item_lot": 12030521,  # with Mausoleum Soldier Ashes
         "bought_flag": Flags.Recipe_DeeprootDiseaseCure_Bought,
     },
     NotesRecipes.Recipe_StormveilDiseaseCure : {
         "name": "Cure: Grafted Plague",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting a disease cure recipe",
+        "caption": "Torn page revealing a recipe for curing the Grafted Plague.\n"
+                   "\n"
+                   "Complete the recipe to obtain a single-use cure for the disease.",
         "icon": 288,  # Note: Flask of Wondrous Physick
         "item_lot": 10000991,  # with Godskin Prayerbook
         "bought_flag": Flags.Recipe_StormveilDiseaseCure_Bought,
     },
     NotesRecipes.Recipe_RayaLucariaDiseaseCure : {
         "name": "Cure: Full Moon Fever",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting a disease cure recipe",
+        "caption": "Torn page revealing a recipe for curing Full Moon Fever.\n"
+                   "\n"
+                   "Complete the recipe to obtain a single-use cure for the disease.",
         "icon": 288,  # Note: Flask of Wondrous Physick
         "item_lot": 14000941,  # with Radagon Icon
         "bought_flag": Flags.Recipe_RayaLucariaDiseaseCure_Bought,
     },
     NotesRecipes.Recipe_RadahnDiseaseCure : {
         "name": "Cure: Starscourge Fever",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting a disease cure recipe",
+        "caption": "Torn page revealing a recipe for curing Starscourge Fever.\n"
+                   "\n"
+                   "Complete the recipe to obtain a single-use cure for the disease.",
         "icon": 288,  # Note: Flask of Wondrous Physick
         "item_lot": 30160041,  # with Collapsing Stars (in War-Dead Catacombs)
         "bought_flag": Flags.Recipe_RadahnDiseaseCure_Bought,
     },
     NotesRecipes.Recipe_VolcanoManorDiseaseCure : {
         "name": "Cure: Serpent Toxin",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting a disease cure recipe",
+        "caption": "Torn page revealing a recipe for serpent antivenom.\n"
+                   "\n"
+                   "Complete the recipe to obtain a single-use cure for the disease.",
         "icon": 288,  # Note: Flask of Wondrous Physick
         "item_lot": 16000621,  # with Dagger Talisman
         "bought_flag": Flags.Recipe_VolcanoManorDiseaseCure_Bought,
     },
     NotesRecipes.Recipe_LeyndellDiseaseCure : {
         "name": "Cure: Plague of Leyndell",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting a disease cure recipe",
+        "caption": "Torn page revealing a recipe for curing the Plague of Leyndell.\n"
+                   "\n"
+                   "Complete the recipe to obtain a single-use cure for the disease.",
         "icon": 288,  # Note: Flask of Wondrous Physick
         "item_lot": 11000911,  # with Golden Order Principia
         "bought_flag": Flags.Recipe_LeyndellDiseaseCure_Bought,
     },
     NotesRecipes.Recipe_SewersDiseaseCure : {
         "name": "Cure: Omen Parasite",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting a disease cure recipe",
+        "caption": "Torn page revealing a recipe for exterminating Omen parasites.\n"
+                   "\n"
+                   "Complete the recipe to obtain a single-use cure for the disease.",
         "icon": 288,  # Note: Flask of Wondrous Physick
         "item_lot": 35000271,  # with Nomad Ashes
         "bought_flag": Flags.Recipe_SewersDiseaseCure_Bought,
     },
     NotesRecipes.Recipe_HaligtreeDiseaseCure : {
         "name": "Cure: Unalloyed Plague",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting a disease cure recipe",
+        "caption": "Torn page revealing a recipe for curing the Unalloyed plague.\n"
+                   "\n"
+                   "Complete the recipe to obtain a single-use cure for the disease.",
         "icon": 288,  # Note: Flask of Wondrous Physick
         "item_lot": 15000801,  # with Marika's Soreseal
         "bought_flag": Flags.Recipe_HaligtreeDiseaseCure_Bought,
     },
     NotesRecipes.Recipe_FarumAzulaDiseaseCure : {
         "name": "Cure: Beastman's Fever",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting a disease cure recipe",
+        "caption": "Torn page revealing a recipe for curing Beastman's Fever.\n"
+                   "\n"
+                   "Complete the recipe to obtain a single-use cure for the disease.",
         "icon": 288,  # Note: Flask of Wondrous Physick
         "item_lot": 13000941,  # with Dragon Towershield
         "bought_flag": Flags.Recipe_FarumAzulaDiseaseCure_Bought,
     },
     NotesRecipes.Recipe_MohgwynDiseaseCure : {
         "name": "Cure: Blood Lord's Fever",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting a disease cure recipe",
+        "caption": "Torn, bloody page revealing a recipe for curing the Blood Lord's Fever.\n"
+                   "\n"
+                   "Complete the recipe to obtain a single-use cure for the disease.",
         "icon": 288,  # Note: Flask of Wondrous Physick
         "shop_row": 100987,  # Mohgwyn merchant
         "cost": 10000,
@@ -1582,8 +1695,10 @@ NEW_NOTES = {
     },
     NotesRecipes.Recipe_CatacombsDiseaseCure : {
         "name": "Cure: Catacombs Toxin",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting a disease cure recipe",
+        "caption": "Torn page revealing a recipe for curing catacombs toxin.\n"
+                   "\n"
+                   "Complete the recipe to obtain a single-use cure for the disease.",
         "icon": 288,  # Note: Flask of Wondrous Physick
         "item_lots": [  # Catacombs boss rewards after Limgrave
             20071,  # Cliffbottom
@@ -1602,8 +1717,10 @@ NEW_NOTES = {
     },
     NotesRecipes.Recipe_CaveDiseaseCure : {
         "name": "Cure: Cave Parasite",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting a disease cure recipe",
+        "caption": "Torn page revealing a recipe for exterminating cave parasites.\n"
+                   "\n"
+                   "Complete the recipe to obtain a single-use cure for the disease.",
         "icon": 288,  # Note: Flask of Wondrous Physick
         "item_lots": [  # Caves boss rewards after Limgrave
             20361,  # Stillwater
@@ -1622,8 +1739,10 @@ NEW_NOTES = {
     },
     NotesRecipes.Recipe_TunnelDiseaseCure : {
         "name": "Cure: Miner's Fever",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting a disease cure recipe",
+        "caption": "Torn page revealing a recipe for curing Miner's Fever.\n"
+                   "\n"
+                   "Complete the recipe to obtain a single-use cure for the disease.",
         "icon": 288,  # Note: Flask of Wondrous Physick
         "item_lots": [  # Tunnels boss rewards after Limgrave
             20621,  # Raya Lucaria
@@ -1641,24 +1760,34 @@ NEW_NOTES = {
     # region Weapon Recipe Notes
     NotesRecipes.Note_SerpentHunter: {
         "name": "Note: The Serpent-Hunter",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting knowledge in brief",
+        "caption": "Bloodstained note imparting knowledge in brief.\n"
+                   "\n"
+                   "\"We found the great serpent-slaying spear, but alas... Our Lord devoured it, along with the rest "
+                   "of our mutinous band.\n"
+                   "\n"
+                   "Ye who reads my final words, I implore you. Forge another spear, and preserve what little remains "
+                   "of our Lord's honor.\"",
         "icon": 294,  # Note: Below the Capital
         "item_lot": 16000690,  # old Serpent-Hunter location (deleted prior to this addition)
         "bought_flag": Flags.Note_SerpentHunter_Bought,
     },
     NotesRecipes.Note_Whip: {
         "name": "Note: Whip",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting knowledge in brief",
+        "caption": "Discarded note imparting knowledge in brief.\n"
+                   "\n"
+                   "It describes a means of fabricating a deadly whip known only to the Volcano Manor.",
         "icon": 294,  # Note: Below the Capital
         "item_lot": 16000611,  # with former Smoldering Shield
         "bought_flag": Flags.Note_Whip_Bought,
     },
     NotesRecipes.Recipe_SteelWireTorch: {
         "name": "Note: Steel-Wire Torch",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting knowledge in brief",
+        "caption": "Discarded note imparting knowledge in brief.\n"
+                   "\n"
+                   "It describes a means of crafting a more potent torch.",
         "icon": 294,
         "shop_rows": [
             100003,  # Gostoc
@@ -1668,32 +1797,40 @@ NEW_NOTES = {
     },
     NotesRecipes.Recipe_StTrinasTorch: {
         "name": "Note: St. Trina's Torch",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting knowledge in brief",
+        "caption": "Discarded note imparting knowledge in brief.\n"
+                   "\n"
+                   "It describes a means of crafting a more potent torch.",
         "icon": 294,
         "item_lot": 1047400911,  # with former Sword of St. Trina
         "bought_flag": Flags.Recipe_StTrinasTorch_Bought,
     },
     NotesRecipes.Recipe_GhostflameTorch: {
         "name": "Note: Ghostflame Torch",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting knowledge in brief",
+        "caption": "Discarded note imparting knowledge in brief.\n"
+                   "\n"
+                   "It describes a means of crafting a more potent torch.",
         "icon": 294,
         "item_lot": 12070501,  # with former Ghostflame Torch
         "bought_flag": Flags.Recipe_GhostflameTorch_Bought,
     },
     NotesRecipes.Recipe_BeastRepellentTorch: {
         "name": "Note: Beast-Repellent Torch",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting knowledge in brief",
+        "caption": "Discarded note imparting knowledge in brief.\n"
+                   "\n"
+                   "It describes a means of crafting a more potent torch.",
         "icon": 294,
         "item_lot": 1047380701,  # with Ash of War: Lion's Claw
         "bought_flag": Flags.Recipe_BeastRepellentTorch_Bought,
     },
     NotesRecipes.Recipe_SentrysTorch: {
         "name": "Note: Sentry's Torch",
-        "info": "",
-        "caption": "",
+        "info": "Note imparting knowledge in brief",
+        "caption": "Discarded note imparting knowledge in brief.\n"
+                   "\n"
+                   "It describes a means of crafting a more potent torch.",
         "icon": 294,
         "item_lot": 1048550601,  # with Stalwart Horn Charm +1
         "bought_flag": Flags.Recipe_SentrysTorch_Bought,
@@ -1706,8 +1843,15 @@ NEW_RECIPE_BOOKS = {
     # region Survival Recipes
     NotesRecipes.Recipes_CommonSurvival: {
         "name": "Survivalist's Cookbook [1]",
-        "info": "",
-        "caption": "",
+        "info": "Expands crafting repertoire",
+        "caption": "A record of crafting techniques left by keen survivalists.\n"
+                   "Contains knowledge for enduring life in the Lands Between.\n"
+                   "\n"
+                   "Acquire the knowledge to craft the following:\n"
+                   "\n"
+                   "- Raw/Seared Steak, Bone Broth\n"
+                   "- Mushroom Stew, Forest Berry Medley\n"
+                   "- Mossdew Soup, Amber-Eye Brew",
         "icon": 3122,  # Missionary's Cookbook [1]
         "shop_row": 100508,  # Kale
         "cost": 300,
@@ -1715,33 +1859,53 @@ NEW_RECIPE_BOOKS = {
     },
     NotesRecipes.Recipes_UncommonSurvival: {
         "name": "Survivalist's Cookbook [2]",
-        "info": "",
-        "caption": "",
+        "info": "Expands crafting repertoire",
+        "caption": "A record of crafting techniques left by keen survivalists.\n"
+                   "Contains knowledge for enduring life in the Lands Between.\n"
+                   "\n"
+                   "Acquire the knowledge to craft the following:\n"
+                   "\n"
+                   "- Jar Brittle, Great Bone Broth\n"
+                   "- Melted Mushroom Stew, Plateau Berry Medley\n"
+                   "- Crystal Shard Soup, Magmatic Brew",
         "icon": 3122,  # Missionary's Cookbook [1]
         "shop_rows": [
             100638,  # Merchant - Liurnia of the Lakes
             100666,  # Isolated Merchant - Weeping Peninsula
+            100846,  # Merchant - South Caelid
         ],
         "cost": 1500,
         "bought_flag": Flags.Recipes_UncommonSurvival_Bought,
     },
     NotesRecipes.Recipes_RareSurvival: {
         "name": "Survivalist's Cookbook [3]",
-        "info": "",
-        "caption": "",
+        "info": "Expands crafting repertoire",
+        "caption": "A record of crafting techniques left by keen survivalists.\n"
+                   "Contains knowledge for enduring life in the Lands Between.\n"
+                   "\n"
+                   "Acquire the knowledge to craft the following:\n"
+                   "\n"
+                   "- Raw/Seared Liver Steak, Blood Broth\n"
+                   "- Mountain Berry Medley\n"
+                   "- Giant's Soup, Blossom Brew",
         "icon": 3122,  # Missionary's Cookbook [1]
         "shop_rows": [
             100779,  # Merchant - Mt. Gelmir
             100755,  # Merchant - Altus Plateau
-            100846,  # Merchant - South Caelid
         ],
         "cost": 3000,
         "bought_flag": Flags.Recipes_RareSurvival_Bought,
     },
     NotesRecipes.Recipes_VeryRareSurvival: {
         "name": "Survivalist's Cookbook [4]",
-        "info": "",
-        "caption": "",
+        "info": "Expands crafting repertoire",
+        "caption": "A record of crafting techniques left by determined survivalists.\n"
+                   "Contains knowledge of forbidden life-extending draughts.\n"
+                   "\n"
+                   "Acquire the knowledge to craft the following:\n"
+                   "\n"
+                   "- Draught of Satiation\n"
+                   "- Draught of Silver Tears",
         "icon": 3122,  # Missionary's Cookbook [1]
         "shop_rows": [
             100744,  # Hermit Merchant - Leyndell
@@ -1755,8 +1919,11 @@ NEW_RECIPE_BOOKS = {
     # region Shield Recipes
     NotesRecipes.Recipes_WoodenSmallShields: {
         "name": "Small Shield Smithbook [1]",
-        "info": "",
-        "caption": "",
+        "info": "Expands shield-smithing repertoire",
+        "caption": "A record of crafting techniques left by wandering smiths.\n"
+                   "Contains knowledge for surviving enemy attacks.\n"
+                   "\n"
+                   "Acquire the knowledge to craft wooden small shields.",
         "icon": 3119,  # Nomadic Warrior's Cookbook
         "shop_rows": [
             100512,  # Kale
@@ -1766,8 +1933,11 @@ NEW_RECIPE_BOOKS = {
     },
     NotesRecipes.Recipes_MetalSmallShields: {
         "name": "Small Shield Smithbook [2]",
-        "info": "",
-        "caption": "",
+        "info": "Expands shield-smithing repertoire",
+        "caption": "A record of crafting techniques left by wandering smiths.\n"
+                   "Contains knowledge for surviving enemy attacks.\n"
+                   "\n"
+                   "Acquire the knowledge to craft metal small shields.",
         "icon": 3119,  # Nomadic Warrior's Cookbook
         "shop_rows": [
             100019,  # Gostoc
@@ -1779,8 +1949,11 @@ NEW_RECIPE_BOOKS = {
     },
     NotesRecipes.Recipes_RareSmallShields: {
         "name": "Small Shield Smithbook [3]",
-        "info": "",
-        "caption": "",
+        "info": "Expands shield-smithing repertoire",
+        "caption": "A record of crafting techniques left by wandering smiths.\n"
+                   "Contains knowledge for surviving enemy attacks.\n"
+                   "\n"
+                   "Acquire the knowledge to craft rare or unique small shields.",
         "icon": 3119,  # Nomadic Warrior's Cookbook
         "shop_rows": [
             100745,  # Hermit Merchant - Leyndell
@@ -1791,8 +1964,11 @@ NEW_RECIPE_BOOKS = {
     },
     NotesRecipes.Recipes_VeryRareSmallShields: {
         "name": "Small Shield Smithbook [4]",
-        "info": "",
-        "caption": "",
+        "info": "Expands shield-smithing repertoire",
+        "caption": "A record of crafting techniques left by wandering smiths.\n"
+                   "Contains knowledge for surviving enemy attacks.\n"
+                   "\n"
+                   "Acquire the knowledge to craft very rare small shields.",
         "icon": 3119,  # Nomadic Warrior's Cookbook
         "shop_rows": [
             100988,  # Imprisoned Merchant - Mohgwyn
@@ -1803,8 +1979,11 @@ NEW_RECIPE_BOOKS = {
 
     NotesRecipes.Recipes_CommonMediumShields: {
         "name": "Medium Shield Smithbook [1]",
-        "info": "",
-        "caption": "",
+        "info": "Expands shield-smithing repertoire",
+        "caption": "A record of crafting techniques left by wandering smiths.\n"
+                   "Contains knowledge for surviving enemy attacks.\n"
+                   "\n"
+                   "Acquire the knowledge to craft basic medium shields.",
         "icon": 3119,  # Nomadic Warrior's Cookbook
         "shop_rows": [
             100548,  # Merchant - North Limgrave
@@ -1815,8 +1994,11 @@ NEW_RECIPE_BOOKS = {
     },
     NotesRecipes.Recipes_WoodenMediumShields: {
         "name": "Medium Shield Smithbook [2]",
-        "info": "",
-        "caption": "",
+        "info": "Expands shield-smithing repertoire",
+        "caption": "A record of crafting techniques left by wandering smiths.\n"
+                   "Contains knowledge for surviving enemy attacks.\n"
+                   "\n"
+                   "Acquire the knowledge to craft wooden medium shields.",
         "icon": 3119,  # Nomadic Warrior's Cookbook
         "shop_rows": [
             100597,  # Merchant - Coastal Cave
@@ -1827,8 +2009,11 @@ NEW_RECIPE_BOOKS = {
     },
     NotesRecipes.Recipes_HeaterMediumShields: {
         "name": "Medium Shield Smithbook [3]",
-        "info": "",
-        "caption": "",
+        "info": "Expands shield-smithing repertoire",
+        "caption": "A record of crafting techniques left by wandering smiths.\n"
+                   "Contains knowledge for surviving enemy attacks.\n"
+                   "\n"
+                   "Acquire the knowledge to craft medium heater shields.",
         "icon": 3119,  # Nomadic Warrior's Cookbook
         "shop_rows": [
             100721,  # Merchant - North Liurnia
@@ -1838,8 +2023,11 @@ NEW_RECIPE_BOOKS = {
     },
     NotesRecipes.Recipes_KiteMediumShields: {
         "name": "Medium Shield Smithbook [4]",
-        "info": "",
-        "caption": "",
+        "info": "Expands shield-smithing repertoire",
+        "caption": "A record of crafting techniques left by wandering smiths.\n"
+                   "Contains knowledge for surviving enemy attacks.\n"
+                   "\n"
+                   "Acquire the knowledge to craft medium kite shields.",
         "icon": 3119,  # Nomadic Warrior's Cookbook
         "shop_rows": [
             100778,  # Merchant - Mt. Gelmir
@@ -1849,8 +2037,11 @@ NEW_RECIPE_BOOKS = {
     },
     NotesRecipes.Recipes_RareMediumShields: {
         "name": "Medium Shield Smithbook [5]",
-        "info": "",
-        "caption": "",
+        "info": "Expands shield-smithing repertoire",
+        "caption": "A record of crafting techniques left by wandering smiths.\n"
+                   "Contains knowledge for surviving enemy attacks.\n"
+                   "\n"
+                   "Acquire the knowledge to craft very rare medium shields.",
         "icon": 3119,  # Nomadic Warrior's Cookbook
         "shop_rows": [
             100969,  # Merchant - Ainsel River
@@ -1862,8 +2053,11 @@ NEW_RECIPE_BOOKS = {
 
     NotesRecipes.Recipes_CommonGreatshields: {
         "name": "Greatshield Smithbook [1]",
-        "info": "",
-        "caption": "",
+        "info": "Expands shield-smithing repertoire",
+        "caption": "A record of crafting techniques left by wandering smiths.\n"
+                   "Contains knowledge for surviving enemy attacks.\n"
+                   "\n"
+                   "Acquire the knowledge to craft basic greatshields.",
         "icon": 3119,  # Nomadic Warrior's Cookbook
         "shop_rows": [
             100639,  # Merchant - Liurnia of the Lakes
@@ -1873,8 +2067,11 @@ NEW_RECIPE_BOOKS = {
     },
     NotesRecipes.Recipes_UncommonGreatshields: {
         "name": "Greatshield Smithbook [2]",
-        "info": "",
-        "caption": "",
+        "info": "Expands shield-smithing repertoire",
+        "caption": "A record of crafting techniques left by wandering smiths.\n"
+                   "Contains knowledge for surviving enemy attacks.\n"
+                   "\n"
+                   "Acquire the knowledge to craft uncommon greatshields.",
         "icon": 3119,  # Nomadic Warrior's Cookbook
         "shop_rows": [
             100754,  # Merchant - Altus Plateau
@@ -1884,8 +2081,11 @@ NEW_RECIPE_BOOKS = {
     },
     NotesRecipes.Recipes_RareGreatshields: {
         "name": "Greatshield Smithbook [3]",
-        "info": "",
-        "caption": "",
+        "info": "Expands shield-smithing repertoire",
+        "caption": "A record of crafting techniques left by wandering smiths.\n"
+                   "Contains knowledge for surviving enemy attacks.\n"
+                   "\n"
+                   "Acquire the knowledge to craft rare greatshields.",
         "icon": 3119,  # Nomadic Warrior's Cookbook
         "shop_rows": [
             100904,  # Merchant - Mountaintops
@@ -1895,8 +2095,11 @@ NEW_RECIPE_BOOKS = {
     },
     NotesRecipes.Recipes_VeryRareGreatshields: {
         "name": "Greatshield Smithbook [4]",
-        "info": "",
-        "caption": "",
+        "info": "Expands shield-smithing repertoire",
+        "caption": "A record of crafting techniques left by wandering smiths.\n"
+                   "Contains knowledge for surviving enemy attacks.\n"
+                   "\n"
+                   "Acquire the knowledge to craft very rare greatshields.",
         "icon": 3119,  # Nomadic Warrior's Cookbook
         "shop_rows": [
             100979,  # Imprisoned Merchant - Mohgwyn
@@ -1909,8 +2112,11 @@ NEW_RECIPE_BOOKS = {
     # region Staff/Seal Recipes
     NotesRecipes.Recipes_CommonStaffs: {
         "name": "Glintstone Staff Craftbook [1]",
-        "info": "",
-        "caption": "",
+        "info": "Expands staff-crafting repertoire",
+        "caption": "A record of crafting techniques left by nomadic mages.\n"
+                   "Contains knowledge for creating tools of sorcery.\n"
+                   "\n"
+                   "Acquire the knowledge to craft common glintstone staves.",
         "icon": 3121,
         "shop_rows": [
             100063,  # Sorceress Sellen
@@ -1921,8 +2127,11 @@ NEW_RECIPE_BOOKS = {
     },
     NotesRecipes.Recipes_UncommonStaffs: {
         "name": "Glintstone Staff Craftbook [2]",
-        "info": "",
-        "caption": "",
+        "info": "Expands staff-crafting repertoire",
+        "caption": "A record of crafting techniques left by nomadic mages.\n"
+                   "Contains knowledge for creating tools of sorcery.\n"
+                   "\n"
+                   "Acquire the knowledge to craft uncommon glintstone staves.",
         "icon": 3121,
         "shop_rows": [
             100679,  # Merchant - Academy of Raya Lucaria
@@ -1932,8 +2141,11 @@ NEW_RECIPE_BOOKS = {
     },
     NotesRecipes.Recipes_RareStaffs: {
         "name": "Glintstone Staff Craftbook [3]",
-        "info": "",
-        "caption": "",
+        "info": "Expands staff-crafting repertoire",
+        "caption": "A record of crafting techniques left by nomadic mages.\n"
+                   "Contains knowledge for creating tools of sorcery.\n"
+                   "\n"
+                   "Acquire the knowledge to craft rare glintstone staves.",
         "icon": 3121,
         "shop_rows": [
             100253,  # Preceptor Seluvis
@@ -1944,24 +2156,33 @@ NEW_RECIPE_BOOKS = {
     },
     NotesRecipes.Recipes_VeryRareStaffs: {
         "name": "Glintstone Staff Craftbook [4]",
-        "info": "",
-        "caption": "",
+        "info": "Expands staff-crafting repertoire",
+        "caption": "A record of crafting techniques left by nomadic mages.\n"
+                   "Contains knowledge for creating tools of sorcery.\n"
+                   "\n"
+                   "Acquire the knowledge to craft very rare glintstone staves.",
         "icon": 3121,
         "item_lot": 20682,  # Yelough Anix boss reward
         "bought_flag": Flags.Recipes_VeryRareStaffs_Bought,
     },
     NotesRecipes.Recipes_UncommonSeals: {
         "name": "Sacred Seal Craftbook [1]",
-        "info": "",
-        "caption": "",
+        "info": "Expands seal-crafting repertoire",
+        "caption": "A record of crafting techniques left by devout artisans.\n"
+                   "Contains knowledge for creating sacred seals for incantations.\n"
+                   "\n"
+                   "Acquire the knowledge to craft uncommon sacred seals.",
         "icon": 3122,
         "item_lot": 10282,  # Fringefolk Hero's Grave boss reward
         "bought_flag": Flags.Recipes_UncommonSeals_Bought,
     },
     NotesRecipes.Recipes_RareSeals: {
         "name": "Sacred Seal Craftbook [2]",
-        "info": "",
-        "caption": "",
+        "info": "Expands seal-crafting repertoire",
+        "caption": "A record of crafting techniques left by devout artisans.\n"
+                   "Contains knowledge for creating sacred seals for incantations.\n"
+                   "\n"
+                   "Acquire the knowledge to craft rare sacred seals.",
         "icon": 3122,
         "shop_rows": [
             100408,  # Miriel
@@ -1971,8 +2192,11 @@ NEW_RECIPE_BOOKS = {
     },
     NotesRecipes.Recipes_VeryRareSeals: {
         "name": "Sacred Seal Craftbook [3]",
-        "info": "",
-        "caption": "",
+        "info": "Expands seal-crafting repertoire",
+        "caption": "A record of crafting techniques left by devout artisans.\n"
+                   "Contains knowledge for creating sacred seals for incantations.\n"
+                   "\n"
+                   "Acquire the knowledge to craft very rare sacred seals.",
         "icon": 3122,
         "item_lot": 20081,  # Sainted Hero's Grave boss reward
         "bought_flag": Flags.Recipes_VeryRareSeals_Bought,
@@ -2033,6 +2257,7 @@ MATERIAL_RARITY_COUNT = {
 ALL_GOODS_DICTS = (
     NEW_CONSUMABLES,
     NEW_MATERIALS,
+    NEW_SMITHS_HAMMERS,
     NEW_NOTES,
     NEW_RECIPE_BOOKS,
     DISEASE_INDICATORS,

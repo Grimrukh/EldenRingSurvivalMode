@@ -1088,10 +1088,24 @@ def test_item_lots(item_lots_map: YappedParam):
         row["lotItemNum01"] = 3
 
     # For quick hunger/thirst management.
-    food_row = item_lots_map.duplicate_row(100, 500, name=f"Test: Great Bone Broth")
+    food_row = item_lots_map.duplicate_row(100, 500, name="Test: Great Bone Broth")
     food_row["lotItemId01"] = Consumables.GreatBoneBroth
     food_row["lotItemCategory01"] = 1  # Good
     food_row["lotItemNum01"] = 3
+
+    # Disease cure testing.
+    for i, cure in enumerate(range(Consumables.LimgraveDiseaseCure, Consumables.TunnelDiseaseCure + 1)):
+        cure_item_lot = item_lots_map.duplicate_row(100, 600 + i, name="Test: Disease Cure")
+        cure_item_lot["lotItemId01"] = cure
+        cure_item_lot["lotItemCategory01"] = 1  # Good
+        cure_item_lot["lotItemNum01"] = 1
+
+    # Temperature protection testing.
+    for i, item in enumerate(range(Consumables.MossdewSoup, Consumables.BlossomBrew + 1)):
+        cure_item_lot = item_lots_map.duplicate_row(100, 700 + i, name="Test: Temp Protection")
+        cure_item_lot["lotItemId01"] = item
+        cure_item_lot["lotItemCategory01"] = 1  # Good
+        cure_item_lot["lotItemNum01"] = 1
 
 
 def enable_all_warps(bonfire_warp_param: YappedParam):

@@ -407,8 +407,6 @@ def Constructor():
     RunEvent(1700)
     AddSpecialEffect(PLAYER, 39999)
     RunEvent(15003999)
-    RunEvent(15003998)
-    RunEvent(15003997)
     RunEvent(19001000)
     RunEvent(19001001)
     RunEvent(19001489)
@@ -428,6 +426,7 @@ def Constructor():
     RunEvent(19001275)
     RunEvent(19001277)
     RunEvent(19001278)
+    RunEvent(19001280)
     RunEvent(19001040)
     RunEvent(19001041)
     RunEvent(19001042)
@@ -471,6 +470,7 @@ def Constructor():
     RunEvent(19001084)
     RunEvent(19001085)
     RunEvent(19001086)
+    RunEvent(19001088)
     RunEvent(19001500, slot=0, args=(53000, 53100, 8410, 50010))
     RunEvent(19001500, slot=1, args=(53001, 53101, 8411, 50011))
     RunEvent(19001500, slot=2, args=(53002, 53102, 8412, 50012))
@@ -8619,6 +8619,9 @@ def Event19001000():
     IfCharacterDoesNotHaveSpecialEffect(1, PLAYER, 51912)
     IfCharacterDoesNotHaveSpecialEffect(1, PLAYER, 40015)
     IfConditionTrue(0, input_condition=1)
+    SkipIfCharacterDoesNotHaveSpecialEffect(2, character=PLAYER, special_effect=53000)
+    Wait(54.0)
+    SkipLines(1)
     Wait(60.0)
     SkipIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40001)
     CancelSpecialEffect(PLAYER, 40001)
@@ -8686,6 +8689,9 @@ def Event19001001():
     IfCharacterDoesNotHaveSpecialEffect(1, PLAYER, 51913)
     IfCharacterDoesNotHaveSpecialEffect(1, PLAYER, 40029)
     IfConditionTrue(0, input_condition=1)
+    SkipIfCharacterDoesNotHaveSpecialEffect(2, character=PLAYER, special_effect=53000)
+    Wait(90.0)
+    SkipLines(1)
     Wait(100.0)
     SkipIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40021)
     CancelSpecialEffect(PLAYER, 40021)
@@ -8718,13 +8724,7 @@ def Event19001001():
     SkipIfCharacterDoesNotHaveSpecialEffect(4, character=PLAYER, special_effect=40028)
     CancelSpecialEffect(PLAYER, 40028)
     AddSpecialEffect(PLAYER, 40029)
-    DisplayDialog(
-        50050,
-        anchor_entity=-1,
-        display_distance=3.0,
-        button_type=ButtonType.OK_or_Cancel,
-        number_buttons=NumberButtons.NoButton,
-    )
+    DisplayStatus(50050, pad_enabled=True)
     Restart()
     AddSpecialEffect(PLAYER, 40021)
     Restart()
@@ -8867,8 +8867,10 @@ def Event19001499():
 @NeverRestart(19001260)
 def Event19001260():
     """Event 19001260"""
+    IfCharacterHasSpecialEffect(-1, PLAYER, 51904)
     IfCharacterHasSpecialEffect(-1, PLAYER, 51906)
     IfConditionFalse(0, input_condition=-1)
+    IfCharacterHasSpecialEffect(-2, PLAYER, 51904)
     IfCharacterHasSpecialEffect(-2, PLAYER, 51906)
     IfConditionTrue(0, input_condition=-2)
     SkipIfCharacterDoesNotHaveSpecialEffect(2, character=PLAYER, special_effect=40001)
@@ -8936,15 +8938,17 @@ def Event19001260():
 @NeverRestart(19001261)
 def Event19001261():
     """Event 19001261"""
-    IfCharacterHasSpecialEffect(-1, PLAYER, 51904)
     IfCharacterHasSpecialEffect(-1, PLAYER, 51907)
+    IfCharacterHasSpecialEffect(-1, PLAYER, 51908)
     IfCharacterHasSpecialEffect(-1, PLAYER, 51909)
     IfCharacterHasSpecialEffect(-1, PLAYER, 51910)
+    IfCharacterHasSpecialEffect(-1, PLAYER, 51905)
     IfConditionFalse(0, input_condition=-1)
-    IfCharacterHasSpecialEffect(-2, PLAYER, 51904)
     IfCharacterHasSpecialEffect(-2, PLAYER, 51907)
+    IfCharacterHasSpecialEffect(-2, PLAYER, 51908)
     IfCharacterHasSpecialEffect(-2, PLAYER, 51909)
     IfCharacterHasSpecialEffect(-2, PLAYER, 51910)
+    IfCharacterHasSpecialEffect(-2, PLAYER, 51905)
     IfConditionTrue(0, input_condition=-2)
     SkipIfCharacterDoesNotHaveSpecialEffect(2, character=PLAYER, special_effect=40001)
     CancelSpecialEffect(PLAYER, 40001)
@@ -9011,11 +9015,9 @@ def Event19001261():
 def Event19001262():
     """Event 19001262"""
     IfCharacterHasSpecialEffect(-1, PLAYER, 51900)
-    IfCharacterHasSpecialEffect(-1, PLAYER, 51908)
     IfCharacterHasSpecialEffect(-1, PLAYER, 51920)
     IfConditionFalse(0, input_condition=-1)
     IfCharacterHasSpecialEffect(-2, PLAYER, 51900)
-    IfCharacterHasSpecialEffect(-2, PLAYER, 51908)
     IfCharacterHasSpecialEffect(-2, PLAYER, 51920)
     IfConditionTrue(0, input_condition=-2)
     SkipIfCharacterDoesNotHaveSpecialEffect(2, character=PLAYER, special_effect=40001)
@@ -9081,11 +9083,9 @@ def Event19001262():
 @NeverRestart(19001263)
 def Event19001263():
     """Event 19001263"""
-    IfCharacterHasSpecialEffect(-1, PLAYER, 51905)
     IfCharacterHasSpecialEffect(-1, PLAYER, 51909)
     IfCharacterHasSpecialEffect(-1, PLAYER, 51911)
     IfConditionFalse(0, input_condition=-1)
-    IfCharacterHasSpecialEffect(-2, PLAYER, 51905)
     IfCharacterHasSpecialEffect(-2, PLAYER, 51909)
     IfCharacterHasSpecialEffect(-2, PLAYER, 51911)
     IfConditionTrue(0, input_condition=-2)
@@ -9726,6 +9726,16 @@ def Event19001278():
     Restart()
 
 
+@NeverRestart(19001280)
+def Event19001280():
+    """Event 19001280"""
+    IfCharacterHasSpecialEffect(0, PLAYER, 51920)
+    IfCharacterDoesNotHaveSpecialEffect(0, PLAYER, 51920)
+    AddSpecialEffect(PLAYER, 52201)
+    AddSpecialEffect(PLAYER, 52251)
+    Restart()
+
+
 @NeverRestart(19001020)
 def Event19001020():
     """Event 19001020"""
@@ -9877,95 +9887,64 @@ def Event19001021():
     """Event 19001021"""
     Wait(5.0)
     IfFlagOn(0, 19001032)
-    DisplayDialog(
-        50000,
-        anchor_entity=-1,
-        display_distance=3.0,
-        button_type=ButtonType.OK_or_Cancel,
-        number_buttons=NumberButtons.NoButton,
-    )
+    DisplayStatus(50000, pad_enabled=True)
     DisableFlag(19001032)
-    Wait(55.0)
+    Wait(115.0)
     Restart()
 
 
 @NeverRestart(19001023)
 def Event19001023():
     """Event 19001023"""
+    Wait(5.0)
     IfFlagOn(0, 19001033)
-    DisplayDialog(
-        50001,
-        anchor_entity=-1,
-        display_distance=3.0,
-        button_type=ButtonType.OK_or_Cancel,
-        number_buttons=NumberButtons.NoButton,
-    )
+    DisplayStatus(50001, pad_enabled=True)
     DisableFlag(19001033)
-    Wait(60.0)
+    Wait(115.0)
     Restart()
 
 
 @NeverRestart(19001025)
 def Event19001025():
     """Event 19001025"""
+    Wait(5.0)
     IfFlagOn(0, 19001034)
-    DisplayDialog(
-        50002,
-        anchor_entity=-1,
-        display_distance=3.0,
-        button_type=ButtonType.OK_or_Cancel,
-        number_buttons=NumberButtons.NoButton,
-    )
+    DisplayStatus(50002, pad_enabled=True)
     DisableFlag(19001034)
-    Wait(60.0)
+    Wait(115.0)
     Restart()
 
 
 @NeverRestart(19001027)
 def Event19001027():
     """Event 19001027"""
+    Wait(5.0)
     IfFlagOn(0, 19001035)
-    DisplayDialog(
-        50003,
-        anchor_entity=-1,
-        display_distance=3.0,
-        button_type=ButtonType.OK_or_Cancel,
-        number_buttons=NumberButtons.NoButton,
-    )
+    DisplayStatus(50003, pad_enabled=True)
     DisableFlag(19001035)
-    Wait(60.0)
+    Wait(115.0)
     Restart()
 
 
 @NeverRestart(19001029)
 def Event19001029():
     """Event 19001029"""
+    Wait(5.0)
     IfFlagOn(0, 19001036)
-    DisplayDialog(
-        50004,
-        anchor_entity=-1,
-        display_distance=3.0,
-        button_type=ButtonType.OK_or_Cancel,
-        number_buttons=NumberButtons.NoButton,
-    )
+    DisplayStatus(50004, pad_enabled=True)
     DisableFlag(19001036)
-    Wait(60.0)
+    Wait(115.0)
     Restart()
 
 
 @NeverRestart(19001031)
 def Event19001031():
     """Event 19001031"""
+    Wait(5.0)
     IfFlagOn(0, 19001037)
-    DisplayDialog(
-        50005,
-        anchor_entity=-1,
-        display_distance=3.0,
-        button_type=ButtonType.OK_or_Cancel,
-        number_buttons=NumberButtons.NoButton,
-    )
+    DisplayStatus(50005, pad_enabled=True)
     DisableFlag(19001037)
-    Wait(60.0)
+    Wait(115.0)
     Restart()
 
 
@@ -10315,6 +10294,20 @@ def Event19001086():
     EnableFlag(19001243)
 
 
+@RestartOnRest(19001088)
+def Event19001088():
+    """Event 19001088"""
+    CancelSpecialEffect(PLAYER, 53030)
+    IfCharacterHasSpecialEffect(1, PLAYER, 53019)
+    IfTimeOfDay(1, earliest=(6, 0, 0), latest=(19, 0, 0))
+    IfConditionTrue(0, input_condition=1)
+    AddSpecialEffect(PLAYER, 53030)
+    IfCharacterHasSpecialEffect(2, PLAYER, 53019)
+    IfTimeOfDay(2, earliest=(6, 0, 0), latest=(19, 0, 0))
+    IfConditionFalse(0, input_condition=2)
+    Restart()
+
+
 @NeverRestart(19001087)
 def Event19001087():
     """Event 19001087"""
@@ -10328,13 +10321,7 @@ def Event19001500(_, arg_0_3: int, arg_4_7: int, arg_8_11: int, arg_12_15: int):
     IfCharacterHasSpecialEffect(1, PLAYER, arg_0_3)
     IfConditionTrue(0, input_condition=1)
     CancelSpecialEffect(PLAYER, arg_0_3)
-    DisplayDialog(
-        arg_12_15,
-        anchor_entity=-1,
-        display_distance=3.0,
-        button_type=ButtonType.OK_or_Cancel,
-        number_buttons=NumberButtons.NoButton,
-    )
+    DisplayStatus(arg_12_15, pad_enabled=True)
     RemoveGoodFromPlayer(arg_8_11, quantity=99)
     IfCharacterDoesNotHaveSpecialEffect(0, PLAYER, arg_4_7)
     Restart()
@@ -10580,7 +10567,6 @@ def Event19001041():
     IfFlagOff(1, 19001057)
     IfFlagOff(1, 19001056)
     IfConditionTrue(0, input_condition=1)
-    DisplayBanner(BannerType.BloodyFingerVanquished)
     EnableFlag(19001051)
     IfInsideMap(-2, game_map=(60, 32, 40, 0))
     IfInsideMap(-2, game_map=(60, 32, 41, 0))
@@ -11215,6 +11201,27 @@ def Event15003999():
     RemoveGoodFromPlayer(8429, quantity=99)
     RemoveGoodFromPlayer(8430, quantity=99)
     DisableFlagRange((19001200, 19001243))
+    CancelSpecialEffect(PLAYER, 53000)
+    CancelSpecialEffect(PLAYER, 53001)
+    CancelSpecialEffect(PLAYER, 53002)
+    CancelSpecialEffect(PLAYER, 53003)
+    CancelSpecialEffect(PLAYER, 53004)
+    CancelSpecialEffect(PLAYER, 53005)
+    CancelSpecialEffect(PLAYER, 53006)
+    CancelSpecialEffect(PLAYER, 53007)
+    CancelSpecialEffect(PLAYER, 53008)
+    CancelSpecialEffect(PLAYER, 53009)
+    CancelSpecialEffect(PLAYER, 53010)
+    CancelSpecialEffect(PLAYER, 53011)
+    CancelSpecialEffect(PLAYER, 53012)
+    CancelSpecialEffect(PLAYER, 53013)
+    CancelSpecialEffect(PLAYER, 53014)
+    CancelSpecialEffect(PLAYER, 53015)
+    CancelSpecialEffect(PLAYER, 53016)
+    CancelSpecialEffect(PLAYER, 53017)
+    CancelSpecialEffect(PLAYER, 53018)
+    CancelSpecialEffect(PLAYER, 53019)
+    CancelSpecialEffect(PLAYER, 53020)
 
 
 @NeverRestart(15003998)

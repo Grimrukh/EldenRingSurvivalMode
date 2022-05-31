@@ -14,10 +14,13 @@ def Constructor():
 
     # TODO: Debugging. Remove for release.
     # AwardItemLot(500)
+    # AwardItemLot(600)
+    # AwardItemLot(610)
+    # AwardItemLot(700)
     AddSpecialEffect(PLAYER, 39999)  # SUPER DEFENSE
     DEBUG_ResetDiseases()
-    DEBUG_GetAllMaps()
-    DEBUG_GetDectusMedallions()
+    # DEBUG_GetAllMaps()
+    # DEBUG_GetDectusMedallions()
 
     # region Hunger/Thirst
     GrowingHunger()
@@ -1175,7 +1178,7 @@ def GrowingThirst():
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(4, SurvivalEffects.Thirst8)  # 4 lines
     CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst9)
-    DisplayDialog(SurvivalText.Dehydration)  # Dehydration warning (for health depletion)
+    DisplayStatus(SurvivalText.Dehydration)  # Dehydration warning (for health depletion)
     Restart()
 
     # Player goes from ZERO thirst to level 1.
@@ -1352,8 +1355,10 @@ def SaveThirstAfterDeath():
 @NeverRestart(Flags.RelieveHunger_1)
 def RelieveHunger_1():
     """Monitors for numerous different "food eaten" special effects and reduces hunger level by 1."""
+    IfPlayerHasSpecialEffect(-1, SurvivalEffects.BoneBroth)
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.BloodBroth)
     IfConditionFalse(0, -1)
+    IfPlayerHasSpecialEffect(-2, SurvivalEffects.BoneBroth)
     IfPlayerHasSpecialEffect(-2, SurvivalEffects.BloodBroth)
     IfConditionTrue(0, -2)
 
@@ -1438,15 +1443,17 @@ def RelieveHunger_1():
 @NeverRestart(Flags.RelieveHunger_2)
 def RelieveHunger_2():
     """Monitors for numerous different "food eaten" special effects and reduces hunger level by 2."""
-    IfPlayerHasSpecialEffect(-1, SurvivalEffects.BoneBroth)
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.BerryMedley1)
+    IfPlayerHasSpecialEffect(-1, SurvivalEffects.BerryMedley2)
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.BerryMedley3)
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.MushroomStew)
+    IfPlayerHasSpecialEffect(-1, SurvivalEffects.GreatBoneBroth)
     IfConditionFalse(0, -1)
-    IfPlayerHasSpecialEffect(-2, SurvivalEffects.BoneBroth)
     IfPlayerHasSpecialEffect(-2, SurvivalEffects.BerryMedley1)
+    IfPlayerHasSpecialEffect(-2, SurvivalEffects.BerryMedley2)
     IfPlayerHasSpecialEffect(-2, SurvivalEffects.BerryMedley3)
     IfPlayerHasSpecialEffect(-2, SurvivalEffects.MushroomStew)
+    IfPlayerHasSpecialEffect(-2, SurvivalEffects.GreatBoneBroth)
     IfConditionTrue(0, -2)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger1)
@@ -1530,11 +1537,9 @@ def RelieveHunger_2():
 def RelieveHunger_3():
     """Monitors for numerous different "food eaten" special effects and reduces hunger level by 3."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.RawSteak)
-    IfPlayerHasSpecialEffect(-1, SurvivalEffects.BerryMedley2)
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.JarBrittle)
     IfConditionFalse(0, -1)
     IfPlayerHasSpecialEffect(-2, SurvivalEffects.RawSteak)
-    IfPlayerHasSpecialEffect(-2, SurvivalEffects.BerryMedley2)
     IfPlayerHasSpecialEffect(-2, SurvivalEffects.JarBrittle)
     IfConditionTrue(0, -2)
 
@@ -1617,11 +1622,9 @@ def RelieveHunger_3():
 @NeverRestart(Flags.RelieveHunger_4)
 def RelieveHunger_4():
     """Monitors for numerous different "food eaten" special effects and reduces hunger level by 4."""
-    IfPlayerHasSpecialEffect(-1, SurvivalEffects.GreatBoneBroth)
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.BerryMedley3)
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.MeltedMushroomStew)
     IfConditionFalse(0, -1)
-    IfPlayerHasSpecialEffect(-2, SurvivalEffects.GreatBoneBroth)
     IfPlayerHasSpecialEffect(-2, SurvivalEffects.BerryMedley3)
     IfPlayerHasSpecialEffect(-2, SurvivalEffects.MeltedMushroomStew)
     IfConditionTrue(0, -2)
@@ -2423,8 +2426,8 @@ def JarBrittleEffects():
     """Manually chains Jar Brittle SpEffect (which handles hunger/thirst) into temperature protection."""
     IfPlayerHasSpecialEffect(0, SurvivalEffects.JarBrittle)
     IfPlayerDoesNotHaveSpecialEffect(0, SurvivalEffects.JarBrittle)
-    AddSpecialEffect(SurvivalEffects.HeatProtection_Moderate)
-    AddSpecialEffect(SurvivalEffects.ColdProtection_Moderate)
+    AddSpecialEffect(PLAYER, SurvivalEffects.HeatProtection_Moderate)
+    AddSpecialEffect(PLAYER, SurvivalEffects.ColdProtection_Moderate)
     return RESTART
 
 
@@ -2653,54 +2656,59 @@ def CheckSevereColdArea():
 def MildHeatWarning():
     Wait(5.0)
     IfFlagOn(0, Flags.ShowMildHeatWarning)
-    DisplayDialog(SurvivalText.MildHeatWarning)
+    DisplayStatus(SurvivalText.MildHeatWarning)
     DisableFlag(Flags.ShowMildHeatWarning)
-    Wait(55.0)
+    Wait(115.0)
     return RESTART
 
 
 @NeverRestart(Flags.ModerateHeatWarning)
 def ModerateHeatWarning():
+    Wait(5.0)
     IfFlagOn(0, Flags.ShowModerateHeatWarning)
-    DisplayDialog(SurvivalText.ModerateHeatWarning)
+    DisplayStatus(SurvivalText.ModerateHeatWarning)
     DisableFlag(Flags.ShowModerateHeatWarning)
-    Wait(60.0)
+    Wait(115.0)
     return RESTART
 
 
 @NeverRestart(Flags.SevereHeatWarning)
 def SevereHeatWarning():
+    Wait(5.0)
     IfFlagOn(0, Flags.ShowSevereHeatWarning)
-    DisplayDialog(SurvivalText.SevereHeatWarning)
+    DisplayStatus(SurvivalText.SevereHeatWarning)
     DisableFlag(Flags.ShowSevereHeatWarning)
-    Wait(60.0)
+    Wait(115.0)
     return RESTART
 
 
 @NeverRestart(Flags.MildColdWarning)
 def MildColdWarning():
+    Wait(5.0)
     IfFlagOn(0, Flags.ShowMildColdWarning)
-    DisplayDialog(SurvivalText.MildColdWarning)
+    DisplayStatus(SurvivalText.MildColdWarning)
     DisableFlag(Flags.ShowMildColdWarning)
-    Wait(60.0)
+    Wait(115.0)
     return RESTART
 
 
 @NeverRestart(Flags.ModerateColdWarning)
 def ModerateColdWarning():
+    Wait(5.0)
     IfFlagOn(0, Flags.ShowModerateColdWarning)
-    DisplayDialog(SurvivalText.ModerateColdWarning)
+    DisplayStatus(SurvivalText.ModerateColdWarning)
     DisableFlag(Flags.ShowModerateColdWarning)
-    Wait(60.0)
+    Wait(115.0)
     return RESTART
 
 
 @NeverRestart(Flags.SevereColdWarning)
 def SevereColdWarning():
+    Wait(5.0)
     IfFlagOn(0, Flags.ShowSevereColdWarning)
-    DisplayDialog(SurvivalText.SevereColdWarning)
+    DisplayStatus(SurvivalText.SevereColdWarning)
     DisableFlag(Flags.ShowSevereColdWarning)
-    Wait(60.0)
+    Wait(115.0)
     return RESTART
 
 
@@ -3173,7 +3181,7 @@ def CureDisease(_, disease_effect: int, cure_effect: int, disease_item: int, cur
     IfConditionTrue(0, 1)
 
     CancelSpecialEffect(PLAYER, disease_effect)
-    DisplayDialog(cure_text)
+    DisplayStatus(cure_text)
     RemoveGoodFromPlayer(disease_item, 99)
 
     IfPlayerDoesNotHaveSpecialEffect(0, cure_effect)
@@ -3257,8 +3265,6 @@ def MonitorInLiurnia():
     IfFlagOff(1, Flags.PlayerInGenericDungeon)
 
     IfConditionTrue(0, 1)
-
-    DisplayBanner(BannerType.BloodyFingerVanquished)
 
     EnableFlag(Flags.PlayerInLiurnia)
 
@@ -3720,6 +3726,28 @@ def DEBUG_ResetDiseases():
     RemoveGoodFromPlayer(DiseaseIndicators.CaveDisease, 99)
     RemoveGoodFromPlayer(DiseaseIndicators.TunnelDisease, 99)
     DisableFlagRange((Flags.LimgraveDiseaseOnce, Flags.TunnelDiseaseTwice))
+
+    CancelSpecialEffect(PLAYER, SurvivalEffects.LimgraveDisease)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.LiurniaDisease)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.CaelidDisease)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.AltusDisease)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.MtGelmirDisease)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.MountaintopsDisease)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.SiofraDisease)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.AinselDisease)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.DeeprootDisease)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.StormveilDisease)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.RayaLucariaDisease)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.RadahnDisease)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.VolcanoManorDisease)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.LeyndellDisease)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.SewersDisease)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.HaligtreeDisease)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.FarumAzulaDisease)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.MohgwynDisease)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.CatacombsDisease)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.CaveDisease)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.TunnelDisease)
 
 
 @NeverRestart(15003998)
