@@ -17,8 +17,8 @@ def Constructor():
     # AwardItemLot(600)
     # AwardItemLot(610)
     # AwardItemLot(700)
-    AddSpecialEffect(PLAYER, 39999)  # SUPER DEFENSE
-    DEBUG_ResetDiseases()
+    # AddSpecialEffect(PLAYER, 39999)  # SUPER DEFENSE
+    # DEBUG_ResetDiseases()
     # DEBUG_GetAllMaps()
     # DEBUG_GetDectusMedallions()
 
