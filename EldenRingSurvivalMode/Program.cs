@@ -161,9 +161,8 @@ namespace EldenRingSurvivalMode
 
         static void DebugPrint(string msg)
         {
-#if DEBUG
-            Console.WriteLine(msg);
-#endif
+            if (doPrint)
+                Console.WriteLine(msg);
         }
 
         [STAThread]
@@ -172,9 +171,9 @@ namespace EldenRingSurvivalMode
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
 
             Console.WriteLine("ELDEN RING SURVIVAL MODE: COMPANION APP (v1.0)");
-            Console.WriteLine("    by Grimrukh");
+            Console.WriteLine("    by Grimrukh\n");
             Console.WriteLine("Keep this executable running alongside Elden Ring. It manages darkness effects at night.");
-            Console.WriteLine("If you have any issues with this executable, you can always play the mod without darkness!");
+            Console.WriteLine("If you have any issues with this executable, you can always play the mod without darkness!\n");
 
             Hook = new ERHook(5000, 5000);
             Hook.Start();
@@ -188,7 +187,7 @@ namespace EldenRingSurvivalMode
             {
                 int hour = Hook.GetIngameHour();
                 DebugPrint($"Current in-game hour: {hour}");
-                // TODO: Check a 'Player In Overworld' general flag and only set darkness in that case.
+                // TODO: Check a 'Player Outside' general flag and only set darkness in that case.
                 // TODO: Functions to smoothly Lerp from one darkness level to the next?
                 if (hour == -1)
                 {

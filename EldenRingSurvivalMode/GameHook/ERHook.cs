@@ -250,8 +250,8 @@ namespace EldenRingSurvivalMode.GameHook
 #if DEBUG
                 if (!writeSuccess)
                     Console.WriteLine($"Attempted to set {name} to {BitConverter.ToString(value)}, but failed.");
-                else
-                    Console.WriteLine($"    --> {name} set to {BitConverter.ToString(value)}.");
+                //else
+                //    Console.WriteLine($"    --> {name} set to {BitConverter.ToString(value)}.");
 #endif
                 valueOffset += gparamInjections[i].size;
             }

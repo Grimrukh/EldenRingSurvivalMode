@@ -18,16 +18,8 @@
 
 TODO:
     - New icons do not appear in zoomed view.
-    - Refined Wood icon is now too red.
+        - Need to add to '00_solo' TPFs.
     - Sacred Tear crafting?
-    - Darkness hook in C#.
-        - Need to customize it to make torches more useful.
-        - Add SpEffect to torch and use HUD icon to test if it is ONLY ACTIVE if you're actually holding the torch.
-            - If so, use that SpEffect to set a flag, and check that flag in C# to determine darkness level.
-            - If not... might need to just cope and allow "torches worn on back" to reduce darkness?
-    - Permanently disable 'Pass Time' grace menu option.
-        - Night-only enemies will be harder to find, but so be it.
-    - Don't forget to change disease odds back to normal.
 
 TODO (Notes for Player):
     - If you "infuse" a weapon (Heavy, Keen, Fire, etc.) then you will not be able to upgrade it. For now, it's

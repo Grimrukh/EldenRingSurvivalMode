@@ -244,7 +244,7 @@ class Flags(Flag):
     Recipe_SentrysTorch_Bought = BASE_FLAG + 394
 
     # TIME FLAG. Increments by 1 every 30 in-game minutes.
-    # TODO: Not implemented and would rather not implement it (read time out of memory instead).
+    PlayerIsOutdoors = BASE_FLAG + 398  # used to tell C# when to add darkness
     MonitorTimeFlag = BASE_FLAG + 399
     TimeEventValue = BASE_FLAG + 400  # 4 flags
     
