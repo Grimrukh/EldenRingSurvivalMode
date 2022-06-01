@@ -58,7 +58,7 @@
   <ItemGroup>
     <Compile Include="GameHook\ERAssembly.cs" />
     <Compile Include="GameHook\ERHook.cs" />
-    <Compile Include="GameHook\DSROffsets.cs" />
+    <Compile Include="GameHook\EROffsets.cs" />
     <Compile Include="GameHook\Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

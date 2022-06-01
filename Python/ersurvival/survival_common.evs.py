@@ -17,14 +17,17 @@ def Constructor():
     # AwardItemLot(600)
     # AwardItemLot(610)
     # AwardItemLot(700)
+    # AwardItemLot(40240000)  # Torch
     # AddSpecialEffect(PLAYER, 39999)  # SUPER DEFENSE
     # DEBUG_ResetDiseases()
     # DEBUG_GetAllMaps()
     # DEBUG_GetDectusMedallions()
+    # DEBUG_AlternateFlag()
 
     # region Hunger/Thirst
-    GrowingHunger()
-    GrowingThirst()
+    # TODO: Re-enable
+    # GrowingHunger()
+    # GrowingThirst()
     SaveHungerAfterDeath()
     SaveThirstAfterDeath()
 
@@ -76,6 +79,33 @@ def Constructor():
     ModerateColdWarning()
     CheckSevereColdArea()
     SevereColdWarning()
+    # endregion
+
+    # region Time of Day Monitor
+    MonitorHour(0, 0, Flags.Hour0)
+    MonitorHour(1, 1, Flags.Hour1)
+    MonitorHour(2, 2, Flags.Hour2)
+    MonitorHour(3, 3, Flags.Hour3)
+    MonitorHour(4, 4, Flags.Hour4)
+    MonitorHour(5, 5, Flags.Hour5)
+    MonitorHour(6, 6, Flags.Hour6)
+    MonitorHour(7, 7, Flags.Hour7)
+    MonitorHour(8, 8, Flags.Hour8)
+    MonitorHour(9, 9, Flags.Hour9)
+    MonitorHour(10, 10, Flags.Hour10)
+    MonitorHour(11, 11, Flags.Hour11)
+    MonitorHour(12, 12, Flags.Hour12)
+    MonitorHour(13, 13, Flags.Hour13)
+    MonitorHour(14, 14, Flags.Hour14)
+    MonitorHour(15, 15, Flags.Hour15)
+    MonitorHour(16, 16, Flags.Hour16)
+    MonitorHour(17, 17, Flags.Hour17)
+    MonitorHour(18, 18, Flags.Hour18)
+    MonitorHour(19, 19, Flags.Hour19)
+    MonitorHour(20, 20, Flags.Hour20)
+    MonitorHour(21, 21, Flags.Hour21)
+    MonitorHour(22, 22, Flags.Hour22)
+    MonitorHour(23, 23, Flags.Hour23)
     # endregion
 
     # region Disease checks
@@ -3701,6 +3731,21 @@ def MonitorSmithsHammerPossession(_, hammer_id: int, possession_flag: int):
     return RESTART
 
 
+@NeverRestart(Flags.MonitorHour)
+def MonitorHour(_, hour: uchar, hour_flag: int):
+    DisableFlag(hour_flag)
+
+    IfTimeOfDay(0, (hour, 0, 0), (hour, 59, 59))
+    DisableFlagRange((Flags.Hour0, Flags.Hour23))
+    EnableFlag(hour_flag)
+
+    # Wait for it to NOT be this hour before restarting to check again.
+    IfTimeOfDay(1, (hour, 0, 0), (hour, 59, 59))
+    IfConditionFalse(0, 1)
+    Wait(1.0)
+    return RESTART
+
+
 @NeverRestart(15003999)
 def DEBUG_ResetDiseases():
     """Debug event for removing all disease indicators and disabling immunity flags."""
@@ -3780,3 +3825,42 @@ def DEBUG_GetDectusMedallions():
     """Award Dectus item lots."""
     AwardItemLot(1046360500)
     AwardItemLot(1051390900)
+
+
+@NeverRestart(15003996)
+def DEBUG_AlternateFlag():
+    """Start flag is divisible by 8.
+
+    TODO: FOUND IT. 19002656 => 7FF44D11C419
+        - The 7FF44 start is shared with all the Cheat Engine flags.
+        - 19002656 // 8 = 2375332
+        - 2656 // 8 = 332
+        - 18002656 -> 7FF44D11B6EA
+        - Stepping up from 1800 (Stranded Graveyard) to 1900 (Stone Platform) results in an offset of 3375 (0xD2F).
+        - Is that how many bytes of flags are allocated per map? Times eight gives 27000.
+        - Let's leave the deep investigation until later and just guess that 19002600 ->
+
+    """
+    # 85
+    DisableFlag(19000000)
+    EnableFlag(19000001)
+    DisableFlag(19000002)
+    EnableFlag(19000003)
+    DisableFlag(19000004)
+    EnableFlag(19000005)
+    DisableFlag(19000006)
+    EnableFlag(19000007)
+
+    Wait(10.0)
+    DisplayBanner(BannerType.BloodyFingerVanquished)
+    # 170
+    EnableFlag(19000000)
+    DisableFlag(19000001)
+    EnableFlag(19000002)
+    DisableFlag(19000003)
+    EnableFlag(19000004)
+    DisableFlag(19000005)
+    EnableFlag(19000006)
+    DisableFlag(19000007)
+    Wait(10.0)
+    return RESTART

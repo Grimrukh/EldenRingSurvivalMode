@@ -45,6 +45,11 @@ namespace SoulsFormats
         public List<Unk3> Unk3s;
 
         /// <summary>
+        /// Unknown. Non-zero in Elden Ring.
+        /// </summary>
+        public int Unk4;
+
+        /// <summary>
         /// Creates a new empty GPARAM formatted for Sekiro.
         /// </summary>
         public GPARAM()
@@ -88,7 +93,7 @@ namespace SoulsFormats
             int unk3Count = br.ReadInt32();
             offsets.Unk3 = br.ReadInt32();
             offsets.Unk3ValueIDs = br.ReadInt32();
-            br.AssertInt32(0);
+            Unk4 = br.ReadInt32();
 
             if (Game == GPGame.DarkSouls3 || Game == GPGame.Sekiro)
             {
@@ -162,7 +167,7 @@ namespace SoulsFormats
             bw.WriteInt32(Unk3s.Count);
             bw.ReserveInt32("UnkOffset3");
             bw.ReserveInt32("Unk3ValuesOffset");
-            bw.WriteInt32(0);
+            bw.WriteInt32(Unk4);  // NOTE: Added by Grimrukh. Probably a real offset that needs calculating.
 
             if (Game == GPGame.DarkSouls3 || Game == GPGame.Sekiro)
             {
@@ -259,7 +264,7 @@ namespace SoulsFormats
             /// <summary>
             /// Sekiro
             /// </summary>
-            Sekiro = 5,
+            Sekiro = 5,  // also Elden Ring
         }
 
         internal struct Offsets

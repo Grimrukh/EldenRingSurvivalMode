@@ -285,6 +285,33 @@ class Flags(Flag):
     # Disease cures (not enough space above for all of them).
     CureDisease = BASE_FLAG + 500  # 21 slots
 
+    # Time flags (one per hour, starting at midnight).
+    Hour0 = BASE_FLAG + 600
+    Hour1 = BASE_FLAG + 601
+    Hour2 = BASE_FLAG + 602
+    Hour3 = BASE_FLAG + 603
+    Hour4 = BASE_FLAG + 604
+    Hour5 = BASE_FLAG + 605
+    Hour6 = BASE_FLAG + 606
+    Hour7 = BASE_FLAG + 607
+    Hour8 = BASE_FLAG + 608
+    Hour9 = BASE_FLAG + 609
+    Hour10 = BASE_FLAG + 610
+    Hour11 = BASE_FLAG + 611
+    Hour12 = BASE_FLAG + 612
+    Hour13 = BASE_FLAG + 613
+    Hour14 = BASE_FLAG + 614
+    Hour15 = BASE_FLAG + 615
+    Hour16 = BASE_FLAG + 616
+    Hour17 = BASE_FLAG + 617
+    Hour18 = BASE_FLAG + 618
+    Hour19 = BASE_FLAG + 619
+    Hour20 = BASE_FLAG + 620
+    Hour21 = BASE_FLAG + 621
+    Hour22 = BASE_FLAG + 622
+    Hour23 = BASE_FLAG + 623
+    MonitorHour = BASE_FLAG + 650  # 24 slots
+
     # For crafting weapons.
     CraftDummyWeaponBase = BASE_FLAG + 1000  # 377 slots
 

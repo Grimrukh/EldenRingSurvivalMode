@@ -1,6 +1,7 @@
 ﻿using PropertyHook;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 
 namespace EldenRingSurvivalMode.GameHook
@@ -10,96 +11,201 @@ namespace EldenRingSurvivalMode.GameHook
         PHPointer FogInjectionAddr { get; set; }
         PHPointer FogNewmemPtr { get; set; }
         PHPointer EventFlags { get; set; }
+        PHPointer StonePlatformEventFlags { get; set; }
 
+        const string EventFlagsAOB = "48 8B 3D ? ? ? ? 48 85 FF 74 ? 48 8B 49";
+        
         bool FogEnabled { get; set; }
+        long BaseAddress { get; set; }
 
         const string windowName = "ELDEN RING™";
-        const long baseAddress = 0x7FF7E0D20000;
-        const long fogInjAddress = 0x1B0C3CD + 7;  // after instruction that reads rdx into xmm1
+        const long fogInjAddress = 0x1B0C4B5;  // mov [rcx+0x00000120], rax
         const long freeAddress = 0x28C7800;
-        const int newmemJumpOffset = 0x4B;  // offset to write jump size in newmem
-        readonly int[] newmemValueOffsets = new int[] { 0x4F, 0x53, 0x57 };  // offsets of fog values at end of newmem
+        static readonly byte[] originalMem = new byte[] { 0x48, 0x89, 0x81, 0x20, 0x01, 0x00, 0x00 };
         
+        readonly List<(string name, int offset, int size)> gparamInjections = new List<(string, int, int)>()
+        {
+            ("NearDepth", 0x0C, 4),
+            ("DrawTiming", 0x20, 4),
+            ("FixedDensity", 0x40, 4),
+            ("LocalLightScale", 0x48, 4),
+            ("AbsorptionScale_Cyan", 0x70, 4),
+            ("AbsorptionScale_Magenta", 0x74, 4),
+            ("AbsorptionScale_Yellow", 0x78, 4),
+            ("SkyColor_Red", 0x80, 4),
+            ("SkyColor_Green", 0x84, 4),
+            ("SkyColor_Blue", 0x88, 4),
+            ("SkyColor_Alpha", 0x8C, 4),
+            ("StartDist", 0x94, 4),
+            ("DirectColor_Red", 0xC0, 4),
+            ("DirectColor_Green", 0xC4, 4),
+            ("DirectColor_Blue", 0xC8, 4),
+            ("DirectColor_Alpha", 0xCC, 4),
+        };
+
+        int newmemValuesOffset = -1;
+
         public ERHook(int refreshInterval, int minLifetime) :
             base(refreshInterval, minLifetime, p => p.MainWindowTitle == windowName)
         {
-            FogInjectionAddr = new PHPointerBase(this, (IntPtr)(baseAddress + fogInjAddress));
-            FogNewmemPtr = new PHPointerBase(this, (IntPtr)(baseAddress + freeAddress));
-            
-            // TODO: Check ER cheat table for AOB and offsets.
-            EventFlags = RegisterRelativeAOB(DSROffsets.EventFlagsAOB, 3, 7, DSROffsets.EventFlagsOffset1, DSROffsets.EventFlagsOffset2);
+            EventFlags = RegisterRelativeAOB(EventFlagsAOB, 3, 7, 0);
+            StonePlatformEventFlags = new PHPointerChild(this, EventFlags, 0xC8);
 
-            OnHooked += DSRHook_OnHooked;
+            OnHooked += ERHook_OnHooked;
         }
 
-        void DSRHook_OnHooked(object sender, PHEventArgs e)
+        void ERHook_OnHooked(object sender, PHEventArgs e)
         {
+            BaseAddress = Process.MainModule.BaseAddress.ToInt64();
+            FogInjectionAddr = new PHPointerBase(this, (IntPtr)(BaseAddress + fogInjAddress));
+            FogNewmemPtr = new PHPointerBase(this, (IntPtr)(BaseAddress + freeAddress));
+
             EnableEldenRingFog();
+        }
+
+        void ERHook_OnUnhooked(object sender, PHEventArgs e)
+        {
+            FogEnabled = false;
         }
 
         public bool Focused => Hooked && User32.GetForegroundProcessID() == Process.Id;
 
-        void EnableEldenRingFog()
+        public int GetIngameHour()
+        {
+            // Read hard-coded event flags to determine which hour the game is currently in, from 0 (midnight) to 23.
+            // Returns -1 if no hour flag is active (e.g., game is not loaded) or an error occurs.
+            
+            long offset = StonePlatformEventFlags.Resolve().ToInt64();
+
+            int hourFlagOffset = 0x1C204D + (1600 / 8);  // Hour0 = 19001600
+            byte[] hourFlagBytes = StonePlatformEventFlags.ReadBytes(hourFlagOffset, 3);  // 24 flags
+            string hourFlags = "";
+            foreach (byte flag in hourFlagBytes)
+            {
+                hourFlags += Convert.ToString(flag, 2).PadLeft(8, '0');
+            }
+            if (hourFlags.Count(x => x == '1') > 1)
+            {
+                Console.WriteLine("ERROR: Time of day is ambiguous (multiple hour flags enabled).");
+                return -1;
+            }
+            return hourFlags.IndexOf('1');
+        }
+
+        public void EnableEldenRingFog()
         {
             // Write assembly script and injection.
+            if (FogEnabled)
+                return;  // no need to enable again
 
 #if DEBUG
             byte[] currentMem = Kernel32.ReadBytes(Handle, FogInjectionAddr.Resolve(), 7);
             Console.WriteLine($"Vanilla fog function bytes: {BitConverter.ToString(currentMem)}");
 #endif
 
-            // ORIGINAL CODE:
-            // 0f 29 89 90 00 00 00     movaps XMMWORD PTR [rcx+0x90],xmm1
-            byte[] injectAsm = new byte[]
-            {
-                0xE9, 0x00, 0x00, 0x00, 0x00,  // jmp [newmem]
-                0x90,  // nop
-                0x90,  // nop
-            };
-
-            // New script that inserts values (and contains them at the end).
-            byte[] newmemAsm = ERAssembly.EldenRingFog;
-            //byte[] newmemAsm = new byte[] { 0xE9, 0x00, 0x00, 0x00, 0x00 };
-
-            // Note that this address-specific override of `Allocate()` uses `MEM_RESERVE | MEM_COMMIT`, not just `MEM_COMMIT`.
             IntPtr newmemPtr = FogNewmemPtr.Resolve();
-            // TODO: Check if this succeeds. I think it may not, but I already have write access.
-            Allocate(newmemPtr, (uint)newmemAsm.Length, Kernel32.PAGE_EXECUTE_READWRITE);
             IntPtr injectionPtr = FogInjectionAddr.Resolve();
-
-#if DEBUG
-            Console.WriteLine($"Fog script new memory allocated.");
-#endif
-
             long injectionAddr = injectionPtr.ToInt64();
             Console.WriteLine($"Injection address: {injectionAddr:X}");
             long newmemAddr = newmemPtr.ToInt64();
             Console.WriteLine($"Newmem address: {newmemAddr:X}");
             Console.WriteLine($"Expected newmem address: {FogNewmemPtr.Resolve().ToInt64():X}");
 
-            // Put allocated 64-bit addresses into new script (from the end of the same script).
-            Array.Copy(BitConverter.GetBytes(newmemAddr + newmemValueOffsets[0]), 0, newmemAsm, 0x0B, 8);  // Fog start multiplier
-            Array.Copy(BitConverter.GetBytes(newmemAddr + newmemValueOffsets[1]), 0, newmemAsm, 0x1F, 8);  // Density near
-            Array.Copy(BitConverter.GetBytes(newmemAddr + newmemValueOffsets[2]), 0, newmemAsm, 0x33, 8);  // Alpha
-
-            // Calculate and insert `jmp` offsets (always the same, in practice).
+            // ORIGINAL CODE:
+            // 48 89 81 20010000     mov [rcx+0x120], rax
+            byte[] injectAsm = new byte[]
+            {
+                0xE9, 0x00, 0x00, 0x00, 0x00,  // jmp [newmem]
+                0x90,  // nop
+                0x90,  // nop
+            };
+            // Insert `jmp` offset into injection.
             int jmpNewmem = (int)(newmemAddr - (injectionAddr + 0x5));  // jumps AFTER jump instruction in game function (5 bytes)
             Array.Copy(BitConverter.GetBytes(jmpNewmem), 0, injectAsm, 0x1, 4);
-            int jmpReturn = (int)(injectionAddr + 0x7 - (newmemAddr + newmemValueOffsets[0]));  // jumps AFTER jump instruction in newmem
-            Array.Copy(BitConverter.GetBytes(jmpReturn), 0, newmemAsm, newmemJumpOffset, 4);
+
+            // New script that inserts values (and contains them at the end).
+            // Built dynamically here based on all the values that need to be written.
+            List<byte> newmemAsm = new List<byte>();
+
+            // Original instruction: mov [rcx+0x120], rax
+            newmemAsm.AddRange(originalMem);
+
+            // push   r8
+            newmemAsm.AddRange(new byte[] { 0x41, 0x50 });
+
+            List<int> valueAddresses = new List<int>();
+            foreach (var (name, offset, size) in gparamInjections)
+            {
+                // movabs r8 ...
+                newmemAsm.AddRange(new byte[] { 0x49, 0xb8 });
+                valueAddresses.Add(newmemAsm.Count);  // will write value offset here later
+                // ... 0xFEFEFEFEFEFEFEFE (reserved)
+                newmemAsm.AddRange(new byte[] { 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE });
+                // xmm1,DWORD PTR [r8]
+                newmemAsm.AddRange(new byte[] { 0xf3, 0x41, 0x0f, 0x10, 0x08 });
+                // movss  DWORD PTR [rcx+{offset}],xmm1
+                if (offset >= 0x80)
+                {  // 32-bit offset required
+                    byte[] offsetBytes = BitConverter.GetBytes(offset);
+                    newmemAsm.AddRange(new byte[] { 0xf3, 0x0f, 0x11, 0x89, offsetBytes[0], offsetBytes[1], offsetBytes[2], offsetBytes[3] });
+                }
+                else
+                {  // 8-bit offset can be used
+                    newmemAsm.AddRange(new byte[] { 0xf3, 0x0f, 0x11, 0x49, (byte)offset });
+                }
+            }
+
+            // pop    r8
+            newmemAsm = newmemAsm.Concat(new byte[] { 0x41, 0x58 }).ToList();
+
+            // jmp 
+            int offsetAfterJmp = newmemAsm.Count + 5;
+            int jmpReturn = (int)(injectionAddr + 0x7 - (newmemAddr + offsetAfterJmp));
+            newmemAsm.Add(0xe9);
+            newmemAsm.AddRange(BitConverter.GetBytes(jmpReturn));
+
+            newmemValuesOffset = newmemAsm.Count;
             
-            // TODO: Debugging injection
-            //int jmpReturn = (int)(injectionAddr + 0x7 - (newmemAddr + 0x5));  // jumps AFTER jump instruction in newmem
-            //Array.Copy(BitConverter.GetBytes(jmpReturn), 0, newmemAsm, 0x1, 4);
+            // Write values (placeholder zeroes) and insert 64-bit addresses (longs) into newmem.
+            foreach (int offset in valueAddresses)
+            {
+                long absValueAddress = newmemAddr + newmemAsm.Count;
+                byte[] addressBytes = BitConverter.GetBytes(absValueAddress);
+                for (int i = 0; i < addressBytes.Length; i++)
+                {
+                    // Overwrite 0xFEFEFEFEFEFEFEFE placeholders in newmem.
+                    newmemAsm[offset + i] = addressBytes[i];
+                }
+                // TODO: Use crafted default values from dictionary?
+                newmemAsm.AddRange(new byte[] { 0x0, 0x0, 0x0, 0x0 });
+            }
 
-            Console.WriteLine($"Final newmem: {BitConverter.ToString(newmemAsm)}");
+            byte[] newmemArray = newmemAsm.ToArray();
+            Allocate(newmemPtr, (uint)newmemArray.Length, Kernel32.PAGE_EXECUTE_READWRITE);
+
+#if DEBUG
+            Console.WriteLine($"Fog script new memory allocated.");
+#endif
+
+            // `newmemAsm` is now complete.
+
             Console.WriteLine($"Final injection: {BitConverter.ToString(injectAsm)}");
+            Console.WriteLine($"Final newmem: {BitConverter.ToString(newmemArray)}");
+            
+            //return;  // TODO
 
-            if (!Kernel32.WriteBytes(Handle, newmemPtr, newmemAsm))
+            if (!Kernel32.WriteBytes(Handle, newmemPtr, newmemArray))
             {
                 // Script write failed. Do NOT inject, or it will crash the game.
+                // Check if newmem script already seems to be there (based on first four bytes).
                 Console.WriteLine($"Failed to write Elden Ring Fog assembly. Error: {Marshal.GetLastWin32Error()}");
-                Console.WriteLine("(This may be because the script was already injected, in which case it should work anyway.)");
+                byte[] newmemExisting = Kernel32.ReadBytes(Handle, newmemPtr, 4);
+                byte[] newmemAsmStart = new byte[4];
+                Array.Copy(newmemArray, 0, newmemAsmStart, 0, 4);
+                if (newmemExisting.SequenceEqual(newmemAsmStart))
+                    Console.WriteLine("It appears the script has already been injected, so it may work anyway.");
+                else
+                    Console.WriteLine("The script does not appear to have already been injected.");
                 return;
             }
 
@@ -110,37 +216,45 @@ namespace EldenRingSurvivalMode.GameHook
             }
             else
             {
-                Console.WriteLine($"Enabled Elden Ring Fog script injection successfully.");
+                Console.WriteLine("Enabled Elden Ring Fog script injection successfully.");
                 FogEnabled = true;
             }
         }
 
-        public void SetFogValues(float startMultiplier, float densityNear, float alpha)
+        /// <summary>
+        /// Update fog values in injected newmem script.
+        /// 
+        /// Values must already be converted to byte arrays from whatever their
+        /// native type may be (usually `float`).
+        /// </summary>
+        /// <param name="values"></param>
+        public void SetFogValues(params byte[][] values)
         {
             IntPtr fogNewmemPtr = FogNewmemPtr.Resolve();
 
-            IntPtr startMultiplierPtr = IntPtr.Add(fogNewmemPtr, newmemValueOffsets[0]);
-            IntPtr densityNearPtr = IntPtr.Add(fogNewmemPtr, newmemValueOffsets[1]);
-            IntPtr alphaPtr = IntPtr.Add(fogNewmemPtr, newmemValueOffsets[2]);
+            if (values.Length != gparamInjections.Count)
+            {
+                Console.WriteLine($"ERROR: Number of values passed to `SetFogValues` must match number of GPARAM values: {gparamInjections.Count}");
+                return;
+            }
 
-            bool startMultiplierSuccess = Kernel32.WriteBytes(Handle, startMultiplierPtr, BitConverter.GetBytes(startMultiplier));
-            bool densityNearSuccess = Kernel32.WriteBytes(Handle, densityNearPtr, BitConverter.GetBytes(densityNear));
-            bool alphaSuccess = Kernel32.WriteBytes(Handle, alphaPtr, BitConverter.GetBytes(alpha));
-
+            int valueOffset = newmemValuesOffset;
+            for (int i = 0; i < values.Length; i++)
+            {
+                IntPtr valuePtr = IntPtr.Add(fogNewmemPtr, valueOffset);
+                string name = gparamInjections[i].name;
+                byte[] value = values[i];
+                if (value.Length != gparamInjections[i].size)
+                    throw new Exception($"INCORRECT FOG VALUE SIZE: {name}");
+                bool writeSuccess = Kernel32.WriteBytes(Handle, valuePtr, value);
 #if DEBUG
-            //if (!startMultiplierSuccess)
-            //    Console.WriteLine($"Attempt to set FOG START MULTIPLIER to {startMultiplier}, but failed.");
-            //else
-            //    Console.WriteLine($"--> FOG START MULTIPLIER set to {startMultiplier}.");
-            //if (!densityNearSuccess)
-            //    Console.WriteLine($"Attempt to set FOG NEAR DENSITY to {densityNear}, but failed.");
-            //else
-            //    Console.WriteLine($"--> FOG NEAR DENSITY set to {densityNear}.");
-            //if (!alphaSuccess)
-            //    Console.WriteLine($"Attempt to set FOG ALPHA to {alpha}, but failed.");
-            //else
-            //    Console.WriteLine($"--> FOG ALPHA set to {alpha}.");
+                if (!writeSuccess)
+                    Console.WriteLine($"Attempted to set {name} to {BitConverter.ToString(value)}, but failed.");
+                else
+                    Console.WriteLine($"    --> {name} set to {BitConverter.ToString(value)}.");
 #endif
+                valueOffset += gparamInjections[i].size;
+            }
         }
 
         public void DisableEldenRingFog()
@@ -149,88 +263,8 @@ namespace EldenRingSurvivalMode.GameHook
             // Not actually used, but here for reference.
 
             Free(FogNewmemPtr.Resolve());
-            byte[] defaultAsm = new byte[] { 0x0f, 0x29, 0x89, 0x90, 0x00, 0x00, 0x00 };
-            Kernel32.WriteBytes(Handle, FogInjectionAddr.Resolve(), defaultAsm);
+            Kernel32.WriteBytes(Handle, FogInjectionAddr.Resolve(), originalMem);
             FogEnabled = false;
         }
-
-        #region Flags
-        static Dictionary<string, int> EventFlagGroups { get; } = new Dictionary<string, int>()
-        {
-            {"0", 0x00000},
-            {"1", 0x00500},
-            {"5", 0x05F00},
-            {"6", 0x0B900},
-            {"7", 0x11300},
-        };
-
-        static Dictionary<string, int> EventFlagAreas { get; } = new Dictionary<string, int>()
-        {
-            {"000", 00},
-            {"100", 01},
-            {"101", 02},
-            {"102", 03},
-            {"110", 04},
-            {"120", 05},
-            {"121", 06},
-            {"130", 07},
-            {"131", 08},
-            {"132", 09},
-            {"140", 10},
-            {"141", 11},
-            {"150", 12},
-            {"151", 13},
-            {"160", 14},
-            {"170", 15},
-            {"180", 16},
-            {"181", 17},
-        };
-
-        int GetEventFlagOffset(int ID, out uint mask)
-        {
-            string idString = ID.ToString("D8");
-            if (idString.Length == 8)
-            {
-                string group = idString.Substring(0, 1);
-                string area = idString.Substring(1, 3);
-                int section = Int32.Parse(idString.Substring(4, 1));
-                int number = Int32.Parse(idString.Substring(5, 3));
-
-                if (EventFlagGroups.ContainsKey(group) && EventFlagAreas.ContainsKey(area))
-                {
-                    int offset = EventFlagGroups[group];
-                    offset += EventFlagAreas[area] * 0x500;
-                    offset += section * 128;
-                    offset += (number - (number % 32)) / 8;
-
-                    mask = 0x80000000 >> (number % 32);
-                    return offset;
-                }
-            }
-            throw new ArgumentException("Unknown event flag ID: " + ID);
-        }
-
-        public bool ReadEventFlag(int ID)
-        {
-            int offset = GetEventFlagOffset(ID, out uint mask);
-            return EventFlags.ReadFlag32(offset, mask);
-        }
-
-        public void WriteEventFlag(int ID, bool state)
-        {
-            int offset = GetEventFlagOffset(ID, out uint mask);
-            EventFlags.WriteFlag32(offset, mask, state);
-        }
-
-        public void EnableEventFlag(int ID)
-        {
-            WriteEventFlag(ID, true);
-        }
-
-        public void DisableEventFlag(int ID)
-        {
-            WriteEventFlag(ID, false);
-        }
-        #endregion
     }
 }

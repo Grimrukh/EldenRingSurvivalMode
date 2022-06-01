@@ -16,17 +16,15 @@
     - SpEffectParam
 - Save Yapped to generate final `regulation.bin`.
 
-TODO (TEST):
-    - All disease recipe locations.
-        - Make sure recipe appears in crafting menu.
-
 TODO:
     - New icons do not appear in zoomed view.
     - Refined Wood icon is now too red.
     - Sacred Tear crafting?
     - Darkness hook in C#.
-        - Need to go back to JZ's tips for detecting in-game time.
         - Need to customize it to make torches more useful.
+        - Add SpEffect to torch and use HUD icon to test if it is ONLY ACTIVE if you're actually holding the torch.
+            - If so, use that SpEffect to set a flag, and check that flag in C# to determine darkness level.
+            - If not... might need to just cope and allow "torches worn on back" to reduce darkness?
     - Permanently disable 'Pass Time' grace menu option.
         - Night-only enemies will be harder to find, but so be it.
     - Don't forget to change disease odds back to normal.
@@ -37,6 +35,8 @@ TODO (Notes for Player):
     - When you craft a weapon upgrade, the crafting menu will not update until you change tabs or go out and back in.
       If you try to craft an "invalid" upgrade recipe (e.g., because you no longer have the required weapon but the menu
       has not refreshed), the ingredients you put into it will be wasted.
+    - "Night" is so bright in some areas of the game that you may notice TRUE DARKNESS appearing and disappearing quite
+      abruptly at times. Not much can be done about this right now, unfortunately.
 """
 import shutil
 from pathlib import Path
