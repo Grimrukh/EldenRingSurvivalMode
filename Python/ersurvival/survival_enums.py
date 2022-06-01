@@ -4,7 +4,8 @@ from soulstruct.game_types import *
 
 
 # Stone Platform 1000 range
-# TODO: There are a few vanilla flags in this range that need to be avoided.
+# TODO: There is seemingly one vanilla flag in this range that needs to be avoided:
+#   19001100
 BASE_FLAG = 19001000
 
 
@@ -99,8 +100,9 @@ class Flags(Flag):
     CaveDiseaseInDaylight = BASE_FLAG + 88
 
     DiseaseRollLock = BASE_FLAG + 99
-    DiseaseRollFirst = BASE_FLAG + 100
-    DiseaseRollSecond = BASE_FLAG + 101
+    # NOTE: Flag 19001100 is used in the vanilla game for something.
+    DiseaseRollFirst = BASE_FLAG + 101
+    DiseaseRollSecond = BASE_FLAG + 102
     DiseaseRollLast = BASE_FLAG + 199
 
     # Active disease status is tracked using possession of key items, not flags.
@@ -380,13 +382,6 @@ class SurvivalEffects(SpecialEffectParam):
     ColdProtection_Severe = 52252
     # TODO: If any magic effects provide protection, just check those manually in EMEVD too.
 
-    # TODO: Merchants sell notes containing information about local diseases.
-    #  They indicate the type of disease (plague, toxin, parasite, or fever) and hint at its effects.
-
-    # TODO: Recipe books for the four main disease cures are awarded by certain bosses.
-    #  Maybe multiple bosses drop each one.
-    #  Pure Scarlet Rot's cure can be found in a particular dungeon, with a hint to it sold by a merchant in Caelid.
-
     # Overworld diseases
     LimgraveDisease = 53000
     LiurniaDisease = 53001
@@ -442,8 +437,6 @@ class SurvivalEffects(SpecialEffectParam):
     CureCatacombsDisease = 53118
     CureCaveDisease = 53119
     CureTunnelDisease = 53120
-
-    # TODO: Effects for all the different new items, as well as crafting recipes.
 
     # Hunger/thirst only.
     RawSteak = 51900  # 3x Sliver of Meat. Sold by first merchant (Kale). -3 hunger

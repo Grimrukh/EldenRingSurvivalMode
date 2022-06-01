@@ -581,8 +581,6 @@ def generate_new_materials(goods_param: YappedParam):
         new_material = goods_param.duplicate_row(source_row, good_id)
         new_material.name = good_info["name"]
         new_material["iconId"] = good_info["icon"]
-        # TODO: Trying a new sort group ID for these 'weapon component' materials.
-        #  If it doesn't work, use 30.
         new_material["sortGroupId"] = 40
 
 
@@ -1149,8 +1147,8 @@ def generate_all_params():
     # TODO: Remove in final release.
     print("\nNOTE: Debugging item lots created.")
     test_item_lots(item_lots_map)
-    print("\nNOTE: All Site of Grace warps enabled.")
-    enable_all_warps(bonfire_warp)
+    # print("\nNOTE: All Site of Grace warps enabled.")
+    # enable_all_warps(bonfire_warp)
 
     write_param_csv(bonfire_warp, "BonfireWarpParam.csv")
     write_param_csv(mtrl, "EquipMtrlSetParam.csv")
@@ -1161,7 +1159,7 @@ def generate_all_params():
     write_param_csv(npc, "NpcParam.csv")
     write_param_csv(shop_merchant, "ShopLineupParam.csv")
     write_param_csv(shop_recipe, "ShopLineupParam_Recipe.csv")
-    # NOTE: SpEffectParam edited manually in Yapped.
+    # NOTE: SpEffectParam and CharaInitParam edited manually in Yapped.
 
     print("Read, edited, and wrote all Yapped param CSVs successfully.")
 

@@ -25,9 +25,8 @@ def Constructor():
     # DEBUG_AlternateFlag()
 
     # region Hunger/Thirst
-    # TODO: Re-enable
-    # GrowingHunger()
-    # GrowingThirst()
+    GrowingHunger()
+    GrowingThirst()
     SaveHungerAfterDeath()
     SaveThirstAfterDeath()
 
@@ -3829,18 +3828,6 @@ def DEBUG_GetDectusMedallions():
 
 @NeverRestart(15003996)
 def DEBUG_AlternateFlag():
-    """Start flag is divisible by 8.
-
-    TODO: FOUND IT. 19002656 => 7FF44D11C419
-        - The 7FF44 start is shared with all the Cheat Engine flags.
-        - 19002656 // 8 = 2375332
-        - 2656 // 8 = 332
-        - 18002656 -> 7FF44D11B6EA
-        - Stepping up from 1800 (Stranded Graveyard) to 1900 (Stone Platform) results in an offset of 3375 (0xD2F).
-        - Is that how many bytes of flags are allocated per map? Times eight gives 27000.
-        - Let's leave the deep investigation until later and just guess that 19002600 ->
-
-    """
     # 85
     DisableFlag(19000000)
     EnableFlag(19000001)

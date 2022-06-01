@@ -1444,7 +1444,7 @@ DISEASE_INDICATORS = {
                    "Among the thick-skinned beastmen, this disease is considered fairly harmless.",
         "icon": 3734,  # faded skull in Icon_02_A
     },
-    DiseaseIndicators.MohgwynDisease: {  # TODO: Test bleed rate (currently 1 with interval 0.2)
+    DiseaseIndicators.MohgwynDisease: {
         "name": "Disease: Blood Lord's Fever",
         "info": "Disease contracted from Mohgwyn Dynasty Palace",
         "caption": "Deadly affliction originating in the Blood Lord's palace.\n"
