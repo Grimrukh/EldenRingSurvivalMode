@@ -59,6 +59,7 @@ def Constructor():
     MonitorInMountaintops()
     MonitorInGenericDungeon()
     MonitorInLegacyDungeon()
+    MonitorOutdoors()
     # endregion
 
     # region Temperature effect checks
@@ -3681,6 +3682,50 @@ def MonitorInLegacyDungeon():
     IfInsideMap(-2, STONE_PLATFORM)
     IfInsideMap(-2, SHUNNING_GROUNDS)
     IfInsideMap(-2, RUIN_STREWN_PRECIPICE)
+
+    IfConditionFalse(0, -2)
+
+    return RESTART
+
+
+@NeverRestart(Flags.MonitorOutdoors)
+def MonitorOutdoors():
+    """Enables a flag when player is outdoors, for darkness."""
+    DisableFlag(Flags.PlayerIsOutdoors)
+
+    IfFlagOn(-1, Flags.PlayerInLimgrave)
+    IfFlagOn(-1, Flags.PlayerInLiurnia)
+    IfFlagOn(-1, Flags.PlayerInCaelid)
+    IfFlagOn(-1, Flags.PlayerInAltus)
+    IfFlagOn(-1, Flags.PlayerInMtGelmir)
+    IfFlagOn(-1, Flags.PlayerInMountaintops)
+    IfInsideMap(-1, STORMVEIL_CASTLE)
+    IfInsideMap(-1, RAYA_LUCARIA)
+    IfInsideMap(-1, VOLCANO_MANOR)
+    IfInsideMap(-1, LEYNDELL_ROYAL_CAPITAL)
+    IfInsideMap(-1, LEYNDELL_ASHEN_CAPITAL)
+    IfInsideMap(-1, HALIGTREE)
+    IfInsideMap(-1, CRUMBLING_FARUM_AZULA)
+    # Not Sewers, Siofra, Ainsel, or Mohgwyn.
+
+    IfConditionTrue(0, -1)
+
+    EnableFlag(Flags.PlayerIsOutdoors)
+
+    IfFlagOn(-2, Flags.PlayerInLimgrave)
+    IfFlagOn(-2, Flags.PlayerInLiurnia)
+    IfFlagOn(-2, Flags.PlayerInCaelid)
+    IfFlagOn(-2, Flags.PlayerInAltus)
+    IfFlagOn(-2, Flags.PlayerInMtGelmir)
+    IfFlagOn(-2, Flags.PlayerInMountaintops)
+    IfInsideMap(-2, STORMVEIL_CASTLE)
+    IfInsideMap(-2, RAYA_LUCARIA)
+    IfInsideMap(-2, VOLCANO_MANOR)
+    IfInsideMap(-2, LEYNDELL_ROYAL_CAPITAL)
+    IfInsideMap(-2, LEYNDELL_ASHEN_CAPITAL)
+    IfInsideMap(-2, HALIGTREE)
+    IfInsideMap(-2, CRUMBLING_FARUM_AZULA)
+    # Not Sewers, Siofra, Ainsel, or Mohgwyn.
 
     IfConditionFalse(0, -2)
 

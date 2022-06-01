@@ -188,6 +188,7 @@ namespace EldenRingSurvivalMode
                 int hour = Hook.GetIngameHour();
                 DebugPrint($"Current in-game hour: {hour}");
                 // TODO: Check a 'Player Outside' general flag and only set darkness in that case.
+
                 // TODO: Functions to smoothly Lerp from one darkness level to the next?
                 if (hour == -1)
                 {

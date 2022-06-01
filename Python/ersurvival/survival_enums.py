@@ -244,10 +244,8 @@ class Flags(Flag):
     Recipe_SentrysTorch_Bought = BASE_FLAG + 394
 
     # TIME FLAG. Increments by 1 every 30 in-game minutes.
-    PlayerIsOutdoors = BASE_FLAG + 398  # used to tell C# when to add darkness
-    MonitorTimeFlag = BASE_FLAG + 399
-    TimeEventValue = BASE_FLAG + 400  # 4 flags
-    
+    MonitorOutdoors = BASE_FLAG + 398  # uses a flag closer to time values
+
     # Monitor Smith's Hammer possession for recipe appearance.
     MonitorSmithsHammerPossession = BASE_FLAG + 450  # five slots
     HasNoviceSmithsHammer = BASE_FLAG + 460
@@ -288,6 +286,8 @@ class Flags(Flag):
     CureDisease = BASE_FLAG + 500  # 21 slots
 
     # Time flags (one per hour, starting at midnight).
+    PlayerIsOutdoors = BASE_FLAG + 599  # used to tell C# when to add darkness
+    # NOTE: Do not use any flags between 593 and 599 (so the byte is zero IFF 592 is zero).
     Hour0 = BASE_FLAG + 600
     Hour1 = BASE_FLAG + 601
     Hour2 = BASE_FLAG + 602

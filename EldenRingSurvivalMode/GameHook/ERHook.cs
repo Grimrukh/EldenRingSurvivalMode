@@ -12,6 +12,7 @@ namespace EldenRingSurvivalMode.GameHook
         PHPointer FogNewmemPtr { get; set; }
         PHPointer EventFlags { get; set; }
         PHPointer StonePlatformEventFlags { get; set; }
+        const int StonePlatformEventOffset = 0x1C204D;  // offset of event flag 19000000
 
         const string EventFlagsAOB = "48 8B 3D ? ? ? ? 48 85 FF 74 ? 48 8B 49";
         
@@ -74,10 +75,16 @@ namespace EldenRingSurvivalMode.GameHook
         {
             // Read hard-coded event flags to determine which hour the game is currently in, from 0 (midnight) to 23.
             // Returns -1 if no hour flag is active (e.g., game is not loaded) or an error occurs.
-            
+
             long offset = StonePlatformEventFlags.Resolve().ToInt64();
 
-            int hourFlagOffset = 0x1C204D + (1600 / 8);  // Hour0 = 19001600
+            // HACK: Currently checks flag 1592 and returns 12 (noon) if enabled, so as to disable darkness.
+            //byte playerIsOutdoors = StonePlatformEventFlags.ReadByte(StonePlatformEventOffset + (1592 / 8));
+            //Console.WriteLine($"Outdoors: {playerIsOutdoors}");
+            //if (playerIsOutdoors == 0)
+            //    return 12;  // MIDDAY
+
+            int hourFlagOffset = StonePlatformEventOffset + (1600 / 8);  // Hour0 = 19001600
             byte[] hourFlagBytes = StonePlatformEventFlags.ReadBytes(hourFlagOffset, 3);  // 24 flags
             string hourFlags = "";
             foreach (byte flag in hourFlagBytes)
@@ -100,16 +107,16 @@ namespace EldenRingSurvivalMode.GameHook
 
 #if DEBUG
             byte[] currentMem = Kernel32.ReadBytes(Handle, FogInjectionAddr.Resolve(), 7);
-            Console.WriteLine($"Vanilla fog function bytes: {BitConverter.ToString(currentMem)}");
+            //Console.WriteLine($"Vanilla fog function bytes: {BitConverter.ToString(currentMem)}");
 #endif
 
             IntPtr newmemPtr = FogNewmemPtr.Resolve();
             IntPtr injectionPtr = FogInjectionAddr.Resolve();
             long injectionAddr = injectionPtr.ToInt64();
-            Console.WriteLine($"Injection address: {injectionAddr:X}");
+            //Console.WriteLine($"Injection address: {injectionAddr:X}");
             long newmemAddr = newmemPtr.ToInt64();
-            Console.WriteLine($"Newmem address: {newmemAddr:X}");
-            Console.WriteLine($"Expected newmem address: {FogNewmemPtr.Resolve().ToInt64():X}");
+            //Console.WriteLine($"Newmem address: {newmemAddr:X}");
+            //Console.WriteLine($"Expected newmem address: {FogNewmemPtr.Resolve().ToInt64():X}");
 
             // ORIGINAL CODE:
             // 48 89 81 20010000     mov [rcx+0x120], rax
@@ -184,13 +191,13 @@ namespace EldenRingSurvivalMode.GameHook
             Allocate(newmemPtr, (uint)newmemArray.Length, Kernel32.PAGE_EXECUTE_READWRITE);
 
 #if DEBUG
-            Console.WriteLine($"Fog script new memory allocated.");
+            //Console.WriteLine($"Fog script new memory allocated.");
 #endif
 
             // `newmemAsm` is now complete.
 
-            Console.WriteLine($"Final injection: {BitConverter.ToString(injectAsm)}");
-            Console.WriteLine($"Final newmem: {BitConverter.ToString(newmemArray)}");
+            //Console.WriteLine($"Final injection: {BitConverter.ToString(injectAsm)}");
+            //Console.WriteLine($"Final newmem: {BitConverter.ToString(newmemArray)}");
             
             //return;  // TODO
 
@@ -216,7 +223,7 @@ namespace EldenRingSurvivalMode.GameHook
             }
             else
             {
-                Console.WriteLine("Enabled Elden Ring Fog script injection successfully.");
+                //Console.WriteLine("Enabled Elden Ring Fog script injection successfully.");
                 FogEnabled = true;
             }
         }
