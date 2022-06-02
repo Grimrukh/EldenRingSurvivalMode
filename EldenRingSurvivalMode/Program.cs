@@ -13,7 +13,6 @@ namespace EldenRingSurvivalMode
     internal class Program
     {
         const string ERPath = @"C:\Steam\steamapps\common\ELDEN RING (Modding)\Game";
-        const bool doPrint = false;
 
         static Dictionary<string, object[]> DarknessPresets = new Dictionary<string, object[]>()
         {
@@ -82,7 +81,7 @@ namespace EldenRingSurvivalMode
             {
                 var param = fog.Params[i];
 
-                if (doPrint)
+                if (doDebugPrint)
                 {
                     Console.WriteLine($"Param: {param.Name1} | {param.Name2} (type {param.Type})");
                     Console.WriteLine($"    {param.Values.Count} values: {string.Join(", ", param.Values)}");
@@ -159,9 +158,12 @@ namespace EldenRingSurvivalMode
 
         static ERHook Hook { get; set; }
 
+        static int CurrentLevel { get; set; } = -1;
+        const bool doDebugPrint = false;
+
         static void DebugPrint(string msg)
         {
-            if (doPrint)
+            if (doDebugPrint)
                 Console.WriteLine(msg);
         }
 
@@ -187,70 +189,207 @@ namespace EldenRingSurvivalMode
             {
                 int hour = Hook.GetIngameHour();
                 DebugPrint($"Current in-game hour: {hour}");
+                
                 // TODO: Check a 'Player Outside' general flag and only set darkness in that case.
+                //  I tried this and C#, for some reason, would not show the flag value changing.
+                //  I don't actually mind the night darkness in generic dungeons/underground, though.
 
-                // TODO: Functions to smoothly Lerp from one darkness level to the next?
                 if (hour == -1)
                 {
                     // Do nothing. No change. (Might want to disable darkness.)
                     DebugPrint("No hour, so no change.");
                 }
-                else if ( 7 <= hour && hour < 18)
+                else if ( 7 <= hour && hour < 21)
                 {
-                    // No night effects.
-                    Hook.DisableEldenRingFog();
+                    SetDarknessLevel(-1);
                     DebugPrint("Disabling darkness.");
+                    CurrentLevel = -1;
                 }
-                else if (hour == 18 || hour == 6)
+                else if (hour == 21 || hour == 6)
                 {
                     // Mild darkness.
-                    Hook.EnableEldenRingFog();
-                    SetFogPreset(0);
+                    SetDarknessLevel(0);
                     DebugPrint("Darkness level 0.");
                 }
-                else if (hour == 19 || hour == 5)
+                else if (hour == 22 || hour == 5)
                 {
                     // Moderate darkness.
-                    Hook.EnableEldenRingFog();
-                    SetFogPreset(1);
-                    Console.WriteLine("Darkness level 1.");
+                    SetDarknessLevel(1);
+                    DebugPrint("Darkness level 1.");
                 }
-                else if (20 <= hour || hour < 5)
+                else if (23 <= hour || hour < 5)
                 {
                     // Max darkness.
-                    Hook.EnableEldenRingFog();
-                    SetFogPreset(2);
+                    SetDarknessLevel(2);
                     DebugPrint("Darkness level 2.");
                 }
-                Thread.Sleep(1000);
+                Thread.Sleep(3000);  // 3 sec
             }
         }
 
-        public static void SetFogPreset(int level)
+        public static void SetDarknessLevel(int level, float lerpDuration = 10f)
         {
-            // Set fog values ONCE to preset level.
-            Vector3 absorptionScale = (Vector3)DarknessPresets["AbsorptionScale"][level];
-            Vector4 skyColor = (Vector4)DarknessPresets["SkyColor"][level];
-            Vector4 directColor = (Vector4)DarknessPresets["DirectColor"][level];
-            
-            Hook.SetFogValues(
-                BitConverter.GetBytes((float)DarknessPresets["NearDepth"][level]),
-                BitConverter.GetBytes((int)DarknessPresets["DrawTiming"][level]),
-                BitConverter.GetBytes((float)DarknessPresets["FixedDensity"][level]),
-                BitConverter.GetBytes((float)DarknessPresets["LocalLightScale"][level]),
-                BitConverter.GetBytes(absorptionScale.X),
-                BitConverter.GetBytes(absorptionScale.Y),
-                BitConverter.GetBytes(absorptionScale.Z),
-                BitConverter.GetBytes(skyColor.X),
-                BitConverter.GetBytes(skyColor.Y),
-                BitConverter.GetBytes(skyColor.Z),
-                BitConverter.GetBytes(skyColor.W),
-                BitConverter.GetBytes((float)DarknessPresets["StartDist"][level]),
-                BitConverter.GetBytes(directColor.X),
-                BitConverter.GetBytes(directColor.Y),
-                BitConverter.GetBytes(directColor.Z),
-                BitConverter.GetBytes(directColor.W)
-            );
+            float t = 0;
+
+            if (level == -1)
+            {
+                if (CurrentLevel == -1)
+                    return;  // nothing to do
+
+                Hook.EnableEldenRingFog();
+
+                // Disable fog by lerping density down to zero, then disabling the injection.
+                float startNearDepth = (float)DarknessPresets["NearDepth"][CurrentLevel];
+                int startDrawTiming = (int)DarknessPresets["DrawTiming"][CurrentLevel];
+                float startFixedDensity = (float)DarknessPresets["FixedDensity"][CurrentLevel];
+                float startLocalLightScale = (float)DarknessPresets["LocalLightScale"][CurrentLevel];
+                Vector3 startAbsorptionScale = (Vector3)DarknessPresets["AbsorptionScale"][CurrentLevel];
+                Vector4 startSkyColor = (Vector4)DarknessPresets["SkyColor"][CurrentLevel];
+                float startStartDist = (float)DarknessPresets["StartDist"][CurrentLevel];
+                Vector4 startDirectColor = (Vector4)DarknessPresets["DirectColor"][CurrentLevel];
+
+                CurrentLevel = -1;  // do not repeat transition
+
+                while (t < lerpDuration)
+                {
+                    float w = t / lerpDuration;
+                    Hook.SetFogValues(
+                        BitConverter.GetBytes(startNearDepth),
+                        BitConverter.GetBytes(startDrawTiming),
+                        BitConverter.GetBytes(Lerp(startFixedDensity, 0f, w)),
+                        BitConverter.GetBytes(startLocalLightScale),
+                        BitConverter.GetBytes(startAbsorptionScale.X),
+                        BitConverter.GetBytes(startAbsorptionScale.Y),
+                        BitConverter.GetBytes(startAbsorptionScale.Z),
+                        BitConverter.GetBytes(startSkyColor.X),
+                        BitConverter.GetBytes(startSkyColor.Y),
+                        BitConverter.GetBytes(startSkyColor.Z),
+                        BitConverter.GetBytes(startSkyColor.W),
+                        BitConverter.GetBytes(startStartDist),
+                        BitConverter.GetBytes(startDirectColor.X),
+                        BitConverter.GetBytes(startDirectColor.Y),
+                        BitConverter.GetBytes(startDirectColor.Z),
+                        BitConverter.GetBytes(startDirectColor.W)
+                    );
+                    // Sleep for one frame (at 60 FPS).
+                    Thread.Sleep(16);
+                    t += 0.016f;
+                }
+                Hook.DisableEldenRingFog();
+                return;
+            }
+
+            // Will do nothing if already enabled.
+            Hook.EnableEldenRingFog();
+
+            float targetNearDepth = (float)DarknessPresets["NearDepth"][level];
+            int targetDrawTiming = (int)DarknessPresets["DrawTiming"][level];
+            float targetFixedDensity = (float)DarknessPresets["FixedDensity"][level];
+            float targetLocalLightScale = (float)DarknessPresets["LocalLightScale"][level];
+            Vector3 targetAbsorptionScale = (Vector3)DarknessPresets["AbsorptionScale"][level];
+            Vector4 targetSkyColor = (Vector4)DarknessPresets["SkyColor"][level];
+            float targetStartDist = (float)DarknessPresets["StartDist"][level];
+            Vector4 targetDirectColor = (Vector4)DarknessPresets["DirectColor"][level];
+
+            if (level == CurrentLevel)
+            {
+                // Set values directly to target level.
+                Hook.SetFogValues(
+                    BitConverter.GetBytes(targetNearDepth),
+                    BitConverter.GetBytes(targetDrawTiming),
+                    BitConverter.GetBytes(targetFixedDensity),
+                    BitConverter.GetBytes(targetLocalLightScale),
+                    BitConverter.GetBytes(targetAbsorptionScale.X),
+                    BitConverter.GetBytes(targetAbsorptionScale.Y),
+                    BitConverter.GetBytes(targetAbsorptionScale.Z),
+                    BitConverter.GetBytes(targetSkyColor.X),
+                    BitConverter.GetBytes(targetSkyColor.Y),
+                    BitConverter.GetBytes(targetSkyColor.Z),
+                    BitConverter.GetBytes(targetSkyColor.W),
+                    BitConverter.GetBytes(targetStartDist),
+                    BitConverter.GetBytes(targetDirectColor.X),
+                    BitConverter.GetBytes(targetDirectColor.Y),
+                    BitConverter.GetBytes(targetDirectColor.Z),
+                    BitConverter.GetBytes(targetDirectColor.W)
+                );
+            }
+            else
+            {
+                if (CurrentLevel == -1)
+                {
+                    // Set values directly to target level EXCEPT for density, which is lerped in from zero.
+
+                    CurrentLevel = level;  // do not repeat transition
+                    
+                    while (t < lerpDuration)
+                    {
+                        float w = t / lerpDuration;
+                        Hook.SetFogValues(
+                            BitConverter.GetBytes(targetNearDepth),
+                            BitConverter.GetBytes(targetDrawTiming),
+                            BitConverter.GetBytes(Lerp(0f, targetFixedDensity, w)),
+                            BitConverter.GetBytes(targetLocalLightScale),
+                            BitConverter.GetBytes(targetAbsorptionScale.X),
+                            BitConverter.GetBytes(targetAbsorptionScale.Y),
+                            BitConverter.GetBytes(targetAbsorptionScale.Z),
+                            BitConverter.GetBytes(targetSkyColor.X),
+                            BitConverter.GetBytes(targetSkyColor.Y),
+                            BitConverter.GetBytes(targetSkyColor.Z),
+                            BitConverter.GetBytes(targetSkyColor.W),
+                            BitConverter.GetBytes(targetStartDist),
+                            BitConverter.GetBytes(targetDirectColor.X),
+                            BitConverter.GetBytes(targetDirectColor.Y),
+                            BitConverter.GetBytes(targetDirectColor.Z),
+                            BitConverter.GetBytes(targetDirectColor.W)
+                        );
+                        // Sleep for one frame (at 60 FPS).
+                        Thread.Sleep(16);
+                        t += 0.016f;
+                    }
+                }
+                else
+                {
+                    // Lerp ALL values from current level to target level.
+                    float startNearDepth = (float)DarknessPresets["NearDepth"][CurrentLevel];
+                    int startDrawTiming = (int)DarknessPresets["DrawTiming"][CurrentLevel];
+                    float startFixedDensity = (float)DarknessPresets["FixedDensity"][CurrentLevel];
+                    float startLocalLightScale = (float)DarknessPresets["LocalLightScale"][CurrentLevel];
+                    Vector3 startAbsorptionScale = (Vector3)DarknessPresets["AbsorptionScale"][CurrentLevel];
+                    Vector4 startSkyColor = (Vector4)DarknessPresets["SkyColor"][CurrentLevel];
+                    float startStartDist = (float)DarknessPresets["StartDist"][CurrentLevel];
+                    Vector4 startDirectColor = (Vector4)DarknessPresets["DirectColor"][CurrentLevel];
+
+                    CurrentLevel = level;  // do not repeat transition
+
+                    while (t < lerpDuration)
+                    {
+                        float w = t / lerpDuration;
+
+                        Hook.SetFogValues(
+                            BitConverter.GetBytes(Lerp(startNearDepth, targetNearDepth, w)),
+                            BitConverter.GetBytes(Lerp(startDrawTiming, targetDrawTiming, w)),
+                            BitConverter.GetBytes(Lerp(startFixedDensity, targetFixedDensity, w)),
+                            BitConverter.GetBytes(Lerp(startLocalLightScale, targetLocalLightScale, w)),
+                            BitConverter.GetBytes(Lerp(startAbsorptionScale.X, targetAbsorptionScale.X, w)),
+                            BitConverter.GetBytes(Lerp(startAbsorptionScale.Y, targetAbsorptionScale.Y, w)),
+                            BitConverter.GetBytes(Lerp(startAbsorptionScale.Z, targetAbsorptionScale.Z, w)),
+                            BitConverter.GetBytes(Lerp(startSkyColor.X, targetSkyColor.X, w)),
+                            BitConverter.GetBytes(Lerp(startSkyColor.Y, targetSkyColor.Y, w)),
+                            BitConverter.GetBytes(Lerp(startSkyColor.Z, targetSkyColor.Z, w)),
+                            BitConverter.GetBytes(Lerp(startSkyColor.W, targetSkyColor.W, w)),
+                            BitConverter.GetBytes(Lerp(startStartDist, targetStartDist, w)),
+                            BitConverter.GetBytes(Lerp(startDirectColor.X, targetDirectColor.X, w)),
+                            BitConverter.GetBytes(Lerp(startDirectColor.Y, targetDirectColor.Y, w)),
+                            BitConverter.GetBytes(Lerp(startDirectColor.Z, targetDirectColor.Z, w)),
+                            BitConverter.GetBytes(Lerp(startDirectColor.W, targetDirectColor.W, w))
+                        );
+
+                        // Sleep for one frame (at 60 FPS).
+                        Thread.Sleep(16);
+                        t += 0.016f;
+                    }
+                }                
+            }            
         }
 
         public static void TestFog(ERHook hook)
