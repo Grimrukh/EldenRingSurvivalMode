@@ -199,25 +199,25 @@ namespace EldenRingSurvivalMode
                     // Do nothing. No change. (Might want to disable darkness.)
                     DebugPrint("No hour, so no change.");
                 }
-                else if ( 7 <= hour && hour < 21)
+                else if ( 7 <= hour && hour < 19)
                 {
                     SetDarknessLevel(-1);
                     DebugPrint("Disabling darkness.");
                     CurrentLevel = -1;
                 }
-                else if (hour == 21 || hour == 6)
+                else if (hour == 19 || hour == 6)
                 {
                     // Mild darkness.
                     SetDarknessLevel(0);
                     DebugPrint("Darkness level 0.");
                 }
-                else if (hour == 22 || hour == 5)
+                else if (hour == 20 || hour == 5)
                 {
                     // Moderate darkness.
                     SetDarknessLevel(1);
                     DebugPrint("Darkness level 1.");
                 }
-                else if (23 <= hour || hour < 5)
+                else if (21 <= hour || hour < 5)
                 {
                     // Max darkness.
                     SetDarknessLevel(2);
