@@ -458,7 +458,7 @@ def generate_dummy_weapons(
         #     f"{item_lot_id}, "
         #     f"{previous_weapon_id if previous_weapon_id is not None else 0})"
         # )
-        # monitor_flag = SurvivalFlags.WeaponMonitorBase + new_weapon_indices.index(row.name)
+        # monitor_flag = Flags.WeaponMonitorBase + new_weapon_indices.index(row.name)
         # if hammer_id != -1:
         #     print(
         #         f"AllowWeaponUpgrade({slot}, {true_weapon_id}, {hammer_id}, {monitor_flag})"
