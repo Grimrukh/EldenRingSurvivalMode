@@ -33,7 +33,7 @@ ENEMY_MODEL_IDS = {
     # 2277: "Small Crab",
     2500: "Crucible Knight",  # rare Erdtree Amber
     3000: "Exile Soldier",  # uncommon Soft Wood
-    3010: "Banished Knight",  # uncommon Iron Shards
+    3010: "Banished Knight",  # uncommon Metal Shards
     3020: "Large Exile Soldier",  # uncommon Soft Wood
     # 3050: "Sol Knight",
     # 3060: "Undead Mariner",
@@ -54,17 +54,17 @@ ENEMY_MODEL_IDS = {
     # 3251: "Tree Sentinel",
     # 3252: "Royal Knight Loretta",
     # 3300: "Nox Swordstress/Nox Priest",
-    3320: "Silver Tear",  # very rare Liquid Metal
-    3330: "Silver Tear Orb",  # rare Liquid Metal
+    3320: "Silver Tear",  # very rare Pliable Metal
+    3330: "Silver Tear Orb",  # rare Pliable Metal
     3350: "Crystalian",  # rare Glintstone Dust
     3360: "Ancestral Follower",  # uncommon Soft Wood
     3361: "Ancestral Follower",  # uncommon Soft Wood
     3370: "Ancestral Follower Shaman",  # rare Refined Wood
     3371: "Ancestral Follower Shaman",  # rare Refined Wood
-    3400: "Grave Warden Duelist",  # uncommon Iron Shards
-    3450: "Misbegotten",  # uncommon Iron Shards
+    3400: "Grave Warden Duelist",  # uncommon Metal Shards
+    3450: "Misbegotten",  # uncommon Metal Shards
     # 3451: "Misbegotten / Hewg",
-    3460: "Leonine Misbegotten",  # common Iron Shards
+    3460: "Leonine Misbegotten",  # common Metal Shards
     # 3470: "Albinauric",
     # 3471: "Albinauric",
     3500: "Skeleton (Curved Sword)",
@@ -93,14 +93,14 @@ ENEMY_MODEL_IDS = {
     # 3720: "Orbhead Sorcerer",
     # 3730: "Arcane Sphere of Faces",
     # 3750: "Clayman",
-    3800: "Cleanrot Knight",  # uncommon Iron Shards
+    3800: "Cleanrot Knight",  # uncommon Metal Shards
     3810: "Kindred of Rot",  # very rare Gruesome Bone
     3850: "Marionette",  # rare String
     3860: "Avionette",  # rare String
     # 3900: "Fire Monk",
     # 3901: "Godskin Monk",
-    3910: "Fire Prelate",  # rare Iron Plate
-    3950: "Man-Serpent",  # rare Iron Shards
+    3910: "Fire Prelate",  # rare Metal Plate
+    3950: "Man-Serpent",  # rare Metal Shards
     3970: "Beastman of Farum Azula",  # very rare Dragon Teeth
     # 4000: "Royal Rider",
     4020: "Royal Revenant",  # uncommon Soft Wood
@@ -153,17 +153,17 @@ ENEMY_MODEL_IDS = {
     4314: "Radahn Soldier",  # uncommon Soft Wood
     4315: "Mausoleum Soldier",  # uncommon Soft Wood
     4316: "Haligtree Soldier",  # uncommon Soft Wood
-    4320: "Vulgar Militia",  # uncommon Iron Shards
-    4321: "Vulgar Militia",  # uncommon Iron Shards
-    4340: "Mad Pumpkin Head",  # uncommon Iron Shards
+    4320: "Vulgar Militia",  # uncommon Metal Shards
+    4321: "Vulgar Militia",  # uncommon Metal Shards
+    4340: "Mad Pumpkin Head",  # uncommon Metal Shards
     # 4341: "Lesser Pumpkin Head",
-    4350: "Castle Knight",  # uncommon Iron Shards
-    4351: "Godrick Knight",  # uncommon Iron Shards
-    4352: "Cuckoo Knight",  # uncommon Iron Shards
-    4353: "Leyndell Knight",  # uncommon Iron Shards
-    4354: "Redmane Knight",  # uncommon Iron Shards
-    4355: "Mausoleum Knight",  # uncommon Iron Shards
-    4356: "Haligtree Knight",  # uncommon Iron Shards
+    4350: "Castle Knight",  # uncommon Metal Shards
+    4351: "Godrick Knight",  # uncommon Metal Shards
+    4352: "Cuckoo Knight",  # uncommon Metal Shards
+    4353: "Leyndell Knight",  # uncommon Metal Shards
+    4354: "Redmane Knight",  # uncommon Metal Shards
+    4355: "Mausoleum Knight",  # uncommon Metal Shards
+    4356: "Haligtree Knight",  # uncommon Metal Shards
     # 4360: "Knight's Horse",
     # 4361: "Godrick Knight's Horse",
     # 4362: "Cuckoo Knight's Horse",
@@ -192,7 +192,7 @@ ENEMY_MODEL_IDS = {
     # 4442: "Giant Rotten Pod",
     # 4450: "Walking Mausoleum",
     # 4460: "Maneuverable Flamethrower",
-    4470: "Abductor Virgin",  # rare Iron Plate
+    4470: "Abductor Virgin",  # rare Metal Plate
     # 4480: "Miranda the Blighted Bloom/Blossom",
     # 4481: "Miranda Sprout",
     # 4482: "Giant Miranda Sprout",
@@ -215,8 +215,8 @@ ENEMY_MODEL_IDS = {
     # 4570: "Wormface",
     # 4580: "Wormface",
     # 4600: "Stonedigger Troll/Bols, Carian Knight",
-    4601: "Armored Troll Knight",  # rare Iron Plate
-    4602: "Troll Knight",  # very rare Iron Plate
+    4601: "Armored Troll Knight",  # rare Metal Plate
+    4602: "Troll Knight",  # very rare Metal Plate
     # 4603: "Smithing Master Iji",
     # 4604: "War Counselor Iji",
     # 4620: "Astel, Naturalborn of the Void",
@@ -320,7 +320,7 @@ EXTRA_ENEMY_DROPS = {
         (3620, 20),  # "Oracle Envoy (Medium)"
         (3630, 50),  # "Oracle Envoy (Large)"
     ),
-    Materials.IronShards: (
+    Materials.MetalShards: (
         (3010, 50),  # "Banished Knight"
         (3400, 50),  # "Grave Warden Duelist"
         (3450, 50),  # "Misbegotten"
@@ -338,13 +338,13 @@ EXTRA_ENEMY_DROPS = {
         (4355, 50),  # "Mausoleum Knight"
         (4356, 50),  # "Haligtree Knight"
     ),
-    Materials.IronPlate: (
+    Materials.MetalPlate: (
         (3910, 20),  # "Fire Prelate"
         (4470, 20),  # "Abductor Virgin"
         (4601, 20),  # "Armored Troll Knight"
         (4602, 5),  # "Troll Knight"
     ),
-    Materials.LiquidMetal: (
+    Materials.PliableMetal: (
         (3320, 5),  # "Silver Tear",
         (3330, 20),  # "Silver Tear Orb"
     ),

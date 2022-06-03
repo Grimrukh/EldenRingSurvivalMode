@@ -166,13 +166,13 @@ def write_param_csv(param: YappedParam, param_name: str):
 MANUAL_ITEM_LOTS = {
     # Bosses
     10012: ("[Stormveil - Godrick] Gruesome Bone", Materials.GruesomeBone, 1),
-    10030: ("[Chapel of Anticipation - Grafed Scion] Iron Plate", Materials.IronPlate, 1),
+    10030: ("[Chapel of Anticipation - Grafed Scion] Metal Plate", Materials.MetalPlate, 1),
     10031: ("[Chapel of Anticipation - Grafed Scion] Shield Grip0", Materials.ShieldGrip, 1),
     10042: ("[Leyndell - Morgott] Erdtree Amber", Materials.ErdtreeAmber, 1),
     10060: ("[Ashen Leyndell - Gideon] Glintstone Dust", Materials.GlintstoneDust, 3),
     10071: ("[Ashen Leyndell - Hoarah Loux] Erdtree Amber", Materials.ErdtreeAmber, 2),
     10081: ("[Lake of Rot - Astel] Meteorite Chunk", Materials.MeteoriteChunk, 3),
-    10100: ("[Siofra - Valiant Gargoyle] Iron Plate", Materials.IronPlate, 2),
+    10100: ("[Siofra - Valiant Gargoyle] Metal Plate", Materials.MetalPlate, 2),
     10101: ("[Siofra - Valiant Gargoyle] Gruesome Bone", Materials.GruesomeBone, 1),
     10111: ("[Deeproot Depths - Fortissax] Dragon Teeth", Materials.DragonTeeth, 3),
     10122: ("[Mohgwyn Palace - Mohg] Gruesome Bone", Materials.GruesomeBone, 3),
@@ -180,40 +180,40 @@ MANUAL_ITEM_LOTS = {
     10161: ("[Farum Azula - Maliketh] Black Mark", Materials.BlackMark, 3),
     10182: ("[Raya Lucaria - Rennala] Glintstone Dust", Materials.GlintstoneDust, 3),
     10191: ("[Haligtree - Loretta] Erdtree Amber", Materials.ErdtreeAmber, 1),
-    10202: ("[Haligtree - Malenia] Liquid Metal", Materials.LiquidMetal, 5),
+    10202: ("[Haligtree - Malenia] Pliable Metal", Materials.PliableMetal, 5),
     10210: ("[Volcano Manor - Godskin Noble] Black Mark", Materials.BlackMark, 1),
-    10222: ("[Mt. Gelmir - Rykard] Liquid Metal", Materials.LiquidMetal, 3),
-    10260: ("[Ruin-Strewn Precipice - Magma Wyrm Makar] Liquid Metal", Materials.LiquidMetal, 1),
-    10290: ("[Volcano Manor - Abducator Virgins] Iron Plate", Materials.IronPlate, 2),
+    10222: ("[Mt. Gelmir - Rykard] Pliable Metal", Materials.PliableMetal, 3),
+    10260: ("[Ruin-Strewn Precipice - Magma Wyrm Makar] Pliable Metal", Materials.PliableMetal, 1),
+    10290: ("[Volcano Manor - Abducator Virgins] Metal Plate", Materials.MetalPlate, 2),
     10302: ("[Caelid - Radahn] Meteorite Chunk", Materials.MeteoriteChunk, 3),
     10311: ("[Mountaintops - Fire Giant] Gruesome Bone", Materials.GruesomeBone, 3),
     10321: ("[Siofra - Ancestor Spirit] Refined Wood", Materials.RefinedWood, 2),
     10331: ("[Nokron - Regal Ancestor Spirit] Refined Wood", Materials.RefinedWood, 3),
-    10342: ("[Nokron - Mimic Tear] Liquid Metal", Materials.LiquidMetal, 1),
-    10800: ("[Weeping Penisula - Leonine Misbegotten] Iron Plate", Materials.IronPlate, 2),
+    10342: ("[Nokron - Mimic Tear] Pliable Metal", Materials.PliableMetal, 1),
+    10800: ("[Weeping Penisula - Leonine Misbegotten] Metal Plate", Materials.MetalPlate, 2),
     10810: ("[Caria Manor - Loretta] String", Materials.String, 3),
-    10820: ("[Shaded Castle - Elemer of the Briar] Iron Plate", Materials.IronPlate, 2),
+    10820: ("[Shaded Castle - Elemer of the Briar] Metal Plate", Materials.MetalPlate, 2),
     10821: ("[Shaded Castle - Elemer of the Briar] Shield Grip", Materials.ShieldGrip, 1),
-    10830: ("[Redmane Castle - Misbegotten Warrior/Crucible Knight] Iron Plate", Materials.IronPlate, 2),
-    10840: ("[Castle Sol - Commander Niall] Liquid Metal", Materials.LiquidMetal, 1),
+    10830: ("[Redmane Castle - Misbegotten Warrior/Crucible Knight] Metal Plate", Materials.MetalPlate, 2),
+    10840: ("[Castle Sol - Commander Niall] Pliable Metal", Materials.PliableMetal, 1),
     # Generic dungeons
     20031: ("[Deathtouched Catacombs - Black Knife Assassin] Black Mark", Materials.BlackMark, 1),
     20100: ("[Auriza Hero's Grave - Crucible Knight Ordovis] Refined Wood", Materials.RefinedWood, 3),
-    20170: ("[Giant-Conquering Hero's Grave - Ancient Hero of Zamor] Liquid Metal", Materials.LiquidMetal, 1),
+    20170: ("[Giant-Conquering Hero's Grave - Ancient Hero of Zamor] Pliable Metal", Materials.PliableMetal, 1),
     20212: ("[Black Knife Catacombs - Black Knife Assassin] Black Mark", Materials.BlackMark, 1),
     20400: ("[Volcano Cave - Demi-human Queen Margot] Living Jar Shard", Materials.LivingJarShard, 3),
     20470: ("[Cave of the Forlorn - Misbegotten Crusader] Erdtree Wood", Materials.ErdtreeWood, 2),
     20490: ("[Sage's Cave - Necromancer Garris] Glintstone Dust", Materials.GlintstoneDust, 1),
-    20600: ("[Morne Tunnel - Scaly Misbegotten] Iron Plate", Materials.IronPlate, 1),
+    20600: ("[Morne Tunnel - Scaly Misbegotten] Metal Plate", Materials.MetalPlate, 1),
     20630: ("[Old Altus Tunnel - Stonedigger Troll] Gruesome Bone", Materials.GruesomeBone, 1),
     20640: ("[Sealed Tunnel - Onyx Lord] Meteorite Chunk", Materials.MeteoriteChunk, 1),
-    20661: ("[Gael Tunnel - Magma Wyrm] Liquid Metal", Materials.LiquidMetal, 1),
+    20661: ("[Gael Tunnel - Magma Wyrm] Pliable Metal", Materials.PliableMetal, 1),
     20670: ("[Sellia Crystal Tunnel - Fallingstar Beast] Meteorite Chunk", Materials.MeteoriteChunk, 1),
     20681: ("[Yelough Anix Tunnel - Astel] Meteorite Chunk", Materials.MeteoriteChunk, 2),
     # Overworld bosses
-    30100: ("[Limgrave - Field - Tree Sentinel] Iron Plate", Materials.IronPlate, 1),
+    30100: ("[Limgrave - Field - Tree Sentinel] Metal Plate", Materials.MetalPlate, 1),
     30111: ("[Limgrave - Field - Flying Dragon Agheel] Dragon Teeth", Materials.DragonTeeth, 1),
-    30130: ("[Limgrave - Evergaol - Bloodhound Knight Darriwil] Liquid Metal", Materials.LiquidMetal, 1),
+    30130: ("[Limgrave - Evergaol - Bloodhound Knight Darriwil] Pliable Metal", Materials.PliableMetal, 1),
     30172: ("[Limgrave - Field - Tibia Mariner] Gruesome Bone", Materials.GruesomeBone, 1),
     30187: ("[Weeping Penisula - Field - Erdtree Avatar] Erdtree Wood", Materials.ErdtreeWood, 1),
     30203: ("[Liurnia - Field - Erdtree Avatar] Erdtree Wood", Materials.ErdtreeWood, 1),
@@ -223,17 +223,17 @@ MANUAL_ITEM_LOTS = {
     30256: ("[Liurnia - Evergaol - Onyx Lord] Meteorite Chunk", Materials.MeteoriteChunk, 1),
     30262: ("[Liurnia - Field - Glintstone Dragon Adula] Dragon Teeth", Materials.DragonTeeth, 1),
     30310: ("[Altus Plateau - Field - Fallingstar Beast] Meteorite Chunk", Materials.MeteoriteChunk, 1),
-    30315: ("[Capital Outskirts - Field - Draconic Tree Sentinel] Iron Plate", Materials.IronPlate, 1),
+    30315: ("[Capital Outskirts - Field - Draconic Tree Sentinel] Metal Plate", Materials.MetalPlate, 1),
     30316: ("[Capital Outskirts - Field - Draconic Tree Sentinel] Shield Grip", Materials.ShieldGrip, 1),
     30322: ("[Altus Plateau - Field - Wormface] Erdtree Wood", Materials.ErdtreeWood, 1),
-    30327: ("[Altus Plateau - Field - Godskin Apostle] Liquid Metal", Materials.LiquidMetal, 1),
-    30335: ("[Capital Outskirts - Field - Tree Sentinel Duo] Iron Plate", Materials.IronPlate, 2),
+    30327: ("[Altus Plateau - Field - Godskin Apostle] Pliable Metal", Materials.PliableMetal, 1),
+    30335: ("[Capital Outskirts - Field - Tree Sentinel Duo] Metal Plate", Materials.MetalPlate, 2),
     30350: ("[Altus Plateau - Field - Black Knife Assassin] Black Mark", Materials.BlackMark, 1),
     30377: ("[Mt. Gelmir - Field - Full-grown Fallingstar Beast] Meteorite Chunk", Materials.MeteoriteChunk, 2),
     30382: ("[Mt. Gelmir - Field - Ulcerated Tree Spirit] Erdtree Wood", Materials.ErdtreeWood, 1),
     30387: ("[Altus Plateau - Field - Tibia Mariner] Gruesome Bone", Materials.GruesomeBone, 1),
-    30390: ("[Mt. Gelmir - Field - Magma Wyrm] Liquid Metal", Materials.LiquidMetal, 1),
-    30400: ("[Mt. Gelmir - Field - Magma Wyrm] Liquid Metal", Materials.LiquidMetal, 1),
+    30390: ("[Mt. Gelmir - Field - Magma Wyrm] Pliable Metal", Materials.PliableMetal, 1),
+    30400: ("[Mt. Gelmir - Field - Magma Wyrm] Pliable Metal", Materials.PliableMetal, 1),
     30405: ("[Caelid - Field - Commander O'Neil] Staff Pole", Materials.StaffPole, 1),
     30412: ("[Caelid - Field - Erdtree Avatar] Erdtree Wood", Materials.ErdtreeWood, 1),
     30417: ("[Caelid - Field - Putrid Avatar] Erdtree Wood", Materials.ErdtreeWood, 1),
@@ -254,41 +254,41 @@ MANUAL_ITEM_LOTS = {
     80320: ("[Reward - \"Champion's Song\" Painting] Harp Bow", Materials.ErdtreeAmber, 1),
 
     # NPC gifts
-    100360: ("[White-Faced Varre - Invasion] Iron Shards", Materials.IronShards, 10),
+    100360: ("[White-Faced Varre - Invasion] Metal Shards", Materials.MetalShards, 10),
     100770: ("[Tanith] Gruesome Bone", Materials.GruesomeBone, 3),
-    101580: ("[Blaidd is the Half-Wolf] Iron Plate", Materials.IronPlate, 3),
-    101630: ("[Bloody Finger Hunter Yura] Iron Plate", Materials.IronPlate, 1),
+    101580: ("[Blaidd is the Half-Wolf] Metal Plate", Materials.MetalPlate, 3),
+    101630: ("[Bloody Finger Hunter Yura] Metal Plate", Materials.MetalPlate, 1),
     102200: ("[Kenneth Haight] Erdtree Amber", Materials.ErdtreeAmber, 1),
     102860: ("[Gideon Ofnir - Boss Drop] Glintstone Dust", Materials.GlintstoneDust, 3),
     102921: ("[Knight Bernahl] Gruesome Bone", Materials.GruesomeBone, 2),
-    103010: ("[Big Boggart] Iron Plate", Materials.IronPlate, 1),
-    103022: ("[Big Boggart] Iron Plate", Materials.IronPlate, 1),
+    103010: ("[Big Boggart] Metal Plate", Materials.MetalPlate, 1),
+    103022: ("[Big Boggart] Metal Plate", Materials.MetalPlate, 1),
     103410: ("[Prince of Death's Throne] Black Mark", Materials.BlackMark, 1),
     103500: ("[Sorcerer Rogier] Glintstone Dust", Materials.GlintstoneDust, 2),
     103580: ("[Sorcerer Rogier] Glintstone Dust", Materials.GlintstoneDust, 2),
     103930: ("[Ranni the Witch] Meteorite Chunk", Materials.MeteoriteChunk, 4),
-    104500: ("[Juno Hoslow] Iron Shards", Materials.IronShards, 5),
-    104510: ("[Juno Hoslow] Iron Shards", Materials.IronShards, 5),
+    104500: ("[Juno Hoslow] Metal Shards", Materials.MetalShards, 5),
+    104510: ("[Juno Hoslow] Metal Shards", Materials.MetalShards, 5),
 
     # Corpses
-    110300: ("[Corpse - White-Faced Varre - Invasion] Iron Shards", Materials.IronShards, 10),
-    110600: ("[Corpse - Edgar] Iron Plate", Materials.IronPlate, 1),
-    110610: ("[Corpse - Edgar] Iron Plate", Materials.IronPlate, 1),
-    110621: ("[Corpse - Edgar] Iron Plate", Materials.IronPlate, 1),
-    111500: ("[Corpse - Blaidd is the Half-Wolf] Iron Plate", Materials.IronPlate, 3),
-    111600: ("[Corpse - Bloody Finger Hunter Yura] Iron Plate", Materials.IronPlate, 1),
+    110300: ("[Corpse - White-Faced Varre - Invasion] Metal Shards", Materials.MetalShards, 10),
+    110600: ("[Corpse - Edgar] Metal Plate", Materials.MetalPlate, 1),
+    110610: ("[Corpse - Edgar] Metal Plate", Materials.MetalPlate, 1),
+    110621: ("[Corpse - Edgar] Metal Plate", Materials.MetalPlate, 1),
+    111500: ("[Corpse - Blaidd is the Half-Wolf] Metal Plate", Materials.MetalPlate, 3),
+    111600: ("[Corpse - Bloody Finger Hunter Yura] Metal Plate", Materials.MetalPlate, 1),
     112901: ("[Corpse - Knight Bernahl] Gruesome Bone", Materials.GruesomeBone, 2),
-    113002: ("[Corpse - Big Boggart] Iron Plate", Materials.IronPlate, 1),
-    113012: ("[Corpse - Big Boggart] Iron Plate", Materials.IronPlate, 1),
+    113002: ("[Corpse - Big Boggart] Metal Plate", Materials.MetalPlate, 1),
+    113012: ("[Corpse - Big Boggart] Metal Plate", Materials.MetalPlate, 1),
     113410: ("[Corpse - Prince of Death's Throne] Black Mark", Materials.BlackMark, 1),
     113420: ("[Corpse - Prince of Death's Throne] Black Mark", Materials.BlackMark, 1),
     113601: ("[Corpse - Thops] Staff Pole", Materials.StaffPole, 1),
-    113701: ("[Corpse - Brother Corhyn] Iron Shards", Materials.IronShards, 3),
-    113800: ("[Corpse - Dung Eater] Iron Plate", Materials.IronPlate, 1),
-    113820: ("[Corpse - Dung Eater] Iron Plate", Materials.IronPlate, 1),
-    114210: ("[Corpse - Nepheli Loux] Iron Plate", Materials.IronPlate, 1),
-    114211: ("[Corpse - Nepheli Loux] Iron Plate", Materials.IronPlate, 1),
-    114500: ("[Corpse - Juno Hoslow] Iron Shards", Materials.IronShards, 5),
+    113701: ("[Corpse - Brother Corhyn] Metal Shards", Materials.MetalShards, 3),
+    113800: ("[Corpse - Dung Eater] Metal Plate", Materials.MetalPlate, 1),
+    113820: ("[Corpse - Dung Eater] Metal Plate", Materials.MetalPlate, 1),
+    114210: ("[Corpse - Nepheli Loux] Metal Plate", Materials.MetalPlate, 1),
+    114211: ("[Corpse - Nepheli Loux] Metal Plate", Materials.MetalPlate, 1),
+    114500: ("[Corpse - Juno Hoslow] Metal Shards", Materials.MetalShards, 5),
 }
 
 
@@ -592,7 +592,7 @@ def replace_stone_item_lots(item_lots_param: YappedParam, is_map: bool):
     Ancient Dragon (max level) stones are not replaced.
     """
     leave_odds = 0.2  # proportion of item lots to leave as Smithing Stones
-    fragment_odds = 0.75  # rather than Iron Shards
+    fragment_odds = 0.75  # rather than Metal Shards
 
     for row in item_lots_param.rows:
         if row.row_id in MANUAL_ITEM_LOTS:
@@ -621,8 +621,8 @@ def replace_stone_item_lots(item_lots_param: YappedParam, is_map: bool):
                 continue
 
             if random.random() >= fragment_odds:
-                # Iron Shards instead
-                good_id = Materials.IronShards
+                # Metal Shards instead
+                good_id = Materials.MetalShards
 
             if random.random() > fragment_odds:
                 # Leave this Smithing Stone.
@@ -750,7 +750,7 @@ def fix_enemy_item_lots(item_lots_param: YappedParam, weapons_param: YappedParam
 def replace_weapon_item_lots(item_lots_param: YappedParam, weapons_param: YappedParam, is_map: bool):
     """Replace all (non-ammo) weapons in given ItemLotParam with components."""
 
-    soft_wood_odds = 0.2  # for enemies (vs. Iron Shards)
+    soft_wood_odds = 0.2  # for enemies (vs. Metal Shards)
 
     manual_item_lots = MANUAL_ITEM_LOTS.copy() if is_map else {}
 
@@ -802,8 +802,8 @@ def replace_weapon_item_lots(item_lots_param: YappedParam, weapons_param: Yapped
                 # Roll a random material/count to replace lot.
                 good_id, good_count = get_random_material()
             else:
-                # Replace enemy drop with either 1 Soft Wood (rarer) or 1 Iron Shards.
-                good_id = Materials.SoftWood if random.random() < soft_wood_odds else Materials.IronShards
+                # Replace enemy drop with either 1 Soft Wood (rarer) or 1 Metal Shards.
+                good_id = Materials.SoftWood if random.random() < soft_wood_odds else Materials.MetalShards
                 good_count = 1
 
             row[f"lotItemId{slot:02d}"] = good_id
@@ -1078,7 +1078,7 @@ def test_item_lots(item_lots_map: YappedParam):
     item_lots_map[100]["lotItemNum01"] = 5
 
     for i, test_good in enumerate(
-        (Materials.IronPlate, Materials.IronShards, Materials.StoneFragment, Materials.SomberStoneFragment)
+        (Materials.MetalPlate, Materials.MetalShards, Materials.StoneFragment, Materials.SomberStoneFragment)
     ):
         row = item_lots_map.duplicate_row(100, 101 + i, name=f"Test: {test_good.name}")
         row["lotItemId01"] = test_good

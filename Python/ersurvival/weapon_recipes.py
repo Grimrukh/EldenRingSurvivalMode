@@ -88,8 +88,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 100,
         "recipe": [
-            (1, Materials.IronPlate),
-            (1, Materials.IronShards),
+            (1, Materials.MetalPlate),
+            (1, Materials.MetalShards),
         ],
         "cost": 50,
     },
@@ -99,7 +99,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 101,
         "recipe": [
-            (1, Materials.IronPlate),
+            (1, Materials.MetalPlate),
             (12, Materials.SacramentalBud),
             (12, Materials.SomberStoneFragment),
             (4, Materials.BlackMark),
@@ -111,7 +111,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 102,
         "recipe": [
-            (1, Materials.IronPlate),
+            (1, Materials.MetalPlate),
             (5, Materials.StoneFragment),
             (10, Materials.SilverFirefly),
         ],
@@ -122,8 +122,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 103,
         "recipe": [
-            (1, Materials.IronPlate),
-            (4, Materials.IronShards),
+            (1, Materials.MetalPlate),
+            (4, Materials.MetalShards),
             (5, Materials.StoneFragment),
             (9, Materials.GraveViolet),
         ],
@@ -169,7 +169,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 107,
         "recipe": [
-            (1, Materials.IronPlate),
+            (1, Materials.MetalPlate),
             (15, Materials.CrystalBud),
             (10, Materials.SomberStoneFragment),
         ],
@@ -180,7 +180,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 108,
         "recipe": [
-            (1, Materials.IronPlate),
+            (1, Materials.MetalPlate),
             (15, Materials.AeonianButterfly),
             (10, Materials.SomberStoneFragment),
         ],
@@ -191,8 +191,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 109,
         "recipe": [
-            (1, Materials.IronPlate),
-            (1, Materials.IronShards),
+            (1, Materials.MetalPlate),
+            (1, Materials.MetalShards),
             (3, Materials.StoneFragment),
         ],
     },
@@ -202,8 +202,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 110,
         "recipe": [
-            (1, Materials.IronPlate),
-            (8, Materials.IronShards),
+            (1, Materials.MetalPlate),
+            (8, Materials.MetalShards),
             (6, Materials.StoneFragment),
             (15, Materials.AltusBloom),
         ],
@@ -238,7 +238,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 114,
         "recipe": [
-            (1, Materials.IronPlate),
+            (1, Materials.MetalPlate),
             (4, Materials.StoneFragment),
             (3, Materials.BeastBlood),
         ],
@@ -249,7 +249,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 115,
         "recipe": [
-            (1, Materials.IronPlate),
+            (1, Materials.MetalPlate),
             (9, Materials.StoneFragment),
             (4, Materials.ErdtreeWood),
             (10, Materials.GoldenSunflower),
@@ -261,7 +261,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 116,
         "recipe": [
-            (1, Materials.IronPlate),
+            (1, Materials.MetalPlate),
             (9, Materials.SomberStoneFragment),
             (13, Materials.ArteriaLeaf),
         ],
@@ -275,8 +275,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 200,
         "recipe": [
-            (2, Materials.IronPlate),
-            (6, Materials.IronShards),
+            (2, Materials.MetalPlate),
+            (6, Materials.MetalShards),
         ],
     },
     "Short Sword": {
@@ -285,8 +285,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 201,
         "recipe": [
-            (1, Materials.IronPlate),
-            (2, Materials.IronShards),
+            (1, Materials.MetalPlate),
+            (2, Materials.MetalShards),
         ],
     },
     "Broadsword": {
@@ -295,8 +295,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 202,
         "recipe": [
-            (2, Materials.IronPlate),
-            (8, Materials.IronShards),
+            (2, Materials.MetalPlate),
+            (8, Materials.MetalShards),
             (9, Materials.SilverFirefly),
         ],
     },
@@ -306,8 +306,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 204,
         "recipe": [
-            (2, Materials.IronPlate),
-            (7, Materials.IronShards),
+            (2, Materials.MetalPlate),
+            (7, Materials.MetalShards),
             (7, Materials.RootResin),
             (8, Materials.AltusBloom),
         ],
@@ -318,8 +318,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 205,
         "recipe": [
-            (2, Materials.IronPlate),
-            (4, Materials.IronShards),
+            (2, Materials.MetalPlate),
+            (4, Materials.MetalShards),
         ],
     },
     "Ornamental Straight Sword": {
@@ -328,7 +328,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 206,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (6, Materials.SomberStoneFragment),
             (6, Materials.GoldenCentipede),
         ],
@@ -339,7 +339,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 207,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (9, Materials.StoneFragment),
             (25, Materials.AltusBloom),
             (16, Materials.GoldenSunflower),
@@ -351,8 +351,8 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 208,
         "recipe": [
-            (2, Materials.IronPlate),
-            (6, Materials.LiquidMetal),
+            (2, Materials.MetalPlate),
+            (6, Materials.PliableMetal),
             (15, Materials.SilverTearHusk),
         ],
     },
@@ -362,7 +362,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 209,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (8, Materials.SomberStoneFragment),
             (15, Materials.SilverFirefly),
             (15, Materials.GoldFirefly),
@@ -408,7 +408,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 218,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (8, Materials.RimedCrystalBud),
             (5, Materials.GlintstoneDust),
             (15, Materials.GlintstoneFirefly),
@@ -420,7 +420,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 219,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (7, Materials.StoneFragment),
             (8, Materials.SlumberingEgg),
             (8, Materials.TrinasLily),
@@ -432,7 +432,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 220,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (5, Materials.ErdtreeAmber),
             (20, Materials.MiquellasLily),
         ],
@@ -443,10 +443,10 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 221,
         "recipe": [
-            (1, Materials.IronPlate),
+            (1, Materials.MetalPlate),
             (8, Materials.SoftWood),
             (8, Materials.ArteriaLeaf),
-            (15, Materials.IronShards),
+            (15, Materials.MetalShards),
         ],
     },
     "Regalia of Eochaid": {
@@ -455,7 +455,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 222,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (5, Materials.GruesomeBone),
             (10, Materials.Bloodrose),
             (15, Materials.SacramentalBud),
@@ -467,8 +467,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 223,
         "recipe": [
-            (1, Materials.IronPlate),
-            (10, Materials.IronShards),
+            (1, Materials.MetalPlate),
+            (10, Materials.MetalShards),
             (12, Materials.AltusBloom),
             (15, Materials.TarnishedGoldenSunflower),
         ],
@@ -479,8 +479,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 224,
         "recipe": [
-            (2, Materials.IronPlate),
-            (15, Materials.IronShards),
+            (2, Materials.MetalPlate),
+            (15, Materials.MetalShards),
             (10, Materials.StoneFragment),
             (12, Materials.StormhawkFeather),
         ],
@@ -516,8 +516,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 300,
         "recipe": [
-            (3, Materials.IronPlate),
-            (8, Materials.IronShards),
+            (3, Materials.MetalPlate),
+            (8, Materials.MetalShards),
         ],
     },
     "Forked Greatsword": {
@@ -526,8 +526,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 301,
         "recipe": [
-            (2, Materials.IronPlate),
-            (10, Materials.IronShards),
+            (2, Materials.MetalPlate),
+            (10, Materials.MetalShards),
             (6, Materials.StoneFragment),
             (10, Materials.GraveViolet),
         ],
@@ -538,9 +538,9 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 302,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (5, Materials.GravelStone),
-            (10, Materials.IronShards),
+            (10, Materials.MetalShards),
             (10, Materials.StoneFragment),
         ],
     },
@@ -550,9 +550,9 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 303,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (15, Materials.AltusBloom),
-            (10, Materials.IronShards),
+            (10, Materials.MetalShards),
         ],
     },
     "Knight's Greatsword": {
@@ -561,8 +561,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 304,
         "recipe": [
-            (3, Materials.IronPlate),
-            (12, Materials.IronShards),
+            (3, Materials.MetalPlate),
+            (12, Materials.MetalShards),
             (12, Materials.AltusBloom),
         ],
     },
@@ -572,8 +572,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 305,
         "recipe": [
-            (2, Materials.IronPlate),
-            (9, Materials.IronShards),
+            (2, Materials.MetalPlate),
+            (9, Materials.MetalShards),
             (15, Materials.Bloodrose),
             (5, Materials.SacramentalBud),
         ],
@@ -584,7 +584,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 306,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (10, Materials.SomberStoneFragment),
             (15, Materials.GoldTingedExcrement),
             (5, Materials.ErdtreeAmber),
@@ -607,8 +607,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 308,
         "recipe": [
-            (3, Materials.IronPlate),
-            (10, Materials.IronShards),
+            (3, Materials.MetalPlate),
+            (10, Materials.MetalShards),
             (12, Materials.SanctuaryStone),
         ],
     },
@@ -618,9 +618,9 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 309,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (12, Materials.SomberStoneFragment),
-            (6, Materials.LiquidMetal),
+            (6, Materials.PliableMetal),
             (7, Materials.MeteoriteChunk),
         ],
     },
@@ -642,8 +642,8 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 313,
         "recipe": [
-            (2, Materials.IronPlate),
-            (5, Materials.LiquidMetal),
+            (2, Materials.MetalPlate),
+            (5, Materials.PliableMetal),
             (3, Materials.BlackMark),
             (20, Materials.GraveViolet),
         ],
@@ -655,7 +655,7 @@ WEAPON_RECIPES = {
         "id": 314,
         "recipe": [
             (1, Materials.Remembrance_Rykard),
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (8, Materials.BloodTaintedExcrement),
             (30, Materials.VolcanicStone),
         ],
@@ -666,8 +666,8 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 315,
         "recipe": [
-            (3, Materials.IronPlate),
-            (15, Materials.IronShards),
+            (3, Materials.MetalPlate),
+            (15, Materials.MetalShards),
             (10, Materials.SomberStoneFragment),
             (8, Materials.BloodTaintedExcrement),
         ],
@@ -678,7 +678,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 316,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (12, Materials.HeftyBeastBone),
             (12, Materials.FormicRock),
             (5, Materials.BloodTaintedExcrement),
@@ -690,7 +690,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 317,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (10, Materials.SomberStoneFragment),
             (7, Materials.ErdtreeAmber),
             (30, Materials.GoldenSunflower),
@@ -702,8 +702,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 318,
         "recipe": [
-            (2, Materials.IronPlate),
-            (7, Materials.IronShards),
+            (2, Materials.MetalPlate),
+            (7, Materials.MetalShards),
             (6, Materials.StoneFragment),
         ],
     },
@@ -713,7 +713,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 319,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (12, Materials.StoneFragment),
             (10, Materials.RootResin),
             (20, Materials.MeltedMushroom),
@@ -737,7 +737,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 321,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (10, Materials.SomberStoneFragment),
             (3, Materials.BlackMark),
             (3, Materials.ErdtreeAmber),
@@ -749,8 +749,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 400,
         "recipe": [
-            (3, Materials.IronPlate),
-            (12, Materials.IronShards),
+            (3, Materials.MetalPlate),
+            (12, Materials.MetalShards),
             (9, Materials.StoneFragment),
             (2, Materials.MeteoriteChunk),
         ],
@@ -761,7 +761,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 401,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (13, Materials.StoneFragment),
             (15, Materials.GraveViolet),
         ],
@@ -784,8 +784,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 403,
         "recipe": [
-            (3, Materials.IronPlate),
-            (10, Materials.IronShards),
+            (3, Materials.MetalPlate),
+            (10, Materials.MetalShards),
             (15, Materials.GoldTingedExcrement),
         ],
     },
@@ -795,7 +795,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 404,
         "recipe": [
-            (4, Materials.IronPlate),
+            (4, Materials.MetalPlate),
             (7, Materials.StoneFragment),
             (12, Materials.ArteriaLeaf),
         ],
@@ -807,7 +807,7 @@ WEAPON_RECIPES = {
         "id": 405,
         "recipe": [
             (1, Materials.Remembrance_Radahn),
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (6, Materials.MeteoriteChunk),
             (12, Materials.SomberStoneFragment),
         ],
@@ -818,7 +818,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 406,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (8, Materials.GlintstoneDust),
             (20, Materials.RimedCrystalBud),
             (4, Materials.MeteoriteChunk),
@@ -830,9 +830,9 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 407,
         "recipe": [
-            (3, Materials.IronPlate),
-            (12, Materials.IronShards),
-            (7, Materials.LiquidMetal),
+            (3, Materials.MetalPlate),
+            (12, Materials.MetalShards),
+            (7, Materials.PliableMetal),
             (4, Materials.BlackMark),
         ],
     },
@@ -854,8 +854,8 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 410,
         "recipe": [
-            (3, Materials.IronPlate),
-            (25, Materials.IronShards),
+            (3, Materials.MetalPlate),
+            (25, Materials.MetalShards),
         ],
     },
     "Troll Knight's Sword": {
@@ -864,7 +864,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 411,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (9, Materials.GlintstoneDust),
             (9, Materials.RimedCrystalBud),
             (2, Materials.MeteoriteChunk),
@@ -879,8 +879,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 500,
         "recipe": [
-            (2, Materials.IronPlate),
-            (5, Materials.IronShards),
+            (2, Materials.MetalPlate),
+            (5, Materials.MetalShards),
             (6, Materials.StoneFragment),
             (10, Materials.AltusBloom),
         ],
@@ -891,7 +891,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 501,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (8, Materials.StoneFragment),
             (2, Materials.ErdtreeWood),
         ],
@@ -902,7 +902,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 502,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (5, Materials.StoneFragment),
             (7, Materials.SilverFirefly),
         ],
@@ -913,7 +913,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 503,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (8, Materials.StoneFragment),
             (10, Materials.GlintstoneFirefly),
             (2, Materials.GlintstoneDust),
@@ -925,7 +925,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 504,
         "recipe": [
-            (4, Materials.LiquidMetal),
+            (4, Materials.PliableMetal),
             (13, Materials.ToxicMushroom),
             (7, Materials.FormicRock),
             (7, Materials.AeonianButterfly),
@@ -937,7 +937,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 505,
         "recipe": [
-            (5, Materials.LiquidMetal),
+            (5, Materials.PliableMetal),
             (5, Materials.GlintstoneDust),
             (12, Materials.RimedCrystalBud),
             (15, Materials.AlbinauricBloodclot),
@@ -949,7 +949,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 506,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (8, Materials.StoneFragment),
             (12, Materials.TarnishedGoldenSunflower),
         ],
@@ -960,7 +960,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 600,
         "recipe": [
-            (5, Materials.LiquidMetal),
+            (5, Materials.PliableMetal),
             (3, Materials.GruesomeBone),
             (13, Materials.BeastBlood),
             (13, Materials.BloodTaintedExcrement),
@@ -972,7 +972,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 601,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (10, Materials.StoneFragment),
             (15, Materials.StripOfWhiteFlesh),
             (1, Materials.BlackMark),
@@ -984,8 +984,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 602,
         "recipe": [
-            (3, Materials.IronPlate),
-            (10, Materials.IronShards),
+            (3, Materials.MetalPlate),
+            (10, Materials.MetalShards),
             (10, Materials.StoneFragment),
         ],
     },
@@ -1010,7 +1010,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 700,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (4, Materials.StoneFragment),
             (6, Materials.SilverFirefly),
         ],
@@ -1021,8 +1021,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 701,
         "recipe": [
-            (2, Materials.IronPlate),
-            (6, Materials.IronShards),
+            (2, Materials.MetalPlate),
+            (6, Materials.MetalShards),
             (10, Materials.ThinBeastBones),
             (5, Materials.BeastBlood),
         ],
@@ -1033,7 +1033,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 702,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (11, Materials.StoneFragment),
             (10, Materials.FormicRock),
             (9, Materials.ArteriaLeaf),
@@ -1045,7 +1045,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 703,
         "recipe": [
-            (1, Materials.IronPlate),
+            (1, Materials.MetalPlate),
             (4, Materials.StoneFragment),
             (4, Materials.OldFang),
         ],
@@ -1056,7 +1056,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 704,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (5, Materials.StoneFragment),
             (5, Materials.SanctuaryStone),
             (5, Materials.RootResin),
@@ -1068,7 +1068,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 705,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (12, Materials.SomberStoneFragment),
             (15, Materials.VolcanicStone),
             (20, Materials.FireBlossom),
@@ -1080,9 +1080,9 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 706,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (9, Materials.StoneFragment),
-            (3, Materials.LiquidMetal),
+            (3, Materials.PliableMetal),
             (10, Materials.RimedCrystalBud),
         ],
     },
@@ -1092,7 +1092,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 707,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (12, Materials.SomberStoneFragment),
             (3, Materials.MeteoriteChunk),
             (10, Materials.GlintstoneDust),
@@ -1104,9 +1104,9 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 708,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (5, Materials.StoneFragment),
-            (10, Materials.IronShards),
+            (10, Materials.MetalShards),
             (1, Materials.DragonTeeth),
         ],
     },
@@ -1116,9 +1116,9 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 710,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (15, Materials.SomberStoneFragment),
-            (6, Materials.LiquidMetal),
+            (6, Materials.PliableMetal),
             (2, Materials.BlackMark),
         ],
     },
@@ -1128,7 +1128,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 711,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (6, Materials.StoneFragment),
             (8, Materials.SacramentalBud),
             (6, Materials.BeastBlood),
@@ -1140,7 +1140,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 712,
         "recipe": [
-            (1, Materials.IronPlate),
+            (1, Materials.MetalPlate),
             (7, Materials.StoneFragment),
             (5, Materials.String),
             (12, Materials.GraveViolet),
@@ -1152,7 +1152,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 714,
         "recipe": [
-            (1, Materials.IronPlate),
+            (1, Materials.MetalPlate),
             (4, Materials.StoneFragment),
             (10, Materials.TarnishedGoldenSunflower),
         ],
@@ -1163,7 +1163,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 715,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (10, Materials.StoneFragment),
             (8, Materials.GoldFirefly),
         ],
@@ -1186,7 +1186,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 802,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (10, Materials.StoneFragment),
             (10, Materials.FormicRock),
         ],
@@ -1197,9 +1197,9 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 803,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (11, Materials.SomberStoneFragment),
-            (3, Materials.LiquidMetal),
+            (3, Materials.PliableMetal),
             (7, Materials.BloodTaintedExcrement),
         ],
     },
@@ -1221,8 +1221,8 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 805,
         "recipe": [
-            (3, Materials.IronPlate),
-            (2, Materials.LiquidMetal),
+            (3, Materials.MetalPlate),
+            (2, Materials.PliableMetal),
             (10, Materials.SomberStoneFragment),
             (11, Materials.RimedCrystalBud),
         ],
@@ -1233,9 +1233,9 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 806,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (12, Materials.StoneFragment),
-            (10, Materials.IronShards),
+            (10, Materials.MetalShards),
             (15, Materials.GoldenSunflower),
         ],
     },
@@ -1245,8 +1245,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 807,
         "recipe": [
-            (3, Materials.IronPlate),
-            (7, Materials.IronShards),
+            (3, Materials.MetalPlate),
+            (7, Materials.MetalShards),
             (7, Materials.StoneFragment),
             (10, Materials.VolcanicStone),
         ],
@@ -1257,7 +1257,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 808,
         "recipe": [
-            (5, Materials.IronPlate),
+            (5, Materials.MetalPlate),
             (20, Materials.StoneFragment),
             (5, Materials.HeftyBeastBone),
         ],
@@ -1269,7 +1269,7 @@ WEAPON_RECIPES = {
         "id": 810,
         "recipe": [
             (1, Materials.Remembrance_Morgott),
-            (9, Materials.LiquidMetal),
+            (9, Materials.PliableMetal),
             (9, Materials.ErdtreeAmber),
             (13, Materials.ArteriaLeaf),
         ],
@@ -1283,7 +1283,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 900,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (12, Materials.StoneFragment),
             (10, Materials.Bloodrose),
             (10, Materials.AltusBloom),
@@ -1295,7 +1295,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 901,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (17, Materials.StoneFragment),
             (10, Materials.FourToedFowlFoot),
         ],
@@ -1307,7 +1307,7 @@ WEAPON_RECIPES = {
         "id": 902,
         "recipe": [
             (1, Materials.Remembrance_Malenia),
-            (8, Materials.LiquidMetal),
+            (8, Materials.PliableMetal),
             (5, Materials.ErdtreeWood),
             (30, Materials.MiquellasLily),
         ],
@@ -1329,7 +1329,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 904,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (20, Materials.SomberStoneFragment),
             (20, Materials.Bloodrose),
             (10, Materials.BloodTaintedExcrement),
@@ -1365,7 +1365,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 908,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (4, Materials.GruesomeBone),
             (10, Materials.MirandaPowder),
             (20, Materials.Poisonbloom),
@@ -1380,7 +1380,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1000,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (9, Materials.StoneFragment),
             (8, Materials.String),
             (10, Materials.Fulgurbloom),
@@ -1392,7 +1392,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1001,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (12, Materials.StoneFragment),
             (8, Materials.ArteriaLeaf),
             (1, Materials.BlackMark),
@@ -1404,7 +1404,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1003,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (10, Materials.StoneFragment),
             (15, Materials.AltusBloom),
         ],
@@ -1415,7 +1415,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1005,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (4, Materials.GruesomeBone),
             (18, Materials.Bloodrose),
             (12, Materials.BloodTaintedExcrement),
@@ -1427,7 +1427,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1008,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (14, Materials.StoneFragment),
             (10, Materials.RootResin),
             (12, Materials.GoldFirefly),
@@ -1439,7 +1439,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1009,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (3, Materials.BlackMark),
             (4, Materials.ErdtreeAmber),
             (20, Materials.MeltedMushroom),
@@ -1454,8 +1454,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1100,
         "recipe": [
-            (2, Materials.IronPlate),
-            (10, Materials.IronShards),
+            (2, Materials.MetalPlate),
+            (10, Materials.MetalShards),
         ],
     },
     "Club": {
@@ -1484,8 +1484,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1104,
         "recipe": [
-            (1, Materials.IronPlate),
-            (3, Materials.IronShards),
+            (1, Materials.MetalPlate),
+            (3, Materials.MetalShards),
             (3, Materials.SoftWood),
         ],
     },
@@ -1495,8 +1495,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1105,
         "recipe": [
-            (2, Materials.IronPlate),
-            (12, Materials.IronShards),
+            (2, Materials.MetalPlate),
+            (12, Materials.MetalShards),
             (8, Materials.StoneFragment),
         ],
     },
@@ -1506,8 +1506,8 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1106,
         "recipe": [
-            (2, Materials.IronPlate),
-            (20, Materials.IronShards),
+            (2, Materials.MetalPlate),
+            (20, Materials.MetalShards),
             (25, Materials.Bloodrose),
             (10, Materials.BloodTaintedExcrement),
         ],
@@ -1530,7 +1530,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1108,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (10, Materials.SanctuaryStone),
             (8, Materials.StoneFragment),
         ],
@@ -1541,9 +1541,9 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1109,
         "recipe": [
-            (2, Materials.IronPlate),
-            (1, Materials.LiquidMetal),
-            (20, Materials.IronShards),
+            (2, Materials.MetalPlate),
+            (1, Materials.PliableMetal),
+            (20, Materials.MetalShards),
             (8, Materials.StoneFragment),
         ],
     },
@@ -1553,8 +1553,8 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1110,
         "recipe": [
-            (2, Materials.IronPlate),
-            (2, Materials.LiquidMetal),
+            (2, Materials.MetalPlate),
+            (2, Materials.PliableMetal),
             (15, Materials.GoldFirefly),
             (15, Materials.GoldenSunflower),
         ],
@@ -1565,8 +1565,8 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1111,
         "recipe": [
-            (2, Materials.IronPlate),
-            (5, Materials.LiquidMetal),
+            (2, Materials.MetalPlate),
+            (5, Materials.PliableMetal),
             (15, Materials.AlbinauricBloodclot),
             (12, Materials.GlintstoneDust),
         ],
@@ -1577,8 +1577,8 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1112,
         "recipe": [
-            (2, Materials.IronPlate),
-            (10, Materials.LiquidMetal),
+            (2, Materials.MetalPlate),
+            (10, Materials.PliableMetal),
             (30, Materials.SilverTearHusk),
             (5, Materials.RimedCrystalBud),
         ],
@@ -1589,7 +1589,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1113,
         "recipe": [
-            (3, Materials.LiquidMetal),
+            (3, Materials.PliableMetal),
             (10, Materials.LivingJarShard),
             (20, Materials.LumpOfFlesh),
             (20, Materials.GraveViolet),
@@ -1649,10 +1649,10 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1202,
         "recipe": [
-            (4, Materials.IronPlate),
-            (9, Materials.IronShards),
+            (4, Materials.MetalPlate),
+            (9, Materials.MetalShards),
             (2, Materials.MeteoriteChunk),
-            (2, Materials.LiquidMetal),
+            (2, Materials.PliableMetal),
         ],
     },
     "Great Mace": {
@@ -1661,8 +1661,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1206,
         "recipe": [
-            (3, Materials.IronPlate),
-            (20, Materials.IronShards),
+            (3, Materials.MetalPlate),
+            (20, Materials.MetalShards),
             (8, Materials.StoneFragment),
             (3, Materials.MeteoriteChunk),
         ],
@@ -1695,7 +1695,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1214,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (3, Materials.RefinedWood),
             (12, Materials.StoneFragment),
             (12, Materials.AltusBloom),
@@ -1707,7 +1707,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1215,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (20, Materials.GoldenSunflower),
             (10, Materials.SomberStoneFragment),
             (10, Materials.BeastBlood),
@@ -1719,8 +1719,8 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1216,
         "recipe": [
-            (3, Materials.IronPlate),
-            (4, Materials.LiquidMetal),
+            (3, Materials.MetalPlate),
+            (4, Materials.PliableMetal),
             (3, Materials.ErdtreeAmber),
             (30, Materials.GoldTingedExcrement),
         ],
@@ -1743,8 +1743,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1218,
         "recipe": [
-            (3, Materials.IronPlate),
-            (25, Materials.IronShards),
+            (3, Materials.MetalPlate),
+            (25, Materials.MetalShards),
             (20, Materials.SacramentalBud),
             (10, Materials.BloodTaintedExcrement),
         ],
@@ -1767,7 +1767,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1220,
         "recipe": [
-            (9, Materials.LiquidMetal),
+            (9, Materials.PliableMetal),
             (6, Materials.GruesomeBone),
             (20, Materials.FireBlossom),
             (20, Materials.VolcanicStone),
@@ -1779,7 +1779,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1221,
         "recipe": [
-            (4, Materials.IronPlate),
+            (4, Materials.MetalPlate),
             (15, Materials.AeonianButterfly),
             (20, Materials.ToxicMushroom),
         ],
@@ -1793,8 +1793,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1300,
         "recipe": [
-            (2, Materials.IronPlate),
-            (16, Materials.IronShards),
+            (2, Materials.MetalPlate),
+            (16, Materials.MetalShards),
             (12, Materials.StoneFragment),
             (2, Materials.MeteoriteChunk),
         ],
@@ -1806,8 +1806,8 @@ WEAPON_RECIPES = {
         "id": 1301,
         "recipe": [
             (3, Materials.RefinedWood),
-            (2, Materials.IronPlate),
-            (13, Materials.IronShards),
+            (2, Materials.MetalPlate),
+            (13, Materials.MetalShards),
             (15, Materials.SilverTearHusk),
         ],
     },
@@ -1817,8 +1817,8 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1302,
         "recipe": [
-            (2, Materials.IronPlate),
-            (4, Materials.LiquidMetal),
+            (2, Materials.MetalPlate),
+            (4, Materials.PliableMetal),
             (2, Materials.GruesomeBone),
             (20, Materials.GraveViolet),
         ],
@@ -1830,7 +1830,7 @@ WEAPON_RECIPES = {
         "id": 1303,
         "recipe": [
             (1, Materials.Remembrance_Astel),
-            (7, Materials.LiquidMetal),
+            (7, Materials.PliableMetal),
             (6, Materials.MeteoriteChunk),
             (12, Materials.GlintstoneDust),
         ],
@@ -1841,9 +1841,9 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1304,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (3, Materials.RefinedWood),
-            (15, Materials.IronShards),
+            (15, Materials.MetalShards),
             (5, Materials.BloodTaintedExcrement),
         ],
     },
@@ -1856,8 +1856,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1400,
         "recipe": [
-            (1, Materials.IronPlate),
-            (2, Materials.IronShards),
+            (1, Materials.MetalPlate),
+            (2, Materials.MetalShards),
             (2, Materials.StoneFragment),
         ],
     },
@@ -1867,8 +1867,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1401,
         "recipe": [
-            (2, Materials.IronPlate),
-            (1, Materials.LiquidMetal),
+            (2, Materials.MetalPlate),
+            (1, Materials.PliableMetal),
             (8, Materials.StoneFragment),
             (8, Materials.GraveViolet),
         ],
@@ -1880,7 +1880,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1402,
         "recipe": [
-            (1, Materials.IronPlate),
+            (1, Materials.MetalPlate),
             (1, Materials.SoftWood),
         ],
         "cost": 50,
@@ -1903,9 +1903,9 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1404,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (8, Materials.StoneFragment),
-            (8, Materials.IronShards),
+            (8, Materials.MetalShards),
             (10, Materials.Fulgurbloom),
         ],
     },
@@ -1915,7 +1915,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1405,
         "recipe": [
-            (6, Materials.LiquidMetal),
+            (6, Materials.PliableMetal),
             (15, Materials.SomberStoneFragment),
             (20, Materials.SilverFirefly),
             (20, Materials.AlbinauricBloodclot),
@@ -1938,8 +1938,8 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1408,
         "recipe": [
-            (2, Materials.IronPlate),
-            (10, Materials.IronShards),
+            (2, Materials.MetalPlate),
+            (10, Materials.MetalShards),
             (3, Materials.DragonTeeth),
             (12, Materials.RimedCrystalBud),
         ],
@@ -1950,7 +1950,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1410,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (4, Materials.SoftWood),
             (2, Materials.RefinedWood),
             (3, Materials.BeastBlood),
@@ -1962,7 +1962,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1411,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (10, Materials.SomberStoneFragment),
             (15, Materials.FlightPinion),
             (3, Materials.BloodTaintedExcrement),
@@ -1974,7 +1974,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1412,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (9, Materials.ErdtreeWood),
             (5, Materials.GruesomeBone),
             (3, Materials.BlackMark),
@@ -1986,7 +1986,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1414,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (30, Materials.Fulgurbloom),
             (20, Materials.FourToedFowlFoot),
             (20, Materials.StormhawkFeather),
@@ -1998,9 +1998,9 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1500,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (12, Materials.SoftWood),
-            (10, Materials.IronShards),
+            (10, Materials.MetalShards),
             (10, Materials.StoneFragment),
         ],
     },
@@ -2010,8 +2010,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1501,
         "recipe": [
-            (3, Materials.IronPlate),
-            (2, Materials.LiquidMetal),
+            (3, Materials.MetalPlate),
+            (2, Materials.PliableMetal),
             (10, Materials.RootResin),
             (10, Materials.VolcanicStone),
         ],
@@ -2034,9 +2034,9 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1503,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (7, Materials.RefinedWood),
-            (3, Materials.LiquidMetal),
+            (3, Materials.PliableMetal),
             (10, Materials.RimedCrystalBud),
         ],
     },
@@ -2047,7 +2047,7 @@ WEAPON_RECIPES = {
         "id": 1504,
         "recipe": [
             (1, Materials.Remembrance_Godrick),
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (15, Materials.GoldFirefly),
             (25, Materials.TarnishedGoldenSunflower),
         ],
@@ -2058,7 +2058,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1505,
         "recipe": [
-            (4, Materials.IronPlate),
+            (4, Materials.MetalPlate),
             (8, Materials.StoneFragment),
             (12, Materials.AltusBloom),
         ],
@@ -2069,8 +2069,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1506,
         "recipe": [
-            (4, Materials.IronPlate),
-            (10, Materials.IronShards),
+            (4, Materials.MetalPlate),
+            (10, Materials.MetalShards),
             (10, Materials.StoneFragment),
             (10, Materials.FourToedFowlFoot),
         ],
@@ -2081,8 +2081,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1508,
         "recipe": [
-            (3, Materials.IronPlate),
-            (12, Materials.IronShards),
+            (3, Materials.MetalPlate),
+            (12, Materials.MetalShards),
             (10, Materials.YellowEmber),
             (8, Materials.BloodTaintedExcrement),
         ],
@@ -2105,8 +2105,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1512,
         "recipe": [
-            (3, Materials.IronPlate),
-            (5, Materials.LiquidMetal),
+            (3, Materials.MetalPlate),
+            (5, Materials.PliableMetal),
             (20, Materials.StoneFragment),
             (20, Materials.SacramentalBud),
         ],
@@ -2117,8 +2117,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1513,
         "recipe": [
-            (3, Materials.IronPlate),
-            (12, Materials.IronShards),
+            (3, Materials.MetalPlate),
+            (12, Materials.MetalShards),
             (12, Materials.RootResin),
             (15, Materials.MeltedMushroom),
         ],
@@ -2129,7 +2129,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1514,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (15, Materials.SomberStoneFragment),
             (4, Materials.ErdtreeAmber),
             (3, Materials.BlackMark),
@@ -2144,7 +2144,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1600,
         "recipe": [
-            (1, Materials.IronPlate),
+            (1, Materials.MetalPlate),
             (1, Materials.SoftWood),
         ],
     },
@@ -2187,7 +2187,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1604,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (9, Materials.ErdtreeWood),
             (6, Materials.ErdtreeAmber),
             (20, Materials.SomberStoneFragment),
@@ -2199,9 +2199,9 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1605,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (6, Materials.RefinedWood),
-            (8, Materials.IronShards),
+            (8, Materials.MetalShards),
             (10, Materials.StoneFragment),
         ],
     },
@@ -2223,7 +2223,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1607,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (12, Materials.StoneFragment),
             (12, Materials.Fulgurbloom),
             (5, Materials.SacramentalBud),
@@ -2259,9 +2259,9 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1611,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (7, Materials.RefinedWood),
-            (10, Materials.IronShards),
+            (10, Materials.MetalShards),
             (16, Materials.StoneFragment),
         ],
     },
@@ -2271,7 +2271,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1612,
         "recipe": [
-            (7, Materials.LiquidMetal),
+            (7, Materials.PliableMetal),
             (20, Materials.SomberStoneFragment),
             (20, Materials.GraveViolet),
             (3, Materials.BlackMark),
@@ -2283,8 +2283,8 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1613,
         "recipe": [
-            (2, Materials.IronPlate),
-            (15, Materials.IronShards),
+            (2, Materials.MetalPlate),
+            (15, Materials.MetalShards),
             (15, Materials.VolcanicStone),
             (15, Materials.FireBlossom),
         ],
@@ -2295,9 +2295,9 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1614,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (5, Materials.RefinedWood),
-            (12, Materials.IronShards),
+            (12, Materials.MetalShards),
             (9, Materials.SacramentalBud),
         ],
     },
@@ -2307,8 +2307,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1615,
         "recipe": [
-            (2, Materials.IronPlate),
-            (5, Materials.IronShards),
+            (2, Materials.MetalPlate),
+            (5, Materials.MetalShards),
             (8, Materials.StoneFragment),
             (5, Materials.RootResin),
         ],
@@ -2332,7 +2332,7 @@ WEAPON_RECIPES = {
         "id": 1701,
         "recipe": [
             (1, Materials.Remembrance_Mohg),
-            (7, Materials.LiquidMetal),
+            (7, Materials.PliableMetal),
             (25, Materials.SacramentalBud),
             (20, Materials.BloodTaintedExcrement),
         ],
@@ -2343,7 +2343,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1702,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (7, Materials.ErdtreeWood),
             (7, Materials.ErdtreeAmber),
             (15, Materials.BuddingHorn),
@@ -2353,7 +2353,7 @@ WEAPON_RECIPES = {
         "visibility_flag": Flags.Note_SerpentHunter_Bought,
         "id": 1703,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (5, Materials.DragonTeeth),
             (15, Materials.Fulgurbloom),
             (1, Materials.BlackMark),
@@ -2366,7 +2366,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1705,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (20, Materials.SomberStoneFragment),
             (20, Materials.YellowEmber),
             (30, Materials.EyeOfYelough),
@@ -2378,8 +2378,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1706,
         "recipe": [
-            (3, Materials.IronPlate),
-            (3, Materials.LiquidMetal),
+            (3, Materials.MetalPlate),
+            (3, Materials.PliableMetal),
             (15, Materials.StoneFragment),
             (15, Materials.RimedRowa),
         ],
@@ -2390,7 +2390,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1707,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (18, Materials.StoneFragment),
             (15, Materials.GoldFirefly),
             (3, Materials.ErdtreeAmber),
@@ -2405,10 +2405,10 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1800,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (8, Materials.SoftWood),
             (3, Materials.RefinedWood),
-            (7, Materials.IronShards),
+            (7, Materials.MetalShards),
         ],
     },
     "Pest's Glaive": {
@@ -2429,7 +2429,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1802,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (4, Materials.RefinedWood),
             (12, Materials.StoneFragment),
             (8, Materials.Fulgurbloom),
@@ -2441,7 +2441,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1803,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (3, Materials.RefinedWood),
             (10, Materials.StoneFragment),
             (15, Materials.FlightPinion),
@@ -2453,7 +2453,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1804,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (10, Materials.AeonianButterfly),
             (15, Materials.SomberStoneFragment),
             (8, Materials.BloodTaintedExcrement),
@@ -2465,7 +2465,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1805,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (13, Materials.SomberStoneFragment),
             (13, Materials.GraveViolet),
             (1, Materials.BlackMark),
@@ -2477,7 +2477,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1806,
         "recipe": [
-            (7, Materials.LiquidMetal),
+            (7, Materials.PliableMetal),
             (20, Materials.StoneFragment),
             (20, Materials.SilverFirefly),
             (25, Materials.AlbinauricBloodclot),
@@ -2489,7 +2489,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1807,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (10, Materials.SoftWood),
             (15, Materials.Bloodrose),
             (12, Materials.StoneFragment),
@@ -2501,7 +2501,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1808,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (3, Materials.ErdtreeAmber),
             (20, Materials.GoldenSunflower),
             (15, Materials.GoldFirefly),
@@ -2513,7 +2513,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1809,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (13, Materials.StoneFragment),
             (15, Materials.RootResin),
             (18, Materials.AltusBloom),
@@ -2525,8 +2525,8 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1810,
         "recipe": [
-            (2, Materials.IronPlate),
-            (6, Materials.LiquidMetal),
+            (2, Materials.MetalPlate),
+            (6, Materials.PliableMetal),
             (6, Materials.ErdtreeAmber),
             (20, Materials.GoldFirefly),
         ],
@@ -2537,7 +2537,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1811,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (7, Materials.ErdtreeWood),
             (15, Materials.StoneFragment),
             (15, Materials.GoldenSunflower),
@@ -2549,7 +2549,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1813,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (6, Materials.RefinedWood),
             (15, Materials.StoneFragment),
             (10, Materials.ArteriaLeaf),
@@ -2561,7 +2561,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1814,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (3, Materials.DragonTeeth),
             (10, Materials.RimedCrystalBud),
             (20, Materials.Fulgurbloom),
@@ -2573,7 +2573,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1815,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (16, Materials.StoneFragment),
             (10, Materials.RootResin),
             (20, Materials.MeltedMushroom),
@@ -2585,7 +2585,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1816,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (20, Materials.SomberStoneFragment),
             (5, Materials.ErdtreeAmber),
             (3, Materials.BlackMark),
@@ -2600,7 +2600,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1900,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (5, Materials.RefinedWood),
             (16, Materials.StoneFragment),
             (15, Materials.Bloodrose),
@@ -2612,7 +2612,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 1901,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (7, Materials.RefinedWood),
             (20, Materials.GraveViolet),
             (3, Materials.BlackMark),
@@ -2624,7 +2624,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1902,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (16, Materials.SomberStoneFragment),
             (6, Materials.ErdtreeWood),
             (3, Materials.ErdtreeAmber),
@@ -2636,7 +2636,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 1906,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (10, Materials.RefinedWood),
             (20, Materials.StormhawkFeather),
             (3, Materials.BlackMark),
@@ -2653,7 +2653,7 @@ WEAPON_RECIPES = {
         "id": 2000,
         "recipe": [
             (3, Materials.RefinedWood),
-            (1, Materials.LiquidMetal),
+            (1, Materials.PliableMetal),
             (8, Materials.BeastBlood),
             (8, Materials.String),
         ],
@@ -2677,7 +2677,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 2003,
         "recipe": [
-            (5, Materials.LiquidMetal),
+            (5, Materials.PliableMetal),
             (3, Materials.DragonTeeth),
             (15, Materials.VolcanicStone),
             (20, Materials.FireBlossom),
@@ -2689,8 +2689,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 2005,
         "recipe": [
-            (5, Materials.LiquidMetal),
-            (15, Materials.IronShards),
+            (5, Materials.PliableMetal),
+            (15, Materials.MetalShards),
             (8, Materials.String),
             (10, Materials.BloodTaintedExcrement),
         ],
@@ -2713,9 +2713,9 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 2007,
         "recipe": [
-            (2, Materials.IronPlate),
-            (10, Materials.IronShards),
-            (4, Materials.LiquidMetal),
+            (2, Materials.MetalPlate),
+            (10, Materials.MetalShards),
+            (4, Materials.PliableMetal),
             (15, Materials.SilverTearHusk),
         ],
     },
@@ -2729,7 +2729,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 2100,
         "recipe": [
-            (2, Materials.IronShards),
+            (2, Materials.MetalShards),
             (2, Materials.LumpOfFlesh),
         ],
         "cost": 50,
@@ -2740,7 +2740,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 2101,
         "recipe": [
-            (4, Materials.IronShards),
+            (4, Materials.MetalShards),
             (2, Materials.StoneFragment),
             (2, Materials.LumpOfFlesh),
         ],
@@ -2763,7 +2763,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 2107,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (2, Materials.MeteoriteChunk),
         ],
     },
@@ -2773,7 +2773,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 2108,
         "recipe": [
-            (15, Materials.IronShards),
+            (15, Materials.MetalShards),
             (8, Materials.StoneFragment),
             (10, Materials.Bloodrose),
         ],
@@ -2784,7 +2784,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 2110,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (6, Materials.StoneFragment),
             (6, Materials.TarnishedGoldenSunflower),
         ],
@@ -2807,7 +2807,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 2112,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (16, Materials.SomberStoneFragment),
             (12, Materials.StormhawkFeather),
             (18, Materials.Fulgurbloom),
@@ -2831,7 +2831,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 2200,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (9, Materials.StoneFragment),
             (9, Materials.SilverFirefly),
             (5, Materials.ArteriaLeaf),
@@ -2843,7 +2843,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 2201,
         "recipe": [
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (12, Materials.Poisonbloom),
             (10, Materials.MirandaPowder),
             (10, Materials.ToxicMushroom),
@@ -2855,7 +2855,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 2202,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (15, Materials.StoneFragment),
             (10, Materials.BeastBlood),
             (5, Materials.BloodTaintedExcrement),
@@ -2867,8 +2867,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 2203,
         "recipe": [
-            (2, Materials.IronPlate),
-            (4, Materials.LiquidMetal),
+            (2, Materials.MetalPlate),
+            (4, Materials.PliableMetal),
             (12, Materials.StormhawkFeather),
             (12, Materials.FourToedFowlFoot),
         ],
@@ -2882,8 +2882,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 2300,
         "recipe": [
-            (5, Materials.IronPlate),
-            (15, Materials.IronShards),
+            (5, Materials.MetalPlate),
+            (15, Materials.MetalShards),
             (20, Materials.FireBlossom),
             (20, Materials.EyeOfYelough),
         ],
@@ -2918,8 +2918,8 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 2303,
         "recipe": [
-            (5, Materials.IronPlate),
-            (5, Materials.LiquidMetal),
+            (5, Materials.MetalPlate),
+            (5, Materials.PliableMetal),
             (5, Materials.ErdtreeAmber),
             (20, Materials.GoldenCentipede),
         ],
@@ -2930,8 +2930,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 2304,
         "recipe": [
-            (4, Materials.IronPlate),
-            (12, Materials.IronShards),
+            (4, Materials.MetalPlate),
+            (12, Materials.MetalShards),
             (12, Materials.StoneFragment),
             (12, Materials.AltusBloom),
         ],
@@ -2943,7 +2943,7 @@ WEAPON_RECIPES = {
         "id": 2305,
         "recipe": [
             (1, Materials.Remembrance_HoarahLoux),
-            (5, Materials.IronPlate),
+            (5, Materials.MetalPlate),
             (10, Materials.ErdtreeWood),
             (40, Materials.TarnishedGoldenSunflower),
         ],
@@ -2966,7 +2966,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 2307,
         "recipe": [
-            (4, Materials.IronPlate),
+            (4, Materials.MetalPlate),
             (8, Materials.ErdtreeWood),
             (5, Materials.ErdtreeAmber),
             (30, Materials.GoldenSunflower),
@@ -2990,9 +2990,9 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 2310,
         "recipe": [
-            (4, Materials.IronPlate),
-            (7, Materials.LiquidMetal),
-            (20, Materials.IronShards),
+            (4, Materials.MetalPlate),
+            (7, Materials.PliableMetal),
+            (20, Materials.MetalShards),
             (30, Materials.Bloodrose),
         ],
     },
@@ -3037,7 +3037,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 2314,
         "recipe": [
-            (4, Materials.IronPlate),
+            (4, Materials.MetalPlate),
             (8, Materials.ErdtreeWood),
             (5, Materials.ErdtreeAmber),
             (20, Materials.AeonianButterfly),
@@ -3049,7 +3049,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 2315,
         "recipe": [
-            (4, Materials.IronPlate),
+            (4, Materials.MetalPlate),
             (15, Materials.StoneFragment),
             (15, Materials.AeonianButterfly),
             (15, Materials.ToxicMushroom),
@@ -3074,7 +3074,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.RefinedWood),
             (2, Materials.String),
-            (1, Materials.IronShards),
+            (1, Materials.MetalShards),
             (5, Materials.SmolderingButterfly),
         ],
         "cost": 1000,
@@ -3083,7 +3083,7 @@ WEAPON_RECIPES = {
         "visibility_flag": Flags.Recipe_StTrinasTorch_Bought,
         "id": 2404,
         "recipe": [
-            (1, Materials.IronPlate),
+            (1, Materials.MetalPlate),
             (1, Materials.ErdtreeWood),
             (10, Materials.TrinasLily),
             (5, Materials.NascentButterfly),
@@ -3094,7 +3094,7 @@ WEAPON_RECIPES = {
         "visibility_flag": Flags.Recipe_GhostflameTorch_Bought,
         "id": 2405,
         "recipe": [
-            (1, Materials.IronPlate),
+            (1, Materials.MetalPlate),
             (10, Materials.HumanBoneShard),
             (10, Materials.SilverTearHusk),
             (5, Materials.NascentButterfly),
@@ -3134,7 +3134,7 @@ WEAPON_RECIPES = {
         "id": 3000,
         "recipe": [
             (1, Materials.ShieldGrip),
-            (2, Materials.LiquidMetal),
+            (2, Materials.PliableMetal),
             (10, Materials.SilverFirefly),
         ],
     },
@@ -3144,7 +3144,7 @@ WEAPON_RECIPES = {
         "id": 3001,
         "recipe": [
             (1, Materials.ShieldGrip),
-            (1, Materials.IronPlate),
+            (1, Materials.MetalPlate),
             (1, Materials.ErdtreeAmber),
             (15, Materials.GoldenSunflower),
         ],
@@ -3155,7 +3155,7 @@ WEAPON_RECIPES = {
         "id": 3002,
         "recipe": [
             (1, Materials.ShieldGrip),
-            (1, Materials.IronPlate),
+            (1, Materials.MetalPlate),
             (12, Materials.VolcanicStone),
         ],
     },
@@ -3175,7 +3175,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.ShieldGrip),
             (3, Materials.SoftWood),
-            (3, Materials.IronShards),
+            (3, Materials.MetalShards),
         ],
     },
     "Beastman's Jar-Shield": {  # NOTE: this is the one Medium Shield buried among otherwise contiguous Small Shields
@@ -3215,7 +3215,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.ShieldGrip),
             (2, Materials.SoftWood),
-            (4, Materials.IronShards),
+            (4, Materials.MetalShards),
         ],
     },
     "Blue-White Wooden Shield": {
@@ -3225,7 +3225,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.ShieldGrip),
             (2, Materials.SoftWood),
-            (4, Materials.IronShards),
+            (4, Materials.MetalShards),
             (4, Materials.AlbinauricBloodclot),
         ],
     },
@@ -3235,8 +3235,8 @@ WEAPON_RECIPES = {
         "id": 3011,
         "recipe": [
             (1, Materials.ShieldGrip),
-            (1, Materials.IronPlate),
-            (3, Materials.IronShards),
+            (1, Materials.MetalPlate),
+            (3, Materials.MetalShards),
             (5, Materials.StoneFragment),
         ],
     },
@@ -3246,7 +3246,7 @@ WEAPON_RECIPES = {
         "id": 3012,
         "recipe": [
             (1, Materials.ShieldGrip),
-            (1, Materials.IronPlate),
+            (1, Materials.MetalPlate),
             (2, Materials.StoneFragment),
             (5, Materials.SilverFirefly),
         ],
@@ -3257,7 +3257,7 @@ WEAPON_RECIPES = {
         "id": 3013,
         "recipe": [
             (1, Materials.ShieldGrip),
-            (1, Materials.IronPlate),
+            (1, Materials.MetalPlate),
             (10, Materials.TarnishedGoldenSunflower),
         ],
     },
@@ -3267,7 +3267,7 @@ WEAPON_RECIPES = {
         "id": 3014,
         "recipe": [
             (1, Materials.ShieldGrip),
-            (1, Materials.IronPlate),
+            (1, Materials.MetalPlate),
             (1, Materials.GlintstoneDust),
             (10, Materials.SilverFirefly),
         ],
@@ -3298,7 +3298,7 @@ WEAPON_RECIPES = {
         "id": 3020,
         "recipe": [
             (1, Materials.ShieldGrip),
-            (1, Materials.IronPlate),
+            (1, Materials.MetalPlate),
             (5, Materials.Poisonbloom),
             (5, Materials.MirandaPowder),
         ],
@@ -3314,7 +3314,7 @@ WEAPON_RECIPES = {
         "id": 3100,
         "recipe": [
             (2, Materials.ShieldGrip),
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
         ],
     },
     "Marred Leather Shield": {
@@ -3343,7 +3343,7 @@ WEAPON_RECIPES = {
         "id": 3103,
         "recipe": [
             (2, Materials.ShieldGrip),
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (12, Materials.AltusBloom),
         ],
     },
@@ -3353,7 +3353,7 @@ WEAPON_RECIPES = {
         "id": 3104,
         "recipe": [
             (2, Materials.ShieldGrip),
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (2, Materials.GlintstoneDust),
             (5, Materials.AlbinauricBloodclot),
         ],
@@ -3364,7 +3364,7 @@ WEAPON_RECIPES = {
         "id": 3105,
         "recipe": [
             (2, Materials.ShieldGrip),
-            (1, Materials.IronPlate),
+            (1, Materials.MetalPlate),
             (4, Materials.HumanBoneShard),
         ],
     },
@@ -3374,7 +3374,7 @@ WEAPON_RECIPES = {
         "id": 3106,
         "recipe": [
             (2, Materials.ShieldGrip),
-            (3, Materials.LiquidMetal),
+            (3, Materials.PliableMetal),
             (10, Materials.SilverTearHusk),
             (5, Materials.AlbinauricBloodclot),
         ],
@@ -3387,7 +3387,7 @@ WEAPON_RECIPES = {
             (2, Materials.ShieldGrip),
             (5, Materials.SoftWood),
             (1, Materials.RefinedWood),
-            (5, Materials.IronShards),
+            (5, Materials.MetalShards),
         ],
     },
     "Scorpion Kite Shield": {
@@ -3396,7 +3396,7 @@ WEAPON_RECIPES = {
         "id": 3108,
         "recipe": [
             (2, Materials.ShieldGrip),
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (5, Materials.YellowEmber),
         ],
     },
@@ -3406,7 +3406,7 @@ WEAPON_RECIPES = {
         "id": 3109,
         "recipe": [
             (2, Materials.ShieldGrip),
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (7, Materials.StormhawkFeather),
             (1, Materials.BlackMark),
         ],
@@ -3417,7 +3417,7 @@ WEAPON_RECIPES = {
         "id": 3110,
         "recipe": [
             (2, Materials.ShieldGrip),
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (10, Materials.AltusBloom),
             (10, Materials.CrystalBud),
         ],
@@ -3428,8 +3428,8 @@ WEAPON_RECIPES = {
         "id": 3113,
         "recipe": [
             (2, Materials.ShieldGrip),
-            (2, Materials.IronPlate),
-            (7, Materials.IronShards),
+            (2, Materials.MetalPlate),
+            (7, Materials.MetalShards),
             (10, Materials.GoldenSunflower),
         ],
     },
@@ -3450,9 +3450,9 @@ WEAPON_RECIPES = {
         "id": 3117,
         "recipe": [
             (1, Materials.ShieldGrip),
-            (1, Materials.LiquidMetal),
+            (1, Materials.PliableMetal),
             (10, Materials.EyeOfYelough),
-            (10, Materials.IronShards),
+            (10, Materials.MetalShards),
         ],
     },
     "Carian Knight's Shield": {
@@ -3461,7 +3461,7 @@ WEAPON_RECIPES = {
         "id": 3119,
         "recipe": [
             (2, Materials.ShieldGrip),
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (5, Materials.GlintstoneDust),
             (10, Materials.CrystalBud),
         ],
@@ -3504,7 +3504,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (2, Materials.ShieldGrip),
             (3, Materials.RefinedWood),
-            (4, Materials.IronShards),
+            (4, Materials.MetalShards),
             (8, Materials.YellowEmber),
         ],
     },
@@ -3524,7 +3524,7 @@ WEAPON_RECIPES = {
         "id": 3128,
         "recipe": [
             (2, Materials.ShieldGrip),
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (3, Materials.BeastBlood),
         ],
     },
@@ -3534,7 +3534,7 @@ WEAPON_RECIPES = {
         "id": 3129,
         "recipe": [
             (2, Materials.ShieldGrip),
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (3, Materials.BeastBlood),
         ],
     },
@@ -3544,8 +3544,8 @@ WEAPON_RECIPES = {
         "id": 3130,
         "recipe": [
             (2, Materials.ShieldGrip),
-            (2, Materials.IronPlate),
-            (4, Materials.IronShards),
+            (2, Materials.MetalPlate),
+            (4, Materials.MetalShards),
             (4, Materials.SilverFirefly),
         ],
     },
@@ -3555,7 +3555,7 @@ WEAPON_RECIPES = {
         "id": 3131,
         "recipe": [
             (2, Materials.ShieldGrip),
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (5, Materials.SilverFirefly),
         ],
     },
@@ -3565,7 +3565,7 @@ WEAPON_RECIPES = {
         "id": 3132,
         "recipe": [
             (2, Materials.ShieldGrip),
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (7, Materials.FlightPinion),
         ],
     },
@@ -3575,8 +3575,8 @@ WEAPON_RECIPES = {
         "id": 3133,
         "recipe": [
             (2, Materials.ShieldGrip),
-            (2, Materials.IronPlate),
-            (4, Materials.IronShards),
+            (2, Materials.MetalPlate),
+            (4, Materials.MetalShards),
         ],
     },
     "Black Leather Shield": {
@@ -3599,7 +3599,7 @@ WEAPON_RECIPES = {
         "id": 3200,
         "recipe": [
             (3, Materials.ShieldGrip),
-            (4, Materials.IronPlate),
+            (4, Materials.MetalPlate),
             (8, Materials.GravelStone),
             (3, Materials.DragonTeeth),
         ],
@@ -3610,7 +3610,7 @@ WEAPON_RECIPES = {
         "id": 3202,
         "recipe": [
             (3, Materials.ShieldGrip),
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (3, Materials.RefinedWood),
             (12, Materials.TarnishedGoldenSunflower),
         ],
@@ -3643,8 +3643,8 @@ WEAPON_RECIPES = {
         "id": 3205,
         "recipe": [
             (3, Materials.ShieldGrip),
-            (3, Materials.IronPlate),
-            (15, Materials.IronShards),
+            (3, Materials.MetalPlate),
+            (15, Materials.MetalShards),
             (15, Materials.Bloodrose),
         ],
     },
@@ -3654,7 +3654,7 @@ WEAPON_RECIPES = {
         "id": 3208,
         "recipe": [
             (3, Materials.ShieldGrip),
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (3, Materials.ErdtreeAmber),
             (25, Materials.GoldenSunflower),
         ],
@@ -3665,7 +3665,7 @@ WEAPON_RECIPES = {
         "id": 3209,
         "recipe": [
             (3, Materials.ShieldGrip),
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (13, Materials.TarnishedGoldenSunflower),
             (20, Materials.ErdleafFlower),
         ],
@@ -3698,7 +3698,7 @@ WEAPON_RECIPES = {
         "id": 3214,
         "recipe": [
             (3, Materials.ShieldGrip),
-            (2, Materials.IronShards),
+            (2, Materials.MetalShards),
             (8, Materials.RefinedWood),
             (15, Materials.AltusBloom)
         ],
@@ -3709,7 +3709,7 @@ WEAPON_RECIPES = {
         "id": 3215,
         "recipe": [
             (3, Materials.ShieldGrip),
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (25, Materials.SomberStoneFragment),
             (25, Materials.FireBlossom),
         ],
@@ -3720,7 +3720,7 @@ WEAPON_RECIPES = {
         "id": 3216,
         "recipe": [
             (3, Materials.ShieldGrip),
-            (5, Materials.IronPlate),
+            (5, Materials.MetalPlate),
             (20, Materials.VolcanicStone),
             (20, Materials.FireBlossom),
         ],
@@ -3731,9 +3731,9 @@ WEAPON_RECIPES = {
         "id": 3217,
         "recipe": [
             (3, Materials.ShieldGrip),
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (5, Materials.RefinedWood),
-            (15, Materials.IronShards),
+            (15, Materials.MetalShards),
         ],
     },
     "Manor Towershield": {
@@ -3742,7 +3742,7 @@ WEAPON_RECIPES = {
         "id": 3219,
         "recipe": [
             (3, Materials.ShieldGrip),
-            (4, Materials.IronPlate),
+            (4, Materials.MetalPlate),
             (15, Materials.TarnishedGoldenSunflower),
             (12, Materials.StoneFragment),
         ],
@@ -3753,7 +3753,7 @@ WEAPON_RECIPES = {
         "id": 3220,
         "recipe": [
             (3, Materials.ShieldGrip),
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (12, Materials.StoneFragment),
             (1, Materials.ErdtreeAmber),
         ],
@@ -3764,8 +3764,8 @@ WEAPON_RECIPES = {
         "id": 3221,
         "recipe": [
             (3, Materials.ShieldGrip),
-            (3, Materials.IronPlate),
-            (10, Materials.IronShards),
+            (3, Materials.MetalPlate),
+            (10, Materials.MetalShards),
             (8, Materials.StormhawkFeather),
         ],
     },
@@ -3786,7 +3786,7 @@ WEAPON_RECIPES = {
         "id": 3223,
         "recipe": [
             (3, Materials.ShieldGrip),
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (10, Materials.VolcanicStone),
             (15, Materials.FadedErdleafFlower),
         ],
@@ -3797,7 +3797,7 @@ WEAPON_RECIPES = {
         "id": 3224,
         "recipe": [
             (3, Materials.ShieldGrip),
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (2, Materials.MeteoriteChunk),
             (1, Materials.BlackMark),
         ],
@@ -3808,7 +3808,7 @@ WEAPON_RECIPES = {
         "id": 3225,
         "recipe": [
             (3, Materials.ShieldGrip),
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (5, Materials.GlintstoneDust),
             (10, Materials.CrystalBud),
         ],
@@ -3819,7 +3819,7 @@ WEAPON_RECIPES = {
         "id": 3226,
         "recipe": [
             (3, Materials.ShieldGrip),
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (20, Materials.GoldenSunflower),
             (8, Materials.GoldenCentipede),
         ],
@@ -3830,7 +3830,7 @@ WEAPON_RECIPES = {
         "id": 3227,
         "recipe": [
             (3, Materials.ShieldGrip),
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (20, Materials.RowaFruit),
             (15, Materials.TarnishedGoldenSunflower),
         ],
@@ -3841,7 +3841,7 @@ WEAPON_RECIPES = {
         "id": 3228,
         "recipe": [
             (3, Materials.ShieldGrip),
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (20, Materials.GoldFirefly),
             (15, Materials.MiquellasLily),
         ],
@@ -3854,7 +3854,7 @@ WEAPON_RECIPES = {
             (3, Materials.ShieldGrip),
             (7, Materials.SoftWood),
             (2, Materials.RefinedWood),
-            (8, Materials.IronShards),
+            (8, Materials.MetalShards),
         ],
     },
     "Lordsworn's Shield": {
@@ -3863,9 +3863,9 @@ WEAPON_RECIPES = {
         "id": 3230,
         "recipe": [
             (3, Materials.ShieldGrip),
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (7, Materials.StoneFragment),
-            (3, Materials.IronShards),
+            (3, Materials.MetalShards),
         ],
     },
     # endregion
@@ -4312,7 +4312,7 @@ WEAPON_RECIPES = {
         "id": 4200,
         "recipe": [
             (1, Materials.Remembrance_Radahn),
-            (4, Materials.IronPlate),
+            (4, Materials.MetalPlate),
             (6, Materials.MeteoriteChunk),
             (15, Materials.String),
         ],
@@ -4364,7 +4364,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (8, Materials.SoftWood),
             (2, Materials.RefinedWood),
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (7, Materials.String),
         ],
     },
@@ -4375,9 +4375,9 @@ WEAPON_RECIPES = {
         "id": 4302,
         "recipe": [
             (6, Materials.RefinedWood),
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (7, Materials.String),
-            (5, Materials.IronShards),
+            (5, Materials.MetalShards),
         ],
     },
     "Heavy Crossbow": {
@@ -4387,7 +4387,7 @@ WEAPON_RECIPES = {
         "id": 4303,
         "recipe": [
             (8, Materials.RefinedWood),
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (8, Materials.String),
             (13, Materials.FireBlossom),
         ],
@@ -4398,7 +4398,7 @@ WEAPON_RECIPES = {
         "somber": True,
         "id": 4305,
         "recipe": [
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (7, Materials.ErdtreeWood),
             (10, Materials.String),
             (18, Materials.GoldenCentipede),
@@ -4424,7 +4424,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (15, Materials.SoftWood),
             (5, Materials.RefinedWood),
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (7, Materials.String),
         ],
     },
@@ -4435,7 +4435,7 @@ WEAPON_RECIPES = {
         "id": 4311,
         "recipe": [
             (13, Materials.RefinedWood),
-            (2, Materials.IronPlate),
+            (2, Materials.MetalPlate),
             (10, Materials.String),
             (3, Materials.BlackMark),
         ],
@@ -4448,7 +4448,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (20, Materials.SoftWood),
             (10, Materials.RefinedWood),
-            (3, Materials.IronPlate),
+            (3, Materials.MetalPlate),
             (15, Materials.String),
         ],
     },
@@ -4459,7 +4459,7 @@ WEAPON_RECIPES = {
         "id": 4401,
         "recipe": [
             (30, Materials.LivingJarShard),
-            (4, Materials.IronPlate),
+            (4, Materials.MetalPlate),
             (30, Materials.FireBlossom),
         ],
     },

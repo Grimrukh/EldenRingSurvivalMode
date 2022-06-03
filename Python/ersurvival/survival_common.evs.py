@@ -12,6 +12,33 @@ from .survival_goods import *
 def Constructor():
     """Will be merged with vanilla Common."""
 
+    # region Time of Day Monitor
+    MonitorHour(0, 0, Flags.Hour0)
+    MonitorHour(1, 1, Flags.Hour1)
+    MonitorHour(2, 2, Flags.Hour2)
+    MonitorHour(3, 3, Flags.Hour3)
+    MonitorHour(4, 4, Flags.Hour4)
+    MonitorHour(5, 5, Flags.Hour5)
+    MonitorHour(6, 6, Flags.Hour6)
+    MonitorHour(7, 7, Flags.Hour7)
+    MonitorHour(8, 8, Flags.Hour8)
+    MonitorHour(9, 9, Flags.Hour9)
+    MonitorHour(10, 10, Flags.Hour10)
+    MonitorHour(11, 11, Flags.Hour11)
+    MonitorHour(12, 12, Flags.Hour12)
+    MonitorHour(13, 13, Flags.Hour13)
+    MonitorHour(14, 14, Flags.Hour14)
+    MonitorHour(15, 15, Flags.Hour15)
+    MonitorHour(16, 16, Flags.Hour16)
+    MonitorHour(17, 17, Flags.Hour17)
+    MonitorHour(18, 18, Flags.Hour18)
+    MonitorHour(19, 19, Flags.Hour19)
+    MonitorHour(20, 20, Flags.Hour20)
+    MonitorHour(21, 21, Flags.Hour21)
+    MonitorHour(22, 22, Flags.Hour22)
+    MonitorHour(23, 23, Flags.Hour23)
+    # endregion
+
     # TODO: Debugging. Remove for release.
     # AwardItemLot(500)
     # AwardItemLot(600)
@@ -80,33 +107,6 @@ def Constructor():
     ModerateColdWarning()
     CheckSevereColdArea()
     SevereColdWarning()
-    # endregion
-
-    # region Time of Day Monitor
-    MonitorHour(0, 0, Flags.Hour0)
-    MonitorHour(1, 1, Flags.Hour1)
-    MonitorHour(2, 2, Flags.Hour2)
-    MonitorHour(3, 3, Flags.Hour3)
-    MonitorHour(4, 4, Flags.Hour4)
-    MonitorHour(5, 5, Flags.Hour5)
-    MonitorHour(6, 6, Flags.Hour6)
-    MonitorHour(7, 7, Flags.Hour7)
-    MonitorHour(8, 8, Flags.Hour8)
-    MonitorHour(9, 9, Flags.Hour9)
-    MonitorHour(10, 10, Flags.Hour10)
-    MonitorHour(11, 11, Flags.Hour11)
-    MonitorHour(12, 12, Flags.Hour12)
-    MonitorHour(13, 13, Flags.Hour13)
-    MonitorHour(14, 14, Flags.Hour14)
-    MonitorHour(15, 15, Flags.Hour15)
-    MonitorHour(16, 16, Flags.Hour16)
-    MonitorHour(17, 17, Flags.Hour17)
-    MonitorHour(18, 18, Flags.Hour18)
-    MonitorHour(19, 19, Flags.Hour19)
-    MonitorHour(20, 20, Flags.Hour20)
-    MonitorHour(21, 21, Flags.Hour21)
-    MonitorHour(22, 22, Flags.Hour22)
-    MonitorHour(23, 23, Flags.Hour23)
     # endregion
 
     # region Disease checks
@@ -252,150 +252,150 @@ def Constructor():
 
     # region Disease cures
     CureDisease(
-        0, 
-        SurvivalEffects.LimgraveDisease, 
-        SurvivalEffects.CureLimgraveDisease, 
-        DiseaseIndicators.LimgraveDisease, 
+        0,
+        SurvivalEffects.LimgraveDisease,
+        SurvivalEffects.CureLimgraveDisease,
+        DiseaseIndicators.LimgraveDisease,
         SurvivalText.CuredLimgraveDisease,
     )
     CureDisease(
-        1, 
-        SurvivalEffects.LiurniaDisease, 
-        SurvivalEffects.CureLiurniaDisease, 
-        DiseaseIndicators.LiurniaDisease, 
+        1,
+        SurvivalEffects.LiurniaDisease,
+        SurvivalEffects.CureLiurniaDisease,
+        DiseaseIndicators.LiurniaDisease,
         SurvivalText.CuredLiurniaDisease,
     )
     CureDisease(
-        2, 
-        SurvivalEffects.CaelidDisease, 
-        SurvivalEffects.CureCaelidDisease, 
-        DiseaseIndicators.CaelidDisease, 
+        2,
+        SurvivalEffects.CaelidDisease,
+        SurvivalEffects.CureCaelidDisease,
+        DiseaseIndicators.CaelidDisease,
         SurvivalText.CuredCaelidDisease,
     )
     CureDisease(
-        3, 
-        SurvivalEffects.AltusDisease, 
-        SurvivalEffects.CureAltusDisease, 
-        DiseaseIndicators.AltusDisease, 
+        3,
+        SurvivalEffects.AltusDisease,
+        SurvivalEffects.CureAltusDisease,
+        DiseaseIndicators.AltusDisease,
         SurvivalText.CuredAltusDisease,
     )
     CureDisease(
-        4, 
-        SurvivalEffects.MtGelmirDisease, 
-        SurvivalEffects.CureMtGelmirDisease, 
-        DiseaseIndicators.MtGelmirDisease, 
+        4,
+        SurvivalEffects.MtGelmirDisease,
+        SurvivalEffects.CureMtGelmirDisease,
+        DiseaseIndicators.MtGelmirDisease,
         SurvivalText.CuredMtGelmirDisease,
     )
     CureDisease(
-        5, 
-        SurvivalEffects.MountaintopsDisease, 
-        SurvivalEffects.CureMountaintopsDisease, 
-        DiseaseIndicators.MountaintopsDisease, 
+        5,
+        SurvivalEffects.MountaintopsDisease,
+        SurvivalEffects.CureMountaintopsDisease,
+        DiseaseIndicators.MountaintopsDisease,
         SurvivalText.CuredMountaintopsDisease,
     )
     CureDisease(
-        6, 
-        SurvivalEffects.SiofraDisease, 
-        SurvivalEffects.CureSiofraDisease, 
-        DiseaseIndicators.SiofraDisease, 
+        6,
+        SurvivalEffects.SiofraDisease,
+        SurvivalEffects.CureSiofraDisease,
+        DiseaseIndicators.SiofraDisease,
         SurvivalText.CuredSiofraDisease,
     )
     CureDisease(
-        7, 
-        SurvivalEffects.AinselDisease, 
-        SurvivalEffects.CureAinselDisease, 
-        DiseaseIndicators.AinselDisease, 
+        7,
+        SurvivalEffects.AinselDisease,
+        SurvivalEffects.CureAinselDisease,
+        DiseaseIndicators.AinselDisease,
         SurvivalText.CuredAinselDisease,
     )
     CureDisease(
-        8, 
-        SurvivalEffects.DeeprootDisease, 
-        SurvivalEffects.CureDeeprootDisease, 
-        DiseaseIndicators.DeeprootDisease, 
+        8,
+        SurvivalEffects.DeeprootDisease,
+        SurvivalEffects.CureDeeprootDisease,
+        DiseaseIndicators.DeeprootDisease,
         SurvivalText.CuredDeeprootDisease,
     )
     CureDisease(
-        9, 
-        SurvivalEffects.StormveilDisease, 
-        SurvivalEffects.CureStormveilDisease, 
-        DiseaseIndicators.StormveilDisease, 
+        9,
+        SurvivalEffects.StormveilDisease,
+        SurvivalEffects.CureStormveilDisease,
+        DiseaseIndicators.StormveilDisease,
         SurvivalText.CuredStormveilDisease,
     )
     CureDisease(
-        10, 
-        SurvivalEffects.RayaLucariaDisease, 
-        SurvivalEffects.CureRayaLucariaDisease, 
-        DiseaseIndicators.RayaLucariaDisease, 
+        10,
+        SurvivalEffects.RayaLucariaDisease,
+        SurvivalEffects.CureRayaLucariaDisease,
+        DiseaseIndicators.RayaLucariaDisease,
         SurvivalText.CuredRayaLucariaDisease,
     )
     CureDisease(
-        11, 
-        SurvivalEffects.RadahnDisease, 
-        SurvivalEffects.CureRadahnDisease, 
-        DiseaseIndicators.RadahnDisease, 
+        11,
+        SurvivalEffects.RadahnDisease,
+        SurvivalEffects.CureRadahnDisease,
+        DiseaseIndicators.RadahnDisease,
         SurvivalText.CuredRadahnDisease,
     )
     CureDisease(
-        12, 
-        SurvivalEffects.VolcanoManorDisease, 
-        SurvivalEffects.CureVolcanoManorDisease, 
-        DiseaseIndicators.VolcanoManorDisease, 
+        12,
+        SurvivalEffects.VolcanoManorDisease,
+        SurvivalEffects.CureVolcanoManorDisease,
+        DiseaseIndicators.VolcanoManorDisease,
         SurvivalText.CuredVolcanoManorDisease,
     )
     CureDisease(
-        13, 
-        SurvivalEffects.LeyndellDisease, 
-        SurvivalEffects.CureLeyndellDisease, 
-        DiseaseIndicators.LeyndellDisease, 
+        13,
+        SurvivalEffects.LeyndellDisease,
+        SurvivalEffects.CureLeyndellDisease,
+        DiseaseIndicators.LeyndellDisease,
         SurvivalText.CuredLeyndellDisease,
     )
     CureDisease(
-        14, 
-        SurvivalEffects.SewersDisease, 
-        SurvivalEffects.CureSewersDisease, 
-        DiseaseIndicators.SewersDisease, 
+        14,
+        SurvivalEffects.SewersDisease,
+        SurvivalEffects.CureSewersDisease,
+        DiseaseIndicators.SewersDisease,
         SurvivalText.CuredSewersDisease,
     )
     CureDisease(
-        15, 
-        SurvivalEffects.HaligtreeDisease, 
-        SurvivalEffects.CureHaligtreeDisease, 
-        DiseaseIndicators.HaligtreeDisease, 
+        15,
+        SurvivalEffects.HaligtreeDisease,
+        SurvivalEffects.CureHaligtreeDisease,
+        DiseaseIndicators.HaligtreeDisease,
         SurvivalText.CuredHaligtreeDisease,
     )
     CureDisease(
-        16, 
-        SurvivalEffects.FarumAzulaDisease, 
-        SurvivalEffects.CureFarumAzulaDisease, 
-        DiseaseIndicators.FarumAzulaDisease, 
+        16,
+        SurvivalEffects.FarumAzulaDisease,
+        SurvivalEffects.CureFarumAzulaDisease,
+        DiseaseIndicators.FarumAzulaDisease,
         SurvivalText.CuredFarumAzulaDisease,
     )
     CureDisease(
-        17, 
-        SurvivalEffects.MohgwynDisease, 
-        SurvivalEffects.CureMohgwynDisease, 
-        DiseaseIndicators.MohgwynDisease, 
+        17,
+        SurvivalEffects.MohgwynDisease,
+        SurvivalEffects.CureMohgwynDisease,
+        DiseaseIndicators.MohgwynDisease,
         SurvivalText.CuredMohgwynDisease,
     )
     CureDisease(
-        18, 
-        SurvivalEffects.CatacombsDisease, 
-        SurvivalEffects.CureCatacombsDisease, 
-        DiseaseIndicators.CatacombsDisease, 
+        18,
+        SurvivalEffects.CatacombsDisease,
+        SurvivalEffects.CureCatacombsDisease,
+        DiseaseIndicators.CatacombsDisease,
         SurvivalText.CuredCatacombsDisease,
     )
     CureDisease(
-        19, 
-        SurvivalEffects.CaveDisease, 
-        SurvivalEffects.CureCaveDisease, 
-        DiseaseIndicators.CaveDisease, 
+        19,
+        SurvivalEffects.CaveDisease,
+        SurvivalEffects.CureCaveDisease,
+        DiseaseIndicators.CaveDisease,
         SurvivalText.CuredCaveDisease,
     )
     CureDisease(
-        20, 
-        SurvivalEffects.TunnelDisease, 
-        SurvivalEffects.CureTunnelDisease, 
-        DiseaseIndicators.TunnelDisease, 
+        20,
+        SurvivalEffects.TunnelDisease,
+        SurvivalEffects.CureTunnelDisease,
+        DiseaseIndicators.TunnelDisease,
         SurvivalText.CuredTunnelDisease,
     )
     # CurePureScarletRot()
@@ -1055,7 +1055,7 @@ def Constructor():
     CraftDummyWeapon(376, 60440100, 40440100, 43080018)
     AllowWeaponUpgrade(376, 44010010, 8404, 19003376)
     # endregion
-    
+
     # Monitor possession of Smith's Hammers for recipe appearance.
     # region Smith's Hammer possession
     MonitorSmithsHammerPossession(0, SmithsHammers.NoviceSmithsHammer, Flags.HasNoviceSmithsHammer)

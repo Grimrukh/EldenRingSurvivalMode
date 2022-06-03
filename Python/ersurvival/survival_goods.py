@@ -171,9 +171,9 @@ class Materials(IntEnum):
     RefinedWood = 21001  # Uncommon? Weapons with wood. Stronger weapons/arrows.
     StoneFragment = 21002  # Used for stronger weapons. Replaces many Smithing Stone drops.
     SomberStoneFragment = 21003  # Used for EVEN STRONGER weapons. Replaces many Somber Smithing Stone drops.
-    IronShards = 21004  # Generic metal scrap. Very common. Worth a "portion" of an Iron plate. More for DEX/bleed.
-    IronPlate = 21005  # Generic metal plate. Base material for most metal weapons. More for STR/heft.
-    LiquidMetal = 21006  # Rare. Used for Nox weapons and weird weapons.
+    MetalShards = 21004  # Generic metal scrap. Very common. Worth a "portion" of an Iron plate. More for DEX/bleed.
+    MetalPlate = 21005  # Generic metal plate. Base material for most metal weapons. More for STR/heft.
+    PliableMetal = 21006  # Rare. Used for Nox weapons and weird weapons.
     DragonTeeth = 21007  # Rare. Used for Dragon weapons
     GruesomeBone = 21008  # Rare. Used for weird weapons & Arcane weapons
     GlintstoneDust = 21009  # Semi-rare. Int stuff.
@@ -1096,7 +1096,7 @@ NEW_MATERIALS = {
         "material_info": "Found sometimes in mines",
         "icon": 19039,
     },
-    Materials.IronShards: {
+    Materials.MetalShards: {
         "name": "Metal Shards",
         "info": "Shards of metal for forging",
         "caption": "Shards of metal that came from a larger piece.\n"
@@ -1104,7 +1104,7 @@ NEW_MATERIALS = {
         "material_info": "Found commonly as loot or dropped by foes",
         "icon": 19040,
     },
-    Materials.IronPlate: {
+    Materials.MetalPlate: {
         "name": "Metal Plate",
         "info": "Sheet of metal for forging",
         "caption": "Sheet of metal perfect for forging metallic weapons.\n"
@@ -1112,7 +1112,7 @@ NEW_MATERIALS = {
         "material_info": "Found sometimes as loot",
         "icon": 19041,
     },
-    Materials.LiquidMetal: {
+    Materials.PliableMetal: {
         "name": "Pliable Metal",
         "info": "Rare metal used for forging",
         "caption": "Prized metal that bends, but never breaks.\n"
@@ -2211,9 +2211,9 @@ MERCHANT_PRICES = {
     Materials.RefinedWood: 2500,
     Materials.StoneFragment: 1000,  # not actually sold
     Materials.SomberStoneFragment: 3000,  # not actually sold
-    Materials.IronShards: 1200,
-    Materials.IronPlate: 4000,
-    Materials.LiquidMetal: 8000,
+    Materials.MetalShards: 1200,
+    Materials.MetalPlate: 4000,
+    Materials.PliableMetal: 8000,
     Materials.DragonTeeth: 9000,
     Materials.GruesomeBone: 7000,
     Materials.GlintstoneDust: 8000,
@@ -2239,9 +2239,9 @@ MATERIAL_RARITY_COUNT = {
     Materials.RefinedWood: (MaterialRarity.Uncommon, 2),
     # Materials.StoneFragment: (0, 1),  # does not replace weapons
     # Materials.SomberStoneFragment: (0, 1),  # does not replace weapons
-    Materials.IronShards: (MaterialRarity.Common, 4),
-    Materials.IronPlate: (MaterialRarity.Uncommon, 1),
-    Materials.LiquidMetal: (MaterialRarity.Rare, 1),
+    Materials.MetalShards: (MaterialRarity.Common, 4),
+    Materials.MetalPlate: (MaterialRarity.Uncommon, 1),
+    Materials.PliableMetal: (MaterialRarity.Rare, 1),
     Materials.DragonTeeth: (MaterialRarity.Rare, 1),
     Materials.GruesomeBone: (MaterialRarity.Rare, 1),
     Materials.GlintstoneDust: (MaterialRarity.Uncommon, 1),
