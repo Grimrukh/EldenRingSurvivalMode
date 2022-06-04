@@ -8,6 +8,71 @@ namespace EldenRingSurvivalMode.GameHook
 {
     internal class ERHook : PHook
     {
+        class MemBuilder
+        {
+            readonly List<byte> mem = new List<byte>();
+            readonly Dictionary<string, (int, int)> reserved = new Dictionary<string, (int, int)>();
+
+            public int Offset => mem.Count;
+
+            List<byte> ParseHexString(string hex)
+            {
+                List<byte> result = new List<byte>();
+                foreach (string b in hex.Split(' '))
+                    result.Add(byte.Parse(b, System.Globalization.NumberStyles.AllowHexSpecifier));
+                return result;
+            }
+
+            public void Write(IEnumerable<byte> bytes)
+            {
+                mem.AddRange(bytes);
+            }
+
+            public void Write(string hex)
+            {
+                Write(ParseHexString(hex));
+            }
+            
+            public void Write(byte b)
+            {
+                mem.Add(b);
+            }
+
+            public byte[] Finish()
+            {
+                if (reserved.Count > 0)
+                    throw new Exception("Cannot call `MemBuilder.Finish()` when reserved names remain.");
+                return mem.ToArray();
+            }
+
+            public void Reserve(string name, int size)
+            {
+                if (reserved.ContainsKey(name))
+                    throw new Exception($"Name '{name}' is already reserved.");
+                reserved[name] = (size, Offset);
+                for (int i = 0; i < size; i++)
+                    Write(0xFE);  // placeholder bytes
+            }
+
+            public void Fill(string name, IEnumerable<byte> value)
+            {
+                if (!reserved.ContainsKey(name))
+                    throw new Exception($"Cannot fill unreserved name '{name}'");
+                (int size, int offset) = reserved[name];
+                byte[] valueArray = value.ToArray();
+                if (valueArray.Length != size)
+                    throw new Exception($"Number of bytes to write to reserved '{name}' does not match reserved size: {size}");
+                for (int i = 0; i < valueArray.Length; i++)
+                    mem[offset + i] = valueArray[i];
+                reserved.Remove(name);
+            }
+
+            public void Fill(string name, string hex)
+            {
+                Fill(name, ParseHexString(hex));
+            }
+        }
+
         PHPointer FogInjectionAddr { get; set; }
         PHPointer FogNewmemPtr { get; set; }
         PHPointer EventFlags { get; set; }
@@ -24,7 +89,7 @@ namespace EldenRingSurvivalMode.GameHook
         const long freeAddress = 0x28C7800;
         static readonly byte[] originalMem = new byte[] { 0x48, 0x89, 0x81, 0x20, 0x01, 0x00, 0x00 };
         
-        readonly List<(string name, int offset, int size)> gparamInjections = new List<(string, int, int)>()
+        readonly List<(string name, int offset, uint size)> gparamInjections = new List<(string, int, uint)>()
         {
             ("NearDepth", 0x0C, 4),
             ("DrawTiming", 0x20, 4),
@@ -44,7 +109,8 @@ namespace EldenRingSurvivalMode.GameHook
             ("DirectColor_Alpha", 0xCC, 4),
         };
 
-        int newmemValuesOffset = -1;
+        Dictionary<string, int> FogValueReadOffsets { get; set; } = new Dictionary<string, int>();
+        Dictionary<string, int> FogValueWriteOffsets { get; set; } = new Dictionary<string, int>();
 
         public ERHook(int refreshInterval, int minLifetime) :
             base(refreshInterval, minLifetime, p => p.MainWindowTitle == windowName)
@@ -105,10 +171,8 @@ namespace EldenRingSurvivalMode.GameHook
             if (FogEnabled)
                 return;  // no need to enable again
 
-#if DEBUG
-            byte[] currentMem = Kernel32.ReadBytes(Handle, FogInjectionAddr.Resolve(), 7);
+            //byte[] currentMem = Kernel32.ReadBytes(Handle, FogInjectionAddr.Resolve(), 7);
             //Console.WriteLine($"Vanilla fog function bytes: {BitConverter.ToString(currentMem)}");
-#endif
 
             IntPtr newmemPtr = FogNewmemPtr.Resolve();
             IntPtr injectionPtr = FogInjectionAddr.Resolve();
@@ -119,7 +183,7 @@ namespace EldenRingSurvivalMode.GameHook
             //Console.WriteLine($"Expected newmem address: {FogNewmemPtr.Resolve().ToInt64():X}");
 
             // ORIGINAL CODE:
-            // 48 89 81 20010000     mov [rcx+0x120], rax
+            // 48 89 81 20010000     mov [rcx+0x00000120], rax
             byte[] injectAsm = new byte[]
             {
                 0xE9, 0x00, 0x00, 0x00, 0x00,  // jmp [newmem]
@@ -131,76 +195,101 @@ namespace EldenRingSurvivalMode.GameHook
             Array.Copy(BitConverter.GetBytes(jmpNewmem), 0, injectAsm, 0x1, 4);
 
             // New script that inserts values (and contains them at the end).
+            // Also moves actual GPARAM values from rcx to static memory so they can be read.
             // Built dynamically here based on all the values that need to be written.
-            List<byte> newmemAsm = new List<byte>();
+            MemBuilder newmem = new MemBuilder();
 
-            // Original instruction: mov [rcx+0x120], rax
-            newmemAsm.AddRange(originalMem);
+            // Original instruction: mov [rcx+0x00000120], rax
+            newmem.Write(originalMem);
 
-            // push   r8
-            newmemAsm.AddRange(new byte[] { 0x41, 0x50 });
+            // push r8
+            newmem.Write("41 50");
 
-            List<int> valueAddresses = new List<int>();
             foreach (var (name, offset, size) in gparamInjections)
             {
-                // movabs r8 ...
-                newmemAsm.AddRange(new byte[] { 0x49, 0xb8 });
-                valueAddresses.Add(newmemAsm.Count);  // will write value offset here later
-                // ... 0xFEFEFEFEFEFEFEFE (reserved)
-                newmemAsm.AddRange(new byte[] { 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE });
-                // xmm1,DWORD PTR [r8]
-                newmemAsm.AddRange(new byte[] { 0xf3, 0x41, 0x0f, 0x10, 0x08 });
-                // movss  DWORD PTR [rcx+{offset}],xmm1
+                // READ ORIGINAL VALUE from `rdx`
+
+                // movabs r8, [newmemReadOffset]
+                newmem.Write("49 b8");
+                newmem.Reserve(name + "_READ", 8);
+
+                // movss xmm1, DWORD PTR [rdx+{offset}]
                 if (offset >= 0x80)
                 {  // 32-bit offset required
+                    newmem.Write("f3 0f 10 8a");
                     byte[] offsetBytes = BitConverter.GetBytes(offset);
-                    newmemAsm.AddRange(new byte[] { 0xf3, 0x0f, 0x11, 0x89, offsetBytes[0], offsetBytes[1], offsetBytes[2], offsetBytes[3] });
+                    newmem.Write(offsetBytes);
                 }
                 else
                 {  // 8-bit offset can be used
-                    newmemAsm.AddRange(new byte[] { 0xf3, 0x0f, 0x11, 0x49, (byte)offset });
+                    newmem.Write("f3 0f 10 4a");
+                    newmem.Write((byte)offset);
+                }
+                // movss DWORD PTR [r8], xmm1
+                newmem.Write("f3 41 0f 11 08");
+
+                // WRITE NEW VALUE to `rcx`
+
+                // movabs r8 [newmemWriteOffset]
+                newmem.Write("49 b8");
+                newmem.Reserve(name + "_WRITE", 8);
+                
+                // xmm1,DWORD PTR [r8]
+                newmem.Write("f3 41 0f 10 08");
+                
+                // movss  DWORD PTR [rcx+{offset}],xmm1
+                if (offset >= 0x80)
+                {  // 32-bit offset required
+                    newmem.Write("f3 0f 11 89");
+                    byte[] offsetBytes = BitConverter.GetBytes(offset);
+                    newmem.Write(offsetBytes);
+                }
+                else
+                {  // 8-bit offset can be used
+                    newmem.Write("f3 0f 11 49");
+                    newmem.Write((byte)offset);
                 }
             }
 
-            // pop    r8
-            newmemAsm = newmemAsm.Concat(new byte[] { 0x41, 0x58 }).ToList();
+            // pop r8
+            newmem.Write("41 58");
 
             // jmp 
-            int offsetAfterJmp = newmemAsm.Count + 5;
+            int offsetAfterJmp = newmem.Offset + 5;
             int jmpReturn = (int)(injectionAddr + 0x7 - (newmemAddr + offsetAfterJmp));
-            newmemAsm.Add(0xe9);
-            newmemAsm.AddRange(BitConverter.GetBytes(jmpReturn));
+            newmem.Write("e9");
+            newmem.Write(BitConverter.GetBytes(jmpReturn));
 
-            newmemValuesOffset = newmemAsm.Count;
-            
-            // Write values (placeholder zeroes) and insert 64-bit addresses (longs) into newmem.
-            foreach (int offset in valueAddresses)
+            foreach (var (name, offset, size) in gparamInjections)
             {
-                long absValueAddress = newmemAddr + newmemAsm.Count;
+                long absValueAddress = newmemAddr + newmem.Offset;
                 byte[] addressBytes = BitConverter.GetBytes(absValueAddress);
-                for (int i = 0; i < addressBytes.Length; i++)
-                {
-                    // Overwrite 0xFEFEFEFEFEFEFEFE placeholders in newmem.
-                    newmemAsm[offset + i] = addressBytes[i];
-                }
-                // TODO: Use crafted default values from dictionary?
-                newmemAsm.AddRange(new byte[] { 0x0, 0x0, 0x0, 0x0 });
+                newmem.Fill(name + "_READ", addressBytes);
+                FogValueReadOffsets[name] = newmem.Offset;
+                newmem.Write("00 00 00 00");
             }
 
-            byte[] newmemArray = newmemAsm.ToArray();
+            // Write values (placeholder zeroes) and insert 64-bit addresses (longs) into newmem.
+            foreach (var (name, offset, size) in gparamInjections)
+            {
+                long absValueAddress = newmemAddr + newmem.Offset;
+                byte[] addressBytes = BitConverter.GetBytes(absValueAddress);
+                newmem.Fill(name + "_WRITE", addressBytes);
+                FogValueWriteOffsets[name] = newmem.Offset;
+                // TODO: Use crafted default values from dictionary?
+                newmem.Write("00 00 00 00");
+            }
+
+            byte[] newmemArray = newmem.Finish();
             Allocate(newmemPtr, (uint)newmemArray.Length, Kernel32.PAGE_EXECUTE_READWRITE);
 
 #if DEBUG
             //Console.WriteLine($"Fog script new memory allocated.");
 #endif
 
-            // `newmemAsm` is now complete.
-
             //Console.WriteLine($"Final injection: {BitConverter.ToString(injectAsm)}");
             //Console.WriteLine($"Final newmem: {BitConverter.ToString(newmemArray)}");
             
-            //return;  // TODO
-
             if (!Kernel32.WriteBytes(Handle, newmemPtr, newmemArray))
             {
                 // Script write failed. Do NOT inject, or it will crash the game.
@@ -228,6 +317,29 @@ namespace EldenRingSurvivalMode.GameHook
             }
         }
 
+        public Dictionary<string, byte[]> GetFogValues()
+        {
+            IntPtr fogNewmemPtr = FogNewmemPtr.Resolve();
+
+            Dictionary<string, byte[]> values = new Dictionary<string, byte[]>();
+
+            foreach (var (name, _, size) in gparamInjections)
+            {
+                if (!FogValueReadOffsets.ContainsKey(name))
+                {
+                    Console.WriteLine($"ERROR: Cannot read fog value: '{name}'. Read offset not set.");
+                    values[name] = null;
+                    continue;
+                }                
+                int valueOffset = FogValueReadOffsets[name];
+                IntPtr valuePtr = IntPtr.Add(fogNewmemPtr, valueOffset);
+                byte[] value = Kernel32.ReadBytes(Handle, valuePtr, size);
+                values[name] = value;
+            }
+
+            return values;
+        }
+
         /// <summary>
         /// Update fog values in injected newmem script.
         /// 
@@ -235,23 +347,34 @@ namespace EldenRingSurvivalMode.GameHook
         /// native type may be (usually `float`).
         /// </summary>
         /// <param name="values"></param>
-        public void SetFogValues(params byte[][] values)
+        public bool SetFogValues(Dictionary<string, byte[]> values)
         {
-            IntPtr fogNewmemPtr = FogNewmemPtr.Resolve();
-
-            if (values.Length != gparamInjections.Count)
+            foreach (string name in values.Keys)
             {
-                Console.WriteLine($"ERROR: Number of values passed to `SetFogValues` must match number of GPARAM values: {gparamInjections.Count}");
-                return;
+                if (!FogValueWriteOffsets.ContainsKey(name))
+                {
+                    Console.WriteLine($"ERROR: Invalid fog value name: '{name}'. No data written.");
+                    return false;
+                }
             }
 
-            int valueOffset = newmemValuesOffset;
-            for (int i = 0; i < values.Length; i++)
+            IntPtr fogNewmemPtr = FogNewmemPtr.Resolve();
+
+            foreach (var (name, _, size) in gparamInjections)
             {
+                if (!values.ContainsKey(name))
+                    continue;
+
+                if (!FogValueWriteOffsets.ContainsKey(name))
+                {
+                    Console.WriteLine($"ERROR: Cannot write fog value: '{name}'. Write offset not set.");
+                    values[name] = null;
+                    continue;
+                }
+                int valueOffset = FogValueWriteOffsets[name];
                 IntPtr valuePtr = IntPtr.Add(fogNewmemPtr, valueOffset);
-                string name = gparamInjections[i].name;
-                byte[] value = values[i];
-                if (value.Length != gparamInjections[i].size)
+                byte[] value = values[name];
+                if (value.Length != size)
                     throw new Exception($"INCORRECT FOG VALUE SIZE: {name}");
                 bool writeSuccess = Kernel32.WriteBytes(Handle, valuePtr, value);
 #if DEBUG
@@ -260,8 +383,9 @@ namespace EldenRingSurvivalMode.GameHook
                 //else
                 //    Console.WriteLine($"    --> {name} set to {BitConverter.ToString(value)}.");
 #endif
-                valueOffset += gparamInjections[i].size;
             }
+
+            return true;
         }
 
         public void DisableEldenRingFog()

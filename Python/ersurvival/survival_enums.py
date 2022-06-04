@@ -7,6 +7,7 @@ from soulstruct.game_types import *
 # TODO: There is seemingly one vanilla flag in this range that needs to be avoided:
 #   19001100
 BASE_FLAG = 19001000
+ALLOW_UPGRADE_BASE_FLAG = 18001500  # 377 slots in Stranded Graveyard
 
 
 class SurvivalText(IntEnum):
@@ -245,14 +246,15 @@ class Flags(Flag):
 
     # TIME FLAG. Increments by 1 every 30 in-game minutes.
     MonitorOutdoors = BASE_FLAG + 398  # uses a flag closer to time values
+    PlayerIsOutdoors = BASE_FLAG + 399  # used to tell C# when to add darkness
 
     # Monitor Smith's Hammer possession for recipe appearance.
-    MonitorSmithsHammerPossession = BASE_FLAG + 450  # five slots
-    HasNoviceSmithsHammer = BASE_FLAG + 460
-    HasApprenticeSmithsHammer = BASE_FLAG + 461
-    HasJourneymanSmithsHammer = BASE_FLAG + 462
-    HasExpertSmithsHammer = BASE_FLAG + 463
-    HasMasterSmithsHammer = BASE_FLAG + 464
+    ShowSmithsHammerRecipe = BASE_FLAG + 450  # five slots
+    ShowNoviceSmithsHammer = BASE_FLAG + 460
+    ShowApprenticeSmithsHammer = BASE_FLAG + 461
+    ShowJourneymanSmithsHammer = BASE_FLAG + 462
+    ShowExpertSmithsHammer = BASE_FLAG + 463
+    ShowMasterSmithsHammer = BASE_FLAG + 464
 
     # For saving hunger/thirst state on death. (Only used to record info across deaths.)
     HasHunger1 = BASE_FLAG + 470
@@ -286,7 +288,7 @@ class Flags(Flag):
     CureDisease = BASE_FLAG + 500  # 21 slots
 
     # Time flags (one per hour, starting at midnight).
-    PlayerIsOutdoors = BASE_FLAG + 599  # used to tell C# when to add darkness
+    MonitorHour = BASE_FLAG + 570  # 24 slots
     # NOTE: Do not use any flags between 593 and 599 (so the byte is zero IFF 592 is zero).
     Hour0 = BASE_FLAG + 600
     Hour1 = BASE_FLAG + 601
@@ -312,14 +314,11 @@ class Flags(Flag):
     Hour21 = BASE_FLAG + 621
     Hour22 = BASE_FLAG + 622
     Hour23 = BASE_FLAG + 623
-    MonitorHour = BASE_FLAG + 650  # 24 slots
 
     # For crafting weapons.
-    CraftDummyWeaponBase = BASE_FLAG + 1000  # 377 slots
-
-    # For monitoring possession of base weapons in recipes.
-    MonitorWeaponPossessionBase = BASE_FLAG + 1500  # 377 slots (event slot)
-    WeaponMonitorBase = BASE_FLAG + 2000  # 377 slots (actual flag)
+    CraftDummyWeaponEvent = BASE_FLAG + 1000  # 377 event slots
+    AllowWeaponUpgradeEvent = BASE_FLAG + 2000  # 377 slots (event slot)
+    AllowWeaponUpgradeFlag = ALLOW_UPGRADE_BASE_FLAG  # 377 slots (actual flag)
 
 
 class VanillaCharacters(Character):

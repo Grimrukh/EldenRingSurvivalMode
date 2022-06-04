@@ -1203,7 +1203,7 @@ NEW_SMITHS_HAMMERS = {
                    "\n"
                    "Allows basic weapons to be upgraded into more powerful tools of battle.",
         "icon": 10407,  # Hammer weapon
-        "recipe_visibility_flag": 0,  # always craftable
+        "recipe_visibility_flag": Flags.ShowNoviceSmithsHammer,
         "recipe": [
             (6, Materials.SmithingStone1),
             (6, Materials.SmithingStone2),
@@ -1218,7 +1218,7 @@ NEW_SMITHS_HAMMERS = {
                    "\n"
                    "Allows slightly advanced weapons to be upgraded into more powerful tools of battle.",
         "icon": 10407,  # Hammer weapon
-        "recipe_visibility_flag": Flags.HasNoviceSmithsHammer,
+        "recipe_visibility_flag": Flags.ShowApprenticeSmithsHammer,
         "recipe": [
             (6, Materials.SmithingStone3),
             (6, Materials.SmithingStone4),
@@ -1233,7 +1233,7 @@ NEW_SMITHS_HAMMERS = {
                    "\n"
                    "Allows moderately advanced weapons to be upgraded into more powerful tools of battle.",
         "icon": 10407,  # Hammer weapon
-        "recipe_visibility_flag": Flags.HasApprenticeSmithsHammer,
+        "recipe_visibility_flag": Flags.ShowJourneymanSmithsHammer,
         "recipe": [
             (6, Materials.SmithingStone5),
             (6, Materials.SmithingStone6),
@@ -1248,7 +1248,7 @@ NEW_SMITHS_HAMMERS = {
                    "\n"
                    "Allows greatly advanced weapons to be upgraded into more powerful tools of battle.",
         "icon": 10407,  # Hammer weapon
-        "recipe_visibility_flag": Flags.HasJourneymanSmithsHammer,
+        "recipe_visibility_flag": Flags.ShowExpertSmithsHammer,
         "recipe": [
             (6, Materials.SmithingStone7),
             (6, Materials.SmithingStone8),
@@ -1263,7 +1263,7 @@ NEW_SMITHS_HAMMERS = {
                    "\n"
                    "Allows extremely advanced weapons to be transformed into legendary armaments.",
         "icon": 10414,  # Marika's Hammer weapon
-        "recipe_visibility_flag": Flags.HasExpertSmithsHammer,
+        "recipe_visibility_flag": Flags.ShowMasterSmithsHammer,
         "recipe": [
             (1, Materials.AncientDragonSmithingStone),
             (1, Materials.SomberAncientDragonSmithingStone),

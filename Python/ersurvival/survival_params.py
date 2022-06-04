@@ -377,7 +377,7 @@ def generate_dummy_weapons(
                 # Visibility flag is determined by monitoring previous weapon ID (and potentially a Smith's Hammer).
                 previous_weapon_base_id = 10000 * (previous_weapon_id // 10000)  # ignore upgrade level
                 previous_weapon_name = weapon_param[previous_weapon_base_id].name
-                visibility_flag = Flags.WeaponMonitorBase + new_weapon_indices.index(previous_weapon_name)
+                visibility_flag = Flags.AllowWeaponUpgradeFlag + new_weapon_indices.index(previous_weapon_name)
 
                 # Determine rune cost for crafting from upgrade level.
                 rune_cost = tier * 1000
@@ -458,10 +458,10 @@ def generate_dummy_weapons(
         #     f"{item_lot_id}, "
         #     f"{previous_weapon_id if previous_weapon_id is not None else 0})"
         # )
-        # monitor_flag = Flags.WeaponMonitorBase + new_weapon_indices.index(row.name)
+        # allow_weapon_upgrade_flag = Flags.AllowWeaponUpgradeFlag + new_weapon_indices.index(row.name)
         # if hammer_id != -1:
         #     print(
-        #         f"AllowWeaponUpgrade({slot}, {true_weapon_id}, {hammer_id}, {monitor_flag})"
+        #         f"AllowWeaponUpgrade({slot}, {true_weapon_id}, {hammer_id}, {allow_weapon_upgrade_flag})"
         #     )
         slot += 1
 
