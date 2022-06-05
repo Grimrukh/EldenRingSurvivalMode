@@ -44,6 +44,8 @@ from yabber import yabber
 VANILLA_PATH = Path("C:/Steam/steamapps/common/ELDEN RING (Vanilla)/Game")
 MODDING_PATH = Path("C:/Steam/steamapps/common/ELDEN RING (Modding)/Game")
 
+DIST_PATH = Path("../../dist/GAME (OPTIONS)/Survival ENABLED/Weapon Tree ENABLED/Diseases ENABLED")
+
 
 def vanilla_common_emevd_to_evs():
     EMEVD(VANILLA_PATH / "event/common.emevd").write_evs(Path(__file__).parent / "common.evs.py")
@@ -85,6 +87,9 @@ def install_evs():
     # Call Yabber to apply DCX
     write_yabber_dcx_xml()
     yabber(MODDING_PATH / "event/common.emevd", dcx_only=True)
+
+    # Copy to DIST_PATH
+    shutil.copy2(MODDING_PATH / "event/common.emevd.dcx", DIST_PATH / "event/common.emevd.dcx")
 
 
 def install():

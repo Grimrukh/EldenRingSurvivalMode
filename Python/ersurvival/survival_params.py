@@ -31,7 +31,8 @@ from survival_text import read_weapon_text, write_weapon_text
 from enemy_ids import EXTRA_ENEMY_DROPS
 from weapon_recipes import WEAPON_RECIPES
 
-CSV_PATH = Path(r"C:\Dark Souls\Tools\Params\Yapped Rune Bear 2.1.4\Projects\ExampleMod\CSV\ER")
+READ_CSV_PATH = Path(r"C:\Dark Souls\Tools\Params\Yapped Rune Bear 2.1.4\Projects\ExampleMod\CSV\ER")
+WRITE_CSV_PATH = Path(r"C:\Dark Souls\Projects\EldenRingSurvivalMode\EldenRingSurvivalMode\CSV")
 
 DO_SURVIVAL = True
 DO_WEAPONS = True
@@ -186,11 +187,13 @@ class YappedParam:
 
 
 def read_param_csv(param_name: str) -> YappedParam:
-    return YappedParam.from_csv_path((CSV_PATH / param_name).with_suffix(".csv"))
+    return YappedParam.from_csv_path((READ_CSV_PATH / param_name).with_suffix(".csv"))
 
 
 def write_param_csv(param: YappedParam, param_name: str):
-    param.write_csv((CSV_PATH / param_name).with_suffix(".csv"))
+    param_path = WRITE_CSV_PATH / param_name
+    param_path.parent.mkdir(parents=True, exist_ok=True)
+    param.write_csv(param_path.with_suffix(".csv"))
 
 
 # Mostly boss rewards. These will be replaced if they exist, or added otherwise.
@@ -1212,7 +1215,7 @@ def generate_all_params():
     # print("\nNOTE: All Site of Grace warps enabled.")
     # enable_all_warps(bonfire_warp)
 
-    write_param_csv(bonfire_warp, "BonfireWarpParam.csv")
+    # write_param_csv(bonfire_warp, "BonfireWarpParam.csv")
     write_param_csv(mtrl, "EquipMtrlSetParam.csv")
     write_param_csv(goods, "EquipParamGoods.csv")
     write_param_csv(weapons, "EquipParamWeapon.csv")
@@ -1226,5 +1229,46 @@ def generate_all_params():
     print("Read, edited, and wrote all Yapped param CSVs successfully.")
 
 
-if __name__ == '__main__':
+def generate_all_variants():
+    global WRITE_CSV_PATH, DO_SURVIVAL, DO_WEAPONS, DO_DISEASES
+
+    base_write_csv_path = WRITE_CSV_PATH
+
+    WRITE_CSV_PATH = base_write_csv_path / "Survival"
+    DO_SURVIVAL = True
+    DO_WEAPONS = DO_DISEASES = False
     generate_all_params()
+
+    WRITE_CSV_PATH = base_write_csv_path / "Weapons"
+    DO_WEAPONS = True
+    DO_SURVIVAL = DO_DISEASES = False
+    generate_all_params()
+
+    WRITE_CSV_PATH = base_write_csv_path / "Diseases"
+    DO_DISEASES = True
+    DO_SURVIVAL = DO_WEAPONS = False
+    generate_all_params()
+
+    WRITE_CSV_PATH = base_write_csv_path / "Survival_Weapons"
+    DO_SURVIVAL = DO_WEAPONS = True
+    DO_DISEASES = False
+    generate_all_params()
+
+    WRITE_CSV_PATH = base_write_csv_path / "Survival_Diseases"
+    DO_SURVIVAL = DO_DISEASES = True
+    DO_WEAPONS = False
+    generate_all_params()
+
+    WRITE_CSV_PATH = base_write_csv_path / "Weapons_Diseases"
+    DO_WEAPONS = DO_DISEASES = True
+    DO_SURVIVAL = False
+    generate_all_params()
+
+    WRITE_CSV_PATH = base_write_csv_path / "Survival_Weapons_Diseases"
+    DO_SURVIVAL = DO_WEAPONS = DO_DISEASES = True
+    generate_all_params()
+
+
+if __name__ == '__main__':
+    # generate_all_params()
+    generate_all_variants()

@@ -66,6 +66,7 @@
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
     <Compile Include="GameHook\User32.cs" />
+    <Compile Include="Params.cs" />
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -73,8 +74,8 @@
       <Project>{18eff8d2-c4d5-4e18-9a31-38e106ba1cf7}</Project>
       <Name>PropertyHook</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Dependencies\SoulsFormats\SoulsFormats.csproj">
-      <Project>{22c664bd-877b-44df-8ecf-2808522469a8}</Project>
+    <ProjectReference Include="..\Dependencies\SoulsFormats\SoulsFormats\SoulsFormats.csproj">
+      <Project>{5c141357-e4b6-421d-b568-03962f5887f2}</Project>
       <Name>SoulsFormats</Name>
     </ProjectReference>
   </ItemGroup>

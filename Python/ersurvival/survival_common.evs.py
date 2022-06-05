@@ -1093,9 +1093,9 @@ def GrowingHunger():
     IfConditionTrue(0, 1)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.LimgraveDisease)
-    Wait(54.0)  # 10% faster
+    Wait(200.0)  # 16% faster
     SkipLines(1)
-    Wait(60.0)
+    Wait(240.0)
 
     # INCREMENT HUNGER
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger1)
@@ -1183,9 +1183,9 @@ def GrowingThirst():
     IfConditionTrue(0, 1)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.LimgraveDisease)
-    Wait(90.0)  # 10% faster
+    Wait(350.0)  # 12.5% faster
     SkipLines(1)
-    Wait(100.0)
+    Wait(400.0)
 
     # INCREMENT THIRST
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst1)
