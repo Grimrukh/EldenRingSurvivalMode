@@ -1,6 +1,13 @@
 from survival_enums import *
 
 
+class ModSubcategory(IntEnum):
+    """Marks installation type of various dictionary entries below."""
+    Survival = 0
+    Weapons = 1
+    Diseases = 2
+
+
 class Consumables(IntEnum):
     """New items that can be crafted."""
     # Hunger/thirst relief
@@ -339,6 +346,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.RawSteak,  # for `EquipGoodsParam`
         "animation": GoodsUseAnimation.ITEM_EATJERKY,  # for `EquipGoodsParam`
         "icon": 19000,
+        "category": ModSubcategory.Survival,
     },
     Consumables.SearedSteak: {
         "name": "Seared Steak",
@@ -355,6 +363,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.SearedSteak,
         "animation": GoodsUseAnimation.ITEM_EATJERKY,
         "icon": 19001,
+        "category": ModSubcategory.Survival,
     },
     Consumables.RawLiverSteak: {
         "name": "Raw Liver Steak",
@@ -371,6 +380,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.RawLiverSteak,
         "animation": GoodsUseAnimation.ITEM_EATJERKY,
         "icon": 19002,
+        "category": ModSubcategory.Survival,
     },
     Consumables.SearedLiverSteak: {
         "name": "Seared Liver Steak",
@@ -388,6 +398,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.SearedLiverSteak,
         "animation": GoodsUseAnimation.ITEM_EATJERKY,
         "icon": 19003,
+        "category": ModSubcategory.Survival,
     },
     Consumables.BoneBroth: {
         "name": "Bone Broth",
@@ -404,6 +415,7 @@ NEW_CONSUMABLES = {
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.CrackedPot,
         "icon": 19004,
+        "category": ModSubcategory.Survival,
     },
     Consumables.GreatBoneBroth: {
         "name": "Great Bone Broth",
@@ -420,6 +432,7 @@ NEW_CONSUMABLES = {
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.RitualPot,
         "icon": 19005,
+        "category": ModSubcategory.Survival,
     },
     Consumables.BloodBroth: {
         "name": "Blood Broth",
@@ -437,6 +450,7 @@ NEW_CONSUMABLES = {
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.RitualPot,
         "icon": 19006,
+        "category": ModSubcategory.Survival,
     },
     Consumables.BerryMedley1: {
         "name": "Forest Berry Medley",
@@ -452,6 +466,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.BerryMedley1,
         "animation": GoodsUseAnimation.ITEM_EATJERKY,
         "icon": 19007,
+        "category": ModSubcategory.Survival,
     },
     Consumables.BerryMedley2: {
         "name": "Plateau Berry Medley",
@@ -467,6 +482,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.BerryMedley2,
         "animation": GoodsUseAnimation.ITEM_EATJERKY,
         "icon": 19008,
+        "category": ModSubcategory.Survival,
     },
     Consumables.BerryMedley3: {
         "name": "Mountain Berry Medley",
@@ -482,6 +498,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.BerryMedley3,
         "animation": GoodsUseAnimation.ITEM_EATJERKY,
         "icon": 19009,
+        "category": ModSubcategory.Survival,
     },
     Consumables.MushroomStew: {
         "name": "Mushroom Stew",
@@ -499,6 +516,7 @@ NEW_CONSUMABLES = {
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.CrackedPot,
         "icon": 19010,
+        "category": ModSubcategory.Survival,
     },
     Consumables.MeltedMushroomStew: {
         "name": "Melted Mushroom Stew",
@@ -516,6 +534,7 @@ NEW_CONSUMABLES = {
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.CrackedPot,
         "icon": 19011,
+        "category": ModSubcategory.Survival,
     },
     Consumables.DraughtOfSatiation: {
         "name": "Draught of Satiation",
@@ -535,6 +554,7 @@ NEW_CONSUMABLES = {
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.RitualPot,
         "icon": 19012,
+        "category": ModSubcategory.Survival,
     },
     Consumables.DraughtOfSilverTears: {
         "name": "Draught of Silver Tears",
@@ -554,6 +574,7 @@ NEW_CONSUMABLES = {
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.RitualPot,
         "icon": 19013,
+        "category": ModSubcategory.Survival,
     },
     Consumables.MossdewSoup: {
         "name": "Mossdew Soup",
@@ -571,6 +592,7 @@ NEW_CONSUMABLES = {
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.CrackedPot,
         "icon": 19014,
+        "category": ModSubcategory.Survival,
     },
     Consumables.CrystalShardSoup: {
         "name": "Crystal Shard Soup",
@@ -588,6 +610,7 @@ NEW_CONSUMABLES = {
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.CrackedPot,
         "icon": 19015,
+        "category": ModSubcategory.Survival,
     },
     Consumables.GiantsSoup: {
         "name": "Giant's Soup",
@@ -606,6 +629,7 @@ NEW_CONSUMABLES = {
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.RitualPot,
         "icon": 19016,
+        "category": ModSubcategory.Survival,
     },
     Consumables.AmberEyeBrew: {
         "name": "Amber-Eye Brew",
@@ -624,6 +648,7 @@ NEW_CONSUMABLES = {
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.CrackedPot,
         "icon": 19017,
+        "category": ModSubcategory.Survival,
     },
     Consumables.MagmaticBrew: {
         "name": "Magmatic Brew",
@@ -641,6 +666,7 @@ NEW_CONSUMABLES = {
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.CrackedPot,
         "icon": 19018,
+        "category": ModSubcategory.Survival,
     },
     Consumables.BlossomBrew: {
         "name": "Blossom Brew",
@@ -658,6 +684,7 @@ NEW_CONSUMABLES = {
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "pot": PotGroupID.RitualPot,
         "icon": 19019,
+        "category": ModSubcategory.Survival,
     },
     Consumables.JarBrittle: {
         "name": "Jar Brittle",
@@ -675,6 +702,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.JarBrittle,
         "animation": GoodsUseAnimation.ITEM_EATJERKY,
         "icon": 19020,
+        "category": ModSubcategory.Survival,
     },
     # endregion
 
@@ -698,6 +726,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.CureLimgraveDisease,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "icon": 24,  # Flask of Wondrous Physick
+        "category": ModSubcategory.Diseases,
     },
     Consumables.LiurniaDiseaseCure: {
         "name": "Cure for Lake Toxin",
@@ -716,6 +745,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.CureLiurniaDisease,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "icon": 24,  # Flask of Wondrous Physick
+        "category": ModSubcategory.Diseases,
     },
     Consumables.CaelidDiseaseCure: {
         "name": "Cure for Scarlet Parasite",
@@ -734,6 +764,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.CureCaelidDisease,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "icon": 24,  # Flask of Wondrous Physick
+        "category": ModSubcategory.Diseases,
     },
     Consumables.AltusDiseaseCure: {
         "name": "Cure for Windmill Fever",
@@ -752,6 +783,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.CureAltusDisease,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "icon": 24,  # Flask of Wondrous Physick
+        "category": ModSubcategory.Diseases,
     },
     Consumables.MtGelmirDiseaseCure: {
         "name": "Cure for Plague of Gelmir",
@@ -770,6 +802,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.CureMtGelmirDisease,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "icon": 24,  # Flask of Wondrous Physick
+        "category": ModSubcategory.Diseases,
     },
     Consumables.MountaintopsDiseaseCure: {
         "name": "Cure for Frigid Parasite",
@@ -788,6 +821,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.CureMountaintopsDisease,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "icon": 24,  # Flask of Wondrous Physick
+        "category": ModSubcategory.Diseases,
     },
     Consumables.SiofraDiseaseCure: {
         "name": "Cure for Plague of Nokron",
@@ -806,6 +840,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.CureSiofraDisease,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "icon": 24,  # Flask of Wondrous Physick
+        "category": ModSubcategory.Diseases,
     },
     Consumables.AinselDiseaseCure: {
         "name": "Cure for Ant Toxin",
@@ -824,6 +859,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.CureAinselDisease,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "icon": 24,  # Flask of Wondrous Physick
+        "category": ModSubcategory.Diseases,
     },
     Consumables.DeeprootDiseaseCure: {
         "name": "Cure for Star-Shaped Parasite",
@@ -842,6 +878,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.CureDeeprootDisease,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "icon": 24,  # Flask of Wondrous Physick
+        "category": ModSubcategory.Diseases,
     },
     Consumables.StormveilDiseaseCure: {
         "name": "Cure for Grafted Plague",
@@ -860,6 +897,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.CureStormveilDisease,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "icon": 24,  # Flask of Wondrous Physick
+        "category": ModSubcategory.Diseases,
     },
     Consumables.RayaLucariaDiseaseCure: {
         "name": "Cure for Full Moon Fever",
@@ -878,6 +916,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.CureRayaLucariaDisease,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "icon": 24,  # Flask of Wondrous Physick
+        "category": ModSubcategory.Diseases,
     },
     Consumables.RadahnDiseaseCure: {
         "name": "Cure for Starscourge Fever",
@@ -896,6 +935,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.CureRadahnDisease,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "icon": 24,  # Flask of Wondrous Physick
+        "category": ModSubcategory.Diseases,
     },
     Consumables.VolcanoManorDiseaseCure: {
         "name": "Cure for Serpent Toxin",
@@ -914,6 +954,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.CureVolcanoManorDisease,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "icon": 24,  # Flask of Wondrous Physick
+        "category": ModSubcategory.Diseases,
     },
     Consumables.LeyndellDiseaseCure: {
         "name": "Cure for Plague of Leyndell",
@@ -932,6 +973,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.CureLeyndellDisease,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "icon": 24,  # Flask of Wondrous Physick
+        "category": ModSubcategory.Diseases,
     },
     Consumables.SewersDiseaseCure: {
         "name": "Cure for Omen Parasite",
@@ -950,6 +992,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.CureSewersDisease,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "icon": 24,  # Flask of Wondrous Physick
+        "category": ModSubcategory.Diseases,
     },
     Consumables.HaligtreeDiseaseCure: {
         "name": "Cure for Unalloyed Plague",
@@ -968,6 +1011,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.CureHaligtreeDisease,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "icon": 24,  # Flask of Wondrous Physick
+        "category": ModSubcategory.Diseases,
     },
     Consumables.FarumAzulaDiseaseCure: {
         "name": "Cure for Beastman's Fever",
@@ -986,6 +1030,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.CureFarumAzulaDisease,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "icon": 24,  # Flask of Wondrous Physick
+        "category": ModSubcategory.Diseases,
     },
     Consumables.MohgwynDiseaseCure: {
         "name": "Cure for Blood Lord's Fever",
@@ -1004,6 +1049,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.CureMohgwynDisease,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "icon": 24,  # Flask of Wondrous Physick
+        "category": ModSubcategory.Diseases,
     },
     Consumables.CatacombsDiseaseCure: {
         "name": "Cure for Catacombs Toxin",
@@ -1022,6 +1068,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.CureCatacombsDisease,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "icon": 24,  # Flask of Wondrous Physick
+        "category": ModSubcategory.Diseases,
     },
     Consumables.CaveDiseaseCure: {
         "name": "Cure for Cave Parasite",
@@ -1040,6 +1087,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.CureCaveDisease,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "icon": 24,  # Flask of Wondrous Physick
+        "category": ModSubcategory.Diseases,
     },
     Consumables.TunnelDiseaseCure: {
         "name": "Cure for Miner's Fever",
@@ -1058,6 +1106,7 @@ NEW_CONSUMABLES = {
         "effect": SurvivalEffects.CureTunnelDisease,
         "animation": GoodsUseAnimation.ITEM_DRINK,
         "icon": 24,  # Flask of Wondrous Physick
+        "category": ModSubcategory.Diseases,
     },
     # endregion
 }
@@ -1071,6 +1120,7 @@ NEW_MATERIALS = {
                    "Common material for crafting weapons and shields.",
         "material_info": "Found commonly as loot or dropped by foes",
         "icon": 19036,
+        "category": ModSubcategory.Weapons,
     },
     Materials.RefinedWood: {
         "name": "Refined Wood",
@@ -1079,6 +1129,7 @@ NEW_MATERIALS = {
                    "Uncommon material for crafting weapons and shields.",
         "material_info": "Found sometimes as loot",
         "icon": 19037,
+        "category": ModSubcategory.Weapons,
     },
     Materials.StoneFragment: {
         "name": "Stone Fragment",
@@ -1087,6 +1138,7 @@ NEW_MATERIALS = {
                    "Common material for crafting weapons and shields.",
         "material_info": "Found commonly in mines",
         "icon": 19038,
+        "category": ModSubcategory.Weapons,
     },
     Materials.SomberStoneFragment: {
         "name": "Somber Stone Fragment",
@@ -1095,6 +1147,7 @@ NEW_MATERIALS = {
                    "Uncommon material for crafting weapons and shields.",
         "material_info": "Found sometimes in mines",
         "icon": 19039,
+        "category": ModSubcategory.Weapons,
     },
     Materials.MetalShards: {
         "name": "Metal Shards",
@@ -1103,6 +1156,7 @@ NEW_MATERIALS = {
                    "Common material for crafting weapons and shields.",
         "material_info": "Found commonly as loot or dropped by foes",
         "icon": 19040,
+        "category": ModSubcategory.Weapons,
     },
     Materials.MetalPlate: {
         "name": "Metal Plate",
@@ -1111,6 +1165,7 @@ NEW_MATERIALS = {
                    "Uncommon material for crafting weapons and shields.",
         "material_info": "Found sometimes as loot",
         "icon": 19041,
+        "category": ModSubcategory.Weapons,
     },
     Materials.PliableMetal: {
         "name": "Pliable Metal",
@@ -1119,6 +1174,7 @@ NEW_MATERIALS = {
                    "Rare material for crafting weapons and shields.",
         "material_info": "Found rarely as loot",
         "icon": 19042,
+        "category": ModSubcategory.Weapons,
     },
     Materials.DragonTeeth: {
         "name": "Dragon Teeth",
@@ -1127,6 +1183,7 @@ NEW_MATERIALS = {
                    "Very rare material for crafting weapons and shields.",
         "material_info": "Found rarely as loot or dropped by dragons",
         "icon": 19043,
+        "category": ModSubcategory.Weapons,
     },
     Materials.GruesomeBone: {
         "name": "Gruesome Bone",
@@ -1135,6 +1192,7 @@ NEW_MATERIALS = {
                    "Rare material for crafting weapons and shields.",
         "material_info": "Found rarely as loot",
         "icon": 19044,
+        "category": ModSubcategory.Weapons,
     },
     Materials.ErdtreeWood: {
         "name": "Erdtree Wood",
@@ -1143,6 +1201,7 @@ NEW_MATERIALS = {
                    "Rare material for crafting weapons and shields.",
         "material_info": "Found rarely as loot",
         "icon": 19045,
+        "category": ModSubcategory.Weapons,
     },
     Materials.MeteoriteChunk: {
         "name": "Meteorite Chunk",
@@ -1151,6 +1210,7 @@ NEW_MATERIALS = {
                    "Rare material for crafting weapons and shields.",
         "material_info": "Found rarely as loot",
         "icon": 19046,
+        "category": ModSubcategory.Weapons,
     },
     Materials.BlackMark: {
         "name": "Black Mark",
@@ -1159,6 +1219,7 @@ NEW_MATERIALS = {
                    "Very rare material for crafting weapons and shields.",
         "material_info": "Found very rarely as loot",
         "icon": 19047,
+        "category": ModSubcategory.Weapons,
     },
     Materials.StaffPole: {
         "name": "Staff Pole",
@@ -1167,6 +1228,7 @@ NEW_MATERIALS = {
                    "Rare material for crafting weapons and shields.",
         "material_info": "Found rarely as loot",
         "icon": 19048,
+        "category": ModSubcategory.Weapons,
     },
     Materials.ShieldGrip: {
         "name": "Shield Handle",
@@ -1175,6 +1237,7 @@ NEW_MATERIALS = {
                    "Uncommon material for crafting weapons and shields.",
         "material_info": "Found sometimes as loot",
         "icon": 19049,
+        "category": ModSubcategory.Weapons,
     },
     Materials.ErdtreeAmber: {
         "name": "Erdtree Amber",
@@ -1183,6 +1246,7 @@ NEW_MATERIALS = {
                    "Very rare material for crafting weapons and shields.",
         "material_info": "Found very rarely as loot",
         "icon": 19050,
+        "category": ModSubcategory.Weapons,
     },
     Materials.GlintstoneDust: {
         "name": "Glintstone Dust",
@@ -1191,6 +1255,7 @@ NEW_MATERIALS = {
                    "Rare material for crafting weapons and shields.",
         "material_info": "Found sometimes as loot",
         "icon": 19051,
+        "category": ModSubcategory.Weapons,
     },
 }
 
@@ -1210,6 +1275,7 @@ NEW_SMITHS_HAMMERS = {
             (3, Materials.SomberSmithingStone1),
             (3, Materials.SomberSmithingStone2),
         ],
+        "category": ModSubcategory.Weapons,
     },
     SmithsHammers.ApprenticeSmithsHammer: {
         "name": "Apprentice Smith's Hammer",
@@ -1225,6 +1291,7 @@ NEW_SMITHS_HAMMERS = {
             (3, Materials.SomberSmithingStone3),
             (3, Materials.SomberSmithingStone4),
         ],
+        "category": ModSubcategory.Weapons,
     },
     SmithsHammers.JourneymanSmithsHammer: {
         "name": "Journeyman Smith's Hammer",
@@ -1240,6 +1307,7 @@ NEW_SMITHS_HAMMERS = {
             (3, Materials.SomberSmithingStone5),
             (3, Materials.SomberSmithingStone6),
         ],
+        "category": ModSubcategory.Weapons,
     },
     SmithsHammers.ExpertSmithsHammer: {
         "name": "Expert Smith's Hammer",
@@ -1255,6 +1323,7 @@ NEW_SMITHS_HAMMERS = {
             (3, Materials.SomberSmithingStone7),
             (3, Materials.SomberSmithingStone8),
         ],
+        "category": ModSubcategory.Weapons,
     },
     SmithsHammers.MasterSmithsHammer: {
         "name": "Master Smith's Hammer",
@@ -1270,6 +1339,7 @@ NEW_SMITHS_HAMMERS = {
             (1, Materials.MeteoriteChunk),
             (1, Materials.ErdtreeAmber),
         ],
+        "category": ModSubcategory.Weapons,
     },
 }
 
@@ -1503,6 +1573,7 @@ NEW_NOTES = {
         "shop_row": 100509,  # Kale
         "cost": 200,
         "bought_flag": Flags.Note_CuringDiseases_Bought,
+        "category": ModSubcategory.Diseases,
     },
     NotesRecipes.Recipe_LimgraveDiseaseCure : {
         "name": "Cure: Plague of Limgrave",
@@ -1514,6 +1585,7 @@ NEW_NOTES = {
         "shop_row": 100596,  # Coastal Cave merchant (TESTED)
         "cost": 2000,
         "bought_flag": Flags.Recipe_LimgraveDiseaseCure_Bought,
+        "category": ModSubcategory.Diseases,
     },
     NotesRecipes.Recipe_LiurniaDiseaseCure : {
         "name": "Cure: Lake Toxin",
@@ -1525,6 +1597,7 @@ NEW_NOTES = {
         "shop_row": 100697,  # Academy of Raya Lucaria merchant
         "cost": 3000,
         "bought_flag": Flags.Recipe_LiurniaDiseaseCure_Bought,
+        "category": ModSubcategory.Diseases,
     },
     NotesRecipes.Recipe_CaelidDiseaseCure : {
         "name": "Cure: Scarlet Parasite",
@@ -1536,6 +1609,7 @@ NEW_NOTES = {
         "shop_row": 100894,  # Dragonbarrow merchant
         "cost": 4000,
         "bought_flag": Flags.Recipe_CaelidDiseaseCure_Bought,
+        "category": ModSubcategory.Diseases,
     },
     NotesRecipes.Recipe_AltusDiseaseCure : {
         "name": "Cure: Windmill Fever",
@@ -1547,6 +1621,7 @@ NEW_NOTES = {
         "shop_row": 100756,  # Altus Plateau merchant
         "cost": 4000,
         "bought_flag": Flags.Recipe_AltusDiseaseCure_Bought,
+        "category": ModSubcategory.Diseases,
     },
     NotesRecipes.Recipe_MtGelmirDiseaseCure : {
         "name": "Cure: Plague of Gelmir",
@@ -1558,6 +1633,7 @@ NEW_NOTES = {
         "shop_row": 100799,  # Mt. Gelmir merchant
         "cost": 4000,
         "bought_flag": Flags.Recipe_MtGelmirDiseaseCure_Bought,
+        "category": ModSubcategory.Diseases,
     },
     NotesRecipes.Recipe_MountaintopsDiseaseCure : {
         "name": "Cure: Frigid Parasite",
@@ -1569,6 +1645,7 @@ NEW_NOTES = {
         "shop_row": 100919,  # Mountaintops merchant
         "cost": 5000,
         "bought_flag": Flags.Recipe_MountaintopsDiseaseCure_Bought,
+        "category": ModSubcategory.Diseases,
     },
     NotesRecipes.Recipe_SiofraDiseaseCure : {
         "name": "Cure: Plague of Nokron",
@@ -1580,6 +1657,7 @@ NEW_NOTES = {
         "shop_row": 100942,  # Siofra merchant
         "cost": 2000,
         "bought_flag": Flags.Recipe_SiofraDiseaseCure_Bought,
+        "category": ModSubcategory.Diseases,
     },
     NotesRecipes.Recipe_AinselDiseaseCure : {
         "name": "Cure: Ant Toxin",
@@ -1591,6 +1669,7 @@ NEW_NOTES = {
         "shop_row": 100968,  # Ainsel merchant
         "cost": 3000,
         "bought_flag": Flags.Recipe_AinselDiseaseCure_Bought,
+        "category": ModSubcategory.Diseases,
     },
     NotesRecipes.Recipe_DeeprootDiseaseCure : {
         "name": "Cure: Star-Shaped Parasite",
@@ -1601,6 +1680,7 @@ NEW_NOTES = {
         "icon": 288,  # Note: Flask of Wondrous Physick
         "item_lot": 12030521,  # with Mausoleum Soldier Ashes
         "bought_flag": Flags.Recipe_DeeprootDiseaseCure_Bought,
+        "category": ModSubcategory.Diseases,
     },
     NotesRecipes.Recipe_StormveilDiseaseCure : {
         "name": "Cure: Grafted Plague",
@@ -1611,6 +1691,7 @@ NEW_NOTES = {
         "icon": 288,  # Note: Flask of Wondrous Physick
         "item_lot": 10000991,  # with Godskin Prayerbook
         "bought_flag": Flags.Recipe_StormveilDiseaseCure_Bought,
+        "category": ModSubcategory.Diseases,
     },
     NotesRecipes.Recipe_RayaLucariaDiseaseCure : {
         "name": "Cure: Full Moon Fever",
@@ -1621,6 +1702,7 @@ NEW_NOTES = {
         "icon": 288,  # Note: Flask of Wondrous Physick
         "item_lot": 14000941,  # with Radagon Icon
         "bought_flag": Flags.Recipe_RayaLucariaDiseaseCure_Bought,
+        "category": ModSubcategory.Diseases,
     },
     NotesRecipes.Recipe_RadahnDiseaseCure : {
         "name": "Cure: Starscourge Fever",
@@ -1631,6 +1713,7 @@ NEW_NOTES = {
         "icon": 288,  # Note: Flask of Wondrous Physick
         "item_lot": 30160041,  # with Collapsing Stars (in War-Dead Catacombs)
         "bought_flag": Flags.Recipe_RadahnDiseaseCure_Bought,
+        "category": ModSubcategory.Diseases,
     },
     NotesRecipes.Recipe_VolcanoManorDiseaseCure : {
         "name": "Cure: Serpent Toxin",
@@ -1641,6 +1724,7 @@ NEW_NOTES = {
         "icon": 288,  # Note: Flask of Wondrous Physick
         "item_lot": 16000621,  # with Dagger Talisman
         "bought_flag": Flags.Recipe_VolcanoManorDiseaseCure_Bought,
+        "category": ModSubcategory.Diseases,
     },
     NotesRecipes.Recipe_LeyndellDiseaseCure : {
         "name": "Cure: Plague of Leyndell",
@@ -1651,6 +1735,7 @@ NEW_NOTES = {
         "icon": 288,  # Note: Flask of Wondrous Physick
         "item_lot": 11000911,  # with Golden Order Principia
         "bought_flag": Flags.Recipe_LeyndellDiseaseCure_Bought,
+        "category": ModSubcategory.Diseases,
     },
     NotesRecipes.Recipe_SewersDiseaseCure : {
         "name": "Cure: Omen Parasite",
@@ -1661,6 +1746,7 @@ NEW_NOTES = {
         "icon": 288,  # Note: Flask of Wondrous Physick
         "item_lot": 35000271,  # with Nomad Ashes
         "bought_flag": Flags.Recipe_SewersDiseaseCure_Bought,
+        "category": ModSubcategory.Diseases,
     },
     NotesRecipes.Recipe_HaligtreeDiseaseCure : {
         "name": "Cure: Unalloyed Plague",
@@ -1671,6 +1757,7 @@ NEW_NOTES = {
         "icon": 288,  # Note: Flask of Wondrous Physick
         "item_lot": 15000801,  # with Marika's Soreseal
         "bought_flag": Flags.Recipe_HaligtreeDiseaseCure_Bought,
+        "category": ModSubcategory.Diseases,
     },
     NotesRecipes.Recipe_FarumAzulaDiseaseCure : {
         "name": "Cure: Beastman's Fever",
@@ -1681,6 +1768,7 @@ NEW_NOTES = {
         "icon": 288,  # Note: Flask of Wondrous Physick
         "item_lot": 13000941,  # with Dragon Towershield
         "bought_flag": Flags.Recipe_FarumAzulaDiseaseCure_Bought,
+        "category": ModSubcategory.Diseases,
     },
     NotesRecipes.Recipe_MohgwynDiseaseCure : {
         "name": "Cure: Blood Lord's Fever",
@@ -1692,6 +1780,7 @@ NEW_NOTES = {
         "shop_row": 100987,  # Mohgwyn merchant
         "cost": 10000,
         "bought_flag": Flags.Recipe_MohgwynDiseaseCure_Bought,
+        "category": ModSubcategory.Diseases,
     },
     NotesRecipes.Recipe_CatacombsDiseaseCure : {
         "name": "Cure: Catacombs Toxin",
@@ -1714,6 +1803,7 @@ NEW_NOTES = {
             20192,  # Consecrated Snowfield
         ],
         "bought_flag": Flags.Recipe_CatacombsDiseaseCure_Bought,
+        "category": ModSubcategory.Diseases,
     },
     NotesRecipes.Recipe_CaveDiseaseCure : {
         "name": "Cure: Cave Parasite",
@@ -1736,6 +1826,7 @@ NEW_NOTES = {
             20471,  # Cave of the Forlorn
         ],
         "bought_flag": Flags.Recipe_CaveDiseaseCure_Bought,
+        "category": ModSubcategory.Diseases,
     },
     NotesRecipes.Recipe_TunnelDiseaseCure : {
         "name": "Cure: Miner's Fever",
@@ -1754,6 +1845,7 @@ NEW_NOTES = {
             # Yelough Anix omitted (drops Very Rare staff recipe book instead)
         ],
         "bought_flag": Flags.Recipe_TunnelDiseaseCure_Bought,
+        "category": ModSubcategory.Diseases,
     },
     # endregion
 
@@ -1771,6 +1863,7 @@ NEW_NOTES = {
         "icon": 294,  # Note: Below the Capital
         "item_lot": 16000690,  # old Serpent-Hunter location (deleted prior to this addition)
         "bought_flag": Flags.Note_SerpentHunter_Bought,
+        "category": ModSubcategory.Weapons,
     },
     NotesRecipes.Note_Whip: {
         "name": "Note: Whip",
@@ -1781,6 +1874,7 @@ NEW_NOTES = {
         "icon": 294,  # Note: Below the Capital
         "item_lot": 16000611,  # with former Smoldering Shield
         "bought_flag": Flags.Note_Whip_Bought,
+        "category": ModSubcategory.Weapons,
     },
     NotesRecipes.Recipe_SteelWireTorch: {
         "name": "Note: Steel-Wire Torch",
@@ -1794,6 +1888,7 @@ NEW_NOTES = {
         ],
         "cost": 800,
         "bought_flag": Flags.Recipe_SteelWireTorch_Bought,
+        "category": ModSubcategory.Weapons,
     },
     NotesRecipes.Recipe_StTrinasTorch: {
         "name": "Note: St. Trina's Torch",
@@ -1804,6 +1899,7 @@ NEW_NOTES = {
         "icon": 294,
         "item_lot": 1047400911,  # with former Sword of St. Trina
         "bought_flag": Flags.Recipe_StTrinasTorch_Bought,
+        "category": ModSubcategory.Weapons,
     },
     NotesRecipes.Recipe_GhostflameTorch: {
         "name": "Note: Ghostflame Torch",
@@ -1814,6 +1910,7 @@ NEW_NOTES = {
         "icon": 294,
         "item_lot": 12070501,  # with former Ghostflame Torch
         "bought_flag": Flags.Recipe_GhostflameTorch_Bought,
+        "category": ModSubcategory.Weapons,
     },
     NotesRecipes.Recipe_BeastRepellentTorch: {
         "name": "Note: Beast-Repellent Torch",
@@ -1824,6 +1921,7 @@ NEW_NOTES = {
         "icon": 294,
         "item_lot": 1047380701,  # with Ash of War: Lion's Claw
         "bought_flag": Flags.Recipe_BeastRepellentTorch_Bought,
+        "category": ModSubcategory.Weapons,
     },
     NotesRecipes.Recipe_SentrysTorch: {
         "name": "Note: Sentry's Torch",
@@ -1834,6 +1932,7 @@ NEW_NOTES = {
         "icon": 294,
         "item_lot": 1048550601,  # with Stalwart Horn Charm +1
         "bought_flag": Flags.Recipe_SentrysTorch_Bought,
+        "category": ModSubcategory.Weapons,
     },
     # endregion
 }
@@ -1856,6 +1955,7 @@ NEW_RECIPE_BOOKS = {
         "shop_row": 100508,  # Kale
         "cost": 300,
         "bought_flag": Flags.Recipes_CommonSurvival_Bought,
+        "category": ModSubcategory.Survival,
     },
     NotesRecipes.Recipes_UncommonSurvival: {
         "name": "Survivalist's Cookbook [2]",
@@ -1876,6 +1976,7 @@ NEW_RECIPE_BOOKS = {
         ],
         "cost": 1500,
         "bought_flag": Flags.Recipes_UncommonSurvival_Bought,
+        "category": ModSubcategory.Survival,
     },
     NotesRecipes.Recipes_RareSurvival: {
         "name": "Survivalist's Cookbook [3]",
@@ -1895,6 +1996,7 @@ NEW_RECIPE_BOOKS = {
         ],
         "cost": 3000,
         "bought_flag": Flags.Recipes_RareSurvival_Bought,
+        "category": ModSubcategory.Survival,
     },
     NotesRecipes.Recipes_VeryRareSurvival: {
         "name": "Survivalist's Cookbook [4]",
@@ -1913,6 +2015,7 @@ NEW_RECIPE_BOOKS = {
         ],
         "cost": 8000,
         "bought_flag": Flags.Recipes_VeryRareSurvival_Bought,
+        "category": ModSubcategory.Survival,
     },
     # endregion
 
@@ -1930,6 +2033,7 @@ NEW_RECIPE_BOOKS = {
         ],
         "cost": 500,
         "bought_flag": Flags.Recipes_WoodenSmallShields_Bought,
+        "category": ModSubcategory.Weapons,
     },
     NotesRecipes.Recipes_MetalSmallShields: {
         "name": "Small Shield Smithbook [2]",
@@ -1946,6 +2050,7 @@ NEW_RECIPE_BOOKS = {
         ],
         "cost": 2000,
         "bought_flag": Flags.Recipes_MetalSmallShields_Bought,
+        "category": ModSubcategory.Weapons,
     },
     NotesRecipes.Recipes_RareSmallShields: {
         "name": "Small Shield Smithbook [3]",
@@ -1961,6 +2066,7 @@ NEW_RECIPE_BOOKS = {
         ],
         "cost": 5000,
         "bought_flag": Flags.Recipes_RareSmallShields_Bought,
+        "category": ModSubcategory.Weapons,
     },
     NotesRecipes.Recipes_VeryRareSmallShields: {
         "name": "Small Shield Smithbook [4]",
@@ -1975,6 +2081,7 @@ NEW_RECIPE_BOOKS = {
         ],
         "cost": 8000,
         "bought_flag": Flags.Recipes_VeryRareSmallShields_Bought,
+        "category": ModSubcategory.Weapons,
     },
 
     NotesRecipes.Recipes_CommonMediumShields: {
@@ -1991,6 +2098,7 @@ NEW_RECIPE_BOOKS = {
         ],
         "cost": 1000,
         "bought_flag": Flags.Recipes_CommonMediumShields_Bought,
+        "category": ModSubcategory.Weapons,
     },
     NotesRecipes.Recipes_WoodenMediumShields: {
         "name": "Medium Shield Smithbook [2]",
@@ -2006,6 +2114,7 @@ NEW_RECIPE_BOOKS = {
         ],
         "cost": 2000,
         "bought_flag": Flags.Recipes_WoodenMediumShields_Bought,
+        "category": ModSubcategory.Weapons,
     },
     NotesRecipes.Recipes_HeaterMediumShields: {
         "name": "Medium Shield Smithbook [3]",
@@ -2020,6 +2129,7 @@ NEW_RECIPE_BOOKS = {
         ],
         "cost": 5000,
         "bought_flag": Flags.Recipes_HeaterMediumShields_Bought,
+        "category": ModSubcategory.Weapons,
     },
     NotesRecipes.Recipes_KiteMediumShields: {
         "name": "Medium Shield Smithbook [4]",
@@ -2034,6 +2144,7 @@ NEW_RECIPE_BOOKS = {
         ],
         "cost": 6000,
         "bought_flag": Flags.Recipes_KiteMediumShields_Bought,
+        "category": ModSubcategory.Weapons,
     },
     NotesRecipes.Recipes_RareMediumShields: {
         "name": "Medium Shield Smithbook [5]",
@@ -2049,6 +2160,7 @@ NEW_RECIPE_BOOKS = {
         ],
         "cost": 9000,
         "bought_flag": Flags.Recipes_RareMediumShields_Bought,
+        "category": ModSubcategory.Weapons,
     },
 
     NotesRecipes.Recipes_CommonGreatshields: {
@@ -2064,6 +2176,7 @@ NEW_RECIPE_BOOKS = {
         ],
         "cost": 2000,
         "bought_flag": Flags.Recipes_CommonGreatshields_Bought,
+        "category": ModSubcategory.Weapons,
     },
     NotesRecipes.Recipes_UncommonGreatshields: {
         "name": "Greatshield Smithbook [2]",
@@ -2078,6 +2191,7 @@ NEW_RECIPE_BOOKS = {
         ],
         "cost": 5000,
         "bought_flag": Flags.Recipes_UncommonGreatshields_Bought,
+        "category": ModSubcategory.Weapons,
     },
     NotesRecipes.Recipes_RareGreatshields: {
         "name": "Greatshield Smithbook [3]",
@@ -2092,6 +2206,7 @@ NEW_RECIPE_BOOKS = {
         ],
         "cost": 8000,
         "bought_flag": Flags.Recipes_RareGreatshields_Bought,
+        "category": ModSubcategory.Weapons,
     },
     NotesRecipes.Recipes_VeryRareGreatshields: {
         "name": "Greatshield Smithbook [4]",
@@ -2106,6 +2221,7 @@ NEW_RECIPE_BOOKS = {
         ],
         "cost": 10000,
         "bought_flag": Flags.Recipes_VeryRareGreatshields_Bought,
+        "category": ModSubcategory.Weapons,
     },
     # endregion
 
@@ -2124,6 +2240,7 @@ NEW_RECIPE_BOOKS = {
         ],
         "cost": 1000,
         "bought_flag": Flags.Recipes_CommonStaffs_Bought,
+        "category": ModSubcategory.Weapons,
     },
     NotesRecipes.Recipes_UncommonStaffs: {
         "name": "Glintstone Staff Craftbook [2]",
@@ -2138,6 +2255,7 @@ NEW_RECIPE_BOOKS = {
         ],
         "cost": 4000,
         "bought_flag": Flags.Recipes_UncommonStaffs_Bought,
+        "category": ModSubcategory.Weapons,
     },
     NotesRecipes.Recipes_RareStaffs: {
         "name": "Glintstone Staff Craftbook [3]",
@@ -2153,6 +2271,7 @@ NEW_RECIPE_BOOKS = {
         ],
         "cost": 8000,
         "bought_flag": Flags.Recipes_RareStaffs_Bought,
+        "category": ModSubcategory.Weapons,
     },
     NotesRecipes.Recipes_VeryRareStaffs: {
         "name": "Glintstone Staff Craftbook [4]",
@@ -2164,6 +2283,7 @@ NEW_RECIPE_BOOKS = {
         "icon": 3121,
         "item_lot": 20682,  # Yelough Anix boss reward
         "bought_flag": Flags.Recipes_VeryRareStaffs_Bought,
+        "category": ModSubcategory.Weapons,
     },
     NotesRecipes.Recipes_UncommonSeals: {
         "name": "Sacred Seal Craftbook [1]",
@@ -2175,6 +2295,7 @@ NEW_RECIPE_BOOKS = {
         "icon": 3122,
         "item_lot": 10282,  # Fringefolk Hero's Grave boss reward
         "bought_flag": Flags.Recipes_UncommonSeals_Bought,
+        "category": ModSubcategory.Weapons,
     },
     NotesRecipes.Recipes_RareSeals: {
         "name": "Sacred Seal Craftbook [2]",
@@ -2189,6 +2310,7 @@ NEW_RECIPE_BOOKS = {
         ],
         "cost": 5000,
         "bought_flag": Flags.Recipes_RareSeals_Bought,
+        "category": ModSubcategory.Weapons,
     },
     NotesRecipes.Recipes_VeryRareSeals: {
         "name": "Sacred Seal Craftbook [3]",
@@ -2200,6 +2322,7 @@ NEW_RECIPE_BOOKS = {
         "icon": 3122,
         "item_lot": 20081,  # Sainted Hero's Grave boss reward
         "bought_flag": Flags.Recipes_VeryRareSeals_Bought,
+        "category": ModSubcategory.Weapons,
     },
     # endregion
 }

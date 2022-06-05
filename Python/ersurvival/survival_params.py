@@ -1,6 +1,22 @@
 """Scripts for generating Params (regulation.bin).
 
 Modifies CSV files exported by Yapped (Rune Bear), which that program can then re-import.
+
+- In Yapped, import all the CSV param files generated from here:
+    - EquipMtrlSetParam
+    - EquipParamGoods
+    - EquipParamWeapon
+    - ItemLotParam_enemy
+    - ItemLotParam_map
+    - Npc_Param
+    - ShopLineupParam
+    - ShopLineupParam_Recipe
+- Ensure that manually-set Yapped tables are also imported:
+    - CharaInitParam
+    - SpEffectParam
+- Save Yapped to generate final `regulation.bin`.
+
+TODO: Will need to undo CharaInit changes without WEAPONS activated.
 """
 from __future__ import annotations
 
@@ -16,6 +32,21 @@ from enemy_ids import EXTRA_ENEMY_DROPS
 from weapon_recipes import WEAPON_RECIPES
 
 CSV_PATH = Path(r"C:\Dark Souls\Tools\Params\Yapped Rune Bear 2.1.4\Projects\ExampleMod\CSV\ER")
+
+DO_SURVIVAL = True
+DO_WEAPONS = True
+DO_DISEASES = True
+
+
+def do_category(info_dict):
+    if info_dict["category"] == ModSubcategory.Survival:
+        return DO_SURVIVAL
+    if info_dict["category"] == ModSubcategory.Weapons:
+        return DO_WEAPONS
+    if info_dict["category"] == ModSubcategory.Diseases:
+        return DO_DISEASES
+    else:
+        raise ValueError(f"Invalid mod category: {info_dict['category']}")
 
 
 class YappedRow(dict):
@@ -303,6 +334,8 @@ def generate_dummy_weapons(
     These dummy weapons can appear properly in crafting menus, and will be silently replaced with the real weapon by
     EMEVD as soon as the player receives it.
     """
+    if not DO_WEAPONS:
+        return
 
     def do_weapon(weapon_row: YappedRow):
         if not weapon_row.name:
@@ -488,6 +521,8 @@ def generate_smiths_hammers(
     goods_param: YappedParam, shop_recipe_param: YappedParam, equip_mtrl_set_param: YappedParam
 ):
     """Recipes for new Smith's Hammers, which allow further weapon upgrades."""
+    if not DO_WEAPONS:
+        return
 
     # Goods
     # TODO: This is definitely a Key Item, but Hammers appear as 'reusable' in crafting menu. Probably no solution.
@@ -544,6 +579,9 @@ def generate_new_consumables(
     mtrl_source = 320010  # 3x Thin Beast Bones
 
     for i, (good_id, good_info) in enumerate(NEW_CONSUMABLES.items()):
+        if not do_category(good_info):
+            continue
+
         shop_id = new_shop_offset + i
         mtrl_id = new_mtrl_offset + 10 * i
 
@@ -578,6 +616,8 @@ def generate_new_materials(goods_param: YappedParam):
     """Add new crafting material Goods. Relatively simple."""
     source_row = 15000  # Sliver of Meat
     for good_id, good_info in NEW_MATERIALS.items():
+        if not do_category(good_info):
+            continue
         new_material = goods_param.duplicate_row(source_row, good_id)
         new_material.name = good_info["name"]
         new_material["iconId"] = good_info["icon"]
@@ -591,6 +631,9 @@ def replace_stone_item_lots(item_lots_param: YappedParam, is_map: bool):
 
     Ancient Dragon (max level) stones are not replaced.
     """
+    if not DO_WEAPONS:
+        return
+
     leave_odds = 0.2  # proportion of item lots to leave as Smithing Stones
     fragment_odds = 0.75  # rather than Metal Shards
 
@@ -645,6 +688,8 @@ def replace_stone_item_lots(item_lots_param: YappedParam, is_map: bool):
 
 
 def fix_enemy_item_lots(item_lots_param: YappedParam, weapons_param: YappedParam):
+    if not DO_WEAPONS:
+        return
 
     item_lot_source = 227000000  # Giant Crab (Crab Eggs)
 
@@ -749,6 +794,8 @@ def fix_enemy_item_lots(item_lots_param: YappedParam, weapons_param: YappedParam
 
 def replace_weapon_item_lots(item_lots_param: YappedParam, weapons_param: YappedParam, is_map: bool):
     """Replace all (non-ammo) weapons in given ItemLotParam with components."""
+    if not DO_WEAPONS:
+        return
 
     soft_wood_odds = 0.2  # for enemies (vs. Metal Shards)
 
@@ -919,6 +966,9 @@ def replace_merchant_weapons(shop_merchant_param: YappedParam, weapons_param: Ya
 
     NOTE: Manual merchant slot replacements may overwrite these again. No big deal.
     """
+    if not DO_WEAPONS:
+        return
+
     price_weight_range = (0.75, 1.25)
     price_m = price_weight_range[1] - price_weight_range[0]
     price_b = price_weight_range[0]
@@ -987,7 +1037,11 @@ def replace_merchant_weapons(shop_merchant_param: YappedParam, weapons_param: Ya
         shop_merchant_param.rows.remove(row)
 
 
-def generate_notes_recipes(goods_param: YappedParam, shop_merchant_param: YappedParam, item_lot_map: YappedParam):
+def generate_notes_recipes(
+    goods_param: YappedParam,
+    shop_merchant_param: YappedParam,
+    item_lot_map: YappedParam,
+):
     """Create new notes and recipe books and add them to merchant lineup."""
 
     note_source = 8700  # Note: Hidden Cave
@@ -1026,6 +1080,9 @@ def generate_notes_recipes(goods_param: YappedParam, shop_merchant_param: Yapped
         (note_source, recipe_source),
     ):
         for good_id, good_info in item_dict.items():
+            if not do_category(good_info):
+                continue
+
             # Create good.
             new_good_row = goods_param.duplicate_row(good_source, good_id)
             new_good_row.name = good_info["name"]
@@ -1047,6 +1104,9 @@ def generate_notes_recipes(goods_param: YappedParam, shop_merchant_param: Yapped
 
 def generate_disease_indicators(goods: YappedParam, item_lots_map: YappedParam):
     """Item lot IDs for disease indicators are identical to the goods themselves."""
+    if not DO_DISEASES:
+        return
+
     goods_source = 8010  # Rusty Key
     item_lot_source = 10000  # Margit reward
 
@@ -1067,6 +1127,8 @@ def generate_disease_indicators(goods: YappedParam, item_lots_map: YappedParam):
 
 def modify_torrent(npc_param: YappedParam):
     """Make some changes to Torrent's NPC values."""
+    if not DO_SURVIVAL:
+        return
     torrent = npc_param[80000000]
     torrent["hp"] = 500  # down from 1939
 

@@ -12,6 +12,21 @@ from .survival_goods import *
 def Constructor():
     """Will be merged with vanilla Common."""
 
+    # region TODO: Debugging. Remove for release.
+    # AwardItemLot(500)
+    # AwardItemLot(600)
+    # AwardItemLot(610)
+    # AwardItemLot(700)
+    # AwardItemLot(40240000)  # Torch
+    # AwardItemLot(300)  # Torch
+    # AddSpecialEffect(PLAYER, 3999 9)  # SUPER DEFENSE
+    # DEBUG_ResetDiseases()
+    # DEBUG_GetAllMaps()
+    # DEBUG_GetDectusMedallions()
+    # DEBUG_AlternateFlag()
+    # endregion
+
+    # DARKNESS
     # region Time of Day Monitor
     MonitorHour(0, 0, Flags.Hour0)
     MonitorHour(1, 1, Flags.Hour1)
@@ -39,19 +54,20 @@ def Constructor():
     MonitorHour(23, 23, Flags.Hour23)
     # endregion
 
-    # TODO: Debugging. Remove for release.
-    # AwardItemLot(500)
-    # AwardItemLot(600)
-    # AwardItemLot(610)
-    # AwardItemLot(700)
-    # AwardItemLot(40240000)  # Torch
-    # AwardItemLot(300)  # Torch
-    # AddSpecialEffect(PLAYER, 3999 9)  # SUPER DEFENSE
-    # DEBUG_ResetDiseases()
-    # DEBUG_GetAllMaps()
-    # DEBUG_GetDectusMedallions()
-    # DEBUG_AlternateFlag()
+    # SHARED
+    # region Map area checks
+    MonitorInLimgrave()
+    MonitorInLiurnia()
+    MonitorInCaelid()
+    MonitorInAltus()
+    MonitorInMtGelmir()
+    MonitorInMountaintops()
+    MonitorInGenericDungeon()
+    MonitorInLegacyDungeon()
+    MonitorOutdoors()
+    # endregion
 
+    # region SURVIVAL
     # region Hunger/Thirst
     GrowingHunger()
     GrowingThirst()
@@ -78,23 +94,9 @@ def Constructor():
     JarBrittleEffects()
     # endregion
 
-    # region Map area checks
-    MonitorInLimgrave()
-    MonitorInLiurnia()
-    MonitorInCaelid()
-    MonitorInAltus()
-    MonitorInMtGelmir()
-    MonitorInMountaintops()
-    MonitorInGenericDungeon()
-    MonitorInLegacyDungeon()
-    MonitorOutdoors()
-    # endregion
-
     # region Temperature effect checks
-
     # Disable all warning trigger flags on map load (in case you quit the game while one was enabled).
     DisableFlagRange((Flags.ShowMildHeatWarning, Flags.ShowSevereColdWarning))
-
     CheckMildHeatArea()
     MildHeatWarning()
     CheckModerateHeatArea()
@@ -108,8 +110,10 @@ def Constructor():
     CheckSevereColdArea()
     SevereColdWarning()
     # endregion
+    # endregion
 
-    # region Disease checks
+    # region DISEASES
+    # region Disease affliction
     DisableFlag(Flags.DiseaseRollLock)
     GetDiseaseOverworld(
         0,
@@ -400,7 +404,9 @@ def Constructor():
     )
     # CurePureScarletRot()
     # endregion
+    # endregion
 
+    # region WEAPONS
     # Swap dummy weapons for real weapons and monitor weapon possession (plus a Smith's Hammer) for upgrading.
     # region Dummy Weapons
     CraftDummyWeapon(0, 60010000, 40010000, 0)
@@ -1073,6 +1079,7 @@ def Constructor():
     ShowSmithsHammerRecipe(
         4, SmithsHammers.ExpertSmithsHammer, SmithsHammers.MasterSmithsHammer, Flags.ShowMasterSmithsHammer
     )
+    # endregion
     # endregion
 
 
