@@ -1215,7 +1215,7 @@ def generate_all_params():
     # print("\nNOTE: All Site of Grace warps enabled.")
     # enable_all_warps(bonfire_warp)
 
-    # write_param_csv(bonfire_warp, "BonfireWarpParam.csv")
+    write_param_csv(bonfire_warp, "BonfireWarpParam.csv")
     write_param_csv(mtrl, "EquipMtrlSetParam.csv")
     write_param_csv(goods, "EquipParamGoods.csv")
     write_param_csv(weapons, "EquipParamWeapon.csv")

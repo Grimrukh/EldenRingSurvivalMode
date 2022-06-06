@@ -3,23 +3,6 @@
 - Run `install_evs()`, `generate_all_params()`, and `set_all_text()` here.
     - This will generate the final `common.emevd.dcx`, `item.msgbnd.dcx`, and `menu.msgbnd.dcx`.
 
-TODO: Feature sets:
-    SURVIVAL: Hunger, thirst, temperature, and Torrent nerf
-        - To disable, remove the relevant events, recipes, cookbooks, and Torrent (NpcParam) change.
-    WEAPONS: Craftable weapon trees and recipe books
-        - To disable, remove the relevant events, recipes, Hammers, reinforcement disable, and new component drops
-    DISEASES: Regional diseases and findable cure recipes
-        - To disable, remove the relevant events and cure items/recipes
-    DARKNESS: Night time is much darker
-        - To disable, remove the relevant events and/or just don't run the executable
-
-TODO:
-    - Have three nested levels of `Game` packages with binary ENABLE/DISABLE options for each of the above three.
-    - Also have a 'Darkness Only' option in the root folder.
-    - Darkness can be specifically disabled in any of the others by simply not running the executable.
-    - No need to vary text between installations (except Darkness Only).
-    -
-
 TODO:
     - Sacred Tear crafting?
 
