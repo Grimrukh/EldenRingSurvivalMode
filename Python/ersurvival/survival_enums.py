@@ -50,6 +50,18 @@ class Flags(Flag):
     GrowingHunger = BASE_FLAG + 0
     GrowingThirst = BASE_FLAG + 1
 
+    HungerTick1 = BASE_FLAG + 10
+    HungerTick2 = BASE_FLAG + 11
+    HungerTick3 = BASE_FLAG + 12
+    HungerTick4 = BASE_FLAG + 13
+    HungerTick5 = BASE_FLAG + 14
+
+    ThirstTick1 = BASE_FLAG + 15
+    ThirstTick2 = BASE_FLAG + 16
+    ThirstTick3 = BASE_FLAG + 17
+    ThirstTick4 = BASE_FLAG + 18
+    ThirstTick5 = BASE_FLAG + 19
+
     CheckMildHeatArea = BASE_FLAG + 20
     MildHeatWarning = BASE_FLAG + 21
     CheckModerateHeatArea = BASE_FLAG + 22

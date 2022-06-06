@@ -1092,10 +1092,21 @@ def GrowingHunger():
     IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Hunger15)
     IfConditionTrue(0, 1)
 
+    for tick_flag in (Flags.HungerTick1, Flags.HungerTick2, Flags.HungerTick3, Flags.HungerTick4, Flags.HungerTick5):
+        SkipLinesIfFlagOn(5, tick_flag)
+        SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.LimgraveDisease)
+        Wait(25.0)  # 16% faster
+        SkipLines(1)
+        Wait(30.0)
+        EnableFlag(tick_flag)
+
+    # Final tick.
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.LimgraveDisease)
-    Wait(150.0)  # 16% faster
+    Wait(25.0)  # 16% faster
     SkipLines(1)
-    Wait(180.0)
+    Wait(30.0)
+
+    DisableFlagRange((Flags.HungerTick1, Flags.HungerTick5))
 
     # INCREMENT HUNGER
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger1)
@@ -1182,10 +1193,21 @@ def GrowingThirst():
     IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Thirst9)
     IfConditionTrue(0, 1)
 
+    for tick_flag in (Flags.ThirstTick1, Flags.ThirstTick2, Flags.ThirstTick3, Flags.ThirstTick4, Flags.ThirstTick5):
+        SkipLinesIfFlagOn(5, tick_flag)
+        SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.LimgraveDisease)
+        Wait(40.0)  # 20% faster
+        SkipLines(1)
+        Wait(50.0)
+        EnableFlag(tick_flag)
+
+    # Final tick.
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.LimgraveDisease)
-    Wait(250.0)  # 16% faster
+    Wait(40.0)  # 20% faster
     SkipLines(1)
-    Wait(300.0)
+    Wait(50.0)
+
+    DisableFlagRange((Flags.ThirstTick1, Flags.ThirstTick5))
 
     # INCREMENT THIRST
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst1)
