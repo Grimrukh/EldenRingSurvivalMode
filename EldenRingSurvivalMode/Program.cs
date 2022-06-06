@@ -24,7 +24,7 @@ namespace EldenRingSurvivalMode
             {
                 ["NearDepth"] = 10f,
                 //["DrawTiming"] = 2,
-                ["FixedDensity"] = 0.1f,
+                ["FixedDensity"] = 0.05f,
                 ["LocalLightScale"] = 0.02f,
                 ["AbsorptionScale_Cyan"] = 0.5f,
                 ["AbsorptionScale_Magenta"] = 0.5f,
@@ -43,7 +43,7 @@ namespace EldenRingSurvivalMode
             {
                 ["NearDepth"] = 8f,
                 //["DrawTiming"] = 2,
-                ["FixedDensity"] = 0.2f,
+                ["FixedDensity"] = 0.1f,
                 ["LocalLightScale"] = 0.02f,
                 ["AbsorptionScale_Cyan"] = 0.5f,
                 ["AbsorptionScale_Magenta"] = 0.5f,
@@ -62,7 +62,7 @@ namespace EldenRingSurvivalMode
             {
                 ["NearDepth"] = 4f,
                 //["DrawTiming"] = 2,
-                ["FixedDensity"] = 0.6f,
+                ["FixedDensity"] = 0.2f,
                 ["LocalLightScale"] = 0.02f,
                 ["AbsorptionScale_Cyan"] = 0.5f,
                 ["AbsorptionScale_Magenta"] = 0.5f,
@@ -109,7 +109,7 @@ namespace EldenRingSurvivalMode
         Keep this companion app running alongside Elden Ring to create the enhanced
         darkness at night. If you don't want darkness, you can simply play without
         running this program. If you ONLY want darkness, make sure you are using the
-        modded files from `Game (Darkness Only)` in addition to running this app.
+        modded files from `Game (DARKNESS ONLY)` in addition to running this app.
 ";
 
         [STAThread]

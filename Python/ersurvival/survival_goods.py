@@ -340,7 +340,7 @@ NEW_CONSUMABLES = {
                    "\n"
                    "Consume to relieve hunger, but not without risk.",
         "recipe": [  # for `EquipMtrlSetParam`
-            (3, Materials.SliverOfMeat),
+            (2, Materials.SliverOfMeat),
         ],
         "recipe_visibility_flag": Flags.Recipes_CommonSurvival_Bought,
         "effect": SurvivalEffects.RawSteak,  # for `EquipGoodsParam`
@@ -356,7 +356,7 @@ NEW_CONSUMABLES = {
                    "\n"
                    "Consume to relieve hunger.",
         "recipe": [
-            (3, Materials.SliverOfMeat),
+            (2, Materials.SliverOfMeat),
             (2, Materials.SmolderingButterfly),
         ],
         "recipe_visibility_flag": Flags.Recipes_CommonSurvival_Bought,

@@ -7,7 +7,8 @@ from soulstruct.game_types import *
 # TODO: There is seemingly one vanilla flag in this range that needs to be avoided:
 #   19001100
 BASE_FLAG = 19001000
-ALLOW_UPGRADE_BASE_FLAG = 18001500  # 377 slots in Stranded Graveyard
+BOUGHT_BASE_FLAG = 18001000  # no vanilla flags used in here
+ALLOW_UPGRADE_BASE_FLAG = 18002000  # 377 slots in Stranded Graveyard; constantly monitored so no saving needed
 
 
 class SurvivalText(IntEnum):
@@ -187,67 +188,74 @@ class Flags(Flag):
 
     # Disease note/cures
     Note_CuringDiseases_Bought = BASE_FLAG + 299
-    Recipe_LimgraveDiseaseCure_Bought = BASE_FLAG + 300
-    Recipe_LiurniaDiseaseCure_Bought = BASE_FLAG + 301
-    Recipe_CaelidDiseaseCure_Bought = BASE_FLAG + 302
-    Recipe_AltusDiseaseCure_Bought = BASE_FLAG + 303
-    Recipe_MtGelmirDiseaseCure_Bought = BASE_FLAG + 304
-    Recipe_MountaintopsDiseaseCure_Bought = BASE_FLAG + 305
-    Recipe_SiofraDiseaseCure_Bought = BASE_FLAG + 306
-    Recipe_AinselDiseaseCure_Bought = BASE_FLAG + 307
-    Recipe_DeeprootDiseaseCure_Bought = BASE_FLAG + 308
-    Recipe_StormveilDiseaseCure_Bought = BASE_FLAG + 309
-    Recipe_RayaLucariaDiseaseCure_Bought = BASE_FLAG + 310
-    Recipe_RadahnDiseaseCure_Bought = BASE_FLAG + 311
-    Recipe_VolcanoManorDiseaseCure_Bought = BASE_FLAG + 312
-    Recipe_LeyndellDiseaseCure_Bought = BASE_FLAG + 313
-    Recipe_SewersDiseaseCure_Bought = BASE_FLAG + 314
-    Recipe_HaligtreeDiseaseCure_Bought = BASE_FLAG + 315
-    Recipe_FarumAzulaDiseaseCure_Bought = BASE_FLAG + 316
-    Recipe_MohgwynDiseaseCure_Bought = BASE_FLAG + 317
-    Recipe_CatacombsDiseaseCure_Bought = BASE_FLAG + 318
-    Recipe_CaveDiseaseCure_Bought = BASE_FLAG + 319
-    Recipe_TunnelDiseaseCure_Bought = BASE_FLAG + 320
+    # Recipe_LimgraveDiseaseCure_Bought = BASE_FLAG + 300  # TODO: For Lobos
+    Recipe_LimgraveDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 0
+    Recipe_LiurniaDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 1
+    # Recipe_CaelidDiseaseCure_Bought = BASE_FLAG + 302  # TODO: For Lobos
+    Recipe_CaelidDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 2
+    Recipe_AltusDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 3
+    Recipe_MtGelmirDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 4
+    Recipe_MountaintopsDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 5
+    Recipe_SiofraDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 6
+    Recipe_AinselDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 7
+    Recipe_DeeprootDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 8
+    Recipe_StormveilDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 9
+    Recipe_RayaLucariaDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 10
+    Recipe_RadahnDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 11
+    Recipe_VolcanoManorDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 12
+    Recipe_LeyndellDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 13
+    Recipe_SewersDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 14
+    Recipe_HaligtreeDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 15
+    Recipe_FarumAzulaDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 16
+    Recipe_MohgwynDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 17
+    Recipe_CatacombsDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 18
+    # Recipe_CaveDiseaseCure_Bought = BASE_FLAG + 319  # TODO: For Lobos
+    Recipe_CaveDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 19
+    Recipe_TunnelDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 20
 
     # Other notes
-    Note_SerpentHunter_Bought = BASE_FLAG + 330  # found, not bought
-    Note_Whip_Bought = BASE_FLAG + 331  # found, not bought
+    Note_SerpentHunter_Bought = BOUGHT_BASE_FLAG + 10 * 30  # found, not bought
+    Note_Whip_Bought = BOUGHT_BASE_FLAG + 10 * 31  # found, not bought
     # TODO: Meteor Chuck
 
     # Survival recipes
-    Recipes_CommonSurvival_Bought = BASE_FLAG + 340
-    Recipes_UncommonSurvival_Bought = BASE_FLAG + 341
-    Recipes_RareSurvival_Bought = BASE_FLAG + 342
-    Recipes_VeryRareSurvival_Bought = BASE_FLAG + 343
+    # Recipes_CommonSurvival_Bought = BASE_FLAG + 340  # TODO: For Lobos
+    Recipes_CommonSurvival_Bought = BOUGHT_BASE_FLAG + 10 * 32
+    # Recipes_UncommonSurvival_Bought = BASE_FLAG + 341  # TODO: For Lobos
+    Recipes_UncommonSurvival_Bought = BOUGHT_BASE_FLAG + 10 * 33
+    Recipes_RareSurvival_Bought = BOUGHT_BASE_FLAG + 10 * 34
+    Recipes_VeryRareSurvival_Bought = BOUGHT_BASE_FLAG + 10 * 35
 
     # Shield recipe books
-    Recipes_WoodenSmallShields_Bought = BASE_FLAG + 350
-    Recipes_MetalSmallShields_Bought = BASE_FLAG + 351
-    Recipes_RareSmallShields_Bought = BASE_FLAG + 352
-    Recipes_VeryRareSmallShields_Bought = BASE_FLAG + 353
+    # Recipes_WoodenSmallShields_Bought = BASE_FLAG + 350  # TODO: For Lobos
+    Recipes_WoodenSmallShields_Bought = BOUGHT_BASE_FLAG + 10 * 36
+    # Recipes_MetalSmallShields_Bought = BASE_FLAG + 351  # TODO: For Lobos
+    Recipes_MetalSmallShields_Bought = BOUGHT_BASE_FLAG + 10 * 37
+    Recipes_RareSmallShields_Bought = BOUGHT_BASE_FLAG + 10 * 38
+    Recipes_VeryRareSmallShields_Bought = BOUGHT_BASE_FLAG + 10 * 39
 
-    Recipes_CommonMediumShields_Bought = BASE_FLAG + 354
-    Recipes_WoodenMediumShields_Bought = BASE_FLAG + 355
-    Recipes_HeaterMediumShields_Bought = BASE_FLAG + 356
-    Recipes_KiteMediumShields_Bought = BASE_FLAG + 357
-    Recipes_RareMediumShields_Bought = BASE_FLAG + 358
+    Recipes_CommonMediumShields_Bought = BOUGHT_BASE_FLAG + 10 * 40
+    Recipes_WoodenMediumShields_Bought = BOUGHT_BASE_FLAG + 10 * 41
+    Recipes_HeaterMediumShields_Bought = BOUGHT_BASE_FLAG + 10 * 42
+    Recipes_KiteMediumShields_Bought = BOUGHT_BASE_FLAG + 10 * 43
+    Recipes_RareMediumShields_Bought = BOUGHT_BASE_FLAG + 10 * 44
 
-    Recipes_CommonGreatshields_Bought = BASE_FLAG + 359
-    Recipes_UncommonGreatshields_Bought = BASE_FLAG + 360
-    Recipes_RareGreatshields_Bought = BASE_FLAG + 361
-    Recipes_VeryRareGreatshields_Bought = BASE_FLAG + 362
+    Recipes_CommonGreatshields_Bought = BOUGHT_BASE_FLAG + 10 * 45
+    Recipes_UncommonGreatshields_Bought = BOUGHT_BASE_FLAG + 10 * 46
+    Recipes_RareGreatshields_Bought = BOUGHT_BASE_FLAG + 10 * 47
+    Recipes_VeryRareGreatshields_Bought = BOUGHT_BASE_FLAG + 10 * 48
 
     # Staff recipe books
-    Recipes_CommonStaffs_Bought = BASE_FLAG + 370
-    Recipes_UncommonStaffs_Bought = BASE_FLAG + 371
-    Recipes_RareStaffs_Bought = BASE_FLAG + 372
-    Recipes_VeryRareStaffs_Bought = BASE_FLAG + 373
+    Recipes_CommonStaffs_Bought = BOUGHT_BASE_FLAG + 10 * 49
+    Recipes_UncommonStaffs_Bought = BOUGHT_BASE_FLAG + 10 * 50
+    Recipes_RareStaffs_Bought = BOUGHT_BASE_FLAG + 10 * 51
+    Recipes_VeryRareStaffs_Bought = BOUGHT_BASE_FLAG + 10 * 52
 
     # Seal recipe books
-    # Recipes_CommonSeals_Bought = BASE_FLAG + 380  # not used
-    Recipes_UncommonSeals_Bought = BASE_FLAG + 381
-    Recipes_RareSeals_Bought = BASE_FLAG + 382
-    Recipes_VeryRareSeals_Bought = BASE_FLAG + 383
+    # Recipes_CommonSeals_Bought = BOUGHT_BASE_FLAG + 10 * 53  # not used
+    Recipes_UncommonSeals_Bought = BOUGHT_BASE_FLAG + 10 * 54
+    Recipes_RareSeals_Bought = BOUGHT_BASE_FLAG + 10 * 55
+    Recipes_VeryRareSeals_Bought = BOUGHT_BASE_FLAG + 10 * 56
 
     # Torch recipe notes (actually found, not bought)
     Recipe_SteelWireTorch_Bought = BASE_FLAG + 390

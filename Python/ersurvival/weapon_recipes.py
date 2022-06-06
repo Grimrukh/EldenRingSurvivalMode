@@ -88,8 +88,7 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 100,
         "recipe": [
-            (1, Materials.MetalPlate),
-            (1, Materials.MetalShards),
+            (2, Materials.MetalShards),
         ],
         "cost": 50,
     },

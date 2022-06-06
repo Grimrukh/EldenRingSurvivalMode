@@ -1518,12 +1518,14 @@ def RelieveHunger_2():
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.BerryMedley3)
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.MushroomStew)
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.GreatBoneBroth)
+    IfPlayerHasSpecialEffect(-1, SurvivalEffects.BoiledCrab)
     IfConditionFalse(0, -1)
     IfPlayerHasSpecialEffect(-2, SurvivalEffects.BerryMedley1)
     IfPlayerHasSpecialEffect(-2, SurvivalEffects.BerryMedley2)
     IfPlayerHasSpecialEffect(-2, SurvivalEffects.BerryMedley3)
     IfPlayerHasSpecialEffect(-2, SurvivalEffects.MushroomStew)
     IfPlayerHasSpecialEffect(-2, SurvivalEffects.GreatBoneBroth)
+    IfPlayerHasSpecialEffect(-2, SurvivalEffects.BoiledCrab)
     IfConditionTrue(0, -2)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger1)
@@ -1694,9 +1696,11 @@ def RelieveHunger_4():
     """Monitors for numerous different "food eaten" special effects and reduces hunger level by 4."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.BerryMedley3)
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.MeltedMushroomStew)
+    IfPlayerHasSpecialEffect(-1, SurvivalEffects.BoiledPrawn)
     IfConditionFalse(0, -1)
     IfPlayerHasSpecialEffect(-2, SurvivalEffects.BerryMedley3)
     IfPlayerHasSpecialEffect(-2, SurvivalEffects.MeltedMushroomStew)
+    IfPlayerHasSpecialEffect(-2, SurvivalEffects.BoiledPrawn)
     IfConditionTrue(0, -2)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger1)

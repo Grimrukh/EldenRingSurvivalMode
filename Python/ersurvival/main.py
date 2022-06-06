@@ -12,8 +12,6 @@ TODO (Notes for Player):
     - When you craft a weapon upgrade, the crafting menu will not update until you change tabs or go out and back in.
       If you try to craft an "invalid" upgrade recipe (e.g., because you no longer have the required weapon but the menu
       has not refreshed), the ingredients you put into it will be wasted.
-    - "Night" is so bright in some areas of the game that you may notice TRUE DARKNESS appearing and disappearing quite
-      abruptly at times. Not much can be done about this right now, unfortunately.
 """
 import shutil
 from pathlib import Path

@@ -901,6 +901,27 @@ def fix_enemy_item_lots(item_lots_param: YappedParam, weapons_param: YappedParam
             row["getItemFlagId"] = 0
             row.name = f"{row_name} (Removed)"
 
+    # Double odds of ALL Goods drops (including new ones just added above).
+    for item_lot in item_lots_param.rows:
+        if not item_lot.name:
+            continue
+        if (
+            "Smithing Stone" in item_lot.name
+            or "Rune" in item_lot.name
+            or "Glass Shard" in item_lot.name
+            or "Ruin Fragment" in item_lot.name
+        ):
+            continue
+        if int(item_lot["lotItemCategory02"]) != 1:
+            continue
+        odds_1 = int(item_lot["lotItemBasePoint01"])
+        odds_2 = int(item_lot["lotItemBasePoint02"])
+        if odds_1 + odds_2 == 1000 and odds_1 > 0 and odds_2 < 200:
+            old_odds = int(item_lot["lotItemBasePoint02"])
+            new_odds = item_lot["lotItemBasePoint02"] = int(2 * old_odds)
+            print(f"Doubling drop odds for: {item_lot.name} ({old_odds} -> {new_odds})")
+            item_lot["lotItemBasePoint01"] = int(item_lot["lotItemBasePoint01"]) - (new_odds - old_odds)
+
 
 def replace_weapon_item_lots(item_lots_param: YappedParam, weapons_param: YappedParam, is_map: bool):
     """Replace all (non-ammo) weapons in given ItemLotParam with components."""
@@ -1243,6 +1264,26 @@ def modify_torrent(npc_param: YappedParam):
     torrent["hp"] = 500  # down from 1939
 
 
+def fix_survival_shops(shop_merchant_param: YappedParam):
+    if not DO_SURVIVAL:
+        return
+
+    crab = shop_merchant_param[100155]
+    crab["sellQuantity"] = 10
+    crab["value"] = 1800  # from 600
+    prawn = shop_merchant_param[100160]
+    prawn["sellQuantity"] = 10
+    prawn["value"] = 1800  # from 600
+
+    bearing_thin_bones = shop_merchant_param[101847]
+    bearing_thin_bones["value"] = 1500  # from 150
+    bearing_hefty_bone = shop_merchant_param[101848]
+    bearing_hefty_bone["value"] = 2500  # from 250
+
+    bearing_sliver_meat = shop_merchant_param[101849]
+    bearing_sliver_meat["value"] = 5000
+
+
 def test_item_lots(item_lots_map: YappedParam):
     """Debugging item lots."""
     item_lots_map[100].name = "Test: Lord's Rune"
@@ -1313,6 +1354,7 @@ def generate_all_params():
     replace_stone_item_lots(item_lots_enemy, is_map=False)
     replace_stone_item_lots(item_lots_map, is_map=True)
     replace_merchant_weapons(shop_merchant, weapons)
+    fix_survival_shops(shop_merchant)
 
     modify_torrent(npc)
     # NOTE: SpEffects 501075-501087 have had their healing effects and VFX (5030) removed.

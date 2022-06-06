@@ -339,33 +339,33 @@ EXTRA_ENEMY_DROPS = {
         (4356, 50),  # "Haligtree Knight"
     ),
     Materials.MetalPlate: (
-        (3910, 20),  # "Fire Prelate"
-        (4470, 20),  # "Abductor Virgin"
-        (4601, 20),  # "Armored Troll Knight"
-        (4602, 5),  # "Troll Knight"
+        (3910, 75),  # "Fire Prelate"
+        (4470, 75),  # "Abductor Virgin"
+        (4601, 75),  # "Armored Troll Knight"
+        (4602, 50),  # "Troll Knight"
     ),
     Materials.PliableMetal: (
-        (3320, 5),  # "Silver Tear",
-        (3330, 20),  # "Silver Tear Orb"
+        (3320, 20),  # "Silver Tear",
+        (3330, 50),  # "Silver Tear Orb"
     ),
     Materials.BlackMark: (
         (3150, 1000),  # "Night's Calvary"
     ),
     Materials.GruesomeBone: (
-        (3061, 20),  # "Undead Azula Beastman"
-        (3810, 5),  # "Kindred of Rot"
+        (3061, 75),  # "Undead Azula Beastman"
+        (3810, 25),  # "Kindred of Rot"
     ),
     Materials.MeteoriteChunk: (
         (4380, 5),  # "Starcaller"
     ),
     Materials.GlintstoneDust: (
-        (3350, 20),  # "Crystalian"
+        (3350, 75),  # "Crystalian"
     ),
     Materials.ErdtreeAmber: (
-        (2500, 20),  # "Crucible Knight"
+        (2500, 50),  # "Crucible Knight"
     ),
     Materials.DragonTeeth: (
-        (3970, 5),  # "Beastman of Farum Azula"
+        (3970, 25),  # "Beastman of Farum Azula"
     ),
     Materials.StoneFragment: (
         (4260, 100),  # "Erdtree Burial Watchdog"
@@ -376,7 +376,7 @@ EXTRA_ENEMY_DROPS = {
         (4384, 5),  # "Glintstone Miner"
     ),
     Materials.String: (
-        (3850, 20),  # "Marionette"
-        (3860, 20),  # "Avionette"
+        (3850, 50),  # "Marionette"
+        (3860, 50),  # "Avionette"
     ),
 }
