@@ -1790,17 +1790,17 @@ NEW_NOTES = {
                    "Complete the recipe to obtain a single-use cure for the disease.",
         "icon": 288,  # Note: Flask of Wondrous Physick
         "item_lots": [  # Catacombs boss rewards after Limgrave
-            20071,  # Cliffbottom
-            20061,  # Road's End
-            20051,  # Black Knife
-            20111,  # Unsightly
-            20121,  # Wyndham
-            20221,  # Leyndell
-            20141,  # Minor Erdtree
-            20151,  # Caelid
-            20162,  # War-Dead
-            20182,  # Giants' Mountaintop
-            20192,  # Consecrated Snowfield
+            20072,  # Cliffbottom
+            20062,  # Road's End
+            20052,  # Black Knife
+            20112,  # Unsightly
+            20122,  # Wyndham
+            20222,  # Leyndell
+            20142,  # Minor Erdtree
+            20152,  # Caelid
+            20163,  # War-Dead
+            20183,  # Giants' Mountaintop
+            20193,  # Consecrated Snowfield
         ],
         "bought_flag": Flags.Recipe_CatacombsDiseaseCure_Bought,
         "category": ModSubcategory.Diseases,
@@ -1813,17 +1813,18 @@ NEW_NOTES = {
                    "Complete the recipe to obtain a single-use cure for the disease.",
         "icon": 288,  # Note: Flask of Wondrous Physick
         "item_lots": [  # Caves boss rewards after Limgrave
-            20361,  # Stillwater
-            20371,  # Lakeside Crystal
-            20381,  # Academy Crystal
-            20491,  # Sage's (Garris)
-            20391,  # Seethewater
+            20362,  # Stillwater
+            20372,  # Lakeside Crystal
+            20382,  # Academy Crystal
+            20392,  # Seethewater
             20401,  # Volcano
-            20451,  # Abandoned
-            20431,  # Gaol
-            20441,  # Dragonbarrow
-            20482,  # Spiritcaller's
+            20422,  # Sage's (Black Knife Assassin)
+            20432,  # Gaol
+            20442,  # Dragonbarrow
+            20452,  # Abandoned
             20471,  # Cave of the Forlorn
+            20483,  # Spiritcaller's
+            20492,  # Sage's (Garris)
         ],
         "bought_flag": Flags.Recipe_CaveDiseaseCure_Bought,
         "category": ModSubcategory.Diseases,
@@ -1836,10 +1837,10 @@ NEW_NOTES = {
                    "Complete the recipe to obtain a single-use cure for the disease.",
         "icon": 288,  # Note: Flask of Wondrous Physick
         "item_lots": [  # Tunnels boss rewards after Limgrave
-            20621,  # Raya Lucaria
+            20622,  # Raya Lucaria
             20631,  # Old Altus
-            20651,  # Altus
             20641,  # Sealed
+            20652,  # Altus
             20662,  # Gael
             20674,  # Sellia Crystal
             # Yelough Anix omitted (drops Very Rare staff recipe book instead)

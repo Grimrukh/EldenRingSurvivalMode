@@ -117,11 +117,10 @@ namespace EldenRingSurvivalMode
         {
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
 
-            Params.AllVariantsCSVToRegulation();
-            
-            Console.WriteLine("Done.");
-            Console.ReadLine();
-            return;
+            //Params.AllVariantsCSVToRegulation();
+            //Console.WriteLine("Done.");
+            //Console.ReadLine();
+            //return;
 
             Console.WriteLine(TitleText);
             
