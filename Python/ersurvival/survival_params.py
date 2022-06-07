@@ -540,18 +540,18 @@ def generate_dummy_weapons(
         new_shop_row["setNum"] = 1  # only one
 
         # TODO: for common EMEVD
-        print(
-            f"CraftDummyWeapon("
-            f"{slot}, "
-            f"{dummy_id}, "
-            f"{item_lot_id}, "
-            f"{previous_weapon_id if previous_weapon_id is not None else 0})"
-        )
-        allow_weapon_upgrade_flag = Flags.AllowWeaponUpgradeFlag + new_weapon_indices.index(row.name)
-        if hammer_id != -1:
-            print(
-                f"AllowWeaponUpgrade({slot}, {true_weapon_id}, {hammer_id}, {allow_weapon_upgrade_flag})"
-            )
+        # print(
+        #     f"CraftDummyWeapon("
+        #     f"{slot}, "
+        #     f"{dummy_id}, "
+        #     f"{item_lot_id}, "
+        #     f"{previous_weapon_id if previous_weapon_id is not None else 0})"
+        # )
+        # allow_weapon_upgrade_flag = Flags.AllowWeaponUpgradeFlag + new_weapon_indices.index(row.name)
+        # if hammer_id != -1:
+        #     print(
+        #         f"AllowWeaponUpgrade({slot}, {true_weapon_id}, {hammer_id}, {allow_weapon_upgrade_flag})"
+        #     )
         slot += 1
 
         # Create ingredients entry.
@@ -1420,5 +1420,5 @@ def generate_all_variants():
 
 
 if __name__ == '__main__':
-    generate_all_params()
-    # generate_all_variants()
+    # generate_all_params()
+    generate_all_variants()
