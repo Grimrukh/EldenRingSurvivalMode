@@ -158,7 +158,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (6, Materials.StoneFragment),
             (10, Materials.GoldFirefly),
-            (12, Materials.HumanBoneShard),
+            (6, Materials.HumanBoneShard),
             (18, Materials.TarnishedGoldenSunflower),
         ],
     },
@@ -214,7 +214,7 @@ WEAPON_RECIPES = {
         "id": 111,
         "recipe": [
             (20, Materials.SanctuaryStone),
-            (10, Materials.BeastBlood),
+            (8, Materials.BeastBlood),
             (10, Materials.SomberStoneFragment),
             (7, Materials.GravelStone),
         ],
@@ -239,7 +239,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.MetalPlate),
             (4, Materials.StoneFragment),
-            (3, Materials.BeastBlood),
+            (2, Materials.BeastBlood),
         ],
     },
     "Erdsteel Dagger": {
@@ -481,7 +481,7 @@ WEAPON_RECIPES = {
             (2, Materials.MetalPlate),
             (15, Materials.MetalShards),
             (10, Materials.StoneFragment),
-            (12, Materials.StormhawkFeather),
+            (6, Materials.StormhawkFeather),
         ],
     },
     "Lazuli Glintstone Sword": {
@@ -679,7 +679,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (3, Materials.MetalPlate),
             (12, Materials.HeftyBeastBone),
-            (12, Materials.FormicRock),
+            (9, Materials.FormicRock),
             (5, Materials.BloodTaintedExcrement),
         ],
     },
@@ -725,8 +725,8 @@ WEAPON_RECIPES = {
         "id": 320,
         "recipe": [
             (10, Materials.SomberStoneFragment),
-            (15, Materials.BuddingHorn),
-            (20, Materials.HumanBoneShard),
+            (8, Materials.BuddingHorn),
+            (10, Materials.HumanBoneShard),
             (30, Materials.FlightPinion),
         ],
     },
@@ -961,7 +961,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (5, Materials.PliableMetal),
             (3, Materials.GruesomeBone),
-            (13, Materials.BeastBlood),
+            (9, Materials.BeastBlood),
             (13, Materials.BloodTaintedExcrement),
         ],
     },
@@ -1023,7 +1023,7 @@ WEAPON_RECIPES = {
             (2, Materials.MetalPlate),
             (6, Materials.MetalShards),
             (10, Materials.ThinBeastBones),
-            (5, Materials.BeastBlood),
+            (4, Materials.BeastBlood),
         ],
     },
     "Shotel": {
@@ -1034,7 +1034,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (2, Materials.MetalPlate),
             (11, Materials.StoneFragment),
-            (10, Materials.FormicRock),
+            (7, Materials.FormicRock),
             (9, Materials.ArteriaLeaf),
         ],
     },
@@ -1046,7 +1046,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.MetalPlate),
             (4, Materials.StoneFragment),
-            (4, Materials.OldFang),
+            (2, Materials.OldFang),
         ],
     },
     "Bandit's Curved Sword": {
@@ -1130,7 +1130,7 @@ WEAPON_RECIPES = {
             (2, Materials.MetalPlate),
             (6, Materials.StoneFragment),
             (8, Materials.SacramentalBud),
-            (6, Materials.BeastBlood),
+            (5, Materials.BeastBlood),
         ],
     },
     "Mantis Blade": {
@@ -1141,7 +1141,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.MetalPlate),
             (7, Materials.StoneFragment),
-            (5, Materials.String),
+            (4, Materials.String),
             (12, Materials.GraveViolet),
         ],
     },
@@ -1187,7 +1187,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (3, Materials.MetalPlate),
             (10, Materials.StoneFragment),
-            (10, Materials.FormicRock),
+            (7, Materials.FormicRock),
         ],
     },
     "Bloodhound's Fang": {
@@ -1355,7 +1355,7 @@ WEAPON_RECIPES = {
             (10, Materials.GravelStone),
             (5, Materials.DragonTeeth),
             (16, Materials.SomberStoneFragment),
-            (12, Materials.FormicRock),
+            (9, Materials.FormicRock),
         ],
     },
     "Serpentbone Blade": {
@@ -1366,7 +1366,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (2, Materials.MetalPlate),
             (4, Materials.GruesomeBone),
-            (10, Materials.MirandaPowder),
+            (5, Materials.MirandaPowder),
             (20, Materials.Poisonbloom),
         ],
     },
@@ -1381,7 +1381,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (2, Materials.MetalPlate),
             (9, Materials.StoneFragment),
-            (8, Materials.String),
+            (4, Materials.String),
             (10, Materials.Fulgurbloom),
         ],
     },
@@ -1519,8 +1519,8 @@ WEAPON_RECIPES = {
         "recipe": [
             (5, Materials.SoftWood),
             (1, Materials.RefinedWood),
-            (5, Materials.OldFang),
-            (3, Materials.String),
+            (3, Materials.OldFang),
+            (2, Materials.String),
         ],
     },
     "Hammer": {
@@ -1639,7 +1639,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (8, Materials.StoneFragment),
             (10, Materials.HeftyBeastBone),
-            (20, Materials.BuddingHorn),
+            (8, Materials.BuddingHorn),
         ],
     },
     "Battle Hammer": {
@@ -1684,8 +1684,8 @@ WEAPON_RECIPES = {
         "recipe": [
             (10, Materials.StoneFragment),
             (2, Materials.GruesomeBone),
-            (15, Materials.HumanBoneShard),
-            (7, Materials.String),
+            (8, Materials.HumanBoneShard),
+            (4, Materials.String),
         ],
     },
     "Pickaxe": {
@@ -1709,7 +1709,7 @@ WEAPON_RECIPES = {
             (3, Materials.MetalPlate),
             (20, Materials.GoldenSunflower),
             (10, Materials.SomberStoneFragment),
-            (10, Materials.BeastBlood),
+            (8, Materials.BeastBlood),
         ],
     },
     "Envoy's Long Horn": {
@@ -1757,7 +1757,7 @@ WEAPON_RECIPES = {
             (20, Materials.StoneFragment),
             (20, Materials.SanctuaryStone),
             (10, Materials.RootResin),
-            (6, Materials.String),
+            (4, Materials.String),
         ],
     },
     "Devourer's Scepter": {
@@ -1928,7 +1928,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (4, Materials.StoneFragment),
             (1, Materials.GruesomeBone),
-            (5, Materials.HumanBoneShard),
+            (3, Materials.HumanBoneShard),
         ],
     },
     "Icerind Hatchet": {
@@ -1952,7 +1952,7 @@ WEAPON_RECIPES = {
             (2, Materials.MetalPlate),
             (4, Materials.SoftWood),
             (2, Materials.RefinedWood),
-            (3, Materials.BeastBlood),
+            (2, Materials.BeastBlood),
         ],
     },
     "Sacrificial Axe": {
@@ -1988,7 +1988,7 @@ WEAPON_RECIPES = {
             (2, Materials.MetalPlate),
             (30, Materials.Fulgurbloom),
             (20, Materials.FourToedFowlFoot),
-            (20, Materials.StormhawkFeather),
+            (12, Materials.StormhawkFeather),
         ],
     },
     "Greataxe": {
@@ -2023,7 +2023,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (2, Materials.ErdtreeWood),
             (10, Materials.StoneFragment),
-            (15, Materials.BuddingHorn),
+            (6, Materials.BuddingHorn),
             (3, Materials.BloodTaintedExcrement),
         ],
     },
@@ -2094,7 +2094,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (1, Materials.Remembrance_RegalAncestor),
             (10, Materials.RefinedWood),
-            (25, Materials.BuddingHorn),
+            (10, Materials.BuddingHorn),
             (30, Materials.DewkissedHerba),
         ],
     },
@@ -2212,7 +2212,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (8, Materials.StoneFragment),
             (2, Materials.GruesomeBone),
-            (8, Materials.HumanBoneShard),
+            (4, Materials.HumanBoneShard),
             (12, Materials.ThinBeastBones),
         ],
     },
@@ -2345,7 +2345,7 @@ WEAPON_RECIPES = {
             (2, Materials.MetalPlate),
             (7, Materials.ErdtreeWood),
             (7, Materials.ErdtreeAmber),
-            (15, Materials.BuddingHorn),
+            (8, Materials.BuddingHorn),
         ],
     },
     "Serpent-Hunter": {
@@ -2637,7 +2637,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (2, Materials.MetalPlate),
             (10, Materials.RefinedWood),
-            (20, Materials.StormhawkFeather),
+            (12, Materials.StormhawkFeather),
             (3, Materials.BlackMark),
         ],
     },
@@ -2653,8 +2653,8 @@ WEAPON_RECIPES = {
         "recipe": [
             (3, Materials.RefinedWood),
             (1, Materials.PliableMetal),
-            (8, Materials.BeastBlood),
-            (8, Materials.String),
+            (4, Materials.BeastBlood),
+            (4, Materials.String),
         ],
         "cost": 20000,
     },
@@ -2667,7 +2667,7 @@ WEAPON_RECIPES = {
             (3, Materials.RefinedWood),
             (15, Materials.Bloodrose),
             (8, Materials.SacramentalBud),
-            (8, Materials.BeastBlood),
+            (5, Materials.BeastBlood),
         ],
     },
     "Magma Whip Candlestick": {
@@ -2795,7 +2795,7 @@ WEAPON_RECIPES = {
         "id": 2111,
         "recipe": [
             (4, Materials.GruesomeBone),
-            (20, Materials.HumanBoneShard),
+            (10, Materials.HumanBoneShard),
             (15, Materials.SomberStoneFragment),
             (15, Materials.YellowEmber),
         ],
@@ -2808,7 +2808,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (2, Materials.MetalPlate),
             (16, Materials.SomberStoneFragment),
-            (12, Materials.StormhawkFeather),
+            (8, Materials.StormhawkFeather),
             (18, Materials.Fulgurbloom),
         ],
     },
@@ -2844,7 +2844,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (2, Materials.MetalPlate),
             (12, Materials.Poisonbloom),
-            (10, Materials.MirandaPowder),
+            (5, Materials.MirandaPowder),
             (10, Materials.ToxicMushroom),
         ],
     },
@@ -2856,7 +2856,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (3, Materials.MetalPlate),
             (15, Materials.StoneFragment),
-            (10, Materials.BeastBlood),
+            (7, Materials.BeastBlood),
             (5, Materials.BloodTaintedExcrement),
         ],
     },
@@ -2868,7 +2868,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (2, Materials.MetalPlate),
             (4, Materials.PliableMetal),
-            (12, Materials.StormhawkFeather),
+            (6, Materials.StormhawkFeather),
             (12, Materials.FourToedFowlFoot),
         ],
     },
@@ -2980,7 +2980,7 @@ WEAPON_RECIPES = {
             (8, Materials.MeteoriteChunk),
             (4, Materials.GruesomeBone),
             (15, Materials.SomberStoneFragment),
-            (15, Materials.FormicRock),
+            (9, Materials.FormicRock),
         ],
     },
     "Ghiza's Wheel": {
@@ -3094,7 +3094,7 @@ WEAPON_RECIPES = {
         "id": 2405,
         "recipe": [
             (1, Materials.MetalPlate),
-            (10, Materials.HumanBoneShard),
+            (5, Materials.HumanBoneShard),
             (10, Materials.SilverTearHusk),
             (5, Materials.NascentButterfly),
         ],
@@ -3225,7 +3225,7 @@ WEAPON_RECIPES = {
             (1, Materials.ShieldGrip),
             (2, Materials.SoftWood),
             (4, Materials.MetalShards),
-            (4, Materials.AlbinauricBloodclot),
+            (2, Materials.AlbinauricBloodclot),
         ],
     },
     "Rift Shield": {
@@ -3287,7 +3287,7 @@ WEAPON_RECIPES = {
         "id": 3019,
         "recipe": [
             (1, Materials.ShieldGrip),
-            (8, Materials.BuddingHorn),
+            (4, Materials.BuddingHorn),
             (15, Materials.DewkissedHerba),
         ],
     },
@@ -3299,7 +3299,7 @@ WEAPON_RECIPES = {
             (1, Materials.ShieldGrip),
             (1, Materials.MetalPlate),
             (5, Materials.Poisonbloom),
-            (5, Materials.MirandaPowder),
+            (4, Materials.MirandaPowder),
         ],
     },
     # endregion
@@ -3354,7 +3354,7 @@ WEAPON_RECIPES = {
             (2, Materials.ShieldGrip),
             (2, Materials.MetalPlate),
             (2, Materials.GlintstoneDust),
-            (5, Materials.AlbinauricBloodclot),
+            (3, Materials.AlbinauricBloodclot),
         ],
     },
     "Sun Realm Shield": {
@@ -3364,7 +3364,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (2, Materials.ShieldGrip),
             (1, Materials.MetalPlate),
-            (4, Materials.HumanBoneShard),
+            (3, Materials.HumanBoneShard),
         ],
     },
     "Silver Mirrorshield": {
@@ -3375,7 +3375,7 @@ WEAPON_RECIPES = {
             (2, Materials.ShieldGrip),
             (3, Materials.PliableMetal),
             (10, Materials.SilverTearHusk),
-            (5, Materials.AlbinauricBloodclot),
+            (3, Materials.AlbinauricBloodclot),
         ],
     },
     "Round Shield": {
@@ -3406,7 +3406,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (2, Materials.ShieldGrip),
             (2, Materials.MetalPlate),
-            (7, Materials.StormhawkFeather),
+            (4, Materials.StormhawkFeather),
             (1, Materials.BlackMark),
         ],
     },
@@ -3473,7 +3473,7 @@ WEAPON_RECIPES = {
             (2, Materials.ShieldGrip),
             (3, Materials.RefinedWood),
             (3, Materials.LumpOfFlesh),
-            (4, Materials.String),
+            (1, Materials.String),
         ],
     },
     "Horse Crest Wooden Shield": {
@@ -3514,7 +3514,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (2, Materials.ShieldGrip),
             (3, Materials.RefinedWood),
-            (5, Materials.StormhawkFeather),
+            (2, Materials.StormhawkFeather),
         ],
     },
     "Beast Crest Heater Shield": {
@@ -3524,7 +3524,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (2, Materials.ShieldGrip),
             (2, Materials.MetalPlate),
-            (3, Materials.BeastBlood),
+            (2, Materials.BeastBlood),
         ],
     },
     "Red Crest Heater Shield": {
@@ -3534,7 +3534,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (2, Materials.ShieldGrip),
             (2, Materials.MetalPlate),
-            (3, Materials.BeastBlood),
+            (2, Materials.BeastBlood),
         ],
     },
     "Blue Crest Heater Shield": {
@@ -3620,7 +3620,7 @@ WEAPON_RECIPES = {
         "id": 3203,
         "recipe": [
             (3, Materials.ShieldGrip),
-            (12, Materials.BuddingHorn),
+            (6, Materials.BuddingHorn),
             (8, Materials.SomberStoneFragment),
             (2, Materials.ErdtreeAmber),
         ],
@@ -3677,7 +3677,7 @@ WEAPON_RECIPES = {
             (3, Materials.ShieldGrip),
             (15, Materials.NascentButterfly),
             (5, Materials.GlintstoneDust),
-            (10, Materials.AlbinauricBloodclot),
+            (5, Materials.AlbinauricBloodclot),
         ],
     },
     "Fingerprint Stone Shield": {
@@ -3765,7 +3765,7 @@ WEAPON_RECIPES = {
             (3, Materials.ShieldGrip),
             (3, Materials.MetalPlate),
             (10, Materials.MetalShards),
-            (8, Materials.StormhawkFeather),
+            (4, Materials.StormhawkFeather),
         ],
     },
     "Ant's Skull Plate": {
@@ -3775,8 +3775,8 @@ WEAPON_RECIPES = {
         "recipe": [
             (3, Materials.ShieldGrip),
             (4, Materials.GruesomeBone),
-            (8, Materials.BuddingHorn),
-            (10, Materials.MirandaPowder),
+            (5, Materials.BuddingHorn),
+            (5, Materials.MirandaPowder),
         ],
     },
     "Redmane Greatshield": {
@@ -3973,7 +3973,7 @@ WEAPON_RECIPES = {
             (1, Materials.StaffPole),
             (5, Materials.SilverTearHusk),
             (3, Materials.GlintstoneDust),
-            (5, Materials.AlbinauricBloodclot),
+            (4, Materials.AlbinauricBloodclot),
         ],
     },
     "Academy Glintstone Staff": {
@@ -4093,7 +4093,7 @@ WEAPON_RECIPES = {
             (12, Materials.StoneFragment),
             (12, Materials.SomberStoneFragment),
             (20, Materials.FireBlossom),
-            (10, Materials.String),
+            (4, Materials.String),
         ],
     },
     "Gravel Stone Seal": {
@@ -4113,8 +4113,8 @@ WEAPON_RECIPES = {
         "recipe": [
             (10, Materials.StoneFragment),
             (10, Materials.SomberStoneFragment),
-            (8, Materials.OldFang),
-            (8, Materials.BeastBlood),
+            (5, Materials.OldFang),
+            (5, Materials.BeastBlood),
         ],
     },
     "Golden Order Seal": {
@@ -4142,7 +4142,7 @@ WEAPON_RECIPES = {
         "cost": 10000,
         "id": 3408,
         "recipe": [
-            (13, Materials.BeastBlood),
+            (8, Materials.BeastBlood),
             (3, Materials.DragonTeeth),
             (20, Materials.SacramentalBud),
         ],
@@ -4181,7 +4181,7 @@ WEAPON_RECIPES = {
             (3, Materials.SoftWood),
             (2, Materials.RefinedWood),
             (15, Materials.ThinBeastBones),
-            (6, Materials.String),
+            (2, Materials.String),
         ],
     },
     "Red Branch Shortbow": {
@@ -4191,7 +4191,7 @@ WEAPON_RECIPES = {
         "id": 4002,
         "recipe": [
             (8, Materials.RefinedWood),
-            (5, Materials.String),
+            (2, Materials.String),
             (15, Materials.AltusBloom),
         ],
     },
@@ -4202,7 +4202,7 @@ WEAPON_RECIPES = {
         "id": 4003,
         "recipe": [
             (4, Materials.RefinedWood),
-            (8, Materials.String),
+            (2, Materials.String),
             (15, Materials.CaveMoss),
         ],
     },
@@ -4226,7 +4226,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (6, Materials.RefinedWood),
             (2, Materials.ErdtreeWood),
-            (5, Materials.String),
+            (2, Materials.String),
         ],
     },
     "Albinauric Bow": {
@@ -4236,9 +4236,9 @@ WEAPON_RECIPES = {
         "id": 4101,
         "recipe": [
             (8, Materials.RefinedWood),
-            (15, Materials.AlbinauricBloodclot),
+            (8, Materials.AlbinauricBloodclot),
             (13, Materials.SilverFirefly),
-            (6, Materials.String),
+            (3, Materials.String),
         ],
     },
     "Horn Bow": {
@@ -4247,8 +4247,8 @@ WEAPON_RECIPES = {
         "somber": False,
         "id": 4102,
         "recipe": [
-            (20, Materials.BuddingHorn),
-            (6, Materials.String),
+            (2, Materials.BuddingHorn),
+            (3, Materials.String),
             (10, Materials.MeltedMushroom),
             (4, Materials.GlintstoneDust),
         ],
@@ -4260,7 +4260,7 @@ WEAPON_RECIPES = {
         "id": 4103,
         "recipe": [
             (8, Materials.ErdtreeWood),
-            (12, Materials.String),
+            (7, Materials.String),
             (10, Materials.RimedRowa),
             (5, Materials.ErdtreeAmber),
         ],
@@ -4272,9 +4272,9 @@ WEAPON_RECIPES = {
         "id": 4104,
         "recipe": [
             (10, Materials.RefinedWood),
-            (12, Materials.String),
+            (6, Materials.String),
             (8, Materials.GruesomeBone),
-            (20, Materials.MirandaPowder),
+            (10, Materials.MirandaPowder),
         ],
     },
     "Pulley Bow": {
@@ -4286,7 +4286,7 @@ WEAPON_RECIPES = {
             (8, Materials.RefinedWood),
             (5, Materials.ErdtreeWood),
             (10, Materials.String),
-            (15, Materials.StormhawkFeather),
+            (8, Materials.StormhawkFeather),
         ],
     },
     "Black Bow": {
@@ -4296,7 +4296,7 @@ WEAPON_RECIPES = {
         "id": 4107,
         "recipe": [
             (13, Materials.RefinedWood),
-            (13, Materials.String),
+            (6, Materials.String),
             (3, Materials.BlackMark),
             (10, Materials.BloodTaintedExcrement),
         ],
@@ -4313,7 +4313,7 @@ WEAPON_RECIPES = {
             (1, Materials.Remembrance_Radahn),
             (4, Materials.MetalPlate),
             (6, Materials.MeteoriteChunk),
-            (15, Materials.String),
+            (6, Materials.String),
         ],
     },
     "Golem Greatbow": {
@@ -4325,7 +4325,7 @@ WEAPON_RECIPES = {
             (13, Materials.StoneFragment),
             (13, Materials.SomberStoneFragment),
             (3, Materials.MeteoriteChunk),
-            (12, Materials.String),
+            (5, Materials.String),
         ],
     },
     "Erdtree Greatbow": {
@@ -4335,7 +4335,7 @@ WEAPON_RECIPES = {
         "id": 4203,
         "recipe": [
             (15, Materials.ErdtreeWood),
-            (15, Materials.String),
+            (6, Materials.String),
             (25, Materials.GoldenCentipede),
             (6, Materials.ErdtreeAmber),
         ],
@@ -4348,7 +4348,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (9, Materials.RefinedWood),
             (3, Materials.ErdtreeWood),
-            (10, Materials.String),
+            (4, Materials.String),
             (20, Materials.AltusBloom),
         ],
     },
@@ -4364,7 +4364,7 @@ WEAPON_RECIPES = {
             (8, Materials.SoftWood),
             (2, Materials.RefinedWood),
             (2, Materials.MetalPlate),
-            (7, Materials.String),
+            (2, Materials.String),
         ],
     },
     "Light Crossbow": {
@@ -4375,7 +4375,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (6, Materials.RefinedWood),
             (2, Materials.MetalPlate),
-            (7, Materials.String),
+            (2, Materials.String),
             (5, Materials.MetalShards),
         ],
     },
@@ -4387,7 +4387,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (8, Materials.RefinedWood),
             (2, Materials.MetalPlate),
-            (8, Materials.String),
+            (3, Materials.String),
             (13, Materials.FireBlossom),
         ],
     },
@@ -4399,7 +4399,7 @@ WEAPON_RECIPES = {
         "recipe": [
             (3, Materials.MetalPlate),
             (7, Materials.ErdtreeWood),
-            (10, Materials.String),
+            (5, Materials.String),
             (18, Materials.GoldenCentipede),
         ],
     },
@@ -4424,7 +4424,7 @@ WEAPON_RECIPES = {
             (15, Materials.SoftWood),
             (5, Materials.RefinedWood),
             (2, Materials.MetalPlate),
-            (7, Materials.String),
+            (3, Materials.String),
         ],
     },
     "Crepus's Black-Key Crossbow": {
@@ -4448,7 +4448,7 @@ WEAPON_RECIPES = {
             (20, Materials.SoftWood),
             (10, Materials.RefinedWood),
             (3, Materials.MetalPlate),
-            (15, Materials.String),
+            (6, Materials.String),
         ],
     },
     "Jar Cannon": {
