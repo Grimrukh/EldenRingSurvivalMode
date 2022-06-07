@@ -25,7 +25,13 @@ from yabber import yabber
 VANILLA_PATH = Path("C:/Steam/steamapps/common/ELDEN RING (Vanilla)/Game")
 MODDING_PATH = Path("C:/Steam/steamapps/common/ELDEN RING (Modding)/Game")
 
-DIST_PATH = Path("../../dist/GAME (OPTIONS)/Survival ENABLED/Weapon Tree ENABLED/Diseases ENABLED")
+SURVIVAL = True
+WEAPON_TREE = True
+DISEASES = True
+DIST_PATH = Path("../../dist/GAME (OPTIONS)")
+DIST_PATH /= "Survival ENABLED" if SURVIVAL else "Survival DISABLED"
+DIST_PATH /= "Weapon Tree ENABLED" if WEAPON_TREE else "Weapon Tree DISABLED"
+DIST_PATH /= "Diseases ENABLED" if DISEASES else "Diseases DISABLED"
 
 
 def vanilla_common_emevd_to_evs():
