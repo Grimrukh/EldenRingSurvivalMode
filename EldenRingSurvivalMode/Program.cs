@@ -100,7 +100,7 @@ namespace EldenRingSurvivalMode
   ____) | |__| | | \ \  \  /   _| |_   \  / ____ \| |____  | |  | | |__| | |__| | |____ 
  |_____/ \____/|_|  \_\  \/   |_____|   \/_/    \_\______| |_|  |_|\____/|_____/|______|
 
-                                         v1.0
+                                         v1.2
                                     
                                       by Grimrukh
                        
@@ -109,7 +109,8 @@ namespace EldenRingSurvivalMode
         Keep this companion app running alongside Elden Ring to create the enhanced
         darkness at night. If you don't want darkness, you can simply play without
         running this program. If you ONLY want darkness, make sure you are using the
-        modded files from `Game (DARKNESS ONLY)` in addition to running this app.
+        modded files from the triple-DISABLED subfolder in `Game (OPTIONS)` in addition 
+        to running this app.
 ";
 
         [STAThread]

@@ -8,7 +8,7 @@ from soulstruct.game_types import *
 #   19001100
 BASE_FLAG = 19001000
 BOUGHT_BASE_FLAG = 18001000  # no vanilla flags used in here
-ALLOW_UPGRADE_BASE_FLAG = 18002000  # 377 slots in Stranded Graveyard; constantly monitored so no saving needed
+ALLOW_UPGRADE_BASE_FLAG = 11051000  # 377 slots in Stranded Graveyard; constantly monitored so no saving needed
 
 
 class SurvivalText(IntEnum):

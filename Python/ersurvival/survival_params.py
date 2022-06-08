@@ -744,12 +744,14 @@ def replace_stone_item_lots(item_lots_param: YappedParam, is_map: bool):
     if not DO_WEAPONS:
         return
 
-    leave_odds = 0.2  # proportion of item lots to leave as Smithing Stones
+    leave_odds = 0.5  # proportion of item lots to leave as Smithing Stones
     fragment_odds = 0.75  # rather than Metal Shards
 
     for row in item_lots_param.rows:
         if row.row_id in MANUAL_ITEM_LOTS:
             continue  # handled already in weapon replacement function
+        if is_map and 998600 <= row.row_id <= 998790:
+            continue  # do not touch Material Nodes
 
         for slot in range(1, 9):
             item_id = int(row[f"lotItemId{slot:02d}"])
@@ -1420,5 +1422,6 @@ def generate_all_variants():
 
 
 if __name__ == '__main__':
+    random.seed(10)
     # generate_all_params()
     generate_all_variants()

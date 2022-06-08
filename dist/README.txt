@@ -7,7 +7,7 @@
   ____) | |__| | | \ \  \  /   _| |_   \  / ____ \| |____  | |  | | |__| | |__| | |____ 
  |_____/ \____/|_|  \_\  \/   |_____|   \/_/    \_\______| |_|  |_|\____/|_____/|______|
 
-                                         v1.0
+                                         v1.2
                                     
                                      by Grimrukh
                        
@@ -19,38 +19,23 @@
    Elden Ring. Decide if you will do it using Mod Engine 2 (see below) or
    through some other means.
 
-1) Install the static modded game files from one or more `Game (X)` subdirectories
-   in the mod folder. The combination of subdirectories you install will determine
-   which features of the mod are activated, as detailed below.
+1) Install the static modded game files from `Game (SHARED)`. You can skip
+   this step if you want darkness only, as these files will not be used.
+   
+2) Navigate down the subfolders inside `Game (OPTIONS)` by choosing whether you
+   want each feature enabled or disabled. The features are:
 
-       Game (DARKNESS ONLY)
-           If you ONLY want the night darkness effects of the mod, install these
-           files only. Ignore the SHARED and OPTIONS folders entirely. You will
-           still need to run the executable while playing the game to see the
-           darkness effects (see step 2 below).
+       Survival -- hunger, thirst, temperature, and Torrent nerf.
+       Weapon Tree -- new weapon crafting/upgrading system.
+       Diseases -- random diseases with hidden cure recipes.
 
-       Game (SHARED)
-           If you want MORE than just darkness, always install these files. They
-           include icons and text used by all the features in OPTIONS.
+   Install the files you find after your 'Diseases' choice. If you
+   chose DISABLED for all three, you will only get Darkness (assuming
+   you also run the Darkness executable).
 
-       Game (OPTIONS)
-           Navigate the very high-tech subfolders inside this folder to determine
-           which set of additional mod files to install. Each feature can be
-           'ENABLED' or 'DISABLED' depending on your choice in each subfolder.
-
-           The feature sets are:
-
-               Survival -- hunger, thirst, temperature, and Torrent nerf.
-               Weapon Tree -- new weapon crafting/upgrading system.
-               Diseases -- random diseases with hidden cure recipes.
-
-           Install the files you find after your 'Diseases' choice. If you
-           forget to install any of these OPTIONS subdirectories, you will get
-           darkness only.
-
-           Note that if you want all three of these OPTIONS enabled but do NOT
-           want darkness, follow the same installation instructions, but skip
-           step 2 below (that is, just don't run the Darkness executable).
+   Note that if you want any of these options ENABLED but do NOT
+   want Darkness, follow the same installation instructions, but skip
+   step 2 below (that is, just don't run the Darkness executable).
 
    You have two methods for installing all of the above files:
     
@@ -68,15 +53,15 @@
        
             [You can find UXM on the FromSoft modding Discord server.]
 
-2) Run `SurvivalModeDarkness.exe`. This is a simple companion program that 
+3) Run `SurvivalModeDarkness.exe`. This is a simple companion program that 
    will connect to your Elden Ring game and create the darkness effects. If
    you don't want the darkness effects, you can simply skip this step. If
    you close the program accidentally, you can restart it without needing
    to restart or even quit out of your Elden Ring game. Note that darkness
-   effects will ONLY work if you run this executable AND are using one of
-   the two modded events from `Game (Full Mod)` or `Game (Darkness Only)`.
+   effects will ONLY work if you run this executable AND you have installed
+   one of the bottom subfolders in `Game (OPTIONS)` (they all have darkness).
 
-3) Run Elden Ring, either through `launchmod_eldenring.bat` if using Mod
+4) Run Elden Ring, either through `launchmod_eldenring.bat` if using Mod
    Engine 2 (which disables anticheat) or through Steam if using UXM
    (after disabling anticheat yourself).
 

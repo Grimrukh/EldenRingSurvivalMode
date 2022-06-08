@@ -25,13 +25,10 @@ from yabber import yabber
 VANILLA_PATH = Path("C:/Steam/steamapps/common/ELDEN RING (Vanilla)/Game")
 MODDING_PATH = Path("C:/Steam/steamapps/common/ELDEN RING (Modding)/Game")
 
-SURVIVAL = True
-WEAPON_TREE = True
-DISEASES = True
+DO_SURVIVAL = True
+DO_WEAPON_TREE = True
+DO_DISEASES = True
 DIST_PATH = Path("../../dist/GAME (OPTIONS)")
-DIST_PATH /= "Survival ENABLED" if SURVIVAL else "Survival DISABLED"
-DIST_PATH /= "Weapon Tree ENABLED" if WEAPON_TREE else "Weapon Tree DISABLED"
-DIST_PATH /= "Diseases ENABLED" if DISEASES else "Diseases DISABLED"
 
 
 def vanilla_common_emevd_to_evs():
@@ -58,35 +55,73 @@ def install_evs():
     """Install Survival Mode common EMEVD."""
     this_dir = Path(__file__).parent
     common = EMEVD(this_dir / "common.evs.py")
-    survival_common = EMEVD(this_dir / "survival_common.evs.py")
-    survival_common.write_numeric(this_dir / "survival_common.txt")
-    num = EMEVD(this_dir / "survival_common.txt")
-    num.write_evs(this_dir / "num.evs.py")
-    merged = common.merge(survival_common, merge_events=(0,))
+    common_shared = EMEVD(this_dir / "common_shared.evs.py")
+    common = common.merge(common_shared, merge_events=(0,))
+
+    if DO_SURVIVAL:
+        common_extra = EMEVD(this_dir / "common_survival.evs.py")
+        common = common.merge(common_extra, merge_events=(0,))
+    if DO_WEAPON_TREE:
+        common_extra = EMEVD(this_dir / "common_weapons.evs.py")
+        common = common.merge(common_extra, merge_events=(0,))
+    if DO_DISEASES:
+        common_extra = EMEVD(this_dir / "common_diseases.evs.py")
+        common = common.merge(common_extra, merge_events=(0,))
 
     # EVS for inspection
-    merged.write_evs(this_dir / "built_common.evs.py")
+    common.write_evs(this_dir / "built_common.evs.py")
 
     # Game common
-    merged.dcx_magic = None
-    merged.write(MODDING_PATH / "event/common.emevd")
+    common.dcx_magic = None
+    common.write(MODDING_PATH / "event/common.emevd")
 
     # Call Yabber to apply DCX
     write_yabber_dcx_xml()
     yabber(MODDING_PATH / "event/common.emevd", dcx_only=True)
 
     # Copy to DIST_PATH
-    shutil.copy2(MODDING_PATH / "event/common.emevd.dcx", DIST_PATH / "event/common.emevd.dcx")
+    dist_path = DIST_PATH
+    dist_path /= "Survival ENABLED" if DO_SURVIVAL else "Survival DISABLED"
+    dist_path /= "Weapon Tree ENABLED" if DO_WEAPON_TREE else "Weapon Tree DISABLED"
+    dist_path /= "Diseases ENABLED" if DO_DISEASES else "Diseases DISABLED"
+    shutil.copy2(MODDING_PATH / "event/common.emevd.dcx", dist_path / "event/common.emevd.dcx")
 
 
-def install():
+def install_all_evs_variants():
+    global DO_SURVIVAL, DO_WEAPON_TREE, DO_DISEASES, DIST_PATH
+
+    DO_SURVIVAL = True
+    DO_WEAPON_TREE = DO_DISEASES = False
     install_evs()
-    # install_regulation()  # TODO: Live-modding in the game with Yapped atm.
-    print("Elden Ring: Survival Mode installed (EMEVD, Params).")
+
+    DO_WEAPON_TREE = True
+    DO_SURVIVAL = DO_DISEASES = False
+    install_evs()
+
+    DO_DISEASES = True
+    DO_SURVIVAL = DO_WEAPON_TREE = False
+    install_evs()
+
+    DO_SURVIVAL = DO_WEAPON_TREE = True
+    DO_DISEASES = False
+    install_evs()
+
+    DO_SURVIVAL = DO_DISEASES = True
+    DO_WEAPON_TREE = False
+    install_evs()
+
+    DO_WEAPON_TREE = DO_DISEASES = True
+    DO_SURVIVAL = False
+    install_evs()
+
+    DO_SURVIVAL = DO_WEAPON_TREE = DO_DISEASES = True
+    install_evs()
 
 
 if __name__ == '__main__':
-    install_evs()
+    install_all_evs_variants()
+
+    # install_evs()
     # generate_all_params()
     # set_all_text()
     print("Full SurvivalMode Python installation complete. (Now use Yapped to convert CSVs to `regulation.bin`.")
