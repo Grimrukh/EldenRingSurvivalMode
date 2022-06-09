@@ -71,7 +71,7 @@ class Materials(IntEnum):
     SmithingStone6 = 10105
     SmithingStone7 = 10106
     SmithingStone8 = 10107
-    AncientDragonSmithingStone = 10108
+    AncientDragonSmithingStone = 10140
     SomberSmithingStone1 = 10160
     SomberSmithingStone2 = 10161
     SomberSmithingStone3 = 10162

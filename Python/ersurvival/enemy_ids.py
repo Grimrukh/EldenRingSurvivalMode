@@ -321,15 +321,15 @@ EXTRA_ENEMY_DROPS = {
         (3630, 50),  # "Oracle Envoy (Large)"
     ),
     Materials.MetalShards: (
-        (3010, 50),  # "Banished Knight"
-        (3400, 100),  # "Grave Warden Duelist"
-        (3450, 50),  # "Misbegotten"
-        (3460, 100),  # "Leonine Misbegotten"
-        (3800, 100),  # "Cleanrot Knight"
-        (3950, 50),  # "Man-Serpent"
-        (4320, 50),  # "Vulgar Militia"
-        (4321, 50),  # "Vulgar Militia"
-        (4340, 100),  # "Mad Pumpkin Head"
+        (3010, 200),  # "Banished Knight"
+        (3400, 1000),  # "Grave Warden Duelist"
+        (3450, 200),  # "Misbegotten"
+        (3460, 900),  # "Leonine Misbegotten"
+        (3800, 900),  # "Cleanrot Knight"
+        (3950, 500),  # "Man-Serpent"
+        (4320, 100),  # "Vulgar Militia"
+        (4321, 100),  # "Vulgar Militia"
+        (4340, 250),  # "Mad Pumpkin Head"
         (4350, 50),  # "Castle Knight"
         (4351, 50),  # "Godrick Knight"
         (4352, 50),  # "Cuckoo Knight"
@@ -339,9 +339,9 @@ EXTRA_ENEMY_DROPS = {
         (4356, 50),  # "Haligtree Knight"
     ),
     Materials.MetalPlate: (
-        (3910, 75),  # "Fire Prelate"
-        (4470, 75),  # "Abductor Virgin"
-        (4601, 75),  # "Armored Troll Knight"
+        (3910, 500),  # "Fire Prelate"
+        (4470, 100),  # "Abductor Virgin"
+        (4601, 100),  # "Armored Troll Knight"
         (4602, 50),  # "Troll Knight"
     ),
     Materials.PliableMetal: (
@@ -359,10 +359,10 @@ EXTRA_ENEMY_DROPS = {
         (4380, 5),  # "Starcaller"
     ),
     Materials.GlintstoneDust: (
-        (3350, 75),  # "Crystalian"
+        (3350, 100),  # "Crystalian"
     ),
     Materials.ErdtreeAmber: (
-        (2500, 50),  # "Crucible Knight"
+        (2500, 100),  # "Crucible Knight"
     ),
     Materials.DragonTeeth: (
         (3970, 25),  # "Beastman of Farum Azula"
@@ -378,5 +378,14 @@ EXTRA_ENEMY_DROPS = {
     Materials.String: (
         (3850, 50),  # "Marionette"
         (3860, 50),  # "Avionette"
+    ),
+    Materials.SacramentalBud: (
+        (3550, 500),  # Sanguine Noble
+    ),
+    Materials.ArteriaLeaf: (
+        (4201, 200),  # Chanting Winged Dame
+    ),
+    Materials.FormicRock: (
+        (4280, 100),  # Giant Ant
     ),
 }

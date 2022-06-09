@@ -482,8 +482,10 @@ def generate_dummy_weapons(
                 hammer_id = SmithsHammers.JourneymanSmithsHammer.value
             elif 12 <= tier <= 14:
                 hammer_id = SmithsHammers.ExpertSmithsHammer.value
-            elif 15 <= tier:
+            elif 15 <= tier <= 19:
                 hammer_id = SmithsHammers.MasterSmithsHammer.value
+            elif tier == 20:
+                hammer_id = -2  # cannot be upgraded
             else:
                 raise ValueError(f"Invalid tier for weapon '{row.name}': {tier}")
 
@@ -511,7 +513,9 @@ def generate_dummy_weapons(
 
         # Copy FMG names and captions (but add Hammer to both captions if required).
         names[dummy_id] = names[weapon_base_id]
-        if hammer_id > 0:
+        if hammer_id == -2:
+            new_caption = f"{captions[weapon_base_id]}\n\nCannot be upgraded further."
+        elif hammer_id > 0:
             hammer_name = NEW_SMITHS_HAMMERS[hammer_id]["name"]
             new_caption = f"{captions[weapon_base_id]}\n\n{hammer_name} is required to upgrade it."
         elif hammer_id == 0:
@@ -548,7 +552,7 @@ def generate_dummy_weapons(
         #     f"{previous_weapon_id if previous_weapon_id is not None else 0})"
         # )
         # allow_weapon_upgrade_flag = Flags.AllowWeaponUpgradeFlag + new_weapon_indices.index(row.name)
-        # if hammer_id != -1:
+        # if hammer_id >= 0:
         #     print(
         #         f"AllowWeaponUpgrade({slot}, {true_weapon_id}, {hammer_id}, {allow_weapon_upgrade_flag})"
         #     )
@@ -680,7 +684,7 @@ def generate_new_materials(goods_param: YappedParam):
         new_material["sortGroupId"] = 40
 
 
-def add_stone_recipes(mtrl_param: YappedParam, shop_recipe_param: YappedParam):
+def add_breaking_recipes(mtrl_param: YappedParam, shop_recipe_param: YappedParam):
     """Add recipes (always available) that let you 'break' [Somber] Smithing Stones into [Somber] Stone Fragments."""
     if not DO_WEAPONS:
         return
@@ -732,6 +736,38 @@ def add_stone_recipes(mtrl_param: YappedParam, shop_recipe_param: YappedParam):
         new_mtrl_row["materialId01"] = Materials.SomberSmithingStone1 + stone_level
         new_mtrl_row["itemNum01"] = 1
         new_mtrl_row["materialCate01"] = 4  # always Goods
+
+    metal_shop_row = shop_recipe_param.duplicate_row(shop_source, new_shop_offset + 30)
+    metal_shop_row.name = "Metal Shards x5"
+    metal_shop_row["equipId"] = Materials.MetalShards
+    metal_shop_row["sellQuantity"] = -1
+    metal_shop_row["value"] = 0  # no rune cost for these
+    metal_shop_row["mtrlId"] = new_mtrl_offset + 30
+    metal_shop_row["eventFlag_forRelease"] = 0  # always available
+    metal_shop_row["equipType"] = 3  # always Goods
+    metal_shop_row["setNum"] = 5
+
+    metal_mtrl_row = mtrl_param.duplicate_row(mtrl_source, new_mtrl_offset + 30)
+    metal_mtrl_row.name = "Metal Shards x5"
+    metal_mtrl_row["materialId01"] = Materials.MetalPlate
+    metal_mtrl_row["itemNum01"] = 1
+    metal_mtrl_row["materialCate01"] = 4  # always Goods
+
+    wood_shop_row = shop_recipe_param.duplicate_row(shop_source, new_shop_offset + 31)
+    wood_shop_row.name = "Soft Wood x5"
+    wood_shop_row["equipId"] = Materials.SoftWood
+    wood_shop_row["sellQuantity"] = -1
+    wood_shop_row["value"] = 0  # no rune cost for these
+    wood_shop_row["mtrlId"] = new_mtrl_offset + 31
+    wood_shop_row["eventFlag_forRelease"] = 0  # always available
+    wood_shop_row["equipType"] = 3  # always Goods
+    wood_shop_row["setNum"] = 5
+
+    wood_mtrl_row = mtrl_param.duplicate_row(mtrl_source, new_mtrl_offset + 31)
+    wood_mtrl_row.name = "Soft Wood x5"
+    wood_mtrl_row["materialId01"] = Materials.RefinedWood
+    wood_mtrl_row["itemNum01"] = 1
+    wood_mtrl_row["materialCate01"] = 4  # always Goods
 
 
 def replace_stone_item_lots(item_lots_param: YappedParam, is_map: bool):
@@ -1343,7 +1379,7 @@ def generate_all_params():
     item_lots_map.rows.remove(item_lots_map[16000690])
 
     generate_dummy_weapons(weapons, mtrl, shop_recipe, item_lots_map)
-    add_stone_recipes(mtrl, shop_recipe)
+    add_breaking_recipes(mtrl, shop_recipe)
 
     generate_new_materials(goods)
     generate_new_consumables(goods, shop_recipe, mtrl)
