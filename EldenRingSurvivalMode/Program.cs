@@ -43,7 +43,7 @@ namespace EldenRingSurvivalMode
             {
                 ["NearDepth"] = 8f,
                 //["DrawTiming"] = 2,
-                ["FixedDensity"] = 0.1f,
+                ["FixedDensity"] = 0.15f,
                 ["LocalLightScale"] = 0.02f,
                 ["AbsorptionScale_Cyan"] = 0.5f,
                 ["AbsorptionScale_Magenta"] = 0.5f,
@@ -62,7 +62,7 @@ namespace EldenRingSurvivalMode
             {
                 ["NearDepth"] = 4f,
                 //["DrawTiming"] = 2,
-                ["FixedDensity"] = 0.2f,
+                ["FixedDensity"] = 0.35f,
                 ["LocalLightScale"] = 0.02f,
                 ["AbsorptionScale_Cyan"] = 0.5f,
                 ["AbsorptionScale_Magenta"] = 0.5f,
@@ -100,7 +100,7 @@ namespace EldenRingSurvivalMode
   ____) | |__| | | \ \  \  /   _| |_   \  / ____ \| |____  | |  | | |__| | |__| | |____ 
  |_____/ \____/|_|  \_\  \/   |_____|   \/_/    \_\______| |_|  |_|\____/|_____/|______|
 
-                                         v1.2
+                                         v1.4
                                     
                                       by Grimrukh
                        
@@ -118,10 +118,10 @@ namespace EldenRingSurvivalMode
         {
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
 
-            Params.AllVariantsCSVToRegulation();
-            Console.WriteLine("Done.");
-            Console.ReadLine();
-            return;
+            //Params.AllVariantsCSVToRegulation();
+            //Console.WriteLine("Done.");
+            //Console.ReadLine();
+            //return;
 
             Console.WriteLine(TitleText);
             
@@ -132,6 +132,8 @@ namespace EldenRingSurvivalMode
             while (!Hook.Hooked)
                 Thread.Sleep(100);
             Console.WriteLine("--> Connected to ELDEN RING successfully.");
+
+            bool lastHasTorch = false;
 
             while (true)
             {
@@ -144,8 +146,8 @@ namespace EldenRingSurvivalMode
                     Console.WriteLine("--> Reconnected to ELDEN RING successfully.");
                 }
 
-                int hour = Hook.GetIngameHour();
-                DebugPrint($"Current in-game hour: {hour}");
+                var (hour, hasTorch) = Hook.GetIngameHourAndTorch();
+                DebugPrint($"Current in-game hour, torch: {hour}, {hasTorch}");
                 
                 // TODO: Check a 'Player Outside' general flag and only set darkness in that case.
                 //  I tried this and C#, for some reason, would not show the flag value changing.
@@ -156,27 +158,49 @@ namespace EldenRingSurvivalMode
                     // Do nothing. No change. (Might want to disable darkness.)
                     DebugPrint("    Time not detected. No change to darkness.");
                 }
-                else if ( 7 <= hour && hour < 19)
+                else if (7 <= hour && hour < 19)
                 {
                     SetDarknessLevel(DarknessLevel.None);
                     DebugPrint("    Darkness level: None");
                 }
                 else if (hour == 19 || hour == 6)
                 {
-                    SetDarknessLevel(DarknessLevel.Low);
+                    // Low, regardless of whether player has torch.
+                    SetDarknessLevel(DarknessLevel.Low, lerpDuration: 10f);
                     DebugPrint("    Darkness level: Low");
                 }
                 else if (hour == 20 || hour == 5)
                 {
-                    SetDarknessLevel(DarknessLevel.Medium);
-                    DebugPrint("    Darkness level: Medium");
+                    float lerpDuration = lastHasTorch != hasTorch ? 1f : 3f;
+                    if (!hasTorch)
+                    {
+                        SetDarknessLevel(DarknessLevel.Medium, lerpDuration);
+                        DebugPrint("    Darkness level: Medium (No Torch)");
+                    }
+                    else
+                    {
+                        SetDarknessLevel(DarknessLevel.Low, lerpDuration);
+                        DebugPrint("    Darkness level: Low (Torch)");
+                    }
+                    
+                        
                 }
                 else if (21 <= hour || hour < 5)
                 {
-                    SetDarknessLevel(DarknessLevel.High);
-                    DebugPrint("    Darkness level: High");
+                    float lerpDuration = lastHasTorch != hasTorch ? 1f : 3f;
+                    if (!hasTorch)
+                    {
+                        SetDarknessLevel(DarknessLevel.High, lerpDuration);
+                        DebugPrint("    Darkness level: High (No Torch)");
+                    }
+                    else
+                    {
+                        SetDarknessLevel(DarknessLevel.Medium, lerpDuration);
+                        DebugPrint("    Darkness level: Medium (Torch)");
+                    }
                 }
-                Thread.Sleep(3000);  // 3 sec
+                lastHasTorch = hasTorch;
+                Thread.Sleep(500);  // 0.5 sec
             }
         }
 
@@ -196,6 +220,8 @@ namespace EldenRingSurvivalMode
             
             Dictionary<string, byte[]> lerpedValues = new Dictionary<string, byte[]>();
 
+            DebugPrint($"Lerping FixedDensity from {startValues["FixedDensity"]} to {endValues["FixedDensity"]}");
+
             float t = 0f;
             while (t < duration)
             {
@@ -204,8 +230,12 @@ namespace EldenRingSurvivalMode
                 foreach (string name in sharedKeys)
                 {
                     float lerpedValue = Lerp(startValues[name], endValues[name], w);
+                    if (name == "FixedDensity")
+                        DebugPrint($"Lerped FixedDensity: {lerpedValue}");
                     lerpedValues[name] = BitConverter.GetBytes(lerpedValue);
                 }
+
+                
 
                 Hook.SetFogValues(lerpedValues);
                 WaitOneFrame(ref t);
@@ -274,9 +304,8 @@ namespace EldenRingSurvivalMode
             }
 
             // Lerp from current darkness to target darkness (no vanilla involvement).
-            CurrentDarknessLevel = level;  // do not repeat transition
-            
             startValues = DarknessPresets[CurrentDarknessLevel];
+            CurrentDarknessLevel = level;  // do not repeat transition
             LerpDarkness(startValues, targetValues, lerpDuration);
             // Leave injection enabled with final darkness value.
         }

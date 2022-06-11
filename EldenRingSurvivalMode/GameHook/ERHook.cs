@@ -137,18 +137,22 @@ namespace EldenRingSurvivalMode.GameHook
 
         public bool Focused => Hooked && User32.GetForegroundProcessID() == Process.Id;
 
-        public int GetIngameHour()
+        public (int hour, bool hasTorch) GetIngameHourAndTorch()
         {
             // Read hard-coded event flags to determine which hour the game is currently in, from 0 (midnight) to 23.
             // Returns -1 if no hour flag is active (e.g., game is not loaded) or an error occurs.
 
             long offset = StonePlatformEventFlags.Resolve().ToInt64();
 
+            // HACK: Currently checks flag 1584 for Torch special effect.
+            int playerHasTorch = StonePlatformEventFlags.ReadByte(StonePlatformEventOffset + (1584 / 8)) & 0b10000000;
+            // Console.WriteLine($"Has Torch: {playerHasTorch}");
+            
             // HACK: Currently checks flag 1592 and returns 12 (noon) if enabled, so as to disable darkness.
-            //byte playerIsOutdoors = StonePlatformEventFlags.ReadByte(StonePlatformEventOffset + (1592 / 8));
-            //Console.WriteLine($"Outdoors: {playerIsOutdoors}");
-            //if (playerIsOutdoors == 0)
-            //    return 12;  // MIDDAY
+            int playerIsOutdoors = StonePlatformEventFlags.ReadByte(StonePlatformEventOffset + (1592 / 8)) & 0b10000000;
+            // Console.WriteLine($"Outdoors: {playerIsOutdoors}");
+            if (playerIsOutdoors == 0)
+                return (12, playerHasTorch != 0);  // MIDDAY
 
             int hourFlagOffset = StonePlatformEventOffset + (1600 / 8);  // Hour0 = 19001600
             byte[] hourFlagBytes = StonePlatformEventFlags.ReadBytes(hourFlagOffset, 3);  // 24 flags
@@ -160,9 +164,9 @@ namespace EldenRingSurvivalMode.GameHook
             if (hourFlags.Count(x => x == '1') > 1)
             {
                 Console.WriteLine("ERROR: Time of day is ambiguous (multiple hour flags enabled).");
-                return -1;
+                return (-1, false);
             }
-            return hourFlags.IndexOf('1');
+            return (hourFlags.IndexOf('1'), playerHasTorch != 0);
         }
 
         public void EnableEldenRingFog()

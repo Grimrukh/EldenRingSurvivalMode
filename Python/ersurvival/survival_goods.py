@@ -1369,7 +1369,7 @@ DISEASE_INDICATORS = {
         "name": "Disease: Scarlet Parasite",
         "info": "Disease contracted in the wastes of Caelid",
         "caption": "Malicious red parasite borne of blood and war.\n"
-                   "Halves the effectiveness of Crimson Tears.\n"
+                   "Reduces the effectiveness of Crimson Tears.\n"
                    "\n"
                    "These vermin line the throat and subsist on stolen restorative tears. Though they have the same "
                    "hue as scarlet rot, any relation between the two is unclear, aside from their shared breeding of "
@@ -2333,10 +2333,10 @@ NEW_RECIPE_BOOKS = {
 MERCHANT_PRICES = {
     Materials.SoftWood: 400,
     Materials.RefinedWood: 2500,
-    Materials.StoneFragment: 1000,  # not actually sold
-    Materials.SomberStoneFragment: 3000,  # not actually sold
-    Materials.MetalShards: 1200,
-    Materials.MetalPlate: 4000,
+    Materials.StoneFragment: 500,  # not actually sold
+    Materials.SomberStoneFragment: 1000,  # not actually sold
+    Materials.MetalShards: 500,
+    Materials.MetalPlate: 3000,
     Materials.PliableMetal: 8000,
     Materials.DragonTeeth: 9000,
     Materials.GruesomeBone: 7000,
@@ -2345,8 +2345,8 @@ MERCHANT_PRICES = {
     Materials.MeteoriteChunk: 12000,
     Materials.BlackMark: 20000,
     Materials.ErdtreeWood: 10000,
-    Materials.StaffPole: 5000,
-    Materials.ShieldGrip: 3000,
+    Materials.StaffPole: 3000,
+    Materials.ShieldGrip: 1000,
 }
 
 

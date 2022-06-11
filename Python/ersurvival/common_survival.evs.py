@@ -12,26 +12,13 @@ from .survival_goods import *
 def Constructor():
     """Will be merged with vanilla Common."""
 
-    # region TODO: Debugging. Remove for release.
-    # DisableFlagRange((18001000, 18001999))
-    # AwardItemLot(600)
-    # AwardItemLot(610)
-    # AwardItemLot(700)
-    # AwardItemLot(40240000)  # Torch
-    # AwardItemLot(300)  # Torch
-    # AddSpecialEffect(PLAYER, 3999 9)  # SUPER DEFENSE
-    # DEBUG_ResetDiseases()
-    # DEBUG_GetAllMaps()
-    # DEBUG_GetDectusMedallions()
-    # DEBUG_AlternateFlag()
-    # endregion
-
     # region SURVIVAL
     # region Hunger/Thirst
     GrowingHunger()
     GrowingThirst()
     SaveHungerAfterDeath()
     SaveThirstAfterDeath()
+    HungerThirstAfterPassTime()
 
     RelieveHunger_1()
     RelieveHunger_2()
@@ -243,6 +230,139 @@ def GrowingThirst():
     # Player goes from ZERO thirst to level 1.
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst1)
     Restart()
+
+
+@NeverRestart(Flags.HungerThirstAfterPassTime)
+def HungerThirstAfterPassTime():
+    """Jump in hunger and thirst after player passes time."""
+
+    IfFlagOn(0, Flags.PlayerPassedTime)
+
+    DisableFlag(Flags.PlayerPassedTime)
+
+    DisableFlagRange((Flags.HungerTick1, Flags.HungerTick5))
+    DisableFlagRange((Flags.ThirstTick1, Flags.ThirstTick5))
+
+    # INCREMENT HUNGER BY 5 (MAX)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger1)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger1)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
+    SkipLines(53)
+
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger2)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger2)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
+    SkipLines(49)
+
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger3)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger3)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
+    SkipLines(45)
+
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger4)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger4)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
+    SkipLines(41)
+
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger5)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger5)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
+    SkipLines(37)
+
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger6)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
+    SkipLines(33)
+
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger7)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
+    SkipLines(29)
+
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger8)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
+    SkipLines(25)
+
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger9)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
+    SkipLines(21)
+
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger10)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
+    SkipLines(17)
+
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger11)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
+    SkipLines(13)
+
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger12)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
+    SkipLines(9)
+
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger13)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
+    SkipLines(5)
+
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger14)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
+    SkipLines(1)
+
+    # Player goes from ZERO hunger to level 5.
+    AddSpecialEffect(PLAYER, SurvivalEffects.Hunger5)
+
+    # INCREMENT THIRST BY 2
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst1)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst1)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
+    End()
+
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst2)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst2)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
+    End()
+
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst3)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
+    End()
+
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst4)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
+    End()
+
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst5)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
+    End()
+
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst6)
+    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
+    End()
+
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(4, SurvivalEffects.Thirst7)  # 4 lines
+    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Thirst9)
+    DisplayStatus(SurvivalText.Dehydration)  # Dehydration warning (for health depletion)
+    End()
+
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(4, SurvivalEffects.Thirst8)  # 4 lines
+    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Thirst9)
+    DisplayStatus(SurvivalText.Dehydration)  # Dehydration warning (for health depletion)
+    End()
+
+    # Player goes from ZERO thirst to level 2.
+    AddSpecialEffect(PLAYER, SurvivalEffects.Thirst2)
+    End()
 
 
 @NeverRestart(Flags.SaveHungerAfterDeath)
@@ -1523,11 +1643,11 @@ def CheckMildHeatArea():
     # MAIN
     IfConditionTrue(0, 3)
 
-    EnableFlag(Flags.ShowMildHeatWarning)
     AddSpecialEffect(PLAYER, SurvivalEffects.Heat_Mild)
+    EnableFlag(Flags.ShowMildHeatWarning)
     Wait(3.0)
     DisableFlag(Flags.ShowMildHeatWarning)
-    return RESTART
+    Restart()
 
 
 @NeverRestart(Flags.CheckModerateHeatArea)
@@ -1555,15 +1675,18 @@ def CheckModerateHeatArea():
     # MAIN
     IfConditionTrue(0, 3)
 
-    EnableFlag(Flags.ShowModerateHeatWarning)
-
-    SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.HeatProtection_Mild)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(5, SurvivalEffects.HeatProtection_Mild)
     AddSpecialEffect(PLAYER, SurvivalEffects.Heat_Mild)
-    SkipLines(1)
+    EnableFlag(Flags.ShowMildHeatWarning)
+    Wait(3.0)
+    DisableFlag(Flags.ShowMildHeatWarning)
+    Restart()
+
     AddSpecialEffect(PLAYER, SurvivalEffects.Heat_Moderate)
+    EnableFlag(Flags.ShowModerateHeatWarning)
     Wait(3.0)
     DisableFlag(Flags.ShowModerateHeatWarning)
-    return RESTART
+    Restart()
 
 
 @NeverRestart(Flags.CheckSevereHeatArea)
@@ -1589,19 +1712,25 @@ def CheckSevereHeatArea():
     # MAIN
     IfConditionTrue(0, 3)
 
-    EnableFlag(Flags.ShowSevereHeatWarning)
-
-    SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.HeatProtection_Moderate)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(5, SurvivalEffects.HeatProtection_Moderate)
     AddSpecialEffect(PLAYER, SurvivalEffects.Heat_Mild)
-    SkipLines(4)
-    SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.HeatProtection_Mild)
-    AddSpecialEffect(PLAYER, SurvivalEffects.Heat_Moderate)
-    SkipLines(1)
-    AddSpecialEffect(PLAYER, SurvivalEffects.Heat_Severe)
+    EnableFlag(Flags.ShowMildHeatWarning)
+    Wait(3.0)
+    DisableFlag(Flags.ShowMildHeatWarning)
+    Restart()
 
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(5, SurvivalEffects.HeatProtection_Mild)
+    AddSpecialEffect(PLAYER, SurvivalEffects.Heat_Moderate)
+    EnableFlag(Flags.ShowModerateHeatWarning)
+    Wait(3.0)
+    DisableFlag(Flags.ShowModerateHeatWarning)
+    Restart()
+
+    AddSpecialEffect(PLAYER, SurvivalEffects.Heat_Severe)
+    EnableFlag(Flags.ShowSevereHeatWarning)
     Wait(3.0)
     DisableFlag(Flags.ShowSevereHeatWarning)
-    return RESTART
+    Restart()
 
 
 @NeverRestart(Flags.CheckMildColdArea)
@@ -1635,12 +1764,11 @@ def CheckMildColdArea():
     # MAIN
     IfConditionTrue(0, 3)
 
-    EnableFlag(Flags.ShowMildColdWarning)
-
     AddSpecialEffect(PLAYER, SurvivalEffects.Cold_Mild)
+    EnableFlag(Flags.ShowMildColdWarning)
     Wait(3.0)
     DisableFlag(Flags.ShowMildColdWarning)
-    return RESTART
+    Restart()
 
 
 @NeverRestart(Flags.CheckModerateColdArea)
@@ -1668,15 +1796,18 @@ def CheckModerateColdArea():
     # MAIN
     IfConditionTrue(0, 3)
 
-    EnableFlag(Flags.ShowModerateColdWarning)
-
-    SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.ColdProtection_Mild)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(5, SurvivalEffects.ColdProtection_Mild)
     AddSpecialEffect(PLAYER, SurvivalEffects.Cold_Mild)
-    SkipLines(1)
+    EnableFlag(Flags.ShowMildColdWarning)
+    Wait(3.0)
+    DisableFlag(Flags.ShowMildColdWarning)
+    Restart()
+
     AddSpecialEffect(PLAYER, SurvivalEffects.Cold_Moderate)
+    EnableFlag(Flags.ShowModerateColdWarning)
     Wait(3.0)
     DisableFlag(Flags.ShowModerateColdWarning)
-    return RESTART
+    Restart()
 
 
 @NeverRestart(Flags.CheckSevereColdArea)
@@ -1701,18 +1832,25 @@ def CheckSevereColdArea():
     # MAIN
     IfConditionTrue(0, 3)
 
-    EnableFlag(Flags.ShowSevereColdWarning)
-
-    SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.ColdProtection_Moderate)
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(5, SurvivalEffects.ColdProtection_Moderate)
     AddSpecialEffect(PLAYER, SurvivalEffects.Cold_Mild)
-    SkipLines(4)
-    SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.ColdProtection_Mild)
+    EnableFlag(Flags.ShowMildColdWarning)
+    Wait(3.0)
+    DisableFlag(Flags.ShowMildColdWarning)
+    Restart()
+
+    SkipLinesIfPlayerDoesNotHaveSpecialEffect(5, SurvivalEffects.ColdProtection_Mild)
     AddSpecialEffect(PLAYER, SurvivalEffects.Cold_Moderate)
-    SkipLines(1)
+    EnableFlag(Flags.ShowModerateColdWarning)
+    Wait(3.0)
+    DisableFlag(Flags.ShowModerateColdWarning)
+    Restart()
+
     AddSpecialEffect(PLAYER, SurvivalEffects.Cold_Severe)
+    EnableFlag(Flags.ShowSevereColdWarning)
     Wait(3.0)
     DisableFlag(Flags.ShowSevereColdWarning)
-    return RESTART
+    Restart()
 
 
 @NeverRestart(Flags.MildHeatWarning)
@@ -1721,7 +1859,7 @@ def MildHeatWarning():
     IfFlagOn(0, Flags.ShowMildHeatWarning)
     DisplayStatus(SurvivalText.MildHeatWarning)
     DisableFlag(Flags.ShowMildHeatWarning)
-    Wait(115.0)
+    Wait(295.0)
     return RESTART
 
 
@@ -1731,7 +1869,7 @@ def ModerateHeatWarning():
     IfFlagOn(0, Flags.ShowModerateHeatWarning)
     DisplayStatus(SurvivalText.ModerateHeatWarning)
     DisableFlag(Flags.ShowModerateHeatWarning)
-    Wait(115.0)
+    Wait(295.0)
     return RESTART
 
 
@@ -1741,7 +1879,7 @@ def SevereHeatWarning():
     IfFlagOn(0, Flags.ShowSevereHeatWarning)
     DisplayStatus(SurvivalText.SevereHeatWarning)
     DisableFlag(Flags.ShowSevereHeatWarning)
-    Wait(115.0)
+    Wait(295.0)
     return RESTART
 
 
@@ -1751,7 +1889,7 @@ def MildColdWarning():
     IfFlagOn(0, Flags.ShowMildColdWarning)
     DisplayStatus(SurvivalText.MildColdWarning)
     DisableFlag(Flags.ShowMildColdWarning)
-    Wait(115.0)
+    Wait(295.0)
     return RESTART
 
 
@@ -1761,7 +1899,7 @@ def ModerateColdWarning():
     IfFlagOn(0, Flags.ShowModerateColdWarning)
     DisplayStatus(SurvivalText.ModerateColdWarning)
     DisableFlag(Flags.ShowModerateColdWarning)
-    Wait(115.0)
+    Wait(295.0)
     return RESTART
 
 
@@ -1771,5 +1909,5 @@ def SevereColdWarning():
     IfFlagOn(0, Flags.ShowSevereColdWarning)
     DisplayStatus(SurvivalText.SevereColdWarning)
     DisableFlag(Flags.ShowSevereColdWarning)
-    Wait(115.0)
+    Wait(295.0)
     return RESTART

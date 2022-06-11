@@ -50,6 +50,8 @@ class Flags(Flag):
     """NEW flags and events used by Survival Mode."""
     GrowingHunger = BASE_FLAG + 0
     GrowingThirst = BASE_FLAG + 1
+    PlayerPassedTime = BASE_FLAG + 2  # NOTE: Hard-coded in Grace ESD.
+    HungerThirstAfterPassTime = BASE_FLAG + 3  # event
 
     HungerTick1 = BASE_FLAG + 10
     HungerTick2 = BASE_FLAG + 11
@@ -266,7 +268,6 @@ class Flags(Flag):
 
     # TIME FLAG. Increments by 1 every 30 in-game minutes.
     MonitorOutdoors = BASE_FLAG + 398  # uses a flag closer to time values
-    PlayerIsOutdoors = BASE_FLAG + 399  # used to tell C# when to add darkness
 
     # Monitor Smith's Hammer possession for recipe appearance.
     ShowSmithsHammerRecipe = BASE_FLAG + 450  # five slots
@@ -308,8 +309,12 @@ class Flags(Flag):
     CureDisease = BASE_FLAG + 500  # 21 slots
 
     # Time flags (one per hour, starting at midnight).
-    MonitorHour = BASE_FLAG + 570  # 24 slots
-    # NOTE: Do not use any flags between 593 and 599 (so the byte is zero IFF 592 is zero).
+    MonitorHour = BASE_FLAG + 550  # 24 slots
+    MonitorPlayerTorch = BASE_FLAG + 583
+    PlayerHasTorch = BASE_FLAG + 584
+    # NOTE: Do not use any flags between 584 and 591 (so the entire byte is zero IFF 584 is zero).
+    PlayerIsOutdoors = BASE_FLAG + 592  # used to tell C# when to add darkness
+    # NOTE: Do not use any flags between 593 and 599 (so the entire byte is zero IFF 592 is zero).
     Hour0 = BASE_FLAG + 600
     Hour1 = BASE_FLAG + 601
     Hour2 = BASE_FLAG + 602

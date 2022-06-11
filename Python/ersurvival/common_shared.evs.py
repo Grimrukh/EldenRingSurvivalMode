@@ -27,7 +27,7 @@ def Constructor():
     # endregion
 
     # DARKNESS
-    # region Time of Day Monitor
+    # region Time of Day / Torch Monitors
     MonitorHour(0, 0, Flags.Hour0)
     MonitorHour(1, 1, Flags.Hour1)
     MonitorHour(2, 2, Flags.Hour2)
@@ -52,6 +52,7 @@ def Constructor():
     MonitorHour(21, 21, Flags.Hour21)
     MonitorHour(22, 22, Flags.Hour22)
     MonitorHour(23, 23, Flags.Hour23)
+    MonitorPlayerTorch()
     # endregion
 
     # SHARED
@@ -613,6 +614,16 @@ def MonitorHour(_, hour: uchar, hour_flag: int):
     IfTimeOfDay(1, (hour, 0, 0), (hour, 59, 59))
     IfConditionFalse(0, 1)
     Wait(1.0)
+    return RESTART
+
+
+@NeverRestart(Flags.MonitorPlayerTorch)
+def MonitorPlayerTorch():
+    """Simply monitors Torch SpEffect 415."""
+    DisableFlag(Flags.PlayerHasTorch)
+    IfPlayerHasSpecialEffect(0, 415)
+    EnableFlag(Flags.PlayerHasTorch)
+    IfPlayerDoesNotHaveSpecialEffect(0, 415)
     return RESTART
 
 

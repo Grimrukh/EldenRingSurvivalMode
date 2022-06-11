@@ -206,6 +206,8 @@ MANUAL_ITEM_LOTS = {
     10060: ("[Ashen Leyndell - Gideon] Glintstone Dust", Materials.GlintstoneDust, 3),
     10071: ("[Ashen Leyndell - Hoarah Loux] Erdtree Amber", Materials.ErdtreeAmber, 2),
     10081: ("[Lake of Rot - Astel] Meteorite Chunk", Materials.MeteoriteChunk, 3),
+    10091: ("[Ainsel - Dragonkin Soldier] Metal Plate", Materials.MetalPlate, 2),
+    10092: ("[Ainsel - Dragonkin Soldier] Dragon Teeth", Materials.DragonTeeth, 2),
     10100: ("[Siofra - Valiant Gargoyle] Metal Plate", Materials.MetalPlate, 2),
     10101: ("[Siofra - Valiant Gargoyle] Gruesome Bone", Materials.GruesomeBone, 2),
     10111: ("[Deeproot Depths - Fortissax] Dragon Teeth", Materials.DragonTeeth, 3),
@@ -213,7 +215,7 @@ MANUAL_ITEM_LOTS = {
     10142: ("[Farum Azula - Godskin Duo]", Materials.BlackMark, 1),
     10151: ("[Farum Azula - Dragonlord Placidusax] Dragon Teeth", Materials.DragonTeeth, 4),
     10161: ("[Farum Azula - Maliketh] Black Mark", Materials.BlackMark, 3),
-    10171: ("[Raya Lucaria - Red Wolf of Radagon]", Materials.GlintstoneDust, 2),
+    10171: ("[Raya Lucaria - Red Wolf of Radagon] Glintstone Dust", Materials.GlintstoneDust, 2),
     10182: ("[Raya Lucaria - Rennala] Glintstone Dust", Materials.GlintstoneDust, 5),
     10191: ("[Haligtree - Loretta] Erdtree Amber", Materials.ErdtreeAmber, 1),
     10202: ("[Haligtree - Malenia] Pliable Metal", Materials.PliableMetal, 5),
@@ -342,6 +344,7 @@ MANUAL_ITEM_LOTS = {
 
     # NPC gifts
     100360: ("[White-Faced Varre - Invasion] Metal Shards", Materials.MetalShards, 10),
+    100611: ("[Edgar] Metal Plate", Materials.MetalPlate, 1),
     100770: ("[Tanith] Gruesome Bone", Materials.GruesomeBone, 3),
     101580: ("[Blaidd is the Half-Wolf] Metal Plate", Materials.MetalPlate, 3),
     101630: ("[Bloody Finger Hunter Yura] Metal Plate", Materials.MetalPlate, 1),
@@ -561,7 +564,7 @@ def generate_dummy_weapons(
         # Create ingredients entry.
         new_mtrl_row = equip_mtrl_set_param.duplicate_row(mtrl_source, mtrl_id)
         new_mtrl_row.name = row.name
-        ingredients = [ing for ing in WEAPON_RECIPES[row.name]["recipe"] if ing[1] < 21100]  # ignore grips
+        ingredients = WEAPON_RECIPES[row.name]["recipe"]
         if not ingredients:
             # print(f"No recipe ingredients for weapon {row.name}. Skipping for now.")
             pass
