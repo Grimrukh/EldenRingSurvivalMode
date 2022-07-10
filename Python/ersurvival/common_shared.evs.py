@@ -4,6 +4,7 @@ Kept separate to `common.evs.py` because I will probably regenerate the vanilla 
 my understanding of ER EMEVD instructions becomes better.
 """
 from soulstruct.eldenring.events import *
+from soulstruct.eldenring.events.instructions import *
 from .survival_enums import *
 from .survival_goods import *
 
@@ -68,24 +69,8 @@ def Constructor():
     MonitorOutdoors()
     # endregion
 
-    # region Lobos Sync (TODO: Remove after first Lobos playthrough done)
-    # Checks for OLD 'bought' flags enabled by Lobos and enables new ones.
-    # Harmless to everyone else, as the old flag range (300-351) has not been reused.
-    SkipLinesIfFlagOff(1, 19001300)
-    EnableFlag(Flags.Recipe_LimgraveDiseaseCure_Bought)
-    SkipLinesIfFlagOff(1, 19001302)
-    EnableFlag(Flags.Recipe_CaelidDiseaseCure_Bought)
-    SkipLinesIfFlagOff(1, 19001319)
-    EnableFlag(Flags.Recipe_CaveDiseaseCure_Bought)
-    SkipLinesIfFlagOff(1, 19001340)
-    EnableFlag(Flags.Recipes_CommonSurvival_Bought)
-    SkipLinesIfFlagOff(1, 19001341)
-    EnableFlag(Flags.Recipes_UncommonSurvival_Bought)
-    SkipLinesIfFlagOff(1, 19001350)
-    EnableFlag(Flags.Recipes_WoodenSmallShields_Bought)
-    SkipLinesIfFlagOff(1, 19001351)
-    EnableFlag(Flags.Recipes_MetalSmallShields_Bought)
-    # endregion
+    # DEBUG_Hour18()
+    # DEBUG_AlternateFlag()
 
 
 # --- MAP CHECKS ---
@@ -110,8 +95,8 @@ def MonitorInLimgrave():
     # (46, 39) overlaps with Caelid too much.
 
     IfConditionTrue(1, -1)
-    IfFlagOff(1, Flags.PlayerInLegacyDungeon)
-    IfFlagOff(1, Flags.PlayerInGenericDungeon)
+    IfFlagDisabled(1, Flags.PlayerInLegacyDungeon)
+    IfFlagDisabled(1, Flags.PlayerInGenericDungeon)
 
     IfConditionTrue(0, 1)
 
@@ -132,8 +117,8 @@ def MonitorInLimgrave():
     # (46, 39) overlaps with Caelid too much.
 
     IfConditionTrue(2, -2)
-    IfFlagOff(2, Flags.PlayerInLegacyDungeon)
-    IfFlagOff(2, Flags.PlayerInGenericDungeon)
+    IfFlagDisabled(2, Flags.PlayerInLegacyDungeon)
+    IfFlagDisabled(2, Flags.PlayerInGenericDungeon)
 
     IfConditionFalse(0, 2)
 
@@ -161,8 +146,8 @@ def MonitorInLiurnia():
         IfInsideMap(-1, (60, 39, c, 0))
 
     IfConditionTrue(1, -1)
-    IfFlagOff(1, Flags.PlayerInLegacyDungeon)
-    IfFlagOff(1, Flags.PlayerInGenericDungeon)
+    IfFlagDisabled(1, Flags.PlayerInLegacyDungeon)
+    IfFlagDisabled(1, Flags.PlayerInGenericDungeon)
 
     IfConditionTrue(0, 1)
 
@@ -185,8 +170,8 @@ def MonitorInLiurnia():
         IfInsideMap(-2, (60, 39, c, 0))
 
     IfConditionTrue(2, -2)
-    IfFlagOff(2, Flags.PlayerInLegacyDungeon)
-    IfFlagOff(2, Flags.PlayerInGenericDungeon)
+    IfFlagDisabled(2, Flags.PlayerInLegacyDungeon)
+    IfFlagDisabled(2, Flags.PlayerInGenericDungeon)
 
     IfConditionFalse(0, 2)
 
@@ -222,8 +207,8 @@ def MonitorInCaelid():
     # (51, 39) contains too much of the Wailing Dunes.
 
     IfConditionTrue(1, -1)
-    IfFlagOff(1, Flags.PlayerInLegacyDungeon)
-    IfFlagOff(1, Flags.PlayerInGenericDungeon)
+    IfFlagDisabled(1, Flags.PlayerInLegacyDungeon)
+    IfFlagDisabled(1, Flags.PlayerInGenericDungeon)
 
     IfConditionTrue(0, 1)
 
@@ -254,8 +239,8 @@ def MonitorInCaelid():
     # (51, 39) contains too much of the Wailing Dunes.
 
     IfConditionTrue(2, -2)
-    IfFlagOff(2, Flags.PlayerInLegacyDungeon)
-    IfFlagOff(2, Flags.PlayerInGenericDungeon)
+    IfFlagDisabled(2, Flags.PlayerInLegacyDungeon)
+    IfFlagDisabled(2, Flags.PlayerInGenericDungeon)
 
     IfConditionFalse(0, 2)
 
@@ -279,8 +264,8 @@ def MonitorInAltus():
     IfInsideMapTile(-1, (60, 45, 53, 0))
 
     IfConditionTrue(1, -1)
-    IfFlagOff(1, Flags.PlayerInLegacyDungeon)
-    IfFlagOff(1, Flags.PlayerInGenericDungeon)
+    IfFlagDisabled(1, Flags.PlayerInLegacyDungeon)
+    IfFlagDisabled(1, Flags.PlayerInGenericDungeon)
 
     IfConditionTrue(0, 1)
 
@@ -298,8 +283,8 @@ def MonitorInAltus():
     IfInsideMapTile(-2, (60, 45, 53, 0))
 
     IfConditionTrue(2, -2)
-    IfFlagOff(2, Flags.PlayerInLegacyDungeon)
-    IfFlagOff(2, Flags.PlayerInGenericDungeon)
+    IfFlagDisabled(2, Flags.PlayerInLegacyDungeon)
+    IfFlagDisabled(2, Flags.PlayerInGenericDungeon)
 
     IfConditionFalse(0, 2)
 
@@ -321,8 +306,8 @@ def MonitorInMtGelmir():
     IfInsideMapTile(-1, (60, 38, 54, 0))
 
     IfConditionTrue(1, -1)
-    IfFlagOff(1, Flags.PlayerInLegacyDungeon)
-    IfFlagOff(1, Flags.PlayerInGenericDungeon)
+    IfFlagDisabled(1, Flags.PlayerInLegacyDungeon)
+    IfFlagDisabled(1, Flags.PlayerInGenericDungeon)
 
     IfConditionTrue(0, 1)
 
@@ -338,8 +323,8 @@ def MonitorInMtGelmir():
     IfInsideMapTile(-2, (60, 38, 54, 0))
 
     IfConditionTrue(2, -2)
-    IfFlagOff(2, Flags.PlayerInLegacyDungeon)
-    IfFlagOff(2, Flags.PlayerInGenericDungeon)
+    IfFlagDisabled(2, Flags.PlayerInLegacyDungeon)
+    IfFlagDisabled(2, Flags.PlayerInGenericDungeon)
 
     IfConditionFalse(0, -2)
 
@@ -359,8 +344,8 @@ def MonitorInMountaintops():
     IfInsideMap(-1, (60, 53, 52, 0))
 
     IfConditionTrue(1, -1)
-    IfFlagOff(1, Flags.PlayerInLegacyDungeon)
-    IfFlagOff(1, Flags.PlayerInGenericDungeon)
+    IfFlagDisabled(1, Flags.PlayerInLegacyDungeon)
+    IfFlagDisabled(1, Flags.PlayerInGenericDungeon)
 
     IfConditionTrue(0, 1)
 
@@ -375,8 +360,8 @@ def MonitorInMountaintops():
     IfInsideMap(-2, (60, 53, 52, 0))
 
     IfConditionTrue(2, -2)
-    IfFlagOff(2, Flags.PlayerInLegacyDungeon)
-    IfFlagOff(2, Flags.PlayerInGenericDungeon)
+    IfFlagDisabled(2, Flags.PlayerInLegacyDungeon)
+    IfFlagDisabled(2, Flags.PlayerInGenericDungeon)
 
     IfConditionFalse(0, 2)
 
@@ -563,12 +548,12 @@ def MonitorOutdoors():
     """Enables a flag when player is outdoors, for darkness."""
     DisableFlag(Flags.PlayerIsOutdoors)
 
-    IfFlagOn(-1, Flags.PlayerInLimgrave)
-    IfFlagOn(-1, Flags.PlayerInLiurnia)
-    IfFlagOn(-1, Flags.PlayerInCaelid)
-    IfFlagOn(-1, Flags.PlayerInAltus)
-    IfFlagOn(-1, Flags.PlayerInMtGelmir)
-    IfFlagOn(-1, Flags.PlayerInMountaintops)
+    IfFlagEnabled(-1, Flags.PlayerInLimgrave)
+    IfFlagEnabled(-1, Flags.PlayerInLiurnia)
+    IfFlagEnabled(-1, Flags.PlayerInCaelid)
+    IfFlagEnabled(-1, Flags.PlayerInAltus)
+    IfFlagEnabled(-1, Flags.PlayerInMtGelmir)
+    IfFlagEnabled(-1, Flags.PlayerInMountaintops)
     IfInsideMap(-1, STORMVEIL_CASTLE)
     IfInsideMap(-1, RAYA_LUCARIA)
     IfInsideMap(-1, VOLCANO_MANOR)
@@ -582,12 +567,12 @@ def MonitorOutdoors():
 
     EnableFlag(Flags.PlayerIsOutdoors)
 
-    IfFlagOn(-2, Flags.PlayerInLimgrave)
-    IfFlagOn(-2, Flags.PlayerInLiurnia)
-    IfFlagOn(-2, Flags.PlayerInCaelid)
-    IfFlagOn(-2, Flags.PlayerInAltus)
-    IfFlagOn(-2, Flags.PlayerInMtGelmir)
-    IfFlagOn(-2, Flags.PlayerInMountaintops)
+    IfFlagEnabled(-2, Flags.PlayerInLimgrave)
+    IfFlagEnabled(-2, Flags.PlayerInLiurnia)
+    IfFlagEnabled(-2, Flags.PlayerInCaelid)
+    IfFlagEnabled(-2, Flags.PlayerInAltus)
+    IfFlagEnabled(-2, Flags.PlayerInMtGelmir)
+    IfFlagEnabled(-2, Flags.PlayerInMountaintops)
     IfInsideMap(-2, STORMVEIL_CASTLE)
     IfInsideMap(-2, RAYA_LUCARIA)
     IfInsideMap(-2, VOLCANO_MANOR)
@@ -732,4 +717,12 @@ def DEBUG_AlternateFlag():
     EnableFlag(19000006)
     DisableFlag(19000007)
     Wait(10.0)
+    return RESTART
+
+
+@NeverRestart(15003995)
+def DEBUG_Hour18():
+    Await(FlagEnabled(Flags.Hour20))
+    DisplayBanner(BannerType.BloodyFingerVanquished)
+    Wait(5.0)
     return RESTART

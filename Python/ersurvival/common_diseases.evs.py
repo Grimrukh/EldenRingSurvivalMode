@@ -4,6 +4,7 @@ Kept separate to `common.evs.py` because I will probably regenerate the vanilla 
 my understanding of ER EMEVD instructions becomes better.
 """
 from soulstruct.eldenring.events import *
+from soulstruct.eldenring.events.instructions import *
 from .survival_enums import *
 from .survival_goods import *
 
@@ -316,20 +317,20 @@ def GetDiseaseOverworld(
     AddSpecialEffect(PLAYER, disease_effect)
     End()
 
-    EndIfFlagOn(had_twice_flag)
+    EndIfFlagEnabled(had_twice_flag)
 
     # Avoid triggering multiple times when raw meat is eaten.
     IfPlayerDoesNotHaveSpecialEffect(6, SurvivalEffects.RawSteak)
     IfPlayerDoesNotHaveSpecialEffect(6, SurvivalEffects.RawLiverSteak)
     IfConditionTrue(0, 6)
 
-    IfFlagOn(1, location_flag)
+    IfFlagEnabled(1, location_flag)
     IfPlayerHasSpecialEffect(-3, SurvivalEffects.RawSteak)
     IfPlayerHasSpecialEffect(-3, SurvivalEffects.RawLiverSteak)
     IfAttackedWithDamageType(-3, PLAYER, -1, DamageType.Unspecified)
     IfConditionTrue(1, -3)
     IfPlayerDoesNotHaveSpecialEffect(1, disease_effect)
-    IfFlagOff(1, Flags.DiseaseRollLock)
+    IfFlagDisabled(1, Flags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
 
@@ -337,9 +338,9 @@ def GetDiseaseOverworld(
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
     EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
-    IfFlagOn(-2, Flags.DiseaseRollFirst)
-    IfFlagOff(2, had_once_flag)
-    IfFlagOn(2, Flags.DiseaseRollSecond)
+    IfFlagEnabled(-2, Flags.DiseaseRollFirst)
+    IfFlagDisabled(2, had_once_flag)
+    IfFlagEnabled(2, Flags.DiseaseRollSecond)
     IfConditionTrue(-2, 2)
 
     SkipLinesIfConditionTrue(2, -2)
@@ -351,7 +352,7 @@ def GetDiseaseOverworld(
     AwardItemLot(item_lot)  # disease indicator
     AddSpecialEffect(PLAYER, disease_effect)
 
-    SkipLinesIfFlagOn(2, had_once_flag)
+    SkipLinesIfFlagEnabled(2, had_once_flag)
     EnableFlag(had_once_flag)
     SkipLines(1)
     EnableFlag(had_twice_flag)
@@ -376,7 +377,7 @@ def GetDiseaseLegacyDungeon(
     AddSpecialEffect(PLAYER, disease_effect)
     End()
 
-    EndIfFlagOn(had_twice_flag)
+    EndIfFlagEnabled(had_twice_flag)
 
     # Avoid triggering multiple times when raw meat is eaten.
     IfPlayerDoesNotHaveSpecialEffect(6, SurvivalEffects.RawSteak)
@@ -389,7 +390,7 @@ def GetDiseaseLegacyDungeon(
     IfAttackedWithDamageType(-3, PLAYER, -1, DamageType.Unspecified)
     IfConditionTrue(1, -3)
     IfPlayerDoesNotHaveSpecialEffect(1, disease_effect)
-    IfFlagOff(1, Flags.DiseaseRollLock)
+    IfFlagDisabled(1, Flags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
 
@@ -397,9 +398,9 @@ def GetDiseaseLegacyDungeon(
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
     EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
-    IfFlagOn(-2, Flags.DiseaseRollFirst)
-    IfFlagOff(2, had_once_flag)
-    IfFlagOn(2, Flags.DiseaseRollSecond)
+    IfFlagEnabled(-2, Flags.DiseaseRollFirst)
+    IfFlagDisabled(2, had_once_flag)
+    IfFlagEnabled(2, Flags.DiseaseRollSecond)
     IfConditionTrue(-2, 2)
 
     SkipLinesIfConditionTrue(2, -2)
@@ -411,7 +412,7 @@ def GetDiseaseLegacyDungeon(
     AddSpecialEffect(PLAYER, disease_effect)
     AwardItemLot(item_lot)  # disease indicator
 
-    SkipLinesIfFlagOn(2, had_once_flag)
+    SkipLinesIfFlagEnabled(2, had_once_flag)
     EnableFlag(had_once_flag)
     End()
     EnableFlag(had_twice_flag)
@@ -427,7 +428,7 @@ def GetDiseaseSiofra():
     AddSpecialEffect(PLAYER, SurvivalEffects.SiofraDisease)
     End()
 
-    EndIfFlagOn(Flags.SiofraDiseaseTwice)
+    EndIfFlagEnabled(Flags.SiofraDiseaseTwice)
 
     # Avoid triggering multiple times when raw meat is eaten.
     IfPlayerDoesNotHaveSpecialEffect(6, SurvivalEffects.RawSteak)
@@ -442,7 +443,7 @@ def GetDiseaseSiofra():
     IfAttackedWithDamageType(-3, PLAYER, -1, DamageType.Unspecified)
     IfConditionTrue(1, -3)
     IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.SiofraDisease)
-    IfFlagOff(1, Flags.DiseaseRollLock)
+    IfFlagDisabled(1, Flags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
 
@@ -450,9 +451,9 @@ def GetDiseaseSiofra():
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
     EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
-    IfFlagOn(-2, Flags.DiseaseRollFirst)
-    IfFlagOff(2, Flags.SiofraDiseaseOnce)
-    IfFlagOn(2, Flags.DiseaseRollSecond)
+    IfFlagEnabled(-2, Flags.DiseaseRollFirst)
+    IfFlagDisabled(2, Flags.SiofraDiseaseOnce)
+    IfFlagEnabled(2, Flags.DiseaseRollSecond)
     IfConditionTrue(-2, 2)
 
     SkipLinesIfConditionTrue(2, -2)
@@ -464,7 +465,7 @@ def GetDiseaseSiofra():
     AddSpecialEffect(PLAYER, SurvivalEffects.SiofraDisease)
     AwardItemLot(DiseaseItemLots.SiofraDisease)
 
-    SkipLinesIfFlagOn(2, Flags.SiofraDiseaseOnce)
+    SkipLinesIfFlagEnabled(2, Flags.SiofraDiseaseOnce)
     EnableFlag(Flags.SiofraDiseaseOnce)
     End()
     EnableFlag(Flags.SiofraDiseaseTwice)
@@ -477,7 +478,7 @@ def GetDiseaseAinsel():
     AddSpecialEffect(PLAYER, SurvivalEffects.AinselDisease)
     End()
 
-    EndIfFlagOn(Flags.AinselDiseaseTwice)
+    EndIfFlagEnabled(Flags.AinselDiseaseTwice)
 
     # Avoid triggering multiple times when raw meat is eaten.
     IfPlayerDoesNotHaveSpecialEffect(6, SurvivalEffects.RawSteak)
@@ -490,7 +491,7 @@ def GetDiseaseAinsel():
     IfAttackedWithDamageType(-3, PLAYER, -1, DamageType.Unspecified)
     IfConditionTrue(1, -3)
     IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.AinselDisease)
-    IfFlagOff(1, Flags.DiseaseRollLock)
+    IfFlagDisabled(1, Flags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
 
@@ -498,9 +499,9 @@ def GetDiseaseAinsel():
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
     EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
-    IfFlagOn(-2, Flags.DiseaseRollFirst)
-    IfFlagOff(2, Flags.AinselDiseaseOnce)
-    IfFlagOn(2, Flags.DiseaseRollSecond)
+    IfFlagEnabled(-2, Flags.DiseaseRollFirst)
+    IfFlagDisabled(2, Flags.AinselDiseaseOnce)
+    IfFlagEnabled(2, Flags.DiseaseRollSecond)
     IfConditionTrue(-2, 2)
 
     SkipLinesIfConditionTrue(2, -2)
@@ -512,7 +513,7 @@ def GetDiseaseAinsel():
     AddSpecialEffect(PLAYER, SurvivalEffects.AinselDisease)
     AwardItemLot(DiseaseItemLots.AinselDisease)
 
-    SkipLinesIfFlagOn(2, Flags.AinselDiseaseOnce)
+    SkipLinesIfFlagEnabled(2, Flags.AinselDiseaseOnce)
     EnableFlag(Flags.AinselDiseaseOnce)
     End()
     EnableFlag(Flags.AinselDiseaseTwice)
@@ -525,7 +526,7 @@ def GetDiseaseDeeprootAstel():
     AddSpecialEffect(PLAYER, SurvivalEffects.DeeprootDisease)
     End()
 
-    EndIfFlagOn(Flags.DeeprootDiseaseTwice)
+    EndIfFlagEnabled(Flags.DeeprootDiseaseTwice)
 
     # Avoid triggering multiple times when raw meat is eaten.
     IfPlayerDoesNotHaveSpecialEffect(6, SurvivalEffects.RawSteak)
@@ -540,7 +541,7 @@ def GetDiseaseDeeprootAstel():
     IfAttackedWithDamageType(-3, PLAYER, -1, DamageType.Unspecified)
     IfConditionTrue(1, -3)
     IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.DeeprootDisease)
-    IfFlagOff(1, Flags.DiseaseRollLock)
+    IfFlagDisabled(1, Flags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
 
@@ -548,9 +549,9 @@ def GetDiseaseDeeprootAstel():
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
     EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
-    IfFlagOn(-2, Flags.DiseaseRollFirst)
-    IfFlagOff(2, Flags.DeeprootDiseaseOnce)
-    IfFlagOn(2, Flags.DiseaseRollSecond)
+    IfFlagEnabled(-2, Flags.DiseaseRollFirst)
+    IfFlagDisabled(2, Flags.DeeprootDiseaseOnce)
+    IfFlagEnabled(2, Flags.DiseaseRollSecond)
     IfConditionTrue(-2, 2)
 
     SkipLinesIfConditionTrue(2, -2)
@@ -562,7 +563,7 @@ def GetDiseaseDeeprootAstel():
     AddSpecialEffect(PLAYER, SurvivalEffects.DeeprootDisease)
     AwardItemLot(DiseaseItemLots.DeeprootDisease)
 
-    SkipLinesIfFlagOn(2, Flags.DeeprootDiseaseOnce)
+    SkipLinesIfFlagEnabled(2, Flags.DeeprootDiseaseOnce)
     EnableFlag(Flags.DeeprootDiseaseOnce)
     End()
     EnableFlag(Flags.DeeprootDiseaseTwice)
@@ -576,13 +577,13 @@ def GetDiseaseRadahn():
     AddSpecialEffect(PLAYER, SurvivalEffects.RadahnDisease)
     End()
 
-    EndIfFlagOn(Flags.RadahnDiseaseTwice)
+    EndIfFlagEnabled(Flags.RadahnDiseaseTwice)
 
     # This disease does NOT trigger when eating raw meat. You are magically safe from raw meat diseases if you eat
     # them while fighting Radahn.
     IfAttackedWithDamageType(1, PLAYER, VanillaCharacters.Radahn, DamageType.Unspecified)
     IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.RadahnDisease)
-    IfFlagOff(1, Flags.DiseaseRollLock)
+    IfFlagDisabled(1, Flags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
 
@@ -590,9 +591,9 @@ def GetDiseaseRadahn():
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
     EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
-    IfFlagOn(-2, Flags.DiseaseRollFirst)
-    IfFlagOff(2, Flags.RadahnDiseaseOnce)
-    IfFlagOn(2, Flags.DiseaseRollSecond)
+    IfFlagEnabled(-2, Flags.DiseaseRollFirst)
+    IfFlagDisabled(2, Flags.RadahnDiseaseOnce)
+    IfFlagEnabled(2, Flags.DiseaseRollSecond)
     IfConditionTrue(-2, 2)
 
     SkipLinesIfConditionTrue(2, -2)
@@ -604,7 +605,7 @@ def GetDiseaseRadahn():
     AddSpecialEffect(PLAYER, SurvivalEffects.RadahnDisease)
     AwardItemLot(DiseaseItemLots.RadahnDisease)
 
-    SkipLinesIfFlagOn(2, Flags.RadahnDiseaseOnce)
+    SkipLinesIfFlagEnabled(2, Flags.RadahnDiseaseOnce)
     EnableFlag(Flags.RadahnDiseaseOnce)
     End()
     EnableFlag(Flags.RadahnDiseaseTwice)
@@ -620,7 +621,7 @@ def GetDiseaseCatacombs():
     AddSpecialEffect(PLAYER, SurvivalEffects.CatacombsDisease)
     End()
 
-    EndIfFlagOn(Flags.CatacombsDiseaseTwice)
+    EndIfFlagEnabled(Flags.CatacombsDiseaseTwice)
 
     # Avoid triggering multiple times when raw meat is eaten.
     IfPlayerDoesNotHaveSpecialEffect(6, SurvivalEffects.RawSteak)
@@ -651,7 +652,7 @@ def GetDiseaseCatacombs():
     IfAttackedWithDamageType(-3, PLAYER, -1, DamageType.Unspecified)
     IfConditionTrue(1, -3)
     IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.CatacombsDisease)
-    IfFlagOff(1, Flags.DiseaseRollLock)
+    IfFlagDisabled(1, Flags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
 
@@ -659,9 +660,9 @@ def GetDiseaseCatacombs():
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
     EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
-    IfFlagOn(-2, Flags.DiseaseRollFirst)
-    IfFlagOff(2, Flags.CatacombsDiseaseOnce)
-    IfFlagOn(2, Flags.DiseaseRollSecond)
+    IfFlagEnabled(-2, Flags.DiseaseRollFirst)
+    IfFlagDisabled(2, Flags.CatacombsDiseaseOnce)
+    IfFlagEnabled(2, Flags.DiseaseRollSecond)
     IfConditionTrue(-2, 2)
 
     SkipLinesIfConditionTrue(2, -2)
@@ -673,7 +674,7 @@ def GetDiseaseCatacombs():
     AddSpecialEffect(PLAYER, SurvivalEffects.CatacombsDisease)
     AwardItemLot(DiseaseItemLots.CatacombsDisease)
 
-    SkipLinesIfFlagOn(2, Flags.CatacombsDiseaseOnce)
+    SkipLinesIfFlagEnabled(2, Flags.CatacombsDiseaseOnce)
     EnableFlag(Flags.CatacombsDiseaseOnce)
     End()
     EnableFlag(Flags.CatacombsDiseaseTwice)
@@ -686,7 +687,7 @@ def GetDiseaseCaves():
     AddSpecialEffect(PLAYER, SurvivalEffects.CaveDisease)
     End()
 
-    EndIfFlagOn(Flags.CaveDiseaseTwice)
+    EndIfFlagEnabled(Flags.CaveDiseaseTwice)
 
     # Avoid triggering multiple times when raw meat is eaten.
     IfPlayerDoesNotHaveSpecialEffect(6, SurvivalEffects.RawSteak)
@@ -718,7 +719,7 @@ def GetDiseaseCaves():
     IfAttackedWithDamageType(-3, PLAYER, -1, DamageType.Unspecified)
     IfConditionTrue(1, -3)
     IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.CaveDisease)
-    IfFlagOff(1, Flags.DiseaseRollLock)
+    IfFlagDisabled(1, Flags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
 
@@ -726,9 +727,9 @@ def GetDiseaseCaves():
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
     EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
-    IfFlagOn(-2, Flags.DiseaseRollFirst)
-    IfFlagOff(2, Flags.CaveDiseaseOnce)
-    IfFlagOn(2, Flags.DiseaseRollSecond)
+    IfFlagEnabled(-2, Flags.DiseaseRollFirst)
+    IfFlagDisabled(2, Flags.CaveDiseaseOnce)
+    IfFlagEnabled(2, Flags.DiseaseRollSecond)
     IfConditionTrue(-2, 2)
 
     SkipLinesIfConditionTrue(2, -2)
@@ -740,7 +741,7 @@ def GetDiseaseCaves():
     AddSpecialEffect(PLAYER, SurvivalEffects.CaveDisease)
     AwardItemLot(DiseaseItemLots.CaveDisease)
 
-    SkipLinesIfFlagOn(2, Flags.CaveDiseaseOnce)
+    SkipLinesIfFlagEnabled(2, Flags.CaveDiseaseOnce)
     EnableFlag(Flags.CaveDiseaseOnce)
     End()
     EnableFlag(Flags.CaveDiseaseTwice)
@@ -753,7 +754,7 @@ def GetDiseaseTunnels():
     AddSpecialEffect(PLAYER, SurvivalEffects.TunnelDisease)
     End()
 
-    EndIfFlagOn(Flags.TunnelDiseaseTwice)
+    EndIfFlagEnabled(Flags.TunnelDiseaseTwice)
 
     # Avoid triggering multiple times when raw meat is eaten.
     IfPlayerDoesNotHaveSpecialEffect(6, SurvivalEffects.RawSteak)
@@ -774,7 +775,7 @@ def GetDiseaseTunnels():
     IfAttackedWithDamageType(-3, PLAYER, -1, DamageType.Unspecified)
     IfConditionTrue(1, -3)
     IfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.TunnelDisease)
-    IfFlagOff(1, Flags.DiseaseRollLock)
+    IfFlagDisabled(1, Flags.DiseaseRollLock)
 
     IfConditionTrue(0, 1)
 
@@ -782,9 +783,9 @@ def GetDiseaseTunnels():
     DisableFlagRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
     EnableRandomFlagInRange((Flags.DiseaseRollFirst, Flags.DiseaseRollLast))
 
-    IfFlagOn(-2, Flags.DiseaseRollFirst)
-    IfFlagOff(2, Flags.TunnelDiseaseOnce)
-    IfFlagOn(2, Flags.DiseaseRollSecond)
+    IfFlagEnabled(-2, Flags.DiseaseRollFirst)
+    IfFlagDisabled(2, Flags.TunnelDiseaseOnce)
+    IfFlagEnabled(2, Flags.DiseaseRollSecond)
     IfConditionTrue(-2, 2)
 
     SkipLinesIfConditionTrue(2, -2)
@@ -796,7 +797,7 @@ def GetDiseaseTunnels():
     AddSpecialEffect(PLAYER, SurvivalEffects.TunnelDisease)
     AwardItemLot(DiseaseItemLots.TunnelDisease)
 
-    SkipLinesIfFlagOn(2, Flags.TunnelDiseaseOnce)
+    SkipLinesIfFlagEnabled(2, Flags.TunnelDiseaseOnce)
     EnableFlag(Flags.TunnelDiseaseOnce)
     End()
     EnableFlag(Flags.TunnelDiseaseTwice)

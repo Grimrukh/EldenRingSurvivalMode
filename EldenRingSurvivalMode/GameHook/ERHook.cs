@@ -77,16 +77,20 @@ namespace EldenRingSurvivalMode.GameHook
         PHPointer FogNewmemPtr { get; set; }
         PHPointer EventFlags { get; set; }
         PHPointer StonePlatformEventFlags { get; set; }
-        const int StonePlatformEventOffset = 0x1C204D;  // offset of event flag 19000000
+        //const int StonePlatformEventOffset = 0x1C204D;  // offset of event flag 19000000 (1.04)
+        const int StonePlatformEventOffset = 0x1BF58D;  // offset of event flag 190000000 (1.05)
 
         const string EventFlagsAOB = "48 8B 3D ? ? ? ? 48 85 FF 74 ? 48 8B 49";
-        
+        const string FogInjectionAOB = "0F 10 82 10 01 00 00 0F 11 81 10 01 00 00 48 8B 82 20 01 00 00";
+        //const long fogInjAddress = 0x1B0C4B5;  // mov [rcx+0x00000120], rax (1.04)
+        //const long fogInjAddress = 0x1B15835;  // mov [rcx+0x00000120], rax (1.05)
+
         bool FogEnabled { get; set; }
         long BaseAddress { get; set; }
 
         const string windowName = "ELDEN RING™";
-        const long fogInjAddress = 0x1B0C4B5;  // mov [rcx+0x00000120], rax
-        const long freeAddress = 0x28C7800;
+        //const long freeAddress = 0x28C7800;  // (1.04)
+        const long freeAddress = 0x28D7C00;  // (1.05)
         static readonly byte[] originalMem = new byte[] { 0x48, 0x89, 0x81, 0x20, 0x01, 0x00, 0x00 };
         
         readonly List<(string name, int offset, uint size)> gparamInjections = new List<(string, int, uint)>()
@@ -115,6 +119,7 @@ namespace EldenRingSurvivalMode.GameHook
         public ERHook(int refreshInterval, int minLifetime) :
             base(refreshInterval, minLifetime, p => p.MainWindowTitle == windowName)
         {
+            FogInjectionAddr = RegisterAbsoluteAOB(FogInjectionAOB);
             EventFlags = RegisterRelativeAOB(EventFlagsAOB, 3, 7, 0);
             StonePlatformEventFlags = new PHPointerChild(this, EventFlags, 0xC8);
 
@@ -124,7 +129,6 @@ namespace EldenRingSurvivalMode.GameHook
         void ERHook_OnHooked(object sender, PHEventArgs e)
         {
             BaseAddress = Process.MainModule.BaseAddress.ToInt64();
-            FogInjectionAddr = new PHPointerBase(this, (IntPtr)(BaseAddress + fogInjAddress));
             FogNewmemPtr = new PHPointerBase(this, (IntPtr)(BaseAddress + freeAddress));
 
             EnableEldenRingFog();
@@ -147,14 +151,16 @@ namespace EldenRingSurvivalMode.GameHook
             // HACK: Currently checks flag 1584 for Torch special effect.
             int playerHasTorch = StonePlatformEventFlags.ReadByte(StonePlatformEventOffset + (1584 / 8)) & 0b10000000;
             // Console.WriteLine($"Has Torch: {playerHasTorch}");
-            
+
             // HACK: Currently checks flag 1592 and returns 12 (noon) if enabled, so as to disable darkness.
             int playerIsOutdoors = StonePlatformEventFlags.ReadByte(StonePlatformEventOffset + (1592 / 8)) & 0b10000000;
             // Console.WriteLine($"Outdoors: {playerIsOutdoors}");
             if (playerIsOutdoors == 0)
                 return (12, playerHasTorch != 0);  // MIDDAY
+                
 
             int hourFlagOffset = StonePlatformEventOffset + (1600 / 8);  // Hour0 = 19001600
+
             byte[] hourFlagBytes = StonePlatformEventFlags.ReadBytes(hourFlagOffset, 3);  // 24 flags
             string hourFlags = "";
             foreach (byte flag in hourFlagBytes)
@@ -179,7 +185,15 @@ namespace EldenRingSurvivalMode.GameHook
             //Console.WriteLine($"Vanilla fog function bytes: {BitConverter.ToString(currentMem)}");
 
             IntPtr newmemPtr = FogNewmemPtr.Resolve();
-            IntPtr injectionPtr = FogInjectionAddr.Resolve();
+            IntPtr injectionPtr = FogInjectionAddr.Resolve() + 21;
+
+            if (injectionPtr == IntPtr.Zero)
+            {
+                Console.WriteLine("Could not find AOB for fog injection. Darkness will not work.");
+                FogEnabled = false;
+                return;
+            }
+
             long injectionAddr = injectionPtr.ToInt64();
             //Console.WriteLine($"Injection address: {injectionAddr:X}");
             long newmemAddr = newmemPtr.ToInt64();
@@ -286,14 +300,15 @@ namespace EldenRingSurvivalMode.GameHook
 
             byte[] newmemArray = newmem.Finish();
             Allocate(newmemPtr, (uint)newmemArray.Length, Kernel32.PAGE_EXECUTE_READWRITE);
-
+            //newmemPtr = Allocate((uint)newmemArray.Length, Kernel32.PAGE_EXECUTE_READWRITE);
+            //Console.WriteLine($"Newmem ptr: {newmemPtr}");
 #if DEBUG
             //Console.WriteLine($"Fog script new memory allocated.");
 #endif
 
             //Console.WriteLine($"Final injection: {BitConverter.ToString(injectAsm)}");
             //Console.WriteLine($"Final newmem: {BitConverter.ToString(newmemArray)}");
-            
+
             if (!Kernel32.WriteBytes(Handle, newmemPtr, newmemArray))
             {
                 // Script write failed. Do NOT inject, or it will crash the game.
@@ -398,7 +413,7 @@ namespace EldenRingSurvivalMode.GameHook
             // Not actually used, but here for reference.
 
             Free(FogNewmemPtr.Resolve());
-            Kernel32.WriteBytes(Handle, FogInjectionAddr.Resolve(), originalMem);
+            Kernel32.WriteBytes(Handle, FogInjectionAddr.Resolve() + 21, originalMem);
             FogEnabled = false;
         }
     }

@@ -19,7 +19,6 @@ from soulstruct.eldenring.events import EMEVD
 
 from survival_params import generate_all_params
 from survival_text import set_all_text
-from yabber import yabber
 
 
 VANILLA_PATH = Path("C:/Steam/steamapps/common/ELDEN RING (Vanilla)/Game")
@@ -33,16 +32,6 @@ DIST_PATH = Path("../../dist/GAME (OPTIONS)")
 
 def vanilla_common_emevd_to_evs():
     EMEVD(VANILLA_PATH / "event/common.emevd").write_evs(Path(__file__).parent / "common.evs.py")
-
-
-def write_yabber_dcx_xml():
-    """Generates XML for Yabber packing of ER EMEVD."""
-    xml = """<?xml version="1.0" encoding="utf-8"?>
-<dcx>
-  <compression>DarkSouls3</compression>
-</dcx>"""
-    with (MODDING_PATH / "event/common.emevd-yabber-dcx.xml").open("w") as f:
-        f.write(xml)
 
 
 def install_regulation():
@@ -61,23 +50,22 @@ def install_evs():
     if DO_SURVIVAL:
         common_extra = EMEVD(this_dir / "common_survival.evs.py")
         common = common.merge(common_extra, merge_events=(0,))
+        print("Merged survival EMEVD.")
     if DO_WEAPON_TREE:
         common_extra = EMEVD(this_dir / "common_weapons.evs.py")
         common = common.merge(common_extra, merge_events=(0,))
+        print("Merged weapon tree EMEVD.")
     if DO_DISEASES:
         common_extra = EMEVD(this_dir / "common_diseases.evs.py")
         common = common.merge(common_extra, merge_events=(0,))
+        print("Merged disease EMEVD.")
 
     # EVS for inspection
     common.write_evs(this_dir / "built_common.evs.py")
 
     # Game common
     common.dcx_magic = None
-    common.write(MODDING_PATH / "event/common.emevd")
-
-    # Call Yabber to apply DCX
-    write_yabber_dcx_xml()
-    yabber(MODDING_PATH / "event/common.emevd", dcx_only=True)
+    common.write(MODDING_PATH / "event/common.emevd.dcx")
 
     # Copy to DIST_PATH
     dist_path = DIST_PATH

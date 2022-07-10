@@ -1,6 +1,7 @@
 from __future__ import annotations
 
-from soulstruct.game_types import *
+from enum import IntEnum
+from soulstruct.eldenring.game_types import *
 
 
 # Stone Platform 1000 range

@@ -31,7 +31,7 @@ from survival_text import read_weapon_text, write_weapon_text
 from enemy_ids import EXTRA_ENEMY_DROPS
 from weapon_recipes import WEAPON_RECIPES
 
-READ_CSV_PATH = Path(r"C:\Dark Souls\Tools\Params\Yapped Rune Bear 2.1.4\Projects\ExampleMod\CSV\ER")
+READ_CSV_PATH = Path(r"C:\Users\Scott\Dropbox\Modding\Tools\Params\Yapped Rune Bear 2.1.4\Projects\ExampleMod\CSV\ER")
 WRITE_CSV_PATH = Path(r"C:\Dark Souls\Projects\EldenRingSurvivalMode\EldenRingSurvivalMode\CSV")
 
 DO_SURVIVAL = True
@@ -426,7 +426,7 @@ def generate_dummy_weapons(
         if not do_weapon(row):
             continue
 
-        weapon_root_index = row.row_id // 10000  # e.g., 1000 for Dagger
+        weapon_root_index = row.row_id // 10000  # e.g., 100 for Dagger
         dummy_id = dummy_offset + 100 * weapon_root_index
         shop_id = new_shop_offset + weapon_root_index
         mtrl_id = new_mtrl_offset + 10 * weapon_root_index
@@ -847,17 +847,17 @@ def fix_enemy_item_lots(item_lots_param: YappedParam, weapons_param: YappedParam
     def find_item_lot(first_item_lot: int):
         """Find item lot to use for new drop, which must be within 10 of `first_item_lot`."""
         for i in range(10):
-            item_lot = item_lots_param[first_item_lot + i]
-            if item_lot is None:
+            item_lot_ = item_lots_param[first_item_lot + i]
+            if item_lot_ is None:
                 # Use this lot (new ID).
                 return item_lots_param.duplicate_row(item_lot_source, first_item_lot + i)
             else:
-                if int(item_lot["lotItemCategory01"]) == 0 and int(item_lot["lotItemCategory02"]) == 2:
+                if int(item_lot_["lotItemCategory01"]) == 0 and int(item_lot_["lotItemCategory02"]) == 2:
                     # Replace non-guaranteed weapon (it will be deleted later otherwise anyway).
-                    return item_lot
-                elif all(int(item_lot[f"lotItemCategory{s:02d}"]) == 0 for s in range(1, 9)):
+                    return item_lot_
+                elif all(int(item_lot_[f"lotItemCategory{s:02d}"]) == 0 for s in range(1, 9)):
                     # Replace empty item lot.
-                    return item_lot
+                    return item_lot_
         else:
             raise ValueError(f"Could not find a free item lot within 10 of: {first_item_lot}")
 
@@ -1462,5 +1462,5 @@ def generate_all_variants():
 
 if __name__ == '__main__':
     random.seed(10)
-    # generate_all_params()
-    generate_all_variants()
+    generate_all_params()
+    # generate_all_variants()

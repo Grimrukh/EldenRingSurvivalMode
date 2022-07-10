@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SoulsFormats;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Numerics;
 using System.Threading;
 using EldenRingSurvivalMode.GameHook;
@@ -100,7 +102,7 @@ namespace EldenRingSurvivalMode
   ____) | |__| | | \ \  \  /   _| |_   \  / ____ \| |____  | |  | | |__| | |__| | |____ 
  |_____/ \____/|_|  \_\  \/   |_____|   \/_/    \_\______| |_|  |_|\____/|_____/|______|
 
-                                         v1.4
+                                         v1.5
                                     
                                       by Grimrukh
                        
@@ -120,6 +122,40 @@ namespace EldenRingSurvivalMode
 
             //Params.AllVariantsCSVToRegulation();
             //Console.WriteLine("Done.");
+            //Console.ReadLine();
+            //return;
+
+            // TODO: Testing EMEVD instructions.
+            //Dictionary<(int category, int index), List<byte[]>> instructions = new Dictionary<(int, int), List<byte[]>>();
+            //foreach (var file in Directory.GetFiles(@"C:\Steam\steamapps\common\ELDEN RING\Game\event"))
+            //{
+            //    if (!file.EndsWith(".emevd.dcx"))
+            //        continue;
+            //    var emevd = EMEVD.Read(file);
+            //    Console.WriteLine($"Read EMEVD: {file}");
+            //    foreach (var evt in emevd.Events)
+            //    {
+            //        foreach (var instr in evt.Instructions)
+            //        {
+            //            var tuple = (instr.Bank, instr.ID);
+            //            if (!instructions.ContainsKey(tuple))
+            //                instructions[tuple] = new List<byte[]>() { instr.ArgData };
+            //            else
+            //                instructions[tuple].Add(instr.ArgData);
+            //        }
+            //    }
+            //}
+            //var instrList = new List<(int cat, int ind)>(instructions.Keys);
+            //instrList.Sort();
+            //foreach (var instr in instrList)
+            //{
+            //    Console.WriteLine($"    {instr.cat}, {instr.ind}:");
+            //    for (int i = 0; i < Math.Min(10, instructions[instr].Count); i++)
+            //    {
+            //        string args = BitConverter.ToString(instructions[instr][i]).Replace("-", " ");
+            //        Console.WriteLine($"        {args}");
+            //    }
+            //}                
             //Console.ReadLine();
             //return;
 
@@ -158,18 +194,18 @@ namespace EldenRingSurvivalMode
                     // Do nothing. No change. (Might want to disable darkness.)
                     DebugPrint("    Time not detected. No change to darkness.");
                 }
-                else if (7 <= hour && hour < 19)
+                else if (5 <= hour && hour < 18)
                 {
                     SetDarknessLevel(DarknessLevel.None);
                     DebugPrint("    Darkness level: None");
                 }
-                else if (hour == 19 || hour == 6)
+                else if (hour == 18 || hour == 19)
                 {
                     // Low, regardless of whether player has torch.
                     SetDarknessLevel(DarknessLevel.Low, lerpDuration: 10f);
                     DebugPrint("    Darkness level: Low");
                 }
-                else if (hour == 20 || hour == 5)
+                else if (hour == 20 || hour == 21)
                 {
                     float lerpDuration = lastHasTorch != hasTorch ? 1f : 3f;
                     if (!hasTorch)
@@ -185,7 +221,7 @@ namespace EldenRingSurvivalMode
                     
                         
                 }
-                else if (21 <= hour || hour < 5)
+                else if (22 <= hour || hour < 5)
                 {
                     float lerpDuration = lastHasTorch != hasTorch ? 1f : 3f;
                     if (!hasTorch)
@@ -231,15 +267,13 @@ namespace EldenRingSurvivalMode
                 {
                     float lerpedValue = Lerp(startValues[name], endValues[name], w);
                     if (name == "FixedDensity")
-                        DebugPrint($"Lerped FixedDensity: {lerpedValue}");
+                        DebugPrint($"   Lerped {name}: {lerpedValue}");
                     lerpedValues[name] = BitConverter.GetBytes(lerpedValue);
                 }
-
-                
-
                 Hook.SetFogValues(lerpedValues);
                 WaitOneFrame(ref t);
             }
+            DebugPrint("Finished lerp.");
         }
 
         static void SetDarknessLevel(DarknessLevel level, float lerpDuration = 10f)
@@ -308,43 +342,6 @@ namespace EldenRingSurvivalMode
             CurrentDarknessLevel = level;  // do not repeat transition
             LerpDarkness(startValues, targetValues, lerpDuration);
             // Leave injection enabled with final darkness value.
-        }
-
-        /// <summary>
-        /// Transition darkness from current (non-zero) level to zero.
-        /// </summary>
-        static void RemoveDarkness()
-        {
-
-        }
-
-        static void TestFog(ERHook hook)
-        {
-            float t = 0;  // parameterizes min to max
-            float period = 10f;
-
-            float[] nearDepthRange = new float[] { 1f, 4f };
-            float[] fixedDensityRange = new float[] { 0.02f, 0.6f };
-            float[] directColorAlphaRange = new float[] { 0.2f, 0f };
-            
-            while (true)
-            {
-                // Alternate fog values between midday/midnight every `period` seconds.
-                float w = 0.5f + 0.5f * (float)Math.Sin(period * t / (2 * Math.PI));
-                float nearDepth = Lerp(nearDepthRange, w);
-                float fixedDensity = Lerp(fixedDensityRange, w);
-                float directColorAlpha = Lerp(directColorAlphaRange, w);
-                hook.SetFogValues(new Dictionary<string, byte[]>
-                {
-                    ["NearDepth"] = BitConverter.GetBytes(nearDepth),
-                    ["DrawTiming"] = BitConverter.GetBytes(DarknessDrawTiming),
-                    ["FixedDensity"] = BitConverter.GetBytes(fixedDensity),
-                    ["LocalLightScale"] = BitConverter.GetBytes(0.02f),
-                    ["SkyColor_Alpha"] = BitConverter.GetBytes(directColorAlpha),  // reused
-                    ["DirectColor_Alpha"] = BitConverter.GetBytes(directColorAlpha)
-                });
-                WaitOneFrame(ref t);
-            }
         }
 
         public static float Lerp(float min, float max, float t)

@@ -3,8 +3,8 @@ __all__ = ["yabber"]
 import subprocess as sp
 from pathlib import Path
 
-YABBER_PATH = Path(r"C:\Dark Souls\Tools\Unpackers\Yabber 1.3.1\Yabber.exe")
-YABBER_DCX_PATH = Path(r"C:\Dark Souls\Tools\Unpackers\Yabber 1.3.1\Yabber.DCX.exe")
+YABBER_PATH = Path(r"C:\Users\Scott\Dropbox\Modding\Tools\Unpackers\Yabber 1.3.1\Yabber.exe")
+YABBER_DCX_PATH = Path(r"C:\Users\Scott\Dropbox\Modding\Tools\Unpackers\Yabber 1.3.1\Yabber.DCX.exe")
 
 
 def yabber(path, dcx_only=False):

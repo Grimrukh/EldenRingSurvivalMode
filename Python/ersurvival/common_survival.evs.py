@@ -4,6 +4,7 @@ Kept separate to `common.evs.py` because I will probably regenerate the vanilla 
 my understanding of ER EMEVD instructions becomes better.
 """
 from soulstruct.eldenring.events import *
+from soulstruct.eldenring.events.instructions import *
 from .survival_enums import *
 from .survival_goods import *
 
@@ -69,7 +70,7 @@ def GrowingHunger():
     IfConditionTrue(0, 1)
 
     for tick_flag in (Flags.HungerTick1, Flags.HungerTick2, Flags.HungerTick3, Flags.HungerTick4, Flags.HungerTick5):
-        SkipLinesIfFlagOn(5, tick_flag)
+        SkipLinesIfFlagEnabled(5, tick_flag)
         SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.LimgraveDisease)
         Wait(25.0)  # 16% faster
         SkipLines(1)
@@ -170,7 +171,7 @@ def GrowingThirst():
     IfConditionTrue(0, 1)
 
     for tick_flag in (Flags.ThirstTick1, Flags.ThirstTick2, Flags.ThirstTick3, Flags.ThirstTick4, Flags.ThirstTick5):
-        SkipLinesIfFlagOn(5, tick_flag)
+        SkipLinesIfFlagEnabled(5, tick_flag)
         SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.LimgraveDisease)
         Wait(40.0)  # 20% faster
         SkipLines(1)
@@ -236,7 +237,7 @@ def GrowingThirst():
 def HungerThirstAfterPassTime():
     """Jump in hunger and thirst after player passes time."""
 
-    IfFlagOn(0, Flags.PlayerPassedTime)
+    IfFlagEnabled(0, Flags.PlayerPassedTime)
 
     DisableFlag(Flags.PlayerPassedTime)
 
@@ -370,63 +371,63 @@ def SaveHungerAfterDeath():
     """Synchronizes hunger state across death using flags."""
 
     # First, if any hunger state flags are enabled, resolve them (apply effect and disable flag).
-    SkipLinesIfFlagOff(2, Flags.HasHunger1)
+    SkipLinesIfFlagDisabled(2, Flags.HasHunger1)
     DisableFlag(Flags.HasHunger1)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger1)
 
-    SkipLinesIfFlagOff(2, Flags.HasHunger2)
+    SkipLinesIfFlagDisabled(2, Flags.HasHunger2)
     DisableFlag(Flags.HasHunger2)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger2)
 
-    SkipLinesIfFlagOff(2, Flags.HasHunger3)
+    SkipLinesIfFlagDisabled(2, Flags.HasHunger3)
     DisableFlag(Flags.HasHunger3)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger3)
 
-    SkipLinesIfFlagOff(2, Flags.HasHunger4)
+    SkipLinesIfFlagDisabled(2, Flags.HasHunger4)
     DisableFlag(Flags.HasHunger4)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger4)
 
-    SkipLinesIfFlagOff(2, Flags.HasHunger5)
+    SkipLinesIfFlagDisabled(2, Flags.HasHunger5)
     DisableFlag(Flags.HasHunger5)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger5)
 
-    SkipLinesIfFlagOff(2, Flags.HasHunger6)
+    SkipLinesIfFlagDisabled(2, Flags.HasHunger6)
     DisableFlag(Flags.HasHunger6)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
 
-    SkipLinesIfFlagOff(2, Flags.HasHunger7)
+    SkipLinesIfFlagDisabled(2, Flags.HasHunger7)
     DisableFlag(Flags.HasHunger7)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
 
-    SkipLinesIfFlagOff(2, Flags.HasHunger8)
+    SkipLinesIfFlagDisabled(2, Flags.HasHunger8)
     DisableFlag(Flags.HasHunger8)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
 
-    SkipLinesIfFlagOff(2, Flags.HasHunger9)
+    SkipLinesIfFlagDisabled(2, Flags.HasHunger9)
     DisableFlag(Flags.HasHunger9)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
 
-    SkipLinesIfFlagOff(2, Flags.HasHunger10)
+    SkipLinesIfFlagDisabled(2, Flags.HasHunger10)
     DisableFlag(Flags.HasHunger10)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
 
-    SkipLinesIfFlagOff(2, Flags.HasHunger11)
+    SkipLinesIfFlagDisabled(2, Flags.HasHunger11)
     DisableFlag(Flags.HasHunger11)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
 
-    SkipLinesIfFlagOff(2, Flags.HasHunger12)
+    SkipLinesIfFlagDisabled(2, Flags.HasHunger12)
     DisableFlag(Flags.HasHunger12)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
 
-    SkipLinesIfFlagOff(2, Flags.HasHunger13)
+    SkipLinesIfFlagDisabled(2, Flags.HasHunger13)
     DisableFlag(Flags.HasHunger13)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
 
-    SkipLinesIfFlagOff(2, Flags.HasHunger14)
+    SkipLinesIfFlagDisabled(2, Flags.HasHunger14)
     DisableFlag(Flags.HasHunger14)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
 
-    SkipLinesIfFlagOff(2, Flags.HasHunger15)
+    SkipLinesIfFlagDisabled(2, Flags.HasHunger15)
     DisableFlag(Flags.HasHunger15)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
 
@@ -471,39 +472,39 @@ def SaveThirstAfterDeath():
     """Synchronizes thirst state across death using flags."""
 
     # First, if any thirst state flags are enabled, resolve them (apply effect and disable flag).
-    SkipLinesIfFlagOff(2, Flags.HasThirst1)
+    SkipLinesIfFlagDisabled(2, Flags.HasThirst1)
     DisableFlag(Flags.HasThirst1)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst1)
 
-    SkipLinesIfFlagOff(2, Flags.HasThirst2)
+    SkipLinesIfFlagDisabled(2, Flags.HasThirst2)
     DisableFlag(Flags.HasThirst2)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst2)
 
-    SkipLinesIfFlagOff(2, Flags.HasThirst3)
+    SkipLinesIfFlagDisabled(2, Flags.HasThirst3)
     DisableFlag(Flags.HasThirst3)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
 
-    SkipLinesIfFlagOff(2, Flags.HasThirst4)
+    SkipLinesIfFlagDisabled(2, Flags.HasThirst4)
     DisableFlag(Flags.HasThirst4)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
 
-    SkipLinesIfFlagOff(2, Flags.HasThirst5)
+    SkipLinesIfFlagDisabled(2, Flags.HasThirst5)
     DisableFlag(Flags.HasThirst5)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
 
-    SkipLinesIfFlagOff(2, Flags.HasThirst6)
+    SkipLinesIfFlagDisabled(2, Flags.HasThirst6)
     DisableFlag(Flags.HasThirst6)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
 
-    SkipLinesIfFlagOff(2, Flags.HasThirst7)
+    SkipLinesIfFlagDisabled(2, Flags.HasThirst7)
     DisableFlag(Flags.HasThirst7)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
 
-    SkipLinesIfFlagOff(2, Flags.HasThirst8)
+    SkipLinesIfFlagDisabled(2, Flags.HasThirst8)
     DisableFlag(Flags.HasThirst8)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
 
-    SkipLinesIfFlagOff(2, Flags.HasThirst9)
+    SkipLinesIfFlagDisabled(2, Flags.HasThirst9)
     DisableFlag(Flags.HasThirst9)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst9)
 
@@ -1620,15 +1621,15 @@ def CheckMildHeatArea():
 
     # --- CAELID / ALTUS / LEYNDELL in MIDDLE OF DAY ---
     IfTimeOfDay(1, (10, 0, 0), (17, 0, 0))
-    IfFlagOn(-1, Flags.PlayerInCaelid)
-    IfFlagOn(-1, Flags.PlayerInAltus)
+    IfFlagEnabled(-1, Flags.PlayerInCaelid)
+    IfFlagEnabled(-1, Flags.PlayerInAltus)
     IfInsideMap(-1, LEYNDELL_ROYAL_CAPITAL)
     IfInsideMap(-1, LEYNDELL_ASHEN_CAPITAL)
     IfConditionTrue(1, -1)
 
     # --- MT. GELMIR at NIGHT ---
     IfTimeOfDay(2, (18, 0, 0), (8, 0, 0))
-    IfFlagOn(2, Flags.PlayerInMtGelmir)
+    IfFlagEnabled(2, Flags.PlayerInMtGelmir)
 
     # -3: Player is in right time and place.
     IfConditionTrue(-3, 1)
@@ -1656,7 +1657,7 @@ def CheckModerateHeatArea():
 
     # --- MT.GELMIR at DAY ---
     IfTimeOfDay(1, (8, 0, 0), (18, 0, 0))
-    IfFlagOn(1, Flags.PlayerInMtGelmir)
+    IfFlagEnabled(1, Flags.PlayerInMtGelmir)
 
     # --- VOLCANO MANOR at NIGHT ---
     IfTimeOfDay(2, (18, 0, 0), (8, 0, 0))
@@ -1739,7 +1740,7 @@ def CheckMildColdArea():
     # --- NIGHT ---
     IfTimeOfDay(1, (18, 0, 0), (8, 0, 0))
 
-    IfFlagOn(-1, Flags.PlayerInLiurnia)
+    IfFlagEnabled(-1, Flags.PlayerInLiurnia)
     IfInsideMap(-1, RAYA_LUCARIA)
 
     IfConditionTrue(1, -1)
@@ -1775,7 +1776,7 @@ def CheckMildColdArea():
 def CheckModerateColdArea():
     # --- MOUNTAINTOPS in DAY ---
     IfTimeOfDay(1, (8, 0, 0), (18, 0, 0))
-    IfFlagOn(1, Flags.PlayerInMountaintops)
+    IfFlagEnabled(1, Flags.PlayerInMountaintops)
 
     # --- AINSEL RIVER / DEEPROOT DEPTHS at ANY TIME ---
 
@@ -1814,7 +1815,7 @@ def CheckModerateColdArea():
 def CheckSevereColdArea():
     # --- MOUNTAINTOPS / FARUM AZULA at NIGHT ---
     IfTimeOfDay(1, (18, 0, 0), (8, 0, 0))
-    IfFlagOn(-1, Flags.PlayerInMountaintops)
+    IfFlagEnabled(-1, Flags.PlayerInMountaintops)
     IfInsideMap(-1, CRUMBLING_FARUM_AZULA)
     IfConditionTrue(1, -1)
 
@@ -1856,7 +1857,7 @@ def CheckSevereColdArea():
 @NeverRestart(Flags.MildHeatWarning)
 def MildHeatWarning():
     Wait(5.0)
-    IfFlagOn(0, Flags.ShowMildHeatWarning)
+    IfFlagEnabled(0, Flags.ShowMildHeatWarning)
     DisplayStatus(SurvivalText.MildHeatWarning)
     DisableFlag(Flags.ShowMildHeatWarning)
     Wait(295.0)
@@ -1866,7 +1867,7 @@ def MildHeatWarning():
 @NeverRestart(Flags.ModerateHeatWarning)
 def ModerateHeatWarning():
     Wait(5.0)
-    IfFlagOn(0, Flags.ShowModerateHeatWarning)
+    IfFlagEnabled(0, Flags.ShowModerateHeatWarning)
     DisplayStatus(SurvivalText.ModerateHeatWarning)
     DisableFlag(Flags.ShowModerateHeatWarning)
     Wait(295.0)
@@ -1876,7 +1877,7 @@ def ModerateHeatWarning():
 @NeverRestart(Flags.SevereHeatWarning)
 def SevereHeatWarning():
     Wait(5.0)
-    IfFlagOn(0, Flags.ShowSevereHeatWarning)
+    IfFlagEnabled(0, Flags.ShowSevereHeatWarning)
     DisplayStatus(SurvivalText.SevereHeatWarning)
     DisableFlag(Flags.ShowSevereHeatWarning)
     Wait(295.0)
@@ -1886,7 +1887,7 @@ def SevereHeatWarning():
 @NeverRestart(Flags.MildColdWarning)
 def MildColdWarning():
     Wait(5.0)
-    IfFlagOn(0, Flags.ShowMildColdWarning)
+    IfFlagEnabled(0, Flags.ShowMildColdWarning)
     DisplayStatus(SurvivalText.MildColdWarning)
     DisableFlag(Flags.ShowMildColdWarning)
     Wait(295.0)
@@ -1896,7 +1897,7 @@ def MildColdWarning():
 @NeverRestart(Flags.ModerateColdWarning)
 def ModerateColdWarning():
     Wait(5.0)
-    IfFlagOn(0, Flags.ShowModerateColdWarning)
+    IfFlagEnabled(0, Flags.ShowModerateColdWarning)
     DisplayStatus(SurvivalText.ModerateColdWarning)
     DisableFlag(Flags.ShowModerateColdWarning)
     Wait(295.0)
@@ -1906,7 +1907,7 @@ def ModerateColdWarning():
 @NeverRestart(Flags.SevereColdWarning)
 def SevereColdWarning():
     Wait(5.0)
-    IfFlagOn(0, Flags.ShowSevereColdWarning)
+    IfFlagEnabled(0, Flags.ShowSevereColdWarning)
     DisplayStatus(SurvivalText.SevereColdWarning)
     DisableFlag(Flags.ShowSevereColdWarning)
     Wait(295.0)
