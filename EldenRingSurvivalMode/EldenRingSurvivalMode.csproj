@@ -8,10 +8,11 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>EldenRingSurvivalMode</RootNamespace>
     <AssemblyName>SurvivalModeDarkness</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -70,16 +71,6 @@
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Dependencies\PropertyHook\PropertyHook\PropertyHook.csproj">
-      <Project>{18eff8d2-c4d5-4e18-9a31-38e106ba1cf7}</Project>
-      <Name>PropertyHook</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Dependencies\SoulsFormats\SoulsFormats\SoulsFormats.csproj">
-      <Project>{5c141357-e4b6-421d-b568-03962f5887f2}</Project>
-      <Name>SoulsFormats</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="GameHook\Resource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
@@ -103,16 +94,21 @@
     <Content Include="GameHook\Resources\Items\SpellTools.txt" />
     <Content Include="GameHook\Resources\Items\UpgradeMaterials.txt" />
     <Content Include="GameHook\Resources\Items\UsableItems.txt" />
-    <Content Include="NewIcons\Black Mark.png" />
-    <Content Include="NewIcons\Erd Tree Wood.png" />
-    <Content Include="NewIcons\Meteorite Chunk.png" />
-    <Content Include="NewIcons\Shield Grip.png" />
-    <Content Include="NewIcons\Staff Pole.png" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Numerics" />
+    <ProjectReference Include="..\..\..\Libraries\Erd-Tools\src\PropertyHook\PropertyHook\PropertyHook.csproj">
+      <Project>{18eff8d2-c4d5-4e18-9a31-38e106ba1cf7}</Project>
+      <Name>PropertyHook</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Erd-Tools\src\SoulsFormats\SoulsFormats\SoulsFormats.csproj">
+      <Project>{d17ae477-b3bc-4536-82ca-fb0c9814bff9}</Project>
+      <Name>SoulsFormats</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="Erd-Tools">
+      <HintPath>..\..\..\Libraries\Erd-Tools\src\Erd-Tools\bin\Debug\net7.0-windows\Erd-Tools.dll</HintPath>
+    </Reference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

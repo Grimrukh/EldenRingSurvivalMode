@@ -9,7 +9,7 @@ from .survival_enums import *
 from .survival_goods import *
 
 
-@NeverRestart(0)
+@ContinueOnRest(0)
 def Constructor():
     """Will be merged with vanilla Common."""
 
@@ -308,7 +308,7 @@ def Constructor():
     # endregion
 
 
-@NeverRestart(Flags.GetDiseaseOverworld)
+@ContinueOnRest(Flags.GetDiseaseOverworld)
 def GetDiseaseOverworld(
     _, disease_effect: int, location_flag: Flag, had_once_flag: Flag, had_twice_flag: Flag, item: int, item_lot: int
 ):
@@ -358,7 +358,7 @@ def GetDiseaseOverworld(
     EnableFlag(had_twice_flag)
 
 
-@NeverRestart(Flags.GetDiseaseLegacyDungeon)
+@ContinueOnRest(Flags.GetDiseaseLegacyDungeon)
 def GetDiseaseLegacyDungeon(
     _,
     disease_effect: int,
@@ -421,7 +421,7 @@ def GetDiseaseLegacyDungeon(
 # --- SPECIFIC DISEASE EVENTS ---
 
 
-@NeverRestart(Flags.GetDiseaseSiofra)
+@ContinueOnRest(Flags.GetDiseaseSiofra)
 def GetDiseaseSiofra():
     IfPlayerHasGood(7, DiseaseIndicators.SiofraDisease)
     SkipLinesIfConditionFalse(2, 7)  # just re-apply disease effect and end
@@ -471,7 +471,7 @@ def GetDiseaseSiofra():
     EnableFlag(Flags.SiofraDiseaseTwice)
 
 
-@NeverRestart(Flags.GetDiseaseAinsel)
+@ContinueOnRest(Flags.GetDiseaseAinsel)
 def GetDiseaseAinsel():
     IfPlayerHasGood(7, DiseaseIndicators.AinselDisease)
     SkipLinesIfConditionFalse(2, 7)  # just re-apply disease effect and end
@@ -519,7 +519,7 @@ def GetDiseaseAinsel():
     EnableFlag(Flags.AinselDiseaseTwice)
 
 
-@NeverRestart(Flags.GetDiseaseDeeprootAstel)
+@ContinueOnRest(Flags.GetDiseaseDeeprootAstel)
 def GetDiseaseDeeprootAstel():
     IfPlayerHasGood(7, DiseaseIndicators.DeeprootDisease)
     SkipLinesIfConditionFalse(2, 7)  # just re-apply disease effect and end
@@ -569,7 +569,7 @@ def GetDiseaseDeeprootAstel():
     EnableFlag(Flags.DeeprootDiseaseTwice)
 
 
-@NeverRestart(Flags.GetDiseaseRadahn)
+@ContinueOnRest(Flags.GetDiseaseRadahn)
 def GetDiseaseRadahn():
     """Only afflicted by Radahn himself."""
     IfPlayerHasGood(7, DiseaseIndicators.RadahnDisease)
@@ -614,7 +614,7 @@ def GetDiseaseRadahn():
 # --- GENERIC DUNGEON DISEASES ---
 
 
-@NeverRestart(Flags.GetDiseaseCatacombs)
+@ContinueOnRest(Flags.GetDiseaseCatacombs)
 def GetDiseaseCatacombs():
     IfPlayerHasGood(7, DiseaseIndicators.CatacombsDisease)
     SkipLinesIfConditionFalse(2, 7)  # just re-apply disease effect and end
@@ -680,7 +680,7 @@ def GetDiseaseCatacombs():
     EnableFlag(Flags.CatacombsDiseaseTwice)
 
 
-@NeverRestart(Flags.GetDiseaseCaves)
+@ContinueOnRest(Flags.GetDiseaseCaves)
 def GetDiseaseCaves():
     IfPlayerHasGood(7, DiseaseIndicators.CaveDisease)
     SkipLinesIfConditionFalse(2, 7)  # just re-apply disease effect and end
@@ -747,7 +747,7 @@ def GetDiseaseCaves():
     EnableFlag(Flags.CaveDiseaseTwice)
 
 
-@NeverRestart(Flags.GetDiseaseTunnels)
+@ContinueOnRest(Flags.GetDiseaseTunnels)
 def GetDiseaseTunnels():
     IfPlayerHasGood(7, DiseaseIndicators.TunnelDisease)
     SkipLinesIfConditionFalse(2, 7)  # just re-apply disease effect and end
@@ -805,7 +805,7 @@ def GetDiseaseTunnels():
 
 @RestartOnRest(Flags.CaveDiseaseInDaylight)
 def CaveDiseaseInDaylight():
-    CancelSpecialEffect(PLAYER, SurvivalEffects.CaveDiseaseDaylight)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.CaveDiseaseDaylight)
 
     IfPlayerHasSpecialEffect(1, SurvivalEffects.CaveDisease)
     IfTimeOfDay(1, (6, 0, 0), (19, 0, 0))
@@ -823,13 +823,13 @@ def CaveDiseaseInDaylight():
 # --- DISEASE CURES ---
 
 
-@NeverRestart(Flags.CureDisease)
+@ContinueOnRest(Flags.CureDisease)
 def CureDisease(_, disease_effect: int, cure_effect: int, disease_item: int, cure_text: int):
     IfPlayerHasSpecialEffect(1, cure_effect)
     IfPlayerHasSpecialEffect(1, disease_effect)
     IfConditionTrue(0, 1)
 
-    CancelSpecialEffect(PLAYER, disease_effect)
+    RemoveSpecialEffect(PLAYER, disease_effect)
     DisplayStatus(cure_text)
     RemoveGoodFromPlayer(disease_item, 99)
 

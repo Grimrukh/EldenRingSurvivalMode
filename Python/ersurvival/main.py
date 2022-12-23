@@ -106,10 +106,14 @@ def install_all_evs_variants():
     install_evs()
 
 
-if __name__ == '__main__':
-    install_all_evs_variants()
+def get_vanilla_common_emevd():
+    """Just converts vanilla common EMEVD to EVS in repo, into which my add-on scripts can be merged."""
 
-    # install_evs()
+
+if __name__ == '__main__':
+    # install_all_evs_variants()
+
+    install_evs()
     # generate_all_params()
     # set_all_text()
     print("Full SurvivalMode Python installation complete. (Now use Yapped to convert CSVs to `regulation.bin`.")

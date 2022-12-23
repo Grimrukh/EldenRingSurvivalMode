@@ -9,11 +9,11 @@ from .survival_enums import *
 from .survival_goods import *
 
 
-@NeverRestart(0)
+@ContinueOnRest(0)
 def Constructor():
     """Will be merged with vanilla Common."""
 
-    # region TODO: Debugging. Remove for release.
+    # region TODO: Debug tests. Always remove or comment out for release.
     # DisableFlagRange((18001000, 18001999))
     # AwardItemLot(600)
     # AwardItemLot(610)
@@ -76,7 +76,7 @@ def Constructor():
 # --- MAP CHECKS ---
 
 
-@NeverRestart(Flags.MonitorInLimgrave)
+@ContinueOnRest(Flags.MonitorInLimgrave)
 def MonitorInLimgrave():
     DisableFlag(Flags.PlayerInLimgrave)
 
@@ -125,7 +125,7 @@ def MonitorInLimgrave():
     return RESTART
 
 
-@NeverRestart(Flags.MonitorInLiurnia)
+@ContinueOnRest(Flags.MonitorInLiurnia)
 def MonitorInLiurnia():
     DisableFlag(Flags.PlayerInLiurnia)
 
@@ -178,7 +178,7 @@ def MonitorInLiurnia():
     return RESTART
 
 
-@NeverRestart(Flags.MonitorInCaelid)
+@ContinueOnRest(Flags.MonitorInCaelid)
 def MonitorInCaelid():
     DisableFlag(Flags.PlayerInCaelid)
 
@@ -247,7 +247,7 @@ def MonitorInCaelid():
     return RESTART
 
 
-@NeverRestart(Flags.MonitorInAltus)
+@ContinueOnRest(Flags.MonitorInAltus)
 def MonitorInAltus():
     """Does NOT include Mt. Gelmir."""
     DisableFlag(Flags.PlayerInAltus)
@@ -258,10 +258,10 @@ def MonitorInAltus():
             IfInsideMap(-1, (60, b, c, 0))
     # Ignoring western lake (too close to Liurnia and Mt. Gelmir).
     # Far east:
-    IfInsideMapTile(-1, (60, 44, 52, 0))
-    IfInsideMapTile(-1, (60, 44, 53, 0))
-    IfInsideMapTile(-1, (60, 45, 52, 0))
-    IfInsideMapTile(-1, (60, 45, 53, 0))
+    IfInsideMap(-1, (60, 44, 52, 0))
+    IfInsideMap(-1, (60, 44, 53, 0))
+    IfInsideMap(-1, (60, 45, 52, 0))
+    IfInsideMap(-1, (60, 45, 53, 0))
 
     IfConditionTrue(1, -1)
     IfFlagDisabled(1, Flags.PlayerInLegacyDungeon)
@@ -277,10 +277,10 @@ def MonitorInAltus():
             IfInsideMap(-2, (60, b, c, 0))
     # Ignoring western lake (too close to Liurnia and Mt. Gelmir).
     # Far east:
-    IfInsideMapTile(-2, (60, 44, 52, 0))
-    IfInsideMapTile(-2, (60, 44, 53, 0))
-    IfInsideMapTile(-2, (60, 45, 52, 0))
-    IfInsideMapTile(-2, (60, 45, 53, 0))
+    IfInsideMap(-2, (60, 44, 52, 0))
+    IfInsideMap(-2, (60, 44, 53, 0))
+    IfInsideMap(-2, (60, 45, 52, 0))
+    IfInsideMap(-2, (60, 45, 53, 0))
 
     IfConditionTrue(2, -2)
     IfFlagDisabled(2, Flags.PlayerInLegacyDungeon)
@@ -291,7 +291,7 @@ def MonitorInAltus():
     return RESTART
 
 
-@NeverRestart(Flags.MonitorInMtGelmir)
+@ContinueOnRest(Flags.MonitorInMtGelmir)
 def MonitorInMtGelmir():
     """Does NOT include rest of Altus."""
     DisableFlag(Flags.PlayerInMtGelmir)
@@ -301,9 +301,9 @@ def MonitorInMtGelmir():
         for c in range(52, 56):
             IfInsideMap(-1, (60, b, c, 0))
     # Western side:
-    IfInsideMapTile(-1, (60, 38, 52, 0))
-    IfInsideMapTile(-1, (60, 38, 53, 0))
-    IfInsideMapTile(-1, (60, 38, 54, 0))
+    IfInsideMap(-1, (60, 38, 52, 0))
+    IfInsideMap(-1, (60, 38, 53, 0))
+    IfInsideMap(-1, (60, 38, 54, 0))
 
     IfConditionTrue(1, -1)
     IfFlagDisabled(1, Flags.PlayerInLegacyDungeon)
@@ -318,9 +318,9 @@ def MonitorInMtGelmir():
         for c in range(52, 56):
             IfInsideMap(-2, (60, b, c, 0))
     # Western side:
-    IfInsideMapTile(-2, (60, 38, 52, 0))
-    IfInsideMapTile(-2, (60, 38, 53, 0))
-    IfInsideMapTile(-2, (60, 38, 54, 0))
+    IfInsideMap(-2, (60, 38, 52, 0))
+    IfInsideMap(-2, (60, 38, 53, 0))
+    IfInsideMap(-2, (60, 38, 54, 0))
 
     IfConditionTrue(2, -2)
     IfFlagDisabled(2, Flags.PlayerInLegacyDungeon)
@@ -331,7 +331,7 @@ def MonitorInMtGelmir():
     return RESTART
 
 
-@NeverRestart(Flags.MonitorInMountaintops)
+@ContinueOnRest(Flags.MonitorInMountaintops)
 def MonitorInMountaintops():
     DisableFlag(Flags.PlayerInMountaintops)
 
@@ -368,7 +368,7 @@ def MonitorInMountaintops():
     return RESTART
 
 
-@NeverRestart(Flags.MonitorInGenericDungeon)
+@ContinueOnRest(Flags.MonitorInGenericDungeon)
 def MonitorInGenericDungeon():
     DisableFlag(Flags.PlayerInGenericDungeon)
 
@@ -485,7 +485,7 @@ def MonitorInGenericDungeon():
     return RESTART
 
 
-@NeverRestart(Flags.MonitorInLegacyDungeon)
+@ContinueOnRest(Flags.MonitorInLegacyDungeon)
 def MonitorInLegacyDungeon():
     """Includes underground rivers - basically anywhere except an m60 map tile."""
     DisableFlag(Flags.PlayerInLegacyDungeon)
@@ -501,8 +501,8 @@ def MonitorInLegacyDungeon():
     IfInsideMap(-1, ASTEL_ARENA)
     IfInsideMap(-1, MOHGWYN_PALACE)
     IfInsideMap(-1, SIOFRA_RIVER_START)
-    IfInsideMap(-1, REGAL_ANCESTOR_LOWER)
-    IfInsideMap(-1, REGAL_ANCESTOR_UPPER)
+    IfInsideMap(-1, ANCESTOR_SPIRIT_ARENA)
+    IfInsideMap(-1, REGAL_ANCESTOR_ARENA)
     IfInsideMap(-1, CRUMBLING_FARUM_AZULA)
     IfInsideMap(-1, RAYA_LUCARIA)
     IfInsideMap(-1, HALIGTREE)
@@ -527,8 +527,8 @@ def MonitorInLegacyDungeon():
     IfInsideMap(-2, ASTEL_ARENA)
     IfInsideMap(-2, MOHGWYN_PALACE)
     IfInsideMap(-2, SIOFRA_RIVER_START)
-    IfInsideMap(-2, REGAL_ANCESTOR_LOWER)
-    IfInsideMap(-2, REGAL_ANCESTOR_UPPER)
+    IfInsideMap(-2, ANCESTOR_SPIRIT_ARENA)
+    IfInsideMap(-2, REGAL_ANCESTOR_ARENA)
     IfInsideMap(-2, CRUMBLING_FARUM_AZULA)
     IfInsideMap(-2, RAYA_LUCARIA)
     IfInsideMap(-2, HALIGTREE)
@@ -543,7 +543,7 @@ def MonitorInLegacyDungeon():
     return RESTART
 
 
-@NeverRestart(Flags.MonitorOutdoors)
+@ContinueOnRest(Flags.MonitorOutdoors)
 def MonitorOutdoors():
     """Enables a flag when player is outdoors, for darkness."""
     DisableFlag(Flags.PlayerIsOutdoors)
@@ -561,6 +561,7 @@ def MonitorOutdoors():
     IfInsideMap(-1, LEYNDELL_ASHEN_CAPITAL)
     IfInsideMap(-1, HALIGTREE)
     IfInsideMap(-1, CRUMBLING_FARUM_AZULA)
+    IfInsideMap(-1, CHAPEL_OF_ANTICIPATION)  # NEW
     # Not Sewers, Siofra, Ainsel, or Mohgwyn.
 
     IfConditionTrue(0, -1)
@@ -587,13 +588,14 @@ def MonitorOutdoors():
     return RESTART
 
 
-@NeverRestart(Flags.MonitorHour)
+@ContinueOnRest(Flags.MonitorHour)
 def MonitorHour(_, hour: uchar, hour_flag: int):
     DisableFlag(hour_flag)
 
     IfTimeOfDay(0, (hour, 0, 0), (hour, 59, 59))
     DisableFlagRange((Flags.Hour0, Flags.Hour23))
     EnableFlag(hour_flag)
+    DisplayBanner(BannerType.BloodyFingerVanquished)
 
     # Wait for it to NOT be this hour before restarting to check again.
     IfTimeOfDay(1, (hour, 0, 0), (hour, 59, 59))
@@ -602,7 +604,7 @@ def MonitorHour(_, hour: uchar, hour_flag: int):
     return RESTART
 
 
-@NeverRestart(Flags.MonitorPlayerTorch)
+@ContinueOnRest(Flags.MonitorPlayerTorch)
 def MonitorPlayerTorch():
     """Simply monitors Torch SpEffect 415."""
     DisableFlag(Flags.PlayerHasTorch)
@@ -612,7 +614,7 @@ def MonitorPlayerTorch():
     return RESTART
 
 
-@NeverRestart(15003999)
+@ContinueOnRest(15003999)
 def DEBUG_ResetDiseases():
     """Debug event for removing all disease indicators and disabling immunity flags."""
     RemoveGoodFromPlayer(DiseaseIndicators.LimgraveDisease, 99)
@@ -638,30 +640,30 @@ def DEBUG_ResetDiseases():
     RemoveGoodFromPlayer(DiseaseIndicators.TunnelDisease, 99)
     DisableFlagRange((Flags.LimgraveDiseaseOnce, Flags.TunnelDiseaseTwice))
 
-    CancelSpecialEffect(PLAYER, SurvivalEffects.LimgraveDisease)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.LiurniaDisease)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.CaelidDisease)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.AltusDisease)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.MtGelmirDisease)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.MountaintopsDisease)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.SiofraDisease)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.AinselDisease)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.DeeprootDisease)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.StormveilDisease)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.RayaLucariaDisease)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.RadahnDisease)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.VolcanoManorDisease)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.LeyndellDisease)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.SewersDisease)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.HaligtreeDisease)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.FarumAzulaDisease)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.MohgwynDisease)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.CatacombsDisease)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.CaveDisease)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.TunnelDisease)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.LimgraveDisease)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.LiurniaDisease)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.CaelidDisease)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.AltusDisease)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.MtGelmirDisease)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.MountaintopsDisease)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.SiofraDisease)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.AinselDisease)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.DeeprootDisease)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.StormveilDisease)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.RayaLucariaDisease)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.RadahnDisease)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.VolcanoManorDisease)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.LeyndellDisease)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.SewersDisease)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.HaligtreeDisease)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.FarumAzulaDisease)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.MohgwynDisease)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.CatacombsDisease)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.CaveDisease)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.TunnelDisease)
 
 
-@NeverRestart(15003998)
+@ContinueOnRest(15003998)
 def DEBUG_GetAllMaps():
     """Award all map item lots."""
     AwardItemLot(12010000)
@@ -686,14 +688,14 @@ def DEBUG_GetAllMaps():
     AwardItemLot(1052540700)
 
 
-@NeverRestart(15003997)
+@ContinueOnRest(15003997)
 def DEBUG_GetDectusMedallions():
     """Award Dectus item lots."""
     AwardItemLot(1046360500)
     AwardItemLot(1051390900)
 
 
-@NeverRestart(15003996)
+@ContinueOnRest(15003996)
 def DEBUG_AlternateFlag():
     # 85
     DisableFlag(19000000)
@@ -720,7 +722,7 @@ def DEBUG_AlternateFlag():
     return RESTART
 
 
-@NeverRestart(15003995)
+@ContinueOnRest(15003995)
 def DEBUG_Hour18():
     Await(FlagEnabled(Flags.Hour20))
     DisplayBanner(BannerType.BloodyFingerVanquished)

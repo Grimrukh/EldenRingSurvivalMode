@@ -9,7 +9,7 @@ from soulstruct.eldenring.events import *
 from soulstruct.eldenring.events.instructions import *
 
 
-@NeverRestart(0)
+@ContinueOnRest(0)
 def Constructor():
     """Event 0"""
     Event_701()
@@ -1313,7 +1313,7 @@ def Constructor():
     Event_19001500(20, 53020, 53120, 8430, 50030)
 
 
-@NeverRestart(50)
+@ContinueOnRest(50)
 def Preconstructor():
     """Event 50"""
     Event_700()
@@ -1466,7 +1466,7 @@ def Preconstructor():
     End()
 
 
-@NeverRestart(130)
+@ContinueOnRest(130)
 def Event_130(_, collision: uint):
     """Event 130"""
     EndIfThisEventSlotFlagEnabled()
@@ -1476,7 +1476,7 @@ def Event_130(_, collision: uint):
     DisableThisSlotFlag()
 
 
-@NeverRestart(700)
+@ContinueOnRest(700)
 def Event_700():
     """Event 700"""
     EndIfPlayerNotInOwnWorld()
@@ -1626,7 +1626,7 @@ def Event_700():
     End()
 
 
-@NeverRestart(701)
+@ContinueOnRest(701)
 def Event_701():
     """Event 701"""
     EndIfPlayerNotInOwnWorld()
@@ -1698,7 +1698,7 @@ def Event_701():
     Wait(3.0)
 
 
-@NeverRestart(702)
+@ContinueOnRest(702)
 def Event_702():
     """Event 702"""
     EndIfPlayerNotInOwnWorld()
@@ -1715,7 +1715,7 @@ def Event_702():
     EnableFlag(101)
 
 
-@NeverRestart(703)
+@ContinueOnRest(703)
 def Event_703():
     """Event 703"""
     EndIfPlayerNotInOwnWorld()
@@ -1783,7 +1783,7 @@ def Event_711():
     Restart()
 
 
-@NeverRestart(715)
+@ContinueOnRest(715)
 def Event_715():
     """Event 715"""
     DisableNetworkSync()
@@ -1812,7 +1812,7 @@ def Event_715():
     Restart()
 
 
-@NeverRestart(716)
+@ContinueOnRest(716)
 def Event_716():
     """Event 716"""
     DisableNetworkSync()
@@ -1861,14 +1861,14 @@ def Event_730(_, flag: uint, value: int):
     EnableFlag(flag)
 
 
-@NeverRestart(740)
+@ContinueOnRest(740)
 def Event_740():
     """Event 740"""
     DisableNetworkSync()
     ChangeCamera(normal_camera_id=-1, locked_camera_id=-1)
 
 
-@NeverRestart(750)
+@ContinueOnRest(750)
 def Event_750():
     """Event 750"""
     DisableNetworkSync()
@@ -1915,7 +1915,7 @@ def Event_810():
     Restart()
 
 
-@NeverRestart(820)
+@ContinueOnRest(820)
 def Event_820(_, flag: uint, hours: char):
     """Event 820"""
     DisableNetworkSync()
@@ -2044,13 +2044,13 @@ def Event_839():
     Restart()
 
 
-@NeverRestart(840)
+@ContinueOnRest(840)
 def Event_840():
     """Event 840"""
     IfCharacterHasSpecialEffect(MAIN, PLAYER, 8998)
     UnknownMap_12(unk_0_4=3.0)
     Unknown_2003_68(unknown1=0, unknown2=1.0, unknown3=0)
-    CancelSpecialEffect(PLAYER, 8998)
+    RemoveSpecialEffect(PLAYER, 8998)
     Wait(1.2000000476837158)
     Restart()
 
@@ -2064,7 +2064,7 @@ def Event_841():
     Restart()
 
 
-@NeverRestart(900)
+@ContinueOnRest(900)
 def Event_900():
     """Event 900"""
     EndIfPlayerNotInOwnWorld()
@@ -2314,7 +2314,7 @@ def Event_902():
     End()
 
 
-@NeverRestart(910)
+@ContinueOnRest(910)
 def Event_910():
     """Event 910"""
     EndIfPlayerNotInOwnWorld()
@@ -2360,8 +2360,8 @@ def Event_910():
     Wait(10.0)
     IfCharacterDead(AND_2, PLAYER)
     EndIfConditionTrue(input_condition=AND_2)
-    IfInsideMapTile(OR_9, game_map=SOUTHEAST_CAELID_NW_NW)
-    IfInsideMapTile(OR_9, game_map=SOUTH_CAELID_NE_SE)
+    IfInsideMap(OR_9, game_map=SOUTHEAST_CAELID_NW_NW)
+    IfInsideMap(OR_9, game_map=SOUTH_CAELID_NE_SE)
     GotoIfConditionTrue(Label.L9, input_condition=OR_9)
     WarpToMap(game_map=SOUTH_CAELID_NE_SE, player_start=1051382020)
     End()
@@ -2371,7 +2371,7 @@ def Event_910():
     EnableFlag(9001)
     WaitFrames(frames=1)
     Unknown_2003_80(unk_0_4=0)
-    IfInsideMapTile(OR_10, game_map=SOUTHEAST_CAELID_NW_NW)
+    IfInsideMap(OR_10, game_map=SOUTHEAST_CAELID_NW_NW)
     SkipLinesIfConditionTrue(2, OR_10)
     UnknownCutscene_10(
         cutscene_id=60510011,
@@ -2439,7 +2439,7 @@ def Event_922():
     WarpToMap(game_map=MOHGWYN_PALACE, player_start=12052021)
 
 
-@NeverRestart(930)
+@ContinueOnRest(930)
 def Event_930(
     _,
     cutscene_id: int,
@@ -2545,7 +2545,7 @@ def Event_930(
     Restart()
 
 
-@NeverRestart(936)
+@ContinueOnRest(936)
 def Event_936(
     _,
     cutscene_id: int,
@@ -2585,7 +2585,7 @@ def Event_936(
     Restart()
 
 
-@NeverRestart(945)
+@ContinueOnRest(945)
 def Event_945():
     """Event 945"""
     DisableNetworkSync()
@@ -2727,7 +2727,7 @@ def Event_950():
     DisableFlag(9001)
 
 
-@NeverRestart(960)
+@ContinueOnRest(960)
 def Event_960(_, flag: uint):
     """Event 960"""
     EndIfFlagEnabled(951)
@@ -2739,7 +2739,7 @@ def Event_960(_, flag: uint):
     IncrementEventValue(955, bit_count=3, max_value=7)
 
 
-@NeverRestart(970)
+@ContinueOnRest(970)
 def Event_970():
     """Event 970"""
     DisableNetworkSync()
@@ -2759,7 +2759,7 @@ def Event_980():
     EnableFlag(1099002980)
 
 
-@NeverRestart(1020)
+@ContinueOnRest(1020)
 def Event_1020():
     """Event 1020"""
     DisableNetworkSync()
@@ -2792,7 +2792,7 @@ def Event_1020():
     Restart()
 
 
-@NeverRestart(1030)
+@ContinueOnRest(1030)
 def Event_1030():
     """Event 1030"""
     DisableNetworkSync()
@@ -3030,8 +3030,8 @@ def Event_1040():
     """Event 1040"""
     DisableNetworkSync()
     DeleteObjectVFX(1060001500)
-    CancelSpecialEffect(PLAYER, 4200)
-    CancelSpecialEffect(PLAYER, 4201)
+    RemoveSpecialEffect(PLAYER, 4200)
+    RemoveSpecialEffect(PLAYER, 4201)
     SetUnknownVFX_06(vfx_id=-1)
     IfTimeOfDay(AND_1, earliest=(0, 0, 0), latest=(2, 59, 59))
     IfUnknownCondition_31(AND_1, hours=0, unknown1=0.0, unknown2=0)
@@ -3080,8 +3080,8 @@ def Event_1040():
     IfConditionTrue(MAIN, input_condition=OR_10)
     SetUnknownVFX_06(vfx_id=-1)
     DeleteObjectVFX(1060001500)
-    CancelSpecialEffect(PLAYER, 4200)
-    CancelSpecialEffect(PLAYER, 4201)
+    RemoveSpecialEffect(PLAYER, 4200)
+    RemoveSpecialEffect(PLAYER, 4201)
     Wait(120.0)
     Restart()
 
@@ -3094,7 +3094,7 @@ def Event_1040():
     IfPlayerInOwnWorld(AND_12)
     IfConditionFalse(MAIN, input_condition=AND_12)
     SetUnknownVFX_06(vfx_id=-1)
-    CancelSpecialEffect(PLAYER, 4200)
+    RemoveSpecialEffect(PLAYER, 4200)
     Wait(10.0)
     Restart()
 
@@ -3144,8 +3144,8 @@ def Event_1040():
     Wait(300.0)
     SetUnknownVFX_06(vfx_id=-1)
     DeleteObjectVFX(1060001500)
-    CancelSpecialEffect(PLAYER, 4200)
-    CancelSpecialEffect(PLAYER, 4201)
+    RemoveSpecialEffect(PLAYER, 4200)
+    RemoveSpecialEffect(PLAYER, 4201)
     Wait(150.0)
     Restart()
 
@@ -3194,7 +3194,7 @@ def Event_1080():
     Restart()
 
 
-@NeverRestart(1100)
+@ContinueOnRest(1100)
 def Event_1100(_, flag: uint, item_lot__item_lot_param_id: int, item_lot_param_id: int, flag_1: uint):
     """Event 1100"""
     Unknown_2004_76(flag=flag, item_lot=item_lot__item_lot_param_id)
@@ -3207,7 +3207,7 @@ def Event_1100(_, flag: uint, item_lot__item_lot_param_id: int, item_lot_param_i
     AwardItemLot(item_lot_param_id, host_only=True)
 
 
-@NeverRestart(1200)
+@ContinueOnRest(1200)
 def Event_1200(_, flag: uint, item_lot__item_lot_param_id: int, item_lot_param_id: int, flag_1: uint):
     """Event 1200"""
     Unknown_2004_76(flag=flag, item_lot=item_lot__item_lot_param_id)
@@ -3220,7 +3220,7 @@ def Event_1200(_, flag: uint, item_lot__item_lot_param_id: int, item_lot_param_i
     AwardItemLot(item_lot_param_id, host_only=True)
 
 
-@NeverRestart(1400)
+@ContinueOnRest(1400)
 def Event_1400():
     """Event 1400"""
     EndIfPlayerNotInOwnWorld()
@@ -3237,7 +3237,7 @@ def Event_1400():
     EnableFlag(60849)
 
 
-@NeverRestart(1401)
+@ContinueOnRest(1401)
 def Event_1401():
     """Event 1401"""
     EndIfPlayerNotInOwnWorld()
@@ -3483,7 +3483,7 @@ def Event_1462():
     EnableFlag(6904)
 
 
-@NeverRestart(1600)
+@ContinueOnRest(1600)
 def Event_1600(_, flag: uint, flag_1: uint, obj: uint, obj_1: uint):
     """Event 1600"""
     DisableNetworkSync()
@@ -3893,7 +3893,7 @@ def Event_1801():
     Unknown_2004_75(character=PLAYER, unknown1=1, unknown2=80000)
 
 
-@NeverRestart(6901)
+@ContinueOnRest(6901)
 def Event_6901():
     """Event 6901"""
     EndIfThisEventSlotFlagEnabled()
@@ -4355,7 +4355,7 @@ def Event_9820(_, right: uint, item_lot_param_id: int, special_effect: int):
     Restart()
 
 
-@NeverRestart(65810)
+@ContinueOnRest(65810)
 def Event_65810(_, flag: uint, flag_1: uint, right: uint, right_1: uint, right_2: uint, right_3: uint):
     """Event 65810"""
     GotoIfPlayerNotInOwnWorld(Label.L15)
@@ -4384,7 +4384,7 @@ def Event_65810(_, flag: uint, flag_1: uint, right: uint, right_1: uint, right_2
     Wait(1.0)
 
 
-@NeverRestart(1910)
+@ContinueOnRest(1910)
 def Event_1910(_, unk_4_8: uint, flag: uint):
     """Event 1910"""
     IfUnknownCondition_33(MAIN, unk_4_8=unk_4_8, unk_8_9=True)
@@ -4423,7 +4423,7 @@ def Event_9910(_, flag: uint):
     Restart()
 
 
-@NeverRestart(3040)
+@ContinueOnRest(3040)
 def Event_3040():
     """Event 3040"""
     EndIfPlayerNotInOwnWorld()
@@ -5743,7 +5743,7 @@ def Event_4611(_, flag: uint, flag_1: uint):
     Restart()
 
 
-@NeverRestart(4612)
+@ContinueOnRest(4612)
 def Event_4612():
     """Event 4612"""
     EndIfPlayerNotInOwnWorld()
@@ -8550,7 +8550,7 @@ def Event_3839():
     End()
 
 
-@NeverRestart(9930)
+@ContinueOnRest(9930)
 def Event_9930(_, flag: uint, flag_1: uint, unk_0_4: int):
     """Event 9930"""
     EndIfPlayerNotInOwnWorld()
@@ -8563,7 +8563,7 @@ def Event_9930(_, flag: uint, flag_1: uint, unk_0_4: int):
     DisableFlag(flag)
 
 
-@NeverRestart(9940)
+@ContinueOnRest(9940)
 def Event_9940():
     """Event 9940"""
     IfFlagEnabled(MAIN, 9992)
@@ -8590,7 +8590,7 @@ def Event_9940():
     EnableFlag(82081)
 
 
-@NeverRestart(9941)
+@ContinueOnRest(9941)
 def Event_9941():
     """Event 9941"""
     IfFlagEnabled(MAIN, 9993)
@@ -8725,14 +8725,14 @@ def Event_9941():
     Restart()
 
 
-@NeverRestart(9943)
+@ContinueOnRest(9943)
 def Event_9943():
     """Event 9943"""
     IfFlagEnabled(MAIN, 9993)
     AwardItemLot(100400, host_only=True)
 
 
-@NeverRestart(9945)
+@ContinueOnRest(9945)
 def Event_9945():
     """Event 9945"""
     IfPlayerInOwnWorld(AND_1)
@@ -8755,7 +8755,7 @@ def Event_9945():
     Restart()
 
 
-@NeverRestart(9946)
+@ContinueOnRest(9946)
 def Event_9946(_, flag: uint, flag_1: uint):
     """Event 9946"""
     EndIfThisEventSlotFlagEnabled()
@@ -8763,7 +8763,7 @@ def Event_9946(_, flag: uint, flag_1: uint):
     EnableFlag(flag)
 
 
-@NeverRestart(9950)
+@ContinueOnRest(9950)
 def Event_9950(_, flag: uint, flag_1: uint):
     """Event 9950"""
     EndIfFlagEnabled(flag)
@@ -8771,7 +8771,7 @@ def Event_9950(_, flag: uint, flag_1: uint):
     EnableFlag(flag_1)
 
 
-@NeverRestart(19001040)
+@ContinueOnRest(19001040)
 def Event_19001040():
     """Event 19001040"""
     DisableFlag(19001050)
@@ -8919,7 +8919,7 @@ def Event_19001040():
     Restart()
 
 
-@NeverRestart(19001041)
+@ContinueOnRest(19001041)
 def Event_19001041():
     """Event 19001041"""
     DisableFlag(19001051)
@@ -9103,7 +9103,7 @@ def Event_19001041():
     Restart()
 
 
-@NeverRestart(19001042)
+@ContinueOnRest(19001042)
 def Event_19001042():
     """Event 19001042"""
     DisableFlag(19001052)
@@ -9183,7 +9183,7 @@ def Event_19001042():
     Restart()
 
 
-@NeverRestart(19001043)
+@ContinueOnRest(19001043)
 def Event_19001043():
     """Event 19001043"""
     DisableFlag(19001053)
@@ -9217,10 +9217,10 @@ def Event_19001043():
     IfInsideMap(OR_1, game_map=NORTH_ALTUS_PLATEAU_SE_NE)
     IfInsideMap(OR_1, game_map=NORTH_ALTUS_PLATEAU_NE_SE)
     IfInsideMap(OR_1, game_map=(60, 43, 55, 0))
-    IfInsideMapTile(OR_1, game_map=NORTHEAST_ALTUS_PLATEAU_SW_SW)
-    IfInsideMapTile(OR_1, game_map=NORTHEAST_ALTUS_PLATEAU_SW_NW)
-    IfInsideMapTile(OR_1, game_map=NORTHEAST_ALTUS_PLATEAU_SW_SE)
-    IfInsideMapTile(OR_1, game_map=NORTHEAST_ALTUS_PLATEAU_SW_NE)
+    IfInsideMap(OR_1, game_map=NORTHEAST_ALTUS_PLATEAU_SW_SW)
+    IfInsideMap(OR_1, game_map=NORTHEAST_ALTUS_PLATEAU_SW_NW)
+    IfInsideMap(OR_1, game_map=NORTHEAST_ALTUS_PLATEAU_SW_SE)
+    IfInsideMap(OR_1, game_map=NORTHEAST_ALTUS_PLATEAU_SW_NE)
     IfConditionTrue(AND_1, input_condition=OR_1)
     IfFlagDisabled(AND_1, 19001057)
     IfFlagDisabled(AND_1, 19001056)
@@ -9256,10 +9256,10 @@ def Event_19001043():
     IfInsideMap(OR_2, game_map=NORTH_ALTUS_PLATEAU_SE_NE)
     IfInsideMap(OR_2, game_map=NORTH_ALTUS_PLATEAU_NE_SE)
     IfInsideMap(OR_2, game_map=(60, 43, 55, 0))
-    IfInsideMapTile(OR_2, game_map=NORTHEAST_ALTUS_PLATEAU_SW_SW)
-    IfInsideMapTile(OR_2, game_map=NORTHEAST_ALTUS_PLATEAU_SW_NW)
-    IfInsideMapTile(OR_2, game_map=NORTHEAST_ALTUS_PLATEAU_SW_SE)
-    IfInsideMapTile(OR_2, game_map=NORTHEAST_ALTUS_PLATEAU_SW_NE)
+    IfInsideMap(OR_2, game_map=NORTHEAST_ALTUS_PLATEAU_SW_SW)
+    IfInsideMap(OR_2, game_map=NORTHEAST_ALTUS_PLATEAU_SW_NW)
+    IfInsideMap(OR_2, game_map=NORTHEAST_ALTUS_PLATEAU_SW_SE)
+    IfInsideMap(OR_2, game_map=NORTHEAST_ALTUS_PLATEAU_SW_NE)
     IfConditionTrue(AND_2, input_condition=OR_2)
     IfFlagDisabled(AND_2, 19001057)
     IfFlagDisabled(AND_2, 19001056)
@@ -9267,7 +9267,7 @@ def Event_19001043():
     Restart()
 
 
-@NeverRestart(19001044)
+@ContinueOnRest(19001044)
 def Event_19001044():
     """Event 19001044"""
     DisableFlag(19001054)
@@ -9287,9 +9287,9 @@ def Event_19001044():
     IfInsideMap(OR_1, game_map=WEST_ALTUS_PLATEAU_SW_NE)
     IfInsideMap(OR_1, game_map=WEST_ALTUS_PLATEAU_NW_SE)
     IfInsideMap(OR_1, game_map=WEST_ALTUS_PLATEAU_NW_NE)
-    IfInsideMapTile(OR_1, game_map=WEST_ALTUS_PLATEAU_SE_SW)
-    IfInsideMapTile(OR_1, game_map=WEST_ALTUS_PLATEAU_SE_NW)
-    IfInsideMapTile(OR_1, game_map=WEST_ALTUS_PLATEAU_NE_SW)
+    IfInsideMap(OR_1, game_map=WEST_ALTUS_PLATEAU_SE_SW)
+    IfInsideMap(OR_1, game_map=WEST_ALTUS_PLATEAU_SE_NW)
+    IfInsideMap(OR_1, game_map=WEST_ALTUS_PLATEAU_NE_SW)
     IfConditionTrue(AND_1, input_condition=OR_1)
     IfFlagDisabled(AND_1, 19001057)
     IfFlagDisabled(AND_1, 19001056)
@@ -9311,9 +9311,9 @@ def Event_19001044():
     IfInsideMap(OR_2, game_map=WEST_ALTUS_PLATEAU_SW_NE)
     IfInsideMap(OR_2, game_map=WEST_ALTUS_PLATEAU_NW_SE)
     IfInsideMap(OR_2, game_map=WEST_ALTUS_PLATEAU_NW_NE)
-    IfInsideMapTile(OR_2, game_map=WEST_ALTUS_PLATEAU_SE_SW)
-    IfInsideMapTile(OR_2, game_map=WEST_ALTUS_PLATEAU_SE_NW)
-    IfInsideMapTile(OR_2, game_map=WEST_ALTUS_PLATEAU_NE_SW)
+    IfInsideMap(OR_2, game_map=WEST_ALTUS_PLATEAU_SE_SW)
+    IfInsideMap(OR_2, game_map=WEST_ALTUS_PLATEAU_SE_NW)
+    IfInsideMap(OR_2, game_map=WEST_ALTUS_PLATEAU_NE_SW)
     IfConditionTrue(AND_2, input_condition=OR_2)
     IfFlagDisabled(AND_2, 19001057)
     IfFlagDisabled(AND_2, 19001056)
@@ -9321,7 +9321,7 @@ def Event_19001044():
     Restart()
 
 
-@NeverRestart(19001045)
+@ContinueOnRest(19001045)
 def Event_19001045():
     """Event 19001045"""
     DisableFlag(19001055)
@@ -9425,7 +9425,7 @@ def Event_19001045():
     Restart()
 
 
-@NeverRestart(19001046)
+@ContinueOnRest(19001046)
 def Event_19001046():
     """Event 19001046"""
     DisableFlag(19001056)
@@ -9531,7 +9531,7 @@ def Event_19001046():
     Restart()
 
 
-@NeverRestart(19001047)
+@ContinueOnRest(19001047)
 def Event_19001047():
     """Event 19001047"""
     DisableFlag(19001057)
@@ -9546,8 +9546,8 @@ def Event_19001047():
     IfInsideMap(OR_1, game_map=ASTEL_ARENA)
     IfInsideMap(OR_1, game_map=MOHGWYN_PALACE)
     IfInsideMap(OR_1, game_map=SIOFRA_RIVER_START)
-    IfInsideMap(OR_1, game_map=REGAL_ANCESTOR_LOWER)
-    IfInsideMap(OR_1, game_map=REGAL_ANCESTOR_UPPER)
+    IfInsideMap(OR_1, game_map=ANCESTOR_SPIRIT_ARENA)
+    IfInsideMap(OR_1, game_map=REGAL_ANCESTOR_ARENA)
     IfInsideMap(OR_1, game_map=CRUMBLING_FARUM_AZULA)
     IfInsideMap(OR_1, game_map=RAYA_LUCARIA)
     IfInsideMap(OR_1, game_map=HALIGTREE)
@@ -9569,8 +9569,8 @@ def Event_19001047():
     IfInsideMap(OR_2, game_map=ASTEL_ARENA)
     IfInsideMap(OR_2, game_map=MOHGWYN_PALACE)
     IfInsideMap(OR_2, game_map=SIOFRA_RIVER_START)
-    IfInsideMap(OR_2, game_map=REGAL_ANCESTOR_LOWER)
-    IfInsideMap(OR_2, game_map=REGAL_ANCESTOR_UPPER)
+    IfInsideMap(OR_2, game_map=ANCESTOR_SPIRIT_ARENA)
+    IfInsideMap(OR_2, game_map=REGAL_ANCESTOR_ARENA)
     IfInsideMap(OR_2, game_map=CRUMBLING_FARUM_AZULA)
     IfInsideMap(OR_2, game_map=RAYA_LUCARIA)
     IfInsideMap(OR_2, game_map=HALIGTREE)
@@ -9583,7 +9583,7 @@ def Event_19001047():
     Restart()
 
 
-@NeverRestart(19001398)
+@ContinueOnRest(19001398)
 def Event_19001398():
     """Event 19001398"""
     DisableFlag(19001592)
@@ -9600,6 +9600,7 @@ def Event_19001398():
     IfInsideMap(OR_1, game_map=LEYNDELL_ASHEN_CAPITAL)
     IfInsideMap(OR_1, game_map=HALIGTREE)
     IfInsideMap(OR_1, game_map=CRUMBLING_FARUM_AZULA)
+    IfInsideMap(OR_1, game_map=CHAPEL_OF_ANTICIPATION)
     IfConditionTrue(MAIN, input_condition=OR_1)
     EnableFlag(19001592)
     IfFlagEnabled(OR_2, 19001050)
@@ -9619,20 +9620,21 @@ def Event_19001398():
     Restart()
 
 
-@NeverRestart(19001550)
+@ContinueOnRest(19001550)
 def Event_19001550(_, earliest_hour__latest_hour: uchar, flag: uint):
     """Event 19001550"""
     DisableFlag(flag)
     IfTimeOfDay(MAIN, earliest=(earliest_hour__latest_hour, 0, 0), latest=(earliest_hour__latest_hour, 59, 59))
     DisableFlagRange((19001600, 19001623))
     EnableFlag(flag)
+    DisplayBanner(BannerType.BloodyFingerVanquished)
     IfTimeOfDay(AND_1, earliest=(earliest_hour__latest_hour, 0, 0), latest=(earliest_hour__latest_hour, 59, 59))
     IfConditionFalse(MAIN, input_condition=AND_1)
     Wait(1.0)
     Restart()
 
 
-@NeverRestart(19001583)
+@ContinueOnRest(19001583)
 def Event_19001583():
     """Event 19001583"""
     DisableFlag(19001584)
@@ -9642,7 +9644,7 @@ def Event_19001583():
     Restart()
 
 
-@NeverRestart(15003999)
+@ContinueOnRest(15003999)
 def Event_15003999():
     """Event 15003999"""
     RemoveGoodFromPlayer(item=8410, quantity=99)
@@ -9667,30 +9669,30 @@ def Event_15003999():
     RemoveGoodFromPlayer(item=8429, quantity=99)
     RemoveGoodFromPlayer(item=8430, quantity=99)
     DisableFlagRange((19001200, 19001243))
-    CancelSpecialEffect(PLAYER, 53000)
-    CancelSpecialEffect(PLAYER, 53001)
-    CancelSpecialEffect(PLAYER, 53002)
-    CancelSpecialEffect(PLAYER, 53003)
-    CancelSpecialEffect(PLAYER, 53004)
-    CancelSpecialEffect(PLAYER, 53005)
-    CancelSpecialEffect(PLAYER, 53006)
-    CancelSpecialEffect(PLAYER, 53007)
-    CancelSpecialEffect(PLAYER, 53008)
-    CancelSpecialEffect(PLAYER, 53009)
-    CancelSpecialEffect(PLAYER, 53010)
-    CancelSpecialEffect(PLAYER, 53011)
-    CancelSpecialEffect(PLAYER, 53012)
-    CancelSpecialEffect(PLAYER, 53013)
-    CancelSpecialEffect(PLAYER, 53014)
-    CancelSpecialEffect(PLAYER, 53015)
-    CancelSpecialEffect(PLAYER, 53016)
-    CancelSpecialEffect(PLAYER, 53017)
-    CancelSpecialEffect(PLAYER, 53018)
-    CancelSpecialEffect(PLAYER, 53019)
-    CancelSpecialEffect(PLAYER, 53020)
+    RemoveSpecialEffect(PLAYER, 53000)
+    RemoveSpecialEffect(PLAYER, 53001)
+    RemoveSpecialEffect(PLAYER, 53002)
+    RemoveSpecialEffect(PLAYER, 53003)
+    RemoveSpecialEffect(PLAYER, 53004)
+    RemoveSpecialEffect(PLAYER, 53005)
+    RemoveSpecialEffect(PLAYER, 53006)
+    RemoveSpecialEffect(PLAYER, 53007)
+    RemoveSpecialEffect(PLAYER, 53008)
+    RemoveSpecialEffect(PLAYER, 53009)
+    RemoveSpecialEffect(PLAYER, 53010)
+    RemoveSpecialEffect(PLAYER, 53011)
+    RemoveSpecialEffect(PLAYER, 53012)
+    RemoveSpecialEffect(PLAYER, 53013)
+    RemoveSpecialEffect(PLAYER, 53014)
+    RemoveSpecialEffect(PLAYER, 53015)
+    RemoveSpecialEffect(PLAYER, 53016)
+    RemoveSpecialEffect(PLAYER, 53017)
+    RemoveSpecialEffect(PLAYER, 53018)
+    RemoveSpecialEffect(PLAYER, 53019)
+    RemoveSpecialEffect(PLAYER, 53020)
 
 
-@NeverRestart(15003998)
+@ContinueOnRest(15003998)
 def Event_15003998():
     """Event 15003998"""
     AwardItemLot(12010000, host_only=True)
@@ -9715,14 +9717,14 @@ def Event_15003998():
     AwardItemLot(1052540700, host_only=True)
 
 
-@NeverRestart(15003997)
+@ContinueOnRest(15003997)
 def Event_15003997():
     """Event 15003997"""
     AwardItemLot(1046360500, host_only=True)
     AwardItemLot(1051390900, host_only=True)
 
 
-@NeverRestart(15003996)
+@ContinueOnRest(15003996)
 def Event_15003996():
     """Event 15003996"""
     DisableFlag(19000000)
@@ -9747,7 +9749,7 @@ def Event_15003996():
     Restart()
 
 
-@NeverRestart(15003995)
+@ContinueOnRest(15003995)
 def Event_15003995():
     """Event 15003995"""
     IfFlagEnabled(MAIN, 19001620)
@@ -9756,7 +9758,7 @@ def Event_15003995():
     Restart()
 
 
-@NeverRestart(19001000)
+@ContinueOnRest(19001000)
 def Event_19001000():
     """Event 19001000"""
     IfCharacterDoesNotHaveSpecialEffect(AND_1, PLAYER, 51912)
@@ -9798,66 +9800,66 @@ def Event_19001000():
     Wait(30.0)
     DisableFlagRange((19001010, 19001014))
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40001)
-    CancelSpecialEffect(PLAYER, 40001)
+    RemoveSpecialEffect(PLAYER, 40001)
     AddSpecialEffect(PLAYER, 40002)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40002)
-    CancelSpecialEffect(PLAYER, 40002)
+    RemoveSpecialEffect(PLAYER, 40002)
     AddSpecialEffect(PLAYER, 40003)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40003)
-    CancelSpecialEffect(PLAYER, 40003)
+    RemoveSpecialEffect(PLAYER, 40003)
     AddSpecialEffect(PLAYER, 40004)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40004)
-    CancelSpecialEffect(PLAYER, 40004)
+    RemoveSpecialEffect(PLAYER, 40004)
     AddSpecialEffect(PLAYER, 40005)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40005)
-    CancelSpecialEffect(PLAYER, 40005)
+    RemoveSpecialEffect(PLAYER, 40005)
     AddSpecialEffect(PLAYER, 40006)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40006)
-    CancelSpecialEffect(PLAYER, 40006)
+    RemoveSpecialEffect(PLAYER, 40006)
     AddSpecialEffect(PLAYER, 40007)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40007)
-    CancelSpecialEffect(PLAYER, 40007)
+    RemoveSpecialEffect(PLAYER, 40007)
     AddSpecialEffect(PLAYER, 40008)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40008)
-    CancelSpecialEffect(PLAYER, 40008)
+    RemoveSpecialEffect(PLAYER, 40008)
     AddSpecialEffect(PLAYER, 40009)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40009)
-    CancelSpecialEffect(PLAYER, 40009)
+    RemoveSpecialEffect(PLAYER, 40009)
     AddSpecialEffect(PLAYER, 40010)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40010)
-    CancelSpecialEffect(PLAYER, 40010)
+    RemoveSpecialEffect(PLAYER, 40010)
     AddSpecialEffect(PLAYER, 40011)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40011)
-    CancelSpecialEffect(PLAYER, 40011)
+    RemoveSpecialEffect(PLAYER, 40011)
     AddSpecialEffect(PLAYER, 40012)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40012)
-    CancelSpecialEffect(PLAYER, 40012)
+    RemoveSpecialEffect(PLAYER, 40012)
     AddSpecialEffect(PLAYER, 40013)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40013)
-    CancelSpecialEffect(PLAYER, 40013)
+    RemoveSpecialEffect(PLAYER, 40013)
     AddSpecialEffect(PLAYER, 40014)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40014)
-    CancelSpecialEffect(PLAYER, 40014)
+    RemoveSpecialEffect(PLAYER, 40014)
     AddSpecialEffect(PLAYER, 40015)
     Restart()
     AddSpecialEffect(PLAYER, 40001)
     Restart()
 
 
-@NeverRestart(19001001)
+@ContinueOnRest(19001001)
 def Event_19001001():
     """Event 19001001"""
     IfCharacterDoesNotHaveSpecialEffect(AND_1, PLAYER, 51913)
@@ -9899,35 +9901,35 @@ def Event_19001001():
     Wait(50.0)
     DisableFlagRange((19001015, 19001019))
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40021)
-    CancelSpecialEffect(PLAYER, 40021)
+    RemoveSpecialEffect(PLAYER, 40021)
     AddSpecialEffect(PLAYER, 40022)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40022)
-    CancelSpecialEffect(PLAYER, 40022)
+    RemoveSpecialEffect(PLAYER, 40022)
     AddSpecialEffect(PLAYER, 40023)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40023)
-    CancelSpecialEffect(PLAYER, 40023)
+    RemoveSpecialEffect(PLAYER, 40023)
     AddSpecialEffect(PLAYER, 40024)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40024)
-    CancelSpecialEffect(PLAYER, 40024)
+    RemoveSpecialEffect(PLAYER, 40024)
     AddSpecialEffect(PLAYER, 40025)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40025)
-    CancelSpecialEffect(PLAYER, 40025)
+    RemoveSpecialEffect(PLAYER, 40025)
     AddSpecialEffect(PLAYER, 40026)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40026)
-    CancelSpecialEffect(PLAYER, 40026)
+    RemoveSpecialEffect(PLAYER, 40026)
     AddSpecialEffect(PLAYER, 40027)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40027)
-    CancelSpecialEffect(PLAYER, 40027)
+    RemoveSpecialEffect(PLAYER, 40027)
     AddSpecialEffect(PLAYER, 40028)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=4, character=PLAYER, special_effect=40028)
-    CancelSpecialEffect(PLAYER, 40028)
+    RemoveSpecialEffect(PLAYER, 40028)
     AddSpecialEffect(PLAYER, 40029)
     DisplayStatus(50050)
     Restart()
@@ -9935,7 +9937,7 @@ def Event_19001001():
     Restart()
 
 
-@NeverRestart(19001003)
+@ContinueOnRest(19001003)
 def Event_19001003():
     """Event 19001003"""
     IfFlagEnabled(MAIN, 19001002)
@@ -9943,93 +9945,93 @@ def Event_19001003():
     DisableFlagRange((19001010, 19001014))
     DisableFlagRange((19001015, 19001019))
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40001)
-    CancelSpecialEffect(PLAYER, 40001)
+    RemoveSpecialEffect(PLAYER, 40001)
     AddSpecialEffect(PLAYER, 40006)
     SkipLines(53)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40002)
-    CancelSpecialEffect(PLAYER, 40002)
+    RemoveSpecialEffect(PLAYER, 40002)
     AddSpecialEffect(PLAYER, 40007)
     SkipLines(49)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40003)
-    CancelSpecialEffect(PLAYER, 40003)
+    RemoveSpecialEffect(PLAYER, 40003)
     AddSpecialEffect(PLAYER, 40008)
     SkipLines(45)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40004)
-    CancelSpecialEffect(PLAYER, 40004)
+    RemoveSpecialEffect(PLAYER, 40004)
     AddSpecialEffect(PLAYER, 40009)
     SkipLines(41)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40005)
-    CancelSpecialEffect(PLAYER, 40005)
+    RemoveSpecialEffect(PLAYER, 40005)
     AddSpecialEffect(PLAYER, 40010)
     SkipLines(37)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40006)
-    CancelSpecialEffect(PLAYER, 40006)
+    RemoveSpecialEffect(PLAYER, 40006)
     AddSpecialEffect(PLAYER, 40011)
     SkipLines(33)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40007)
-    CancelSpecialEffect(PLAYER, 40007)
+    RemoveSpecialEffect(PLAYER, 40007)
     AddSpecialEffect(PLAYER, 40012)
     SkipLines(29)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40008)
-    CancelSpecialEffect(PLAYER, 40008)
+    RemoveSpecialEffect(PLAYER, 40008)
     AddSpecialEffect(PLAYER, 40013)
     SkipLines(25)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40009)
-    CancelSpecialEffect(PLAYER, 40009)
+    RemoveSpecialEffect(PLAYER, 40009)
     AddSpecialEffect(PLAYER, 40014)
     SkipLines(21)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40010)
-    CancelSpecialEffect(PLAYER, 40010)
+    RemoveSpecialEffect(PLAYER, 40010)
     AddSpecialEffect(PLAYER, 40015)
     SkipLines(17)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40011)
-    CancelSpecialEffect(PLAYER, 40011)
+    RemoveSpecialEffect(PLAYER, 40011)
     AddSpecialEffect(PLAYER, 40015)
     SkipLines(13)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40012)
-    CancelSpecialEffect(PLAYER, 40012)
+    RemoveSpecialEffect(PLAYER, 40012)
     AddSpecialEffect(PLAYER, 40015)
     SkipLines(9)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40013)
-    CancelSpecialEffect(PLAYER, 40013)
+    RemoveSpecialEffect(PLAYER, 40013)
     AddSpecialEffect(PLAYER, 40015)
     SkipLines(5)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40014)
-    CancelSpecialEffect(PLAYER, 40014)
+    RemoveSpecialEffect(PLAYER, 40014)
     AddSpecialEffect(PLAYER, 40015)
     SkipLines(1)
     AddSpecialEffect(PLAYER, 40005)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40021)
-    CancelSpecialEffect(PLAYER, 40021)
+    RemoveSpecialEffect(PLAYER, 40021)
     AddSpecialEffect(PLAYER, 40023)
     End()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40022)
-    CancelSpecialEffect(PLAYER, 40022)
+    RemoveSpecialEffect(PLAYER, 40022)
     AddSpecialEffect(PLAYER, 40024)
     End()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40023)
-    CancelSpecialEffect(PLAYER, 40023)
+    RemoveSpecialEffect(PLAYER, 40023)
     AddSpecialEffect(PLAYER, 40025)
     End()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40024)
-    CancelSpecialEffect(PLAYER, 40024)
+    RemoveSpecialEffect(PLAYER, 40024)
     AddSpecialEffect(PLAYER, 40026)
     End()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40025)
-    CancelSpecialEffect(PLAYER, 40025)
+    RemoveSpecialEffect(PLAYER, 40025)
     AddSpecialEffect(PLAYER, 40027)
     End()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40026)
-    CancelSpecialEffect(PLAYER, 40026)
+    RemoveSpecialEffect(PLAYER, 40026)
     AddSpecialEffect(PLAYER, 40028)
     End()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=4, character=PLAYER, special_effect=40027)
-    CancelSpecialEffect(PLAYER, 40027)
+    RemoveSpecialEffect(PLAYER, 40027)
     AddSpecialEffect(PLAYER, 40029)
     DisplayStatus(50050)
     End()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=4, character=PLAYER, special_effect=40028)
-    CancelSpecialEffect(PLAYER, 40028)
+    RemoveSpecialEffect(PLAYER, 40028)
     AddSpecialEffect(PLAYER, 40029)
     DisplayStatus(50050)
     End()
@@ -10037,7 +10039,7 @@ def Event_19001003():
     End()
 
 
-@NeverRestart(19001489)
+@ContinueOnRest(19001489)
 def Event_19001489():
     """Event 19001489"""
     SkipLinesIfFlagDisabled(2, 19001470)
@@ -10085,7 +10087,7 @@ def Event_19001489():
     SkipLinesIfFlagDisabled(2, 19001484)
     DisableFlag(19001484)
     AddSpecialEffect(PLAYER, 40015)
-    IfHealthLessThanOrEqual(MAIN, PLAYER, value=0.0)
+    IfHealthRatioLessThanOrEqual(MAIN, PLAYER, value=0.0)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40001)
     EnableFlag(19001470)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40002)
@@ -10119,7 +10121,7 @@ def Event_19001489():
     End()
 
 
-@NeverRestart(19001499)
+@ContinueOnRest(19001499)
 def Event_19001499():
     """Event 19001499"""
     SkipLinesIfFlagDisabled(2, 19001490)
@@ -10149,7 +10151,7 @@ def Event_19001499():
     SkipLinesIfFlagDisabled(2, 19001498)
     DisableFlag(19001498)
     AddSpecialEffect(PLAYER, 40029)
-    IfHealthLessThanOrEqual(MAIN, PLAYER, value=0.0)
+    IfHealthRatioLessThanOrEqual(MAIN, PLAYER, value=0.0)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40021)
     EnableFlag(19001490)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40022)
@@ -10171,7 +10173,7 @@ def Event_19001499():
     End()
 
 
-@NeverRestart(19001260)
+@ContinueOnRest(19001260)
 def Event_19001260():
     """Event 19001260"""
     IfCharacterHasSpecialEffect(OR_1, PLAYER, 51904)
@@ -10181,68 +10183,68 @@ def Event_19001260():
     IfCharacterHasSpecialEffect(OR_2, PLAYER, 51906)
     IfConditionTrue(MAIN, input_condition=OR_2)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40001)
-    CancelSpecialEffect(PLAYER, 40001)
+    RemoveSpecialEffect(PLAYER, 40001)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40002)
-    CancelSpecialEffect(PLAYER, 40002)
+    RemoveSpecialEffect(PLAYER, 40002)
     AddSpecialEffect(PLAYER, 40001)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40003)
-    CancelSpecialEffect(PLAYER, 40003)
+    RemoveSpecialEffect(PLAYER, 40003)
     AddSpecialEffect(PLAYER, 40002)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40004)
-    CancelSpecialEffect(PLAYER, 40004)
+    RemoveSpecialEffect(PLAYER, 40004)
     AddSpecialEffect(PLAYER, 40003)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40005)
-    CancelSpecialEffect(PLAYER, 40005)
+    RemoveSpecialEffect(PLAYER, 40005)
     AddSpecialEffect(PLAYER, 40004)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40006)
-    CancelSpecialEffect(PLAYER, 40006)
+    RemoveSpecialEffect(PLAYER, 40006)
     AddSpecialEffect(PLAYER, 40005)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40007)
-    CancelSpecialEffect(PLAYER, 40007)
+    RemoveSpecialEffect(PLAYER, 40007)
     AddSpecialEffect(PLAYER, 40006)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40008)
-    CancelSpecialEffect(PLAYER, 40008)
+    RemoveSpecialEffect(PLAYER, 40008)
     AddSpecialEffect(PLAYER, 40007)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40009)
-    CancelSpecialEffect(PLAYER, 40009)
+    RemoveSpecialEffect(PLAYER, 40009)
     AddSpecialEffect(PLAYER, 40008)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40010)
-    CancelSpecialEffect(PLAYER, 40010)
+    RemoveSpecialEffect(PLAYER, 40010)
     AddSpecialEffect(PLAYER, 40009)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40011)
-    CancelSpecialEffect(PLAYER, 40011)
+    RemoveSpecialEffect(PLAYER, 40011)
     AddSpecialEffect(PLAYER, 40010)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40012)
-    CancelSpecialEffect(PLAYER, 40012)
+    RemoveSpecialEffect(PLAYER, 40012)
     AddSpecialEffect(PLAYER, 40011)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40013)
-    CancelSpecialEffect(PLAYER, 40013)
+    RemoveSpecialEffect(PLAYER, 40013)
     AddSpecialEffect(PLAYER, 40012)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40014)
-    CancelSpecialEffect(PLAYER, 40014)
+    RemoveSpecialEffect(PLAYER, 40014)
     AddSpecialEffect(PLAYER, 40013)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40015)
-    CancelSpecialEffect(PLAYER, 40015)
+    RemoveSpecialEffect(PLAYER, 40015)
     AddSpecialEffect(PLAYER, 40014)
     Restart()
     Restart()
 
 
-@NeverRestart(19001261)
+@ContinueOnRest(19001261)
 def Event_19001261():
     """Event 19001261"""
     IfCharacterHasSpecialEffect(OR_1, PLAYER, 51907)
@@ -10260,67 +10262,67 @@ def Event_19001261():
     IfCharacterHasSpecialEffect(OR_2, PLAYER, 500820)
     IfConditionTrue(MAIN, input_condition=OR_2)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40001)
-    CancelSpecialEffect(PLAYER, 40001)
+    RemoveSpecialEffect(PLAYER, 40001)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40002)
-    CancelSpecialEffect(PLAYER, 40002)
+    RemoveSpecialEffect(PLAYER, 40002)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40003)
-    CancelSpecialEffect(PLAYER, 40003)
+    RemoveSpecialEffect(PLAYER, 40003)
     AddSpecialEffect(PLAYER, 40001)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40004)
-    CancelSpecialEffect(PLAYER, 40004)
+    RemoveSpecialEffect(PLAYER, 40004)
     AddSpecialEffect(PLAYER, 40002)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40005)
-    CancelSpecialEffect(PLAYER, 40005)
+    RemoveSpecialEffect(PLAYER, 40005)
     AddSpecialEffect(PLAYER, 40003)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40006)
-    CancelSpecialEffect(PLAYER, 40006)
+    RemoveSpecialEffect(PLAYER, 40006)
     AddSpecialEffect(PLAYER, 40004)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40007)
-    CancelSpecialEffect(PLAYER, 40007)
+    RemoveSpecialEffect(PLAYER, 40007)
     AddSpecialEffect(PLAYER, 40005)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40008)
-    CancelSpecialEffect(PLAYER, 40008)
+    RemoveSpecialEffect(PLAYER, 40008)
     AddSpecialEffect(PLAYER, 40006)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40009)
-    CancelSpecialEffect(PLAYER, 40009)
+    RemoveSpecialEffect(PLAYER, 40009)
     AddSpecialEffect(PLAYER, 40007)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40010)
-    CancelSpecialEffect(PLAYER, 40010)
+    RemoveSpecialEffect(PLAYER, 40010)
     AddSpecialEffect(PLAYER, 40008)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40011)
-    CancelSpecialEffect(PLAYER, 40011)
+    RemoveSpecialEffect(PLAYER, 40011)
     AddSpecialEffect(PLAYER, 40009)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40012)
-    CancelSpecialEffect(PLAYER, 40012)
+    RemoveSpecialEffect(PLAYER, 40012)
     AddSpecialEffect(PLAYER, 40010)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40013)
-    CancelSpecialEffect(PLAYER, 40013)
+    RemoveSpecialEffect(PLAYER, 40013)
     AddSpecialEffect(PLAYER, 40011)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40014)
-    CancelSpecialEffect(PLAYER, 40014)
+    RemoveSpecialEffect(PLAYER, 40014)
     AddSpecialEffect(PLAYER, 40012)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40015)
-    CancelSpecialEffect(PLAYER, 40015)
+    RemoveSpecialEffect(PLAYER, 40015)
     AddSpecialEffect(PLAYER, 40013)
     Restart()
     Restart()
 
 
-@NeverRestart(19001262)
+@ContinueOnRest(19001262)
 def Event_19001262():
     """Event 19001262"""
     IfCharacterHasSpecialEffect(OR_1, PLAYER, 51900)
@@ -10330,66 +10332,66 @@ def Event_19001262():
     IfCharacterHasSpecialEffect(OR_2, PLAYER, 51920)
     IfConditionTrue(MAIN, input_condition=OR_2)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40001)
-    CancelSpecialEffect(PLAYER, 40001)
+    RemoveSpecialEffect(PLAYER, 40001)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40002)
-    CancelSpecialEffect(PLAYER, 40002)
+    RemoveSpecialEffect(PLAYER, 40002)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40003)
-    CancelSpecialEffect(PLAYER, 40003)
+    RemoveSpecialEffect(PLAYER, 40003)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40004)
-    CancelSpecialEffect(PLAYER, 40004)
+    RemoveSpecialEffect(PLAYER, 40004)
     AddSpecialEffect(PLAYER, 40001)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40005)
-    CancelSpecialEffect(PLAYER, 40005)
+    RemoveSpecialEffect(PLAYER, 40005)
     AddSpecialEffect(PLAYER, 40002)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40006)
-    CancelSpecialEffect(PLAYER, 40006)
+    RemoveSpecialEffect(PLAYER, 40006)
     AddSpecialEffect(PLAYER, 40003)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40007)
-    CancelSpecialEffect(PLAYER, 40007)
+    RemoveSpecialEffect(PLAYER, 40007)
     AddSpecialEffect(PLAYER, 40004)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40008)
-    CancelSpecialEffect(PLAYER, 40008)
+    RemoveSpecialEffect(PLAYER, 40008)
     AddSpecialEffect(PLAYER, 40005)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40009)
-    CancelSpecialEffect(PLAYER, 40009)
+    RemoveSpecialEffect(PLAYER, 40009)
     AddSpecialEffect(PLAYER, 40006)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40010)
-    CancelSpecialEffect(PLAYER, 40010)
+    RemoveSpecialEffect(PLAYER, 40010)
     AddSpecialEffect(PLAYER, 40007)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40011)
-    CancelSpecialEffect(PLAYER, 40011)
+    RemoveSpecialEffect(PLAYER, 40011)
     AddSpecialEffect(PLAYER, 40008)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40012)
-    CancelSpecialEffect(PLAYER, 40012)
+    RemoveSpecialEffect(PLAYER, 40012)
     AddSpecialEffect(PLAYER, 40009)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40013)
-    CancelSpecialEffect(PLAYER, 40013)
+    RemoveSpecialEffect(PLAYER, 40013)
     AddSpecialEffect(PLAYER, 40010)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40014)
-    CancelSpecialEffect(PLAYER, 40014)
+    RemoveSpecialEffect(PLAYER, 40014)
     AddSpecialEffect(PLAYER, 40011)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40015)
-    CancelSpecialEffect(PLAYER, 40015)
+    RemoveSpecialEffect(PLAYER, 40015)
     AddSpecialEffect(PLAYER, 40012)
     Restart()
     Restart()
 
 
-@NeverRestart(19001263)
+@ContinueOnRest(19001263)
 def Event_19001263():
     """Event 19001263"""
     IfCharacterHasSpecialEffect(OR_1, PLAYER, 51909)
@@ -10401,65 +10403,65 @@ def Event_19001263():
     IfCharacterHasSpecialEffect(OR_2, PLAYER, 500830)
     IfConditionTrue(MAIN, input_condition=OR_2)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40001)
-    CancelSpecialEffect(PLAYER, 40001)
+    RemoveSpecialEffect(PLAYER, 40001)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40002)
-    CancelSpecialEffect(PLAYER, 40002)
+    RemoveSpecialEffect(PLAYER, 40002)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40003)
-    CancelSpecialEffect(PLAYER, 40003)
+    RemoveSpecialEffect(PLAYER, 40003)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40004)
-    CancelSpecialEffect(PLAYER, 40004)
+    RemoveSpecialEffect(PLAYER, 40004)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40005)
-    CancelSpecialEffect(PLAYER, 40005)
+    RemoveSpecialEffect(PLAYER, 40005)
     AddSpecialEffect(PLAYER, 40001)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40006)
-    CancelSpecialEffect(PLAYER, 40006)
+    RemoveSpecialEffect(PLAYER, 40006)
     AddSpecialEffect(PLAYER, 40002)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40007)
-    CancelSpecialEffect(PLAYER, 40007)
+    RemoveSpecialEffect(PLAYER, 40007)
     AddSpecialEffect(PLAYER, 40003)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40008)
-    CancelSpecialEffect(PLAYER, 40008)
+    RemoveSpecialEffect(PLAYER, 40008)
     AddSpecialEffect(PLAYER, 40004)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40009)
-    CancelSpecialEffect(PLAYER, 40009)
+    RemoveSpecialEffect(PLAYER, 40009)
     AddSpecialEffect(PLAYER, 40005)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40010)
-    CancelSpecialEffect(PLAYER, 40010)
+    RemoveSpecialEffect(PLAYER, 40010)
     AddSpecialEffect(PLAYER, 40006)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40011)
-    CancelSpecialEffect(PLAYER, 40011)
+    RemoveSpecialEffect(PLAYER, 40011)
     AddSpecialEffect(PLAYER, 40007)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40012)
-    CancelSpecialEffect(PLAYER, 40012)
+    RemoveSpecialEffect(PLAYER, 40012)
     AddSpecialEffect(PLAYER, 40008)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40013)
-    CancelSpecialEffect(PLAYER, 40013)
+    RemoveSpecialEffect(PLAYER, 40013)
     AddSpecialEffect(PLAYER, 40009)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40014)
-    CancelSpecialEffect(PLAYER, 40014)
+    RemoveSpecialEffect(PLAYER, 40014)
     AddSpecialEffect(PLAYER, 40010)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40015)
-    CancelSpecialEffect(PLAYER, 40015)
+    RemoveSpecialEffect(PLAYER, 40015)
     AddSpecialEffect(PLAYER, 40011)
     Restart()
     Restart()
 
 
-@NeverRestart(19001264)
+@ContinueOnRest(19001264)
 def Event_19001264():
     """Event 19001264"""
     IfCharacterHasSpecialEffect(OR_1, PLAYER, 51901)
@@ -10467,64 +10469,64 @@ def Event_19001264():
     IfCharacterHasSpecialEffect(OR_2, PLAYER, 51901)
     IfConditionTrue(MAIN, input_condition=OR_2)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40001)
-    CancelSpecialEffect(PLAYER, 40001)
+    RemoveSpecialEffect(PLAYER, 40001)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40002)
-    CancelSpecialEffect(PLAYER, 40002)
+    RemoveSpecialEffect(PLAYER, 40002)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40003)
-    CancelSpecialEffect(PLAYER, 40003)
+    RemoveSpecialEffect(PLAYER, 40003)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40004)
-    CancelSpecialEffect(PLAYER, 40004)
+    RemoveSpecialEffect(PLAYER, 40004)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40005)
-    CancelSpecialEffect(PLAYER, 40005)
+    RemoveSpecialEffect(PLAYER, 40005)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40006)
-    CancelSpecialEffect(PLAYER, 40006)
+    RemoveSpecialEffect(PLAYER, 40006)
     AddSpecialEffect(PLAYER, 40001)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40007)
-    CancelSpecialEffect(PLAYER, 40007)
+    RemoveSpecialEffect(PLAYER, 40007)
     AddSpecialEffect(PLAYER, 40002)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40008)
-    CancelSpecialEffect(PLAYER, 40008)
+    RemoveSpecialEffect(PLAYER, 40008)
     AddSpecialEffect(PLAYER, 40003)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40009)
-    CancelSpecialEffect(PLAYER, 40009)
+    RemoveSpecialEffect(PLAYER, 40009)
     AddSpecialEffect(PLAYER, 40004)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40010)
-    CancelSpecialEffect(PLAYER, 40010)
+    RemoveSpecialEffect(PLAYER, 40010)
     AddSpecialEffect(PLAYER, 40005)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40011)
-    CancelSpecialEffect(PLAYER, 40011)
+    RemoveSpecialEffect(PLAYER, 40011)
     AddSpecialEffect(PLAYER, 40006)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40012)
-    CancelSpecialEffect(PLAYER, 40012)
+    RemoveSpecialEffect(PLAYER, 40012)
     AddSpecialEffect(PLAYER, 40007)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40013)
-    CancelSpecialEffect(PLAYER, 40013)
+    RemoveSpecialEffect(PLAYER, 40013)
     AddSpecialEffect(PLAYER, 40008)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40014)
-    CancelSpecialEffect(PLAYER, 40014)
+    RemoveSpecialEffect(PLAYER, 40014)
     AddSpecialEffect(PLAYER, 40009)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40015)
-    CancelSpecialEffect(PLAYER, 40015)
+    RemoveSpecialEffect(PLAYER, 40015)
     AddSpecialEffect(PLAYER, 40010)
     Restart()
     Restart()
 
 
-@NeverRestart(19001265)
+@ContinueOnRest(19001265)
 def Event_19001265():
     """Event 19001265"""
     IfCharacterHasSpecialEffect(OR_1, PLAYER, 51902)
@@ -10532,63 +10534,63 @@ def Event_19001265():
     IfCharacterHasSpecialEffect(OR_2, PLAYER, 51902)
     IfConditionTrue(MAIN, input_condition=OR_2)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40001)
-    CancelSpecialEffect(PLAYER, 40001)
+    RemoveSpecialEffect(PLAYER, 40001)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40002)
-    CancelSpecialEffect(PLAYER, 40002)
+    RemoveSpecialEffect(PLAYER, 40002)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40003)
-    CancelSpecialEffect(PLAYER, 40003)
+    RemoveSpecialEffect(PLAYER, 40003)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40004)
-    CancelSpecialEffect(PLAYER, 40004)
+    RemoveSpecialEffect(PLAYER, 40004)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40005)
-    CancelSpecialEffect(PLAYER, 40005)
+    RemoveSpecialEffect(PLAYER, 40005)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40006)
-    CancelSpecialEffect(PLAYER, 40006)
+    RemoveSpecialEffect(PLAYER, 40006)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40007)
-    CancelSpecialEffect(PLAYER, 40007)
+    RemoveSpecialEffect(PLAYER, 40007)
     AddSpecialEffect(PLAYER, 40001)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40008)
-    CancelSpecialEffect(PLAYER, 40008)
+    RemoveSpecialEffect(PLAYER, 40008)
     AddSpecialEffect(PLAYER, 40002)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40009)
-    CancelSpecialEffect(PLAYER, 40009)
+    RemoveSpecialEffect(PLAYER, 40009)
     AddSpecialEffect(PLAYER, 40003)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40010)
-    CancelSpecialEffect(PLAYER, 40010)
+    RemoveSpecialEffect(PLAYER, 40010)
     AddSpecialEffect(PLAYER, 40004)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40011)
-    CancelSpecialEffect(PLAYER, 40011)
+    RemoveSpecialEffect(PLAYER, 40011)
     AddSpecialEffect(PLAYER, 40005)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40012)
-    CancelSpecialEffect(PLAYER, 40012)
+    RemoveSpecialEffect(PLAYER, 40012)
     AddSpecialEffect(PLAYER, 40006)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40013)
-    CancelSpecialEffect(PLAYER, 40013)
+    RemoveSpecialEffect(PLAYER, 40013)
     AddSpecialEffect(PLAYER, 40007)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40014)
-    CancelSpecialEffect(PLAYER, 40014)
+    RemoveSpecialEffect(PLAYER, 40014)
     AddSpecialEffect(PLAYER, 40008)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40015)
-    CancelSpecialEffect(PLAYER, 40015)
+    RemoveSpecialEffect(PLAYER, 40015)
     AddSpecialEffect(PLAYER, 40009)
     Restart()
     Restart()
 
 
-@NeverRestart(19001267)
+@ContinueOnRest(19001267)
 def Event_19001267():
     """Event 19001267"""
     IfCharacterHasSpecialEffect(OR_1, PLAYER, 51903)
@@ -10598,61 +10600,61 @@ def Event_19001267():
     IfCharacterHasSpecialEffect(OR_2, PLAYER, 51912)
     IfConditionTrue(MAIN, input_condition=OR_2)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40001)
-    CancelSpecialEffect(PLAYER, 40001)
+    RemoveSpecialEffect(PLAYER, 40001)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40002)
-    CancelSpecialEffect(PLAYER, 40002)
+    RemoveSpecialEffect(PLAYER, 40002)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40003)
-    CancelSpecialEffect(PLAYER, 40003)
+    RemoveSpecialEffect(PLAYER, 40003)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40004)
-    CancelSpecialEffect(PLAYER, 40004)
+    RemoveSpecialEffect(PLAYER, 40004)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40005)
-    CancelSpecialEffect(PLAYER, 40005)
+    RemoveSpecialEffect(PLAYER, 40005)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40006)
-    CancelSpecialEffect(PLAYER, 40006)
+    RemoveSpecialEffect(PLAYER, 40006)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40007)
-    CancelSpecialEffect(PLAYER, 40007)
+    RemoveSpecialEffect(PLAYER, 40007)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40008)
-    CancelSpecialEffect(PLAYER, 40008)
+    RemoveSpecialEffect(PLAYER, 40008)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40009)
-    CancelSpecialEffect(PLAYER, 40009)
+    RemoveSpecialEffect(PLAYER, 40009)
     AddSpecialEffect(PLAYER, 40001)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40010)
-    CancelSpecialEffect(PLAYER, 40010)
+    RemoveSpecialEffect(PLAYER, 40010)
     AddSpecialEffect(PLAYER, 40002)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40011)
-    CancelSpecialEffect(PLAYER, 40011)
+    RemoveSpecialEffect(PLAYER, 40011)
     AddSpecialEffect(PLAYER, 40003)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40012)
-    CancelSpecialEffect(PLAYER, 40012)
+    RemoveSpecialEffect(PLAYER, 40012)
     AddSpecialEffect(PLAYER, 40004)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40013)
-    CancelSpecialEffect(PLAYER, 40013)
+    RemoveSpecialEffect(PLAYER, 40013)
     AddSpecialEffect(PLAYER, 40005)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40014)
-    CancelSpecialEffect(PLAYER, 40014)
+    RemoveSpecialEffect(PLAYER, 40014)
     AddSpecialEffect(PLAYER, 40006)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40015)
-    CancelSpecialEffect(PLAYER, 40015)
+    RemoveSpecialEffect(PLAYER, 40015)
     AddSpecialEffect(PLAYER, 40007)
     Restart()
     Restart()
 
 
-@NeverRestart(19001270)
+@ContinueOnRest(19001270)
 def Event_19001270():
     """Event 19001270"""
     IfCharacterHasSpecialEffect(OR_1, PLAYER, 51907)
@@ -10672,44 +10674,44 @@ def Event_19001270():
     IfCharacterHasSpecialEffect(OR_2, PLAYER, 51919)
     IfConditionTrue(MAIN, input_condition=OR_2)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40021)
-    CancelSpecialEffect(PLAYER, 40021)
+    RemoveSpecialEffect(PLAYER, 40021)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40022)
-    CancelSpecialEffect(PLAYER, 40022)
+    RemoveSpecialEffect(PLAYER, 40022)
     AddSpecialEffect(PLAYER, 40021)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40023)
-    CancelSpecialEffect(PLAYER, 40023)
+    RemoveSpecialEffect(PLAYER, 40023)
     AddSpecialEffect(PLAYER, 40022)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40024)
-    CancelSpecialEffect(PLAYER, 40024)
+    RemoveSpecialEffect(PLAYER, 40024)
     AddSpecialEffect(PLAYER, 40023)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40025)
-    CancelSpecialEffect(PLAYER, 40025)
+    RemoveSpecialEffect(PLAYER, 40025)
     AddSpecialEffect(PLAYER, 40024)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40026)
-    CancelSpecialEffect(PLAYER, 40026)
+    RemoveSpecialEffect(PLAYER, 40026)
     AddSpecialEffect(PLAYER, 40025)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40027)
-    CancelSpecialEffect(PLAYER, 40027)
+    RemoveSpecialEffect(PLAYER, 40027)
     AddSpecialEffect(PLAYER, 40026)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40028)
-    CancelSpecialEffect(PLAYER, 40028)
+    RemoveSpecialEffect(PLAYER, 40028)
     AddSpecialEffect(PLAYER, 40027)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40029)
-    CancelSpecialEffect(PLAYER, 40029)
+    RemoveSpecialEffect(PLAYER, 40029)
     AddSpecialEffect(PLAYER, 40028)
     Restart()
     Restart()
 
 
-@NeverRestart(19001271)
+@ContinueOnRest(19001271)
 def Event_19001271():
     """Event 19001271"""
     IfCharacterHasSpecialEffect(OR_1, PLAYER, 51908)
@@ -10719,43 +10721,43 @@ def Event_19001271():
     IfCharacterHasSpecialEffect(OR_2, PLAYER, 51910)
     IfConditionTrue(MAIN, input_condition=OR_2)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40021)
-    CancelSpecialEffect(PLAYER, 40021)
+    RemoveSpecialEffect(PLAYER, 40021)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40022)
-    CancelSpecialEffect(PLAYER, 40022)
+    RemoveSpecialEffect(PLAYER, 40022)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40023)
-    CancelSpecialEffect(PLAYER, 40023)
+    RemoveSpecialEffect(PLAYER, 40023)
     AddSpecialEffect(PLAYER, 40021)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40024)
-    CancelSpecialEffect(PLAYER, 40024)
+    RemoveSpecialEffect(PLAYER, 40024)
     AddSpecialEffect(PLAYER, 40022)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40025)
-    CancelSpecialEffect(PLAYER, 40025)
+    RemoveSpecialEffect(PLAYER, 40025)
     AddSpecialEffect(PLAYER, 40023)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40026)
-    CancelSpecialEffect(PLAYER, 40026)
+    RemoveSpecialEffect(PLAYER, 40026)
     AddSpecialEffect(PLAYER, 40024)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40027)
-    CancelSpecialEffect(PLAYER, 40027)
+    RemoveSpecialEffect(PLAYER, 40027)
     AddSpecialEffect(PLAYER, 40025)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40028)
-    CancelSpecialEffect(PLAYER, 40028)
+    RemoveSpecialEffect(PLAYER, 40028)
     AddSpecialEffect(PLAYER, 40026)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40029)
-    CancelSpecialEffect(PLAYER, 40029)
+    RemoveSpecialEffect(PLAYER, 40029)
     AddSpecialEffect(PLAYER, 40027)
     Restart()
     Restart()
 
 
-@NeverRestart(19001272)
+@ContinueOnRest(19001272)
 def Event_19001272():
     """Event 19001272"""
     IfCharacterHasSpecialEffect(OR_1, PLAYER, 51904)
@@ -10767,42 +10769,42 @@ def Event_19001272():
     IfCharacterHasSpecialEffect(OR_2, PLAYER, 51911)
     IfConditionTrue(MAIN, input_condition=OR_2)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40021)
-    CancelSpecialEffect(PLAYER, 40021)
+    RemoveSpecialEffect(PLAYER, 40021)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40022)
-    CancelSpecialEffect(PLAYER, 40022)
+    RemoveSpecialEffect(PLAYER, 40022)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40023)
-    CancelSpecialEffect(PLAYER, 40023)
+    RemoveSpecialEffect(PLAYER, 40023)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40024)
-    CancelSpecialEffect(PLAYER, 40024)
+    RemoveSpecialEffect(PLAYER, 40024)
     AddSpecialEffect(PLAYER, 40021)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40025)
-    CancelSpecialEffect(PLAYER, 40025)
+    RemoveSpecialEffect(PLAYER, 40025)
     AddSpecialEffect(PLAYER, 40022)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40026)
-    CancelSpecialEffect(PLAYER, 40026)
+    RemoveSpecialEffect(PLAYER, 40026)
     AddSpecialEffect(PLAYER, 40023)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40027)
-    CancelSpecialEffect(PLAYER, 40027)
+    RemoveSpecialEffect(PLAYER, 40027)
     AddSpecialEffect(PLAYER, 40024)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40028)
-    CancelSpecialEffect(PLAYER, 40028)
+    RemoveSpecialEffect(PLAYER, 40028)
     AddSpecialEffect(PLAYER, 40025)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40029)
-    CancelSpecialEffect(PLAYER, 40029)
+    RemoveSpecialEffect(PLAYER, 40029)
     AddSpecialEffect(PLAYER, 40026)
     Restart()
     Restart()
 
 
-@NeverRestart(19001273)
+@ContinueOnRest(19001273)
 def Event_19001273():
     """Event 19001273"""
     IfCharacterHasSpecialEffect(OR_1, PLAYER, 51906)
@@ -10810,41 +10812,41 @@ def Event_19001273():
     IfCharacterHasSpecialEffect(OR_2, PLAYER, 51906)
     IfConditionTrue(MAIN, input_condition=OR_2)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40021)
-    CancelSpecialEffect(PLAYER, 40021)
+    RemoveSpecialEffect(PLAYER, 40021)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40022)
-    CancelSpecialEffect(PLAYER, 40022)
+    RemoveSpecialEffect(PLAYER, 40022)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40023)
-    CancelSpecialEffect(PLAYER, 40023)
+    RemoveSpecialEffect(PLAYER, 40023)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40024)
-    CancelSpecialEffect(PLAYER, 40024)
+    RemoveSpecialEffect(PLAYER, 40024)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40025)
-    CancelSpecialEffect(PLAYER, 40025)
+    RemoveSpecialEffect(PLAYER, 40025)
     AddSpecialEffect(PLAYER, 40021)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40026)
-    CancelSpecialEffect(PLAYER, 40026)
+    RemoveSpecialEffect(PLAYER, 40026)
     AddSpecialEffect(PLAYER, 40022)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40027)
-    CancelSpecialEffect(PLAYER, 40027)
+    RemoveSpecialEffect(PLAYER, 40027)
     AddSpecialEffect(PLAYER, 40023)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40028)
-    CancelSpecialEffect(PLAYER, 40028)
+    RemoveSpecialEffect(PLAYER, 40028)
     AddSpecialEffect(PLAYER, 40024)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40029)
-    CancelSpecialEffect(PLAYER, 40029)
+    RemoveSpecialEffect(PLAYER, 40029)
     AddSpecialEffect(PLAYER, 40025)
     Restart()
     Restart()
 
 
-@NeverRestart(19001274)
+@ContinueOnRest(19001274)
 def Event_19001274():
     """Event 19001274"""
     IfCharacterHasSpecialEffect(OR_1, PLAYER, 51905)
@@ -10852,40 +10854,40 @@ def Event_19001274():
     IfCharacterHasSpecialEffect(OR_2, PLAYER, 51905)
     IfConditionTrue(MAIN, input_condition=OR_2)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40021)
-    CancelSpecialEffect(PLAYER, 40021)
+    RemoveSpecialEffect(PLAYER, 40021)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40022)
-    CancelSpecialEffect(PLAYER, 40022)
+    RemoveSpecialEffect(PLAYER, 40022)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40023)
-    CancelSpecialEffect(PLAYER, 40023)
+    RemoveSpecialEffect(PLAYER, 40023)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40024)
-    CancelSpecialEffect(PLAYER, 40024)
+    RemoveSpecialEffect(PLAYER, 40024)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40025)
-    CancelSpecialEffect(PLAYER, 40025)
+    RemoveSpecialEffect(PLAYER, 40025)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40026)
-    CancelSpecialEffect(PLAYER, 40026)
+    RemoveSpecialEffect(PLAYER, 40026)
     AddSpecialEffect(PLAYER, 40021)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40027)
-    CancelSpecialEffect(PLAYER, 40027)
+    RemoveSpecialEffect(PLAYER, 40027)
     AddSpecialEffect(PLAYER, 40022)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40028)
-    CancelSpecialEffect(PLAYER, 40028)
+    RemoveSpecialEffect(PLAYER, 40028)
     AddSpecialEffect(PLAYER, 40023)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40029)
-    CancelSpecialEffect(PLAYER, 40029)
+    RemoveSpecialEffect(PLAYER, 40029)
     AddSpecialEffect(PLAYER, 40024)
     Restart()
     Restart()
 
 
-@NeverRestart(19001275)
+@ContinueOnRest(19001275)
 def Event_19001275():
     """Event 19001275"""
     IfCharacterHasSpecialEffect(OR_1, PLAYER, 51913)
@@ -10893,39 +10895,39 @@ def Event_19001275():
     IfCharacterHasSpecialEffect(OR_2, PLAYER, 51913)
     IfConditionTrue(MAIN, input_condition=OR_2)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40021)
-    CancelSpecialEffect(PLAYER, 40021)
+    RemoveSpecialEffect(PLAYER, 40021)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40022)
-    CancelSpecialEffect(PLAYER, 40022)
+    RemoveSpecialEffect(PLAYER, 40022)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40023)
-    CancelSpecialEffect(PLAYER, 40023)
+    RemoveSpecialEffect(PLAYER, 40023)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40024)
-    CancelSpecialEffect(PLAYER, 40024)
+    RemoveSpecialEffect(PLAYER, 40024)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40025)
-    CancelSpecialEffect(PLAYER, 40025)
+    RemoveSpecialEffect(PLAYER, 40025)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40026)
-    CancelSpecialEffect(PLAYER, 40026)
+    RemoveSpecialEffect(PLAYER, 40026)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40027)
-    CancelSpecialEffect(PLAYER, 40027)
+    RemoveSpecialEffect(PLAYER, 40027)
     AddSpecialEffect(PLAYER, 40021)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40028)
-    CancelSpecialEffect(PLAYER, 40028)
+    RemoveSpecialEffect(PLAYER, 40028)
     AddSpecialEffect(PLAYER, 40022)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40029)
-    CancelSpecialEffect(PLAYER, 40029)
+    RemoveSpecialEffect(PLAYER, 40029)
     AddSpecialEffect(PLAYER, 40023)
     Restart()
     Restart()
 
 
-@NeverRestart(19001277)
+@ContinueOnRest(19001277)
 def Event_19001277():
     """Event 19001277"""
     IfCharacterHasSpecialEffect(OR_1, PLAYER, 3960)
@@ -10955,35 +10957,35 @@ def Event_19001277():
     IfCharacterHasSpecialEffect(OR_2, PLAYER, 501340)
     IfConditionTrue(MAIN, input_condition=OR_2)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40021)
-    CancelSpecialEffect(PLAYER, 40021)
+    RemoveSpecialEffect(PLAYER, 40021)
     AddSpecialEffect(PLAYER, 40022)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40022)
-    CancelSpecialEffect(PLAYER, 40022)
+    RemoveSpecialEffect(PLAYER, 40022)
     AddSpecialEffect(PLAYER, 40023)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40023)
-    CancelSpecialEffect(PLAYER, 40023)
+    RemoveSpecialEffect(PLAYER, 40023)
     AddSpecialEffect(PLAYER, 40024)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40024)
-    CancelSpecialEffect(PLAYER, 40024)
+    RemoveSpecialEffect(PLAYER, 40024)
     AddSpecialEffect(PLAYER, 40025)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40025)
-    CancelSpecialEffect(PLAYER, 40025)
+    RemoveSpecialEffect(PLAYER, 40025)
     AddSpecialEffect(PLAYER, 40026)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40026)
-    CancelSpecialEffect(PLAYER, 40026)
+    RemoveSpecialEffect(PLAYER, 40026)
     AddSpecialEffect(PLAYER, 40027)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40027)
-    CancelSpecialEffect(PLAYER, 40027)
+    RemoveSpecialEffect(PLAYER, 40027)
     AddSpecialEffect(PLAYER, 40028)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40028)
-    CancelSpecialEffect(PLAYER, 40028)
+    RemoveSpecialEffect(PLAYER, 40028)
     AddSpecialEffect(PLAYER, 40029)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40029)
@@ -10992,7 +10994,7 @@ def Event_19001277():
     Restart()
 
 
-@NeverRestart(19001278)
+@ContinueOnRest(19001278)
 def Event_19001278():
     """Event 19001278"""
     IfCharacterHasSpecialEffect(OR_1, PLAYER, 51920)
@@ -11000,35 +11002,35 @@ def Event_19001278():
     IfCharacterHasSpecialEffect(OR_2, PLAYER, 51920)
     IfConditionTrue(MAIN, input_condition=OR_2)
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40021)
-    CancelSpecialEffect(PLAYER, 40021)
+    RemoveSpecialEffect(PLAYER, 40021)
     AddSpecialEffect(PLAYER, 40024)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40022)
-    CancelSpecialEffect(PLAYER, 40022)
+    RemoveSpecialEffect(PLAYER, 40022)
     AddSpecialEffect(PLAYER, 40025)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40023)
-    CancelSpecialEffect(PLAYER, 40023)
+    RemoveSpecialEffect(PLAYER, 40023)
     AddSpecialEffect(PLAYER, 40026)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40024)
-    CancelSpecialEffect(PLAYER, 40024)
+    RemoveSpecialEffect(PLAYER, 40024)
     AddSpecialEffect(PLAYER, 40027)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40025)
-    CancelSpecialEffect(PLAYER, 40025)
+    RemoveSpecialEffect(PLAYER, 40025)
     AddSpecialEffect(PLAYER, 40028)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40026)
-    CancelSpecialEffect(PLAYER, 40026)
+    RemoveSpecialEffect(PLAYER, 40026)
     AddSpecialEffect(PLAYER, 40029)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40027)
-    CancelSpecialEffect(PLAYER, 40027)
+    RemoveSpecialEffect(PLAYER, 40027)
     AddSpecialEffect(PLAYER, 40029)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40028)
-    CancelSpecialEffect(PLAYER, 40028)
+    RemoveSpecialEffect(PLAYER, 40028)
     AddSpecialEffect(PLAYER, 40029)
     Restart()
     SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40029)
@@ -11037,7 +11039,7 @@ def Event_19001278():
     Restart()
 
 
-@NeverRestart(19001280)
+@ContinueOnRest(19001280)
 def Event_19001280():
     """Event 19001280"""
     IfCharacterHasSpecialEffect(MAIN, PLAYER, 51920)
@@ -11047,7 +11049,7 @@ def Event_19001280():
     Restart()
 
 
-@NeverRestart(19001020)
+@ContinueOnRest(19001020)
 def Event_19001020():
     """Event 19001020"""
     IfTimeOfDay(AND_1, earliest=(10, 0, 0), latest=(17, 0, 0))
@@ -11072,7 +11074,7 @@ def Event_19001020():
     Restart()
 
 
-@NeverRestart(19001022)
+@ContinueOnRest(19001022)
 def Event_19001022():
     """Event 19001022"""
     IfTimeOfDay(AND_1, earliest=(8, 0, 0), latest=(18, 0, 0))
@@ -11098,7 +11100,7 @@ def Event_19001022():
     Restart()
 
 
-@NeverRestart(19001024)
+@ContinueOnRest(19001024)
 def Event_19001024():
     """Event 19001024"""
     IfTimeOfDay(AND_1, earliest=(8, 0, 0), latest=(18, 0, 0))
@@ -11128,7 +11130,7 @@ def Event_19001024():
     Restart()
 
 
-@NeverRestart(19001026)
+@ContinueOnRest(19001026)
 def Event_19001026():
     """Event 19001026"""
     IfTimeOfDay(AND_1, earliest=(18, 0, 0), latest=(8, 0, 0))
@@ -11152,7 +11154,7 @@ def Event_19001026():
     Restart()
 
 
-@NeverRestart(19001028)
+@ContinueOnRest(19001028)
 def Event_19001028():
     """Event 19001028"""
     IfTimeOfDay(AND_1, earliest=(8, 0, 0), latest=(18, 0, 0))
@@ -11179,7 +11181,7 @@ def Event_19001028():
     Restart()
 
 
-@NeverRestart(19001030)
+@ContinueOnRest(19001030)
 def Event_19001030():
     """Event 19001030"""
     IfTimeOfDay(AND_1, earliest=(18, 0, 0), latest=(8, 0, 0))
@@ -11211,7 +11213,7 @@ def Event_19001030():
     Restart()
 
 
-@NeverRestart(19001021)
+@ContinueOnRest(19001021)
 def Event_19001021():
     """Event 19001021"""
     Wait(5.0)
@@ -11222,7 +11224,7 @@ def Event_19001021():
     Restart()
 
 
-@NeverRestart(19001023)
+@ContinueOnRest(19001023)
 def Event_19001023():
     """Event 19001023"""
     Wait(5.0)
@@ -11233,7 +11235,7 @@ def Event_19001023():
     Restart()
 
 
-@NeverRestart(19001025)
+@ContinueOnRest(19001025)
 def Event_19001025():
     """Event 19001025"""
     Wait(5.0)
@@ -11244,7 +11246,7 @@ def Event_19001025():
     Restart()
 
 
-@NeverRestart(19001027)
+@ContinueOnRest(19001027)
 def Event_19001027():
     """Event 19001027"""
     Wait(5.0)
@@ -11255,7 +11257,7 @@ def Event_19001027():
     Restart()
 
 
-@NeverRestart(19001029)
+@ContinueOnRest(19001029)
 def Event_19001029():
     """Event 19001029"""
     Wait(5.0)
@@ -11266,7 +11268,7 @@ def Event_19001029():
     Restart()
 
 
-@NeverRestart(19001031)
+@ContinueOnRest(19001031)
 def Event_19001031():
     """Event 19001031"""
     Wait(5.0)
@@ -11277,7 +11279,7 @@ def Event_19001031():
     Restart()
 
 
-@NeverRestart(19002000)
+@ContinueOnRest(19002000)
 def Event_19002000(_, item: int, item_lot_param_id: int, item_1: int):
     """Event 19002000"""
     IfPlayerHasWeapon(MAIN, item)
@@ -11304,7 +11306,7 @@ def Event_19003000(_, item: int, item_1: int, flag: uint):
     Restart()
 
 
-@NeverRestart(19001450)
+@ContinueOnRest(19001450)
 def Event_19001450(_, item: int, item_1: int, flag: uint):
     """Event 19001450"""
     DisableFlag(flag)
@@ -11320,7 +11322,7 @@ def Event_19001450(_, item: int, item_1: int, flag: uint):
     Restart()
 
 
-@NeverRestart(19001060)
+@ContinueOnRest(19001060)
 def Event_19001060(
     _,
     special_effect__special_effect_id: int,
@@ -11366,7 +11368,7 @@ def Event_19001060(
     EnableFlag(flag_2)
 
 
-@NeverRestart(19001070)
+@ContinueOnRest(19001070)
 def Event_19001070(
     _,
     special_effect__special_effect_id: int,
@@ -11415,7 +11417,7 @@ def Event_19001070(
     EnableFlag(flag_1)
 
 
-@NeverRestart(19001080)
+@ContinueOnRest(19001080)
 def Event_19001080():
     """Event 19001080"""
     IfPlayerHasGood(AND_7, 8416)
@@ -11455,7 +11457,7 @@ def Event_19001080():
     EnableFlag(19001215)
 
 
-@NeverRestart(19001081)
+@ContinueOnRest(19001081)
 def Event_19001081():
     """Event 19001081"""
     IfPlayerHasGood(AND_7, 8417)
@@ -11493,7 +11495,7 @@ def Event_19001081():
     EnableFlag(19001217)
 
 
-@NeverRestart(19001082)
+@ContinueOnRest(19001082)
 def Event_19001082():
     """Event 19001082"""
     IfPlayerHasGood(AND_7, 8418)
@@ -11533,7 +11535,7 @@ def Event_19001082():
     EnableFlag(19001219)
 
 
-@NeverRestart(19001083)
+@ContinueOnRest(19001083)
 def Event_19001083():
     """Event 19001083"""
     IfPlayerHasGood(AND_7, 8421)
@@ -11564,7 +11566,7 @@ def Event_19001083():
     EnableFlag(19001225)
 
 
-@NeverRestart(19001084)
+@ContinueOnRest(19001084)
 def Event_19001084():
     """Event 19001084"""
     IfPlayerHasGood(AND_7, 8428)
@@ -11619,7 +11621,7 @@ def Event_19001084():
     EnableFlag(19001239)
 
 
-@NeverRestart(19001085)
+@ContinueOnRest(19001085)
 def Event_19001085():
     """Event 19001085"""
     IfPlayerHasGood(AND_7, 8429)
@@ -11676,7 +11678,7 @@ def Event_19001085():
     EnableFlag(19001241)
 
 
-@NeverRestart(19001086)
+@ContinueOnRest(19001086)
 def Event_19001086():
     """Event 19001086"""
     IfPlayerHasGood(AND_7, 8430)
@@ -11725,7 +11727,7 @@ def Event_19001086():
 @RestartOnRest(19001088)
 def Event_19001088():
     """Event 19001088"""
-    CancelSpecialEffect(PLAYER, 53030)
+    RemoveSpecialEffect(PLAYER, 53030)
     IfCharacterHasSpecialEffect(AND_1, PLAYER, 53019)
     IfTimeOfDay(AND_1, earliest=(6, 0, 0), latest=(19, 0, 0))
     IfConditionTrue(MAIN, input_condition=AND_1)
@@ -11736,13 +11738,13 @@ def Event_19001088():
     Restart()
 
 
-@NeverRestart(19001500)
+@ContinueOnRest(19001500)
 def Event_19001500(_, special_effect__special_effect_id: int, special_effect: int, item: int, text: int):
     """Event 19001500"""
     IfCharacterHasSpecialEffect(AND_1, PLAYER, special_effect)
     IfCharacterHasSpecialEffect(AND_1, PLAYER, special_effect__special_effect_id)
     IfConditionTrue(MAIN, input_condition=AND_1)
-    CancelSpecialEffect(PLAYER, special_effect__special_effect_id)
+    RemoveSpecialEffect(PLAYER, special_effect__special_effect_id)
     DisplayStatus(text)
     RemoveGoodFromPlayer(item=item, quantity=99)
     IfCharacterDoesNotHaveSpecialEffect(MAIN, PLAYER, special_effect)

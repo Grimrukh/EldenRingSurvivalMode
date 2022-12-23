@@ -1,10 +1,10 @@
-﻿using SoulsFormats;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
 using System.Threading;
-using EldenRingSurvivalMode.GameHook;
+using SoulsFormats;
+using Erd_Tools;
 
 namespace EldenRingSurvivalMode
 {
@@ -81,10 +81,10 @@ namespace EldenRingSurvivalMode
             },
         };
 
-        static ERHook Hook { get; set; }
+        static ErdHook Hook { get; set; }
 
         static DarknessLevel CurrentDarknessLevel { get; set; } = DarknessLevel.None;
-        const bool doDebugPrint = false;
+        const bool doDebugPrint = true;
 
         static void DebugPrint(string msg)
         {
@@ -161,7 +161,7 @@ namespace EldenRingSurvivalMode
 
             Console.WriteLine(TitleText);
             
-            Hook = new ERHook(5000, 5000);
+            Hook = new ErdHook(5000, 1000, p => p.MainWindowTitle is "ELDEN RING™" or "ELDEN RING");
             Hook.Start();
 
             Console.WriteLine("\nSearching for running ELDEN RING process...");
@@ -182,28 +182,31 @@ namespace EldenRingSurvivalMode
                     Console.WriteLine("--> Reconnected to ELDEN RING successfully.");
                 }
 
-                var (hour, hasTorch) = Hook.GetIngameHourAndTorch();
-                DebugPrint($"Current in-game hour, torch: {hour}, {hasTorch}");
-                
-                // TODO: Check a 'Player Outside' general flag and only set darkness in that case.
-                //  I tried this and C#, for some reason, would not show the flag value changing.
-                //  I don't actually mind the night darkness in generic dungeons/underground, though.
+                var (hour, hasTorch, isOutdoors) = Hook.GetIngameHourTorchOutdoors();
+                DebugPrint($"Fog enabled? {Hook.FogEnabled}");
+                DebugPrint($"Hour = {hour} | Torch = {hasTorch} | Outdoors = {isOutdoors}");
 
                 if (hour == -1)
                 {
                     // Do nothing. No change. (Might want to disable darkness.)
                     DebugPrint("    Time not detected. No change to darkness.");
                 }
+                else if (!isOutdoors)
+                {
+                    // No darkness indoors.
+                    SetDarknessLevel(DarknessLevel.None);
+                    DebugPrint("    Darkness level: None (Indoors)");
+                }                
                 else if (5 <= hour && hour < 18)
                 {
                     SetDarknessLevel(DarknessLevel.None);
-                    DebugPrint("    Darkness level: None");
+                    DebugPrint("    Darkness level: None (Daytime Outdoors)");
                 }
                 else if (hour == 18 || hour == 19)
                 {
                     // Low, regardless of whether player has torch.
                     SetDarknessLevel(DarknessLevel.Low, lerpDuration: 10f);
-                    DebugPrint("    Darkness level: Low");
+                    DebugPrint("    Darkness level: Low (Early Evening)");
                 }
                 else if (hour == 20 || hour == 21)
                 {
@@ -211,12 +214,12 @@ namespace EldenRingSurvivalMode
                     if (!hasTorch)
                     {
                         SetDarknessLevel(DarknessLevel.Medium, lerpDuration);
-                        DebugPrint("    Darkness level: Medium (No Torch)");
+                        DebugPrint("    Darkness level: Medium (Mid-Evening, No Torch)");
                     }
                     else
                     {
                         SetDarknessLevel(DarknessLevel.Low, lerpDuration);
-                        DebugPrint("    Darkness level: Low (Torch)");
+                        DebugPrint("    Darkness level: Low (Mid-Evening, Torch)");
                     }
                     
                         
@@ -227,12 +230,12 @@ namespace EldenRingSurvivalMode
                     if (!hasTorch)
                     {
                         SetDarknessLevel(DarknessLevel.High, lerpDuration);
-                        DebugPrint("    Darkness level: High (No Torch)");
+                        DebugPrint("    Darkness level: High (Night, No Torch)");
                     }
                     else
                     {
                         SetDarknessLevel(DarknessLevel.Medium, lerpDuration);
-                        DebugPrint("    Darkness level: Medium (Torch)");
+                        DebugPrint("    Darkness level: Medium (Night, Torch)");
                     }
                 }
                 lastHasTorch = hasTorch;

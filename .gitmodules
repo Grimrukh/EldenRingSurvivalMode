@@ -1,0 +1,6 @@
+[submodule "Dependencies/Erd-Tools"]
+	path = Dependencies/Erd-Tools
+	url = https://github.com/Nordgaren/Erd-Tools
+[submodule "Dependencies/Paramdex"]
+	path = Dependencies/Paramdex
+	url = https://github.com/soulsmods/Paramdex

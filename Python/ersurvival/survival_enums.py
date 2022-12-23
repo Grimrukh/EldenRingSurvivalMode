@@ -191,10 +191,8 @@ class Flags(Flag):
 
     # Disease note/cures
     Note_CuringDiseases_Bought = BASE_FLAG + 299
-    # Recipe_LimgraveDiseaseCure_Bought = BASE_FLAG + 300  # TODO: For Lobos
     Recipe_LimgraveDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 0
     Recipe_LiurniaDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 1
-    # Recipe_CaelidDiseaseCure_Bought = BASE_FLAG + 302  # TODO: For Lobos
     Recipe_CaelidDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 2
     Recipe_AltusDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 3
     Recipe_MtGelmirDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 4
@@ -212,7 +210,6 @@ class Flags(Flag):
     Recipe_FarumAzulaDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 16
     Recipe_MohgwynDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 17
     Recipe_CatacombsDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 18
-    # Recipe_CaveDiseaseCure_Bought = BASE_FLAG + 319  # TODO: For Lobos
     Recipe_CaveDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 19
     Recipe_TunnelDiseaseCure_Bought = BOUGHT_BASE_FLAG + 10 * 20
 
@@ -222,17 +219,13 @@ class Flags(Flag):
     # TODO: Meteor Chuck
 
     # Survival recipes
-    # Recipes_CommonSurvival_Bought = BASE_FLAG + 340  # TODO: For Lobos
     Recipes_CommonSurvival_Bought = BOUGHT_BASE_FLAG + 10 * 32
-    # Recipes_UncommonSurvival_Bought = BASE_FLAG + 341  # TODO: For Lobos
     Recipes_UncommonSurvival_Bought = BOUGHT_BASE_FLAG + 10 * 33
     Recipes_RareSurvival_Bought = BOUGHT_BASE_FLAG + 10 * 34
     Recipes_VeryRareSurvival_Bought = BOUGHT_BASE_FLAG + 10 * 35
 
     # Shield recipe books
-    # Recipes_WoodenSmallShields_Bought = BASE_FLAG + 350  # TODO: For Lobos
     Recipes_WoodenSmallShields_Bought = BOUGHT_BASE_FLAG + 10 * 36
-    # Recipes_MetalSmallShields_Bought = BASE_FLAG + 351  # TODO: For Lobos
     Recipes_MetalSmallShields_Bought = BOUGHT_BASE_FLAG + 10 * 37
     Recipes_RareSmallShields_Bought = BOUGHT_BASE_FLAG + 10 * 38
     Recipes_VeryRareSmallShields_Bought = BOUGHT_BASE_FLAG + 10 * 39

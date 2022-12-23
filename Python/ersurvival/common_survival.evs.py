@@ -9,7 +9,7 @@ from .survival_enums import *
 from .survival_goods import *
 
 
-@NeverRestart(0)
+@ContinueOnRest(0)
 def Constructor():
     """Will be merged with vanilla Common."""
 
@@ -60,7 +60,7 @@ def Constructor():
     # endregion
 
 
-@NeverRestart(Flags.GrowingHunger)
+@ContinueOnRest(Flags.GrowingHunger)
 def GrowingHunger():
     """Hunger ticks up every 60 seconds."""
 
@@ -87,72 +87,72 @@ def GrowingHunger():
 
     # INCREMENT HUNGER
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger1)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger1)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger1)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger2)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger2)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger2)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger2)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger3)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger3)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger3)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger3)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger4)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger4)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger4)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger4)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger5)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger5)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger5)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger5)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger6)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger7)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger8)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger9)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger10)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger11)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger12)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger13)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger14)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
     Restart()
 
@@ -161,7 +161,7 @@ def GrowingHunger():
     Restart()
 
 
-@NeverRestart(Flags.GrowingThirst)
+@ContinueOnRest(Flags.GrowingThirst)
 def GrowingThirst():
     """Thirst ticks up every 100 seconds."""
 
@@ -188,42 +188,42 @@ def GrowingThirst():
 
     # INCREMENT THIRST
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst1)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst1)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst1)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst2)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst2)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst2)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst2)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst3)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst4)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst5)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst6)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst7)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(4, SurvivalEffects.Thirst8)  # 4 lines
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst9)
     DisplayStatus(SurvivalText.Dehydration)  # Dehydration warning (for health depletion)
     Restart()
@@ -233,7 +233,7 @@ def GrowingThirst():
     Restart()
 
 
-@NeverRestart(Flags.HungerThirstAfterPassTime)
+@ContinueOnRest(Flags.HungerThirstAfterPassTime)
 def HungerThirstAfterPassTime():
     """Jump in hunger and thirst after player passes time."""
 
@@ -246,72 +246,72 @@ def HungerThirstAfterPassTime():
 
     # INCREMENT HUNGER BY 5 (MAX)
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger1)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger1)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger1)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
     SkipLines(53)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger2)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger2)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger2)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
     SkipLines(49)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger3)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger3)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger3)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
     SkipLines(45)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger4)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger4)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger4)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
     SkipLines(41)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger5)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger5)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger5)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
     SkipLines(37)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger6)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
     SkipLines(33)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger7)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
     SkipLines(29)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger8)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
     SkipLines(25)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger9)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
     SkipLines(21)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger10)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
     SkipLines(17)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger11)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
     SkipLines(13)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger12)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
     SkipLines(9)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger13)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
     SkipLines(5)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger14)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
     SkipLines(1)
 
@@ -320,43 +320,43 @@ def HungerThirstAfterPassTime():
 
     # INCREMENT THIRST BY 2
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst1)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst1)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst1)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
     End()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst2)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst2)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst2)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
     End()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst3)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
     End()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst4)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
     End()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst5)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
     End()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst6)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
     End()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(4, SurvivalEffects.Thirst7)  # 4 lines
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst9)
     DisplayStatus(SurvivalText.Dehydration)  # Dehydration warning (for health depletion)
     End()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(4, SurvivalEffects.Thirst8)  # 4 lines
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst9)
     DisplayStatus(SurvivalText.Dehydration)  # Dehydration warning (for health depletion)
     End()
@@ -366,7 +366,7 @@ def HungerThirstAfterPassTime():
     End()
 
 
-@NeverRestart(Flags.SaveHungerAfterDeath)
+@ContinueOnRest(Flags.SaveHungerAfterDeath)
 def SaveHungerAfterDeath():
     """Synchronizes hunger state across death using flags."""
 
@@ -432,7 +432,7 @@ def SaveHungerAfterDeath():
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
 
     # Now, wait for player to die, then enable the appropriate flag for this event to work on next load.
-    IfHealthLessThanOrEqual(0, PLAYER, 0)
+    IfHealthRatioLessThanOrEqual(0, PLAYER, 0)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Hunger1)
     EnableFlag(Flags.HasHunger1)
@@ -467,7 +467,7 @@ def SaveHungerAfterDeath():
     return
 
 
-@NeverRestart(Flags.SaveThirstAfterDeath)
+@ContinueOnRest(Flags.SaveThirstAfterDeath)
 def SaveThirstAfterDeath():
     """Synchronizes thirst state across death using flags."""
 
@@ -509,7 +509,7 @@ def SaveThirstAfterDeath():
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst9)
 
     # Now, wait for player to die, then enable the appropriate flag for this event to work on next load.
-    IfHealthLessThanOrEqual(0, PLAYER, 0)
+    IfHealthRatioLessThanOrEqual(0, PLAYER, 0)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(1, SurvivalEffects.Thirst1)
     EnableFlag(Flags.HasThirst1)
@@ -532,7 +532,7 @@ def SaveThirstAfterDeath():
     return
 
 
-@NeverRestart(Flags.RelieveHunger_1)
+@ContinueOnRest(Flags.RelieveHunger_1)
 def RelieveHunger_1():
     """Monitors for numerous different "food eaten" special effects and reduces hunger level by 1."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.BoneBroth)
@@ -543,76 +543,76 @@ def RelieveHunger_1():
     IfConditionTrue(0, -2)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger1)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger1)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger1)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger2)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger2)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger2)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger1)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger3)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger3)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger3)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger2)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger4)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger4)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger4)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger3)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger5)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger5)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger5)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger4)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger6)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger5)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger7)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger8)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger9)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger10)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger11)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger12)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger13)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger14)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger15)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
     Restart()
 
@@ -620,7 +620,7 @@ def RelieveHunger_1():
     Restart()
 
 
-@NeverRestart(Flags.RelieveHunger_2)
+@ContinueOnRest(Flags.RelieveHunger_2)
 def RelieveHunger_2():
     """Monitors for numerous different "food eaten" special effects and reduces hunger level by 2."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.BerryMedley1)
@@ -639,75 +639,75 @@ def RelieveHunger_2():
     IfConditionTrue(0, -2)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger1)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger1)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger1)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger2)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger2)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger2)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger3)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger3)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger3)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger1)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger4)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger4)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger4)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger2)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger5)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger5)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger5)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger3)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger6)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger4)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger7)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger5)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger8)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger9)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger10)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger11)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger12)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger13)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger14)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger15)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
     Restart()
 
@@ -715,7 +715,7 @@ def RelieveHunger_2():
     Restart()
 
 
-@NeverRestart(Flags.RelieveHunger_3)
+@ContinueOnRest(Flags.RelieveHunger_3)
 def RelieveHunger_3():
     """Monitors for numerous different "food eaten" special effects and reduces hunger level by 3."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.RawSteak)
@@ -726,74 +726,74 @@ def RelieveHunger_3():
     IfConditionTrue(0, -2)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger1)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger1)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger1)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger2)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger2)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger2)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger3)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger3)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger3)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger4)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger4)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger4)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger1)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger5)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger5)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger5)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger2)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger6)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger3)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger7)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger4)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger8)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger5)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger9)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger10)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger11)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger12)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger13)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger14)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger15)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
     Restart()
 
@@ -801,7 +801,7 @@ def RelieveHunger_3():
     Restart()
 
 
-@NeverRestart(Flags.RelieveHunger_4)
+@ContinueOnRest(Flags.RelieveHunger_4)
 def RelieveHunger_4():
     """Monitors for numerous different "food eaten" special effects and reduces hunger level by 4."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.BerryMedley3)
@@ -814,73 +814,73 @@ def RelieveHunger_4():
     IfConditionTrue(0, -2)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger1)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger1)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger1)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger2)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger2)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger2)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger3)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger3)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger3)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger4)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger4)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger4)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger5)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger5)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger5)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger1)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger6)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger2)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger7)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger3)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger8)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger4)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger9)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger5)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger10)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger11)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger12)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger13)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger14)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger15)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
     Restart()
 
@@ -888,7 +888,7 @@ def RelieveHunger_4():
     Restart()
 
 
-@NeverRestart(Flags.RelieveHunger_5)
+@ContinueOnRest(Flags.RelieveHunger_5)
 def RelieveHunger_5():
     """Monitors for numerous different "food eaten" special effects and reduces hunger level by 5."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.SearedSteak)
@@ -897,72 +897,72 @@ def RelieveHunger_5():
     IfConditionTrue(0, -2)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger1)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger1)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger1)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger2)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger2)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger2)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger3)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger3)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger3)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger4)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger4)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger4)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger5)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger5)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger5)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger6)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger1)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger7)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger2)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger8)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger3)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger9)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger4)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger10)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger5)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger11)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger12)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger13)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger14)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger15)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
     Restart()
 
@@ -970,7 +970,7 @@ def RelieveHunger_5():
     Restart()
 
 
-@NeverRestart(Flags.RelieveHunger_6)
+@ContinueOnRest(Flags.RelieveHunger_6)
 def RelieveHunger_6():
     """Monitors for numerous different "food eaten" special effects and reduces hunger level by 6."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.RawLiverSteak)
@@ -979,71 +979,71 @@ def RelieveHunger_6():
     IfConditionTrue(0, -2)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger1)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger1)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger1)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger2)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger2)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger2)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger3)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger3)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger3)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger4)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger4)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger4)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger5)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger5)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger5)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger6)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger6)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger6)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger7)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger1)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger8)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger2)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger9)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger3)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger10)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger4)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger11)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger5)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger12)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger13)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger14)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger8)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger15)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
     Restart()
 
@@ -1051,7 +1051,7 @@ def RelieveHunger_6():
     Restart()
 
 
-@NeverRestart(Flags.RelieveHunger_8)
+@ContinueOnRest(Flags.RelieveHunger_8)
 def RelieveHunger_8():
     """Monitors for numerous different "food eaten" special effects and reduces hunger level by 8."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.SearedLiverSteak)
@@ -1062,69 +1062,69 @@ def RelieveHunger_8():
     IfConditionTrue(0, -2)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger1)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger1)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger1)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger2)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger2)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger2)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger3)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger3)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger3)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger4)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger4)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger4)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger5)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger5)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger5)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger6)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger6)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger6)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger7)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger7)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger7)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Hunger8)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger8)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger8)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger9)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger9)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger1)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger10)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger10)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger2)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger11)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger11)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger3)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger12)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger12)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger4)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger13)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger13)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger5)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger14)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger14)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger6)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Hunger15)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Hunger15)
     AddSpecialEffect(PLAYER, SurvivalEffects.Hunger7)
     Restart()
 
@@ -1132,7 +1132,7 @@ def RelieveHunger_8():
     Restart()
 
 
-@NeverRestart(Flags.RelieveThirst_1)
+@ContinueOnRest(Flags.RelieveThirst_1)
 def RelieveThirst_1():
     """Monitors for numerous different "drink consumed" special effects and reduces thirst level by 1."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.BerryMedley1)
@@ -1153,46 +1153,46 @@ def RelieveThirst_1():
     IfConditionTrue(0, -2)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Thirst1)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst1)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst1)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst2)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst2)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst2)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst1)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst3)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst2)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst4)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst5)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst6)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst7)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst8)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst9)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst9)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst9)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
     Restart()
 
@@ -1200,7 +1200,7 @@ def RelieveThirst_1():
     Restart()
 
 
-@NeverRestart(Flags.RelieveThirst_2)
+@ContinueOnRest(Flags.RelieveThirst_2)
 def RelieveThirst_2():
     """Monitors for numerous different "drink consumed" special effects and reduces thirst level by 2."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.BerryMedley2)
@@ -1211,45 +1211,45 @@ def RelieveThirst_2():
     IfConditionTrue(0, -2)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Thirst1)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst1)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst1)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Thirst2)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst2)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst2)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst3)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst1)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst4)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst2)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst5)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst6)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst7)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst8)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst9)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst9)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst9)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
     Restart()
 
@@ -1257,7 +1257,7 @@ def RelieveThirst_2():
     Restart()
 
 
-@NeverRestart(Flags.RelieveThirst_3)
+@ContinueOnRest(Flags.RelieveThirst_3)
 def RelieveThirst_3():
     """Monitors for numerous different "drink consumed" special effects and reduces thirst level by 3."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.BoneBroth)
@@ -1270,44 +1270,44 @@ def RelieveThirst_3():
     IfConditionTrue(0, -2)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Thirst1)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst1)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst1)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Thirst2)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst2)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst2)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Thirst3)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst3)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst3)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst4)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst1)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst5)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst2)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst6)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst7)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst8)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst9)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst9)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst9)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
     Restart()
 
@@ -1315,7 +1315,7 @@ def RelieveThirst_3():
     Restart()
 
 
-@NeverRestart(Flags.RelieveThirst_4)
+@ContinueOnRest(Flags.RelieveThirst_4)
 def RelieveThirst_4():
     """Monitors for numerous different "drink consumed" special effects and reduces thirst level by 4."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.BloodBroth)
@@ -1324,43 +1324,43 @@ def RelieveThirst_4():
     IfConditionTrue(0, -2)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Thirst1)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst1)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst1)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Thirst2)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst2)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst2)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Thirst3)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst3)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst3)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Thirst4)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst4)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst4)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst5)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst1)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst6)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst2)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst7)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst8)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst9)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst9)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst9)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
     Restart()
 
@@ -1368,7 +1368,7 @@ def RelieveThirst_4():
     Restart()
 
 
-@NeverRestart(Flags.RelieveThirst_5)
+@ContinueOnRest(Flags.RelieveThirst_5)
 def RelieveThirst_5():
     """Monitors for numerous different "drink consumed" special effects and reduces thirst level by 5."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.GreatBoneBroth)
@@ -1377,42 +1377,42 @@ def RelieveThirst_5():
     IfConditionTrue(0, -2)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Thirst1)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst1)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst1)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Thirst2)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst2)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst2)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Thirst3)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst3)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst3)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Thirst4)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst4)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst4)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Thirst5)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst5)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst5)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst6)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst1)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst7)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst2)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst8)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst9)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst9)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst9)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
     Restart()
 
@@ -1420,7 +1420,7 @@ def RelieveThirst_5():
     Restart()
 
 
-@NeverRestart(Flags.RelieveThirst_6)
+@ContinueOnRest(Flags.RelieveThirst_6)
 def RelieveThirst_6():
     """Monitors for numerous different "drink consumed" special effects and reduces thirst level by 6."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.DraughtOfSilverTears)
@@ -1429,41 +1429,41 @@ def RelieveThirst_6():
     IfConditionTrue(0, -2)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Thirst1)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst1)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst1)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Thirst2)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst2)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst2)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Thirst3)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst3)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst3)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Thirst4)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst4)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst4)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Thirst5)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst5)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst5)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(2, SurvivalEffects.Thirst6)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst6)  # no replacement effect
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst6)  # no replacement effect
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst7)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst1)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst8)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst2)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst9)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst9)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst9)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
     Restart()
 
@@ -1471,7 +1471,7 @@ def RelieveThirst_6():
     Restart()
 
 
-@NeverRestart(Flags.IncreaseThirst_1)
+@ContinueOnRest(Flags.IncreaseThirst_1)
 def IncreaseThirst_1():
     """Various dried/cured meats make you MORE thirsty."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.ImmunizingCuredMeat)
@@ -1502,42 +1502,42 @@ def IncreaseThirst_1():
     IfConditionTrue(0, -2)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst1)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst1)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst1)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst2)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst2)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst2)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst2)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst3)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst4)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst5)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst6)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst7)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst8)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst9)  # max
     Restart()
 
@@ -1549,7 +1549,7 @@ def IncreaseThirst_1():
     Restart()
 
 
-@NeverRestart(Flags.IncreaseThirst_3)
+@ContinueOnRest(Flags.IncreaseThirst_3)
 def IncreaseThirst_3():
     """Jar Brittle makes you MORE thirsty."""
     IfPlayerHasSpecialEffect(-1, SurvivalEffects.JarBrittle)
@@ -1558,42 +1558,42 @@ def IncreaseThirst_3():
     IfConditionTrue(0, -2)
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst1)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst1)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst1)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst2)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst2)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst2)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst3)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst3)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst4)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst4)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst5)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst5)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst6)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst6)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst9)  # max
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst7)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst7)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst9)  # max
     Restart()
 
     SkipLinesIfPlayerDoesNotHaveSpecialEffect(3, SurvivalEffects.Thirst8)
-    CancelSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
+    RemoveSpecialEffect(PLAYER, SurvivalEffects.Thirst8)
     AddSpecialEffect(PLAYER, SurvivalEffects.Thirst9)  # max
     Restart()
 
@@ -1605,7 +1605,7 @@ def IncreaseThirst_3():
     Restart()
 
 
-@NeverRestart(Flags.JarBrittleEffects)
+@ContinueOnRest(Flags.JarBrittleEffects)
 def JarBrittleEffects():
     """Manually chains Jar Brittle SpEffect (which handles hunger/thirst) into temperature protection."""
     IfPlayerHasSpecialEffect(0, SurvivalEffects.JarBrittle)
@@ -1615,7 +1615,7 @@ def JarBrittleEffects():
     return RESTART
 
 
-@NeverRestart(Flags.CheckMildHeatArea)
+@ContinueOnRest(Flags.CheckMildHeatArea)
 def CheckMildHeatArea():
     """Checks if mild heat should be applied to the player due to current time and place."""
 
@@ -1651,7 +1651,7 @@ def CheckMildHeatArea():
     Restart()
 
 
-@NeverRestart(Flags.CheckModerateHeatArea)
+@ContinueOnRest(Flags.CheckModerateHeatArea)
 def CheckModerateHeatArea():
     """Checks if moderate heat should be applied to the player due to current time and place."""
 
@@ -1690,7 +1690,7 @@ def CheckModerateHeatArea():
     Restart()
 
 
-@NeverRestart(Flags.CheckSevereHeatArea)
+@ContinueOnRest(Flags.CheckSevereHeatArea)
 def CheckSevereHeatArea():
     """Checks if severe heat should be applied to the player due to current time and place."""
 
@@ -1734,7 +1734,7 @@ def CheckSevereHeatArea():
     Restart()
 
 
-@NeverRestart(Flags.CheckMildColdArea)
+@ContinueOnRest(Flags.CheckMildColdArea)
 def CheckMildColdArea():
 
     # --- NIGHT ---
@@ -1772,7 +1772,7 @@ def CheckMildColdArea():
     Restart()
 
 
-@NeverRestart(Flags.CheckModerateColdArea)
+@ContinueOnRest(Flags.CheckModerateColdArea)
 def CheckModerateColdArea():
     # --- MOUNTAINTOPS in DAY ---
     IfTimeOfDay(1, (8, 0, 0), (18, 0, 0))
@@ -1811,7 +1811,7 @@ def CheckModerateColdArea():
     Restart()
 
 
-@NeverRestart(Flags.CheckSevereColdArea)
+@ContinueOnRest(Flags.CheckSevereColdArea)
 def CheckSevereColdArea():
     # --- MOUNTAINTOPS / FARUM AZULA at NIGHT ---
     IfTimeOfDay(1, (18, 0, 0), (8, 0, 0))
@@ -1854,7 +1854,7 @@ def CheckSevereColdArea():
     Restart()
 
 
-@NeverRestart(Flags.MildHeatWarning)
+@ContinueOnRest(Flags.MildHeatWarning)
 def MildHeatWarning():
     Wait(5.0)
     IfFlagEnabled(0, Flags.ShowMildHeatWarning)
@@ -1864,7 +1864,7 @@ def MildHeatWarning():
     return RESTART
 
 
-@NeverRestart(Flags.ModerateHeatWarning)
+@ContinueOnRest(Flags.ModerateHeatWarning)
 def ModerateHeatWarning():
     Wait(5.0)
     IfFlagEnabled(0, Flags.ShowModerateHeatWarning)
@@ -1874,7 +1874,7 @@ def ModerateHeatWarning():
     return RESTART
 
 
-@NeverRestart(Flags.SevereHeatWarning)
+@ContinueOnRest(Flags.SevereHeatWarning)
 def SevereHeatWarning():
     Wait(5.0)
     IfFlagEnabled(0, Flags.ShowSevereHeatWarning)
@@ -1884,7 +1884,7 @@ def SevereHeatWarning():
     return RESTART
 
 
-@NeverRestart(Flags.MildColdWarning)
+@ContinueOnRest(Flags.MildColdWarning)
 def MildColdWarning():
     Wait(5.0)
     IfFlagEnabled(0, Flags.ShowMildColdWarning)
@@ -1894,7 +1894,7 @@ def MildColdWarning():
     return RESTART
 
 
-@NeverRestart(Flags.ModerateColdWarning)
+@ContinueOnRest(Flags.ModerateColdWarning)
 def ModerateColdWarning():
     Wait(5.0)
     IfFlagEnabled(0, Flags.ShowModerateColdWarning)
@@ -1904,7 +1904,7 @@ def ModerateColdWarning():
     return RESTART
 
 
-@NeverRestart(Flags.SevereColdWarning)
+@ContinueOnRest(Flags.SevereColdWarning)
 def SevereColdWarning():
     Wait(5.0)
     IfFlagEnabled(0, Flags.ShowSevereColdWarning)

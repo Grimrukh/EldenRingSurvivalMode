@@ -9,7 +9,7 @@ from .survival_enums import *
 from .survival_goods import *
 
 
-@NeverRestart(0)
+@ContinueOnRest(0)
 def Constructor():
     """Will be merged with vanilla Common."""
 
@@ -601,7 +601,7 @@ def Constructor():
     # endregion
 
 
-@NeverRestart(Flags.CraftDummyWeaponEvent)
+@ContinueOnRest(Flags.CraftDummyWeaponEvent)
 def CraftDummyWeapon(_, dummy_weapon_id: int, weapon_item_lot: int, previous_weapon: int):
     """Wait for player to obtain a crafted dummy weapon, then remove it, remove the previous "required" weapon in
     the recipe (if nonzero), and award the real item."""
@@ -635,7 +635,7 @@ def AllowWeaponUpgrade(_, weapon_id: int, hammer_id: int, upgrade_visible_flag: 
     return RESTART
 
 
-@NeverRestart(Flags.ShowSmithsHammerRecipe)
+@ContinueOnRest(Flags.ShowSmithsHammerRecipe)
 def ShowSmithsHammerRecipe(_, required_hammer_id: int, hammer_id: int, possession_flag: int):
     DisableFlag(possession_flag)
     SkipLinesIfValueEqual(1, required_hammer_id, 0)
