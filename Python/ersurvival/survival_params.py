@@ -1,6 +1,7 @@
 """Scripts for generating Params (regulation.bin).
 
 Modifies CSV files exported by Yapped (Rune Bear), which that program can then re-import.
+(UPDATE: I now have a C# script to import CSVs into `regulation.bin` automatically.)
 
 - In Yapped, import all the CSV param files generated from here:
     - EquipMtrlSetParam
