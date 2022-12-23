@@ -115,45 +115,6 @@ namespace EldenRingSurvival
         {
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
 
-            //Params.AllVariantsCSVToRegulation();
-            //Console.WriteLine("Done.");
-            //Console.ReadLine();
-            //return;
-
-            // TODO: Testing EMEVD instructions.
-            //Dictionary<(int category, int index), List<byte[]>> instructions = new Dictionary<(int, int), List<byte[]>>();
-            //foreach (var file in Directory.GetFiles(@"C:\Steam\steamapps\common\ELDEN RING\Game\event"))
-            //{
-            //    if (!file.EndsWith(".emevd.dcx"))
-            //        continue;
-            //    var emevd = EMEVD.Read(file);
-            //    Console.WriteLine($"Read EMEVD: {file}");
-            //    foreach (var evt in emevd.Events)
-            //    {
-            //        foreach (var instr in evt.Instructions)
-            //        {
-            //            var tuple = (instr.Bank, instr.ID);
-            //            if (!instructions.ContainsKey(tuple))
-            //                instructions[tuple] = new List<byte[]>() { instr.ArgData };
-            //            else
-            //                instructions[tuple].Add(instr.ArgData);
-            //        }
-            //    }
-            //}
-            //var instrList = new List<(int cat, int ind)>(instructions.Keys);
-            //instrList.Sort();
-            //foreach (var instr in instrList)
-            //{
-            //    Console.WriteLine($"    {instr.cat}, {instr.ind}:");
-            //    for (int i = 0; i < Math.Min(10, instructions[instr].Count); i++)
-            //    {
-            //        string args = BitConverter.ToString(instructions[instr][i]).Replace("-", " ");
-            //        Console.WriteLine($"        {args}");
-            //    }
-            //}                
-            //Console.ReadLine();
-            //return;
-
             Console.WriteLine(TitleText);
             
             Hook = new ErdHook(5000, 1000, p => p.MainWindowTitle is "ELDEN RING™" or "ELDEN RING");
@@ -184,10 +145,10 @@ namespace EldenRingSurvival
 
                 if (hour == -1)
                 {
-                    SetDarknessLevel(DarknessLevel.Low, lerpDuration: 10f);
+                    //SetDarknessLevel(DarknessLevel.Low, lerpDuration: 10f);
 
                     // Can't detect hour. Disable darkness injection (or all zeroes may be written).
-                    //Fog.DisableFogInjection();
+                    Fog.DisableFogInjection();
                     DebugPrint("    Time not detected. Disabling darkness.");
                 }
                 else if (!isOutdoors)
@@ -288,7 +249,7 @@ namespace EldenRingSurvival
         {
             if (Fog == null)
             {
-                DebugPrint($"FogManager not active. Cannot set darkness level.");
+                DebugPrint("FogManager not active. Cannot set darkness level.");
                 return;
             }
 
@@ -330,7 +291,10 @@ namespace EldenRingSurvival
                 {
                     Console.WriteLine("ERROR: Could not get original fog values.");
                 }
+                return;
             }
+
+            // BELOW: Moving to non-None darkness level.
 
             // Will do nothing if already enabled.
             Fog.EnableFogInjection();

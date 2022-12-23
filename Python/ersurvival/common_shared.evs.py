@@ -595,11 +595,12 @@ def MonitorHour(_, hour: uchar, hour_flag: int):
     IfTimeOfDay(0, (hour, 0, 0), (hour, 59, 59))
     DisableFlagRange((Flags.Hour0, Flags.Hour23))
     EnableFlag(hour_flag)
-    DisplayBanner(BannerType.BloodyFingerVanquished)
+    DisplayBanner(BannerType.BloodyFingerVanquished)  # TODO: Remove.
 
     # Wait for it to NOT be this hour before restarting to check again.
     IfTimeOfDay(1, (hour, 0, 0), (hour, 59, 59))
     IfConditionFalse(0, 1)
+    DisplayBanner(BannerType.DuelistVanquished)  # TODO: Remove.
     Wait(1.0)
     return RESTART
 

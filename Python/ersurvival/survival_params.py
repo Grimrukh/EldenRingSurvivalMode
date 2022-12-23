@@ -32,8 +32,8 @@ from survival_text import read_weapon_text, write_weapon_text
 from enemy_ids import EXTRA_ENEMY_DROPS
 from weapon_recipes import WEAPON_RECIPES
 
-READ_CSV_PATH = Path(r"C:\Users\Scott\Dropbox\Modding\Tools\Params\Yapped Rune Bear 2.1.4\Projects\ExampleMod\CSV\ER")
-WRITE_CSV_PATH = Path(r"C:\Dark Souls\Projects\EldenRingSurvivalMode\EldenRingSurvivalMode\CSV")
+READ_CSV_PATH = Path(r"C:\Dark Souls\Projects\EldenRingSurvivalMode\EldenRingSurvivalScripts\EldenRingSurvivalScripts\Vanilla CSV")
+WRITE_CSV_PATH = Path(r"C:\Dark Souls\Projects\EldenRingSurvivalMode\EldenRingSurvivalScripts\EldenRingSurvivalScripts\Modded CSV")
 
 DO_SURVIVAL = True
 DO_WEAPONS = True
@@ -51,7 +51,7 @@ def do_category(info_dict):
         raise ValueError(f"Invalid mod category: {info_dict['category']}")
 
 
-class YappedRow(dict):
+class CSVRow(dict):
 
     def __init__(self, source: dict):
         self.__initialized = False
@@ -90,11 +90,11 @@ class YappedRow(dict):
         super().__setitem__("Row Name", str(value))
 
 
-class YappedParam:
+class CSVParam:
 
     def __init__(self, field_names: list[str]):
         self.field_names = field_names
-        self.rows = []  # type: list[YappedRow]
+        self.rows = []  # type: list[CSVRow]
 
     def __getitem__(self, row_id: int):
         for row in self.rows:
@@ -113,20 +113,20 @@ class YappedParam:
             for row in self.rows:
                 i += 1
                 if row["Row ID"] == after_row_id:
-                    self.rows.insert(i, YappedRow(row_dict))
+                    self.rows.insert(i, CSVRow(row_dict))
                     return
             raise ValueError(f"Could not find row ID {after_row_id} to insert new row after.")
         else:  # append to end of row list
-            self.rows.append(YappedRow(row_dict))
+            self.rows.append(CSVRow(row_dict))
 
-    def duplicate_row(self, source_row_id: int, dest_row_id: int, **kwargs) -> YappedRow:
+    def duplicate_row(self, source_row_id: int, dest_row_id: int, **kwargs) -> CSVRow:
         row_ids = self.get_row_ids()
         if source_row_id not in row_ids:
             raise ValueError(f"Source row ID {source_row_id} is not in this param.")
         if dest_row_id in row_ids:
             raise ValueError(f"Dest row ID {dest_row_id} already exists. Delete it first if you want to replace it.")
         source_row = self[source_row_id]
-        new_row = YappedRow(source_row)
+        new_row = CSVRow(source_row)
         new_row["Row ID"] = dest_row_id
         if "name" in kwargs:
             new_row.name = kwargs.pop("name")
@@ -183,15 +183,15 @@ class YappedParam:
                 param.add_row(row)
                 i += 1
 
-        print(f"Loaded YappedParam from CSV with {i} rows.")
+        print(f"Loaded Param from CSV with {i} rows.")
         return param
 
 
-def read_param_csv(param_name: str) -> YappedParam:
-    return YappedParam.from_csv_path((READ_CSV_PATH / param_name).with_suffix(".csv"))
+def read_param_csv(param_name: str) -> CSVParam:
+    return CSVParam.from_csv_path((READ_CSV_PATH / param_name).with_suffix(".csv"))
 
 
-def write_param_csv(param: YappedParam, param_name: str):
+def write_param_csv(param: CSVParam, param_name: str):
     param_path = WRITE_CSV_PATH / param_name
     param_path.parent.mkdir(parents=True, exist_ok=True)
     param.write_csv(param_path.with_suffix(".csv"))
@@ -384,10 +384,10 @@ MANUAL_ITEM_LOTS = {
 
 
 def generate_dummy_weapons(
-    weapon_param: YappedParam,
-    equip_mtrl_set_param: YappedParam,
-    shop_recipe_param: YappedParam,
-    item_lots_map_param: YappedParam,  # assuming that this (not 'enemy') is used for EMEVD rewards but shouldn't matter
+    weapon_param: CSVParam,
+    equip_mtrl_set_param: CSVParam,
+    shop_recipe_param: CSVParam,
+    item_lots_map_param: CSVParam,  # assuming that this (not 'enemy') is used for EMEVD rewards but shouldn't matter
 ):
     """Generate dummy weapons for each melee weapon with type 13 (arrow).
 
@@ -397,7 +397,7 @@ def generate_dummy_weapons(
     if not DO_WEAPONS:
         return
 
-    def do_weapon(weapon_row: YappedRow):
+    def do_weapon(weapon_row: CSVRow):
         if not weapon_row.name:
             return False  # ignore unused weapons
         if 1000000 <= weapon_row.row_id <= 47010000 and weapon_row.row_id % 10000 == 0:
@@ -582,7 +582,7 @@ def generate_dummy_weapons(
 
 
 def generate_smiths_hammers(
-    goods_param: YappedParam, shop_recipe_param: YappedParam, equip_mtrl_set_param: YappedParam
+    goods_param: CSVParam, shop_recipe_param: CSVParam, equip_mtrl_set_param: CSVParam
 ):
     """Recipes for new Smith's Hammers, which allow further weapon upgrades."""
     if not DO_WEAPONS:
@@ -627,7 +627,7 @@ def generate_smiths_hammers(
 
 
 def generate_new_consumables(
-    goods_param: YappedParam, shop_recipe_param: YappedParam, equip_mtrl_set_param: YappedParam
+    goods_param: CSVParam, shop_recipe_param: CSVParam, equip_mtrl_set_param: CSVParam
 ):
     """Recipes for new "survival" goods (food, drink, protection)."""
 
@@ -676,7 +676,7 @@ def generate_new_consumables(
             new_mtrl_row[f"materialCate{j + 1:02d}"] = 4  # always Goods
 
 
-def generate_new_materials(goods_param: YappedParam):
+def generate_new_materials(goods_param: CSVParam):
     """Add new crafting material Goods. Relatively simple."""
     source_row = 15000  # Sliver of Meat
     for good_id, good_info in NEW_MATERIALS.items():
@@ -688,7 +688,7 @@ def generate_new_materials(goods_param: YappedParam):
         new_material["sortGroupId"] = 40
 
 
-def add_breaking_recipes(mtrl_param: YappedParam, shop_recipe_param: YappedParam):
+def add_breaking_recipes(mtrl_param: CSVParam, shop_recipe_param: CSVParam):
     """Add recipes (always available) that let you 'break' [Somber] Smithing Stones into [Somber] Stone Fragments."""
     if not DO_WEAPONS:
         return
@@ -774,7 +774,7 @@ def add_breaking_recipes(mtrl_param: YappedParam, shop_recipe_param: YappedParam
     wood_mtrl_row["materialCate01"] = 4  # always Goods
 
 
-def replace_stone_item_lots(item_lots_param: YappedParam, is_map: bool):
+def replace_stone_item_lots(item_lots_param: CSVParam, is_map: bool):
     """Replace [Somber] Smithing Stones with [Somber] Stone Fragments, some percentage of the time.
 
     Stone Fragment drop count depends on the level of the Smithing Stone it is replacing.
@@ -839,7 +839,7 @@ def replace_stone_item_lots(item_lots_param: YappedParam, is_map: bool):
             )
 
 
-def fix_enemy_item_lots(item_lots_param: YappedParam, weapons_param: YappedParam):
+def fix_enemy_item_lots(item_lots_param: CSVParam, weapons_param: CSVParam):
     if not DO_WEAPONS:
         return
 
@@ -965,7 +965,7 @@ def fix_enemy_item_lots(item_lots_param: YappedParam, weapons_param: YappedParam
             item_lot["lotItemBasePoint01"] = int(item_lot["lotItemBasePoint01"]) - (new_odds - old_odds)
 
 
-def replace_weapon_item_lots(item_lots_param: YappedParam, weapons_param: YappedParam, is_map: bool):
+def replace_weapon_item_lots(item_lots_param: CSVParam, weapons_param: CSVParam, is_map: bool):
     """Replace all (non-ammo) weapons in given ItemLotParam with components."""
     if not DO_WEAPONS:
         return
@@ -1132,7 +1132,7 @@ def get_random_material() -> tuple[Materials, int]:
     return material, random.randint(1, MATERIAL_RARITY_COUNT[material][1])
 
 
-def replace_merchant_weapons(shop_merchant_param: YappedParam, weapons_param: YappedParam):
+def replace_merchant_weapons(shop_merchant_param: CSVParam, weapons_param: CSVParam):
     """Replaces weapons sold by merchants with random components.
 
     Functions basically the same as map item lots.
@@ -1211,9 +1211,9 @@ def replace_merchant_weapons(shop_merchant_param: YappedParam, weapons_param: Ya
 
 
 def generate_notes_recipes(
-    goods_param: YappedParam,
-    shop_merchant_param: YappedParam,
-    item_lot_map: YappedParam,
+    goods_param: CSVParam,
+    shop_merchant_param: CSVParam,
+    item_lot_map: CSVParam,
 ):
     """Create new notes and recipe books and add them to merchant lineup."""
 
@@ -1275,7 +1275,7 @@ def generate_notes_recipes(
                 raise KeyError(f"Note/recipe {good_id} does not have a 'shop_row(s)' or 'item_lot(s)' field.")
 
 
-def generate_disease_indicators(goods: YappedParam, item_lots_map: YappedParam):
+def generate_disease_indicators(goods: CSVParam, item_lots_map: CSVParam):
     """Item lot IDs for disease indicators are identical to the goods themselves."""
     if not DO_DISEASES:
         return
@@ -1298,7 +1298,7 @@ def generate_disease_indicators(goods: YappedParam, item_lots_map: YappedParam):
         new_item_lot["getItemFlagId"] = 0  # no acquirement flag
 
 
-def modify_torrent(npc_param: YappedParam):
+def modify_torrent(npc_param: CSVParam):
     """Make some changes to Torrent's NPC values."""
     if not DO_SURVIVAL:
         return
@@ -1306,7 +1306,7 @@ def modify_torrent(npc_param: YappedParam):
     torrent["hp"] = 500  # down from 1939
 
 
-def fix_survival_shops(shop_merchant_param: YappedParam):
+def fix_survival_shops(shop_merchant_param: CSVParam):
     if not DO_SURVIVAL:
         return
 
@@ -1326,7 +1326,7 @@ def fix_survival_shops(shop_merchant_param: YappedParam):
     bearing_sliver_meat["value"] = 5000
 
 
-def test_item_lots(item_lots_map: YappedParam):
+def test_item_lots(item_lots_map: CSVParam):
     """Debugging item lots."""
     item_lots_map[100].name = "Test: Lord's Rune"
     item_lots_map[100]["lotItemId01"] = 2919
@@ -1361,7 +1361,7 @@ def test_item_lots(item_lots_map: YappedParam):
         cure_item_lot["lotItemNum01"] = 1
 
 
-def enable_all_warps(bonfire_warp_param: YappedParam):
+def enable_all_warps(bonfire_warp_param: CSVParam):
     for row in bonfire_warp_param.rows:
         if row.row_id < 100000:
             continue
@@ -1369,15 +1369,18 @@ def enable_all_warps(bonfire_warp_param: YappedParam):
 
 
 def generate_all_params():
-    bonfire_warp = read_param_csv("BonfireWarpParam_vanilla.csv")
-    goods = read_param_csv("EquipParamGoods_vanilla.csv")
-    weapons = read_param_csv("EquipParamWeapon_vanilla.csv")
-    item_lots_enemy = read_param_csv("ItemLotParam_enemy_vanilla.csv")
-    item_lots_map = read_param_csv("ItemLotParam_map_vanilla.csv")
-    mtrl = read_param_csv("EquipMtrlSetParam_vanilla.csv")
-    npc = read_param_csv("NpcParam_vanilla.csv")
-    shop_recipe = read_param_csv("ShopLineupParam_Recipe_vanilla.csv")
-    shop_merchant = read_param_csv("ShopLineupParam_vanilla.csv")
+    """Reads vanilla CSV files (exported from vanilla regulation), modifies them, and saves new CSV files, which will
+    then be batch-converted back into a new `regulation.bin` file (or a variant of it, depending on desired install
+    options) in a C# script using SoulsFormats."""
+    bonfire_warp = read_param_csv("BonfireWarpParam.csv")
+    goods = read_param_csv("EquipParamGoods.csv")
+    weapons = read_param_csv("EquipParamWeapon.csv")
+    item_lots_enemy = read_param_csv("ItemLotParam_enemy.csv")
+    item_lots_map = read_param_csv("ItemLotParam_map.csv")
+    mtrl = read_param_csv("EquipMtrlSetParam.csv")
+    npc = read_param_csv("NpcParam.csv")
+    shop_recipe = read_param_csv("ShopLineupParam_Recipe.csv")
+    shop_merchant = read_param_csv("ShopLineupParam.csv")
 
     # Delete Serpent-Hunter item lot (it will be replaced with a new recipe below).
     item_lots_map.rows.remove(item_lots_map[16000690])
@@ -1463,5 +1466,7 @@ def generate_all_variants():
 
 if __name__ == '__main__':
     random.seed(10)
-    generate_all_params()
-    # generate_all_variants()
+
+    # generate_all_params()  # default variant only
+
+    generate_all_variants()

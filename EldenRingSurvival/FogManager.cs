@@ -104,10 +104,12 @@ namespace EldenRingSurvival
             Console.WriteLine($"Is Outdoors: {playerIsOutdoors}");
 
             int currentHour = -1;
+            int[] allHours = new int[24];
             for (int hour = 0; hour < 24; hour++)
             {
                 if (Hook.IsEventFlag(19001600 + hour))
                 {
+                    allHours[hour] = 1;
                     if (currentHour == -1)
                     {
                         currentHour = hour;
@@ -118,7 +120,18 @@ namespace EldenRingSurvival
                         return (-1, false, playerIsOutdoors);
                     }
                 }
+                else
+                {
+                    allHours[hour] = 0;
+                }
             }
+
+            string hoursString = "";
+            foreach (int hour in allHours)
+            {
+                hoursString += hour.ToString();
+            }
+            Console.WriteLine($"HOUR FLAGS: {hoursString}");
 
             if (currentHour == -1)
                 Console.WriteLine("ERROR: Could not detect time of day.");

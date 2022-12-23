@@ -15,7 +15,7 @@ my doubts that they'd use a range so close to the rest of the goods.
 
 The `hi` and `low` TPF/layouts are *identical* for these icons, fortunately, so I just have to duplicate my edited ones.
 """
-from survival_params import YappedParam, read_param_csv
+from survival_params import CSVParam, read_param_csv
 from survival_goods import NEW_CONSUMABLES, NEW_MATERIALS
 
 
@@ -48,7 +48,7 @@ def print_layout_entries():
             y += DIM + PAD
 
 
-def find_good_icon_id(goods_param: YappedParam, icon_id: int):
+def find_good_icon_id(goods_param: CSVParam, icon_id: int):
     for row in goods_param.rows:
         if int(row["iconId"]) == icon_id:
             print(f"Icon ID {icon_id} used by good {row.row_id} named: '{row.name}'")

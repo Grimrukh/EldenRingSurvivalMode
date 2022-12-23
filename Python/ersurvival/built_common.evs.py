@@ -29,10 +29,10 @@ def Constructor():
         action_button_id=9700,
         item=8105,
         item_1=8106,
-        map_base_id=60385000,
+        map_id=60385000,
         move_to_region=1038502500,
         move_to_region_1=0,
-        unknown2=62001
+        unk_20_24=62001,
     )
     Event_930(
         1,
@@ -42,10 +42,10 @@ def Constructor():
         action_button_id=9700,
         item=8105,
         item_1=8106,
-        map_base_id=60385000,
+        map_id=60385000,
         move_to_region=1038502502,
         move_to_region_1=0,
-        unknown2=63000
+        unk_20_24=63000,
     )
     Event_930(
         3,
@@ -55,10 +55,10 @@ def Constructor():
         action_button_id=9700,
         item=8107,
         item_1=0,
-        map_base_id=60495300,
+        map_id=60495300,
         move_to_region=1049532502,
         move_to_region_1=0,
-        unknown2=65000
+        unk_20_24=65000,
     )
     Event_930(
         5,
@@ -68,52 +68,81 @@ def Constructor():
         action_button_id=9701,
         item=8175,
         item_1=8176,
-        map_base_id=60495300,
+        map_id=60495300,
         move_to_region=1049532506,
         move_to_region_1=0,
-        unknown2=65002
+        unk_20_24=65002,
     )
-    Event_936(0, 60490000, 60490001, 1049532500, 60495300, 1049532500, 63003, 0, 0, -1.0)
-    Event_936(1, 60490020, 60490021, 1049532504, 60485400, 1049532504, 63003, 0, 0, -1.0)
+    Event_936(
+        0,
+        cutscene_id=60490000,
+        cutscene_id_1=60490001,
+        flag=1049532500,
+        map_id=60495300,
+        move_to_region=1049532500,
+        unk_20_24=63003,
+        change_weather=0,
+        weather=0,
+        weather_duration=-1.0,
+    )
+    Event_936(
+        1,
+        cutscene_id=60490020,
+        cutscene_id_1=60490021,
+        flag=1049532504,
+        map_id=60485400,
+        move_to_region=1049532504,
+        unk_20_24=63003,
+        change_weather=0,
+        weather=0,
+        weather_duration=-1.0,
+    )
     Event_970()
-    Event_9820(0, right=8820, item_lot_param_id=4820, special_effect=3600)
+    Event_9820(0, right=8820, item_lot=4820, special_effect=3600)
     Event_1020()
     Event_9945()
     Event_1400()
     Event_1401()
-    Event_1410(0, flag=60804, command_id__unk_0_4=4, special_effect=1000, character=11100785, flag_1=11102180)
+    Event_1410(0, flag=60804, command_id__gesture_param_id=4, special_effect=1000, character=11100785, flag_1=11102180)
     Event_1411(
         0,
         flag=60808,
-        command_id__unk_0_4=8,
+        command_id__gesture_param_id=8,
         special_effect=1001,
         character=39200700,
         flag_1=39202160,
         character_1=1052380260,
         flag_2=1252382699,
         character_2=1045520730,
-        flag_3=1045522170
+        flag_3=1045522170,
     )
-    Event_1412(0, flag=60823, command_id__unk_0_4=53, special_effect=1002, character=1050560700, flag_1=1050562140)
-    Event_1600(0, flag=62010, flag_1=63010, obj=1042371690, obj_1=1042371691)
-    Event_1600(1, flag=62011, flag_1=63011, obj=1044321690, obj_1=1044321691)
-    Event_1600(2, flag=62012, flag_1=63012, obj=1045371690, obj_1=1045371691)
-    Event_1600(3, flag=62020, flag_1=63020, obj=1038411690, obj_1=1038411691)
-    Event_1600(4, flag=62021, flag_1=63021, obj=1037441690, obj_1=1037441691)
-    Event_1600(5, flag=62022, flag_1=63022, obj=1034481690, obj_1=1034481691)
-    Event_1600(6, flag=62030, flag_1=63030, obj=1040521690, obj_1=1040521691)
-    Event_1600(7, flag=62031, flag_1=63031, obj=1042511690, obj_1=1042511691)
-    Event_1600(8, flag=62032, flag_1=63032, obj=1036541690, obj_1=1036541691)
-    Event_1600(9, flag=62040, flag_1=63040, obj=1049371690, obj_1=1049371691)
-    Event_1600(10, flag=62041, flag_1=63041, obj=1049401690, obj_1=1049401691)
-    Event_1600(11, flag=62050, flag_1=63050, obj=1049531690, obj_1=1049531691)
-    Event_1600(12, flag=62051, flag_1=63051, obj=1052541690, obj_1=1052541691)
-    Event_1600(13, flag=62052, flag_1=63052, obj=1048561690, obj_1=1048561691)
-    Event_1600(14, flag=62060, flag_1=63060, obj=0, obj_1=0)
-    Event_1600(15, flag=62061, flag_1=63061, obj=0, obj_1=0)
-    Event_1600(16, flag=62063, flag_1=63063, obj=0, obj_1=0)
-    Event_1600(17, flag=62062, flag_1=63062, obj=0, obj_1=0)
-    Event_1600(18, flag=62064, flag_1=63064, obj=0, obj_1=0)
+    Event_1412(
+        0,
+        flag=60823,
+        command_id__gesture_param_id=53,
+        special_effect=1002,
+        character=1050560700,
+        flag_1=1050562140,
+    )
+    Event_1600(0, flag=62010, flag_1=63010, asset=1042371690, asset_1=1042371691)
+    Event_1600(1, flag=62011, flag_1=63011, asset=1044321690, asset_1=1044321691)
+    Event_1600(2, flag=62012, flag_1=63012, asset=1045371690, asset_1=1045371691)
+    Event_1600(3, flag=62020, flag_1=63020, asset=1038411690, asset_1=1038411691)
+    Event_1600(4, flag=62021, flag_1=63021, asset=1037441690, asset_1=1037441691)
+    Event_1600(5, flag=62022, flag_1=63022, asset=1034481690, asset_1=1034481691)
+    Event_1600(6, flag=62030, flag_1=63030, asset=1040521690, asset_1=1040521691)
+    Event_1600(7, flag=62031, flag_1=63031, asset=1042511690, asset_1=1042511691)
+    Event_1600(8, flag=62032, flag_1=63032, asset=1036541690, asset_1=1036541691)
+    Event_1600(9, flag=62040, flag_1=63040, asset=1049371690, asset_1=1049371691)
+    Event_1600(10, flag=62041, flag_1=63041, asset=1049401690, asset_1=1049401691)
+    Event_1600(11, flag=62050, flag_1=63050, asset=1049531690, asset_1=1049531691)
+    Event_1600(12, flag=62051, flag_1=63051, asset=1052541690, asset_1=1052541691)
+    Event_1600(13, flag=62052, flag_1=63052, asset=1048561690, asset_1=1048561691)
+    Event_1600(14, flag=62060, flag_1=63060, asset=0, asset_1=0)
+    Event_1600(15, flag=62061, flag_1=63061, asset=0, asset_1=0)
+    Event_1600(16, flag=62063, flag_1=63063, asset=0, asset_1=0)
+    Event_1600(17, flag=62062, flag_1=63062, asset=0, asset_1=0)
+    Event_1600(18, flag=62064, flag_1=63064, asset=0, asset_1=0)
     Event_1630(
         0,
         flag=62004,
@@ -124,7 +153,7 @@ def Constructor():
         right_3=62031,
         right_4=62041,
         right_5=62050,
-        right_6=0
+        right_6=0,
     )
     Event_1630(
         1,
@@ -136,7 +165,7 @@ def Constructor():
         right_3=0,
         right_4=0,
         right_5=0,
-        right_6=0
+        right_6=0,
     )
     Event_1630(
         2,
@@ -148,7 +177,7 @@ def Constructor():
         right_3=0,
         right_4=0,
         right_5=0,
-        right_6=0
+        right_6=0,
     )
     Event_1630(
         3,
@@ -160,7 +189,7 @@ def Constructor():
         right_3=0,
         right_4=0,
         right_5=0,
-        right_6=0
+        right_6=0,
     )
     Event_1630(
         4,
@@ -172,7 +201,7 @@ def Constructor():
         right_3=0,
         right_4=0,
         right_5=0,
-        right_6=0
+        right_6=0,
     )
     Event_1630(
         5,
@@ -184,61 +213,63 @@ def Constructor():
         right_3=0,
         right_4=0,
         right_5=0,
-        right_6=0
+        right_6=0,
     )
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(2052):
+        return
     Event_945()
     Event_920()
     Event_921()
     Event_922()
     Event_130(2, collision=14004100)
-    Event_9300(4, 4, 10000800, 0.0)
-    Event_9300(5, 5, 9130, 0.0)
-    Event_9300(6, 6, 11000800, 0.0)
-    Event_9300(7, 7, 16000800, 0.0)
-    Event_9300(8, 8, 15000800, 0.0)
-    Event_9300(9, 9, 12050800, 0.0)
-    Event_9300(10, 10, 13000800, 0.0)
-    Event_9300(11, 11, 11050800, 0.0)
-    Event_9300(12, 12, 13000830, 0.0)
-    Event_9300(18, 18, 14000800, 0.0)
-    Event_9300(19, 19, 12030850, 0.0)
-    Event_9300(20, 20, 13000850, 0.0)
-    Event_9300(21, 21, 1052520800, 0.0)
-    Event_9300(22, 22, 12010800, 0.0)
-    Event_9300(23, 23, 12090800, 0.0)
-    Event_9300(24, 24, 12020800, 0.0)
-    Event_9300(25, 25, 10000850, 0.0)
-    Event_9300(26, 26, 14000850, 0.0)
-    Event_9300(27, 27, 16000850, 0.0)
-    Event_9300(28, 28, 39200800, 0.0)
-    Event_9300(29, 29, 11000850, 0.0)
-    Event_9300(30, 30, 35000800, 0.0)
-    Event_9300(31, 31, 12020850, 0.0)
-    Event_9300(32, 32, 15000850, 0.0)
-    Event_9300(33, 33, 12040800, 0.0)
-    Event_9300(34, 34, 1043300800, 0.0)
-    Event_9300(35, 35, 1035500800, 0.0)
-    Event_9300(36, 36, 1039540800, 0.0)
-    Event_9300(37, 37, 12080800, 0.0)
-    Event_9300(38, 38, 1051570800, 0.0)
-    Event_9300(39, 39, 105, 0.0)
-    Event_9300(40, 40, 161, 0.0)
-    Event_9300(41, 41, 110, 0.0)
-    Event_9360(0, 0, 100, 0.0)
-    Event_9360(1, 1, 9390, 0.0)
-    Event_9360(2, 2, 9392, 0.0)
-    Event_9360(3, 3, 11000801, 0.0)
-    Event_9360(4, 4, 1252520801, 0.0)
-    Event_9360(5, 5, 13000801, 0.0)
-    Event_9360(6, 6, 19000802, 0.0)
-    Event_9375(0, 0, 120, 0.0)
-    Event_9375(1, 1, 9391, 0.0)
-    Event_9375(2, 2, 9393, 0.0)
-    Event_9375(3, 3, 11000800, 0.0)
-    Event_9375(4, 4, 1252520800, 0.0)
-    Event_9375(5, 5, 13000800, 0.0)
-    Event_9375(6, 6, 19000800, 0.0)
+    Event_9300(4, achievement_id=4, flag=10000800, seconds=0.0)
+    Event_9300(5, achievement_id=5, flag=9130, seconds=0.0)
+    Event_9300(6, achievement_id=6, flag=11000800, seconds=0.0)
+    Event_9300(7, achievement_id=7, flag=16000800, seconds=0.0)
+    Event_9300(8, achievement_id=8, flag=15000800, seconds=0.0)
+    Event_9300(9, achievement_id=9, flag=12050800, seconds=0.0)
+    Event_9300(10, achievement_id=10, flag=13000800, seconds=0.0)
+    Event_9300(11, achievement_id=11, flag=11050800, seconds=0.0)
+    Event_9300(12, achievement_id=12, flag=13000830, seconds=0.0)
+    Event_9300(18, achievement_id=18, flag=14000800, seconds=0.0)
+    Event_9300(19, achievement_id=19, flag=12030850, seconds=0.0)
+    Event_9300(20, achievement_id=20, flag=13000850, seconds=0.0)
+    Event_9300(21, achievement_id=21, flag=1052520800, seconds=0.0)
+    Event_9300(22, achievement_id=22, flag=12010800, seconds=0.0)
+    Event_9300(23, achievement_id=23, flag=12090800, seconds=0.0)
+    Event_9300(24, achievement_id=24, flag=12020800, seconds=0.0)
+    Event_9300(25, achievement_id=25, flag=10000850, seconds=0.0)
+    Event_9300(26, achievement_id=26, flag=14000850, seconds=0.0)
+    Event_9300(27, achievement_id=27, flag=16000850, seconds=0.0)
+    Event_9300(28, achievement_id=28, flag=39200800, seconds=0.0)
+    Event_9300(29, achievement_id=29, flag=11000850, seconds=0.0)
+    Event_9300(30, achievement_id=30, flag=35000800, seconds=0.0)
+    Event_9300(31, achievement_id=31, flag=12020850, seconds=0.0)
+    Event_9300(32, achievement_id=32, flag=15000850, seconds=0.0)
+    Event_9300(33, achievement_id=33, flag=12040800, seconds=0.0)
+    Event_9300(34, achievement_id=34, flag=1043300800, seconds=0.0)
+    Event_9300(35, achievement_id=35, flag=1035500800, seconds=0.0)
+    Event_9300(36, achievement_id=36, flag=1039540800, seconds=0.0)
+    Event_9300(37, achievement_id=37, flag=12080800, seconds=0.0)
+    Event_9300(38, achievement_id=38, flag=1051570800, seconds=0.0)
+    Event_9300(39, achievement_id=39, flag=105, seconds=0.0)
+    Event_9300(41, achievement_id=41, flag=110, seconds=0.0)
+    Event_9360(0, activity_id=0, flag=100, seconds=0.0)
+    Event_9360(1, activity_id=1, flag=9390, seconds=0.0)
+    Event_9360(2, activity_id=2, flag=9392, seconds=0.0)
+    Event_9360(3, activity_id=3, flag=11000801, seconds=0.0)
+    Event_9360(4, activity_id=4, flag=1252520801, seconds=0.0)
+    Event_9360(5, activity_id=5, flag=13000801, seconds=0.0)
+    Event_9360(6, activity_id=6, flag=19000802, seconds=0.0)
+    Event_9375(0, activity_id=0, flag=120, seconds=0.0)
+    Event_9375(1, activity_id=1, flag=9391, seconds=0.0)
+    Event_9375(2, activity_id=2, flag=9393, seconds=0.0)
+    Event_9375(3, activity_id=3, flag=11000800, seconds=0.0)
+    Event_9375(4, activity_id=4, flag=1252520800, seconds=0.0)
+    Event_9375(5, activity_id=5, flag=13000800, seconds=0.0)
+    Event_9375(6, activity_id=6, flag=19000800, seconds=0.0)
     Event_9390(0, flag=6001, right=10000801, right_1=1252380801, right_2=16000801, right_3=12050801, right_4=0)
     Event_9390(1, flag=6001, right=10000800, right_1=1252380800, right_2=16000800, right_3=12050800, right_4=0)
     Event_9390(2, flag=9390, right=10000801, right_1=1252380801, right_2=16000801, right_3=12050801, right_4=11000801)
@@ -302,101 +333,101 @@ def Constructor():
     Event_730(5, flag=185, value=5)
     Event_730(6, flag=186, value=6)
     Event_730(7, flag=187, value=7)
-    Event_1100(0, flag=9100, item_lot__item_lot_param_id=10000, item_lot_param_id=0, flag_1=60510)
-    Event_1100(1, flag=9101, item_lot__item_lot_param_id=10010, item_lot_param_id=0, flag_1=510010)
-    Event_1100(2, flag=9102, item_lot__item_lot_param_id=10020, item_lot_param_id=0, flag_1=510020)
-    Event_1100(3, flag=9103, item_lot__item_lot_param_id=10030, item_lot_param_id=0, flag_1=510030)
-    Event_1100(4, flag=9104, item_lot__item_lot_param_id=10040, item_lot_param_id=0, flag_1=510040)
-    Event_1100(5, flag=9105, item_lot__item_lot_param_id=10050, item_lot_param_id=0, flag_1=60520)
-    Event_1100(6, flag=9106, item_lot__item_lot_param_id=10060, item_lot_param_id=0, flag_1=510060)
-    Event_1100(7, flag=9107, item_lot__item_lot_param_id=10070, item_lot_param_id=0, flag_1=510070)
-    Event_1100(8, flag=9108, item_lot__item_lot_param_id=10080, item_lot_param_id=0, flag_1=510080)
-    Event_1100(9, flag=9109, item_lot__item_lot_param_id=10090, item_lot_param_id=0, flag_1=510090)
-    Event_1100(10, flag=9110, item_lot__item_lot_param_id=10100, item_lot_param_id=0, flag_1=510100)
-    Event_1100(11, flag=9111, item_lot__item_lot_param_id=10110, item_lot_param_id=0, flag_1=510110)
-    Event_1100(12, flag=9112, item_lot__item_lot_param_id=10120, item_lot_param_id=0, flag_1=510120)
-    Event_1100(13, flag=9113, item_lot__item_lot_param_id=10130, item_lot_param_id=0, flag_1=510130)
-    Event_1100(14, flag=9114, item_lot__item_lot_param_id=10140, item_lot_param_id=0, flag_1=510140)
-    Event_1100(15, flag=9115, item_lot__item_lot_param_id=10150, item_lot_param_id=0, flag_1=510150)
-    Event_1100(16, flag=9116, item_lot__item_lot_param_id=10160, item_lot_param_id=0, flag_1=510160)
-    Event_1100(17, flag=9117, item_lot__item_lot_param_id=10170, item_lot_param_id=0, flag_1=60440)
-    Event_1100(18, flag=9118, item_lot__item_lot_param_id=10180, item_lot_param_id=0, flag_1=197)
-    Event_1100(19, flag=9119, item_lot__item_lot_param_id=10190, item_lot_param_id=0, flag_1=510190)
-    Event_1100(20, flag=9120, item_lot__item_lot_param_id=10200, item_lot_param_id=0, flag_1=510200)
-    Event_1100(21, flag=9121, item_lot__item_lot_param_id=10210, item_lot_param_id=0, flag_1=510210)
-    Event_1100(22, flag=9122, item_lot__item_lot_param_id=10220, item_lot_param_id=0, flag_1=510220)
-    Event_1100(23, flag=9123, item_lot__item_lot_param_id=10230, item_lot_param_id=0, flag_1=510230)
-    Event_1100(24, flag=9124, item_lot__item_lot_param_id=10240, item_lot_param_id=0, flag_1=510240)
-    Event_1100(25, flag=9125, item_lot__item_lot_param_id=10250, item_lot_param_id=0, flag_1=510250)
-    Event_1100(26, flag=9126, item_lot__item_lot_param_id=10260, item_lot_param_id=0, flag_1=510260)
-    Event_1100(27, flag=9127, item_lot__item_lot_param_id=10270, item_lot_param_id=0, flag_1=510270)
-    Event_1100(28, flag=9128, item_lot__item_lot_param_id=10280, item_lot_param_id=0, flag_1=510280)
-    Event_1100(29, flag=9129, item_lot__item_lot_param_id=10290, item_lot_param_id=0, flag_1=510290)
-    Event_1100(30, flag=9130, item_lot__item_lot_param_id=10300, item_lot_param_id=0, flag_1=510300)
-    Event_1100(31, flag=9131, item_lot__item_lot_param_id=10310, item_lot_param_id=0, flag_1=510310)
-    Event_1100(32, flag=9132, item_lot__item_lot_param_id=10320, item_lot_param_id=0, flag_1=510320)
-    Event_1100(33, flag=9133, item_lot__item_lot_param_id=10330, item_lot_param_id=0, flag_1=510330)
-    Event_1100(34, flag=9134, item_lot__item_lot_param_id=10340, item_lot_param_id=0, flag_1=510340)
-    Event_1100(35, flag=9135, item_lot__item_lot_param_id=10350, item_lot_param_id=0, flag_1=510350)
-    Event_1100(73, flag=9173, item_lot__item_lot_param_id=10730, item_lot_param_id=0, flag_1=510730)
-    Event_1100(74, flag=9174, item_lot__item_lot_param_id=10740, item_lot_param_id=0, flag_1=510740)
-    Event_1100(80, flag=9180, item_lot__item_lot_param_id=10800, item_lot_param_id=0, flag_1=510800)
-    Event_1100(81, flag=9181, item_lot__item_lot_param_id=10810, item_lot_param_id=0, flag_1=510810)
-    Event_1100(82, flag=9182, item_lot__item_lot_param_id=10820, item_lot_param_id=0, flag_1=510820)
-    Event_1100(83, flag=9183, item_lot__item_lot_param_id=10830, item_lot_param_id=0, flag_1=510830)
-    Event_1100(84, flag=9184, item_lot__item_lot_param_id=10840, item_lot_param_id=0, flag_1=510840)
-    Event_1200(0, flag=9200, item_lot__item_lot_param_id=20000, item_lot_param_id=0, flag_1=520000)
-    Event_1200(1, flag=9201, item_lot__item_lot_param_id=20010, item_lot_param_id=0, flag_1=520010)
-    Event_1200(2, flag=9202, item_lot__item_lot_param_id=20020, item_lot_param_id=0, flag_1=520020)
-    Event_1200(3, flag=9203, item_lot__item_lot_param_id=20030, item_lot_param_id=0, flag_1=520030)
-    Event_1200(4, flag=9204, item_lot__item_lot_param_id=20040, item_lot_param_id=0, flag_1=520040)
-    Event_1200(5, flag=9205, item_lot__item_lot_param_id=20050, item_lot_param_id=0, flag_1=520050)
-    Event_1200(6, flag=9206, item_lot__item_lot_param_id=20060, item_lot_param_id=0, flag_1=520060)
-    Event_1200(7, flag=9207, item_lot__item_lot_param_id=20070, item_lot_param_id=0, flag_1=520070)
-    Event_1200(8, flag=9208, item_lot__item_lot_param_id=20080, item_lot_param_id=0, flag_1=520080)
-    Event_1200(9, flag=9209, item_lot__item_lot_param_id=20090, item_lot_param_id=0, flag_1=520090)
-    Event_1200(10, flag=9210, item_lot__item_lot_param_id=20100, item_lot_param_id=0, flag_1=520100)
-    Event_1200(11, flag=9211, item_lot__item_lot_param_id=20110, item_lot_param_id=0, flag_1=520110)
-    Event_1200(12, flag=9212, item_lot__item_lot_param_id=20120, item_lot_param_id=0, flag_1=520120)
-    Event_1200(13, flag=9213, item_lot__item_lot_param_id=20130, item_lot_param_id=0, flag_1=520130)
-    Event_1200(14, flag=9214, item_lot__item_lot_param_id=20140, item_lot_param_id=0, flag_1=520140)
-    Event_1200(15, flag=9215, item_lot__item_lot_param_id=20150, item_lot_param_id=0, flag_1=520150)
-    Event_1200(16, flag=9216, item_lot__item_lot_param_id=20160, item_lot_param_id=0, flag_1=520160)
-    Event_1200(17, flag=9217, item_lot__item_lot_param_id=20170, item_lot_param_id=0, flag_1=520170)
-    Event_1200(18, flag=9218, item_lot__item_lot_param_id=20180, item_lot_param_id=0, flag_1=520180)
-    Event_1200(19, flag=9219, item_lot__item_lot_param_id=20190, item_lot_param_id=0, flag_1=520190)
-    Event_1200(20, flag=9220, item_lot__item_lot_param_id=20200, item_lot_param_id=0, flag_1=520200)
-    Event_1200(21, flag=9221, item_lot__item_lot_param_id=20210, item_lot_param_id=0, flag_1=520210)
-    Event_1200(22, flag=9222, item_lot__item_lot_param_id=20220, item_lot_param_id=0, flag_1=520220)
-    Event_1200(30, flag=9230, item_lot__item_lot_param_id=20300, item_lot_param_id=0, flag_1=520300)
-    Event_1200(31, flag=9231, item_lot__item_lot_param_id=20310, item_lot_param_id=0, flag_1=520310)
-    Event_1200(32, flag=9232, item_lot__item_lot_param_id=20320, item_lot_param_id=0, flag_1=520320)
-    Event_1200(33, flag=9233, item_lot__item_lot_param_id=20330, item_lot_param_id=0, flag_1=520330)
-    Event_1200(34, flag=9234, item_lot__item_lot_param_id=20340, item_lot_param_id=0, flag_1=520340)
-    Event_1200(35, flag=9235, item_lot__item_lot_param_id=20350, item_lot_param_id=0, flag_1=520350)
-    Event_1200(36, flag=9236, item_lot__item_lot_param_id=20360, item_lot_param_id=0, flag_1=520360)
-    Event_1200(37, flag=9237, item_lot__item_lot_param_id=20370, item_lot_param_id=0, flag_1=520370)
-    Event_1200(38, flag=9238, item_lot__item_lot_param_id=20380, item_lot_param_id=0, flag_1=520380)
-    Event_1200(39, flag=9239, item_lot__item_lot_param_id=20390, item_lot_param_id=0, flag_1=520390)
-    Event_1200(40, flag=9240, item_lot__item_lot_param_id=20400, item_lot_param_id=0, flag_1=520400)
-    Event_1200(41, flag=9241, item_lot__item_lot_param_id=20410, item_lot_param_id=0, flag_1=520410)
-    Event_1200(42, flag=9242, item_lot__item_lot_param_id=20420, item_lot_param_id=0, flag_1=520420)
-    Event_1200(43, flag=9243, item_lot__item_lot_param_id=20430, item_lot_param_id=0, flag_1=520430)
-    Event_1200(44, flag=9244, item_lot__item_lot_param_id=20440, item_lot_param_id=0, flag_1=520440)
-    Event_1200(45, flag=9245, item_lot__item_lot_param_id=20450, item_lot_param_id=0, flag_1=520450)
-    Event_1200(46, flag=9246, item_lot__item_lot_param_id=20460, item_lot_param_id=0, flag_1=520460)
-    Event_1200(47, flag=9247, item_lot__item_lot_param_id=20470, item_lot_param_id=0, flag_1=520470)
-    Event_1200(48, flag=9248, item_lot__item_lot_param_id=20480, item_lot_param_id=0, flag_1=520480)
-    Event_1200(49, flag=9249, item_lot__item_lot_param_id=20490, item_lot_param_id=0, flag_1=520490)
-    Event_1200(60, flag=9260, item_lot__item_lot_param_id=20600, item_lot_param_id=0, flag_1=520600)
-    Event_1200(61, flag=9261, item_lot__item_lot_param_id=20610, item_lot_param_id=0, flag_1=520610)
-    Event_1200(62, flag=9262, item_lot__item_lot_param_id=20620, item_lot_param_id=0, flag_1=520620)
-    Event_1200(63, flag=9263, item_lot__item_lot_param_id=20630, item_lot_param_id=0, flag_1=520630)
-    Event_1200(64, flag=9264, item_lot__item_lot_param_id=20640, item_lot_param_id=0, flag_1=520640)
-    Event_1200(65, flag=9265, item_lot__item_lot_param_id=20650, item_lot_param_id=0, flag_1=520650)
-    Event_1200(66, flag=9266, item_lot__item_lot_param_id=20660, item_lot_param_id=0, flag_1=520660)
-    Event_1200(67, flag=9267, item_lot__item_lot_param_id=20670, item_lot_param_id=0, flag_1=520670)
-    Event_1200(68, flag=9268, item_lot__item_lot_param_id=20680, item_lot_param_id=0, flag_1=520680)
+    Event_1100(0, flag=9100, item_lot=10000, item_lot_1=0, flag_1=60510)
+    Event_1100(1, flag=9101, item_lot=10010, item_lot_1=0, flag_1=510010)
+    Event_1100(2, flag=9102, item_lot=10020, item_lot_1=0, flag_1=510020)
+    Event_1100(3, flag=9103, item_lot=10030, item_lot_1=0, flag_1=510030)
+    Event_1100(4, flag=9104, item_lot=10040, item_lot_1=0, flag_1=510040)
+    Event_1100(5, flag=9105, item_lot=10050, item_lot_1=0, flag_1=60520)
+    Event_1100(6, flag=9106, item_lot=10060, item_lot_1=0, flag_1=510060)
+    Event_1100(7, flag=9107, item_lot=10070, item_lot_1=0, flag_1=510070)
+    Event_1100(8, flag=9108, item_lot=10080, item_lot_1=0, flag_1=510080)
+    Event_1100(9, flag=9109, item_lot=10090, item_lot_1=0, flag_1=510090)
+    Event_1100(10, flag=9110, item_lot=10100, item_lot_1=0, flag_1=510100)
+    Event_1100(11, flag=9111, item_lot=10110, item_lot_1=0, flag_1=510110)
+    Event_1100(12, flag=9112, item_lot=10120, item_lot_1=0, flag_1=510120)
+    Event_1100(13, flag=9113, item_lot=10130, item_lot_1=0, flag_1=510130)
+    Event_1100(14, flag=9114, item_lot=10140, item_lot_1=0, flag_1=510140)
+    Event_1100(15, flag=9115, item_lot=10150, item_lot_1=0, flag_1=510150)
+    Event_1100(16, flag=9116, item_lot=10160, item_lot_1=0, flag_1=510160)
+    Event_1100(17, flag=9117, item_lot=10170, item_lot_1=0, flag_1=60440)
+    Event_1100(18, flag=9118, item_lot=10180, item_lot_1=0, flag_1=197)
+    Event_1100(19, flag=9119, item_lot=10190, item_lot_1=0, flag_1=510190)
+    Event_1100(20, flag=9120, item_lot=10200, item_lot_1=0, flag_1=510200)
+    Event_1100(21, flag=9121, item_lot=10210, item_lot_1=0, flag_1=510210)
+    Event_1100(22, flag=9122, item_lot=10220, item_lot_1=0, flag_1=510220)
+    Event_1100(23, flag=9123, item_lot=10230, item_lot_1=0, flag_1=510230)
+    Event_1100(24, flag=9124, item_lot=10240, item_lot_1=0, flag_1=510240)
+    Event_1100(25, flag=9125, item_lot=10250, item_lot_1=0, flag_1=510250)
+    Event_1100(26, flag=9126, item_lot=10260, item_lot_1=0, flag_1=510260)
+    Event_1100(27, flag=9127, item_lot=10270, item_lot_1=0, flag_1=510270)
+    Event_1100(28, flag=9128, item_lot=10280, item_lot_1=0, flag_1=510280)
+    Event_1100(29, flag=9129, item_lot=10290, item_lot_1=0, flag_1=510290)
+    Event_1100(30, flag=9130, item_lot=10300, item_lot_1=0, flag_1=510300)
+    Event_1100(31, flag=9131, item_lot=10310, item_lot_1=0, flag_1=510310)
+    Event_1100(32, flag=9132, item_lot=10320, item_lot_1=0, flag_1=510320)
+    Event_1100(33, flag=9133, item_lot=10330, item_lot_1=0, flag_1=510330)
+    Event_1100(34, flag=9134, item_lot=10340, item_lot_1=0, flag_1=510340)
+    Event_1100(35, flag=9135, item_lot=10350, item_lot_1=0, flag_1=510350)
+    Event_1100(73, flag=9173, item_lot=10730, item_lot_1=0, flag_1=510730)
+    Event_1100(74, flag=9174, item_lot=10740, item_lot_1=0, flag_1=510740)
+    Event_1100(80, flag=9180, item_lot=10800, item_lot_1=0, flag_1=510800)
+    Event_1100(81, flag=9181, item_lot=10810, item_lot_1=0, flag_1=510810)
+    Event_1100(82, flag=9182, item_lot=10820, item_lot_1=0, flag_1=510820)
+    Event_1100(83, flag=9183, item_lot=10830, item_lot_1=0, flag_1=510830)
+    Event_1100(84, flag=9184, item_lot=10840, item_lot_1=0, flag_1=510840)
+    Event_1200(0, flag=9200, item_lot=20000, item_lot_1=0, flag_1=520000)
+    Event_1200(1, flag=9201, item_lot=20010, item_lot_1=0, flag_1=520010)
+    Event_1200(2, flag=9202, item_lot=20020, item_lot_1=0, flag_1=520020)
+    Event_1200(3, flag=9203, item_lot=20030, item_lot_1=0, flag_1=520030)
+    Event_1200(4, flag=9204, item_lot=20040, item_lot_1=0, flag_1=520040)
+    Event_1200(5, flag=9205, item_lot=20050, item_lot_1=0, flag_1=520050)
+    Event_1200(6, flag=9206, item_lot=20060, item_lot_1=0, flag_1=520060)
+    Event_1200(7, flag=9207, item_lot=20070, item_lot_1=0, flag_1=520070)
+    Event_1200(8, flag=9208, item_lot=20080, item_lot_1=0, flag_1=520080)
+    Event_1200(9, flag=9209, item_lot=20090, item_lot_1=0, flag_1=520090)
+    Event_1200(10, flag=9210, item_lot=20100, item_lot_1=0, flag_1=520100)
+    Event_1200(11, flag=9211, item_lot=20110, item_lot_1=0, flag_1=520110)
+    Event_1200(12, flag=9212, item_lot=20120, item_lot_1=0, flag_1=520120)
+    Event_1200(13, flag=9213, item_lot=20130, item_lot_1=0, flag_1=520130)
+    Event_1200(14, flag=9214, item_lot=20140, item_lot_1=0, flag_1=520140)
+    Event_1200(15, flag=9215, item_lot=20150, item_lot_1=0, flag_1=520150)
+    Event_1200(16, flag=9216, item_lot=20160, item_lot_1=0, flag_1=520160)
+    Event_1200(17, flag=9217, item_lot=20170, item_lot_1=0, flag_1=520170)
+    Event_1200(18, flag=9218, item_lot=20180, item_lot_1=0, flag_1=520180)
+    Event_1200(19, flag=9219, item_lot=20190, item_lot_1=0, flag_1=520190)
+    Event_1200(20, flag=9220, item_lot=20200, item_lot_1=0, flag_1=520200)
+    Event_1200(21, flag=9221, item_lot=20210, item_lot_1=0, flag_1=520210)
+    Event_1200(22, flag=9222, item_lot=20220, item_lot_1=0, flag_1=520220)
+    Event_1200(30, flag=9230, item_lot=20300, item_lot_1=0, flag_1=520300)
+    Event_1200(31, flag=9231, item_lot=20310, item_lot_1=0, flag_1=520310)
+    Event_1200(32, flag=9232, item_lot=20320, item_lot_1=0, flag_1=520320)
+    Event_1200(33, flag=9233, item_lot=20330, item_lot_1=0, flag_1=520330)
+    Event_1200(34, flag=9234, item_lot=20340, item_lot_1=0, flag_1=520340)
+    Event_1200(35, flag=9235, item_lot=20350, item_lot_1=0, flag_1=520350)
+    Event_1200(36, flag=9236, item_lot=20360, item_lot_1=0, flag_1=520360)
+    Event_1200(37, flag=9237, item_lot=20370, item_lot_1=0, flag_1=520370)
+    Event_1200(38, flag=9238, item_lot=20380, item_lot_1=0, flag_1=520380)
+    Event_1200(39, flag=9239, item_lot=20390, item_lot_1=0, flag_1=520390)
+    Event_1200(40, flag=9240, item_lot=20400, item_lot_1=0, flag_1=520400)
+    Event_1200(41, flag=9241, item_lot=20410, item_lot_1=0, flag_1=520410)
+    Event_1200(42, flag=9242, item_lot=20420, item_lot_1=0, flag_1=520420)
+    Event_1200(43, flag=9243, item_lot=20430, item_lot_1=0, flag_1=520430)
+    Event_1200(44, flag=9244, item_lot=20440, item_lot_1=0, flag_1=520440)
+    Event_1200(45, flag=9245, item_lot=20450, item_lot_1=0, flag_1=520450)
+    Event_1200(46, flag=9246, item_lot=20460, item_lot_1=0, flag_1=520460)
+    Event_1200(47, flag=9247, item_lot=20470, item_lot_1=0, flag_1=520470)
+    Event_1200(48, flag=9248, item_lot=20480, item_lot_1=0, flag_1=520480)
+    Event_1200(49, flag=9249, item_lot=20490, item_lot_1=0, flag_1=520490)
+    Event_1200(60, flag=9260, item_lot=20600, item_lot_1=0, flag_1=520600)
+    Event_1200(61, flag=9261, item_lot=20610, item_lot_1=0, flag_1=520610)
+    Event_1200(62, flag=9262, item_lot=20620, item_lot_1=0, flag_1=520620)
+    Event_1200(63, flag=9263, item_lot=20630, item_lot_1=0, flag_1=520630)
+    Event_1200(64, flag=9264, item_lot=20640, item_lot_1=0, flag_1=520640)
+    Event_1200(65, flag=9265, item_lot=20650, item_lot_1=0, flag_1=520650)
+    Event_1200(66, flag=9266, item_lot=20660, item_lot_1=0, flag_1=520660)
+    Event_1200(67, flag=9267, item_lot=20670, item_lot_1=0, flag_1=520670)
+    Event_1200(68, flag=9268, item_lot=20680, item_lot_1=0, flag_1=520680)
     Event_65810(0, flag=65810, flag_1=100750, right=0, right_1=0, right_2=0, right_3=0)
     Event_65810(1, flag=65811, flag_1=400163, right=0, right_1=0, right_2=0, right_3=0)
     Event_65810(2, flag=65812, flag_1=100760, right=0, right_1=0, right_2=0, right_3=0)
@@ -489,6 +520,7 @@ def Constructor():
     Event_65810(90, flag=65900, flag_1=540646, right=0, right_1=0, right_2=0, right_3=0)
     Event_65810(91, flag=65901, flag_1=580360, right=0, right_1=0, right_2=0, right_3=0)
     Event_1080()
+    Event_1088()
     Event_841()
     Event_9910(0, flag=3005)
     Event_750()
@@ -496,30 +528,30 @@ def Constructor():
     Event_9943()
     Event_9940()
     Event_1700()
-    Event_19001550(0, earliest_hour__latest_hour=0, flag=19001600)
-    Event_19001550(1, earliest_hour__latest_hour=1, flag=19001601)
-    Event_19001550(2, earliest_hour__latest_hour=2, flag=19001602)
-    Event_19001550(3, earliest_hour__latest_hour=3, flag=19001603)
-    Event_19001550(4, earliest_hour__latest_hour=4, flag=19001604)
-    Event_19001550(5, earliest_hour__latest_hour=5, flag=19001605)
-    Event_19001550(6, earliest_hour__latest_hour=6, flag=19001606)
-    Event_19001550(7, earliest_hour__latest_hour=7, flag=19001607)
-    Event_19001550(8, earliest_hour__latest_hour=8, flag=19001608)
-    Event_19001550(9, earliest_hour__latest_hour=9, flag=19001609)
-    Event_19001550(10, earliest_hour__latest_hour=10, flag=19001610)
-    Event_19001550(11, earliest_hour__latest_hour=11, flag=19001611)
-    Event_19001550(12, earliest_hour__latest_hour=12, flag=19001612)
-    Event_19001550(13, earliest_hour__latest_hour=13, flag=19001613)
-    Event_19001550(14, earliest_hour__latest_hour=14, flag=19001614)
-    Event_19001550(15, earliest_hour__latest_hour=15, flag=19001615)
-    Event_19001550(16, earliest_hour__latest_hour=16, flag=19001616)
-    Event_19001550(17, earliest_hour__latest_hour=17, flag=19001617)
-    Event_19001550(18, earliest_hour__latest_hour=18, flag=19001618)
-    Event_19001550(19, earliest_hour__latest_hour=19, flag=19001619)
-    Event_19001550(20, earliest_hour__latest_hour=20, flag=19001620)
-    Event_19001550(21, earliest_hour__latest_hour=21, flag=19001621)
-    Event_19001550(22, earliest_hour__latest_hour=22, flag=19001622)
-    Event_19001550(23, earliest_hour__latest_hour=23, flag=19001623)
+    Event_19001550(0, hour=0, flag=19001600)
+    Event_19001550(1, hour=1, flag=19001601)
+    Event_19001550(2, hour=2, flag=19001602)
+    Event_19001550(3, hour=3, flag=19001603)
+    Event_19001550(4, hour=4, flag=19001604)
+    Event_19001550(5, hour=5, flag=19001605)
+    Event_19001550(6, hour=6, flag=19001606)
+    Event_19001550(7, hour=7, flag=19001607)
+    Event_19001550(8, hour=8, flag=19001608)
+    Event_19001550(9, hour=9, flag=19001609)
+    Event_19001550(10, hour=10, flag=19001610)
+    Event_19001550(11, hour=11, flag=19001611)
+    Event_19001550(12, hour=12, flag=19001612)
+    Event_19001550(13, hour=13, flag=19001613)
+    Event_19001550(14, hour=14, flag=19001614)
+    Event_19001550(15, hour=15, flag=19001615)
+    Event_19001550(16, hour=16, flag=19001616)
+    Event_19001550(17, hour=17, flag=19001617)
+    Event_19001550(18, hour=18, flag=19001618)
+    Event_19001550(19, hour=19, flag=19001619)
+    Event_19001550(20, hour=20, flag=19001620)
+    Event_19001550(21, hour=21, flag=19001621)
+    Event_19001550(22, hour=22, flag=19001622)
+    Event_19001550(23, hour=23, flag=19001623)
     Event_19001583()
     Event_19001040()
     Event_19001041()
@@ -564,631 +596,583 @@ def Constructor():
     Event_19001029()
     Event_19001030()
     Event_19001031()
-    Event_19002000(0, item=60010000, item_lot_param_id=40010000, item_1=0)
+    Event_19002000(0, item=60010000, item_lot=40010000, item_1=0)
     Event_19003000(0, item=1000000, item_1=0, flag=11051000)
-    Event_19002000(1, item=60010100, item_lot_param_id=40010100, item_1=1160009)
-    Event_19002000(2, item=60010200, item_lot_param_id=40010200, item_1=1140006)
+    Event_19002000(1, item=60010100, item_lot=40010100, item_1=1160009)
+    Event_19002000(2, item=60010200, item_lot=40010200, item_1=1140006)
     Event_19003000(2, item=1020009, item_1=8402, flag=11051002)
-    Event_19002000(3, item=60010300, item_lot_param_id=40010300, item_1=1140006)
+    Event_19002000(3, item=60010300, item_lot=40010300, item_1=1140006)
     Event_19003000(3, item=1030009, item_1=8402, flag=11051003)
-    Event_19002000(4, item=60010400, item_lot_param_id=40010400, item_1=1160009)
-    Event_19002000(5, item=60010500, item_lot_param_id=40010500, item_1=1100012)
+    Event_19002000(4, item=60010400, item_lot=40010400, item_1=1160009)
+    Event_19002000(5, item=60010500, item_lot=40010500, item_1=1100012)
     Event_19003000(5, item=1050015, item_1=8404, flag=11051005)
-    Event_19002000(6, item=60010600, item_lot_param_id=40010600, item_1=1030009)
+    Event_19002000(6, item=60010600, item_lot=40010600, item_1=1030009)
     Event_19003000(6, item=1060012, item_1=8403, flag=11051006)
-    Event_19002000(7, item=60010700, item_lot_param_id=40010700, item_1=1050015)
-    Event_19002000(8, item=60010800, item_lot_param_id=40010800, item_1=1130015)
-    Event_19002000(9, item=60010900, item_lot_param_id=40010900, item_1=1000000)
+    Event_19002000(7, item=60010700, item_lot=40010700, item_1=1050015)
+    Event_19002000(8, item=60010800, item_lot=40010800, item_1=1130015)
+    Event_19002000(9, item=60010900, item_lot=40010900, item_1=1000000)
     Event_19003000(9, item=1090003, item_1=8400, flag=11051009)
-    Event_19002000(10, item=60011000, item_lot_param_id=40011000, item_1=1020009)
+    Event_19002000(10, item=60011000, item_lot=40011000, item_1=1020009)
     Event_19003000(10, item=1100012, item_1=8403, flag=11051010)
-    Event_19002000(11, item=60011100, item_lot_param_id=40011100, item_1=1100012)
-    Event_19002000(12, item=60011300, item_lot_param_id=40011300, item_1=1060012)
+    Event_19002000(11, item=60011100, item_lot=40011100, item_1=1100012)
+    Event_19002000(12, item=60011300, item_lot=40011300, item_1=1060012)
     Event_19003000(12, item=1130015, item_1=8404, flag=11051012)
-    Event_19002000(13, item=60011400, item_lot_param_id=40011400, item_1=1090003)
+    Event_19002000(13, item=60011400, item_lot=40011400, item_1=1090003)
     Event_19003000(13, item=1140006, item_1=8401, flag=11051013)
-    Event_19002000(14, item=60011500, item_lot_param_id=40011500, item_1=1100012)
+    Event_19002000(14, item=60011500, item_lot=40011500, item_1=1100012)
     Event_19003000(14, item=1150015, item_1=8404, flag=11051014)
-    Event_19002000(15, item=60011600, item_lot_param_id=40011600, item_1=1150015)
+    Event_19002000(15, item=60011600, item_lot=40011600, item_1=1150015)
     Event_19003000(15, item=1160009, item_1=8404, flag=11051015)
-    Event_19002000(16, item=60020000, item_lot_param_id=40020000, item_1=2050004)
+    Event_19002000(16, item=60020000, item_lot=40020000, item_1=2050004)
     Event_19003000(16, item=2000006, item_1=8401, flag=11051016)
-    Event_19002000(17, item=60020100, item_lot_param_id=40020100, item_1=1000000)
+    Event_19002000(17, item=60020100, item_lot=40020100, item_1=1000000)
     Event_19003000(17, item=2010002, item_1=0, flag=11051017)
-    Event_19002000(18, item=60020200, item_lot_param_id=40020200, item_1=2000006)
+    Event_19002000(18, item=60020200, item_lot=40020200, item_1=2000006)
     Event_19003000(18, item=2020008, item_1=8401, flag=11051018)
-    Event_19002000(19, item=60020400, item_lot_param_id=40020400, item_1=2020008)
+    Event_19002000(19, item=60020400, item_lot=40020400, item_1=2020008)
     Event_19003000(19, item=2040010, item_1=8402, flag=11051019)
-    Event_19002000(20, item=60020500, item_lot_param_id=40020500, item_1=2010002)
+    Event_19002000(20, item=60020500, item_lot=40020500, item_1=2010002)
     Event_19003000(20, item=2050004, item_1=8400, flag=11051020)
-    Event_19002000(21, item=60020600, item_lot_param_id=40020600, item_1=2040010)
+    Event_19002000(21, item=60020600, item_lot=40020600, item_1=2040010)
     Event_19003000(21, item=2060006, item_1=8403, flag=11051021)
-    Event_19002000(22, item=60020700, item_lot_param_id=40020700, item_1=2110008)
+    Event_19002000(22, item=60020700, item_lot=40020700, item_1=2110008)
     Event_19003000(22, item=2070009, item_1=8404, flag=11051022)
-    Event_19002000(23, item=60020800, item_lot_param_id=40020800, item_1=7060015)
+    Event_19002000(23, item=60020800, item_lot=40020800, item_1=7060015)
     Event_19003000(23, item=2080009, item_1=8404, flag=11051023)
-    Event_19002000(24, item=60020900, item_lot_param_id=40020900, item_1=3050014)
+    Event_19002000(24, item=60020900, item_lot=40020900, item_1=3050014)
     Event_19003000(24, item=2090008, item_1=8404, flag=11051024)
-    Event_19002000(25, item=60021100, item_lot_param_id=40021100, item_1=2060006)
+    Event_19002000(25, item=60021100, item_lot=40021100, item_1=2060006)
     Event_19003000(25, item=2110008, item_1=8404, flag=11051025)
-    Event_19002000(26, item=60021400, item_lot_param_id=40021400, item_1=2180008)
-    Event_19002000(27, item=60021500, item_lot_param_id=40021500, item_1=2000006)
+    Event_19002000(26, item=60021400, item_lot=40021400, item_1=2180008)
+    Event_19002000(27, item=60021500, item_lot=40021500, item_1=2000006)
     Event_19003000(27, item=2150004, item_1=8401, flag=11051027)
-    Event_19002000(28, item=60021800, item_lot_param_id=40021800, item_1=2190007)
+    Event_19002000(28, item=60021800, item_lot=40021800, item_1=2190007)
     Event_19003000(28, item=2180008, item_1=8404, flag=11051028)
-    Event_19002000(29, item=60021900, item_lot_param_id=40021900, item_1=2250006)
+    Event_19002000(29, item=60021900, item_lot=40021900, item_1=2250006)
     Event_19003000(29, item=2190007, item_1=8403, flag=11051029)
-    Event_19002000(30, item=60022000, item_lot_param_id=40022000, item_1=2070009)
-    Event_19002000(31, item=60022100, item_lot_param_id=40022100, item_1=2230012)
+    Event_19002000(30, item=60022000, item_lot=40022000, item_1=2070009)
+    Event_19002000(31, item=60022100, item_lot=40022100, item_1=2230012)
     Event_19003000(31, item=2210015, item_1=8404, flag=11051031)
-    Event_19002000(32, item=60022200, item_lot_param_id=40022200, item_1=2240018)
-    Event_19002000(33, item=60022300, item_lot_param_id=40022300, item_1=2040010)
+    Event_19002000(32, item=60022200, item_lot=40022200, item_1=2240018)
+    Event_19002000(33, item=60022300, item_lot=40022300, item_1=2040010)
     Event_19003000(33, item=2230012, item_1=8403, flag=11051033)
-    Event_19002000(34, item=60022400, item_lot_param_id=40022400, item_1=2210015)
+    Event_19002000(34, item=60022400, item_lot=40022400, item_1=2210015)
     Event_19003000(34, item=2240018, item_1=8404, flag=11051034)
-    Event_19002000(35, item=60022500, item_lot_param_id=40022500, item_1=2260005)
+    Event_19002000(35, item=60022500, item_lot=40022500, item_1=2260005)
     Event_19003000(35, item=2250006, item_1=8403, flag=11051035)
-    Event_19002000(36, item=60022600, item_lot_param_id=40022600, item_1=2150004)
+    Event_19002000(36, item=60022600, item_lot=40022600, item_1=2150004)
     Event_19003000(36, item=2260005, item_1=8402, flag=11051036)
-    Event_19002000(37, item=60030000, item_lot_param_id=40030000, item_1=2020008)
+    Event_19002000(37, item=60030000, item_lot=40030000, item_1=2020008)
     Event_19003000(37, item=3000009, item_1=8402, flag=11051037)
-    Event_19002000(38, item=60030100, item_lot_param_id=40030100, item_1=3180010)
+    Event_19002000(38, item=60030100, item_lot=40030100, item_1=3180010)
     Event_19003000(38, item=3010012, item_1=8403, flag=11051038)
-    Event_19002000(39, item=60030200, item_lot_param_id=40030200, item_1=3080014)
+    Event_19002000(39, item=60030200, item_lot=40030200, item_1=3080014)
     Event_19003000(39, item=3020015, item_1=8404, flag=11051039)
-    Event_19002000(40, item=60030300, item_lot_param_id=40030300, item_1=3180010)
+    Event_19002000(40, item=60030300, item_lot=40030300, item_1=3180010)
     Event_19003000(40, item=3030012, item_1=8403, flag=11051040)
-    Event_19002000(41, item=60030400, item_lot_param_id=40030400, item_1=3080014)
+    Event_19002000(41, item=60030400, item_lot=40030400, item_1=3080014)
     Event_19003000(41, item=3040015, item_1=8404, flag=11051041)
-    Event_19002000(42, item=60030500, item_lot_param_id=40030500, item_1=3010012)
+    Event_19002000(42, item=60030500, item_lot=40030500, item_1=3010012)
     Event_19003000(42, item=3050014, item_1=8403, flag=11051042)
-    Event_19002000(43, item=60030600, item_lot_param_id=40030600, item_1=3140009)
-    Event_19002000(44, item=60030700, item_lot_param_id=40030700, item_1=3040015)
+    Event_19002000(43, item=60030600, item_lot=40030600, item_1=3140009)
+    Event_19002000(44, item=60030700, item_lot=40030700, item_1=3040015)
     Event_19003000(44, item=3070008, item_1=8404, flag=11051044)
-    Event_19002000(45, item=60030800, item_lot_param_id=40030800, item_1=3030012)
+    Event_19002000(45, item=60030800, item_lot=40030800, item_1=3030012)
     Event_19003000(45, item=3080014, item_1=8403, flag=11051045)
-    Event_19002000(46, item=60030900, item_lot_param_id=40030900, item_1=3130009)
-    Event_19002000(47, item=60031000, item_lot_param_id=40031000, item_1=2090008)
-    Event_19002000(48, item=60031300, item_lot_param_id=40031300, item_1=3070008)
+    Event_19002000(46, item=60030900, item_lot=40030900, item_1=3130009)
+    Event_19002000(47, item=60031000, item_lot=40031000, item_1=2090008)
+    Event_19002000(48, item=60031300, item_lot=40031300, item_1=3070008)
     Event_19003000(48, item=3130009, item_1=8404, flag=11051048)
-    Event_19002000(49, item=60031400, item_lot_param_id=40031400, item_1=3040015)
+    Event_19002000(49, item=60031400, item_lot=40031400, item_1=3040015)
     Event_19003000(49, item=3140009, item_1=8404, flag=11051049)
-    Event_19002000(50, item=60031500, item_lot_param_id=40031500, item_1=3040015)
-    Event_19002000(51, item=60031600, item_lot_param_id=40031600, item_1=3050014)
+    Event_19002000(50, item=60031500, item_lot=40031500, item_1=3040015)
+    Event_19002000(51, item=60031600, item_lot=40031600, item_1=3050014)
     Event_19003000(51, item=3160008, item_1=8404, flag=11051051)
-    Event_19002000(52, item=60031700, item_lot_param_id=40031700, item_1=2090008)
-    Event_19002000(53, item=60031800, item_lot_param_id=40031800, item_1=3000009)
+    Event_19002000(52, item=60031700, item_lot=40031700, item_1=2090008)
+    Event_19002000(53, item=60031800, item_lot=40031800, item_1=3000009)
     Event_19003000(53, item=3180010, item_1=8402, flag=11051053)
-    Event_19002000(54, item=60031900, item_lot_param_id=40031900, item_1=3040015)
+    Event_19002000(54, item=60031900, item_lot=40031900, item_1=3040015)
     Event_19003000(54, item=3190018, item_1=8404, flag=11051054)
-    Event_19002000(55, item=60032000, item_lot_param_id=40032000, item_1=3160008)
-    Event_19002000(56, item=60032100, item_lot_param_id=40032100, item_1=3190018)
-    Event_19002000(57, item=60040000, item_lot_param_id=40040000, item_1=4010017)
+    Event_19002000(55, item=60032000, item_lot=40032000, item_1=3160008)
+    Event_19002000(56, item=60032100, item_lot=40032100, item_1=3190018)
+    Event_19002000(57, item=60040000, item_lot=40040000, item_1=4010017)
     Event_19003000(57, item=4000018, item_1=8404, flag=11051057)
-    Event_19002000(58, item=60040100, item_lot_param_id=40040100, item_1=4040016)
+    Event_19002000(58, item=60040100, item_lot=40040100, item_1=4040016)
     Event_19003000(58, item=4010017, item_1=8404, flag=11051058)
-    Event_19002000(59, item=60040200, item_lot_param_id=40040200, item_1=4010017)
-    Event_19002000(60, item=60040300, item_lot_param_id=40040300, item_1=4040016)
+    Event_19002000(59, item=60040200, item_lot=40040200, item_1=4010017)
+    Event_19002000(60, item=60040300, item_lot=40040300, item_1=4040016)
     Event_19003000(60, item=4030017, item_1=8404, flag=11051060)
-    Event_19002000(61, item=60040400, item_lot_param_id=40040400, item_1=3020015)
+    Event_19002000(61, item=60040400, item_lot=40040400, item_1=3020015)
     Event_19003000(61, item=4040016, item_1=8404, flag=11051061)
-    Event_19002000(62, item=60040500, item_lot_param_id=40040500, item_1=4010017)
-    Event_19002000(63, item=60040600, item_lot_param_id=40040600, item_1=4110009)
-    Event_19002000(64, item=60040700, item_lot_param_id=40040700, item_1=4110009)
-    Event_19002000(65, item=60040800, item_lot_param_id=40040800, item_1=4000018)
-    Event_19002000(66, item=60041000, item_lot_param_id=40041000, item_1=4000018)
-    Event_19002000(67, item=60041100, item_lot_param_id=40041100, item_1=4030017)
+    Event_19002000(62, item=60040500, item_lot=40040500, item_1=4010017)
+    Event_19002000(63, item=60040600, item_lot=40040600, item_1=4110009)
+    Event_19002000(64, item=60040700, item_lot=40040700, item_1=4110009)
+    Event_19002000(65, item=60040800, item_lot=40040800, item_1=4000018)
+    Event_19002000(66, item=60041000, item_lot=40041000, item_1=4000018)
+    Event_19002000(67, item=60041100, item_lot=40041100, item_1=4030017)
     Event_19003000(67, item=4110009, item_1=8404, flag=11051067)
-    Event_19002000(68, item=60050000, item_lot_param_id=40050000, item_1=5060010)
+    Event_19002000(68, item=60050000, item_lot=40050000, item_1=5060010)
     Event_19003000(68, item=5000012, item_1=8403, flag=11051068)
-    Event_19002000(69, item=60050100, item_lot_param_id=40050100, item_1=5000012)
+    Event_19002000(69, item=60050100, item_lot=40050100, item_1=5000012)
     Event_19003000(69, item=5010014, item_1=8403, flag=11051069)
-    Event_19002000(70, item=60050200, item_lot_param_id=40050200, item_1=2000006)
+    Event_19002000(70, item=60050200, item_lot=40050200, item_1=2000006)
     Event_19003000(70, item=5020008, item_1=8401, flag=11051070)
-    Event_19002000(71, item=60050300, item_lot_param_id=40050300, item_1=5000012)
+    Event_19002000(71, item=60050300, item_lot=40050300, item_1=5000012)
     Event_19003000(71, item=5030014, item_1=8403, flag=11051071)
-    Event_19002000(72, item=60050400, item_lot_param_id=40050400, item_1=5030014)
+    Event_19002000(72, item=60050400, item_lot=40050400, item_1=5030014)
     Event_19003000(72, item=5040017, item_1=8404, flag=11051072)
-    Event_19002000(73, item=60050500, item_lot_param_id=40050500, item_1=5040017)
-    Event_19002000(74, item=60050600, item_lot_param_id=40050600, item_1=5020008)
+    Event_19002000(73, item=60050500, item_lot=40050500, item_1=5040017)
+    Event_19002000(74, item=60050600, item_lot=40050600, item_1=5020008)
     Event_19003000(74, item=5060010, item_1=8402, flag=11051074)
-    Event_19002000(75, item=60060000, item_lot_param_id=40060000, item_1=6010017)
-    Event_19002000(76, item=60060100, item_lot_param_id=40060100, item_1=6020016)
+    Event_19002000(75, item=60060000, item_lot=40060000, item_1=6010017)
+    Event_19002000(76, item=60060100, item_lot=40060100, item_1=6020016)
     Event_19003000(76, item=6010017, item_1=8404, flag=11051076)
-    Event_19002000(77, item=60060200, item_lot_param_id=40060200, item_1=5010014)
+    Event_19002000(77, item=60060200, item_lot=40060200, item_1=5010014)
     Event_19003000(77, item=6020016, item_1=8404, flag=11051077)
-    Event_19002000(78, item=60060400, item_lot_param_id=40060400, item_1=6010017)
-    Event_19002000(79, item=60070000, item_lot_param_id=40070000, item_1=7030006)
+    Event_19002000(78, item=60060400, item_lot=40060400, item_1=6010017)
+    Event_19002000(79, item=60070000, item_lot=40070000, item_1=7030006)
     Event_19003000(79, item=7000008, item_1=8401, flag=11051079)
-    Event_19002000(80, item=60070100, item_lot_param_id=40070100, item_1=7110010)
+    Event_19002000(80, item=60070100, item_lot=40070100, item_1=7110010)
     Event_19003000(80, item=7010012, item_1=8403, flag=11051080)
-    Event_19002000(81, item=60070200, item_lot_param_id=40070200, item_1=7060015)
+    Event_19002000(81, item=60070200, item_lot=40070200, item_1=7060015)
     Event_19003000(81, item=7020018, item_1=8404, flag=11051081)
-    Event_19002000(82, item=60070300, item_lot_param_id=40070300, item_1=7140004)
+    Event_19002000(82, item=60070300, item_lot=40070300, item_1=7140004)
     Event_19003000(82, item=7030006, item_1=8401, flag=11051082)
-    Event_19002000(83, item=60070400, item_lot_param_id=40070400, item_1=7030006)
+    Event_19002000(83, item=60070400, item_lot=40070400, item_1=7030006)
     Event_19003000(83, item=7040008, item_1=8401, flag=11051083)
-    Event_19002000(84, item=60070500, item_lot_param_id=40070500, item_1=2080009)
-    Event_19002000(85, item=60070600, item_lot_param_id=40070600, item_1=7120012)
+    Event_19002000(84, item=60070500, item_lot=40070500, item_1=2080009)
+    Event_19002000(85, item=60070600, item_lot=40070600, item_1=7120012)
     Event_19003000(85, item=7060015, item_1=8404, flag=11051085)
-    Event_19002000(86, item=60070700, item_lot_param_id=40070700, item_1=2080009)
-    Event_19002000(87, item=60070800, item_lot_param_id=40070800, item_1=7000008)
+    Event_19002000(86, item=60070700, item_lot=40070700, item_1=2080009)
+    Event_19002000(87, item=60070800, item_lot=40070800, item_1=7000008)
     Event_19003000(87, item=7080010, item_1=8402, flag=11051087)
-    Event_19002000(88, item=60071000, item_lot_param_id=40071000, item_1=7020018)
-    Event_19002000(89, item=60071100, item_lot_param_id=40071100, item_1=7040008)
+    Event_19002000(88, item=60071000, item_lot=40071000, item_1=7020018)
+    Event_19002000(89, item=60071100, item_lot=40071100, item_1=7040008)
     Event_19003000(89, item=7110010, item_1=8402, flag=11051089)
-    Event_19002000(90, item=60071200, item_lot_param_id=40071200, item_1=7080010)
+    Event_19002000(90, item=60071200, item_lot=40071200, item_1=7080010)
     Event_19003000(90, item=7120012, item_1=8403, flag=11051090)
-    Event_19002000(91, item=60071400, item_lot_param_id=40071400, item_1=2010002)
+    Event_19002000(91, item=60071400, item_lot=40071400, item_1=2010002)
     Event_19003000(91, item=7140004, item_1=8400, flag=11051091)
-    Event_19002000(92, item=60071500, item_lot_param_id=40071500, item_1=7010012)
+    Event_19002000(92, item=60071500, item_lot=40071500, item_1=7010012)
     Event_19003000(92, item=7150014, item_1=8403, flag=11051092)
-    Event_19002000(93, item=60080100, item_lot_param_id=40080100, item_1=8060018)
-    Event_19002000(94, item=60080200, item_lot_param_id=40080200, item_1=7150014)
+    Event_19002000(93, item=60080100, item_lot=40080100, item_1=8060018)
+    Event_19002000(94, item=60080200, item_lot=40080200, item_1=7150014)
     Event_19003000(94, item=8020016, item_1=8404, flag=11051094)
-    Event_19002000(95, item=60080300, item_lot_param_id=40080300, item_1=8050008)
+    Event_19002000(95, item=60080300, item_lot=40080300, item_1=8050008)
     Event_19003000(95, item=8030009, item_1=8404, flag=11051095)
-    Event_19002000(96, item=60080400, item_lot_param_id=40080400, item_1=8060018)
-    Event_19002000(97, item=60080500, item_lot_param_id=40080500, item_1=8070012)
+    Event_19002000(96, item=60080400, item_lot=40080400, item_1=8060018)
+    Event_19002000(97, item=60080500, item_lot=40080500, item_1=8070012)
     Event_19003000(97, item=8050008, item_1=8404, flag=11051097)
-    Event_19002000(98, item=60080600, item_lot_param_id=40080600, item_1=8020016)
+    Event_19002000(98, item=60080600, item_lot=40080600, item_1=8020016)
     Event_19003000(98, item=8060018, item_1=8404, flag=11051098)
-    Event_19002000(99, item=60080700, item_lot_param_id=40080700, item_1=7080010)
+    Event_19002000(99, item=60080700, item_lot=40080700, item_1=7080010)
     Event_19003000(99, item=8070012, item_1=8403, flag=11051099)
-    Event_19002000(100, item=60080800, item_lot_param_id=40080800, item_1=8060018)
-    Event_19002000(101, item=60081000, item_lot_param_id=40081000, item_1=8030009)
-    Event_19002000(102, item=60090000, item_lot_param_id=40090000, item_1=7080010)
+    Event_19002000(100, item=60080800, item_lot=40080800, item_1=8060018)
+    Event_19002000(101, item=60081000, item_lot=40081000, item_1=8030009)
+    Event_19002000(102, item=60090000, item_lot=40090000, item_1=7080010)
     Event_19003000(102, item=9000012, item_1=8403, flag=11051102)
-    Event_19002000(103, item=60090100, item_lot_param_id=40090100, item_1=9080015)
+    Event_19002000(103, item=60090100, item_lot=40090100, item_1=9080015)
     Event_19003000(103, item=9010017, item_1=8404, flag=11051103)
-    Event_19002000(104, item=60090200, item_lot_param_id=40090200, item_1=9010017)
-    Event_19002000(105, item=60090300, item_lot_param_id=40090300, item_1=9080015)
+    Event_19002000(104, item=60090200, item_lot=40090200, item_1=9010017)
+    Event_19002000(105, item=60090300, item_lot=40090300, item_1=9080015)
     Event_19003000(105, item=9030009, item_1=8404, flag=11051105)
-    Event_19002000(106, item=60090400, item_lot_param_id=40090400, item_1=9070008)
-    Event_19002000(107, item=60090600, item_lot_param_id=40090600, item_1=9030009)
-    Event_19002000(108, item=60090700, item_lot_param_id=40090700, item_1=9080015)
+    Event_19002000(106, item=60090400, item_lot=40090400, item_1=9070008)
+    Event_19002000(107, item=60090600, item_lot=40090600, item_1=9030009)
+    Event_19002000(108, item=60090700, item_lot=40090700, item_1=9080015)
     Event_19003000(108, item=9070008, item_1=8404, flag=11051108)
-    Event_19002000(109, item=60090800, item_lot_param_id=40090800, item_1=9000012)
+    Event_19002000(109, item=60090800, item_lot=40090800, item_1=9000012)
     Event_19003000(109, item=9080015, item_1=8404, flag=11051109)
-    Event_19002000(110, item=60100000, item_lot_param_id=40100000, item_1=2040010)
+    Event_19002000(110, item=60100000, item_lot=40100000, item_1=2040010)
     Event_19003000(110, item=10000012, item_1=8403, flag=11051110)
-    Event_19002000(111, item=60100100, item_lot_param_id=40100100, item_1=10030014)
+    Event_19002000(111, item=60100100, item_lot=40100100, item_1=10030014)
     Event_19003000(111, item=10010016, item_1=8404, flag=11051111)
-    Event_19002000(112, item=60100300, item_lot_param_id=40100300, item_1=10000012)
+    Event_19002000(112, item=60100300, item_lot=40100300, item_1=10000012)
     Event_19003000(112, item=10030014, item_1=8403, flag=11051112)
-    Event_19002000(113, item=60100500, item_lot_param_id=40100500, item_1=10010016)
-    Event_19002000(114, item=60100800, item_lot_param_id=40100800, item_1=10030014)
+    Event_19002000(113, item=60100500, item_lot=40100500, item_1=10010016)
+    Event_19002000(114, item=60100800, item_lot=40100800, item_1=10030014)
     Event_19003000(114, item=10080017, item_1=8404, flag=11051114)
-    Event_19002000(115, item=60100900, item_lot_param_id=40100900, item_1=10080017)
-    Event_19002000(116, item=60110000, item_lot_param_id=40110000, item_1=11070006)
+    Event_19002000(115, item=60100900, item_lot=40100900, item_1=10080017)
+    Event_19002000(116, item=60110000, item_lot=40110000, item_1=11070006)
     Event_19003000(116, item=11000009, item_1=8402, flag=11051116)
-    Event_19002000(117, item=60110100, item_lot_param_id=40110100, item_1=0)
+    Event_19002000(117, item=60110100, item_lot=40110100, item_1=0)
     Event_19003000(117, item=11010000, item_1=0, flag=11051117)
-    Event_19002000(118, item=60110300, item_lot_param_id=40110300, item_1=11010000)
+    Event_19002000(118, item=60110300, item_lot=40110300, item_1=11010000)
     Event_19003000(118, item=11030003, item_1=8400, flag=11051118)
-    Event_19002000(119, item=60110400, item_lot_param_id=40110400, item_1=11010000)
+    Event_19002000(119, item=60110400, item_lot=40110400, item_1=11010000)
     Event_19003000(119, item=11040003, item_1=8400, flag=11051119)
-    Event_19002000(120, item=60110500, item_lot_param_id=40110500, item_1=11000009)
+    Event_19002000(120, item=60110500, item_lot=40110500, item_1=11000009)
     Event_19003000(120, item=11050012, item_1=8403, flag=11051120)
-    Event_19002000(121, item=60110600, item_lot_param_id=40110600, item_1=11090016)
-    Event_19002000(122, item=60110700, item_lot_param_id=40110700, item_1=11030003)
+    Event_19002000(121, item=60110600, item_lot=40110600, item_1=11090016)
+    Event_19002000(122, item=60110700, item_lot=40110700, item_1=11030003)
     Event_19003000(122, item=11070006, item_1=8401, flag=11051122)
-    Event_19002000(123, item=60110800, item_lot_param_id=40110800, item_1=11040003)
+    Event_19002000(123, item=60110800, item_lot=40110800, item_1=11040003)
     Event_19003000(123, item=11080006, item_1=8401, flag=11051123)
-    Event_19002000(124, item=60110900, item_lot_param_id=40110900, item_1=11050012)
+    Event_19002000(124, item=60110900, item_lot=40110900, item_1=11050012)
     Event_19003000(124, item=11090016, item_1=8404, flag=11051124)
-    Event_19002000(125, item=60111000, item_lot_param_id=40111000, item_1=11130007)
+    Event_19002000(125, item=60111000, item_lot=40111000, item_1=11130007)
     Event_19003000(125, item=11100008, item_1=8404, flag=11051125)
-    Event_19002000(126, item=60111100, item_lot_param_id=40111100, item_1=11090016)
-    Event_19002000(127, item=60111200, item_lot_param_id=40111200, item_1=11130007)
-    Event_19002000(128, item=60111300, item_lot_param_id=40111300, item_1=11140009)
+    Event_19002000(126, item=60111100, item_lot=40111100, item_1=11090016)
+    Event_19002000(127, item=60111200, item_lot=40111200, item_1=11130007)
+    Event_19002000(128, item=60111300, item_lot=40111300, item_1=11140009)
     Event_19003000(128, item=11130007, item_1=8403, flag=11051128)
-    Event_19002000(129, item=60111400, item_lot_param_id=40111400, item_1=11080006)
+    Event_19002000(129, item=60111400, item_lot=40111400, item_1=11080006)
     Event_19003000(129, item=11140009, item_1=8402, flag=11051129)
-    Event_19002000(130, item=60111500, item_lot_param_id=40111500, item_1=11100008)
-    Event_19002000(131, item=60120000, item_lot_param_id=40120000, item_1=11140009)
+    Event_19002000(130, item=60111500, item_lot=40111500, item_1=11100008)
+    Event_19002000(131, item=60120000, item_lot=40120000, item_1=11140009)
     Event_19003000(131, item=12000010, item_1=8402, flag=11051131)
-    Event_19002000(132, item=60120100, item_lot_param_id=40120100, item_1=12140014)
+    Event_19002000(132, item=60120100, item_lot=40120100, item_1=12140014)
     Event_19003000(132, item=12010016, item_1=8404, flag=11051132)
-    Event_19002000(133, item=60120200, item_lot_param_id=40120200, item_1=12140014)
+    Event_19002000(133, item=60120200, item_lot=40120200, item_1=12140014)
     Event_19003000(133, item=12020016, item_1=8404, flag=11051133)
-    Event_19002000(134, item=60120600, item_lot_param_id=40120600, item_1=12000010)
+    Event_19002000(134, item=60120600, item_lot=40120600, item_1=12000010)
     Event_19003000(134, item=12060012, item_1=8403, flag=11051134)
-    Event_19002000(135, item=60120800, item_lot_param_id=40120800, item_1=12000010)
+    Event_19002000(135, item=60120800, item_lot=40120800, item_1=12000010)
     Event_19003000(135, item=12080012, item_1=8403, flag=11051135)
-    Event_19002000(136, item=60121300, item_lot_param_id=40121300, item_1=12000010)
+    Event_19002000(136, item=60121300, item_lot=40121300, item_1=12000010)
     Event_19003000(136, item=12130012, item_1=8403, flag=11051136)
-    Event_19002000(137, item=60121400, item_lot_param_id=40121400, item_1=12080012)
+    Event_19002000(137, item=60121400, item_lot=40121400, item_1=12080012)
     Event_19003000(137, item=12140014, item_1=8403, flag=11051137)
-    Event_19002000(138, item=60121500, item_lot_param_id=40121500, item_1=12130012)
+    Event_19002000(138, item=60121500, item_lot=40121500, item_1=12130012)
     Event_19003000(138, item=12150008, item_1=8404, flag=11051138)
-    Event_19002000(139, item=60121600, item_lot_param_id=40121600, item_1=11100008)
+    Event_19002000(139, item=60121600, item_lot=40121600, item_1=11100008)
     Event_19003000(139, item=12160009, item_1=8404, flag=11051139)
-    Event_19002000(140, item=60121700, item_lot_param_id=40121700, item_1=12210018)
-    Event_19002000(141, item=60121800, item_lot_param_id=40121800, item_1=11090016)
-    Event_19002000(142, item=60121900, item_lot_param_id=40121900, item_1=12060012)
+    Event_19002000(140, item=60121700, item_lot=40121700, item_1=12210018)
+    Event_19002000(141, item=60121800, item_lot=40121800, item_1=11090016)
+    Event_19002000(142, item=60121900, item_lot=40121900, item_1=12060012)
     Event_19003000(142, item=12190014, item_1=8403, flag=11051142)
-    Event_19002000(143, item=60122000, item_lot_param_id=40122000, item_1=12150008)
-    Event_19002000(144, item=60122100, item_lot_param_id=40122100, item_1=12020016)
+    Event_19002000(143, item=60122000, item_lot=40122000, item_1=12150008)
+    Event_19002000(144, item=60122100, item_lot=40122100, item_1=12020016)
     Event_19003000(144, item=12210018, item_1=8404, flag=11051144)
-    Event_19002000(145, item=60130000, item_lot_param_id=40130000, item_1=13010015)
+    Event_19002000(145, item=60130000, item_lot=40130000, item_1=13010015)
     Event_19003000(145, item=13000016, item_1=8404, flag=11051145)
-    Event_19002000(146, item=60130100, item_lot_param_id=40130100, item_1=11050012)
+    Event_19002000(146, item=60130100, item_lot=40130100, item_1=11050012)
     Event_19003000(146, item=13010015, item_1=8404, flag=11051146)
-    Event_19002000(147, item=60130200, item_lot_param_id=40130200, item_1=13000016)
+    Event_19002000(147, item=60130200, item_lot=40130200, item_1=13000016)
     Event_19003000(147, item=13020009, item_1=8404, flag=11051147)
-    Event_19002000(148, item=60130300, item_lot_param_id=40130300, item_1=13020009)
-    Event_19002000(149, item=60130400, item_lot_param_id=40130400, item_1=13010015)
+    Event_19002000(148, item=60130300, item_lot=40130300, item_1=13020009)
+    Event_19002000(149, item=60130400, item_lot=40130400, item_1=13010015)
     Event_19003000(149, item=13040018, item_1=8404, flag=11051149)
-    Event_19002000(150, item=60140000, item_lot_param_id=40140000, item_1=14020000)
+    Event_19002000(150, item=60140000, item_lot=40140000, item_1=14020000)
     Event_19003000(150, item=14000003, item_1=8400, flag=11051150)
-    Event_19002000(151, item=60140100, item_lot_param_id=40140100, item_1=14060005)
+    Event_19002000(151, item=60140100, item_lot=40140100, item_1=14060005)
     Event_19003000(151, item=14010010, item_1=8402, flag=11051151)
-    Event_19002000(152, item=60140200, item_lot_param_id=40140200, item_1=0)
+    Event_19002000(152, item=60140200, item_lot=40140200, item_1=0)
     Event_19003000(152, item=14020000, item_1=0, flag=11051152)
-    Event_19002000(153, item=60140300, item_lot_param_id=40140300, item_1=14100008)
+    Event_19002000(153, item=60140300, item_lot=40140300, item_1=14100008)
     Event_19003000(153, item=14030010, item_1=8402, flag=11051153)
-    Event_19002000(154, item=60140400, item_lot_param_id=40140400, item_1=15010010)
+    Event_19002000(154, item=60140400, item_lot=40140400, item_1=15010010)
     Event_19003000(154, item=14040013, item_1=8403, flag=11051154)
-    Event_19002000(155, item=60140500, item_lot_param_id=40140500, item_1=14080008)
-    Event_19002000(156, item=60140600, item_lot_param_id=40140600, item_1=14000003)
+    Event_19002000(155, item=60140500, item_lot=40140500, item_1=14080008)
+    Event_19002000(156, item=60140600, item_lot=40140600, item_1=14000003)
     Event_19003000(156, item=14060005, item_1=8400, flag=11051156)
-    Event_19002000(157, item=60140800, item_lot_param_id=40140800, item_1=14010010)
+    Event_19002000(157, item=60140800, item_lot=40140800, item_1=14010010)
     Event_19003000(157, item=14080008, item_1=8404, flag=11051157)
-    Event_19002000(158, item=60141000, item_lot_param_id=40141000, item_1=14060005)
+    Event_19002000(158, item=60141000, item_lot=40141000, item_1=14060005)
     Event_19003000(158, item=14100008, item_1=8401, flag=11051158)
-    Event_19002000(159, item=60141100, item_lot_param_id=40141100, item_1=14040013)
+    Event_19002000(159, item=60141100, item_lot=40141100, item_1=14040013)
     Event_19003000(159, item=14110015, item_1=8404, flag=11051159)
-    Event_19002000(160, item=60141200, item_lot_param_id=40141200, item_1=14110015)
-    Event_19002000(161, item=60141400, item_lot_param_id=40141400, item_1=14110015)
-    Event_19002000(162, item=60150000, item_lot_param_id=40150000, item_1=15060013)
+    Event_19002000(160, item=60141200, item_lot=40141200, item_1=14110015)
+    Event_19002000(161, item=60141400, item_lot=40141400, item_1=14110015)
+    Event_19002000(162, item=60150000, item_lot=40150000, item_1=15060013)
     Event_19003000(162, item=15000014, item_1=8403, flag=11051162)
-    Event_19002000(163, item=60150100, item_lot_param_id=40150100, item_1=14100008)
+    Event_19002000(163, item=60150100, item_lot=40150100, item_1=14100008)
     Event_19003000(163, item=15010010, item_1=8402, flag=11051163)
-    Event_19002000(164, item=60150200, item_lot_param_id=40150200, item_1=15060013)
+    Event_19002000(164, item=60150200, item_lot=40150200, item_1=15060013)
     Event_19003000(164, item=15020015, item_1=8404, flag=11051164)
-    Event_19002000(165, item=60150300, item_lot_param_id=40150300, item_1=15020015)
+    Event_19002000(165, item=60150300, item_lot=40150300, item_1=15020015)
     Event_19003000(165, item=15030018, item_1=8404, flag=11051165)
-    Event_19002000(166, item=60150400, item_lot_param_id=40150400, item_1=15080016)
+    Event_19002000(166, item=60150400, item_lot=40150400, item_1=15080016)
     Event_19003000(166, item=15040009, item_1=8404, flag=11051166)
-    Event_19002000(167, item=60150500, item_lot_param_id=40150500, item_1=15010010)
+    Event_19002000(167, item=60150500, item_lot=40150500, item_1=15010010)
     Event_19003000(167, item=15050012, item_1=8403, flag=11051167)
-    Event_19002000(168, item=60150600, item_lot_param_id=40150600, item_1=15050012)
+    Event_19002000(168, item=60150600, item_lot=40150600, item_1=15050012)
     Event_19003000(168, item=15060013, item_1=8403, flag=11051168)
-    Event_19002000(169, item=60150800, item_lot_param_id=40150800, item_1=15000014)
+    Event_19002000(169, item=60150800, item_lot=40150800, item_1=15000014)
     Event_19003000(169, item=15080016, item_1=8404, flag=11051169)
-    Event_19002000(170, item=60151100, item_lot_param_id=40151100, item_1=15030018)
-    Event_19002000(171, item=60151200, item_lot_param_id=40151200, item_1=14080008)
-    Event_19002000(172, item=60151300, item_lot_param_id=40151300, item_1=15020015)
+    Event_19002000(170, item=60151100, item_lot=40151100, item_1=15030018)
+    Event_19002000(171, item=60151200, item_lot=40151200, item_1=14080008)
+    Event_19002000(172, item=60151300, item_lot=40151300, item_1=15020015)
     Event_19003000(172, item=15130018, item_1=8404, flag=11051172)
-    Event_19002000(173, item=60151400, item_lot_param_id=40151400, item_1=15130018)
-    Event_19002000(174, item=60160000, item_lot_param_id=40160000, item_1=1000000)
+    Event_19002000(173, item=60151400, item_lot=40151400, item_1=15130018)
+    Event_19002000(174, item=60160000, item_lot=40160000, item_1=1000000)
     Event_19003000(174, item=16000003, item_1=8400, flag=11051174)
-    Event_19002000(175, item=60160100, item_lot_param_id=40160100, item_1=16000003)
+    Event_19002000(175, item=60160100, item_lot=40160100, item_1=16000003)
     Event_19003000(175, item=16010006, item_1=8401, flag=11051175)
-    Event_19002000(176, item=60160200, item_lot_param_id=40160200, item_1=16030015)
+    Event_19002000(176, item=60160200, item_lot=40160200, item_1=16030015)
     Event_19003000(176, item=16020008, item_1=8404, flag=11051176)
-    Event_19002000(177, item=60160300, item_lot_param_id=40160300, item_1=16140014)
+    Event_19002000(177, item=60160300, item_lot=40160300, item_1=16140014)
     Event_19003000(177, item=16030015, item_1=8404, flag=11051177)
-    Event_19002000(178, item=60160400, item_lot_param_id=40160400, item_1=16140014)
-    Event_19002000(179, item=60160500, item_lot_param_id=40160500, item_1=16150009)
+    Event_19002000(178, item=60160400, item_lot=40160400, item_1=16140014)
+    Event_19002000(179, item=60160500, item_lot=40160500, item_1=16150009)
     Event_19003000(179, item=16050012, item_1=8403, flag=11051179)
-    Event_19002000(180, item=60160600, item_lot_param_id=40160600, item_1=16010006)
+    Event_19002000(180, item=60160600, item_lot=40160600, item_1=16010006)
     Event_19003000(180, item=16060009, item_1=8402, flag=11051180)
-    Event_19002000(181, item=60160700, item_lot_param_id=40160700, item_1=16050012)
+    Event_19002000(181, item=60160700, item_lot=40160700, item_1=16050012)
     Event_19003000(181, item=16070014, item_1=8403, flag=11051181)
-    Event_19002000(182, item=60160800, item_lot_param_id=40160800, item_1=16060009)
+    Event_19002000(182, item=60160800, item_lot=40160800, item_1=16060009)
     Event_19003000(182, item=16080012, item_1=8403, flag=11051182)
-    Event_19002000(183, item=60160900, item_lot_param_id=40160900, item_1=16110017)
-    Event_19002000(184, item=60161100, item_lot_param_id=40161100, item_1=16140014)
+    Event_19002000(183, item=60160900, item_lot=40160900, item_1=16110017)
+    Event_19002000(184, item=60161100, item_lot=40161100, item_1=16140014)
     Event_19003000(184, item=16110017, item_1=8404, flag=11051184)
-    Event_19002000(185, item=60161200, item_lot_param_id=40161200, item_1=16160009)
-    Event_19002000(186, item=60161300, item_lot_param_id=40161300, item_1=16140014)
+    Event_19002000(185, item=60161200, item_lot=40161200, item_1=16160009)
+    Event_19002000(186, item=60161300, item_lot=40161300, item_1=16140014)
     Event_19003000(186, item=16130009, item_1=8404, flag=11051186)
-    Event_19002000(187, item=60161400, item_lot_param_id=40161400, item_1=16080012)
+    Event_19002000(187, item=60161400, item_lot=40161400, item_1=16080012)
     Event_19003000(187, item=16140014, item_1=8403, flag=11051187)
-    Event_19002000(188, item=60161500, item_lot_param_id=40161500, item_1=16010006)
+    Event_19002000(188, item=60161500, item_lot=40161500, item_1=16010006)
     Event_19003000(188, item=16150009, item_1=8402, flag=11051188)
-    Event_19002000(189, item=60161600, item_lot_param_id=40161600, item_1=16020008)
+    Event_19002000(189, item=60161600, item_lot=40161600, item_1=16020008)
     Event_19003000(189, item=16160009, item_1=8404, flag=11051189)
-    Event_19002000(190, item=60170100, item_lot_param_id=40170100, item_1=17060016)
-    Event_19002000(191, item=60170200, item_lot_param_id=40170200, item_1=17070018)
-    Event_19002000(192, item=60170300, item_lot_param_id=40170300, item_1=0)
-    Event_19002000(193, item=60170500, item_lot_param_id=40170500, item_1=16130009)
-    Event_19002000(194, item=60170600, item_lot_param_id=40170600, item_1=16070014)
+    Event_19002000(190, item=60170100, item_lot=40170100, item_1=17060016)
+    Event_19002000(191, item=60170200, item_lot=40170200, item_1=17070018)
+    Event_19002000(192, item=60170300, item_lot=40170300, item_1=0)
+    Event_19002000(193, item=60170500, item_lot=40170500, item_1=16130009)
+    Event_19002000(194, item=60170600, item_lot=40170600, item_1=16070014)
     Event_19003000(194, item=17060016, item_1=8404, flag=11051194)
-    Event_19002000(195, item=60170700, item_lot_param_id=40170700, item_1=17060016)
+    Event_19002000(195, item=60170700, item_lot=40170700, item_1=17060016)
     Event_19003000(195, item=17070018, item_1=8404, flag=11051195)
-    Event_19002000(196, item=60180000, item_lot_param_id=40180000, item_1=16150009)
+    Event_19002000(196, item=60180000, item_lot=40180000, item_1=16150009)
     Event_19003000(196, item=18000010, item_1=8402, flag=11051196)
-    Event_19002000(197, item=60180100, item_lot_param_id=40180100, item_1=18000010)
+    Event_19002000(197, item=60180100, item_lot=40180100, item_1=18000010)
     Event_19003000(197, item=18010012, item_1=8403, flag=11051197)
-    Event_19002000(198, item=60180200, item_lot_param_id=40180200, item_1=18030012)
+    Event_19002000(198, item=60180200, item_lot=40180200, item_1=18030012)
     Event_19003000(198, item=18020014, item_1=8403, flag=11051198)
-    Event_19002000(199, item=60180300, item_lot_param_id=40180300, item_1=18000010)
+    Event_19002000(199, item=60180300, item_lot=40180300, item_1=18000010)
     Event_19003000(199, item=18030012, item_1=8403, flag=11051199)
-    Event_19002000(200, item=60180400, item_lot_param_id=40180400, item_1=18110017)
-    Event_19002000(201, item=60180500, item_lot_param_id=40180500, item_1=18090016)
+    Event_19002000(200, item=60180400, item_lot=40180400, item_1=18110017)
+    Event_19002000(201, item=60180500, item_lot=40180500, item_1=18090016)
     Event_19003000(201, item=18050016, item_1=8404, flag=11051201)
-    Event_19002000(202, item=60180600, item_lot_param_id=40180600, item_1=18130017)
-    Event_19002000(203, item=60180700, item_lot_param_id=40180700, item_1=18010012)
+    Event_19002000(202, item=60180600, item_lot=40180600, item_1=18130017)
+    Event_19002000(203, item=60180700, item_lot=40180700, item_1=18010012)
     Event_19003000(203, item=18070014, item_1=8403, flag=11051203)
-    Event_19002000(204, item=60180800, item_lot_param_id=40180800, item_1=18140008)
+    Event_19002000(204, item=60180800, item_lot=40180800, item_1=18140008)
     Event_19003000(204, item=18080009, item_1=8404, flag=11051204)
-    Event_19002000(205, item=60180900, item_lot_param_id=40180900, item_1=18020014)
+    Event_19002000(205, item=60180900, item_lot=40180900, item_1=18020014)
     Event_19003000(205, item=18090016, item_1=8404, flag=11051205)
-    Event_19002000(206, item=60181000, item_lot_param_id=40181000, item_1=18130017)
-    Event_19002000(207, item=60181100, item_lot_param_id=40181100, item_1=18020014)
+    Event_19002000(206, item=60181000, item_lot=40181000, item_1=18130017)
+    Event_19002000(207, item=60181100, item_lot=40181100, item_1=18020014)
     Event_19003000(207, item=18110017, item_1=8404, flag=11051207)
-    Event_19002000(208, item=60181300, item_lot_param_id=40181300, item_1=18070014)
+    Event_19002000(208, item=60181300, item_lot=40181300, item_1=18070014)
     Event_19003000(208, item=18130017, item_1=8404, flag=11051208)
-    Event_19002000(209, item=60181400, item_lot_param_id=40181400, item_1=18020014)
+    Event_19002000(209, item=60181400, item_lot=40181400, item_1=18020014)
     Event_19003000(209, item=18140008, item_1=8404, flag=11051209)
-    Event_19002000(210, item=60181500, item_lot_param_id=40181500, item_1=18090016)
+    Event_19002000(210, item=60181500, item_lot=40181500, item_1=18090016)
     Event_19003000(210, item=18150018, item_1=8404, flag=11051210)
-    Event_19002000(211, item=60181600, item_lot_param_id=40181600, item_1=18150018)
-    Event_19002000(212, item=60190000, item_lot_param_id=40190000, item_1=18020014)
+    Event_19002000(211, item=60181600, item_lot=40181600, item_1=18150018)
+    Event_19002000(212, item=60190000, item_lot=40190000, item_1=18020014)
     Event_19003000(212, item=19000016, item_1=8404, flag=11051212)
-    Event_19002000(213, item=60190100, item_lot_param_id=40190100, item_1=19000016)
+    Event_19002000(213, item=60190100, item_lot=40190100, item_1=19000016)
     Event_19003000(213, item=19010018, item_1=8404, flag=11051213)
-    Event_19002000(214, item=60190200, item_lot_param_id=40190200, item_1=19000016)
+    Event_19002000(214, item=60190200, item_lot=40190200, item_1=19000016)
     Event_19003000(214, item=19020009, item_1=8404, flag=11051214)
-    Event_19002000(215, item=60190600, item_lot_param_id=40190600, item_1=19020009)
-    Event_19002000(216, item=60200000, item_lot_param_id=40200000, item_1=0)
+    Event_19002000(215, item=60190600, item_lot=40190600, item_1=19020009)
+    Event_19002000(216, item=60200000, item_lot=40200000, item_1=0)
     Event_19003000(216, item=20000010, item_1=8402, flag=11051216)
-    Event_19002000(217, item=60200200, item_lot_param_id=40200200, item_1=20000010)
+    Event_19002000(217, item=60200200, item_lot=40200200, item_1=20000010)
     Event_19003000(217, item=20020013, item_1=8403, flag=11051217)
-    Event_19002000(218, item=60200300, item_lot_param_id=40200300, item_1=20000010)
-    Event_19002000(219, item=60200500, item_lot_param_id=40200500, item_1=20070017)
-    Event_19002000(220, item=60200600, item_lot_param_id=40200600, item_1=20000010)
-    Event_19002000(221, item=60200700, item_lot_param_id=40200700, item_1=20020013)
+    Event_19002000(218, item=60200300, item_lot=40200300, item_1=20000010)
+    Event_19002000(219, item=60200500, item_lot=40200500, item_1=20070017)
+    Event_19002000(220, item=60200600, item_lot=40200600, item_1=20000010)
+    Event_19002000(221, item=60200700, item_lot=40200700, item_1=20020013)
     Event_19003000(221, item=20070017, item_1=8404, flag=11051221)
-    Event_19002000(222, item=60210000, item_lot_param_id=40210000, item_1=0)
+    Event_19002000(222, item=60210000, item_lot=40210000, item_1=0)
     Event_19003000(222, item=21000000, item_1=0, flag=11051222)
-    Event_19002000(223, item=60210100, item_lot_param_id=40210100, item_1=21000000)
+    Event_19002000(223, item=60210100, item_lot=40210100, item_1=21000000)
     Event_19003000(223, item=21010003, item_1=8400, flag=11051223)
-    Event_19002000(224, item=60210600, item_lot_param_id=40210600, item_1=21120008)
-    Event_19002000(225, item=60210700, item_lot_param_id=40210700, item_1=21100006)
+    Event_19002000(224, item=60210600, item_lot=40210600, item_1=21120008)
+    Event_19002000(225, item=60210700, item_lot=40210700, item_1=21100006)
     Event_19003000(225, item=21070009, item_1=8402, flag=11051225)
-    Event_19002000(226, item=60210800, item_lot_param_id=40210800, item_1=21070009)
+    Event_19002000(226, item=60210800, item_lot=40210800, item_1=21070009)
     Event_19003000(226, item=21080012, item_1=8403, flag=11051226)
-    Event_19002000(227, item=60211000, item_lot_param_id=40211000, item_1=21010003)
+    Event_19002000(227, item=60211000, item_lot=40211000, item_1=21010003)
     Event_19003000(227, item=21100006, item_1=8401, flag=11051227)
-    Event_19002000(228, item=60211100, item_lot_param_id=40211100, item_1=22030018)
-    Event_19002000(229, item=60211200, item_lot_param_id=40211200, item_1=21080012)
+    Event_19002000(228, item=60211100, item_lot=40211100, item_1=22030018)
+    Event_19002000(229, item=60211200, item_lot=40211200, item_1=21080012)
     Event_19003000(229, item=21120008, item_1=8404, flag=11051229)
-    Event_19002000(230, item=60211300, item_lot_param_id=40211300, item_1=22030018)
-    Event_19002000(231, item=60220000, item_lot_param_id=40220000, item_1=21100006)
+    Event_19002000(230, item=60211300, item_lot=40211300, item_1=22030018)
+    Event_19002000(231, item=60220000, item_lot=40220000, item_1=21100006)
     Event_19003000(231, item=22000009, item_1=8402, flag=11051231)
-    Event_19002000(232, item=60220100, item_lot_param_id=40220100, item_1=22000009)
+    Event_19002000(232, item=60220100, item_lot=40220100, item_1=22000009)
     Event_19003000(232, item=22010012, item_1=8403, flag=11051232)
-    Event_19002000(233, item=60220200, item_lot_param_id=40220200, item_1=22010012)
+    Event_19002000(233, item=60220200, item_lot=40220200, item_1=22010012)
     Event_19003000(233, item=22020015, item_1=8404, flag=11051233)
-    Event_19002000(234, item=60220300, item_lot_param_id=40220300, item_1=22020015)
+    Event_19002000(234, item=60220300, item_lot=40220300, item_1=22020015)
     Event_19003000(234, item=22030018, item_1=8404, flag=11051234)
-    Event_19002000(235, item=60230000, item_lot_param_id=40230000, item_1=23020018)
-    Event_19002000(236, item=60230100, item_lot_param_id=40230100, item_1=12130012)
+    Event_19002000(235, item=60230000, item_lot=40230000, item_1=23020018)
+    Event_19002000(236, item=60230100, item_lot=40230100, item_1=12130012)
     Event_19003000(236, item=23010008, item_1=8404, flag=11051236)
-    Event_19002000(237, item=60230200, item_lot_param_id=40230200, item_1=12190014)
+    Event_19002000(237, item=60230200, item_lot=40230200, item_1=12190014)
     Event_19003000(237, item=23020018, item_1=8404, flag=11051237)
-    Event_19002000(238, item=60230300, item_lot_param_id=40230300, item_1=12160009)
-    Event_19002000(239, item=60230400, item_lot_param_id=40230400, item_1=15000014)
+    Event_19002000(238, item=60230300, item_lot=40230300, item_1=12160009)
+    Event_19002000(239, item=60230400, item_lot=40230400, item_1=15000014)
     Event_19003000(239, item=23040017, item_1=8404, flag=11051239)
-    Event_19002000(240, item=60230500, item_lot_param_id=40230500, item_1=15040009)
-    Event_19002000(241, item=60230600, item_lot_param_id=40230600, item_1=23040017)
-    Event_19002000(242, item=60230700, item_lot_param_id=40230700, item_1=23010008)
-    Event_19002000(243, item=60230800, item_lot_param_id=40230800, item_1=17060016)
-    Event_19002000(244, item=60231000, item_lot_param_id=40231000, item_1=19010018)
-    Event_19002000(245, item=60231100, item_lot_param_id=40231100, item_1=23020018)
-    Event_19002000(246, item=60231200, item_lot_param_id=40231200, item_1=18080009)
-    Event_19002000(247, item=60231300, item_lot_param_id=40231300, item_1=12010016)
-    Event_19002000(248, item=60231400, item_lot_param_id=40231400, item_1=23010008)
-    Event_19002000(249, item=60231500, item_lot_param_id=40231500, item_1=23040017)
-    Event_19002000(250, item=60240000, item_lot_param_id=40240000, item_1=0)
-    Event_19002000(251, item=60240200, item_lot_param_id=40240200, item_1=0)
-    Event_19002000(252, item=60240400, item_lot_param_id=40240400, item_1=0)
-    Event_19002000(253, item=60240500, item_lot_param_id=40240500, item_1=0)
-    Event_19002000(254, item=60240600, item_lot_param_id=40240600, item_1=0)
-    Event_19002000(255, item=60240700, item_lot_param_id=40240700, item_1=0)
-    Event_19002000(256, item=60300000, item_lot_param_id=40300000, item_1=0)
-    Event_19002000(257, item=60300100, item_lot_param_id=40300100, item_1=0)
-    Event_19002000(258, item=60300200, item_lot_param_id=40300200, item_1=0)
-    Event_19002000(259, item=60300300, item_lot_param_id=40300300, item_1=0)
-    Event_19002000(260, item=60300400, item_lot_param_id=40300400, item_1=0)
-    Event_19002000(261, item=60300600, item_lot_param_id=40300600, item_1=0)
-    Event_19002000(262, item=60300700, item_lot_param_id=40300700, item_1=0)
-    Event_19002000(263, item=60300800, item_lot_param_id=40300800, item_1=0)
-    Event_19002000(264, item=60300900, item_lot_param_id=40300900, item_1=0)
-    Event_19002000(265, item=60301000, item_lot_param_id=40301000, item_1=0)
-    Event_19002000(266, item=60301100, item_lot_param_id=40301100, item_1=0)
-    Event_19002000(267, item=60301200, item_lot_param_id=40301200, item_1=0)
-    Event_19002000(268, item=60301300, item_lot_param_id=40301300, item_1=0)
-    Event_19002000(269, item=60301400, item_lot_param_id=40301400, item_1=0)
-    Event_19002000(270, item=60301500, item_lot_param_id=40301500, item_1=0)
-    Event_19002000(271, item=60301900, item_lot_param_id=40301900, item_1=0)
-    Event_19002000(272, item=60302000, item_lot_param_id=40302000, item_1=0)
-    Event_19002000(273, item=60310000, item_lot_param_id=40310000, item_1=0)
-    Event_19002000(274, item=60310100, item_lot_param_id=40310100, item_1=0)
-    Event_19002000(275, item=60310200, item_lot_param_id=40310200, item_1=0)
-    Event_19002000(276, item=60310300, item_lot_param_id=40310300, item_1=0)
-    Event_19002000(277, item=60310400, item_lot_param_id=40310400, item_1=0)
-    Event_19002000(278, item=60310500, item_lot_param_id=40310500, item_1=0)
-    Event_19002000(279, item=60310600, item_lot_param_id=40310600, item_1=0)
-    Event_19002000(280, item=60310700, item_lot_param_id=40310700, item_1=0)
-    Event_19002000(281, item=60310800, item_lot_param_id=40310800, item_1=0)
-    Event_19002000(282, item=60310900, item_lot_param_id=40310900, item_1=0)
-    Event_19002000(283, item=60311000, item_lot_param_id=40311000, item_1=0)
-    Event_19002000(284, item=60311300, item_lot_param_id=40311300, item_1=0)
-    Event_19002000(285, item=60311400, item_lot_param_id=40311400, item_1=0)
-    Event_19002000(286, item=60311700, item_lot_param_id=40311700, item_1=0)
-    Event_19002000(287, item=60311900, item_lot_param_id=40311900, item_1=0)
-    Event_19002000(288, item=60312300, item_lot_param_id=40312300, item_1=0)
-    Event_19002000(289, item=60312400, item_lot_param_id=40312400, item_1=0)
-    Event_19002000(290, item=60312500, item_lot_param_id=40312500, item_1=0)
-    Event_19002000(291, item=60312600, item_lot_param_id=40312600, item_1=0)
-    Event_19002000(292, item=60312700, item_lot_param_id=40312700, item_1=0)
-    Event_19002000(293, item=60312800, item_lot_param_id=40312800, item_1=0)
-    Event_19002000(294, item=60312900, item_lot_param_id=40312900, item_1=0)
-    Event_19002000(295, item=60313000, item_lot_param_id=40313000, item_1=0)
-    Event_19002000(296, item=60313100, item_lot_param_id=40313100, item_1=0)
-    Event_19002000(297, item=60313200, item_lot_param_id=40313200, item_1=0)
-    Event_19002000(298, item=60313300, item_lot_param_id=40313300, item_1=0)
-    Event_19002000(299, item=60313400, item_lot_param_id=40313400, item_1=0)
-    Event_19002000(300, item=60320000, item_lot_param_id=40320000, item_1=0)
-    Event_19002000(301, item=60320200, item_lot_param_id=40320200, item_1=0)
-    Event_19002000(302, item=60320300, item_lot_param_id=40320300, item_1=0)
-    Event_19002000(303, item=60320400, item_lot_param_id=40320400, item_1=0)
-    Event_19002000(304, item=60320500, item_lot_param_id=40320500, item_1=0)
-    Event_19002000(305, item=60320800, item_lot_param_id=40320800, item_1=0)
-    Event_19002000(306, item=60320900, item_lot_param_id=40320900, item_1=0)
-    Event_19002000(307, item=60321200, item_lot_param_id=40321200, item_1=0)
-    Event_19002000(308, item=60321300, item_lot_param_id=40321300, item_1=0)
-    Event_19002000(309, item=60321400, item_lot_param_id=40321400, item_1=0)
-    Event_19002000(310, item=60321500, item_lot_param_id=40321500, item_1=0)
-    Event_19002000(311, item=60321600, item_lot_param_id=40321600, item_1=0)
-    Event_19002000(312, item=60321700, item_lot_param_id=40321700, item_1=0)
-    Event_19002000(313, item=60321900, item_lot_param_id=40321900, item_1=0)
-    Event_19002000(314, item=60322000, item_lot_param_id=40322000, item_1=0)
-    Event_19002000(315, item=60322100, item_lot_param_id=40322100, item_1=0)
-    Event_19002000(316, item=60322200, item_lot_param_id=40322200, item_1=0)
-    Event_19002000(317, item=60322300, item_lot_param_id=40322300, item_1=0)
-    Event_19002000(318, item=60322400, item_lot_param_id=40322400, item_1=0)
-    Event_19002000(319, item=60322500, item_lot_param_id=40322500, item_1=0)
-    Event_19002000(320, item=60322600, item_lot_param_id=40322600, item_1=0)
-    Event_19002000(321, item=60322700, item_lot_param_id=40322700, item_1=0)
-    Event_19002000(322, item=60322800, item_lot_param_id=40322800, item_1=0)
-    Event_19002000(323, item=60322900, item_lot_param_id=40322900, item_1=0)
-    Event_19002000(324, item=60323000, item_lot_param_id=40323000, item_1=0)
-    Event_19002000(325, item=60330000, item_lot_param_id=40330000, item_1=0)
-    Event_19002000(326, item=60330400, item_lot_param_id=40330400, item_1=0)
-    Event_19002000(327, item=60330500, item_lot_param_id=40330500, item_1=0)
-    Event_19002000(328, item=60330600, item_lot_param_id=40330600, item_1=0)
-    Event_19002000(329, item=60330900, item_lot_param_id=40330900, item_1=0)
-    Event_19002000(330, item=60331200, item_lot_param_id=40331200, item_1=0)
-    Event_19002000(331, item=60331300, item_lot_param_id=40331300, item_1=0)
-    Event_19002000(332, item=60331700, item_lot_param_id=40331700, item_1=0)
-    Event_19002000(333, item=60331800, item_lot_param_id=40331800, item_1=0)
-    Event_19002000(334, item=60331900, item_lot_param_id=40331900, item_1=0)
-    Event_19002000(335, item=60332000, item_lot_param_id=40332000, item_1=0)
-    Event_19002000(336, item=60332100, item_lot_param_id=40332100, item_1=0)
-    Event_19002000(337, item=60332300, item_lot_param_id=40332300, item_1=0)
-    Event_19002000(338, item=60332400, item_lot_param_id=40332400, item_1=0)
-    Event_19002000(339, item=60332500, item_lot_param_id=40332500, item_1=0)
-    Event_19002000(340, item=60332600, item_lot_param_id=40332600, item_1=0)
-    Event_19002000(341, item=60332700, item_lot_param_id=40332700, item_1=0)
-    Event_19002000(342, item=60332800, item_lot_param_id=40332800, item_1=0)
-    Event_19002000(343, item=60340000, item_lot_param_id=40340000, item_1=0)
-    Event_19002000(344, item=60340100, item_lot_param_id=40340100, item_1=0)
-    Event_19002000(345, item=60340200, item_lot_param_id=40340200, item_1=0)
-    Event_19002000(346, item=60340300, item_lot_param_id=40340300, item_1=0)
-    Event_19002000(347, item=60340400, item_lot_param_id=40340400, item_1=0)
-    Event_19002000(348, item=60340600, item_lot_param_id=40340600, item_1=0)
-    Event_19002000(349, item=60340700, item_lot_param_id=40340700, item_1=0)
-    Event_19002000(350, item=60340800, item_lot_param_id=40340800, item_1=0)
-    Event_19002000(351, item=60340900, item_lot_param_id=40340900, item_1=0)
-    Event_19002000(352, item=60400000, item_lot_param_id=40400000, item_1=0)
+    Event_19002000(240, item=60230500, item_lot=40230500, item_1=15040009)
+    Event_19002000(241, item=60230600, item_lot=40230600, item_1=23040017)
+    Event_19002000(242, item=60230700, item_lot=40230700, item_1=23010008)
+    Event_19002000(243, item=60230800, item_lot=40230800, item_1=17060016)
+    Event_19002000(244, item=60231000, item_lot=40231000, item_1=19010018)
+    Event_19002000(245, item=60231100, item_lot=40231100, item_1=23020018)
+    Event_19002000(246, item=60231200, item_lot=40231200, item_1=18080009)
+    Event_19002000(247, item=60231300, item_lot=40231300, item_1=12010016)
+    Event_19002000(248, item=60231400, item_lot=40231400, item_1=23010008)
+    Event_19002000(249, item=60231500, item_lot=40231500, item_1=23040017)
+    Event_19002000(250, item=60240000, item_lot=40240000, item_1=0)
+    Event_19002000(251, item=60240200, item_lot=40240200, item_1=0)
+    Event_19002000(252, item=60240400, item_lot=40240400, item_1=0)
+    Event_19002000(253, item=60240500, item_lot=40240500, item_1=0)
+    Event_19002000(254, item=60240600, item_lot=40240600, item_1=0)
+    Event_19002000(255, item=60240700, item_lot=40240700, item_1=0)
+    Event_19002000(256, item=60300000, item_lot=40300000, item_1=0)
+    Event_19002000(257, item=60300100, item_lot=40300100, item_1=0)
+    Event_19002000(258, item=60300200, item_lot=40300200, item_1=0)
+    Event_19002000(259, item=60300300, item_lot=40300300, item_1=0)
+    Event_19002000(260, item=60300400, item_lot=40300400, item_1=0)
+    Event_19002000(261, item=60300600, item_lot=40300600, item_1=0)
+    Event_19002000(262, item=60300700, item_lot=40300700, item_1=0)
+    Event_19002000(263, item=60300800, item_lot=40300800, item_1=0)
+    Event_19002000(264, item=60300900, item_lot=40300900, item_1=0)
+    Event_19002000(265, item=60301000, item_lot=40301000, item_1=0)
+    Event_19002000(266, item=60301100, item_lot=40301100, item_1=0)
+    Event_19002000(267, item=60301200, item_lot=40301200, item_1=0)
+    Event_19002000(268, item=60301300, item_lot=40301300, item_1=0)
+    Event_19002000(269, item=60301400, item_lot=40301400, item_1=0)
+    Event_19002000(270, item=60301500, item_lot=40301500, item_1=0)
+    Event_19002000(271, item=60301900, item_lot=40301900, item_1=0)
+    Event_19002000(272, item=60302000, item_lot=40302000, item_1=0)
+    Event_19002000(273, item=60310000, item_lot=40310000, item_1=0)
+    Event_19002000(274, item=60310100, item_lot=40310100, item_1=0)
+    Event_19002000(275, item=60310200, item_lot=40310200, item_1=0)
+    Event_19002000(276, item=60310300, item_lot=40310300, item_1=0)
+    Event_19002000(277, item=60310400, item_lot=40310400, item_1=0)
+    Event_19002000(278, item=60310500, item_lot=40310500, item_1=0)
+    Event_19002000(279, item=60310600, item_lot=40310600, item_1=0)
+    Event_19002000(280, item=60310700, item_lot=40310700, item_1=0)
+    Event_19002000(281, item=60310800, item_lot=40310800, item_1=0)
+    Event_19002000(282, item=60310900, item_lot=40310900, item_1=0)
+    Event_19002000(283, item=60311000, item_lot=40311000, item_1=0)
+    Event_19002000(284, item=60311300, item_lot=40311300, item_1=0)
+    Event_19002000(285, item=60311400, item_lot=40311400, item_1=0)
+    Event_19002000(286, item=60311700, item_lot=40311700, item_1=0)
+    Event_19002000(287, item=60311900, item_lot=40311900, item_1=0)
+    Event_19002000(288, item=60312300, item_lot=40312300, item_1=0)
+    Event_19002000(289, item=60312400, item_lot=40312400, item_1=0)
+    Event_19002000(290, item=60312500, item_lot=40312500, item_1=0)
+    Event_19002000(291, item=60312600, item_lot=40312600, item_1=0)
+    Event_19002000(292, item=60312700, item_lot=40312700, item_1=0)
+    Event_19002000(293, item=60312800, item_lot=40312800, item_1=0)
+    Event_19002000(294, item=60312900, item_lot=40312900, item_1=0)
+    Event_19002000(295, item=60313000, item_lot=40313000, item_1=0)
+    Event_19002000(296, item=60313100, item_lot=40313100, item_1=0)
+    Event_19002000(297, item=60313200, item_lot=40313200, item_1=0)
+    Event_19002000(298, item=60313300, item_lot=40313300, item_1=0)
+    Event_19002000(299, item=60313400, item_lot=40313400, item_1=0)
+    Event_19002000(300, item=60320000, item_lot=40320000, item_1=0)
+    Event_19002000(301, item=60320200, item_lot=40320200, item_1=0)
+    Event_19002000(302, item=60320300, item_lot=40320300, item_1=0)
+    Event_19002000(303, item=60320400, item_lot=40320400, item_1=0)
+    Event_19002000(304, item=60320500, item_lot=40320500, item_1=0)
+    Event_19002000(305, item=60320800, item_lot=40320800, item_1=0)
+    Event_19002000(306, item=60320900, item_lot=40320900, item_1=0)
+    Event_19002000(307, item=60321200, item_lot=40321200, item_1=0)
+    Event_19002000(308, item=60321300, item_lot=40321300, item_1=0)
+    Event_19002000(309, item=60321400, item_lot=40321400, item_1=0)
+    Event_19002000(310, item=60321500, item_lot=40321500, item_1=0)
+    Event_19002000(311, item=60321600, item_lot=40321600, item_1=0)
+    Event_19002000(312, item=60321700, item_lot=40321700, item_1=0)
+    Event_19002000(313, item=60321900, item_lot=40321900, item_1=0)
+    Event_19002000(314, item=60322000, item_lot=40322000, item_1=0)
+    Event_19002000(315, item=60322100, item_lot=40322100, item_1=0)
+    Event_19002000(316, item=60322200, item_lot=40322200, item_1=0)
+    Event_19002000(317, item=60322300, item_lot=40322300, item_1=0)
+    Event_19002000(318, item=60322400, item_lot=40322400, item_1=0)
+    Event_19002000(319, item=60322500, item_lot=40322500, item_1=0)
+    Event_19002000(320, item=60322600, item_lot=40322600, item_1=0)
+    Event_19002000(321, item=60322700, item_lot=40322700, item_1=0)
+    Event_19002000(322, item=60322800, item_lot=40322800, item_1=0)
+    Event_19002000(323, item=60322900, item_lot=40322900, item_1=0)
+    Event_19002000(324, item=60323000, item_lot=40323000, item_1=0)
+    Event_19002000(325, item=60330000, item_lot=40330000, item_1=0)
+    Event_19002000(326, item=60330400, item_lot=40330400, item_1=0)
+    Event_19002000(327, item=60330500, item_lot=40330500, item_1=0)
+    Event_19002000(328, item=60330600, item_lot=40330600, item_1=0)
+    Event_19002000(329, item=60330900, item_lot=40330900, item_1=0)
+    Event_19002000(330, item=60331200, item_lot=40331200, item_1=0)
+    Event_19002000(331, item=60331300, item_lot=40331300, item_1=0)
+    Event_19002000(332, item=60331700, item_lot=40331700, item_1=0)
+    Event_19002000(333, item=60331800, item_lot=40331800, item_1=0)
+    Event_19002000(334, item=60331900, item_lot=40331900, item_1=0)
+    Event_19002000(335, item=60332000, item_lot=40332000, item_1=0)
+    Event_19002000(336, item=60332100, item_lot=40332100, item_1=0)
+    Event_19002000(337, item=60332300, item_lot=40332300, item_1=0)
+    Event_19002000(338, item=60332400, item_lot=40332400, item_1=0)
+    Event_19002000(339, item=60332500, item_lot=40332500, item_1=0)
+    Event_19002000(340, item=60332600, item_lot=40332600, item_1=0)
+    Event_19002000(341, item=60332700, item_lot=40332700, item_1=0)
+    Event_19002000(342, item=60332800, item_lot=40332800, item_1=0)
+    Event_19002000(343, item=60340000, item_lot=40340000, item_1=0)
+    Event_19002000(344, item=60340100, item_lot=40340100, item_1=0)
+    Event_19002000(345, item=60340200, item_lot=40340200, item_1=0)
+    Event_19002000(346, item=60340300, item_lot=40340300, item_1=0)
+    Event_19002000(347, item=60340400, item_lot=40340400, item_1=0)
+    Event_19002000(348, item=60340600, item_lot=40340600, item_1=0)
+    Event_19002000(349, item=60340700, item_lot=40340700, item_1=0)
+    Event_19002000(350, item=60340800, item_lot=40340800, item_1=0)
+    Event_19002000(351, item=60340900, item_lot=40340900, item_1=0)
+    Event_19002000(352, item=60400000, item_lot=40400000, item_1=0)
     Event_19003000(352, item=40000000, item_1=0, flag=11051352)
-    Event_19002000(353, item=60400100, item_lot_param_id=40400100, item_1=40000000)
+    Event_19002000(353, item=60400100, item_lot=40400100, item_1=40000000)
     Event_19003000(353, item=40010005, item_1=8400, flag=11051353)
-    Event_19002000(354, item=60400200, item_lot_param_id=40400200, item_1=40030003)
+    Event_19002000(354, item=60400200, item_lot=40400200, item_1=40030003)
     Event_19003000(354, item=40020008, item_1=8401, flag=11051354)
-    Event_19002000(355, item=60400300, item_lot_param_id=40400300, item_1=40000000)
+    Event_19002000(355, item=60400300, item_lot=40400300, item_1=40000000)
     Event_19003000(355, item=40030003, item_1=8401, flag=11051355)
-    Event_19002000(356, item=60400500, item_lot_param_id=40400500, item_1=40030003)
+    Event_19002000(356, item=60400500, item_lot=40400500, item_1=40030003)
     Event_19003000(356, item=40050010, item_1=8402, flag=11051356)
-    Event_19002000(357, item=60410000, item_lot_param_id=40410000, item_1=40020008)
+    Event_19002000(357, item=60410000, item_lot=40410000, item_1=40020008)
     Event_19003000(357, item=41000010, item_1=8402, flag=11051357)
-    Event_19002000(358, item=60410100, item_lot_param_id=40410100, item_1=41000010)
+    Event_19002000(358, item=60410100, item_lot=40410100, item_1=41000010)
     Event_19003000(358, item=41010015, item_1=8404, flag=11051358)
-    Event_19002000(359, item=60410200, item_lot_param_id=40410200, item_1=41000010)
+    Event_19002000(359, item=60410200, item_lot=40410200, item_1=41000010)
     Event_19003000(359, item=41020015, item_1=8404, flag=11051359)
-    Event_19002000(360, item=60410300, item_lot_param_id=40410300, item_1=41000010)
-    Event_19002000(361, item=60410400, item_lot_param_id=40410400, item_1=41000010)
-    Event_19002000(362, item=60410600, item_lot_param_id=40410600, item_1=40010005)
+    Event_19002000(360, item=60410300, item_lot=40410300, item_1=41000010)
+    Event_19002000(361, item=60410400, item_lot=40410400, item_1=41000010)
+    Event_19002000(362, item=60410600, item_lot=40410600, item_1=40010005)
     Event_19003000(362, item=41060008, item_1=8404, flag=11051362)
-    Event_19002000(363, item=60410700, item_lot_param_id=40410700, item_1=41010015)
-    Event_19002000(364, item=60420000, item_lot_param_id=40420000, item_1=42010008)
-    Event_19002000(365, item=60420100, item_lot_param_id=40420100, item_1=42040014)
+    Event_19002000(363, item=60410700, item_lot=40410700, item_1=41010015)
+    Event_19002000(364, item=60420000, item_lot=40420000, item_1=42010008)
+    Event_19002000(365, item=60420100, item_lot=40420100, item_1=42040014)
     Event_19003000(365, item=42010008, item_1=8404, flag=11051365)
-    Event_19002000(366, item=60420300, item_lot_param_id=40420300, item_1=42040014)
-    Event_19002000(367, item=60420400, item_lot_param_id=40420400, item_1=41000010)
+    Event_19002000(366, item=60420300, item_lot=40420300, item_1=42040014)
+    Event_19002000(367, item=60420400, item_lot=40420400, item_1=41000010)
     Event_19003000(367, item=42040014, item_1=8403, flag=11051367)
-    Event_19002000(368, item=60430000, item_lot_param_id=40430000, item_1=41060008)
+    Event_19002000(368, item=60430000, item_lot=40430000, item_1=41060008)
     Event_19003000(368, item=43000010, item_1=8402, flag=11051368)
-    Event_19002000(369, item=60430200, item_lot_param_id=40430200, item_1=43000010)
+    Event_19002000(369, item=60430200, item_lot=40430200, item_1=43000010)
     Event_19003000(369, item=43020013, item_1=8403, flag=11051369)
-    Event_19002000(370, item=60430300, item_lot_param_id=40430300, item_1=43020013)
+    Event_19002000(370, item=60430300, item_lot=40430300, item_1=43020013)
     Event_19003000(370, item=43030016, item_1=8404, flag=11051370)
-    Event_19002000(371, item=60430500, item_lot_param_id=40430500, item_1=43030016)
-    Event_19002000(372, item=60430600, item_lot_param_id=40430600, item_1=43020013)
-    Event_19002000(373, item=60430800, item_lot_param_id=40430800, item_1=43030016)
+    Event_19002000(371, item=60430500, item_lot=40430500, item_1=43030016)
+    Event_19002000(372, item=60430600, item_lot=40430600, item_1=43020013)
+    Event_19002000(373, item=60430800, item_lot=40430800, item_1=43030016)
     Event_19003000(373, item=43080018, item_1=8404, flag=11051373)
-    Event_19002000(374, item=60431100, item_lot_param_id=40431100, item_1=43030016)
-    Event_19002000(375, item=60440000, item_lot_param_id=40440000, item_1=43080018)
-    Event_19002000(376, item=60440100, item_lot_param_id=40440100, item_1=43080018)
+    Event_19002000(374, item=60431100, item_lot=40431100, item_1=43030016)
+    Event_19002000(375, item=60440000, item_lot=40440000, item_1=43080018)
+    Event_19002000(376, item=60440100, item_lot=40440100, item_1=43080018)
     Event_19001450(0, item=0, item_1=8400, flag=19001460)
     Event_19001450(1, item=8400, item_1=8401, flag=19001461)
     Event_19001450(2, item=8401, item_1=8402, flag=19001462)
     Event_19001450(3, item=8402, item_1=8403, flag=19001463)
     Event_19001450(4, item=8403, item_1=8404, flag=19001464)
     DisableFlag(19001099)
-    Event_19001060(
-        0,
-        special_effect__special_effect_id=53000,
-        flag=19001050,
-        flag_1=19001200,
-        flag_2=19001201,
-        item=8410,
-        item_lot_param_id=84100
-    )
-    Event_19001060(
-        1,
-        special_effect__special_effect_id=53001,
-        flag=19001051,
-        flag_1=19001202,
-        flag_2=19001203,
-        item=8411,
-        item_lot_param_id=84110
-    )
-    Event_19001060(
-        2,
-        special_effect__special_effect_id=53002,
-        flag=19001052,
-        flag_1=19001204,
-        flag_2=19001205,
-        item=8412,
-        item_lot_param_id=84120
-    )
-    Event_19001060(
-        3,
-        special_effect__special_effect_id=53003,
-        flag=19001053,
-        flag_1=19001206,
-        flag_2=19001207,
-        item=8413,
-        item_lot_param_id=84130
-    )
-    Event_19001060(
-        4,
-        special_effect__special_effect_id=53004,
-        flag=19001054,
-        flag_1=19001208,
-        flag_2=19001209,
-        item=8414,
-        item_lot_param_id=84140
-    )
-    Event_19001060(
-        5,
-        special_effect__special_effect_id=53005,
-        flag=19001055,
-        flag_1=19001210,
-        flag_2=19001211,
-        item=8415,
-        item_lot_param_id=84150
-    )
+    Event_19001060(0, special_effect=53000, flag=19001050, flag_1=19001200, flag_2=19001201, item=8410, item_lot=84100)
+    Event_19001060(1, special_effect=53001, flag=19001051, flag_1=19001202, flag_2=19001203, item=8411, item_lot=84110)
+    Event_19001060(2, special_effect=53002, flag=19001052, flag_1=19001204, flag_2=19001205, item=8412, item_lot=84120)
+    Event_19001060(3, special_effect=53003, flag=19001053, flag_1=19001206, flag_2=19001207, item=8413, item_lot=84130)
+    Event_19001060(4, special_effect=53004, flag=19001054, flag_1=19001208, flag_2=19001209, item=8414, item_lot=84140)
+    Event_19001060(5, special_effect=53005, flag=19001055, flag_1=19001210, flag_2=19001211, item=8415, item_lot=84150)
     Event_19001070(
         0,
-        special_effect__special_effect_id=53009,
+        special_effect=53009,
         area_id=10,
         block_id=0,
         cc_id=0,
@@ -1196,11 +1180,11 @@ def Constructor():
         flag=19001220,
         flag_1=19001221,
         item=8419,
-        item_lot_param_id=84190
+        item_lot=84190,
     )
     Event_19001070(
         1,
-        special_effect__special_effect_id=53010,
+        special_effect=53010,
         area_id=14,
         block_id=0,
         cc_id=0,
@@ -1208,11 +1192,11 @@ def Constructor():
         flag=19001222,
         flag_1=19001223,
         item=8420,
-        item_lot_param_id=84200
+        item_lot=84200,
     )
     Event_19001070(
         2,
-        special_effect__special_effect_id=53012,
+        special_effect=53012,
         area_id=16,
         block_id=0,
         cc_id=0,
@@ -1220,11 +1204,11 @@ def Constructor():
         flag=19001226,
         flag_1=19001227,
         item=8422,
-        item_lot_param_id=84220
+        item_lot=84220,
     )
     Event_19001070(
         3,
-        special_effect__special_effect_id=53013,
+        special_effect=53013,
         area_id=11,
         block_id=0,
         cc_id=0,
@@ -1232,11 +1216,11 @@ def Constructor():
         flag=19001228,
         flag_1=19001229,
         item=8423,
-        item_lot_param_id=84230
+        item_lot=84230,
     )
     Event_19001070(
         4,
-        special_effect__special_effect_id=53014,
+        special_effect=53014,
         area_id=35,
         block_id=0,
         cc_id=0,
@@ -1244,11 +1228,11 @@ def Constructor():
         flag=19001230,
         flag_1=19001231,
         item=8424,
-        item_lot_param_id=84240
+        item_lot=84240,
     )
     Event_19001070(
         5,
-        special_effect__special_effect_id=53015,
+        special_effect=53015,
         area_id=15,
         block_id=0,
         cc_id=0,
@@ -1256,11 +1240,11 @@ def Constructor():
         flag=19001232,
         flag_1=19001233,
         item=8425,
-        item_lot_param_id=84250
+        item_lot=84250,
     )
     Event_19001070(
         6,
-        special_effect__special_effect_id=53016,
+        special_effect=53016,
         area_id=13,
         block_id=0,
         cc_id=0,
@@ -1268,11 +1252,11 @@ def Constructor():
         flag=19001234,
         flag_1=19001235,
         item=8426,
-        item_lot_param_id=84260
+        item_lot=84260,
     )
     Event_19001070(
         7,
-        special_effect__special_effect_id=53017,
+        special_effect=53017,
         area_id=12,
         block_id=5,
         cc_id=0,
@@ -1280,7 +1264,7 @@ def Constructor():
         flag=19001236,
         flag_1=19001237,
         item=8427,
-        item_lot_param_id=84270
+        item_lot=84270,
     )
     Event_19001080()
     Event_19001081()
@@ -1290,27 +1274,27 @@ def Constructor():
     Event_19001085()
     Event_19001086()
     Event_19001088()
-    Event_19001500(0, special_effect__special_effect_id=53000, special_effect=53100, item=8410, text=50010)
-    Event_19001500(1, special_effect__special_effect_id=53001, special_effect=53101, item=8411, text=50011)
-    Event_19001500(2, special_effect__special_effect_id=53002, special_effect=53102, item=8412, text=50012)
-    Event_19001500(3, special_effect__special_effect_id=53003, special_effect=53103, item=8413, text=50013)
-    Event_19001500(4, special_effect__special_effect_id=53004, special_effect=53104, item=8414, text=50014)
-    Event_19001500(5, special_effect__special_effect_id=53005, special_effect=53105, item=8415, text=50015)
-    Event_19001500(6, special_effect__special_effect_id=53006, special_effect=53106, item=8416, text=50016)
-    Event_19001500(7, special_effect__special_effect_id=53007, special_effect=53107, item=8417, text=50017)
-    Event_19001500(8, special_effect__special_effect_id=53008, special_effect=53108, item=8418, text=50018)
-    Event_19001500(9, special_effect__special_effect_id=53009, special_effect=53109, item=8419, text=50019)
-    Event_19001500(10, special_effect__special_effect_id=53010, special_effect=53110, item=8420, text=50020)
-    Event_19001500(11, special_effect__special_effect_id=53011, special_effect=53111, item=8421, text=50021)
-    Event_19001500(12, special_effect__special_effect_id=53012, special_effect=53112, item=8422, text=50022)
-    Event_19001500(13, special_effect__special_effect_id=53013, special_effect=53113, item=8423, text=50023)
-    Event_19001500(14, special_effect__special_effect_id=53014, special_effect=53114, item=8424, text=50024)
-    Event_19001500(15, special_effect__special_effect_id=53015, special_effect=53115, item=8425, text=50025)
-    Event_19001500(16, special_effect__special_effect_id=53016, special_effect=53116, item=8426, text=50026)
-    Event_19001500(17, special_effect__special_effect_id=53017, special_effect=53117, item=8427, text=50027)
-    Event_19001500(18, special_effect__special_effect_id=53018, special_effect=53118, item=8428, text=50028)
-    Event_19001500(19, special_effect__special_effect_id=53019, special_effect=53119, item=8429, text=50029)
-    Event_19001500(20, 53020, 53120, 8430, 50030)
+    Event_19001500(0, special_effect=53000, special_effect_1=53100, item=8410, text=50010)
+    Event_19001500(1, special_effect=53001, special_effect_1=53101, item=8411, text=50011)
+    Event_19001500(2, special_effect=53002, special_effect_1=53102, item=8412, text=50012)
+    Event_19001500(3, special_effect=53003, special_effect_1=53103, item=8413, text=50013)
+    Event_19001500(4, special_effect=53004, special_effect_1=53104, item=8414, text=50014)
+    Event_19001500(5, special_effect=53005, special_effect_1=53105, item=8415, text=50015)
+    Event_19001500(6, special_effect=53006, special_effect_1=53106, item=8416, text=50016)
+    Event_19001500(7, special_effect=53007, special_effect_1=53107, item=8417, text=50017)
+    Event_19001500(8, special_effect=53008, special_effect_1=53108, item=8418, text=50018)
+    Event_19001500(9, special_effect=53009, special_effect_1=53109, item=8419, text=50019)
+    Event_19001500(10, special_effect=53010, special_effect_1=53110, item=8420, text=50020)
+    Event_19001500(11, special_effect=53011, special_effect_1=53111, item=8421, text=50021)
+    Event_19001500(12, special_effect=53012, special_effect_1=53112, item=8422, text=50022)
+    Event_19001500(13, special_effect=53013, special_effect_1=53113, item=8423, text=50023)
+    Event_19001500(14, special_effect=53014, special_effect_1=53114, item=8424, text=50024)
+    Event_19001500(15, special_effect=53015, special_effect_1=53115, item=8425, text=50025)
+    Event_19001500(16, special_effect=53016, special_effect_1=53116, item=8426, text=50026)
+    Event_19001500(17, special_effect=53017, special_effect_1=53117, item=8427, text=50027)
+    Event_19001500(18, special_effect=53018, special_effect_1=53118, item=8428, text=50028)
+    Event_19001500(19, special_effect=53019, special_effect_1=53119, item=8429, text=50029)
+    Event_19001500(20, special_effect=53020, special_effect_1=53120, item=8430, text=50030)
 
 
 @ContinueOnRest(50)
@@ -1325,22 +1309,23 @@ def Preconstructor():
     EnableFlag(6001)
     DisableFlag(9000)
     DisableFlag(9001)
+    DisableFlag(280)
     Event_740()
     Event_810()
-    Event_820(0, flag=550, hours=5)
-    Event_820(1, flag=551, hours=0)
-    Event_820(2, flag=552, hours=6)
-    Event_820(3, flag=553, hours=7)
-    Event_820(4, flag=554, hours=1)
-    Event_820(5, flag=555, hours=8)
-    Event_820(6, flag=556, hours=3)
-    Event_820(7, flag=557, hours=9)
-    Event_820(8, flag=558, hours=2)
-    Event_820(9, flag=559, hours=10)
-    Event_820(10, flag=560, hours=4)
-    Event_820(11, flag=561, hours=11)
-    Event_820(12, flag=562, hours=15)
-    Event_820(13, flag=563, hours=12)
+    Event_820(0, flag=550, weather=5)
+    Event_820(1, flag=551, weather=0)
+    Event_820(2, flag=552, weather=6)
+    Event_820(3, flag=553, weather=7)
+    Event_820(4, flag=554, weather=1)
+    Event_820(5, flag=555, weather=8)
+    Event_820(6, flag=556, weather=3)
+    Event_820(7, flag=557, weather=9)
+    Event_820(8, flag=558, weather=2)
+    Event_820(9, flag=559, weather=10)
+    Event_820(10, flag=560, weather=4)
+    Event_820(11, flag=561, weather=11)
+    Event_820(12, flag=562, weather=15)
+    Event_820(13, flag=563, weather=12)
     Event_839()
     Event_840()
     Event_980()
@@ -1354,52 +1339,53 @@ def Preconstructor():
     Event_3046()
     Event_3056()
     Event_3080()
-    Event_3179()
-    Event_3499()
-    Event_3659()
-    Event_3239()
-    Event_3619()
-    Event_3559()
-    Event_3679()
-    Event_3959()
-    Event_3779()
-    Event_3839()
-    Event_3859()
-    Event_4119()
-    Event_3119()
-    Event_3199()
-    Event_3279()
-    Event_3299()
-    Event_3579()
-    Event_3699()
-    Event_3399()
-    Event_3419()
-    Event_3379()
-    Event_3439()
-    Event_3459()
-    Event_3479()
-    Event_3639()
-    Event_3719()
-    Event_3599()
-    Event_4259()
-    Event_3979()
-    Event_3919()
-    Event_3899()
-    Event_3739()
-    Event_4159()
-    Event_3799()
-    Event_3819()
-    Event_4239()
-    Event_3879()
-    Event_4199()
-    Event_4179()
-    Event_4219()
-    Event_4719()
-    Event_4739()
-    Event_4059()
-    Event_4139()
-    Event_4079()
-    Event_3759()
+    if FlagDisabled(2052):
+        Event_3179()
+        Event_3499()
+        Event_3659()
+        Event_3239()
+        Event_3619()
+        Event_3559()
+        Event_3679()
+        Event_3959()
+        Event_3779()
+        Event_3839()
+        Event_3859()
+        Event_4119()
+        Event_3119()
+        Event_3199()
+        Event_3279()
+        Event_3299()
+        Event_3579()
+        Event_3699()
+        Event_3399()
+        Event_3419()
+        Event_3379()
+        Event_3439()
+        Event_3459()
+        Event_3479()
+        Event_3639()
+        Event_3719()
+        Event_3599()
+        Event_4259()
+        Event_3979()
+        Event_3919()
+        Event_3899()
+        Event_3739()
+        Event_4159()
+        Event_3799()
+        Event_3819()
+        Event_4239()
+        Event_3879()
+        Event_4199()
+        Event_4179()
+        Event_4219()
+        Event_4719()
+        Event_4739()
+        Event_4059()
+        Event_4139()
+        Event_4079()
+        Event_3759()
     Event_3049()
     Event_3050()
     Event_3051()
@@ -1411,6 +1397,25 @@ def Preconstructor():
     Event_3059()
     Event_3089()
     Event_4612()
+    Event_60701(0, flag=11109751, flag_1=60701)
+    Event_60701(1, flag=11109752, flag_1=60702)
+    Event_60701(2, flag=11109753, flag_1=60703)
+    Event_60701(3, flag=11109754, flag_1=60704)
+    Event_60701(4, flag=11109755, flag_1=60705)
+    Event_60701(5, flag=11109756, flag_1=60706)
+    Event_60701(6, flag=11109757, flag_1=60707)
+    Event_60701(7, flag=11109758, flag_1=60708)
+    Event_60701(8, flag=11109759, flag_1=60709)
+    Event_60701(9, flag=11109760, flag_1=60710)
+    Event_60701(10, flag=11109761, flag_1=60711)
+    Event_60701(11, flag=11109762, flag_1=60712)
+    Event_60701(12, flag=11109763, flag_1=60713)
+    Event_60701(13, flag=11109764, flag_1=60714)
+    Event_60701(14, flag=11109765, flag_1=60715)
+    Event_60701(29, flag=11109745, flag_1=60730)
+    Event_60701(30, flag=11109746, flag_1=60731)
+    Event_60701(31, flag=11109747, flag_1=60732)
+    Event_60701(32, flag=11109748, flag_1=60733)
     Event_3081(
         0,
         flag=1037429202,
@@ -1419,7 +1424,7 @@ def Preconstructor():
         flag_3=16009302,
         flag_4=16009312,
         flag_5=16009322,
-        flag_6=16009313
+        flag_6=16009313,
     )
     Event_3082(0, flag=1042369202, flag_1=1035449202, flag_2=12059163)
     Event_3083(0, flag=16009202, flag_1=16009252)
@@ -1448,14 +1453,49 @@ def Preconstructor():
     Event_4611(0, flag=11009452, flag_1=1040549202)
     Event_3098()
     Event_3099()
-    IfFlagEnabled(AND_1, 6010)
-    IfFlagDisabled(AND_1, 100)
+    AND_1.Add(FlagEnabled(6010))
+    AND_1.Add(FlagDisabled(100))
     GotoIfConditionFalse(Label.L0, input_condition=AND_1)
     DisableFlag(6010)
 
     # --- Label 0 --- #
     DefineLabel(0)
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(2052):
+        return
+    Event_6800(0, item=11000, flag=65000)
+    Event_6800(1, item=11001, flag=65010)
+    Event_6800(2, item=11002, flag=65020)
+    Event_6800(3, item=11003, flag=65030)
+    Event_6800(4, item=11004, flag=65040)
+    Event_6800(5, item=11005, flag=65050)
+    Event_6800(6, item=11006, flag=65060)
+    Event_6800(7, item=11007, flag=65070)
+    Event_6800(8, item=11008, flag=65080)
+    Event_6800(9, item=11009, flag=65090)
+    Event_6800(10, item=11010, flag=65100)
+    Event_6800(11, item=11011, flag=65110)
+    Event_6800(12, item=11012, flag=65120)
+    Event_6800(13, item=11013, flag=65130)
+    Event_6800(14, item=11014, flag=65140)
+    Event_6800(15, item=11015, flag=65150)
+    Event_6800(16, item=11016, flag=65160)
+    Event_6800(17, item=11017, flag=65170)
+    Event_6800(18, item=11018, flag=65180)
+    Event_6800(19, item=11019, flag=65190)
+    Event_6800(20, item=11020, flag=65200)
+    Event_6800(21, item=11021, flag=65210)
+    Event_6800(22, item=11022, flag=65220)
+    Event_6800(23, item=11023, flag=65230)
+    Event_6800(24, item=11024, flag=65240)
+    Event_6800(25, item=11025, flag=65250)
+    Event_6800(26, item=11026, flag=65260)
+    Event_6800(27, item=11027, flag=65270)
+    Event_6800(28, item=11028, flag=65280)
+    Event_6800(29, item=11029, flag=65290)
+    Event_6800(30, item=11030, flag=65300)
+    Event_6800(31, item=11031, flag=65310)
     Event_6901()
     Event_6902()
     Event_6903()
@@ -1463,24 +1503,32 @@ def Preconstructor():
     Event_6905()
     Event_6906()
     Event_6907()
+    Event_6908()
     End()
 
 
 @ContinueOnRest(130)
 def Event_130(_, collision: uint):
     """Event 130"""
-    EndIfThisEventSlotFlagEnabled()
-    IfPlayerInOwnWorld(AND_1)
-    IfPlayerStandingOnCollision(AND_1, collision)
-    IfConditionTrue(MAIN, input_condition=AND_1)
-    DisableThisSlotFlag()
+    if ThisEventSlotFlagEnabled():
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(PlayerStandingOnCollision(collision))
+    
+    MAIN.Await(AND_1)
+    
+    EnableThisSlotFlag()
 
 
 @ContinueOnRest(700)
 def Event_700():
     """Event 700"""
-    EndIfPlayerNotInOwnWorld()
-    EndIfThisEventSlotFlagEnabled()
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(2052):
+        return
+    if ThisEventSlotFlagEnabled():
+        return
     EnableFlag(62000)
     EnableFlag(710580)
     EnableFlag(720000)
@@ -1504,6 +1552,7 @@ def Event_700():
     EnableFlag(720200)
     EnableFlag(720210)
     EnableFlag(720220)
+    EnableFlag(720230)
     GotoIfFlagEnabled(Label.L1, flag=2001)
     GotoIfFlagEnabled(Label.L0, flag=2000)
     EnableFlag(60200)
@@ -1594,31 +1643,31 @@ def Event_700():
 
     # --- Label 9 --- #
     DefineLabel(9)
-    IfNewGameCycleGreaterThanOrEqual(AND_7, completion_count=7)
+    AND_7.Add(NewGameCycleGreaterThanOrEqual(completion_count=7))
     SkipLinesIfConditionFalse(2, AND_7)
     EnableFlag(57)
     End()
-    IfNewGameCycleEqual(AND_6, completion_count=6)
+    AND_6.Add(NewGameCycleEqual(completion_count=6))
     SkipLinesIfConditionFalse(2, AND_6)
     EnableFlag(56)
     End()
-    IfNewGameCycleEqual(AND_5, completion_count=5)
+    AND_5.Add(NewGameCycleEqual(completion_count=5))
     SkipLinesIfConditionFalse(2, AND_5)
     EnableFlag(55)
     End()
-    IfNewGameCycleEqual(AND_4, completion_count=4)
+    AND_4.Add(NewGameCycleEqual(completion_count=4))
     SkipLinesIfConditionFalse(2, AND_4)
     EnableFlag(54)
     End()
-    IfNewGameCycleEqual(AND_3, completion_count=3)
+    AND_3.Add(NewGameCycleEqual(completion_count=3))
     SkipLinesIfConditionFalse(2, AND_3)
     EnableFlag(53)
     End()
-    IfNewGameCycleEqual(AND_2, completion_count=2)
+    AND_2.Add(NewGameCycleEqual(completion_count=2))
     SkipLinesIfConditionFalse(2, AND_2)
     EnableFlag(52)
     End()
-    IfNewGameCycleEqual(AND_1, completion_count=1)
+    AND_1.Add(NewGameCycleEqual(completion_count=1))
     SkipLinesIfConditionFalse(2, AND_1)
     EnableFlag(51)
     End()
@@ -1629,11 +1678,16 @@ def Event_700():
 @ContinueOnRest(701)
 def Event_701():
     """Event 701"""
-    EndIfPlayerNotInOwnWorld()
-    EndIfThisEventSlotFlagEnabled()
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(2052):
+        return
+    if ThisEventSlotFlagEnabled():
+        return
     GotoIfFlagEnabled(Label.L1, flag=2001)
     GotoIfFlagEnabled(Label.L0, flag=2000)
-    EndIfFlagDisabled(50)
+    if FlagDisabled(50):
+        return
     GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=106, flag=60210, bit_count=1)
     GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=100, flag=60220, bit_count=1)
     GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=109, flag=60230, bit_count=1)
@@ -1645,17 +1699,18 @@ def Event_701():
     GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=105, flag=60290, bit_count=1)
     GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=108, flag=60300, bit_count=1)
     GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=103, flag=60310, bit_count=1)
-    IfPlayerHasGood(AND_10, 150)
+    AND_10.Add(PlayerHasGood(150))
     SkipLinesIfConditionTrue(1, AND_10)
     GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=150, flag=1650, bit_count=4)
-    IfPlayerHasGood(AND_11, 111)
+    AND_11.Add(PlayerHasGood(111))
     SkipLinesIfConditionTrue(1, AND_11)
     GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=111, flag=1660, bit_count=8)
     End()
 
     # --- Label 1 --- #
     DefineLabel(1)
-    EndIfFlagDisabled(50)
+    if FlagDisabled(50):
+        return
     GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=106, flag=60210, bit_count=1)
     GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=100, flag=60220, bit_count=1)
     GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=109, flag=60230, bit_count=1)
@@ -1676,7 +1731,8 @@ def Event_701():
 
     # --- Label 0 --- #
     DefineLabel(0)
-    EndIfFlagDisabled(50)
+    if FlagDisabled(50):
+        return
     GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=106, flag=60210, bit_count=1)
     GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=100, flag=60220, bit_count=1)
     GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=109, flag=60230, bit_count=1)
@@ -1688,12 +1744,12 @@ def Event_701():
     GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=105, flag=60290, bit_count=1)
     GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=108, flag=60300, bit_count=1)
     GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=103, flag=60310, bit_count=1)
-    Unknown_2003_71(unk_0_4=6)
-    Unknown_2003_71(unk_0_4=21)
-    Unknown_2003_71(unk_0_4=22)
-    Unknown_2003_71(unk_0_4=23)
-    Unknown_2003_71(unk_0_4=24)
-    Unknown_2003_71(unk_0_4=80)
+    AwardGesture(gesture_param_id=6)
+    AwardGesture(gesture_param_id=21)
+    AwardGesture(gesture_param_id=22)
+    AwardGesture(gesture_param_id=23)
+    AwardGesture(gesture_param_id=24)
+    AwardGesture(gesture_param_id=80)
     EnableFlag(100)
     Wait(3.0)
 
@@ -1701,45 +1757,55 @@ def Event_701():
 @ContinueOnRest(702)
 def Event_702():
     """Event 702"""
-    EndIfPlayerNotInOwnWorld()
-    EndIfThisEventSlotFlagEnabled()
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(2052):
+        return
+    if ThisEventSlotFlagEnabled():
+        return
     GotoIfFlagEnabled(Label.L0, flag=2000)
     End()
 
     # --- Label 0 --- #
     DefineLabel(0)
-    Unknown_2003_68(unknown1=7, unknown2=-1.0, unknown3=1)
-    IfFlagEnabled(MAIN, 1042368540)
-    Unknown_2003_68(unknown1=0, unknown2=3600.0, unknown3=1)
-    UnknownTimer_05(unknown1=0)
+    SetWeather(weather=Weather.PuffyClouds, duration=-1.0, immediate_change=True)
+    
+    MAIN.Await(FlagEnabled(1042368540))
+    
+    SetWeather(weather=Weather.Default, duration=3600.0, immediate_change=True)
+    UnfreezeTime()
     EnableFlag(101)
 
 
 @ContinueOnRest(703)
 def Event_703():
     """Event 703"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(2052):
+        return
     GotoIfFlagEnabled(Label.L0, flag=2000)
     End()
 
     # --- Label 0 --- #
     DefineLabel(0)
-    EndIfFlagEnabled(101)
-    IfFlagEnabled(AND_1, 100)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if FlagEnabled(101):
+        return
+    AND_1.Add(FlagEnabled(100))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(101)
-    SkipLinesIfFlagDisabled(1, 9990)
-    Unknown_2003_68(unknown1=0, unknown2=6000.0, unknown3=0)
-    UnknownTimer_04(
-        hours=23,
-        minutes=45,
-        seconds=0,
-        unknown1=0,
-        unknown2=0,
-        unknown3=0,
-        unknown4=0,
-        unknown5=0,
-        unknown6=0,
+    if FlagEnabled(9990):
+        SetWeather(weather=Weather.Default, duration=6000.0, immediate_change=False)
+    SetCurrentTime(
+        time=(23, 45, 0),
+        fade_transition=False,
+        wait_for_completion=False,
+        show_clock=False,
+        clock_start_delay=0.0,
+        clock_change_duration=0.0,
+        clock_finish_delay=0.0,
     )
 
 
@@ -1748,7 +1814,8 @@ def Event_705():
     """Event 705"""
     DisableFlag(9290)
     DisableFlag(9291)
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
 
 
 @RestartOnRest(710)
@@ -1772,13 +1839,17 @@ def Event_711():
     """Event 711"""
     DisableNetworkSync()
     DisableFlag(202)
-    IfTryingToJoinSession(OR_1)
-    IfTryingToCreateSession(OR_1)
-    IfConditionTrue(MAIN, input_condition=OR_1)
+    OR_1.Add(MultiplayerPending())
+    OR_1.Add(Multiplayer())
+    
+    MAIN.Await(OR_1)
+    
     EnableFlag(202)
-    IfTryingToJoinSession(OR_2)
-    IfTryingToCreateSession(OR_2)
-    IfConditionFalse(MAIN, input_condition=OR_2)
+    OR_2.Add(MultiplayerPending())
+    OR_2.Add(Multiplayer())
+    
+    MAIN.Await(not OR_2)
+    
     DisableFlag(202)
     Restart()
 
@@ -1787,28 +1858,32 @@ def Event_711():
 def Event_715():
     """Event 715"""
     DisableNetworkSync()
-    SkipLinesIfPlayerNotInOwnWorld(1)
-    DisableNetworkFlag(210)
+    if PlayerInOwnWorld():
+        DisableNetworkFlag(210)
     DisableFlag(211)
-    IfInsideMap(OR_1, game_map=STORMVEIL_CASTLE)
-    IfInsideMap(OR_1, game_map=LEYNDELL_ROYAL_CAPITAL)
-    IfInsideMap(OR_1, game_map=(12, 0, 0, 0))
-    IfInsideMap(OR_1, game_map=CRUMBLING_FARUM_AZULA)
-    IfInsideMap(OR_1, game_map=RAYA_LUCARIA)
-    IfInsideMap(OR_1, game_map=HALIGTREE)
-    IfInsideMap(OR_1, game_map=VOLCANO_MANOR)
-    IfConditionTrue(MAIN, input_condition=OR_1)
-    SkipLinesIfPlayerNotInOwnWorld(1)
-    EnableNetworkFlag(210)
+    OR_1.Add(InsideMap(game_map=STORMVEIL_CASTLE))
+    OR_1.Add(InsideMap(game_map=LEYNDELL_ROYAL_CAPITAL))
+    OR_1.Add(InsideMap(game_map=(12, 0, 0, 0)))
+    OR_1.Add(InsideMap(game_map=CRUMBLING_FARUM_AZULA))
+    OR_1.Add(InsideMap(game_map=RAYA_LUCARIA))
+    OR_1.Add(InsideMap(game_map=HALIGTREE))
+    OR_1.Add(InsideMap(game_map=VOLCANO_MANOR))
+    
+    MAIN.Await(OR_1)
+    
+    if PlayerInOwnWorld():
+        EnableNetworkFlag(210)
     EnableFlag(211)
-    IfInsideMap(OR_2, game_map=STORMVEIL_CASTLE)
-    IfInsideMap(OR_2, game_map=LEYNDELL_ROYAL_CAPITAL)
-    IfInsideMap(OR_2, game_map=(12, 0, 0, 0))
-    IfInsideMap(OR_2, game_map=CRUMBLING_FARUM_AZULA)
-    IfInsideMap(OR_2, game_map=RAYA_LUCARIA)
-    IfInsideMap(OR_2, game_map=HALIGTREE)
-    IfInsideMap(OR_2, game_map=VOLCANO_MANOR)
-    IfConditionFalse(MAIN, input_condition=OR_2)
+    OR_2.Add(InsideMap(game_map=STORMVEIL_CASTLE))
+    OR_2.Add(InsideMap(game_map=LEYNDELL_ROYAL_CAPITAL))
+    OR_2.Add(InsideMap(game_map=(12, 0, 0, 0)))
+    OR_2.Add(InsideMap(game_map=CRUMBLING_FARUM_AZULA))
+    OR_2.Add(InsideMap(game_map=RAYA_LUCARIA))
+    OR_2.Add(InsideMap(game_map=HALIGTREE))
+    OR_2.Add(InsideMap(game_map=VOLCANO_MANOR))
+    
+    MAIN.Await(not OR_2)
+    
     Restart()
 
 
@@ -1816,48 +1891,58 @@ def Event_715():
 def Event_716():
     """Event 716"""
     DisableNetworkSync()
-    SkipLinesIfPlayerNotInOwnWorld(1)
-    DisableNetworkFlag(220)
+    if PlayerInOwnWorld():
+        DisableNetworkFlag(220)
     DisableFlag(221)
-    IfInsideMap(OR_1, game_map=STORMVEIL_CASTLE)
-    IfInsideMap(OR_1, game_map=LEYNDELL_ROYAL_CAPITAL)
-    IfInsideMap(OR_1, game_map=(12, 0, 0, 0))
-    IfInsideMap(OR_1, game_map=CRUMBLING_FARUM_AZULA)
-    IfInsideMap(OR_1, game_map=RAYA_LUCARIA)
-    IfInsideMap(OR_1, game_map=HALIGTREE)
-    IfInsideMap(OR_1, game_map=VOLCANO_MANOR)
-    IfConditionTrue(MAIN, input_condition=OR_1)
-    SkipLinesIfPlayerNotInOwnWorld(1)
-    EnableNetworkFlag(220)
+    OR_1.Add(InsideMap(game_map=STORMVEIL_CASTLE))
+    OR_1.Add(InsideMap(game_map=LEYNDELL_ROYAL_CAPITAL))
+    OR_1.Add(InsideMap(game_map=(12, 0, 0, 0)))
+    OR_1.Add(InsideMap(game_map=CRUMBLING_FARUM_AZULA))
+    OR_1.Add(InsideMap(game_map=RAYA_LUCARIA))
+    OR_1.Add(InsideMap(game_map=HALIGTREE))
+    OR_1.Add(InsideMap(game_map=VOLCANO_MANOR))
+    
+    MAIN.Await(OR_1)
+    
+    if PlayerInOwnWorld():
+        EnableNetworkFlag(220)
     EnableFlag(221)
-    IfInsideMap(OR_2, game_map=STORMVEIL_CASTLE)
-    IfInsideMap(OR_2, game_map=LEYNDELL_ROYAL_CAPITAL)
-    IfInsideMap(OR_2, game_map=(12, 0, 0, 0))
-    IfInsideMap(OR_2, game_map=CRUMBLING_FARUM_AZULA)
-    IfInsideMap(OR_2, game_map=RAYA_LUCARIA)
-    IfInsideMap(OR_2, game_map=HALIGTREE)
-    IfInsideMap(OR_2, game_map=VOLCANO_MANOR)
-    IfConditionFalse(MAIN, input_condition=OR_2)
+    OR_2.Add(InsideMap(game_map=STORMVEIL_CASTLE))
+    OR_2.Add(InsideMap(game_map=LEYNDELL_ROYAL_CAPITAL))
+    OR_2.Add(InsideMap(game_map=(12, 0, 0, 0)))
+    OR_2.Add(InsideMap(game_map=CRUMBLING_FARUM_AZULA))
+    OR_2.Add(InsideMap(game_map=RAYA_LUCARIA))
+    OR_2.Add(InsideMap(game_map=HALIGTREE))
+    OR_2.Add(InsideMap(game_map=VOLCANO_MANOR))
+    
+    MAIN.Await(not OR_2)
+    
     Restart()
 
 
 @RestartOnRest(720)
 def Event_720(_, flag: uint, value: int):
     """Event 720"""
-    EndIfFlagEnabled(flag)
-    IfPlayerInOwnWorld(AND_1)
-    IfTrueFlagCountGreaterThanOrEqual(AND_1, FlagType.Absolute, flag_range=(190, 199), value=value)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if FlagEnabled(flag):
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(EnabledFlagCount(FlagType.Absolute, flag_range=(190, 199)) >= value)
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(flag)
 
 
 @RestartOnRest(730)
 def Event_730(_, flag: uint, value: int):
     """Event 730"""
-    EndIfFlagEnabled(flag)
-    IfPlayerInOwnWorld(AND_1)
-    IfTrueFlagCountGreaterThanOrEqual(AND_1, FlagType.Absolute, flag_range=(170, 179), value=value)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if FlagEnabled(flag):
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(EnabledFlagCount(FlagType.Absolute, flag_range=(170, 179)) >= value)
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(flag)
 
 
@@ -1872,19 +1957,20 @@ def Event_740():
 def Event_750():
     """Event 750"""
     DisableNetworkSync()
-    EndIfFlagDisabled(9295)
+    if FlagDisabled(9295):
+        return
     DisableFlag(9295)
-    ForceAnimation(PLAYER, 60456, unknown2=1.0)
+    ForceAnimation(PLAYER, 60456)
 
 
 @RestartOnRest(810)
 def Event_810():
     """Event 810"""
-    IfTimeOfDay(OR_1, earliest=(5, 30, 0), latest=(11, 59, 59))
+    OR_1.Add(TimeOfDayInRange(earliest=(5, 30, 0), latest=(11, 59, 59)))
     GotoIfConditionTrue(Label.L1, input_condition=OR_1)
-    IfTimeOfDay(OR_2, earliest=(12, 0, 0), latest=(19, 59, 59))
+    OR_2.Add(TimeOfDayInRange(earliest=(12, 0, 0), latest=(19, 59, 59)))
     GotoIfConditionTrue(Label.L2, input_condition=OR_2)
-    IfTimeOfDay(OR_3, earliest=(20, 0, 0), latest=(5, 29, 59))
+    OR_3.Add(TimeOfDayInRange(earliest=(20, 0, 0), latest=(5, 29, 59)))
     GotoIfConditionTrue(Label.L3, input_condition=OR_3)
 
     # --- Label 1 --- #
@@ -1892,8 +1978,10 @@ def Event_810():
     EnableFlag(530)
     DisableFlag(531)
     DisableFlag(532)
-    IfTimeOfDay(AND_1, earliest=(6, 0, 0), latest=(11, 59, 59))
-    IfConditionFalse(MAIN, input_condition=AND_1)
+    AND_1.Add(TimeOfDayInRange(earliest=(6, 0, 0), latest=(11, 59, 59)))
+    
+    MAIN.Await(not AND_1)
+    
     Restart()
 
     # --- Label 2 --- #
@@ -1901,8 +1989,10 @@ def Event_810():
     DisableFlag(530)
     EnableFlag(531)
     DisableFlag(532)
-    IfTimeOfDay(AND_2, earliest=(12, 0, 0), latest=(19, 59, 59))
-    IfConditionFalse(MAIN, input_condition=AND_2)
+    AND_2.Add(TimeOfDayInRange(earliest=(12, 0, 0), latest=(19, 59, 59)))
+    
+    MAIN.Await(not AND_2)
+    
     Restart()
 
     # --- Label 3 --- #
@@ -1910,22 +2000,28 @@ def Event_810():
     DisableFlag(530)
     DisableFlag(531)
     EnableFlag(532)
-    IfTimeOfDay(AND_3, earliest=(20, 0, 0), latest=(5, 59, 59))
-    IfConditionFalse(MAIN, input_condition=AND_3)
+    AND_3.Add(TimeOfDayInRange(earliest=(20, 0, 0), latest=(5, 59, 59)))
+    
+    MAIN.Await(not AND_3)
+    
     Restart()
 
 
 @ContinueOnRest(820)
-def Event_820(_, flag: uint, hours: char):
+def Event_820(_, flag: uint, weather: char):
     """Event 820"""
     DisableNetworkSync()
     DisableFlag(flag)
-    IfUnknownCondition_31(AND_1, hours=hours, unknown1=0.0, unknown2=0)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    AND_1.Add(WeatherState(weather=weather, unk_4_8=0.0, unk_8_12=0.0))
+    
+    MAIN.Await(AND_1)
+    
     WaitFrames(frames=1)
     EnableFlag(flag)
-    IfUnknownCondition_31(AND_2, hours=hours, unknown1=0.0, unknown2=0)
-    IfConditionFalse(MAIN, input_condition=AND_2)
+    AND_2.Add(WeatherState(weather=weather, unk_4_8=0.0, unk_8_12=0.0))
+    
+    MAIN.Await(not AND_2)
+    
     WaitFrames(frames=1)
     Restart()
 
@@ -1934,25 +2030,25 @@ def Event_820(_, flag: uint, hours: char):
 def Event_839():
     """Event 839"""
     DisableNetworkSync()
-    IfUnknownCondition_31(OR_1, hours=5, unknown1=0.0, unknown2=0)
+    OR_1.Add(WeatherState(weather=Weather.Cloudless, unk_4_8=0.0, unk_8_12=0.0))
     GotoIfConditionTrue(Label.L0, input_condition=OR_1)
-    IfUnknownCondition_31(OR_2, hours=0, unknown1=0.0, unknown2=0)
-    IfUnknownCondition_31(OR_2, hours=6, unknown1=0.0, unknown2=0)
-    IfUnknownCondition_31(OR_2, hours=7, unknown1=0.0, unknown2=0)
+    OR_2.Add(WeatherState(weather=Weather.Default, unk_4_8=0.0, unk_8_12=0.0))
+    OR_2.Add(WeatherState(weather=Weather.FlatClouds, unk_4_8=0.0, unk_8_12=0.0))
+    OR_2.Add(WeatherState(weather=Weather.PuffyClouds, unk_4_8=0.0, unk_8_12=0.0))
     GotoIfConditionTrue(Label.L1, input_condition=OR_2)
-    IfUnknownCondition_31(OR_3, hours=1, unknown1=0.0, unknown2=0)
-    IfUnknownCondition_31(OR_3, hours=8, unknown1=0.0, unknown2=0)
-    IfUnknownCondition_31(OR_3, hours=3, unknown1=0.0, unknown2=0)
-    IfUnknownCondition_31(OR_3, hours=15, unknown1=0.0, unknown2=0)
+    OR_3.Add(WeatherState(weather=Weather.Rain, unk_4_8=0.0, unk_8_12=0.0))
+    OR_3.Add(WeatherState(weather=Weather.RainyClouds, unk_4_8=0.0, unk_8_12=0.0))
+    OR_3.Add(WeatherState(weather=Weather.WindyRain, unk_4_8=0.0, unk_8_12=0.0))
+    OR_3.Add(WeatherState(weather=Weather.RainyHeavyFog, unk_4_8=0.0, unk_8_12=0.0))
     GotoIfConditionTrue(Label.L2, input_condition=OR_3)
-    IfUnknownCondition_31(OR_4, hours=2, unknown1=0.0, unknown2=0)
-    IfUnknownCondition_31(OR_4, hours=10, unknown1=0.0, unknown2=0)
+    OR_4.Add(WeatherState(weather=Weather.Snow, unk_4_8=0.0, unk_8_12=0.0))
+    OR_4.Add(WeatherState(weather=Weather.HeavySnow, unk_4_8=0.0, unk_8_12=0.0))
     GotoIfConditionTrue(Label.L3, input_condition=OR_4)
-    IfUnknownCondition_31(OR_5, hours=4, unknown1=0.0, unknown2=0)
-    IfUnknownCondition_31(OR_5, hours=11, unknown1=0.0, unknown2=0)
+    OR_5.Add(WeatherState(weather=Weather.Fog, unk_4_8=0.0, unk_8_12=0.0))
+    OR_5.Add(WeatherState(weather=Weather.HeavyFog, unk_4_8=0.0, unk_8_12=0.0))
     GotoIfConditionTrue(Label.L4, input_condition=OR_5)
-    IfUnknownCondition_31(OR_6, hours=9, unknown1=0.0, unknown2=0)
-    IfUnknownCondition_31(OR_6, hours=12, unknown1=0.0, unknown2=0)
+    OR_6.Add(WeatherState(weather=Weather.WindyFog, unk_4_8=0.0, unk_8_12=0.0))
+    OR_6.Add(WeatherState(weather=Weather.WindyPuffyClouds, unk_4_8=0.0, unk_8_12=0.0))
     GotoIfConditionTrue(Label.L5, input_condition=OR_6)
     DisableFlag(570)
     DisableFlag(571)
@@ -1971,8 +2067,10 @@ def Event_839():
     DisableFlag(573)
     DisableFlag(574)
     DisableFlag(575)
-    IfUnknownCondition_31(OR_10, hours=5, unknown1=0.0, unknown2=0)
-    IfConditionFalse(MAIN, input_condition=OR_10)
+    OR_10.Add(WeatherState(weather=Weather.Cloudless, unk_4_8=0.0, unk_8_12=0.0))
+    
+    MAIN.Await(not OR_10)
+    
     Restart()
 
     # --- Label 1 --- #
@@ -1983,10 +2081,12 @@ def Event_839():
     DisableFlag(573)
     DisableFlag(574)
     DisableFlag(575)
-    IfUnknownCondition_31(OR_11, hours=0, unknown1=0.0, unknown2=0)
-    IfUnknownCondition_31(OR_11, hours=6, unknown1=0.0, unknown2=0)
-    IfUnknownCondition_31(OR_11, hours=7, unknown1=0.0, unknown2=0)
-    IfConditionFalse(MAIN, input_condition=OR_11)
+    OR_11.Add(WeatherState(weather=Weather.Default, unk_4_8=0.0, unk_8_12=0.0))
+    OR_11.Add(WeatherState(weather=Weather.FlatClouds, unk_4_8=0.0, unk_8_12=0.0))
+    OR_11.Add(WeatherState(weather=Weather.PuffyClouds, unk_4_8=0.0, unk_8_12=0.0))
+    
+    MAIN.Await(not OR_11)
+    
     Restart()
 
     # --- Label 2 --- #
@@ -1997,11 +2097,13 @@ def Event_839():
     DisableFlag(573)
     DisableFlag(574)
     DisableFlag(575)
-    IfUnknownCondition_31(OR_12, hours=1, unknown1=0.0, unknown2=0)
-    IfUnknownCondition_31(OR_12, hours=8, unknown1=0.0, unknown2=0)
-    IfUnknownCondition_31(OR_12, hours=3, unknown1=0.0, unknown2=0)
-    IfUnknownCondition_31(OR_12, hours=15, unknown1=0.0, unknown2=0)
-    IfConditionFalse(MAIN, input_condition=OR_12)
+    OR_12.Add(WeatherState(weather=Weather.Rain, unk_4_8=0.0, unk_8_12=0.0))
+    OR_12.Add(WeatherState(weather=Weather.RainyClouds, unk_4_8=0.0, unk_8_12=0.0))
+    OR_12.Add(WeatherState(weather=Weather.WindyRain, unk_4_8=0.0, unk_8_12=0.0))
+    OR_12.Add(WeatherState(weather=Weather.RainyHeavyFog, unk_4_8=0.0, unk_8_12=0.0))
+    
+    MAIN.Await(not OR_12)
+    
     Restart()
 
     # --- Label 3 --- #
@@ -2012,9 +2114,11 @@ def Event_839():
     EnableFlag(573)
     DisableFlag(574)
     DisableFlag(575)
-    IfUnknownCondition_31(OR_13, hours=2, unknown1=0.0, unknown2=0)
-    IfUnknownCondition_31(OR_13, hours=10, unknown1=0.0, unknown2=0)
-    IfConditionFalse(MAIN, input_condition=OR_13)
+    OR_13.Add(WeatherState(weather=Weather.Snow, unk_4_8=0.0, unk_8_12=0.0))
+    OR_13.Add(WeatherState(weather=Weather.HeavySnow, unk_4_8=0.0, unk_8_12=0.0))
+    
+    MAIN.Await(not OR_13)
+    
     Restart()
 
     # --- Label 4 --- #
@@ -2025,9 +2129,11 @@ def Event_839():
     DisableFlag(573)
     EnableFlag(574)
     DisableFlag(575)
-    IfUnknownCondition_31(OR_14, hours=4, unknown1=0.0, unknown2=0)
-    IfUnknownCondition_31(OR_14, hours=11, unknown1=0.0, unknown2=0)
-    IfConditionFalse(MAIN, input_condition=OR_14)
+    OR_14.Add(WeatherState(weather=Weather.Fog, unk_4_8=0.0, unk_8_12=0.0))
+    OR_14.Add(WeatherState(weather=Weather.HeavyFog, unk_4_8=0.0, unk_8_12=0.0))
+    
+    MAIN.Await(not OR_14)
+    
     Restart()
 
     # --- Label 5 --- #
@@ -2038,18 +2144,21 @@ def Event_839():
     DisableFlag(573)
     DisableFlag(574)
     EnableFlag(575)
-    IfUnknownCondition_31(OR_15, hours=9, unknown1=0.0, unknown2=0)
-    IfUnknownCondition_31(OR_15, hours=12, unknown1=0.0, unknown2=0)
-    IfConditionFalse(MAIN, input_condition=OR_15)
+    OR_15.Add(WeatherState(weather=Weather.WindyFog, unk_4_8=0.0, unk_8_12=0.0))
+    OR_15.Add(WeatherState(weather=Weather.WindyPuffyClouds, unk_4_8=0.0, unk_8_12=0.0))
+    
+    MAIN.Await(not OR_15)
+    
     Restart()
 
 
 @ContinueOnRest(840)
 def Event_840():
     """Event 840"""
-    IfCharacterHasSpecialEffect(MAIN, PLAYER, 8998)
-    UnknownMap_12(unk_0_4=3.0)
-    Unknown_2003_68(unknown1=0, unknown2=1.0, unknown3=0)
+    MAIN.Await(CharacterHasSpecialEffect(PLAYER, 8998))
+    
+    DeactivateGparamOverride(change_duration=3.0)
+    SetWeather(weather=Weather.Default, duration=1.0, immediate_change=False)
     RemoveSpecialEffect(PLAYER, 8998)
     Wait(1.2000000476837158)
     Restart()
@@ -2058,25 +2167,31 @@ def Event_840():
 @RestartOnRest(841)
 def Event_841():
     """Event 841"""
-    IfCharacterHasSpecialEffect(MAIN, PLAYER, 8990)
-    Unknown_2003_68(unknown1=4, unknown2=-1.0, unknown3=0)
-    IfCharacterDoesNotHaveSpecialEffect(MAIN, PLAYER, 8990)
+    MAIN.Await(CharacterHasSpecialEffect(PLAYER, 8990))
+    
+    SetWeather(weather=Weather.Fog, duration=-1.0, immediate_change=False)
+    
+    MAIN.Await(CharacterDoesNotHaveSpecialEffect(PLAYER, 8990))
+    
     Restart()
 
 
 @ContinueOnRest(900)
 def Event_900():
     """Event 900"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     GotoIfFlagDisabled(Label.L0, flag=9116)
     GotoIfFlagDisabled(Label.L1, flag=118)
     End()
 
     # --- Label 0 --- #
     DefineLabel(0)
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, 9116)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(9116))
+    
+    MAIN.Await(AND_1)
+    
     AddSpecialEffect(PLAYER, 4280)
     AddSpecialEffect(PLAYER, 4282)
     SetRespawnPoint(respawn_point=13002020)
@@ -2085,23 +2200,24 @@ def Event_900():
 
     # --- Label 1 --- #
     DefineLabel(1)
-    IfCharacterDead(AND_2, PLAYER)
-    EndIfConditionTrue(input_condition=AND_2)
+    AND_2.Add(CharacterDead(PLAYER))
+    if AND_2:
+        return
     SetBackreadStateAlternate(13000800, False)
     EnableFlag(300)
     EnableFlag(301)
     DisableFlag(302)
     EnableFlag(71300)
     DisableFlagRange((71100, 71110))
-    Unknown_2003_80(unk_0_4=0)
-    UnknownCutscene_11(
+    DisableLoadingScreenText()
+    PlayCutsceneToPlayerAndWarp(
         cutscene_id=13000050,
         cutscene_flags=0,
         move_to_region=11052010,
-        map_base_id=11050000,
+        map_id=11050000,
         player_id=10000,
-        unknown2=13000,
-        unknown3=1,
+        unk_20_24=13000,
+        unk_24_25=True,
     )
     WaitFramesAfterCutscene(frames=1)
     SetRespawnPoint(respawn_point=11052010)
@@ -2112,13 +2228,16 @@ def Event_900():
 @RestartOnRest(901)
 def Event_901():
     """Event 901"""
-    EndIfFlagEnabled(110)
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, 1054539205)
-    IfFlagEnabled(OR_1, 1054539200)
-    IfFlagEnabled(OR_1, 1054539201)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if FlagEnabled(110):
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(1054539205))
+    OR_1.Add(FlagEnabled(1054539200))
+    OR_1.Add(FlagEnabled(1054539201))
+    AND_1.Add(OR_1)
+    
+    MAIN.Await(AND_1)
+    
     Wait(2.0)
     EnableFlag(9001)
     WaitFrames(frames=1)
@@ -2128,21 +2247,21 @@ def Event_901():
     EnableFlag(302)
     EnableFlag(9021)
     GotoIfFlagEnabled(Label.L1, flag=1054539201)
-    IfUnknownCondition_34(OR_10, unk_4_8=150000, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=640000, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=910000, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=760000, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=440000, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=470000, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=820000, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=1010000, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=1760000, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=1770000, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=1780000, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=2010000, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=330100, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=1810100, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=1811100, unk_8_12=-1)
+    OR_10.Add(PlayerHasHeadArmorEquipped(armor=150000))
+    OR_10.Add(PlayerHasHeadArmorEquipped(armor=640000))
+    OR_10.Add(PlayerHasHeadArmorEquipped(armor=910000))
+    OR_10.Add(PlayerHasHeadArmorEquipped(armor=760000))
+    OR_10.Add(PlayerHasHeadArmorEquipped(armor=440000))
+    OR_10.Add(PlayerHasHeadArmorEquipped(armor=470000))
+    OR_10.Add(PlayerHasHeadArmorEquipped(armor=820000))
+    OR_10.Add(PlayerHasHeadArmorEquipped(armor=1010000))
+    OR_10.Add(PlayerHasHeadArmorEquipped(armor=1760000))
+    OR_10.Add(PlayerHasHeadArmorEquipped(armor=1770000))
+    OR_10.Add(PlayerHasHeadArmorEquipped(armor=1780000))
+    OR_10.Add(PlayerHasHeadArmorEquipped(armor=2010000))
+    OR_10.Add(PlayerHasBodyArmorEquipped(armor=330100))
+    OR_10.Add(PlayerHasBodyArmorEquipped(armor=1810100))
+    OR_10.Add(PlayerHasBodyArmorEquipped(armor=1811100))
     SkipLinesIfConditionTrue(3, OR_10)
     EnableFlag(780010)
     DisableFlag(780011)
@@ -2150,30 +2269,26 @@ def Event_901():
     DisableFlag(780010)
     EnableFlag(780011)
     EnableFlag(111)
-    UnknownCutscene_12(
+    PlayCutsceneToPlayerAndWarpWithWeatherAndTime(
         cutscene_id=60540000,
         cutscene_flags=0,
-        respawn_point=13002500,
-        move_to_region=13000000,
+        move_to_region=13002500,
+        map_id=13000000,
         player_id=10000,
         unk_20_24=0,
-        unk_24_25=0,
-        unk_25_26=1,
-        unk_26_27=0,
-        unk_28_32=300.0,
-        unk_32_36=0,
+        unk_24_25=False,
+        change_weather=True,
+        weather_duration=300.0,
     )
     WaitFramesAfterCutscene(frames=1)
-    UnknownCutscene_10(
+    PlayCutsceneToPlayerWithWeatherAndTime(
         cutscene_id=60540010,
         cutscene_flags=CutsceneFlags.Unknown16,
         player_id=10000,
-        hours=1,
-        unknown1=0,
-        unknown2=300.0,
-        unknown3=1,
-        unknown4=6,
-        unknown5=30,
+        change_weather=True,
+        weather_duration=300.0,
+        change_time=True,
+        time=(6, 30, 0),
     )
     WaitFramesAfterCutscene(frames=1)
     DisableFlag(9001)
@@ -2183,30 +2298,26 @@ def Event_901():
     DefineLabel(1)
     DisableFlag(9000)
     EnableFlag(112)
-    UnknownCutscene_12(
+    PlayCutsceneToPlayerAndWarpWithWeatherAndTime(
         cutscene_id=60540001,
         cutscene_flags=0,
-        respawn_point=13002500,
-        move_to_region=13000000,
+        move_to_region=13002500,
+        map_id=13000000,
         player_id=10000,
         unk_20_24=0,
-        unk_24_25=0,
-        unk_25_26=1,
-        unk_26_27=0,
-        unk_28_32=200.0,
-        unk_32_36=0,
+        unk_24_25=False,
+        change_weather=True,
+        weather_duration=200.0,
     )
     WaitFramesAfterCutscene(frames=1)
-    UnknownCutscene_10(
+    PlayCutsceneToPlayerWithWeatherAndTime(
         cutscene_id=60540011,
         cutscene_flags=CutsceneFlags.Unknown16,
         player_id=10000,
-        hours=1,
-        unknown1=0,
-        unknown2=300.0,
-        unknown3=1,
-        unknown4=6,
-        unknown5=30,
+        change_weather=True,
+        weather_duration=300.0,
+        change_time=True,
+        time=(6, 30, 0),
     )
     WaitFramesAfterCutscene(frames=1)
     DisableFlag(9001)
@@ -2216,11 +2327,13 @@ def Event_901():
 @RestartOnRest(902)
 def Event_902():
     """Event 902"""
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, 1054539206)
-    IfFlagEnabled(AND_1, 110)
-    IfInsideMap(AND_1, game_map=SOUTHEAST_MOUNTAINTOPS_SE_NW)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(1054539206))
+    AND_1.Add(FlagEnabled(110))
+    AND_1.Add(InsideMap(game_map=SOUTHEAST_MOUNTAINTOPS_SE_NW))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(9001)
     WaitFrames(frames=1)
     SetRespawnPoint(respawn_point=13002500)
@@ -2229,21 +2342,21 @@ def Event_902():
     EnableFlag(302)
     EnableFlag(9021)
     GotoIfFlagEnabled(Label.L1, flag=112)
-    IfUnknownCondition_34(OR_10, unk_4_8=150000, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=640000, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=910000, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=760000, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=440000, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=470000, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=820000, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=1010000, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=1760000, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=1770000, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=1780000, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=2010000, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=330100, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=1810100, unk_8_12=-1)
-    IfUnknownCondition_34(OR_10, unk_4_8=1811100, unk_8_12=-1)
+    OR_10.Add(PlayerHasHeadArmorEquipped(armor=150000))
+    OR_10.Add(PlayerHasHeadArmorEquipped(armor=640000))
+    OR_10.Add(PlayerHasHeadArmorEquipped(armor=910000))
+    OR_10.Add(PlayerHasHeadArmorEquipped(armor=760000))
+    OR_10.Add(PlayerHasHeadArmorEquipped(armor=440000))
+    OR_10.Add(PlayerHasHeadArmorEquipped(armor=470000))
+    OR_10.Add(PlayerHasHeadArmorEquipped(armor=820000))
+    OR_10.Add(PlayerHasHeadArmorEquipped(armor=1010000))
+    OR_10.Add(PlayerHasHeadArmorEquipped(armor=1760000))
+    OR_10.Add(PlayerHasHeadArmorEquipped(armor=1770000))
+    OR_10.Add(PlayerHasHeadArmorEquipped(armor=1780000))
+    OR_10.Add(PlayerHasHeadArmorEquipped(armor=2010000))
+    OR_10.Add(PlayerHasBodyArmorEquipped(armor=330100))
+    OR_10.Add(PlayerHasBodyArmorEquipped(armor=1810100))
+    OR_10.Add(PlayerHasBodyArmorEquipped(armor=1811100))
     SkipLinesIfConditionTrue(3, OR_10)
     EnableFlag(780010)
     DisableFlag(780011)
@@ -2251,30 +2364,26 @@ def Event_902():
     DisableFlag(780010)
     EnableFlag(780011)
     EnableFlag(111)
-    UnknownCutscene_12(
+    PlayCutsceneToPlayerAndWarpWithWeatherAndTime(
         cutscene_id=60540000,
         cutscene_flags=0,
-        respawn_point=13002500,
-        move_to_region=13000000,
+        move_to_region=13002500,
+        map_id=13000000,
         player_id=10000,
         unk_20_24=0,
-        unk_24_25=0,
-        unk_25_26=1,
-        unk_26_27=0,
-        unk_28_32=300.0,
-        unk_32_36=0,
+        unk_24_25=False,
+        change_weather=True,
+        weather_duration=300.0,
     )
     WaitFramesAfterCutscene(frames=1)
-    UnknownCutscene_10(
+    PlayCutsceneToPlayerWithWeatherAndTime(
         cutscene_id=60540010,
         cutscene_flags=CutsceneFlags.Unknown16,
         player_id=10000,
-        hours=1,
-        unknown1=0,
-        unknown2=300.0,
-        unknown3=1,
-        unknown4=6,
-        unknown5=30,
+        change_weather=True,
+        weather_duration=300.0,
+        change_time=True,
+        time=(6, 30, 0),
     )
     WaitFramesAfterCutscene(frames=1)
     DisableFlag(9001)
@@ -2284,30 +2393,26 @@ def Event_902():
     DefineLabel(1)
     DisableFlag(9000)
     EnableFlag(112)
-    UnknownCutscene_12(
+    PlayCutsceneToPlayerAndWarpWithWeatherAndTime(
         cutscene_id=60540001,
         cutscene_flags=0,
-        respawn_point=13002500,
-        move_to_region=13000000,
+        move_to_region=13002500,
+        map_id=13000000,
         player_id=10000,
         unk_20_24=0,
-        unk_24_25=0,
-        unk_25_26=1,
-        unk_26_27=0,
-        unk_28_32=200.0,
-        unk_32_36=0,
+        unk_24_25=False,
+        change_weather=True,
+        weather_duration=200.0,
     )
     WaitFramesAfterCutscene(frames=1)
-    UnknownCutscene_10(
+    PlayCutsceneToPlayerWithWeatherAndTime(
         cutscene_id=60540011,
         cutscene_flags=CutsceneFlags.Unknown16,
         player_id=10000,
-        hours=1,
-        unknown1=0,
-        unknown2=300.0,
-        unknown3=1,
-        unknown4=6,
-        unknown5=30,
+        change_weather=True,
+        weather_duration=300.0,
+        change_time=True,
+        time=(6, 30, 0),
     )
     WaitFramesAfterCutscene(frames=1)
     DisableFlag(9001)
@@ -2317,30 +2422,38 @@ def Event_902():
 @ContinueOnRest(910)
 def Event_910():
     """Event 910"""
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(9415)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(2052):
+        return
+    if FlagEnabled(9415):
+        return
     GotoIfFlagDisabled(Label.L0, flag=310)
-    SkipLinesIfFlagEnabled(2, 9416)
-    SetAreaWelcomeMessageState(state=False)
-    EnableFlag(9416)
-    UnknownTimer_04(
-        hours=22,
-        minutes=30,
-        seconds=0,
-        unknown1=0,
-        unknown2=0,
-        unknown3=0,
-        unknown4=0,
-        unknown5=0,
-        unknown6=0,
+    if FlagDisabled(9416):
+        SetAreaWelcomeMessageState(state=False)
+        EnableFlag(9416)
+    SetCurrentTime(
+        time=(22, 30, 0),
+        fade_transition=False,
+        wait_for_completion=False,
+        show_clock=False,
+        clock_start_delay=0.0,
+        clock_change_duration=0.0,
+        clock_finish_delay=0.0,
     )
-    Unknown_2003_68(unknown1=5, unknown2=-1.0, unknown3=1)
+    SetWeather(weather=Weather.Cloudless, duration=-1.0, immediate_change=True)
     AddSpecialEffect(PLAYER, 4280)
     AddSpecialEffect(PLAYER, 4282)
-    IfFlagEnabled(OR_13, 76422)
-    IfFlagEnabled(OR_13, 73016)
-    IfConditionTrue(MAIN, input_condition=OR_13)
-    Unknown_2003_68(unknown1=5, unknown2=15000.0, unknown3=0)
+    if FlagDisabled(9417):
+        Wait(0.5)
+        DisplayDialog(text=30140, anchor_entity=0, display_distance=5.0, number_buttons=NumberButtons.OneButton)
+        EnableFlag(9417)
+    OR_13.Add(FlagEnabled(76422))
+    OR_13.Add(FlagEnabled(73016))
+    
+    MAIN.Await(OR_13)
+    
+    SetWeather(weather=Weather.Cloudless, duration=15000.0, immediate_change=False)
     AddSpecialEffect(PLAYER, 4281)
     AddSpecialEffect(PLAYER, 4283)
     EnableFlag(9415)
@@ -2348,20 +2461,23 @@ def Event_910():
 
     # --- Label 0 --- #
     DefineLabel(0)
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, 9130)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(9130))
+    
+    MAIN.Await(AND_1)
+    
     AddSpecialEffect(PLAYER, 4280)
     AddSpecialEffect(PLAYER, 4282)
     SetRespawnPoint(respawn_point=1052382020)
     SaveRequest()
-    SkipLinesIfFlagEnabled(2, 9414)
-    EnableFlag(9414)
-    Wait(10.0)
-    IfCharacterDead(AND_2, PLAYER)
-    EndIfConditionTrue(input_condition=AND_2)
-    IfInsideMap(OR_9, game_map=SOUTHEAST_CAELID_NW_NW)
-    IfInsideMap(OR_9, game_map=SOUTH_CAELID_NE_SE)
+    if FlagDisabled(9414):
+        EnableFlag(9414)
+        Wait(10.0)
+    AND_2.Add(CharacterDead(PLAYER))
+    if AND_2:
+        return
+    OR_9.Add(MapLoaded(game_map=SOUTHEAST_CAELID_NW_NW))
+    OR_9.Add(MapLoaded(game_map=SOUTH_CAELID_NE_SE))
     GotoIfConditionTrue(Label.L9, input_condition=OR_9)
     WarpToMap(game_map=SOUTH_CAELID_NE_SE, player_start=1051382020)
     End()
@@ -2370,34 +2486,30 @@ def Event_910():
     DefineLabel(9)
     EnableFlag(9001)
     WaitFrames(frames=1)
-    Unknown_2003_80(unk_0_4=0)
-    IfInsideMap(OR_10, game_map=SOUTHEAST_CAELID_NW_NW)
+    DisableLoadingScreenText()
+    OR_10.Add(MapLoaded(game_map=SOUTHEAST_CAELID_NW_NW))
     SkipLinesIfConditionTrue(2, OR_10)
-    UnknownCutscene_10(
+    PlayCutsceneToPlayerWithWeatherAndTime(
         cutscene_id=60510011,
         cutscene_flags=0,
         player_id=10000,
-        hours=1,
-        unknown1=5,
-        unknown2=-1.0,
-        unknown3=1,
-        unknown4=22,
-        unknown5=30,
+        change_weather=True,
+        weather=Weather.Cloudless,
+        change_time=True,
+        time=(22, 30, 0),
     )
     SkipLines(1)
-    UnknownCutscene_10(
+    PlayCutsceneToPlayerWithWeatherAndTime(
         cutscene_id=60510010,
         cutscene_flags=0,
         player_id=10000,
-        hours=1,
-        unknown1=5,
-        unknown2=-1.0,
-        unknown3=1,
-        unknown4=22,
-        unknown5=30,
+        change_weather=True,
+        weather=Weather.Cloudless,
+        change_time=True,
+        time=(22, 30, 0),
     )
     WaitFramesAfterCutscene(frames=1)
-    Unknown_2004_77(unknown1=1.0, unknown2=0.0, unknown3=0, unknown4=-1.0)
+    FadeToBlack(strength=1.0, duration=0.0, freeze_player=False, freeze_player_delay=-1.0)
     EnableFlag(310)
     SetNetworkInteractionState(state=False)
     End()
@@ -2406,11 +2518,15 @@ def Event_910():
 @RestartOnRest(920)
 def Event_920():
     """Event 920"""
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(116)
-    IfPlayerInOwnWorld(AND_1)
-    IfCharacterHasSpecialEffect(AND_1, PLAYER, 502190)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(116):
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(CharacterHasSpecialEffect(PLAYER, 502190))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(116)
     DisableFlag(7500)
     DisableFlag(9431)
@@ -2419,23 +2535,30 @@ def Event_920():
 @RestartOnRest(921)
 def Event_921():
     """Event 921"""
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(116)
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, 108)
-    IfFlagEnabled(AND_1, 9120)
-    IfCharacterInsideRegion(AND_1, character=PLAYER, region=13002050)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(116):
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(108))
+    AND_1.Add(FlagEnabled(9120))
+    AND_1.Add(CharacterInsideRegion(character=PLAYER, region=13002050))
+    
+    MAIN.Await(AND_1)
+    
     AddSpecialEffect(PLAYER, 4230)
 
 
 @RestartOnRest(922)
 def Event_922():
     """Event 922"""
-    EndIfPlayerNotInOwnWorld()
-    IfPlayerInOwnWorld(AND_1)
-    IfCharacterHasSpecialEffect(AND_1, PLAYER, 502160)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(CharacterHasSpecialEffect(PLAYER, 502160))
+    
+    MAIN.Await(AND_1)
+    
     WarpToMap(game_map=MOHGWYN_PALACE, player_start=12052021)
 
 
@@ -2448,99 +2571,101 @@ def Event_930(
     action_button_id: int,
     item: int,
     item_1: int,
-    map_base_id: uint,
+    map_id: int,
     move_to_region: uint,
     move_to_region_1: uint,
-    unknown2: int,
+    unk_20_24: int,
 ):
     """Event 930"""
-    IfTryingToCreateSession(OR_1)
-    IfTryingToJoinSession(OR_1)
-    IfConditionFalse(AND_1, input_condition=OR_1)
-    IfPlayerInOwnWorld(AND_1)
-    SkipLinesIfValueEqual(1, left=item, right=0)
-    IfPlayerHasGood(AND_1, item)
-    SkipLinesIfValueEqual(1, left=item_1, right=0)
-    IfPlayerHasGood(AND_1, item_1)
-    IfActionButtonParamActivated(AND_1, action_button_id=action_button_id, entity=entity)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    OR_1.Add(Multiplayer())
+    OR_1.Add(MultiplayerPending())
+    AND_1.Add(not OR_1)
+    AND_1.Add(PlayerInOwnWorld())
+    if ValueNotEqual(left=item, right=0):
+        AND_1.Add(PlayerHasGood(item))
+    if ValueNotEqual(left=item_1, right=0):
+        AND_1.Add(PlayerHasGood(item_1))
+    AND_1.Add(ActionButtonParamActivated(action_button_id=action_button_id, entity=entity))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(9021)
-    UnknownCutscene_11(
+    PlayCutsceneToPlayerAndWarp(
         cutscene_id=cutscene_id,
         cutscene_flags=0,
         move_to_region=move_to_region,
-        map_base_id=map_base_id,
+        map_id=map_id,
         player_id=10000,
-        unknown2=unknown2,
-        unknown3=0,
+        unk_20_24=unk_20_24,
+        unk_24_25=False,
     )
     WaitFramesAfterCutscene(frames=1)
     PlayCutscene(cutscene_id_1, cutscene_flags=CutsceneFlags.Unknown16, player_id=10000)
     WaitFramesAfterCutscene(frames=1)
     Restart()
     SkipLinesIfPlayerNotInOwnWorld(2)
-    UnknownCutscene_11(
+    PlayCutsceneToPlayerAndWarp(
         cutscene_id=cutscene_id,
         cutscene_flags=0,
         move_to_region=move_to_region,
-        map_base_id=map_base_id,
+        map_id=map_id,
         player_id=10000,
-        unknown2=0,
-        unknown3=0,
+        unk_20_24=0,
+        unk_24_25=False,
     )
     SkipLines(4)
-    SkipLinesIfUnsignedEqual(2, left=move_to_region_1, right=0)
-    UnknownCutscene_11(
-        cutscene_id=cutscene_id,
-        cutscene_flags=0,
-        move_to_region=move_to_region_1,
-        map_base_id=map_base_id,
-        player_id=10000,
-        unknown2=0,
-        unknown3=0,
-    )
-    SkipLines(1)
-    UnknownCutscene_11(
-        cutscene_id=cutscene_id,
-        cutscene_flags=0,
-        move_to_region=move_to_region,
-        map_base_id=map_base_id,
-        player_id=10000,
-        unknown2=0,
-        unknown3=0,
-    )
+    if UnsignedNotEqual(left=move_to_region_1, right=0):
+        PlayCutsceneToPlayerAndWarp(
+            cutscene_id=cutscene_id,
+            cutscene_flags=0,
+            move_to_region=move_to_region_1,
+            map_id=map_id,
+            player_id=10000,
+            unk_20_24=0,
+            unk_24_25=False,
+        )
+    else:
+        PlayCutsceneToPlayerAndWarp(
+            cutscene_id=cutscene_id,
+            cutscene_flags=0,
+            move_to_region=move_to_region,
+            map_id=map_id,
+            player_id=10000,
+            unk_20_24=0,
+            unk_24_25=False,
+        )
     WaitFramesAfterCutscene(frames=1)
     SkipLinesIfPlayerNotInOwnWorld(2)
-    UnknownCutscene_11(
+    PlayCutsceneToPlayerAndWarp(
         cutscene_id=cutscene_id_1,
         cutscene_flags=CutsceneFlags.Unknown16,
         move_to_region=move_to_region,
-        map_base_id=map_base_id,
+        map_id=map_id,
         player_id=10000,
-        unknown2=0,
-        unknown3=0,
+        unk_20_24=0,
+        unk_24_25=False,
     )
     SkipLines(4)
-    SkipLinesIfUnsignedEqual(2, left=move_to_region_1, right=0)
-    UnknownCutscene_11(
-        cutscene_id=cutscene_id_1,
-        cutscene_flags=CutsceneFlags.Unknown16,
-        move_to_region=move_to_region_1,
-        map_base_id=map_base_id,
-        player_id=10000,
-        unknown2=0,
-        unknown3=0,
-    )
-    SkipLines(1)
-    UnknownCutscene_11(
-        cutscene_id=cutscene_id_1,
-        cutscene_flags=CutsceneFlags.Unknown16,
-        move_to_region=move_to_region,
-        map_base_id=map_base_id,
-        player_id=10000,
-        unknown2=0,
-        unknown3=0,
-    )
+    if UnsignedNotEqual(left=move_to_region_1, right=0):
+        PlayCutsceneToPlayerAndWarp(
+            cutscene_id=cutscene_id_1,
+            cutscene_flags=CutsceneFlags.Unknown16,
+            move_to_region=move_to_region_1,
+            map_id=map_id,
+            player_id=10000,
+            unk_20_24=0,
+            unk_24_25=False,
+        )
+    else:
+        PlayCutsceneToPlayerAndWarp(
+            cutscene_id=cutscene_id_1,
+            cutscene_flags=CutsceneFlags.Unknown16,
+            move_to_region=move_to_region,
+            map_id=map_id,
+            player_id=10000,
+            unk_20_24=0,
+            unk_24_25=False,
+        )
     WaitFramesAfterCutscene(frames=1)
     Restart()
 
@@ -2551,33 +2676,34 @@ def Event_936(
     cutscene_id: int,
     cutscene_id_1: int,
     flag: uint,
-    move_to_region: int,
-    respawn_point: int,
+    map_id: int,
+    move_to_region: uint,
     unk_20_24: int,
-    unk_25_26: uchar,
-    unk_26_27: uchar,
-    unk_28_32: float,
+    change_weather: uchar,
+    weather: char,
+    weather_duration: float,
 ):
     """Event 936"""
-    IfTryingToCreateSession(OR_1)
-    IfTryingToJoinSession(OR_1)
-    IfConditionFalse(AND_1, input_condition=OR_1)
-    IfFlagEnabled(AND_1, flag)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    OR_1.Add(Multiplayer())
+    OR_1.Add(MultiplayerPending())
+    AND_1.Add(not OR_1)
+    AND_1.Add(FlagEnabled(flag))
+    
+    MAIN.Await(AND_1)
+    
     DisableFlag(flag)
     EnableFlag(9021)
-    UnknownCutscene_12(
+    PlayCutsceneToPlayerAndWarpWithWeatherAndTime(
         cutscene_id=cutscene_id,
         cutscene_flags=0,
-        respawn_point=respawn_point,
         move_to_region=move_to_region,
+        map_id=map_id,
         player_id=10000,
         unk_20_24=unk_20_24,
-        unk_24_25=0,
-        unk_25_26=unk_25_26,
-        unk_26_27=unk_26_27,
-        unk_28_32=unk_28_32,
-        unk_32_36=0,
+        unk_24_25=False,
+        change_weather=change_weather,
+        weather=weather,
+        weather_duration=weather_duration,
     )
     WaitFramesAfterCutscene(frames=1)
     PlayCutscene(cutscene_id_1, cutscene_flags=CutsceneFlags.Unknown16, player_id=10000)
@@ -2589,50 +2715,57 @@ def Event_936(
 def Event_945():
     """Event 945"""
     DisableNetworkSync()
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(105)
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, 104)
-    IfConditionTrue(MAIN, input_condition=AND_1)
-    WarpToMap(game_map=ROUNDTABLE_HOLD, player_start=11100980, unknown1=61000)
-    DisableThisSlotFlag()
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(105):
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(104))
+    
+    MAIN.Await(AND_1)
+    
+    WarpToMap(game_map=ROUNDTABLE_HOLD, player_start=11100980, unk_8_12=61000)
+    EnableThisSlotFlag()
 
 
 @RestartOnRest(950)
 def Event_950():
     """Event 950"""
-    EndIfFlagEnabled(951)
-    IfPlayerInOwnWorld(AND_10)
-    IfEntityWithinDistance(AND_1, entity=PLAYER, other_entity=1042361950, radius=2.0)
-    IfConditionTrue(OR_11, input_condition=AND_1)
-    IfEntityWithinDistance(AND_2, entity=PLAYER, other_entity=1043371950, radius=2.0)
-    IfConditionTrue(OR_11, input_condition=AND_2)
-    IfEntityWithinDistance(AND_3, entity=PLAYER, other_entity=1046381950, radius=2.0)
-    IfConditionTrue(OR_11, input_condition=AND_3)
-    IfEntityWithinDistance(AND_4, entity=PLAYER, other_entity=1041381950, radius=2.0)
-    IfConditionTrue(OR_11, input_condition=AND_4)
-    IfEntityWithinDistance(AND_5, entity=PLAYER, other_entity=1044351950, radius=2.0)
-    IfConditionTrue(OR_11, input_condition=AND_5)
-    IfEntityWithinDistance(AND_6, entity=PLAYER, other_entity=1042371950, radius=2.0)
-    IfConditionTrue(OR_11, input_condition=AND_6)
-    IfEntityWithinDistance(AND_7, entity=PLAYER, other_entity=1044341950, radius=2.0)
-    IfConditionTrue(OR_11, input_condition=AND_7)
-    IfEntityWithinDistance(AND_8, entity=PLAYER, other_entity=1043351950, radius=2.0)
-    IfConditionTrue(OR_11, input_condition=AND_8)
-    IfConditionTrue(AND_11, input_condition=OR_11)
-    IfFlagEnabled(AND_11, 9000)
-    IfEventValueEqual(AND_12, flag=955, bit_count=3, value=2)
-    IfEventValueGreaterThanOrEqual(AND_13, flag=955, bit_count=3, value=3)
-    IfConditionTrue(AND_14, input_condition=AND_10)
-    IfConditionTrue(AND_14, input_condition=AND_11)
-    IfConditionTrue(OR_14, input_condition=AND_12)
-    IfConditionTrue(OR_14, input_condition=AND_13)
-    IfConditionTrue(OR_14, input_condition=AND_2)
-    IfConditionTrue(OR_14, input_condition=AND_6)
-    IfConditionTrue(AND_14, input_condition=OR_14)
-    IfConditionTrue(OR_15, input_condition=AND_14)
-    IfTimeElapsed(OR_15, seconds=3.0)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    if FlagEnabled(951):
+        return
+    AND_10.Add(PlayerInOwnWorld())
+    AND_1.Add(EntityWithinDistance(entity=PLAYER, other_entity=1042361950, radius=2.0))
+    OR_11.Add(AND_1)
+    AND_2.Add(EntityWithinDistance(entity=PLAYER, other_entity=1043371950, radius=2.0))
+    OR_11.Add(AND_2)
+    AND_3.Add(EntityWithinDistance(entity=PLAYER, other_entity=1046381950, radius=2.0))
+    OR_11.Add(AND_3)
+    AND_4.Add(EntityWithinDistance(entity=PLAYER, other_entity=1041381950, radius=2.0))
+    OR_11.Add(AND_4)
+    AND_5.Add(EntityWithinDistance(entity=PLAYER, other_entity=1044351950, radius=2.0))
+    OR_11.Add(AND_5)
+    AND_6.Add(EntityWithinDistance(entity=PLAYER, other_entity=1042371950, radius=2.0))
+    OR_11.Add(AND_6)
+    AND_7.Add(EntityWithinDistance(entity=PLAYER, other_entity=1044341950, radius=2.0))
+    OR_11.Add(AND_7)
+    AND_8.Add(EntityWithinDistance(entity=PLAYER, other_entity=1043351950, radius=2.0))
+    OR_11.Add(AND_8)
+    AND_11.Add(OR_11)
+    AND_11.Add(FlagEnabled(9000))
+    AND_12.Add(EventValue(flag=955, bit_count=3) == 2)
+    AND_13.Add(EventValue(flag=955, bit_count=3) >= 3)
+    AND_14.Add(AND_10)
+    AND_14.Add(AND_11)
+    OR_14.Add(AND_12)
+    OR_14.Add(AND_13)
+    OR_14.Add(AND_2)
+    OR_14.Add(AND_6)
+    AND_14.Add(OR_14)
+    OR_15.Add(AND_14)
+    OR_15.Add(TimeElapsed(seconds=3.0))
+    
+    MAIN.Await(OR_15)
+    
     EndIfFinishedConditionFalse(input_condition=AND_14)
     EnableFlag(9001)
     WaitFrames(frames=1)
@@ -2655,8 +2788,8 @@ def Event_950():
     PlayCutscene(60420000, cutscene_flags=CutsceneFlags.Unknown16, player_id=10000)
     WaitFramesAfterCutscene(frames=1)
     Move(PLAYER, destination=1042362980, destination_type=CoordEntityType.Region, short_move=True)
-    UnknownCamera_4(unknown1=5.0, unknown2=-150.6300048828125)
-    Unknown_2003_68(unknown1=0, unknown2=300.0, unknown3=1)
+    SetCameraAngle(x_angle=5.0, y_angle=-150.6300048828125)
+    SetWeather(weather=Weather.Default, duration=300.0, immediate_change=True)
     Goto(Label.L10)
 
     # --- Label 2 --- #
@@ -2664,8 +2797,8 @@ def Event_950():
     PlayCutscene(60420001, cutscene_flags=CutsceneFlags.Unknown16, player_id=10000)
     WaitFramesAfterCutscene(frames=1)
     Move(PLAYER, destination=1043372980, destination_type=CoordEntityType.Region, short_move=True)
-    UnknownCamera_4(unknown1=5.0, unknown2=108.81999969482422)
-    Unknown_2003_68(unknown1=0, unknown2=300.0, unknown3=1)
+    SetCameraAngle(x_angle=5.0, y_angle=108.81999969482422)
+    SetWeather(weather=Weather.Default, duration=300.0, immediate_change=True)
     Goto(Label.L10)
 
     # --- Label 3 --- #
@@ -2673,8 +2806,8 @@ def Event_950():
     PlayCutscene(60420002, cutscene_flags=CutsceneFlags.Unknown16, player_id=10000)
     WaitFramesAfterCutscene(frames=1)
     Move(PLAYER, destination=1046382980, destination_type=CoordEntityType.Region, short_move=True)
-    UnknownCamera_4(unknown1=5.0, unknown2=-155.69000244140625)
-    Unknown_2003_68(unknown1=0, unknown2=300.0, unknown3=1)
+    SetCameraAngle(x_angle=5.0, y_angle=-155.69000244140625)
+    SetWeather(weather=Weather.Default, duration=300.0, immediate_change=True)
     Goto(Label.L10)
 
     # --- Label 4 --- #
@@ -2682,8 +2815,8 @@ def Event_950():
     PlayCutscene(60420003, cutscene_flags=CutsceneFlags.Unknown16, player_id=10000)
     WaitFramesAfterCutscene(frames=1)
     Move(PLAYER, destination=1041382980, destination_type=CoordEntityType.Region, short_move=True)
-    UnknownCamera_4(unknown1=5.0, unknown2=49.130001068115234)
-    Unknown_2003_68(unknown1=0, unknown2=300.0, unknown3=1)
+    SetCameraAngle(x_angle=5.0, y_angle=49.130001068115234)
+    SetWeather(weather=Weather.Default, duration=300.0, immediate_change=True)
     Goto(Label.L10)
 
     # --- Label 5 --- #
@@ -2691,8 +2824,8 @@ def Event_950():
     PlayCutscene(60420004, cutscene_flags=CutsceneFlags.Unknown16, player_id=10000)
     WaitFramesAfterCutscene(frames=1)
     Move(PLAYER, destination=1044352980, destination_type=CoordEntityType.Region, short_move=True)
-    UnknownCamera_4(unknown1=5.0, unknown2=-144.17999267578125)
-    Unknown_2003_68(unknown1=0, unknown2=300.0, unknown3=1)
+    SetCameraAngle(x_angle=5.0, y_angle=-144.17999267578125)
+    SetWeather(weather=Weather.Default, duration=300.0, immediate_change=True)
     Goto(Label.L10)
 
     # --- Label 6 --- #
@@ -2700,8 +2833,8 @@ def Event_950():
     PlayCutscene(60420005, cutscene_flags=CutsceneFlags.Unknown16, player_id=10000)
     WaitFramesAfterCutscene(frames=1)
     Move(PLAYER, destination=1042372980, destination_type=CoordEntityType.Region, short_move=True)
-    UnknownCamera_4(unknown1=4.019999980926514, unknown2=18.700000762939453)
-    Unknown_2003_68(unknown1=0, unknown2=300.0, unknown3=1)
+    SetCameraAngle(x_angle=4.019999980926514, y_angle=18.700000762939453)
+    SetWeather(weather=Weather.Default, duration=300.0, immediate_change=True)
     Goto(Label.L10)
 
     # --- Label 7 --- #
@@ -2709,8 +2842,8 @@ def Event_950():
     PlayCutscene(60420006, cutscene_flags=CutsceneFlags.Unknown16, player_id=10000)
     WaitFramesAfterCutscene(frames=1)
     Move(PLAYER, destination=1044342980, destination_type=CoordEntityType.Region, short_move=True)
-    UnknownCamera_4(unknown1=5.0, unknown2=17.420000076293945)
-    Unknown_2003_68(unknown1=0, unknown2=300.0, unknown3=1)
+    SetCameraAngle(x_angle=5.0, y_angle=17.420000076293945)
+    SetWeather(weather=Weather.Default, duration=300.0, immediate_change=True)
     Goto(Label.L10)
 
     # --- Label 8 --- #
@@ -2718,8 +2851,8 @@ def Event_950():
     PlayCutscene(60420007, cutscene_flags=CutsceneFlags.Unknown16, player_id=10000)
     WaitFramesAfterCutscene(frames=1)
     Move(PLAYER, destination=1043352980, destination_type=CoordEntityType.Region, short_move=True)
-    UnknownCamera_4(unknown1=5.0, unknown2=-126.7699966430664)
-    Unknown_2003_68(unknown1=0, unknown2=300.0, unknown3=1)
+    SetCameraAngle(x_angle=5.0, y_angle=-126.7699966430664)
+    SetWeather(weather=Weather.Default, duration=300.0, immediate_change=True)
     Goto(Label.L10)
 
     # --- Label 10 --- #
@@ -2730,12 +2863,17 @@ def Event_950():
 @ContinueOnRest(960)
 def Event_960(_, flag: uint):
     """Event 960"""
-    EndIfFlagEnabled(951)
-    EndIfFlagEnabled(flag)
-    IfFlagEnabled(OR_1, 951)
-    IfFlagEnabled(OR_1, flag)
-    IfConditionTrue(MAIN, input_condition=OR_1)
-    EndIfFlagEnabled(951)
+    if FlagEnabled(951):
+        return
+    if FlagEnabled(flag):
+        return
+    OR_1.Add(FlagEnabled(951))
+    OR_1.Add(FlagEnabled(flag))
+    
+    MAIN.Await(OR_1)
+    
+    if FlagEnabled(951):
+        return
     IncrementEventValue(955, bit_count=3, max_value=7)
 
 
@@ -2743,17 +2881,21 @@ def Event_960(_, flag: uint):
 def Event_970():
     """Event 970"""
     DisableNetworkSync()
-    EndIfFlagEnabled(82001)
-    IfPlayerInOwnWorld(AND_1)
-    IfInsideMap(AND_1, game_map=(12, -1, -1, -1))
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if FlagEnabled(82001):
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(InsideMap(game_map=(12, -1, -1, -1)))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(82001)
 
 
 @RestartOnRest(980)
 def Event_980():
     """Event 980"""
-    EndIfFlagEnabled(1099002980)
+    if FlagEnabled(1099002980):
+        return
     DisableFlagRange((9800, 9809))
     EnableRandomFlagInRange(flag_range=(9800, 9809))
     EnableFlag(1099002980)
@@ -2766,18 +2908,22 @@ def Event_1020():
     GotoIfFlagEnabled(Label.L0, flag=9021)
     GotoIfFlagEnabled(Label.L1, flag=1099002100)
     SuppressSoundEvent(sound_id=6, unk_4_8=0, suppression_active=False)
-    IfFlagEnabled(OR_1, 1099002100)
-    IfFlagEnabled(OR_1, 9021)
-    IfConditionTrue(MAIN, input_condition=OR_1)
+    OR_1.Add(FlagEnabled(1099002100))
+    OR_1.Add(FlagEnabled(9021))
+    
+    MAIN.Await(OR_1)
+    
     Restart()
 
     # --- Label 0 --- #
     DefineLabel(0)
     SuppressSoundEvent(sound_id=6, unk_4_8=0, suppression_active=True)
     DisableFlag(9021)
-    IfTimeElapsed(OR_2, seconds=1.0)
-    IfFlagEnabled(OR_2, 1099002100)
-    IfConditionTrue(MAIN, input_condition=OR_2)
+    OR_2.Add(TimeElapsed(seconds=1.0))
+    OR_2.Add(FlagEnabled(1099002100))
+    
+    MAIN.Await(OR_2)
+    
     GotoIfFlagEnabled(Label.L2, flag=1099002100)
     Restart()
 
@@ -2787,7 +2933,9 @@ def Event_1020():
 
     # --- Label 2 --- #
     DefineLabel(2)
-    IfFlagDisabled(MAIN, 1099002100)
+    
+    MAIN.Await(FlagDisabled(1099002100))
+    
     WaitFrames(frames=1)
     Restart()
 
@@ -2796,225 +2944,263 @@ def Event_1020():
 def Event_1030():
     """Event 1030"""
     DisableNetworkSync()
-    IfUnknownFlagCheck_37(OR_1, flag=1000, state=FlagSetting.On)
-    IfUnknownFlagCheck_37(OR_1, flag=2000, state=FlagSetting.On)
-    IfUnknownFlagCheck_37(OR_1, flag=2010, state=FlagSetting.On)
-    IfUnknownFlagCheck_37(OR_1, flag=2020, state=FlagSetting.On)
-    IfUnknownFlagCheck_37(OR_1, flag=3000, state=FlagSetting.On)
-    IfUnknownFlagCheck_37(OR_1, flag=3010, state=FlagSetting.On)
-    IfUnknownFlagCheck_37(OR_1, flag=3020, state=FlagSetting.On)
-    IfUnknownFlagCheck_37(OR_1, flag=3021, state=FlagSetting.On)
-    IfUnknownFlagCheck_37(OR_1, flag=3022, state=FlagSetting.On)
-    IfUnknownFlagCheck_37(OR_1, flag=4000, state=FlagSetting.On)
-    IfUnknownFlagCheck_37(OR_1, flag=4001, state=FlagSetting.On)
-    IfUnknownFlagCheck_37(OR_1, flag=4010, state=FlagSetting.On)
-    IfUnknownFlagCheck_37(OR_1, flag=4020, state=FlagSetting.On)
-    IfUnknownFlagCheck_37(OR_1, flag=5000, state=FlagSetting.On)
-    IfUnknownFlagCheck_37(OR_1, flag=5010, state=FlagSetting.On)
-    IfUnknownFlagCheck_37(OR_1, flag=5011, state=FlagSetting.On)
-    IfUnknownFlagCheck_37(OR_1, flag=6000, state=FlagSetting.On)
-    IfUnknownFlagCheck_37(OR_2, flag=620000100, state=FlagSetting.On)
-    IfUnknownFlagCheck_37(OR_2, flag=620000101, state=FlagSetting.On)
-    IfConditionTrue(AND_2, input_condition=OR_2)
-    IfFlagDisabled(AND_2, 9840)
-    IfConditionTrue(OR_1, input_condition=AND_2)
-    IfConditionTrue(MAIN, input_condition=OR_1)
-    IfUnknownFlagCheck_37(OR_5, flag=1000, state=FlagSetting.Off)
+    OR_1.Add(WeatherLotActive(weather_lot_param_id=1000))
+    OR_1.Add(WeatherLotActive(weather_lot_param_id=2000))
+    OR_1.Add(WeatherLotActive(weather_lot_param_id=2010))
+    OR_1.Add(WeatherLotActive(weather_lot_param_id=2020))
+    OR_1.Add(WeatherLotActive(weather_lot_param_id=3000))
+    OR_1.Add(WeatherLotActive(weather_lot_param_id=3010))
+    OR_1.Add(WeatherLotActive(weather_lot_param_id=3020))
+    OR_1.Add(WeatherLotActive(weather_lot_param_id=3021))
+    OR_1.Add(WeatherLotActive(weather_lot_param_id=3022))
+    OR_1.Add(WeatherLotActive(weather_lot_param_id=4000))
+    OR_1.Add(WeatherLotActive(weather_lot_param_id=4001))
+    OR_1.Add(WeatherLotActive(weather_lot_param_id=4010))
+    OR_1.Add(WeatherLotActive(weather_lot_param_id=4020))
+    OR_1.Add(WeatherLotActive(weather_lot_param_id=5000))
+    OR_1.Add(WeatherLotActive(weather_lot_param_id=5010))
+    OR_1.Add(WeatherLotActive(weather_lot_param_id=5011))
+    OR_1.Add(WeatherLotActive(weather_lot_param_id=6000))
+    OR_2.Add(WeatherLotActive(weather_lot_param_id=620000100))
+    OR_2.Add(WeatherLotActive(weather_lot_param_id=620000101))
+    AND_2.Add(OR_2)
+    AND_2.Add(FlagDisabled(9840))
+    OR_1.Add(AND_2)
+    
+    MAIN.Await(OR_1)
+    
+    OR_5.Add(WeatherLotInactive(weather_lot_param_id=1000))
     GotoIfConditionTrue(Label.L1, input_condition=OR_5)
-    Unknown_2003_68(unknown1=5, unknown2=-1.0, unknown3=0)
+    SetWeather(weather=Weather.Cloudless, duration=-1.0, immediate_change=False)
     Wait(1.0)
-    IfUnknownFlagCheck_37(MAIN, flag=1000, state=FlagSetting.Off)
-    Unknown_2003_68(unknown1=-1, unknown2=-1.0, unknown3=0)
+    
+    MAIN.Await(WeatherLotInactive(weather_lot_param_id=1000))
+    
+    SetWeather(weather=Weather.Null, duration=-1.0, immediate_change=False)
     Wait(1.0)
     Restart()
 
     # --- Label 1 --- #
     DefineLabel(1)
-    IfUnknownFlagCheck_37(OR_6, flag=2000, state=FlagSetting.Off)
+    OR_6.Add(WeatherLotInactive(weather_lot_param_id=2000))
     GotoIfConditionTrue(Label.L1, input_condition=OR_6)
-    Unknown_2003_68(unknown1=0, unknown2=-1.0, unknown3=0)
+    SetWeather(weather=Weather.Default, duration=-1.0, immediate_change=False)
     Wait(1.0)
-    IfUnknownFlagCheck_37(MAIN, flag=2000, state=FlagSetting.Off)
-    Unknown_2003_68(unknown1=-1, unknown2=-1.0, unknown3=0)
+    
+    MAIN.Await(WeatherLotInactive(weather_lot_param_id=2000))
+    
+    SetWeather(weather=Weather.Null, duration=-1.0, immediate_change=False)
     Wait(1.0)
     Restart()
 
     # --- Label 1 --- #
     DefineLabel(1)
-    IfUnknownFlagCheck_37(OR_7, flag=2010, state=FlagSetting.Off)
+    OR_7.Add(WeatherLotInactive(weather_lot_param_id=2010))
     GotoIfConditionTrue(Label.L1, input_condition=OR_7)
-    Unknown_2003_68(unknown1=6, unknown2=-1.0, unknown3=0)
+    SetWeather(weather=Weather.FlatClouds, duration=-1.0, immediate_change=False)
     Wait(1.0)
-    IfUnknownFlagCheck_37(MAIN, flag=2010, state=FlagSetting.Off)
-    Unknown_2003_68(unknown1=-1, unknown2=-1.0, unknown3=0)
+    
+    MAIN.Await(WeatherLotInactive(weather_lot_param_id=2010))
+    
+    SetWeather(weather=Weather.Null, duration=-1.0, immediate_change=False)
     Wait(1.0)
     Restart()
 
     # --- Label 1 --- #
     DefineLabel(1)
-    IfUnknownFlagCheck_37(OR_8, flag=2020, state=FlagSetting.Off)
+    OR_8.Add(WeatherLotInactive(weather_lot_param_id=2020))
     GotoIfConditionTrue(Label.L1, input_condition=OR_8)
-    Unknown_2003_68(unknown1=7, unknown2=-1.0, unknown3=0)
+    SetWeather(weather=Weather.PuffyClouds, duration=-1.0, immediate_change=False)
     Wait(1.0)
-    IfUnknownFlagCheck_37(MAIN, flag=2020, state=FlagSetting.Off)
-    Unknown_2003_68(unknown1=-1, unknown2=-1.0, unknown3=0)
+    
+    MAIN.Await(WeatherLotInactive(weather_lot_param_id=2020))
+    
+    SetWeather(weather=Weather.Null, duration=-1.0, immediate_change=False)
     Wait(1.0)
     Restart()
 
     # --- Label 1 --- #
     DefineLabel(1)
-    IfUnknownFlagCheck_37(OR_10, flag=3000, state=FlagSetting.Off)
+    OR_10.Add(WeatherLotInactive(weather_lot_param_id=3000))
     GotoIfConditionTrue(Label.L1, input_condition=OR_10)
-    Unknown_2003_68(unknown1=1, unknown2=-1.0, unknown3=0)
+    SetWeather(weather=Weather.Rain, duration=-1.0, immediate_change=False)
     Wait(1.0)
-    IfUnknownFlagCheck_37(MAIN, flag=3000, state=FlagSetting.Off)
-    Unknown_2003_68(unknown1=-1, unknown2=-1.0, unknown3=0)
+    
+    MAIN.Await(WeatherLotInactive(weather_lot_param_id=3000))
+    
+    SetWeather(weather=Weather.Null, duration=-1.0, immediate_change=False)
     Wait(1.0)
     Restart()
 
     # --- Label 1 --- #
     DefineLabel(1)
-    IfUnknownFlagCheck_37(OR_11, flag=3010, state=FlagSetting.Off)
+    OR_11.Add(WeatherLotInactive(weather_lot_param_id=3010))
     GotoIfConditionTrue(Label.L1, input_condition=OR_11)
-    Unknown_2003_68(unknown1=8, unknown2=-1.0, unknown3=0)
+    SetWeather(weather=Weather.RainyClouds, duration=-1.0, immediate_change=False)
     Wait(1.0)
-    IfUnknownFlagCheck_37(MAIN, flag=3010, state=FlagSetting.Off)
-    Unknown_2003_68(unknown1=-1, unknown2=-1.0, unknown3=0)
+    
+    MAIN.Await(WeatherLotInactive(weather_lot_param_id=3010))
+    
+    SetWeather(weather=Weather.Null, duration=-1.0, immediate_change=False)
     Wait(1.0)
     Restart()
 
     # --- Label 1 --- #
     DefineLabel(1)
-    IfUnknownFlagCheck_37(OR_12, flag=3020, state=FlagSetting.Off)
+    OR_12.Add(WeatherLotInactive(weather_lot_param_id=3020))
     GotoIfConditionTrue(Label.L1, input_condition=OR_12)
-    Unknown_2003_68(unknown1=3, unknown2=-1.0, unknown3=0)
+    SetWeather(weather=Weather.WindyRain, duration=-1.0, immediate_change=False)
     Wait(1.0)
-    IfUnknownFlagCheck_37(MAIN, flag=3020, state=FlagSetting.Off)
-    Unknown_2003_68(unknown1=-1, unknown2=-1.0, unknown3=0)
+    
+    MAIN.Await(WeatherLotInactive(weather_lot_param_id=3020))
+    
+    SetWeather(weather=Weather.Null, duration=-1.0, immediate_change=False)
     Wait(1.0)
     Restart()
 
     # --- Label 1 --- #
     DefineLabel(1)
-    IfUnknownFlagCheck_37(OR_13, flag=3021, state=FlagSetting.Off)
+    OR_13.Add(WeatherLotInactive(weather_lot_param_id=3021))
     GotoIfConditionTrue(Label.L1, input_condition=OR_13)
-    Unknown_2003_68(unknown1=9, unknown2=-1.0, unknown3=0)
+    SetWeather(weather=Weather.WindyFog, duration=-1.0, immediate_change=False)
     Wait(1.0)
-    IfUnknownFlagCheck_37(MAIN, flag=3021, state=FlagSetting.Off)
-    Unknown_2003_68(unknown1=-1, unknown2=-1.0, unknown3=0)
+    
+    MAIN.Await(WeatherLotInactive(weather_lot_param_id=3021))
+    
+    SetWeather(weather=Weather.Null, duration=-1.0, immediate_change=False)
     Wait(1.0)
     Restart()
 
     # --- Label 1 --- #
     DefineLabel(1)
-    IfUnknownFlagCheck_37(OR_14, flag=3022, state=FlagSetting.Off)
+    OR_14.Add(WeatherLotInactive(weather_lot_param_id=3022))
     GotoIfConditionTrue(Label.L1, input_condition=OR_14)
-    Unknown_2003_68(unknown1=17, unknown2=-1.0, unknown3=0)
+    SetWeather(weather=Weather.ScatteredRain, duration=-1.0, immediate_change=False)
     Wait(1.0)
-    IfUnknownFlagCheck_37(MAIN, flag=3022, state=FlagSetting.Off)
-    Unknown_2003_68(unknown1=-1, unknown2=-1.0, unknown3=0)
+    
+    MAIN.Await(WeatherLotInactive(weather_lot_param_id=3022))
+    
+    SetWeather(weather=Weather.Null, duration=-1.0, immediate_change=False)
     Wait(1.0)
     Restart()
 
     # --- Label 1 --- #
     DefineLabel(1)
-    IfUnknownFlagCheck_37(AND_5, flag=4000, state=FlagSetting.Off)
+    AND_5.Add(WeatherLotInactive(weather_lot_param_id=4000))
     GotoIfConditionTrue(Label.L1, input_condition=AND_5)
-    Unknown_2003_68(unknown1=2, unknown2=-1.0, unknown3=0)
+    SetWeather(weather=Weather.Snow, duration=-1.0, immediate_change=False)
     Wait(1.0)
-    IfUnknownFlagCheck_37(MAIN, flag=4000, state=FlagSetting.Off)
-    Unknown_2003_68(unknown1=-1, unknown2=-1.0, unknown3=0)
+    
+    MAIN.Await(WeatherLotInactive(weather_lot_param_id=4000))
+    
+    SetWeather(weather=Weather.Null, duration=-1.0, immediate_change=False)
     Wait(1.0)
     Restart()
 
     # --- Label 1 --- #
     DefineLabel(1)
-    IfUnknownFlagCheck_37(AND_6, flag=4001, state=FlagSetting.Off)
+    AND_6.Add(WeatherLotInactive(weather_lot_param_id=4001))
     GotoIfConditionTrue(Label.L1, input_condition=AND_6)
-    Unknown_2003_68(unknown1=18, unknown2=-1.0, unknown3=0)
+    SetWeather(weather=Weather.Unknown18, duration=-1.0, immediate_change=False)
     Wait(1.0)
-    IfUnknownFlagCheck_37(MAIN, flag=4001, state=FlagSetting.Off)
-    Unknown_2003_68(unknown1=-1, unknown2=-1.0, unknown3=0)
+    
+    MAIN.Await(WeatherLotInactive(weather_lot_param_id=4001))
+    
+    SetWeather(weather=Weather.Null, duration=-1.0, immediate_change=False)
     Wait(1.0)
     Restart()
 
     # --- Label 1 --- #
     DefineLabel(1)
-    IfUnknownFlagCheck_37(AND_7, flag=4010, state=FlagSetting.Off)
+    AND_7.Add(WeatherLotInactive(weather_lot_param_id=4010))
     GotoIfConditionTrue(Label.L1, input_condition=AND_7)
-    Unknown_2003_68(unknown1=10, unknown2=-1.0, unknown3=0)
+    SetWeather(weather=Weather.HeavySnow, duration=-1.0, immediate_change=False)
     Wait(1.0)
-    IfUnknownFlagCheck_37(MAIN, flag=4010, state=FlagSetting.Off)
-    Unknown_2003_68(unknown1=-1, unknown2=-1.0, unknown3=0)
+    
+    MAIN.Await(WeatherLotInactive(weather_lot_param_id=4010))
+    
+    SetWeather(weather=Weather.Null, duration=-1.0, immediate_change=False)
     Wait(1.0)
     Restart()
 
     # --- Label 1 --- #
     DefineLabel(1)
-    IfUnknownFlagCheck_37(AND_8, flag=4020, state=FlagSetting.Off)
+    AND_8.Add(WeatherLotInactive(weather_lot_param_id=4020))
     GotoIfConditionTrue(Label.L1, input_condition=AND_8)
-    Unknown_2003_68(unknown1=16, unknown2=-1.0, unknown3=0)
+    SetWeather(weather=Weather.SnowyHeavyFog, duration=-1.0, immediate_change=False)
     Wait(1.0)
-    IfUnknownFlagCheck_37(MAIN, flag=4020, state=FlagSetting.Off)
-    Unknown_2003_68(unknown1=-1, unknown2=-1.0, unknown3=0)
+    
+    MAIN.Await(WeatherLotInactive(weather_lot_param_id=4020))
+    
+    SetWeather(weather=Weather.Null, duration=-1.0, immediate_change=False)
     Wait(1.0)
     Restart()
 
     # --- Label 1 --- #
     DefineLabel(1)
-    IfUnknownFlagCheck_37(AND_10, flag=5000, state=FlagSetting.Off)
+    AND_10.Add(WeatherLotInactive(weather_lot_param_id=5000))
     GotoIfConditionTrue(Label.L1, input_condition=AND_10)
-    Unknown_2003_68(unknown1=4, unknown2=-1.0, unknown3=0)
+    SetWeather(weather=Weather.Fog, duration=-1.0, immediate_change=False)
     Wait(1.0)
-    IfUnknownFlagCheck_37(MAIN, flag=5000, state=FlagSetting.Off)
-    Unknown_2003_68(unknown1=-1, unknown2=-1.0, unknown3=0)
+    
+    MAIN.Await(WeatherLotInactive(weather_lot_param_id=5000))
+    
+    SetWeather(weather=Weather.Null, duration=-1.0, immediate_change=False)
     Wait(1.0)
     Restart()
 
     # --- Label 1 --- #
     DefineLabel(1)
-    IfUnknownFlagCheck_37(AND_11, flag=5010, state=FlagSetting.Off)
+    AND_11.Add(WeatherLotInactive(weather_lot_param_id=5010))
     GotoIfConditionTrue(Label.L1, input_condition=AND_11)
-    Unknown_2003_68(unknown1=11, unknown2=-1.0, unknown3=0)
+    SetWeather(weather=Weather.HeavyFog, duration=-1.0, immediate_change=False)
     Wait(1.0)
-    IfUnknownFlagCheck_37(MAIN, flag=5010, state=FlagSetting.Off)
-    Unknown_2003_68(unknown1=-1, unknown2=-1.0, unknown3=0)
+    
+    MAIN.Await(WeatherLotInactive(weather_lot_param_id=5010))
+    
+    SetWeather(weather=Weather.Null, duration=-1.0, immediate_change=False)
     Wait(1.0)
     Restart()
 
     # --- Label 1 --- #
     DefineLabel(1)
-    IfUnknownFlagCheck_37(AND_12, flag=5011, state=FlagSetting.Off)
+    AND_12.Add(WeatherLotInactive(weather_lot_param_id=5011))
     GotoIfConditionTrue(Label.L1, input_condition=AND_12)
-    Unknown_2003_68(unknown1=15, unknown2=-1.0, unknown3=0)
+    SetWeather(weather=Weather.RainyHeavyFog, duration=-1.0, immediate_change=False)
     Wait(1.0)
-    IfUnknownFlagCheck_37(MAIN, flag=5011, state=FlagSetting.Off)
-    Unknown_2003_68(unknown1=-1, unknown2=-1.0, unknown3=0)
+    
+    MAIN.Await(WeatherLotInactive(weather_lot_param_id=5011))
+    
+    SetWeather(weather=Weather.Null, duration=-1.0, immediate_change=False)
     Wait(1.0)
     Restart()
 
     # --- Label 1 --- #
     DefineLabel(1)
-    IfUnknownFlagCheck_37(AND_14, flag=6000, state=FlagSetting.Off)
+    AND_14.Add(WeatherLotInactive(weather_lot_param_id=6000))
     GotoIfConditionTrue(Label.L1, input_condition=AND_14)
-    Unknown_2003_68(unknown1=12, unknown2=-1.0, unknown3=0)
+    SetWeather(weather=Weather.WindyPuffyClouds, duration=-1.0, immediate_change=False)
     Wait(1.0)
-    IfUnknownFlagCheck_37(MAIN, flag=6000, state=FlagSetting.Off)
-    Unknown_2003_68(unknown1=-1, unknown2=-1.0, unknown3=0)
+    
+    MAIN.Await(WeatherLotInactive(weather_lot_param_id=6000))
+    
+    SetWeather(weather=Weather.Null, duration=-1.0, immediate_change=False)
     Wait(1.0)
     Restart()
 
     # --- Label 1 --- #
     DefineLabel(1)
-    IfUnknownFlagCheck_37(AND_15, flag=620000100, state=FlagSetting.Off)
-    IfUnknownFlagCheck_37(AND_15, flag=620000101, state=FlagSetting.Off)
+    AND_15.Add(WeatherLotInactive(weather_lot_param_id=620000100))
+    AND_15.Add(WeatherLotInactive(weather_lot_param_id=620000101))
     GotoIfConditionTrue(Label.L1, input_condition=AND_15)
-    Unknown_2003_68(unknown1=0, unknown2=-1.0, unknown3=0)
+    SetWeather(weather=Weather.Default, duration=-1.0, immediate_change=False)
     Wait(1.0)
-    IfUnknownFlagCheck_37(AND_15, flag=620000100, state=FlagSetting.Off)
-    IfUnknownFlagCheck_37(AND_15, flag=620000101, state=FlagSetting.Off)
-    IfConditionTrue(MAIN, input_condition=AND_15)
-    Unknown_2003_68(unknown1=-1, unknown2=-1.0, unknown3=0)
+    AND_15.Add(WeatherLotInactive(weather_lot_param_id=620000100))
+    AND_15.Add(WeatherLotInactive(weather_lot_param_id=620000101))
+    
+    MAIN.Await(AND_15)
+    
+    SetWeather(weather=Weather.Null, duration=-1.0, immediate_change=False)
     EnableFlag(9840)
     Wait(1.0)
     Restart()
@@ -3029,57 +3215,61 @@ def Event_1030():
 def Event_1040():
     """Event 1040"""
     DisableNetworkSync()
-    DeleteObjectVFX(1060001500)
+    DeleteAssetVFX(1060001500)
     RemoveSpecialEffect(PLAYER, 4200)
     RemoveSpecialEffect(PLAYER, 4201)
-    SetUnknownVFX_06(vfx_id=-1)
-    IfTimeOfDay(AND_1, earliest=(0, 0, 0), latest=(2, 59, 59))
-    IfUnknownCondition_31(AND_1, hours=0, unknown1=0.0, unknown2=0)
-    IfInsideMap(AND_1, game_map=(60, -1, -1, -1))
-    IfConditionTrue(OR_1, input_condition=AND_1)
-    IfInsideMap(AND_2, game_map=CHAPEL_OF_ANTICIPATION)
-    IfFlagDisabled(AND_2, 102)
-    IfPlayerInOwnWorld(AND_2)
-    IfConditionTrue(OR_1, input_condition=AND_2)
-    IfMultiplayerEvent(OR_2, event_id=0)
-    IfMultiplayerEvent(OR_3, event_id=10)
-    IfMultiplayerEvent(OR_4, event_id=20)
-    IfMultiplayerEvent(OR_5, event_id=30)
-    IfMultiplayerEvent(OR_6, event_id=40)
-    IfMultiplayerEvent(OR_7, event_id=50)
-    IfMultiplayerEvent(OR_8, event_id=60)
-    IfMultiplayerEvent(OR_9, event_id=70)
-    IfMultiplayerEvent(OR_10, event_id=80)
-    IfConditionTrue(OR_15, input_condition=OR_2)
-    IfConditionTrue(OR_15, input_condition=OR_3)
-    IfConditionTrue(OR_15, input_condition=OR_4)
-    IfConditionTrue(OR_15, input_condition=OR_5)
-    IfConditionTrue(OR_15, input_condition=OR_6)
-    IfConditionTrue(OR_15, input_condition=OR_7)
-    IfConditionTrue(OR_15, input_condition=OR_8)
-    IfConditionTrue(OR_15, input_condition=OR_9)
-    IfConditionTrue(OR_15, input_condition=OR_10)
-    IfConditionTrue(OR_1, input_condition=OR_15)
-    IfFlagEnabled(OR_1, 9989)
-    IfConditionTrue(MAIN, input_condition=OR_1)
+    SetWindVFX(wind_vfx_id=-1)
+    AND_1.Add(TimeOfDayInRange(earliest=(0, 0, 0), latest=(2, 59, 59)))
+    AND_1.Add(WeatherState(weather=Weather.Default, unk_4_8=0.0, unk_8_12=0.0))
+    AND_1.Add(InsideMap(game_map=(60, -1, -1, -1)))
+    OR_1.Add(AND_1)
+    AND_2.Add(InsideMap(game_map=CHAPEL_OF_ANTICIPATION))
+    AND_2.Add(FlagDisabled(102))
+    AND_2.Add(PlayerInOwnWorld())
+    OR_1.Add(AND_2)
+    OR_2.Add(MultiplayerEvent(event_id=0))
+    OR_3.Add(MultiplayerEvent(event_id=10))
+    OR_4.Add(MultiplayerEvent(event_id=20))
+    OR_5.Add(MultiplayerEvent(event_id=30))
+    OR_6.Add(MultiplayerEvent(event_id=40))
+    OR_7.Add(MultiplayerEvent(event_id=50))
+    OR_8.Add(MultiplayerEvent(event_id=60))
+    OR_9.Add(MultiplayerEvent(event_id=70))
+    OR_10.Add(MultiplayerEvent(event_id=80))
+    OR_15.Add(OR_2)
+    OR_15.Add(OR_3)
+    OR_15.Add(OR_4)
+    OR_15.Add(OR_5)
+    OR_15.Add(OR_6)
+    OR_15.Add(OR_7)
+    OR_15.Add(OR_8)
+    OR_15.Add(OR_9)
+    OR_15.Add(OR_10)
+    OR_1.Add(OR_15)
+    OR_1.Add(FlagEnabled(9989))
+    
+    MAIN.Await(OR_1)
+    
     GotoIfFinishedConditionTrue(Label.L0, input_condition=OR_15)
     GotoIfFinishedConditionTrue(Label.L1, input_condition=AND_2)
-    SetUnknownVFX_06(vfx_id=808004)
+    SetWindVFX(wind_vfx_id=808004)
     Wait(5.0)
-    CreateObjectVFX(1060001500, vfx_id=200, model_point=806800)
+    CreateAssetVFX(1060001500, vfx_id=200, model_point=806800)
     Wait(14.0)
     AddSpecialEffect(PLAYER, 4200)
     AddSpecialEffect(PLAYER, 4201)
-    IfTimeOfDay(AND_10, earliest=(0, 0, 0), latest=(3, 29, 59))
-    IfUnknownCondition_31(AND_10, hours=0, unknown1=0.0, unknown2=0)
-    IfInsideMap(AND_10, game_map=(60, -1, -1, -1))
-    IfConditionFalse(AND_11, input_condition=AND_10)
-    IfFlagDisabled(AND_11, 9989)
-    IfConditionTrue(OR_10, input_condition=AND_11)
-    IfTimeElapsed(OR_10, seconds=300.0)
-    IfConditionTrue(MAIN, input_condition=OR_10)
-    SetUnknownVFX_06(vfx_id=-1)
-    DeleteObjectVFX(1060001500)
+    AND_10.Add(TimeOfDayInRange(earliest=(0, 0, 0), latest=(3, 29, 59)))
+    AND_10.Add(WeatherState(weather=Weather.Default, unk_4_8=0.0, unk_8_12=0.0))
+    AND_10.Add(InsideMap(game_map=(60, -1, -1, -1)))
+    AND_11.Add(not AND_10)
+    AND_11.Add(FlagDisabled(9989))
+    OR_10.Add(AND_11)
+    OR_10.Add(TimeElapsed(seconds=300.0))
+    
+    MAIN.Await(OR_10)
+    
+    SetWindVFX(wind_vfx_id=-1)
+    DeleteAssetVFX(1060001500)
     RemoveSpecialEffect(PLAYER, 4200)
     RemoveSpecialEffect(PLAYER, 4201)
     Wait(120.0)
@@ -3087,24 +3277,26 @@ def Event_1040():
 
     # --- Label 1 --- #
     DefineLabel(1)
-    SetUnknownVFX_06(vfx_id=808004)
+    SetWindVFX(wind_vfx_id=808004)
     AddSpecialEffect(PLAYER, 4200)
-    IfInsideMap(AND_12, game_map=CHAPEL_OF_ANTICIPATION)
-    IfFlagDisabled(AND_12, 102)
-    IfPlayerInOwnWorld(AND_12)
-    IfConditionFalse(MAIN, input_condition=AND_12)
-    SetUnknownVFX_06(vfx_id=-1)
+    AND_12.Add(InsideMap(game_map=CHAPEL_OF_ANTICIPATION))
+    AND_12.Add(FlagDisabled(102))
+    AND_12.Add(PlayerInOwnWorld())
+    
+    MAIN.Await(not AND_12)
+    
+    SetWindVFX(wind_vfx_id=-1)
     RemoveSpecialEffect(PLAYER, 4200)
     Wait(10.0)
     Restart()
 
     # --- Label 0 --- #
     DefineLabel(0)
-    IfInsideMap(AND_15, game_map=(60, -1, -1, -1))
+    AND_15.Add(InsideMap(game_map=(60, -1, -1, -1)))
     GotoIfConditionFalse(Label.L2, input_condition=AND_15)
-    SetUnknownVFX_06(vfx_id=808004)
+    SetWindVFX(wind_vfx_id=808004)
     Wait(5.0)
-    CreateObjectVFX(1060001500, vfx_id=200, model_point=806800)
+    CreateAssetVFX(1060001500, vfx_id=200, model_point=806800)
     Wait(14.0)
 
     # --- Label 2 --- #
@@ -3112,38 +3304,38 @@ def Event_1040():
     AddSpecialEffect(PLAYER, 4200)
     AddSpecialEffect(PLAYER, 4201)
     SkipLinesIfFinishedConditionFalse(2, input_condition=OR_2)
-    DisplayUnknownMessage_16(text=3000201, unknown2=0)
+    DisplayNetworkMessage(text=3000201, unk_4_5=False)
     Goto(Label.L15)
     SkipLinesIfFinishedConditionFalse(2, input_condition=OR_3)
-    DisplayUnknownMessage_16(text=3000211, unknown2=0)
+    DisplayNetworkMessage(text=3000211, unk_4_5=False)
     Goto(Label.L15)
     SkipLinesIfFinishedConditionFalse(2, input_condition=OR_4)
-    DisplayUnknownMessage_16(text=3000221, unknown2=0)
+    DisplayNetworkMessage(text=3000221, unk_4_5=False)
     Goto(Label.L15)
     SkipLinesIfFinishedConditionFalse(2, input_condition=OR_5)
-    DisplayUnknownMessage_16(text=3000231, unknown2=0)
+    DisplayNetworkMessage(text=3000231, unk_4_5=False)
     Goto(Label.L15)
     SkipLinesIfFinishedConditionFalse(2, input_condition=OR_6)
-    DisplayUnknownMessage_16(text=3000241, unknown2=0)
+    DisplayNetworkMessage(text=3000241, unk_4_5=False)
     Goto(Label.L15)
     SkipLinesIfFinishedConditionFalse(2, input_condition=OR_7)
-    DisplayUnknownMessage_16(text=3000251, unknown2=0)
+    DisplayNetworkMessage(text=3000251, unk_4_5=False)
     Goto(Label.L15)
     SkipLinesIfFinishedConditionFalse(2, input_condition=OR_8)
-    DisplayUnknownMessage_16(text=3000261, unknown2=0)
+    DisplayNetworkMessage(text=3000261, unk_4_5=False)
     Goto(Label.L15)
     SkipLinesIfFinishedConditionFalse(2, input_condition=OR_9)
-    DisplayUnknownMessage_16(text=3000271, unknown2=0)
+    DisplayNetworkMessage(text=3000271, unk_4_5=False)
     Goto(Label.L15)
     SkipLinesIfFinishedConditionFalse(2, input_condition=OR_10)
-    DisplayUnknownMessage_16(text=3000281, unknown2=0)
+    DisplayNetworkMessage(text=3000281, unk_4_5=False)
     Goto(Label.L15)
 
     # --- Label 15 --- #
     DefineLabel(15)
     Wait(300.0)
-    SetUnknownVFX_06(vfx_id=-1)
-    DeleteObjectVFX(1060001500)
+    SetWindVFX(wind_vfx_id=-1)
+    DeleteAssetVFX(1060001500)
     RemoveSpecialEffect(PLAYER, 4200)
     RemoveSpecialEffect(PLAYER, 4201)
     Wait(150.0)
@@ -3154,17 +3346,20 @@ def Event_1040():
 def Event_1050():
     """Event 1050"""
     DisableNetworkSync()
-    IfFlagEnabled(AND_1, 7500)
-    IfFlagDisabled(AND_2, 7500)
-    IfCharacterHasSpecialEffect(AND_2, 20000, 503315)
-    IfConditionTrue(OR_3, input_condition=AND_1)
-    IfConditionTrue(OR_3, input_condition=AND_2)
-    IfConditionTrue(MAIN, input_condition=OR_3)
+    AND_1.Add(FlagEnabled(7500))
+    AND_2.Add(FlagDisabled(7500))
+    AND_2.Add(CharacterHasSpecialEffect(20000, 503315))
+    OR_3.Add(AND_1)
+    OR_3.Add(AND_2)
+    
+    MAIN.Await(OR_3)
+    
     GotoIfFinishedConditionTrue(Label.L2, input_condition=AND_2)
     AddSpecialEffect(20000, 503315)
     Wait(0.10000000149011612)
-    IfFlagDisabled(AND_10, 7500)
-    IfConditionTrue(MAIN, input_condition=AND_10)
+    AND_10.Add(FlagDisabled(7500))
+    
+    MAIN.Await(AND_10)
 
     # --- Label 2 --- #
     DefineLabel(2)
@@ -3176,74 +3371,117 @@ def Event_1050():
 @RestartOnRest(1080)
 def Event_1080():
     """Event 1080"""
-    EndIfPlayerNotInOwnWorld()
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, 9080)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(9080))
+    
+    MAIN.Await(AND_1)
+    
     AddSpecialEffect(PLAYER, 4286)
-    IfPlayerInOwnWorld(AND_2)
-    IfFlagEnabled(AND_2, 9000)
-    IfFlagEnabled(AND_2, 9080)
-    IfCharacterHasSpecialEffect(AND_2, PLAYER, 4286)
-    IfConditionTrue(OR_2, input_condition=AND_2)
-    IfFlagDisabled(OR_2, 9080)
-    IfConditionTrue(MAIN, input_condition=OR_2)
+    AND_2.Add(PlayerInOwnWorld())
+    AND_2.Add(FlagEnabled(9000))
+    AND_2.Add(FlagEnabled(9080))
+    AND_2.Add(CharacterHasSpecialEffect(PLAYER, 4286))
+    OR_2.Add(AND_2)
+    OR_2.Add(FlagDisabled(9080))
+    
+    MAIN.Await(OR_2)
+    
     AddSpecialEffect(PLAYER, 4287)
     DisableFlag(9080)
     WaitFramesAfterCutscene(frames=1)
     Restart()
 
 
+@RestartOnRest(1088)
+def Event_1088():
+    """Event 1088"""
+    if PlayerNotInOwnWorld():
+        return
+    GotoIfFlagEnabled(Label.L0, flag=2051)
+    GotoIfFlagEnabled(Label.L0, flag=2052)
+    AddSpecialEffect(PLAYER, 4289)
+    OR_1.Add(FlagEnabled(2051))
+    OR_1.Add(FlagEnabled(2052))
+    
+    MAIN.Await(OR_1)
+    
+    AddSpecialEffect(PLAYER, 4288)
+    Restart()
+
+    # --- Label 0 --- #
+    DefineLabel(0)
+    AddSpecialEffect(PLAYER, 4288)
+    OR_2.Add(FlagEnabled(2051))
+    OR_2.Add(FlagEnabled(2052))
+    
+    MAIN.Await(not OR_2)
+    
+    AddSpecialEffect(PLAYER, 4289)
+    Restart()
+
+
 @ContinueOnRest(1100)
-def Event_1100(_, flag: uint, item_lot__item_lot_param_id: int, item_lot_param_id: int, flag_1: uint):
+def Event_1100(_, flag: uint, item_lot: int, item_lot_1: int, flag_1: uint):
     """Event 1100"""
-    Unknown_2004_76(flag=flag, item_lot=item_lot__item_lot_param_id)
-    EndIfFlagEnabled(flag_1)
-    IfFlagEnabled(MAIN, flag)
-    SkipLinesIfValueEqual(1, left=item_lot__item_lot_param_id, right=0)
-    AwardItemLot(item_lot__item_lot_param_id, host_only=True)
+    Unknown_2004_76(flag=flag, item_lot=item_lot)
+    if FlagEnabled(flag_1):
+        return
+    
+    MAIN.Await(FlagEnabled(flag))
+    
+    if ValueNotEqual(left=item_lot, right=0):
+        AwardItemLot(item_lot, host_only=True)
     Wait(5.0)
-    SkipLinesIfValueEqual(1, left=item_lot_param_id, right=0)
-    AwardItemLot(item_lot_param_id, host_only=True)
+    if ValueNotEqual(left=item_lot_1, right=0):
+        AwardItemLot(item_lot_1, host_only=True)
 
 
 @ContinueOnRest(1200)
-def Event_1200(_, flag: uint, item_lot__item_lot_param_id: int, item_lot_param_id: int, flag_1: uint):
+def Event_1200(_, flag: uint, item_lot: int, item_lot_1: int, flag_1: uint):
     """Event 1200"""
-    Unknown_2004_76(flag=flag, item_lot=item_lot__item_lot_param_id)
-    EndIfFlagEnabled(flag_1)
-    IfFlagEnabled(MAIN, flag)
-    SkipLinesIfValueEqual(1, left=item_lot__item_lot_param_id, right=0)
-    AwardItemLot(item_lot__item_lot_param_id, host_only=True)
+    Unknown_2004_76(flag=flag, item_lot=item_lot)
+    if FlagEnabled(flag_1):
+        return
+    
+    MAIN.Await(FlagEnabled(flag))
+    
+    if ValueNotEqual(left=item_lot, right=0):
+        AwardItemLot(item_lot, host_only=True)
     Wait(5.0)
-    SkipLinesIfValueEqual(1, left=item_lot_param_id, right=0)
-    AwardItemLot(item_lot_param_id, host_only=True)
+    if ValueNotEqual(left=item_lot_1, right=0):
+        AwardItemLot(item_lot_1, host_only=True)
 
 
 @ContinueOnRest(1400)
 def Event_1400():
     """Event 1400"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     GotoIfFlagEnabled(Label.L0, flag=6950)
-    EndIfFlagDisabled(60849)
-    Unknown_2003_81(unk_0_4=108)
+    if FlagDisabled(60849):
+        return
+    RemoveGesture(gesture_param_id=108)
     DisableFlag(60849)
     End()
 
     # --- Label 0 --- #
     DefineLabel(0)
-    EndIfFlagEnabled(60849)
-    Unknown_2003_71(unk_0_4=108)
+    if FlagEnabled(60849):
+        return
+    AwardGesture(gesture_param_id=108)
     EnableFlag(60849)
 
 
 @ContinueOnRest(1401)
 def Event_1401():
     """Event 1401"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     GotoIfFlagDisabled(Label.L0, flag=6950)
     GotoIfFlagDisabled(Label.L15, flag=60850)
-    Unknown_2003_81(unk_0_4=109)
+    RemoveGesture(gesture_param_id=109)
     DisableFlag(60850)
 
     # --- Label 15 --- #
@@ -3254,10 +3492,12 @@ def Event_1401():
     # --- Label 0 --- #
     DefineLabel(0)
     GotoIfFlagEnabled(Label.L16, flag=60850)
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, 7680)
-    IfConditionTrue(MAIN, input_condition=AND_1)
-    Unknown_2003_71(unk_0_4=109)
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(7680))
+    
+    MAIN.Await(AND_1)
+    
+    AwardGesture(gesture_param_id=109)
     EnableFlag(60850)
 
     # --- Label 16 --- #
@@ -3266,25 +3506,31 @@ def Event_1401():
 
 
 @RestartOnRest(1410)
-def Event_1410(_, flag: uint, command_id__unk_0_4: int, special_effect: int, character: uint, flag_1: uint):
+def Event_1410(_, flag: uint, command_id__gesture_param_id: int, special_effect: int, character: uint, flag_1: uint):
     """Event 1410"""
-    EndIfPlayerNotInOwnWorld()
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, flag_1)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(flag_1))
+    
+    MAIN.Await(AND_1)
+    
     AICommand(character, command_id=80, command_slot=0)
-    AICommand(character, command_id=command_id__unk_0_4, command_slot=1)
+    AICommand(character, command_id=command_id__gesture_param_id, command_slot=1)
     ReplanAI(character)
-    IfCharacterHasSpecialEffect(AND_2, character, special_effect)
-    IfConditionTrue(OR_2, input_condition=AND_2)
-    IfAttackedWithDamageType(OR_2, attacked_entity=character, attacker=PLAYER)
-    IfConditionTrue(MAIN, input_condition=OR_2)
+    AND_2.Add(CharacterHasSpecialEffect(character, special_effect))
+    OR_2.Add(AND_2)
+    OR_2.Add(AttackedWithDamageType(attacked_entity=character, attacker=PLAYER))
+    
+    MAIN.Await(OR_2)
+    
     AICommand(character, command_id=-1, command_slot=0)
     AICommand(character, command_id=-1, command_slot=1)
     ReplanAI(character)
     EndIfFinishedConditionFalse(input_condition=AND_2)
-    EndIfFlagEnabled(flag)
-    Unknown_2003_71(unk_0_4=command_id__unk_0_4)
+    if FlagEnabled(flag):
+        return
+    AwardGesture(gesture_param_id=command_id__gesture_param_id)
     EnableFlag(flag)
 
 
@@ -3292,7 +3538,7 @@ def Event_1410(_, flag: uint, command_id__unk_0_4: int, special_effect: int, cha
 def Event_1411(
     _,
     flag: uint,
-    command_id__unk_0_4: int,
+    command_id__gesture_param_id: int,
     special_effect: int,
     character: uint,
     flag_1: uint,
@@ -3302,63 +3548,74 @@ def Event_1411(
     flag_3: uint,
 ):
     """Event 1411"""
-    EndIfPlayerNotInOwnWorld()
-    IfFlagEnabled(OR_1, flag_1)
-    IfFlagEnabled(OR_1, flag_2)
-    IfFlagEnabled(OR_1, flag_3)
-    IfConditionTrue(MAIN, input_condition=OR_1)
-    SkipLinesIfFlagDisabled(3, flag_1)
-    AICommand(character, command_id=80, command_slot=0)
-    AICommand(character, command_id=command_id__unk_0_4, command_slot=1)
-    ReplanAI(character)
-    SkipLinesIfFlagDisabled(3, flag_2)
-    AICommand(character_1, command_id=80, command_slot=0)
-    AICommand(character_1, command_id=command_id__unk_0_4, command_slot=1)
-    ReplanAI(character_1)
-    SkipLinesIfFlagDisabled(3, flag_3)
-    AICommand(character_2, command_id=80, command_slot=0)
-    AICommand(character_2, command_id=command_id__unk_0_4, command_slot=1)
-    ReplanAI(character_2)
-    IfCharacterHasSpecialEffect(OR_2, character, special_effect)
-    IfCharacterHasSpecialEffect(OR_2, character_1, special_effect)
-    IfCharacterHasSpecialEffect(OR_2, character_2, special_effect)
-    IfConditionTrue(MAIN, input_condition=OR_2)
-    SkipLinesIfFlagDisabled(3, flag_1)
-    AICommand(character, command_id=-1, command_slot=0)
-    AICommand(character, command_id=-1, command_slot=1)
-    ReplanAI(character)
-    SkipLinesIfFlagDisabled(3, flag_2)
-    AICommand(character_1, command_id=-1, command_slot=0)
-    AICommand(character_1, command_id=-1, command_slot=1)
-    ReplanAI(character_1)
-    SkipLinesIfFlagDisabled(3, flag_3)
-    AICommand(character_2, command_id=-1, command_slot=0)
-    AICommand(character_2, command_id=-1, command_slot=1)
-    ReplanAI(character_2)
-    EndIfFlagEnabled(flag)
-    Unknown_2003_71(unk_0_4=command_id__unk_0_4)
+    if PlayerNotInOwnWorld():
+        return
+    OR_1.Add(FlagEnabled(flag_1))
+    OR_1.Add(FlagEnabled(flag_2))
+    OR_1.Add(FlagEnabled(flag_3))
+    
+    MAIN.Await(OR_1)
+    
+    if FlagEnabled(flag_1):
+        AICommand(character, command_id=80, command_slot=0)
+        AICommand(character, command_id=command_id__gesture_param_id, command_slot=1)
+        ReplanAI(character)
+    if FlagEnabled(flag_2):
+        AICommand(character_1, command_id=80, command_slot=0)
+        AICommand(character_1, command_id=command_id__gesture_param_id, command_slot=1)
+        ReplanAI(character_1)
+    if FlagEnabled(flag_3):
+        AICommand(character_2, command_id=80, command_slot=0)
+        AICommand(character_2, command_id=command_id__gesture_param_id, command_slot=1)
+        ReplanAI(character_2)
+    OR_2.Add(CharacterHasSpecialEffect(character, special_effect))
+    OR_2.Add(CharacterHasSpecialEffect(character_1, special_effect))
+    OR_2.Add(CharacterHasSpecialEffect(character_2, special_effect))
+    
+    MAIN.Await(OR_2)
+    
+    if FlagEnabled(flag_1):
+        AICommand(character, command_id=-1, command_slot=0)
+        AICommand(character, command_id=-1, command_slot=1)
+        ReplanAI(character)
+    if FlagEnabled(flag_2):
+        AICommand(character_1, command_id=-1, command_slot=0)
+        AICommand(character_1, command_id=-1, command_slot=1)
+        ReplanAI(character_1)
+    if FlagEnabled(flag_3):
+        AICommand(character_2, command_id=-1, command_slot=0)
+        AICommand(character_2, command_id=-1, command_slot=1)
+        ReplanAI(character_2)
+    if FlagEnabled(flag):
+        return
+    AwardGesture(gesture_param_id=command_id__gesture_param_id)
     EnableFlag(flag)
 
 
 @RestartOnRest(1412)
-def Event_1412(_, flag: uint, command_id__unk_0_4: int, special_effect: int, character: uint, flag_1: uint):
+def Event_1412(_, flag: uint, command_id__gesture_param_id: int, special_effect: int, character: uint, flag_1: uint):
     """Event 1412"""
-    IfFlagEnabled(AND_1, flag_1)
-    IfEntityWithinDistance(AND_1, entity=PLAYER, other_entity=character, radius=18.0)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    AND_1.Add(FlagEnabled(flag_1))
+    AND_1.Add(EntityWithinDistance(entity=PLAYER, other_entity=character, radius=18.0))
+    
+    MAIN.Await(AND_1)
+    
     AICommand(character, command_id=80, command_slot=0)
-    AICommand(character, command_id=command_id__unk_0_4, command_slot=1)
+    AICommand(character, command_id=command_id__gesture_param_id, command_slot=1)
     ReplanAI(character)
-    IfCharacterHasSpecialEffect(AND_2, character, special_effect)
-    IfConditionTrue(OR_2, input_condition=AND_2)
-    IfAttackedWithDamageType(OR_2, attacked_entity=character, attacker=PLAYER)
-    IfConditionTrue(MAIN, input_condition=OR_2)
+    AND_2.Add(CharacterHasSpecialEffect(character, special_effect))
+    OR_2.Add(AND_2)
+    OR_2.Add(AttackedWithDamageType(attacked_entity=character, attacker=PLAYER))
+    
+    MAIN.Await(OR_2)
+    
     AICommand(character, command_id=-1, command_slot=0)
     AICommand(character, command_id=-1, command_slot=1)
     ReplanAI(character)
     EndIfFinishedConditionFalse(input_condition=AND_2)
-    EndIfFlagEnabled(flag)
-    Unknown_2003_71(unk_0_4=command_id__unk_0_4)
+    if FlagEnabled(flag):
+        return
+    AwardGesture(gesture_param_id=command_id__gesture_param_id)
     EnableFlag(flag)
 
 
@@ -3366,154 +3623,170 @@ def Event_1412(_, flag: uint, command_id__unk_0_4: int, special_effect: int, cha
 def Event_1450(_, flag: uint, right: uint, right_1: uint, right_2: uint):
     """Event 1450"""
     DisableNetworkSync()
-    IfPlayerInOwnWorld(AND_9)
-    IfFlagEnabled(AND_9, flag)
-    SkipLinesIfUnsignedEqual(1, left=0, right=right)
-    IfFlagEnabled(AND_9, right)
-    SkipLinesIfUnsignedEqual(1, left=0, right=right_1)
-    IfFlagEnabled(AND_9, right_1)
-    SkipLinesIfUnsignedEqual(1, left=0, right=right_2)
-    IfFlagEnabled(AND_9, right_2)
-    EndIfConditionTrue(input_condition=AND_9)
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, flag)
-    IfConditionTrue(MAIN, input_condition=AND_1)
-    SkipLinesIfUnsignedEqual(1, left=0, right=right)
-    EnableFlag(right)
-    SkipLinesIfUnsignedEqual(1, left=0, right=right_1)
-    EnableFlag(right_1)
-    SkipLinesIfUnsignedEqual(1, left=0, right=right_2)
-    EnableFlag(right_2)
+    AND_9.Add(PlayerInOwnWorld())
+    AND_9.Add(FlagEnabled(flag))
+    if UnsignedNotEqual(left=0, right=right):
+        AND_9.Add(FlagEnabled(right))
+    if UnsignedNotEqual(left=0, right=right_1):
+        AND_9.Add(FlagEnabled(right_1))
+    if UnsignedNotEqual(left=0, right=right_2):
+        AND_9.Add(FlagEnabled(right_2))
+    if AND_9:
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(flag))
+    
+    MAIN.Await(AND_1)
+    
+    if UnsignedNotEqual(left=0, right=right):
+        EnableFlag(right)
+    if UnsignedNotEqual(left=0, right=right_1):
+        EnableFlag(right_1)
+    if UnsignedNotEqual(left=0, right=right_2):
+        EnableFlag(right_2)
 
 
 @RestartOnRest(1460)
 def Event_1460():
     """Event 1460"""
-    EndIfPlayerNotInOwnWorld()
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66000)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66010)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66020)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66030)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66040)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66050)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66060)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66070)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66080)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66090)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66100)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66110)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66120)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66130)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66140)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66150)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66160)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66170)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66180)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66190)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfPlayerInOwnWorld(AND_1)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66000))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66010))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66020))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66030))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66040))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66050))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66060))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66070))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66080))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66090))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66100))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66110))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66120))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66130))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66140))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66150))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66160))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66170))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66180))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66190))
+    AND_1.Add(OR_1)
+    AND_1.Add(PlayerInOwnWorld())
+    
+    MAIN.Await(AND_1)
+    
     StoreItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=9500, flag=9560, bit_count=5)
-    IfEventValueEqual(AND_10, flag=9560, bit_count=5, value=20)
+    AND_10.Add(EventValue(flag=9560, bit_count=5) == 20)
     GotoIfConditionTrue(Label.L10, input_condition=AND_10)
     WaitFrames(frames=1)
     Restart()
 
     # --- Label 10 --- #
     DefineLabel(10)
-    SkipLinesIfFlagEnabled(1, 6902)
-    EnableFlag(6902)
+    if FlagDisabled(6902):
+        EnableFlag(6902)
 
 
 @RestartOnRest(1461)
 def Event_1461():
     """Event 1461"""
-    EndIfPlayerNotInOwnWorld()
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66400)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66410)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66420)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66430)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66440)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66450)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66460)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66470)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66480)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66490)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfPlayerInOwnWorld(AND_1)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66400))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66410))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66420))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66430))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66440))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66450))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66460))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66470))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66480))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66490))
+    AND_1.Add(OR_1)
+    AND_1.Add(PlayerInOwnWorld())
+    
+    MAIN.Await(AND_1)
+    
     StoreItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=9501, flag=9565, bit_count=5)
-    IfEventValueEqual(AND_10, flag=9565, bit_count=5, value=10)
+    AND_10.Add(EventValue(flag=9565, bit_count=5) == 10)
     GotoIfConditionTrue(Label.L10, input_condition=AND_10)
     WaitFrames(frames=1)
     Restart()
 
     # --- Label 10 --- #
     DefineLabel(10)
-    SkipLinesIfFlagEnabled(1, 6903)
-    EnableFlag(6903)
+    if FlagDisabled(6903):
+        EnableFlag(6903)
 
 
 @RestartOnRest(1462)
 def Event_1462():
     """Event 1462"""
-    EndIfPlayerNotInOwnWorld()
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66700)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66710)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66720)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66730)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66740)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66750)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66760)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66770)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66780)
-    IfFlagState(OR_1, FlagSetting.Change, FlagType.Absolute, 66790)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfPlayerInOwnWorld(AND_1)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66700))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66710))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66720))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66730))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66740))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66750))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66760))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66770))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66780))
+    OR_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 66790))
+    AND_1.Add(OR_1)
+    AND_1.Add(PlayerInOwnWorld())
+    
+    MAIN.Await(AND_1)
+    
     StoreItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=9510, flag=9570, bit_count=5)
-    IfEventValueEqual(AND_10, flag=9570, bit_count=5, value=10)
+    AND_10.Add(EventValue(flag=9570, bit_count=5) == 10)
     GotoIfConditionTrue(Label.L10, input_condition=AND_10)
     WaitFrames(frames=1)
     Restart()
 
     # --- Label 10 --- #
     DefineLabel(10)
-    SkipLinesIfFlagEnabled(1, 6904)
-    EnableFlag(6904)
+    if FlagDisabled(6904):
+        EnableFlag(6904)
 
 
 @ContinueOnRest(1600)
-def Event_1600(_, flag: uint, flag_1: uint, obj: uint, obj_1: uint):
+def Event_1600(_, flag: uint, flag_1: uint, asset: uint, asset_1: uint):
     """Event 1600"""
     DisableNetworkSync()
     GotoIfPlayerInOwnWorld(Label.L0)
-    EndIfUnsignedEqual(left=0, right=obj)
-    DisableObject(obj_1)
+    if UnsignedEqual(left=0, right=asset):
+        return
+    DisableAsset(asset_1)
     End()
 
     # --- Label 0 --- #
     DefineLabel(0)
     GotoIfFlagDisabled(Label.L1, flag=flag)
-    EndIfUnsignedEqual(left=0, right=obj)
-    DisableObject(obj_1)
+    if UnsignedEqual(left=0, right=asset):
+        return
+    DisableAsset(asset_1)
     End()
 
     # --- Label 1 --- #
     DefineLabel(1)
-    SkipLinesIfUnsignedEqual(1, left=0, right=obj)
-    CreateObjectVFX(obj, vfx_id=200, model_point=803220)
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, flag)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if UnsignedNotEqual(left=0, right=asset):
+        CreateAssetVFX(asset, vfx_id=200, model_point=803220)
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(flag))
+    
+    MAIN.Await(AND_1)
+    
     Wait(1.0)
-    DisplayBanner(BannerType.UnknownBossDefeat)
+    DisplayBanner(BannerType.MapFound)
     EnableFlag(flag_1)
     Wait(1.0)
-    SkipLinesIfUnsignedEqual(1, left=0, right=obj)
-    ForceAnimation(obj_1, 1, unknown2=1.0)
-    SkipLinesIfUnsignedEqual(1, left=0, right=obj)
-    DeleteObjectVFX(obj)
+    if UnsignedNotEqual(left=0, right=asset):
+        ForceAnimation(asset_1, 1)
+    if UnsignedNotEqual(left=0, right=asset):
+        DeleteAssetVFX(asset)
     End()
 
 
@@ -3531,25 +3804,29 @@ def Event_1630(
     right_6: uint,
 ):
     """Event 1630"""
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(flag)
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, flag_1)
-    SkipLinesIfUnsignedEqual(1, left=0, right=right)
-    IfFlagEnabled(AND_1, right)
-    SkipLinesIfUnsignedEqual(1, left=0, right=right_1)
-    IfFlagEnabled(AND_1, right_1)
-    SkipLinesIfUnsignedEqual(1, left=0, right=right_2)
-    IfFlagEnabled(AND_1, right_2)
-    SkipLinesIfUnsignedEqual(1, left=0, right=right_3)
-    IfFlagEnabled(AND_1, right_3)
-    SkipLinesIfUnsignedEqual(1, left=0, right=right_4)
-    IfFlagEnabled(AND_1, right_4)
-    SkipLinesIfUnsignedEqual(1, left=0, right=right_5)
-    IfFlagEnabled(AND_1, right_5)
-    SkipLinesIfUnsignedEqual(1, left=0, right=right_6)
-    IfFlagEnabled(AND_1, right_6)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(flag):
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(flag_1))
+    if UnsignedNotEqual(left=0, right=right):
+        AND_1.Add(FlagEnabled(right))
+    if UnsignedNotEqual(left=0, right=right_1):
+        AND_1.Add(FlagEnabled(right_1))
+    if UnsignedNotEqual(left=0, right=right_2):
+        AND_1.Add(FlagEnabled(right_2))
+    if UnsignedNotEqual(left=0, right=right_3):
+        AND_1.Add(FlagEnabled(right_3))
+    if UnsignedNotEqual(left=0, right=right_4):
+        AND_1.Add(FlagEnabled(right_4))
+    if UnsignedNotEqual(left=0, right=right_5):
+        AND_1.Add(FlagEnabled(right_5))
+    if UnsignedNotEqual(left=0, right=right_6):
+        AND_1.Add(FlagEnabled(right_6))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(flag)
 
 
@@ -3557,13 +3834,18 @@ def Event_1630(
 def Event_1700():
     """Event 1700"""
     DisableNetworkSync()
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagDisabled(710530)
-    EndIfFlagEnabled(69100)
-    IfFlagEnabled(AND_1, 710530)
-    IfTimeElapsed(AND_1, seconds=2.0)
-    IfCharacterDoesNotHaveSpecialEffect(AND_1, PLAYER, 9640)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagDisabled(710530):
+        return
+    if FlagEnabled(69100):
+        return
+    AND_1.Add(FlagEnabled(710530))
+    AND_1.Add(TimeElapsed(seconds=2.0))
+    AND_1.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 9640))
+    
+    MAIN.Await(AND_1)
+    
     DisplayTutorialMessage(tutorial_param_id=1530, unk_4_5=True, unk_5_6=True)
     EnableFlag(700530)
     GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=9110, flag=700530, bit_count=1)
@@ -3574,12 +3856,16 @@ def Event_1700():
 def Event_1701():
     """Event 1701"""
     DisableNetworkSync()
-    EndIfPlayerNotInOwnWorld()
-    EndIfThisEventSlotFlagEnabled()
-    IfFlagEnabled(AND_1, 18000020)
-    IfPlayerInOwnWorld(AND_1)
-    IfCharacterDead(AND_1, PLAYER)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    if ThisEventSlotFlagEnabled():
+        return
+    AND_1.Add(FlagEnabled(18000020))
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(CharacterDead(PLAYER))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(710530)
 
 
@@ -3587,17 +3873,22 @@ def Event_1701():
 def Event_1702():
     """Event 1702"""
     DisableNetworkSync()
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(700550)
-    EndIfFlagEnabled(69110)
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, 710550)
-    IfFlagEnabled(AND_1, 60110)
-    IfTryingToCreateSession(OR_1)
-    IfTryingToJoinSession(OR_1)
-    IfConditionFalse(AND_1, input_condition=OR_1)
-    IfCharacterDoesNotHaveSpecialEffect(AND_1, PLAYER, 9640)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(700550):
+        return
+    if FlagEnabled(69110):
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(710550))
+    AND_1.Add(FlagEnabled(60110))
+    OR_1.Add(Multiplayer())
+    OR_1.Add(MultiplayerPending())
+    AND_1.Add(not OR_1)
+    AND_1.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 9640))
+    
+    MAIN.Await(AND_1)
+    
     DisplayTutorialMessage(tutorial_param_id=1550, unk_4_5=True, unk_5_6=True)
     EnableFlag(700550)
     GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=9111, flag=710550, bit_count=1)
@@ -3608,20 +3899,25 @@ def Event_1702():
 def Event_1703():
     """Event 1703"""
     DisableNetworkSync()
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(710570)
-    EndIfFlagEnabled(69130)
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, 60120)
-    IfTryingToCreateSession(OR_1)
-    IfTryingToJoinSession(OR_1)
-    IfConditionFalse(AND_1, input_condition=OR_1)
-    IfCharacterDoesNotHaveSpecialEffect(AND_1, PLAYER, 9640)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(710570):
+        return
+    if FlagEnabled(69130):
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(60120))
+    OR_1.Add(Multiplayer())
+    OR_1.Add(MultiplayerPending())
+    AND_1.Add(not OR_1)
+    AND_1.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 9640))
+    
+    MAIN.Await(AND_1)
+    
     DisplayTutorialMessage(tutorial_param_id=1570, unk_4_5=True, unk_5_6=True)
     EnableFlag(710570)
-    SkipLinesIfValueEqual(1, left=9113, right=0)
-    GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=9113, flag=710570, bit_count=1)
+    if ValueNotEqual(left=9113, right=0):
+        GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=9113, flag=710570, bit_count=1)
     EnableFlag(69130)
 
 
@@ -3629,102 +3925,118 @@ def Event_1703():
 def Event_1704():
     """Event 1704"""
     DisableNetworkSync()
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(69350)
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, 60120)
-    IfTryingToCreateSession(OR_1)
-    IfTryingToJoinSession(OR_1)
-    IfConditionFalse(AND_1, input_condition=OR_1)
-    IfCharacterDoesNotHaveSpecialEffect(AND_1, PLAYER, 9640)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(69350):
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(60120))
+    OR_1.Add(Multiplayer())
+    OR_1.Add(MultiplayerPending())
+    AND_1.Add(not OR_1)
+    AND_1.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 9640))
+    
+    MAIN.Await(AND_1)
+    
     Wait(0.30000001192092896)
     DisplayTutorialMessage(tutorial_param_id=1580, unk_4_5=True, unk_5_6=True)
     EnableFlag(69350)
-    SkipLinesIfValueEqual(1, left=9135, right=0)
-    GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=9135, flag=710580, bit_count=1)
+    if ValueNotEqual(left=9135, right=0):
+        GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=9135, flag=710580, bit_count=1)
 
 
 @RestartOnRest(1705)
 def Event_1705():
     """Event 1705"""
     DisableNetworkSync()
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(69160)
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, 710600)
-    IfFlagDisabled(AND_1, 69160)
-    IfTryingToCreateSession(OR_1)
-    IfTryingToJoinSession(OR_1)
-    IfConditionFalse(AND_1, input_condition=OR_1)
-    IfCharacterDoesNotHaveSpecialEffect(AND_1, PLAYER, 9640)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(69160):
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(710600))
+    AND_1.Add(FlagDisabled(69160))
+    OR_1.Add(Multiplayer())
+    OR_1.Add(MultiplayerPending())
+    AND_1.Add(not OR_1)
+    AND_1.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 9640))
+    
+    MAIN.Await(AND_1)
+    
     DisplayTutorialMessage(tutorial_param_id=1600, unk_4_5=True, unk_5_6=True)
     EnableFlag(69160)
     EnableFlag(710750)
-    SkipLinesIfValueEqual(1, left=9116, right=0)
-    GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=9116, flag=710600, bit_count=1)
+    if ValueNotEqual(left=9116, right=0):
+        GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=9116, flag=710600, bit_count=1)
 
 
 @RestartOnRest(1720)
 def Event_1720(_, flag: uint, flag_1: uint, tutorial_param_id: int, item: int):
     """Event 1720"""
     DisableNetworkSync()
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(flag)
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, flag_1)
-    IfFlagDisabled(AND_1, flag)
-    IfTryingToCreateSession(OR_1)
-    IfTryingToJoinSession(OR_1)
-    IfConditionFalse(AND_1, input_condition=OR_1)
-    IfCharacterDoesNotHaveSpecialEffect(AND_1, PLAYER, 9640)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(flag):
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(flag_1))
+    AND_1.Add(FlagDisabled(flag))
+    OR_1.Add(Multiplayer())
+    OR_1.Add(MultiplayerPending())
+    AND_1.Add(not OR_1)
+    AND_1.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 9640))
+    
+    MAIN.Await(AND_1)
+    
     DisplayTutorialMessage(tutorial_param_id=tutorial_param_id, unk_4_5=True, unk_5_6=True)
     EnableFlag(flag)
-    SkipLinesIfValueEqual(1, left=item, right=0)
-    GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=item, flag=flag_1, bit_count=1)
+    if ValueNotEqual(left=item, right=0):
+        GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=item, flag=flag_1, bit_count=1)
 
 
 @RestartOnRest(1750)
 def Event_1750():
     """Event 1750"""
     DisableNetworkSync()
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(710060)
-    IfPlayerHasWeapon(OR_1, 33000000)
-    IfPlayerHasWeapon(OR_1, 33040000)
-    IfPlayerHasWeapon(OR_1, 33050000)
-    IfPlayerHasWeapon(OR_1, 33060000)
-    IfPlayerHasWeapon(OR_1, 33090000)
-    IfPlayerHasWeapon(OR_1, 33120000)
-    IfPlayerHasWeapon(OR_1, 33130000)
-    IfPlayerHasWeapon(OR_1, 33170000)
-    IfPlayerHasWeapon(OR_1, 33180000)
-    IfPlayerHasWeapon(OR_1, 33190000)
-    IfPlayerHasWeapon(OR_1, 33200000)
-    IfPlayerHasWeapon(OR_1, 33210000)
-    IfPlayerHasWeapon(OR_1, 33230000)
-    IfPlayerHasWeapon(OR_1, 33240000)
-    IfPlayerHasWeapon(OR_1, 33250000)
-    IfPlayerHasWeapon(OR_1, 33260000)
-    IfPlayerHasWeapon(OR_1, 33270000)
-    IfPlayerHasWeapon(OR_1, 33280000)
-    IfPlayerHasWeapon(OR_1, 34000000)
-    IfPlayerHasWeapon(OR_1, 34010000)
-    IfPlayerHasWeapon(OR_1, 34020000)
-    IfPlayerHasWeapon(OR_1, 34030000)
-    IfPlayerHasWeapon(OR_1, 34040000)
-    IfPlayerHasWeapon(OR_1, 34060000)
-    IfPlayerHasWeapon(OR_1, 34070000)
-    IfPlayerHasWeapon(OR_1, 34080000)
-    IfPlayerHasWeapon(OR_1, 34090000)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfOutsideMap(AND_1, game_map=CHAPEL_OF_ANTICIPATION)
-    IfOutsideMap(AND_1, game_map=STRANDED_GRAVEYARD)
-    IfUnknownCharacterCondition_28(AND_1, character=1, unk_8_12=31, unk_12_16=3)
-    IfPlayerInOwnWorld(AND_1)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(710060):
+        return
+    OR_1.Add(PlayerHasWeapon(33000000))
+    OR_1.Add(PlayerHasWeapon(33040000))
+    OR_1.Add(PlayerHasWeapon(33050000))
+    OR_1.Add(PlayerHasWeapon(33060000))
+    OR_1.Add(PlayerHasWeapon(33090000))
+    OR_1.Add(PlayerHasWeapon(33120000))
+    OR_1.Add(PlayerHasWeapon(33130000))
+    OR_1.Add(PlayerHasWeapon(33170000))
+    OR_1.Add(PlayerHasWeapon(33180000))
+    OR_1.Add(PlayerHasWeapon(33190000))
+    OR_1.Add(PlayerHasWeapon(33200000))
+    OR_1.Add(PlayerHasWeapon(33210000))
+    OR_1.Add(PlayerHasWeapon(33230000))
+    OR_1.Add(PlayerHasWeapon(33240000))
+    OR_1.Add(PlayerHasWeapon(33250000))
+    OR_1.Add(PlayerHasWeapon(33260000))
+    OR_1.Add(PlayerHasWeapon(33270000))
+    OR_1.Add(PlayerHasWeapon(33280000))
+    OR_1.Add(PlayerHasWeapon(34000000))
+    OR_1.Add(PlayerHasWeapon(34010000))
+    OR_1.Add(PlayerHasWeapon(34020000))
+    OR_1.Add(PlayerHasWeapon(34030000))
+    OR_1.Add(PlayerHasWeapon(34040000))
+    OR_1.Add(PlayerHasWeapon(34060000))
+    OR_1.Add(PlayerHasWeapon(34070000))
+    OR_1.Add(PlayerHasWeapon(34080000))
+    OR_1.Add(PlayerHasWeapon(34090000))
+    AND_1.Add(OR_1)
+    AND_1.Add(OutsideMap(game_map=CHAPEL_OF_ANTICIPATION))
+    AND_1.Add(OutsideMap(game_map=STRANDED_GRAVEYARD))
+    AND_1.Add(PlayerTargeted(min_npc_threat_level=1, max_npc_threat_level=31, ai_status=AIStatusType.Battle))
+    AND_1.Add(PlayerInOwnWorld())
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(710060)
 
 
@@ -3732,38 +4044,42 @@ def Event_1750():
 def Event_1751():
     """Event 1751"""
     DisableNetworkSync()
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(710130)
-    IfPlayerHasWeapon(OR_1, 40000000)
-    IfPlayerHasWeapon(OR_1, 40010000)
-    IfPlayerHasWeapon(OR_1, 40020000)
-    IfPlayerHasWeapon(OR_1, 40030000)
-    IfPlayerHasWeapon(OR_1, 40050000)
-    IfPlayerHasWeapon(OR_1, 41000000)
-    IfPlayerHasWeapon(OR_1, 41010000)
-    IfPlayerHasWeapon(OR_1, 41020000)
-    IfPlayerHasWeapon(OR_1, 41030000)
-    IfPlayerHasWeapon(OR_1, 41040000)
-    IfPlayerHasWeapon(OR_1, 41060000)
-    IfPlayerHasWeapon(OR_1, 41070000)
-    IfPlayerHasWeapon(OR_1, 42000000)
-    IfPlayerHasWeapon(OR_1, 42000000)
-    IfPlayerHasWeapon(OR_1, 42030000)
-    IfPlayerHasWeapon(OR_1, 42040000)
-    IfPlayerHasWeapon(OR_1, 43000000)
-    IfPlayerHasWeapon(OR_1, 43020000)
-    IfPlayerHasWeapon(OR_1, 43030000)
-    IfPlayerHasWeapon(OR_1, 43050000)
-    IfPlayerHasWeapon(OR_1, 43060000)
-    IfPlayerHasWeapon(OR_1, 43080000)
-    IfPlayerHasWeapon(OR_1, 43100000)
-    IfPlayerHasWeapon(OR_1, 43110000)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfOutsideMap(AND_1, game_map=CHAPEL_OF_ANTICIPATION)
-    IfOutsideMap(AND_1, game_map=STRANDED_GRAVEYARD)
-    IfUnknownCharacterCondition_28(AND_1, character=1, unk_8_12=31, unk_12_16=3)
-    IfPlayerInOwnWorld(AND_1)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(710130):
+        return
+    OR_1.Add(PlayerHasWeapon(40000000))
+    OR_1.Add(PlayerHasWeapon(40010000))
+    OR_1.Add(PlayerHasWeapon(40020000))
+    OR_1.Add(PlayerHasWeapon(40030000))
+    OR_1.Add(PlayerHasWeapon(40050000))
+    OR_1.Add(PlayerHasWeapon(41000000))
+    OR_1.Add(PlayerHasWeapon(41010000))
+    OR_1.Add(PlayerHasWeapon(41020000))
+    OR_1.Add(PlayerHasWeapon(41030000))
+    OR_1.Add(PlayerHasWeapon(41040000))
+    OR_1.Add(PlayerHasWeapon(41060000))
+    OR_1.Add(PlayerHasWeapon(41070000))
+    OR_1.Add(PlayerHasWeapon(42000000))
+    OR_1.Add(PlayerHasWeapon(42000000))
+    OR_1.Add(PlayerHasWeapon(42030000))
+    OR_1.Add(PlayerHasWeapon(42040000))
+    OR_1.Add(PlayerHasWeapon(43000000))
+    OR_1.Add(PlayerHasWeapon(43020000))
+    OR_1.Add(PlayerHasWeapon(43030000))
+    OR_1.Add(PlayerHasWeapon(43050000))
+    OR_1.Add(PlayerHasWeapon(43060000))
+    OR_1.Add(PlayerHasWeapon(43080000))
+    OR_1.Add(PlayerHasWeapon(43100000))
+    OR_1.Add(PlayerHasWeapon(43110000))
+    AND_1.Add(OR_1)
+    AND_1.Add(OutsideMap(game_map=CHAPEL_OF_ANTICIPATION))
+    AND_1.Add(OutsideMap(game_map=STRANDED_GRAVEYARD))
+    AND_1.Add(PlayerTargeted(min_npc_threat_level=1, max_npc_threat_level=31, ai_status=AIStatusType.Battle))
+    AND_1.Add(PlayerInOwnWorld())
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(710130)
 
 
@@ -3771,13 +4087,17 @@ def Event_1751():
 def Event_1752():
     """Event 1752"""
     DisableNetworkSync()
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(710710)
-    IfFlagEnabled(AND_1, 60110)
-    IfFlagEnabled(AND_1, 700550)
-    IfCharacterHasSpecialEffect(AND_1, PLAYER, 9530)
-    IfPlayerInOwnWorld(AND_1)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(710710):
+        return
+    AND_1.Add(FlagEnabled(60110))
+    AND_1.Add(FlagEnabled(700550))
+    AND_1.Add(CharacterHasSpecialEffect(PLAYER, 9530))
+    AND_1.Add(PlayerInOwnWorld())
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(710710)
 
 
@@ -3785,16 +4105,20 @@ def Event_1752():
 def Event_1770(_, flag: uint, flag_1: uint, tutorial_param_id: int):
     """Event 1770"""
     DisableNetworkSync()
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(flag)
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, flag_1)
-    IfFlagDisabled(AND_1, flag)
-    IfTryingToCreateSession(OR_1)
-    IfTryingToJoinSession(OR_1)
-    IfConditionFalse(AND_1, input_condition=OR_1)
-    IfCharacterDoesNotHaveSpecialEffect(AND_1, PLAYER, 9640)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(flag):
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(flag_1))
+    AND_1.Add(FlagDisabled(flag))
+    OR_1.Add(Multiplayer())
+    OR_1.Add(MultiplayerPending())
+    AND_1.Add(not OR_1)
+    AND_1.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 9640))
+    
+    MAIN.Await(AND_1)
+    
     DisplayTutorialMessage(tutorial_param_id=tutorial_param_id, unk_4_5=True, unk_5_6=True)
     EnableFlag(flag)
 
@@ -3803,14 +4127,18 @@ def Event_1770(_, flag: uint, flag_1: uint, tutorial_param_id: int):
 def Event_1790():
     """Event 1790"""
     DisableNetworkSync()
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(710600)
-    IfPlayerInOwnWorld(AND_1)
-    IfTryingToCreateSession(OR_1)
-    IfTryingToJoinSession(OR_1)
-    IfConditionFalse(AND_1, input_condition=OR_1)
-    IfCharacterHasSpecialEffect(AND_1, PLAYER, 81)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(710600):
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    OR_1.Add(Multiplayer())
+    OR_1.Add(MultiplayerPending())
+    AND_1.Add(not OR_1)
+    AND_1.Add(CharacterHasSpecialEffect(PLAYER, 81))
+    
+    MAIN.Await(AND_1)
+    
     Wait(1.5)
     EnableFlag(710800)
 
@@ -3818,23 +4146,27 @@ def Event_1790():
 @RestartOnRest(1800)
 def Event_1800():
     """Event 1800"""
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(2001)
-    IfFlagState(AND_1, FlagSetting.Change, FlagType.Absolute, 9431)
-    IfFlagEnabled(AND_1, 9431)
-    IfFlagState(AND_11, FlagSetting.Change, FlagType.Absolute, 9431)
-    IfFlagDisabled(AND_11, 9431)
-    IfFlagState(AND_2, FlagSetting.Change, FlagType.Absolute, 9432)
-    IfFlagEnabled(AND_2, 9432)
-    IfFlagState(AND_3, FlagSetting.Change, FlagType.Absolute, 9433)
-    IfFlagEnabled(AND_3, 9433)
-    IfConditionTrue(OR_9, input_condition=AND_1)
-    IfConditionTrue(OR_9, input_condition=AND_2)
-    IfConditionTrue(OR_9, input_condition=AND_3)
-    IfConditionTrue(OR_9, input_condition=AND_11)
-    IfConditionTrue(AND_9, input_condition=OR_9)
-    IfPlayerInOwnWorld(AND_9)
-    IfConditionTrue(MAIN, input_condition=AND_9)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(2001):
+        return
+    AND_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 9431))
+    AND_1.Add(FlagEnabled(9431))
+    AND_11.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 9431))
+    AND_11.Add(FlagDisabled(9431))
+    AND_2.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 9432))
+    AND_2.Add(FlagEnabled(9432))
+    AND_3.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 9433))
+    AND_3.Add(FlagEnabled(9433))
+    OR_9.Add(AND_1)
+    OR_9.Add(AND_2)
+    OR_9.Add(AND_3)
+    OR_9.Add(AND_11)
+    AND_9.Add(OR_9)
+    AND_9.Add(PlayerInOwnWorld())
+    
+    MAIN.Await(AND_9)
+    
     EnableFlag(9420)
     GotoIfFinishedConditionTrue(Label.L1, input_condition=AND_1)
     GotoIfFinishedConditionTrue(Label.L2, input_condition=AND_2)
@@ -3845,20 +4177,20 @@ def Event_1800():
     DefineLabel(11)
     GotoIfFlagEnabled(Label.L2, flag=9432)
     GotoIfFlagEnabled(Label.L3, flag=9433)
-    Unknown_2004_75(character=PLAYER, unknown1=0, unknown2=-1)
+    SetCharacterFaceParamOverride(character=PLAYER, override_slot=0, face_param_id=-1)
     DisableFlag(9420)
     Goto(Label.L9)
 
     # --- Label 1 --- #
     DefineLabel(1)
-    Unknown_2004_75(character=PLAYER, unknown1=0, unknown2=81000)
+    SetCharacterFaceParamOverride(character=PLAYER, override_slot=0, face_param_id=81000)
     Goto(Label.L9)
 
     # --- Label 2 --- #
     DefineLabel(2)
     GotoIfFlagEnabled(Label.L9, flag=9431)
     GotoIfFlagEnabled(Label.L9, flag=9434)
-    Unknown_2004_75(character=PLAYER, unknown1=0, unknown2=81001)
+    SetCharacterFaceParamOverride(character=PLAYER, override_slot=0, face_param_id=81001)
     Goto(Label.L9)
 
     # --- Label 3 --- #
@@ -3866,7 +4198,7 @@ def Event_1800():
     GotoIfFlagEnabled(Label.L9, flag=9431)
     GotoIfFlagEnabled(Label.L9, flag=9432)
     GotoIfFlagEnabled(Label.L9, flag=9434)
-    Unknown_2004_75(character=PLAYER, unknown1=0, unknown2=81002)
+    SetCharacterFaceParamOverride(character=PLAYER, override_slot=0, face_param_id=81002)
     Goto(Label.L9)
 
     # --- Label 4 --- #
@@ -3883,30 +4215,58 @@ def Event_1800():
 @RestartOnRest(1801)
 def Event_1801():
     """Event 1801"""
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(2001)
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagState(AND_1, FlagSetting.Change, FlagType.Absolute, 9430)
-    IfFlagEnabled(AND_1, 9430)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(2001):
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 9430))
+    AND_1.Add(FlagEnabled(9430))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(9421)
-    Unknown_2004_75(character=PLAYER, unknown1=1, unknown2=80000)
+    SetCharacterFaceParamOverride(character=PLAYER, override_slot=1, face_param_id=80000)
+
+
+@RestartOnRest(6800)
+def Event_6800(_, item: int, flag: uint):
+    """Event 6800"""
+    if ThisEventSlotFlagEnabled():
+        return
+    GotoIfPlayerNotInOwnWorld(Label.L15)
+    AND_1.Add(PlayerDoesNotHaveGood(item))
+    AND_1.Add(FlagEnabled(flag))
+    SkipLinesIfConditionFalse(1, AND_1)
+    DisableFlag(flag)
+    EnableThisSlotFlag()
+    End()
+
+    # --- Label 15 --- #
+    DefineLabel(15)
+    AND_15.Add(PlayerInOwnWorld())
+    
+    MAIN.Await(AND_15)
+    
+    Wait(1.0)
+    ReplanAI(0)
 
 
 @ContinueOnRest(6901)
 def Event_6901():
     """Event 6901"""
-    EndIfThisEventSlotFlagEnabled()
+    if ThisEventSlotFlagEnabled():
+        return
     GotoIfPlayerNotInOwnWorld(Label.L15)
-    IfFlagDisabled(AND_1, 68000)
-    IfFlagDisabled(AND_1, 68020)
+    AND_1.Add(FlagDisabled(68000))
+    AND_1.Add(FlagDisabled(68020))
     GotoIfConditionFalse(Label.L1, input_condition=AND_1)
     Goto(Label.L0)
 
     # --- Label 1 --- #
     DefineLabel(1)
-    IfFlagEnabled(AND_2, 68000)
-    IfFlagDisabled(AND_2, 68020)
+    AND_2.Add(FlagEnabled(68000))
+    AND_2.Add(FlagDisabled(68020))
     GotoIfConditionFalse(Label.L2, input_condition=AND_2)
     RemoveGoodFromPlayer(item=9402, quantity=1)
     GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=9400, flag=68000, bit_count=1)
@@ -3914,15 +4274,15 @@ def Event_6901():
 
     # --- Label 2 --- #
     DefineLabel(2)
-    IfFlagDisabled(AND_3, 68000)
-    IfFlagEnabled(AND_3, 68020)
+    AND_3.Add(FlagDisabled(68000))
+    AND_3.Add(FlagEnabled(68020))
     GotoIfConditionFalse(Label.L3, input_condition=AND_3)
     Goto(Label.L0)
 
     # --- Label 3 --- #
     DefineLabel(3)
-    IfFlagEnabled(AND_4, 68000)
-    IfFlagEnabled(AND_4, 68020)
+    AND_4.Add(FlagEnabled(68000))
+    AND_4.Add(FlagEnabled(68020))
     GotoIfConditionFalse(Label.L4, input_condition=AND_4)
     GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=9400, flag=68000, bit_count=1)
     Goto(Label.L0)
@@ -3933,15 +4293,15 @@ def Event_6901():
     # --- Label 0 --- #
     DefineLabel(0)
     ClearMainCondition()
-    SkipLinesIfFlagDisabled(2, 66040)
-    EnableFlag(66000)
-    DisableFlag(66040)
-    SkipLinesIfFlagDisabled(2, 66080)
-    EnableFlag(66130)
-    DisableFlag(66080)
-    IfFlagEnabled(AND_5, 10019200)
-    IfFlagEnabled(AND_5, 66150)
-    IfFlagEnabled(AND_5, 66181)
+    if FlagEnabled(66040):
+        EnableFlag(66000)
+        DisableFlag(66040)
+    if FlagEnabled(66080):
+        EnableFlag(66130)
+        DisableFlag(66080)
+    AND_5.Add(FlagEnabled(10019200))
+    AND_5.Add(FlagEnabled(66150))
+    AND_5.Add(FlagEnabled(66181))
     SkipLinesIfConditionFalse(4, AND_5)
     EnableFlag(66150)
     EnableFlag(66170)
@@ -3957,20 +4317,20 @@ def Event_6901():
     DisableFlag(66161)
     DisableFlag(66181)
     DisableFlag(66200)
-    SkipLinesIfFlagDisabled(4, 66420)
-    DisableFlag(66400)
-    EnableFlag(66410)
-    DisableFlag(66420)
-    SkipLines(3)
-    DisableFlag(66400)
-    DisableFlag(66410)
-    DisableFlag(66420)
+    if FlagEnabled(66420):
+        DisableFlag(66400)
+        EnableFlag(66410)
+        DisableFlag(66420)
+    else:
+        DisableFlag(66400)
+        DisableFlag(66410)
+        DisableFlag(66420)
     DisableFlag(66470)
     DisableFlag(66471)
     DisableFlag(66480)
-    SkipLinesIfFlagDisabled(2, 66710)
-    EnableFlag(66760)
-    DisableFlag(66710)
+    if FlagEnabled(66710):
+        EnableFlag(66760)
+        DisableFlag(66710)
     DisableFlag(66730)
     DisableFlag(66731)
     DisableFlag(66750)
@@ -4038,47 +4398,49 @@ def Event_6901():
     DisableFlag(1051360290)
     DisableFlag(530140)
     ClearMainCondition()
-    SkipLinesIfFlagDisabled(2, 82135)
-    EnableFlag(62135)
-    DisableFlag(82135)
-    SkipLinesIfFlagDisabled(2, 82137)
-    EnableFlag(62137)
-    DisableFlag(82137)
-    SkipLinesIfFlagDisabled(2, 82138)
-    EnableFlag(62138)
-    DisableFlag(82138)
-    SkipLinesIfFlagDisabled(2, 95600)
-    EnableFlag(78600)
-    DisableFlag(95600)
+    if FlagEnabled(82135):
+        EnableFlag(62135)
+        DisableFlag(82135)
+    if FlagEnabled(82137):
+        EnableFlag(62137)
+        DisableFlag(82137)
+    if FlagEnabled(82138):
+        EnableFlag(62138)
+        DisableFlag(82138)
+    if FlagEnabled(95600):
+        EnableFlag(78600)
+        DisableFlag(95600)
     DisableFlag(82195)
     DisableFlag(82196)
     DisableFlag(82197)
     DisableFlag(82198)
     ClearMainCondition()
-    IfFlagDisabled(AND_15, 15000800)
-    IfCharacterInsideRegion(AND_15, character=PLAYER, region=15002845)
+    AND_15.Add(FlagDisabled(15000800))
+    AND_15.Add(CharacterInsideRegion(character=PLAYER, region=15002845))
     SkipLinesIfConditionFalse(1, AND_15)
-    Unknown_2004_74(
+    MoveCharacterAndCopyDrawParentWithFadeout(
         character=PLAYER,
-        unknown1=1,
-        region=15002950,
-        unknown2=-1,
-        character_2=PLAYER,
-        unknown3=0,
-        unknown4=1,
+        destination_type=CoordEntityType.Region,
+        destination=15002950,
+        model_point=-1,
+        copy_draw_parent=PLAYER,
+        use_bonfire_effect=False,
+        reset_camera=True,
     )
     ClearMainCondition()
-    SkipLinesIfFlagEnabled(2, 11109213)
-    EnableFlag(10007452)
-    SkipLines(1)
-    EnableFlag(10007450)
-    DisableThisSlotFlag()
+    if FlagDisabled(11109213):
+        EnableFlag(10007452)
+    else:
+        EnableFlag(10007450)
+    EnableThisSlotFlag()
     End()
 
     # --- Label 15 --- #
     DefineLabel(15)
-    IfPlayerInOwnWorld(AND_15)
-    IfConditionTrue(MAIN, input_condition=AND_15)
+    AND_15.Add(PlayerInOwnWorld())
+    
+    MAIN.Await(AND_15)
+    
     Wait(1.0)
     ReplanAI(0)
 
@@ -4086,11 +4448,14 @@ def Event_6901():
 @RestartOnRest(6902)
 def Event_6902():
     """Event 6902"""
-    EndIfThisEventSlotFlagEnabled()
+    if ThisEventSlotFlagEnabled():
+        return
     GotoIfPlayerNotInOwnWorld(Label.L15)
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, 6902)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(6902))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(66000)
     EnableFlag(66010)
     EnableFlag(66020)
@@ -4110,13 +4475,15 @@ def Event_6902():
     EnableFlag(66170)
     EnableFlag(66180)
     EnableFlag(66190)
-    DisableThisSlotFlag()
+    EnableThisSlotFlag()
     End()
 
     # --- Label 15 --- #
     DefineLabel(15)
-    IfPlayerInOwnWorld(AND_15)
-    IfConditionTrue(MAIN, input_condition=AND_15)
+    AND_15.Add(PlayerInOwnWorld())
+    
+    MAIN.Await(AND_15)
+    
     Wait(1.0)
     ReplanAI(0)
 
@@ -4124,11 +4491,14 @@ def Event_6902():
 @RestartOnRest(6903)
 def Event_6903():
     """Event 6903"""
-    EndIfThisEventSlotFlagEnabled()
+    if ThisEventSlotFlagEnabled():
+        return
     GotoIfPlayerNotInOwnWorld(Label.L15)
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, 6903)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(6903))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(66400)
     EnableFlag(66410)
     EnableFlag(66420)
@@ -4139,13 +4509,15 @@ def Event_6903():
     EnableFlag(66470)
     EnableFlag(66480)
     EnableFlag(66490)
-    DisableThisSlotFlag()
+    EnableThisSlotFlag()
     End()
 
     # --- Label 15 --- #
     DefineLabel(15)
-    IfPlayerInOwnWorld(AND_15)
-    IfConditionTrue(MAIN, input_condition=AND_15)
+    AND_15.Add(PlayerInOwnWorld())
+    
+    MAIN.Await(AND_15)
+    
     Wait(1.0)
     ReplanAI(0)
 
@@ -4153,11 +4525,14 @@ def Event_6903():
 @RestartOnRest(6904)
 def Event_6904():
     """Event 6904"""
-    EndIfThisEventSlotFlagEnabled()
+    if ThisEventSlotFlagEnabled():
+        return
     GotoIfPlayerNotInOwnWorld(Label.L15)
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, 6904)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(6904))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(66700)
     EnableFlag(66710)
     EnableFlag(66720)
@@ -4168,13 +4543,15 @@ def Event_6904():
     EnableFlag(66770)
     EnableFlag(66780)
     EnableFlag(66790)
-    DisableThisSlotFlag()
+    EnableThisSlotFlag()
     End()
 
     # --- Label 15 --- #
     DefineLabel(15)
-    IfPlayerInOwnWorld(AND_15)
-    IfConditionTrue(MAIN, input_condition=AND_15)
+    AND_15.Add(PlayerInOwnWorld())
+    
+    MAIN.Await(AND_15)
+    
     Wait(1.0)
     ReplanAI(0)
 
@@ -4182,29 +4559,32 @@ def Event_6904():
 @RestartOnRest(6905)
 def Event_6905():
     """Event 6905"""
-    EndIfThisEventSlotFlagEnabled()
+    if ThisEventSlotFlagEnabled():
+        return
     GotoIfPlayerNotInOwnWorld(Label.L15)
-    SkipLinesIfFlagDisabled(1, 510010)
-    EnableFlag(171)
-    SkipLinesIfFlagDisabled(1, 510300)
-    EnableFlag(172)
-    SkipLinesIfFlagDisabled(1, 510040)
-    EnableFlag(173)
-    SkipLinesIfFlagDisabled(1, 510220)
-    EnableFlag(174)
-    SkipLinesIfFlagDisabled(1, 510120)
-    EnableFlag(175)
-    SkipLinesIfFlagDisabled(1, 510200)
-    EnableFlag(176)
-    SkipLinesIfFlagDisabled(1, 197)
-    EnableFlag(177)
-    DisableThisSlotFlag()
+    if FlagEnabled(510010):
+        EnableFlag(171)
+    if FlagEnabled(510300):
+        EnableFlag(172)
+    if FlagEnabled(510040):
+        EnableFlag(173)
+    if FlagEnabled(510220):
+        EnableFlag(174)
+    if FlagEnabled(510120):
+        EnableFlag(175)
+    if FlagEnabled(510200):
+        EnableFlag(176)
+    if FlagEnabled(197):
+        EnableFlag(177)
+    EnableThisSlotFlag()
     End()
 
     # --- Label 15 --- #
     DefineLabel(15)
-    IfPlayerInOwnWorld(AND_15)
-    IfConditionTrue(MAIN, input_condition=AND_15)
+    AND_15.Add(PlayerInOwnWorld())
+    
+    MAIN.Await(AND_15)
+    
     Wait(1.0)
     ReplanAI(0)
 
@@ -4212,37 +4592,40 @@ def Event_6905():
 @RestartOnRest(6906)
 def Event_6906():
     """Event 6906"""
-    EndIfThisEventSlotFlagEnabled()
+    if ThisEventSlotFlagEnabled():
+        return
     GotoIfPlayerNotInOwnWorld(Label.L15)
-    SkipLinesIfFlagDisabled(1, 69390)
-    GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=9141, flag=69390, bit_count=1)
-    SkipLinesIfFlagDisabled(1, 520040)
-    GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=202000, flag=520040, bit_count=1)
+    if FlagEnabled(69390):
+        GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=9141, flag=69390, bit_count=1)
+    if FlagEnabled(520040):
+        GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=202000, flag=520040, bit_count=1)
     SkipLinesIfFlagDisabled(4, 1039418600)
     EnableFlag(1039418540)
-    EndOfAnimation(obj=1039411540, animation_id=2)
-    DisableObjectActivation(1039411540, obj_act_id=-1)
+    EndOfAnimation(asset=1039411540, animation_id=2)
+    DisableAssetActivation(1039411540, obj_act_id=-1)
     SkipLines(4)
-    SkipLinesIfFlagDisabled(3, 73006)
-    EnableFlag(1039418540)
-    EndOfAnimation(obj=1039411540, animation_id=2)
-    DisableObjectActivation(1039411540, obj_act_id=-1)
+    if FlagEnabled(73006):
+        EnableFlag(1039418540)
+        EndOfAnimation(asset=1039411540, animation_id=2)
+        DisableAssetActivation(1039411540, obj_act_id=-1)
     SkipLinesIfFlagDisabled(4, 1047408600)
     EnableFlag(1047408540)
-    EndOfAnimation(obj=1047401540, animation_id=2)
-    DisableObjectActivation(1047401540, obj_act_id=-1)
+    EndOfAnimation(asset=1047401540, animation_id=2)
+    DisableAssetActivation(1047401540, obj_act_id=-1)
     SkipLines(4)
-    SkipLinesIfFlagDisabled(3, 73014)
-    EnableFlag(1047408540)
-    EndOfAnimation(obj=1047401540, animation_id=2)
-    DisableObjectActivation(1047401540, obj_act_id=-1)
-    DisableThisSlotFlag()
+    if FlagEnabled(73014):
+        EnableFlag(1047408540)
+        EndOfAnimation(asset=1047401540, animation_id=2)
+        DisableAssetActivation(1047401540, obj_act_id=-1)
+    EnableThisSlotFlag()
     End()
 
     # --- Label 15 --- #
     DefineLabel(15)
-    IfPlayerInOwnWorld(AND_15)
-    IfConditionTrue(MAIN, input_condition=AND_15)
+    AND_15.Add(PlayerInOwnWorld())
+    
+    MAIN.Await(AND_15)
+    
     Wait(1.0)
     ReplanAI(0)
 
@@ -4250,35 +4633,59 @@ def Event_6906():
 @RestartOnRest(6907)
 def Event_6907():
     """Event 6907"""
-    EndIfThisEventSlotFlagEnabled()
+    if ThisEventSlotFlagEnabled():
+        return
     GotoIfPlayerNotInOwnWorld(Label.L15)
-    SkipLinesIfFlagDisabled(1, 102)
-    EnableFlag(71801)
+    if FlagEnabled(102):
+        EnableFlag(71801)
     SkipLinesIfFlagDisabled(4, 1050558600)
     EnableFlag(1050558540)
-    EndOfAnimation(obj=1050551540, animation_id=2)
-    DisableObjectActivation(1050551540, obj_act_id=-1)
+    EndOfAnimation(asset=1050551540, animation_id=2)
+    DisableAssetActivation(1050551540, obj_act_id=-1)
     SkipLines(4)
-    SkipLinesIfFlagDisabled(3, 73019)
-    EnableFlag(1050558540)
-    EndOfAnimation(obj=1050551540, animation_id=2)
-    DisableObjectActivation(1050551540, obj_act_id=-1)
+    if FlagEnabled(73019):
+        EnableFlag(1050558540)
+        EndOfAnimation(asset=1050551540, animation_id=2)
+        DisableAssetActivation(1050551540, obj_act_id=-1)
     SkipLinesIfFlagDisabled(4, 1039488600)
     EnableFlag(1039488540)
-    EndOfAnimation(obj=1039481540, animation_id=2)
-    DisableObjectActivation(1039481540, obj_act_id=-1)
+    EndOfAnimation(asset=1039481540, animation_id=2)
+    DisableAssetActivation(1039481540, obj_act_id=-1)
     SkipLines(4)
-    SkipLinesIfFlagDisabled(3, 73005)
-    EnableFlag(1039488540)
-    EndOfAnimation(obj=1039481540, animation_id=2)
-    DisableObjectActivation(1039481540, obj_act_id=-1)
-    DisableThisSlotFlag()
+    if FlagEnabled(73005):
+        EnableFlag(1039488540)
+        EndOfAnimation(asset=1039481540, animation_id=2)
+        DisableAssetActivation(1039481540, obj_act_id=-1)
+    EnableThisSlotFlag()
     End()
 
     # --- Label 15 --- #
     DefineLabel(15)
-    IfPlayerInOwnWorld(AND_15)
-    IfConditionTrue(MAIN, input_condition=AND_15)
+    AND_15.Add(PlayerInOwnWorld())
+    
+    MAIN.Await(AND_15)
+    
+    Wait(1.0)
+    ReplanAI(0)
+
+
+@RestartOnRest(6908)
+def Event_6908():
+    """Event 6908"""
+    if ThisEventSlotFlagEnabled():
+        return
+    GotoIfPlayerNotInOwnWorld(Label.L15)
+    if FlagEnabled(73207):
+        EnableFlag(73257)
+    EnableThisSlotFlag()
+    End()
+
+    # --- Label 15 --- #
+    DefineLabel(15)
+    AND_15.Add(PlayerInOwnWorld())
+    
+    MAIN.Await(AND_15)
+    
     Wait(1.0)
     ReplanAI(0)
 
@@ -4286,71 +4693,88 @@ def Event_6907():
 @RestartOnRest(9300)
 def Event_9300(_, achievement_id: int, flag: uint, seconds: float):
     """Event 9300"""
-    EndIfThisEventSlotFlagEnabled()
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, flag)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if ThisEventSlotFlagEnabled():
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(flag))
+    
+    MAIN.Await(AND_1)
+    
     Wait(seconds)
     AwardAchievement(achievement_id=achievement_id)
 
 
 @RestartOnRest(9360)
-def Event_9360(_, unknown_slot: uint, flag: uint, seconds: float):
+def Event_9360(_, activity_id: int, flag: uint, seconds: float):
     """Event 9360"""
-    EndIfThisEventSlotFlagEnabled()
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, flag)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if ThisEventSlotFlagEnabled():
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(flag))
+    
+    MAIN.Await(AND_1)
+    
     Wait(seconds)
-    UnknownSystem_07(unknown_slot=unknown_slot)
+    StartPS5Activity(activity_id=activity_id)
 
 
 @RestartOnRest(9375)
-def Event_9375(_, unknown_slot: uint, flag: uint, seconds: float):
+def Event_9375(_, activity_id: int, flag: uint, seconds: float):
     """Event 9375"""
-    EndIfThisEventSlotFlagEnabled()
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, flag)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if ThisEventSlotFlagEnabled():
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(flag))
+    
+    MAIN.Await(AND_1)
+    
     Wait(seconds)
-    UnknownSystem_08(unknown_slot=unknown_slot)
+    EndPS5Activity(activity_id=activity_id)
 
 
 @RestartOnRest(9390)
 def Event_9390(_, flag: uint, right: uint, right_1: uint, right_2: uint, right_3: uint, right_4: uint):
     """Event 9390"""
-    EndIfThisEventSlotFlagEnabled()
-    IfFlagEnabled(AND_1, flag)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if ThisEventSlotFlagEnabled():
+        return
+    AND_1.Add(FlagEnabled(flag))
+    
+    MAIN.Await(AND_1)
+    
     SkipLinesIfUnsignedEqual(2, left=0, right=right)
     SkipLinesIfFlagEnabled(1, right)
-    IfFlagEnabled(OR_2, right)
+    OR_2.Add(FlagEnabled(right))
     SkipLinesIfUnsignedEqual(2, left=0, right=right_1)
     SkipLinesIfFlagEnabled(1, right_1)
-    IfFlagEnabled(OR_2, right_1)
+    OR_2.Add(FlagEnabled(right_1))
     SkipLinesIfUnsignedEqual(2, left=0, right=right_2)
     SkipLinesIfFlagEnabled(1, right_2)
-    IfFlagEnabled(OR_2, right_2)
+    OR_2.Add(FlagEnabled(right_2))
     SkipLinesIfUnsignedEqual(2, left=0, right=right_3)
     SkipLinesIfFlagEnabled(1, right_3)
-    IfFlagEnabled(OR_2, right_3)
+    OR_2.Add(FlagEnabled(right_3))
     SkipLinesIfUnsignedEqual(2, left=0, right=right_4)
     SkipLinesIfFlagEnabled(1, right_4)
-    IfFlagEnabled(OR_2, right_4)
-    IfConditionTrue(MAIN, input_condition=OR_2)
-    DisableThisSlotFlag()
+    OR_2.Add(FlagEnabled(right_4))
+    
+    MAIN.Await(OR_2)
+    
+    EnableThisSlotFlag()
 
 
 @RestartOnRest(9820)
-def Event_9820(_, right: uint, item_lot_param_id: int, special_effect: int):
+def Event_9820(_, right: uint, item_lot: int, special_effect: int):
     """Event 9820"""
     DisableNetworkSync()
-    SkipLinesIfUnsignedEqual(1, left=0, right=right)
-    EndIfFlagEnabled(right)
-    IfCharacterHasSpecialEffect(AND_1, PLAYER, special_effect)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if UnsignedNotEqual(left=0, right=right):
+        if FlagEnabled(right):
+            return
+    AND_1.Add(CharacterHasSpecialEffect(PLAYER, special_effect))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(right)
-    AwardItemLot(item_lot_param_id, host_only=True)
+    AwardItemLot(item_lot, host_only=True)
     Wait(1.2000000476837158)
     Restart()
 
@@ -4359,37 +4783,45 @@ def Event_9820(_, right: uint, item_lot_param_id: int, special_effect: int):
 def Event_65810(_, flag: uint, flag_1: uint, right: uint, right_1: uint, right_2: uint, right_3: uint):
     """Event 65810"""
     GotoIfPlayerNotInOwnWorld(Label.L15)
-    EndIfFlagEnabled(flag)
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(OR_1, flag_1)
-    SkipLinesIfUnsignedEqual(1, left=0, right=right)
-    IfFlagEnabled(OR_1, right)
-    SkipLinesIfUnsignedEqual(1, left=0, right=right_1)
-    IfFlagEnabled(OR_1, right_1)
-    SkipLinesIfUnsignedEqual(1, left=0, right=right_2)
-    IfFlagEnabled(OR_1, right_2)
-    SkipLinesIfUnsignedEqual(1, left=0, right=right_3)
-    IfFlagEnabled(OR_1, right_3)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if FlagEnabled(flag):
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    OR_1.Add(FlagEnabled(flag_1))
+    if UnsignedNotEqual(left=0, right=right):
+        OR_1.Add(FlagEnabled(right))
+    if UnsignedNotEqual(left=0, right=right_1):
+        OR_1.Add(FlagEnabled(right_1))
+    if UnsignedNotEqual(left=0, right=right_2):
+        OR_1.Add(FlagEnabled(right_2))
+    if UnsignedNotEqual(left=0, right=right_3):
+        OR_1.Add(FlagEnabled(right_3))
+    AND_1.Add(OR_1)
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(flag)
-    SkipLinesIfFlagEnabled(1, 65800)
-    EnableFlag(65800)
+    if FlagDisabled(65800):
+        EnableFlag(65800)
     End()
 
     # --- Label 15 --- #
     DefineLabel(15)
-    IfPlayerInOwnWorld(AND_15)
-    IfConditionTrue(MAIN, input_condition=AND_15)
+    AND_15.Add(PlayerInOwnWorld())
+    
+    MAIN.Await(AND_15)
+    
     Wait(1.0)
 
 
 @ContinueOnRest(1910)
-def Event_1910(_, unk_4_8: uint, flag: uint):
+def Event_1910(_, npc_threat_level: uint, flag: uint):
     """Event 1910"""
-    IfUnknownCondition_33(MAIN, unk_4_8=unk_4_8, unk_8_9=True)
+    MAIN.Await(FieldBattleMusicEnabled(npc_threat_level=npc_threat_level))
+    
     EnableFlag(flag)
-    IfUnknownCondition_33(MAIN, unk_4_8=unk_4_8, unk_8_9=False)
+    
+    MAIN.Await(FieldBattleMusicDisabled(npc_threat_level=npc_threat_level))
+    
     DisableFlag(flag)
     Restart()
 
@@ -4397,10 +4829,13 @@ def Event_1910(_, unk_4_8: uint, flag: uint):
 @RestartOnRest(9910)
 def Event_9910(_, flag: uint):
     """Event 9910"""
-    EndIfPlayerNotInOwnWorld()
-    IfFlagEnabled(OR_1, flag)
-    IfCharacterDead(OR_1, PLAYER)
-    IfConditionTrue(MAIN, input_condition=OR_1)
+    if PlayerNotInOwnWorld():
+        return
+    OR_1.Add(FlagEnabled(flag))
+    OR_1.Add(CharacterDead(PLAYER))
+    
+    MAIN.Await(OR_1)
+    
     DisableFlag(flag)
     DisableFlagRange((1042330101, 1042330102))
     DisableFlagRange((1043330101, 1043330101))
@@ -4426,14 +4861,16 @@ def Event_9910(_, flag: uint):
 @ContinueOnRest(3040)
 def Event_3040():
     """Event 3040"""
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(9413)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(9413):
+        return
     GotoIfFlagEnabled(Label.L2, flag=9412)
     GotoIfFlagDisabled(Label.L20, flag=9411)
     GotoIfFlagEnabled(Label.L20, flag=9130)
     GotoIfCharacterInsideRegion(Label.L20, character=PLAYER, region=1051362220)
     DisableNetworkFlag(9411)
-    UnknownTimer_05(unknown1=0)
+    UnfreezeTime()
     DisableNetworkFlag(1051362702)
     EnableFlag(3618)
 
@@ -4441,43 +4878,51 @@ def Event_3040():
     DefineLabel(20)
     GotoIfFlagEnabled(Label.L1, flag=9411)
     GotoIfFlagEnabled(Label.L0, flag=9410)
-    IfFlagEnabled(OR_1, 1044369223)
-    IfFlagEnabled(OR_1, 1034499224)
-    IfFlagEnabled(OR_1, 3063)
-    IfPlayerInOwnWorld(AND_1)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    OR_1.Add(FlagEnabled(1044369223))
+    OR_1.Add(FlagEnabled(1034499224))
+    OR_1.Add(FlagEnabled(3063))
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(OR_1)
+    
+    MAIN.Await(AND_1)
+    
     GotoIfPlayerNotInOwnWorld(Label.L0)
     EnableNetworkFlag(9410)
 
     # --- Label 0 --- #
     DefineLabel(0)
-    IfPlayerInOwnWorld(AND_2)
-    IfFlagEnabled(AND_2, 1051362702)
-    IfConditionTrue(MAIN, input_condition=AND_2)
+    AND_2.Add(PlayerInOwnWorld())
+    AND_2.Add(FlagEnabled(1051362702))
+    
+    MAIN.Await(AND_2)
+    
     GotoIfPlayerNotInOwnWorld(Label.L1)
     EnableNetworkFlag(9411)
     EnableFlag(3618)
 
     # --- Label 1 --- #
     DefineLabel(1)
-    UnknownTimer_05(unknown1=1)
-    IfPlayerInOwnWorld(AND_3)
-    IfFlagEnabled(AND_3, 310)
-    IfConditionTrue(MAIN, input_condition=AND_3)
-    UnknownTimer_05(unknown1=0)
+    FreezeTime()
+    AND_3.Add(PlayerInOwnWorld())
+    AND_3.Add(FlagEnabled(310))
+    
+    MAIN.Await(AND_3)
+    
+    UnfreezeTime()
     GotoIfPlayerNotInOwnWorld(Label.L2)
     EnableNetworkFlag(9411)
 
     # --- Label 2 --- #
     DefineLabel(2)
-    IfFlagEnabled(AND_4, 9130)
-    IfFlagDisabled(AND_4, 1051369360)
-    IfPlayerInOwnWorld(AND_4)
-    IfCharacterInsideRegion(AND_5, character=PLAYER, region=1051362220)
-    IfConditionTrue(OR_4, input_condition=AND_4)
-    IfConditionTrue(OR_4, input_condition=AND_5)
-    IfConditionTrue(MAIN, input_condition=OR_4)
+    AND_4.Add(FlagEnabled(9130))
+    AND_4.Add(FlagDisabled(1051369360))
+    AND_4.Add(PlayerInOwnWorld())
+    AND_5.Add(CharacterInsideRegion(character=PLAYER, region=1051362220))
+    OR_4.Add(AND_4)
+    OR_4.Add(AND_5)
+    
+    MAIN.Await(OR_4)
+    
     EndIfFinishedConditionTrue(input_condition=AND_5)
     EnableNetworkFlag(9413)
 
@@ -4485,10 +4930,14 @@ def Event_3040():
 @RestartOnRest(3041)
 def Event_3041():
     """Event 3041"""
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagDisabled(9000)
-    EndIfFlagDisabled(11109657)
-    EndIfFlagEnabled(3002)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagDisabled(9000):
+        return
+    if FlagDisabled(11109657):
+        return
+    if FlagEnabled(3002):
+        return
     EnableFlag(9001)
     WaitFrames(frames=1)
     PlayCutscene(15000020, cutscene_flags=0, player_id=10000)
@@ -4500,12 +4949,15 @@ def Event_3041():
 @RestartOnRest(3042)
 def Event_3042():
     """Event 3042"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     SkipLinesIfFlagRangeAllDisabled(2, (76100, 76199))
     EnableFlag(3061)
     End()
     DisableFlag(3061)
-    IfFlagRangeAnyEnabled(MAIN, flag_range=(76100, 76199))
+    
+    MAIN.Await(FlagRangeAnyEnabled(flag_range=(76100, 76199)))
+    
     EnableFlag(3061)
     End()
 
@@ -4513,12 +4965,15 @@ def Event_3042():
 @RestartOnRest(3043)
 def Event_3043():
     """Event 3043"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     SkipLinesIfFlagRangeAllDisabled(2, (76200, 76299))
     EnableFlag(3062)
     End()
     DisableFlag(3062)
-    IfFlagRangeAnyEnabled(MAIN, flag_range=(76200, 76299))
+    
+    MAIN.Await(FlagRangeAnyEnabled(flag_range=(76200, 76299)))
+    
     EnableFlag(3062)
     End()
 
@@ -4526,12 +4981,15 @@ def Event_3043():
 @RestartOnRest(3044)
 def Event_3044():
     """Event 3044"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     SkipLinesIfFlagRangeAllDisabled(2, (76300, 76399))
     EnableFlag(3063)
     End()
     DisableFlag(3063)
-    IfFlagRangeAnyEnabled(MAIN, flag_range=(76300, 76399))
+    
+    MAIN.Await(FlagRangeAnyEnabled(flag_range=(76300, 76399)))
+    
     EnableFlag(3063)
     End()
 
@@ -4539,12 +4997,15 @@ def Event_3044():
 @RestartOnRest(3045)
 def Event_3045():
     """Event 3045"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     SkipLinesIfFlagRangeAllDisabled(2, (76400, 76499))
     EnableFlag(3064)
     End()
     DisableFlag(3064)
-    IfFlagRangeAnyEnabled(MAIN, flag_range=(76400, 76499))
+    
+    MAIN.Await(FlagRangeAnyEnabled(flag_range=(76400, 76499)))
+    
     EnableFlag(3064)
     End()
 
@@ -4552,12 +5013,15 @@ def Event_3045():
 @RestartOnRest(3046)
 def Event_3046():
     """Event 3046"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     SkipLinesIfFlagRangeAllDisabled(2, (76500, 76599))
     EnableFlag(3065)
     End()
     DisableFlag(3065)
-    IfFlagRangeAnyEnabled(MAIN, flag_range=(76500, 76599))
+    
+    MAIN.Await(FlagRangeAnyEnabled(flag_range=(76500, 76599)))
+    
     EnableFlag(3065)
     End()
 
@@ -4565,22 +5029,25 @@ def Event_3046():
 @RestartOnRest(3049)
 def Event_3049():
     """Event 3049"""
-    EndIfPlayerNotInOwnWorld()
-    IfFlagRangeAnyEnabled(AND_1, flag_range=(3740, 3748))
-    IfFlagEnabled(AND_1, 3741)
-    IfFlagRangeAnyEnabled(AND_2, flag_range=(3765, 3767))
-    IfFlagEnabled(AND_2, 3761)
-    IfFlagRangeAnyEnabled(AND_3, flag_range=(3565, 3568))
-    IfFlagEnabled(AND_3, 3561)
-    IfFlagEnabled(OR_2, 3601)
-    IfFlagEnabled(OR_2, 3603)
-    IfFlagRangeAnyEnabled(AND_4, flag_range=(3605, 3616))
-    IfConditionTrue(AND_4, input_condition=OR_2)
-    IfConditionTrue(OR_1, input_condition=AND_1)
-    IfConditionTrue(OR_1, input_condition=AND_2)
-    IfConditionTrue(OR_1, input_condition=AND_3)
-    IfConditionTrue(OR_1, input_condition=AND_4)
-    IfConditionTrue(MAIN, input_condition=OR_1)
+    if PlayerNotInOwnWorld():
+        return
+    AND_1.Add(FlagRangeAnyEnabled(flag_range=(3740, 3748)))
+    AND_1.Add(FlagEnabled(3741))
+    AND_2.Add(FlagRangeAnyEnabled(flag_range=(3765, 3767)))
+    AND_2.Add(FlagEnabled(3761))
+    AND_3.Add(FlagRangeAnyEnabled(flag_range=(3565, 3568)))
+    AND_3.Add(FlagEnabled(3561))
+    OR_2.Add(FlagEnabled(3601))
+    OR_2.Add(FlagEnabled(3603))
+    AND_4.Add(FlagRangeAnyEnabled(flag_range=(3605, 3616)))
+    AND_4.Add(OR_2)
+    OR_1.Add(AND_1)
+    OR_1.Add(AND_2)
+    OR_1.Add(AND_3)
+    OR_1.Add(AND_4)
+    
+    MAIN.Await(OR_1)
+    
     GotoIfFinishedConditionTrue(Label.L0, input_condition=AND_1)
     EnableFlag(1034509403)
 
@@ -4599,52 +5066,58 @@ def Event_3049():
     DefineLabel(2)
     SkipLinesIfFinishedConditionTrue(1, input_condition=AND_4)
     EnableFlag(1045379209)
-    IfFlagRangeAnyEnabled(AND_5, flag_range=(3740, 3748))
-    IfFlagEnabled(AND_5, 3740)
+    AND_5.Add(FlagRangeAnyEnabled(flag_range=(3740, 3748)))
+    AND_5.Add(FlagEnabled(3740))
     SkipLinesIfConditionFalse(2, AND_5)
     DisableNetworkConnectedFlagRange(flag_range=(3740, 3743))
     EnableNetworkFlag(3741)
-    IfFlagRangeAnyEnabled(AND_6, flag_range=(3765, 3767))
-    IfFlagEnabled(AND_6, 3760)
+    AND_6.Add(FlagRangeAnyEnabled(flag_range=(3765, 3767)))
+    AND_6.Add(FlagEnabled(3760))
     SkipLinesIfConditionFalse(2, AND_6)
     DisableNetworkConnectedFlagRange(flag_range=(3760, 3763))
     EnableNetworkFlag(3761)
-    IfFlagRangeAnyEnabled(AND_7, flag_range=(3565, 3568))
-    IfFlagEnabled(AND_7, 3560)
+    AND_7.Add(FlagRangeAnyEnabled(flag_range=(3565, 3568)))
+    AND_7.Add(FlagEnabled(3560))
     SkipLinesIfConditionFalse(2, AND_7)
     DisableNetworkConnectedFlagRange(flag_range=(3560, 3563))
     EnableNetworkFlag(3561)
-    IfFlagRangeAnyEnabled(AND_8, flag_range=(3605, 3616))
-    IfFlagEnabled(AND_8, 3600)
+    AND_8.Add(FlagRangeAnyEnabled(flag_range=(3605, 3616)))
+    AND_8.Add(FlagEnabled(3600))
     SkipLinesIfConditionFalse(2, AND_8)
     DisableNetworkConnectedFlagRange(flag_range=(3600, 3603))
     EnableNetworkFlag(3601)
-    IfFlagRangeAnyEnabled(AND_9, flag_range=(3740, 3748))
-    IfFlagEnabled(AND_9, 3741)
-    IfFlagRangeAnyEnabled(AND_10, flag_range=(3765, 3767))
-    IfFlagEnabled(AND_10, 3761)
-    IfFlagRangeAnyEnabled(AND_10, flag_range=(3565, 3568))
-    IfFlagEnabled(AND_10, 3561)
-    IfFlagEnabled(OR_4, 3601)
-    IfFlagEnabled(OR_4, 3603)
-    IfFlagRangeAnyEnabled(AND_11, flag_range=(3605, 3616))
-    IfConditionTrue(AND_11, input_condition=OR_4)
-    IfConditionTrue(OR_3, input_condition=AND_9)
-    IfConditionTrue(OR_3, input_condition=AND_10)
-    IfConditionTrue(OR_3, input_condition=AND_11)
-    IfConditionTrue(OR_3, input_condition=AND_12)
-    IfConditionFalse(MAIN, input_condition=OR_3)
+    AND_9.Add(FlagRangeAnyEnabled(flag_range=(3740, 3748)))
+    AND_9.Add(FlagEnabled(3741))
+    AND_10.Add(FlagRangeAnyEnabled(flag_range=(3765, 3767)))
+    AND_10.Add(FlagEnabled(3761))
+    AND_10.Add(FlagRangeAnyEnabled(flag_range=(3565, 3568)))
+    AND_10.Add(FlagEnabled(3561))
+    OR_4.Add(FlagEnabled(3601))
+    OR_4.Add(FlagEnabled(3603))
+    AND_11.Add(FlagRangeAnyEnabled(flag_range=(3605, 3616)))
+    AND_11.Add(OR_4)
+    OR_3.Add(AND_9)
+    OR_3.Add(AND_10)
+    OR_3.Add(AND_11)
+    OR_3.Add(AND_12)
+    
+    MAIN.Await(not OR_3)
+    
     Restart()
 
 
 @RestartOnRest(3050)
 def Event_3050():
     """Event 3050"""
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(400159)
-    IfFlagEnabled(AND_1, 12019280)
-    IfFlagDisabled(AND_1, 12012716)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(400159):
+        return
+    AND_1.Add(FlagEnabled(12019280))
+    AND_1.Add(FlagDisabled(12012716))
+    
+    MAIN.Await(AND_1)
+    
     RemoveGoodFromPlayer(item=8146, quantity=1)
     GivePlayerItemAmountSpecifiedByFlagValue(item_type=ItemType.Good, item=8187, flag=12019280, bit_count=1)
     AwardItemLot(101590, host_only=False)
@@ -4654,14 +5127,20 @@ def Event_3050():
 @RestartOnRest(3051)
 def Event_3051():
     """Event 3051"""
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(400033)
-    EndIfFlagEnabled(3383)
-    IfFlagEnabled(AND_1, 400031)
-    IfFlagEnabled(AND_1, 3383)
-    IfFlagDisabled(AND_1, 35009209)
-    IfConditionTrue(MAIN, input_condition=AND_1)
-    EndIfFlagEnabled(400033)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(400033):
+        return
+    if FlagEnabled(3383):
+        return
+    AND_1.Add(FlagEnabled(400031))
+    AND_1.Add(FlagEnabled(3383))
+    AND_1.Add(FlagDisabled(35009209))
+    
+    MAIN.Await(AND_1)
+    
+    if FlagEnabled(400033):
+        return
     RemoveGoodFromPlayer(item=8154, quantity=1)
     AwardItemLot(100330, host_only=False)
     End()
@@ -4670,12 +5149,17 @@ def Event_3051():
 @RestartOnRest(3052)
 def Event_3052():
     """Event 3052"""
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(400410)
-    EndIfFlagEnabled(4103)
-    IfFlagEnabled(AND_1, 1036419209)
-    IfFlagDisabled(AND_1, 1036412703)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(400410):
+        return
+    if FlagEnabled(4103):
+        return
+    AND_1.Add(FlagEnabled(1036419209))
+    AND_1.Add(FlagDisabled(1036412703))
+    
+    MAIN.Await(AND_1)
+    
     AwardItemLot(104100, host_only=False)
     End()
 
@@ -4683,28 +5167,38 @@ def Event_3052():
 @RestartOnRest(3053)
 def Event_3053():
     """Event 3053"""
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(60818)
-    EndIfFlagEnabled(3683)
-    IfFlagEnabled(OR_1, 31009218)
-    IfFlagEnabled(OR_1, 1038419267)
-    IfFlagEnabled(OR_1, 1037549213)
-    IfConditionTrue(MAIN, input_condition=OR_1)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(60818):
+        return
+    if FlagEnabled(3683):
+        return
+    OR_1.Add(FlagEnabled(31009218))
+    OR_1.Add(FlagEnabled(1038419267))
+    OR_1.Add(FlagEnabled(1037549213))
+    
+    MAIN.Await(OR_1)
+    
     EnableFlag(60818)
-    Unknown_2003_71(unk_0_4=40)
+    AwardGesture(gesture_param_id=40)
     End()
 
 
 @RestartOnRest(3054)
 def Event_3054():
     """Event 3054"""
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(60830)
-    IfFlagEnabled(AND_1, 4703)
-    IfConditionTrue(MAIN, input_condition=AND_1)
-    EndIfFlagEnabled(60830)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(60830):
+        return
+    AND_1.Add(FlagEnabled(4703))
+    
+    MAIN.Await(AND_1)
+    
+    if FlagEnabled(60830):
+        return
     EnableFlag(60830)
-    Unknown_2003_71(unk_0_4=73)
+    AwardGesture(gesture_param_id=73)
     End()
 
 
@@ -4713,15 +5207,19 @@ def Event_3055():
     """Event 3055"""
     DisableNetworkSync()
     GotoIfCharacterHasSpecialEffect(Label.L0, character=PLAYER, special_effect=503360)
-    IfPlayerHasGood(MAIN, 3360)
+    
+    MAIN.Await(PlayerHasGood(3360))
+    
     AddSpecialEffect(PLAYER, 503360)
 
     # --- Label 0 --- #
     DefineLabel(0)
-    IfPlayerDoesNotHaveGood(AND_1, 3360)
-    IfCharacterDoesNotHaveSpecialEffect(AND_1, PLAYER, 503355)
-    IfCharacterDoesNotHaveSpecialEffect(AND_1, PLAYER, 503356)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    AND_1.Add(PlayerDoesNotHaveGood(3360))
+    AND_1.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 503355))
+    AND_1.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 503356))
+    
+    MAIN.Await(AND_1)
+    
     AddSpecialEffect(PLAYER, 503359)
     Restart()
 
@@ -4729,23 +5227,27 @@ def Event_3055():
 @RestartOnRest(3056)
 def Event_3056():
     """Event 3056"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableNetworkSync()
-    IfFlagEnabled(OR_1, 1051587800)
-    IfFlagEnabled(OR_1, 400130)
-    IfFlagEnabled(OR_2, 110)
-    IfConditionTrue(OR_3, input_condition=OR_1)
-    IfConditionTrue(OR_3, input_condition=OR_2)
-    IfConditionTrue(MAIN, input_condition=OR_3)
+    OR_1.Add(FlagEnabled(1051587800))
+    OR_1.Add(FlagEnabled(400130))
+    OR_2.Add(FlagEnabled(110))
+    OR_3.Add(OR_1)
+    OR_3.Add(OR_2)
+    
+    MAIN.Await(OR_3)
+    
     GotoIfFinishedConditionTrue(Label.L0, input_condition=OR_1)
     Goto(Label.L1)
 
     # --- Label 0 --- #
     DefineLabel(0)
-    SkipLinesIfFlagEnabled(2, 1035429213)
-    EnableFlag(1035429211)
-    EnableFlag(1035429213)
-    IfFlagEnabled(MAIN, 110)
+    if FlagDisabled(1035429213):
+        EnableFlag(1035429211)
+        EnableFlag(1035429213)
+    
+    MAIN.Await(FlagEnabled(110))
 
     # --- Label 1 --- #
     DefineLabel(1)
@@ -4756,23 +5258,29 @@ def Event_3056():
 @RestartOnRest(3058)
 def Event_3058():
     """Event 3058"""
-    EndIfPlayerInOwnWorld()
+    if PlayerInOwnWorld():
+        return
     DisableNetworkSync()
-    IfCharacterHasSpecialEffect(MAIN, 20000, 9721)
+    
+    MAIN.Await(CharacterHasSpecialEffect(20000, 9721))
+    
     EnableFlag(7700)
 
 
 @RestartOnRest(3059)
 def Event_3059():
     """Event 3059"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableNetworkSync()
-    IfFlagEnabled(MAIN, 7700)
+    
+    MAIN.Await(FlagEnabled(7700))
+    
     DisableFlag(7700)
     GotoIfFlagEnabled(Label.L0, flag=1035449235)
     GotoIfFlagDisabled(Label.L0, flag=1035449207)
     IncrementEventValue(1035449230, bit_count=3, max_value=5)
-    IfEventValueGreaterThanOrEqual(AND_1, flag=1035449230, bit_count=5, value=3)
+    AND_1.Add(EventValue(flag=1035449230, bit_count=5) >= 3)
     GotoIfConditionFalse(Label.L0, input_condition=AND_1)
     EnableFlag(1035449235)
     EnableFlag(3198)
@@ -4786,9 +5294,13 @@ def Event_3059():
 @RestartOnRest(3080)
 def Event_3080():
     """Event 3080"""
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(9433)
-    IfTrueFlagCountGreaterThanOrEqual(MAIN, FlagType.Absolute, flag_range=(290500, 290999), value=4)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(9433):
+        return
+    
+    MAIN.Await(EnabledFlagCount(FlagType.Absolute, flag_range=(290500, 290999)) >= 4)
+    
     EnableFlag(9433)
     End()
 
@@ -4796,7 +5308,8 @@ def Event_3080():
 @RestartOnRest(3081)
 def Event_3081(_, flag: uint, flag_1: uint, flag_2: uint, flag_3: uint, flag_4: uint, flag_5: uint, flag_6: uint):
     """Event 3081"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(flag)
     DisableFlag(flag_1)
     DisableFlag(flag_2)
@@ -4804,414 +5317,441 @@ def Event_3081(_, flag: uint, flag_1: uint, flag_2: uint, flag_3: uint, flag_4: 
     DisableFlag(flag_4)
     DisableFlag(flag_5)
     DisableFlag(flag_6)
-    IfFlagEnabled(AND_1, 3425)
-    IfFlagEnabled(OR_1, 1037429207)
-    IfFlagEnabled(OR_1, 1037429209)
-    IfFlagEnabled(OR_1, 1037429205)
-    IfConditionTrue(AND_1, input_condition=OR_1)
+    AND_1.Add(FlagEnabled(3425))
+    OR_1.Add(FlagEnabled(1037429207))
+    OR_1.Add(FlagEnabled(1037429209))
+    OR_1.Add(FlagEnabled(1037429205))
+    AND_1.Add(OR_1)
     SkipLinesIfConditionFalse(1, AND_1)
     EnableFlag(flag)
-    IfFlagEnabled(AND_2, 3426)
-    IfFlagEnabled(OR_2, 1038519205)
-    IfFlagEnabled(OR_2, 1038519206)
-    IfConditionTrue(AND_2, input_condition=OR_2)
-    IfFlagEnabled(AND_2, 1038519207)
+    AND_2.Add(FlagEnabled(3426))
+    OR_2.Add(FlagEnabled(1038519205))
+    OR_2.Add(FlagEnabled(1038519206))
+    AND_2.Add(OR_2)
+    AND_2.Add(FlagEnabled(1038519207))
     SkipLinesIfConditionFalse(1, AND_2)
     EnableFlag(flag_1)
-    IfFlagEnabled(AND_3, 3426)
-    IfFlagEnabled(OR_3, 1038519205)
-    IfFlagEnabled(OR_3, 1038519206)
-    IfConditionTrue(AND_3, input_condition=OR_3)
-    IfFlagEnabled(AND_3, 1038509205)
+    AND_3.Add(FlagEnabled(3426))
+    OR_3.Add(FlagEnabled(1038519205))
+    OR_3.Add(FlagEnabled(1038519206))
+    AND_3.Add(OR_3)
+    AND_3.Add(FlagEnabled(1038509205))
     SkipLinesIfConditionFalse(1, AND_3)
     EnableFlag(flag_2)
-    IfFlagEnabled(AND_4, 3427)
-    IfFlagEnabled(AND_4, 16009305)
-    IfFlagDisabled(AND_4, 16009306)
+    AND_4.Add(FlagEnabled(3427))
+    AND_4.Add(FlagEnabled(16009305))
+    AND_4.Add(FlagDisabled(16009306))
     SkipLinesIfConditionFalse(1, AND_4)
     EnableFlag(flag_3)
-    IfFlagEnabled(AND_5, 3427)
-    IfFlagEnabled(AND_5, 16009305)
-    IfFlagEnabled(AND_5, 16009306)
+    AND_5.Add(FlagEnabled(3427))
+    AND_5.Add(FlagEnabled(16009305))
+    AND_5.Add(FlagEnabled(16009306))
     SkipLinesIfConditionFalse(1, AND_5)
     EnableFlag(flag_4)
-    IfFlagEnabled(AND_6, 3428)
+    AND_6.Add(FlagEnabled(3428))
     SkipLinesIfConditionFalse(1, AND_6)
     EnableFlag(flag_4)
-    IfFlagEnabled(AND_7, 3430)
-    IfFlagEnabled(AND_7, 16009335)
+    AND_7.Add(FlagEnabled(3430))
+    AND_7.Add(FlagEnabled(16009335))
     SkipLinesIfConditionFalse(1, AND_7)
     EnableFlag(flag_4)
-    IfFlagEnabled(AND_8, 3431)
-    IfFlagEnabled(AND_8, 16009335)
+    AND_8.Add(FlagEnabled(3431))
+    AND_8.Add(FlagEnabled(16009335))
     SkipLinesIfConditionFalse(1, AND_8)
     EnableFlag(flag_4)
-    IfFlagEnabled(AND_9, 3429)
-    IfFlagEnabled(OR_9, 16009326)
-    IfFlagEnabled(OR_9, 16009327)
-    IfConditionTrue(AND_9, input_condition=OR_9)
+    AND_9.Add(FlagEnabled(3429))
+    OR_9.Add(FlagEnabled(16009326))
+    OR_9.Add(FlagEnabled(16009327))
+    AND_9.Add(OR_9)
     SkipLinesIfConditionFalse(1, AND_9)
     EnableFlag(flag_5)
-    IfFlagEnabled(AND_10, 3431)
-    IfFlagDisabled(AND_10, 16009327)
-    IfFlagEnabled(AND_10, 16009328)
+    AND_10.Add(FlagEnabled(3431))
+    AND_10.Add(FlagDisabled(16009327))
+    AND_10.Add(FlagEnabled(16009328))
     SkipLinesIfConditionFalse(1, AND_10)
     EnableFlag(flag_5)
-    IfFlagEnabled(AND_11, 3431)
-    IfFlagDisabled(AND_11, 16009319)
+    AND_11.Add(FlagEnabled(3431))
+    AND_11.Add(FlagDisabled(16009319))
     SkipLinesIfConditionFalse(1, AND_11)
     EnableFlag(flag_6)
-    IfFlagEnabled(AND_12, 3431)
-    IfFlagEnabled(AND_12, 400091)
+    AND_12.Add(FlagEnabled(3431))
+    AND_12.Add(FlagEnabled(400091))
     SkipLinesIfConditionFalse(1, AND_12)
     EnableFlag(flag_6)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3425)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1037429205)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1037429207)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1037429209)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3426)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1038519205)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1038519206)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1038519207)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1038509205)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3427)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 16009305)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 16009306)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3428)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3430)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 16009335)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3431)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 16009335)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3429)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 16009326)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 16009327)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 16009328)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 16009319)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 400091)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3425))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1037429205))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1037429207))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1037429209))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3426))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1038519205))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1038519206))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1038519207))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1038509205))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3427))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 16009305))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 16009306))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3428))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3430))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 16009335))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3431))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 16009335))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3429))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 16009326))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 16009327))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 16009328))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 16009319))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 400091))
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @RestartOnRest(3082)
 def Event_3082(_, flag: uint, flag_1: uint, flag_2: uint):
     """Event 3082"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(flag)
     DisableFlag(flag_1)
     DisableFlag(flag_2)
-    IfFlagEnabled(OR_1, 3185)
-    IfFlagEnabled(OR_1, 3187)
-    IfFlagEnabled(OR_1, 3191)
-    IfFlagEnabled(OR_2, 1042369206)
-    IfFlagEnabled(OR_2, 1042369225)
-    IfFlagEnabled(OR_2, 1042369226)
-    IfFlagEnabled(OR_2, 1042369235)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfConditionTrue(AND_1, input_condition=OR_2)
+    OR_1.Add(FlagEnabled(3185))
+    OR_1.Add(FlagEnabled(3187))
+    OR_1.Add(FlagEnabled(3191))
+    OR_2.Add(FlagEnabled(1042369206))
+    OR_2.Add(FlagEnabled(1042369225))
+    OR_2.Add(FlagEnabled(1042369226))
+    OR_2.Add(FlagEnabled(1042369235))
+    AND_1.Add(OR_1)
+    AND_1.Add(OR_2)
     SkipLinesIfConditionFalse(1, AND_1)
     EnableFlag(flag)
-    IfFlagEnabled(AND_4, 3188)
-    IfFlagEnabled(OR_4, 1035449205)
-    IfFlagEnabled(OR_4, 1035449206)
-    IfConditionTrue(AND_4, input_condition=OR_4)
-    IfConditionTrue(OR_5, input_condition=AND_4)
-    IfFlagEnabled(OR_5, 3189)
-    IfFlagEnabled(OR_5, 3190)
+    AND_4.Add(FlagEnabled(3188))
+    OR_4.Add(FlagEnabled(1035449205))
+    OR_4.Add(FlagEnabled(1035449206))
+    AND_4.Add(OR_4)
+    OR_5.Add(AND_4)
+    OR_5.Add(FlagEnabled(3189))
+    OR_5.Add(FlagEnabled(3190))
     SkipLinesIfConditionFalse(1, OR_5)
     EnableFlag(flag_1)
-    IfFlagEnabled(OR_6, 3183)
-    IfFlagEnabled(OR_6, 12059166)
-    IfConditionTrue(OR_6, input_condition=AND_6)
-    IfFlagEnabled(AND_6, 400036)
-    IfFlagEnabled(AND_6, 400037)
+    OR_6.Add(FlagEnabled(3183))
+    OR_6.Add(FlagEnabled(12059166))
+    OR_6.Add(AND_6)
+    AND_6.Add(FlagEnabled(400036))
+    AND_6.Add(FlagEnabled(400037))
     SkipLinesIfConditionFalse(1, AND_6)
     EnableFlag(flag_2)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3185)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1042369206)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3187)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1042369225)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1042369226)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3191)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1042369235)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3188)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1035449205)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1035449206)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3189)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3190)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3183)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 12059166)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 400036)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 400037)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3185))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1042369206))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3187))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1042369225))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1042369226))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3191))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1042369235))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3188))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1035449205))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1035449206))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3189))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3190))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3183))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 12059166))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 400036))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 400037))
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @RestartOnRest(3083)
 def Event_3083(_, flag: uint, flag_1: uint):
     """Event 3083"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(flag)
     DisableFlag(flag_1)
-    IfFlagEnabled(AND_1, 3105)
-    IfFlagEnabled(OR_1, 16009208)
-    IfFlagEnabled(OR_1, 16009206)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfConditionTrue(OR_2, input_condition=AND_1)
-    IfFlagEnabled(OR_2, 3106)
-    IfFlagEnabled(OR_2, 3107)
-    IfFlagEnabled(OR_2, 3108)
+    AND_1.Add(FlagEnabled(3105))
+    OR_1.Add(FlagEnabled(16009208))
+    OR_1.Add(FlagEnabled(16009206))
+    AND_1.Add(OR_1)
+    OR_2.Add(AND_1)
+    OR_2.Add(FlagEnabled(3106))
+    OR_2.Add(FlagEnabled(3107))
+    OR_2.Add(FlagEnabled(3108))
     SkipLinesIfConditionFalse(1, OR_2)
     EnableFlag(flag)
-    IfFlagEnabled(OR_4, 3109)
-    IfFlagEnabled(OR_4, 3110)
-    IfFlagEnabled(OR_4, 3111)
-    IfFlagEnabled(OR_5, 16009255)
-    IfFlagEnabled(OR_5, 16009256)
-    IfFlagEnabled(OR_5, 16009258)
-    IfConditionTrue(AND_4, input_condition=OR_4)
-    IfConditionTrue(AND_4, input_condition=OR_5)
-    IfFlagDisabled(AND_6, 16009208)
-    IfFlagEnabled(AND_6, 71600)
-    IfFlagEnabled(AND_6, 3109)
-    IfConditionTrue(OR_6, input_condition=AND_4)
-    IfConditionTrue(OR_6, input_condition=AND_6)
+    OR_4.Add(FlagEnabled(3109))
+    OR_4.Add(FlagEnabled(3110))
+    OR_4.Add(FlagEnabled(3111))
+    OR_5.Add(FlagEnabled(16009255))
+    OR_5.Add(FlagEnabled(16009256))
+    OR_5.Add(FlagEnabled(16009258))
+    AND_4.Add(OR_4)
+    AND_4.Add(OR_5)
+    AND_6.Add(FlagDisabled(16009208))
+    AND_6.Add(FlagEnabled(71600))
+    AND_6.Add(FlagEnabled(3109))
+    OR_6.Add(AND_4)
+    OR_6.Add(AND_6)
     SkipLinesIfConditionFalse(1, OR_6)
     EnableFlag(flag_1)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3105)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 16009208)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 16009206)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3106)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3107)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3108)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3109)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3110)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3111)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 16009255)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 16009256)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 16009258)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 16009208)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 71600)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3105))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 16009208))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 16009206))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3106))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3107))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3108))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3109))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3110))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3111))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 16009255))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 16009256))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 16009258))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 16009208))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 71600))
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @RestartOnRest(3084)
 def Event_3084(_, flag: uint, flag_1: uint, flag_2: uint):
     """Event 3084"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(flag)
     DisableFlag(flag_1)
     DisableFlag(flag_2)
-    IfFlagEnabled(AND_1, 4105)
-    IfFlagEnabled(OR_1, 1036419205)
-    IfFlagEnabled(OR_1, 1036419206)
-    IfConditionTrue(AND_1, input_condition=OR_1)
+    AND_1.Add(FlagEnabled(4105))
+    OR_1.Add(FlagEnabled(1036419205))
+    OR_1.Add(FlagEnabled(1036419206))
+    AND_1.Add(OR_1)
     SkipLinesIfConditionFalse(1, AND_1)
     EnableFlag(flag)
-    IfFlagEnabled(OR_2, 1036419209)
-    IfFlagEnabled(AND_2, 4103)
-    IfFlagEnabled(AND_2, 400412)
-    IfConditionTrue(OR_3, input_condition=OR_2)
-    IfConditionTrue(OR_3, input_condition=AND_2)
+    OR_2.Add(FlagEnabled(1036419209))
+    AND_2.Add(FlagEnabled(4103))
+    AND_2.Add(FlagEnabled(400412))
+    OR_3.Add(OR_2)
+    OR_3.Add(AND_2)
     SkipLinesIfConditionFalse(1, OR_3)
     EnableFlag(flag_1)
-    IfFlagEnabled(AND_4, 4106)
-    IfFlagEnabled(OR_4, 1047589206)
-    IfFlagEnabled(OR_4, 1047582700)
-    IfConditionTrue(AND_4, input_condition=OR_4)
+    AND_4.Add(FlagEnabled(4106))
+    OR_4.Add(FlagEnabled(1047589206))
+    OR_4.Add(FlagEnabled(1047582700))
+    AND_4.Add(OR_4)
     SkipLinesIfConditionFalse(1, AND_4)
     EnableFlag(flag_2)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 4105)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1036419205)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1036419206)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1036419209)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 4103)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 400412)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 4106)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1047589206)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1047582700)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 4105))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1036419205))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1036419206))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1036419209))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 4103))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 400412))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 4106))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1047589206))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1047582700))
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @RestartOnRest(3085)
 def Event_3085(_, flag: uint, flag_1: uint):
     """Event 3085"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(flag)
     DisableFlag(flag_1)
-    IfFlagEnabled(OR_1, 3688)
-    IfFlagEnabled(OR_1, 3693)
-    IfFlagEnabled(OR_2, 1037549206)
-    IfFlagEnabled(OR_2, 1037549207)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfConditionTrue(AND_1, input_condition=OR_2)
+    OR_1.Add(FlagEnabled(3688))
+    OR_1.Add(FlagEnabled(3693))
+    OR_2.Add(FlagEnabled(1037549206))
+    OR_2.Add(FlagEnabled(1037549207))
+    AND_1.Add(OR_1)
+    AND_1.Add(OR_2)
     SkipLinesIfConditionFalse(1, AND_1)
     EnableFlag(flag)
-    IfFlagEnabled(AND_3, 400181)
-    IfFlagEnabled(AND_3, 400189)
+    AND_3.Add(FlagEnabled(400181))
+    AND_3.Add(FlagEnabled(400189))
     SkipLinesIfConditionFalse(1, AND_3)
     EnableFlag(flag_1)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3688)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3693)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1037549206)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1037549207)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 400181)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 400189)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3688))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3693))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1037549206))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1037549207))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 400181))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 400189))
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @RestartOnRest(3086)
 def Event_3086(_, flag: uint, flag_1: uint, flag_2: uint, flag_3: uint):
     """Event 3086"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(flag)
     DisableFlag(flag_1)
     DisableFlag(flag_2)
     DisableFlag(flag_3)
-    IfFlagEnabled(OR_1, 3625)
-    IfFlagEnabled(AND_1, 3631)
-    IfFlagEnabled(AND_1, 1044389209)
-    IfConditionTrue(OR_1, input_condition=AND_1)
-    IfFlagEnabled(AND_2, 1044389206)
-    IfConditionTrue(AND_2, input_condition=OR_1)
+    OR_1.Add(FlagEnabled(3625))
+    AND_1.Add(FlagEnabled(3631))
+    AND_1.Add(FlagEnabled(1044389209))
+    OR_1.Add(AND_1)
+    AND_2.Add(FlagEnabled(1044389206))
+    AND_2.Add(OR_1)
     SkipLinesIfConditionFalse(1, AND_2)
     EnableFlag(flag)
-    IfFlagEnabled(OR_3, 3626)
-    IfFlagEnabled(AND_3, 3631)
-    IfFlagEnabled(AND_3, 1043359259)
-    IfConditionTrue(OR_3, input_condition=AND_3)
-    IfFlagEnabled(OR_4, 1043359255)
-    IfFlagEnabled(OR_4, 1043359256)
-    IfFlagEnabled(OR_4, 1043359257)
-    IfConditionTrue(AND_4, input_condition=OR_3)
-    IfConditionTrue(AND_4, input_condition=OR_4)
+    OR_3.Add(FlagEnabled(3626))
+    AND_3.Add(FlagEnabled(3631))
+    AND_3.Add(FlagEnabled(1043359259))
+    OR_3.Add(AND_3)
+    OR_4.Add(FlagEnabled(1043359255))
+    OR_4.Add(FlagEnabled(1043359256))
+    OR_4.Add(FlagEnabled(1043359257))
+    AND_4.Add(OR_3)
+    AND_4.Add(OR_4)
     SkipLinesIfConditionFalse(1, AND_4)
     EnableFlag(flag_1)
-    IfFlagEnabled(OR_5, 3627)
-    IfFlagEnabled(AND_5, 3631)
-    IfFlagEnabled(AND_5, 1035469209)
-    IfConditionTrue(OR_5, input_condition=AND_5)
-    IfFlagEnabled(AND_6, 1035469208)
-    IfConditionTrue(AND_6, input_condition=OR_5)
+    OR_5.Add(FlagEnabled(3627))
+    AND_5.Add(FlagEnabled(3631))
+    AND_5.Add(FlagEnabled(1035469209))
+    OR_5.Add(AND_5)
+    AND_6.Add(FlagEnabled(1035469208))
+    AND_6.Add(OR_5)
     SkipLinesIfConditionFalse(1, AND_6)
     EnableFlag(flag_2)
-    IfFlagEnabled(OR_7, 3630)
-    IfFlagEnabled(AND_7, 3631)
-    IfFlagEnabled(AND_7, 1039529209)
-    IfConditionTrue(OR_7, input_condition=AND_7)
-    IfFlagEnabled(AND_8, 1039529205)
-    IfConditionTrue(AND_8, input_condition=OR_7)
+    OR_7.Add(FlagEnabled(3630))
+    AND_7.Add(FlagEnabled(3631))
+    AND_7.Add(FlagEnabled(1039529209))
+    OR_7.Add(AND_7)
+    AND_8.Add(FlagEnabled(1039529205))
+    AND_8.Add(OR_7)
     SkipLinesIfConditionFalse(1, AND_8)
     EnableFlag(flag_3)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3625)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3631)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1044389209)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1044389206)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3626)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1043359259)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1043359255)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1043359256)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1043359257)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3627)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1035469209)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1035469208)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3630)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1039529209)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1039529205)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3625))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3631))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1044389209))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1044389206))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3626))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1043359259))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1043359255))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1043359256))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1043359257))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3627))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1035469209))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1035469208))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3630))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1039529209))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1039529205))
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @RestartOnRest(3087)
 def Event_3087(_, flag: uint, flag_1: uint, flag_2: uint):
     """Event 3087"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(flag)
     DisableFlag(flag_1)
     DisableFlag(flag_2)
-    IfFlagEnabled(AND_1, 3885)
-    IfFlagEnabled(OR_2, 1042389255)
-    IfFlagEnabled(OR_2, 1042389256)
-    IfConditionTrue(AND_1, input_condition=OR_2)
+    AND_1.Add(FlagEnabled(3885))
+    OR_2.Add(FlagEnabled(1042389255))
+    OR_2.Add(FlagEnabled(1042389256))
+    AND_1.Add(OR_2)
     SkipLinesIfConditionFalse(1, AND_1)
     EnableFlag(flag)
-    IfFlagEnabled(AND_3, 400293)
-    IfFlagEnabled(AND_3, 400294)
-    IfFlagEnabled(AND_3, 400299)
+    AND_3.Add(FlagEnabled(400293))
+    AND_3.Add(FlagEnabled(400294))
+    AND_3.Add(FlagEnabled(400299))
     SkipLinesIfConditionFalse(1, AND_3)
     EnableFlag(flag_1)
-    IfFlagEnabled(AND_4, 3886)
-    IfFlagEnabled(OR_4, 16009455)
-    IfFlagEnabled(OR_4, 16009456)
-    IfFlagEnabled(OR_4, 16009460)
-    IfConditionTrue(AND_4, input_condition=OR_4)
+    AND_4.Add(FlagEnabled(3886))
+    OR_4.Add(FlagEnabled(16009455))
+    OR_4.Add(FlagEnabled(16009456))
+    OR_4.Add(FlagEnabled(16009460))
+    AND_4.Add(OR_4)
     SkipLinesIfConditionFalse(1, AND_4)
     EnableFlag(flag_2)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3885)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1042389255)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1042389256)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 400293)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 400294)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 400299)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3886)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 16009455)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 16009456)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 16009460)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3885))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1042389255))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1042389256))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 400293))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 400294))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 400299))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3886))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 16009455))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 16009456))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 16009460))
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @RestartOnRest(3088)
 def Event_3088(_, flag: uint, flag_1: uint, flag_2: uint, flag_3: uint):
     """Event 3088"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(flag)
     DisableFlag(flag_1)
     DisableFlag(flag_2)
     DisableFlag(flag_3)
-    IfFlagEnabled(AND_1, 4145)
-    IfFlagEnabled(OR_2, 1036439205)
-    IfFlagEnabled(OR_2, 1036439206)
-    IfConditionTrue(AND_1, input_condition=OR_2)
+    AND_1.Add(FlagEnabled(4145))
+    OR_2.Add(FlagEnabled(1036439205))
+    OR_2.Add(FlagEnabled(1036439206))
+    AND_1.Add(OR_2)
     SkipLinesIfConditionFalse(1, AND_1)
     EnableFlag(flag)
-    IfFlagEnabled(AND_3, 400300)
-    IfFlagEnabled(AND_3, 400309)
+    AND_3.Add(FlagEnabled(400300))
+    AND_3.Add(FlagEnabled(400309))
     SkipLinesIfConditionFalse(1, AND_3)
     EnableFlag(flag_1)
-    IfFlagEnabled(OR_4, 4146)
-    IfFlagEnabled(OR_4, 4147)
-    IfConditionTrue(AND_4, input_condition=OR_4)
-    IfFlagEnabled(AND_4, 1044529256)
+    OR_4.Add(FlagEnabled(4146))
+    OR_4.Add(FlagEnabled(4147))
+    AND_4.Add(OR_4)
+    AND_4.Add(FlagEnabled(1044529256))
     SkipLinesIfConditionFalse(1, AND_4)
     EnableFlag(flag_2)
-    IfFlagEnabled(AND_5, 400308)
-    IfFlagEnabled(AND_5, 400309)
+    AND_5.Add(FlagEnabled(400308))
+    AND_5.Add(FlagEnabled(400309))
     SkipLinesIfConditionFalse(1, AND_5)
     EnableFlag(flag_3)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 4145)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1036439205)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1036439206)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 400300)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 400309)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 4146)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 4147)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1044529256)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 400308)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 4145))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1036439205))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1036439206))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 400300))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 400309))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 4146))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 4147))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1044529256))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 400308))
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @RestartOnRest(3089)
 def Event_3089():
     """Event 3089"""
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(34149201)
-    IfFlagEnabled(OR_1, 62528)
-    IfFlagEnabled(OR_1, 34149200)
-    IfConditionTrue(MAIN, input_condition=OR_1)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(34149201):
+        return
+    OR_1.Add(FlagEnabled(62528))
+    OR_1.Add(FlagEnabled(34149200))
+    
+    MAIN.Await(OR_1)
+    
     EnableFlag(34149201)
     End()
 
@@ -5219,139 +5759,161 @@ def Event_3089():
 @RestartOnRest(3090)
 def Event_3090(_, flag: uint, flag_1: uint):
     """Event 3090"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(flag)
     DisableFlag(flag_1)
-    IfFlagEnabled(AND_1, 62022)
-    IfFlagEnabled(AND_1, 3409)
+    AND_1.Add(FlagEnabled(62022))
+    AND_1.Add(FlagEnabled(3409))
     SkipLinesIfConditionFalse(1, AND_1)
     EnableFlag(flag)
-    IfFlagEnabled(AND_2, 62031)
-    IfFlagEnabled(AND_2, 118)
+    AND_2.Add(FlagEnabled(62031))
+    AND_2.Add(FlagEnabled(118))
     SkipLinesIfConditionFalse(1, AND_2)
     EnableFlag(flag_1)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 62022)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3409)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 62031)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 118)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 62022))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3409))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 62031))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 118))
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @RestartOnRest(3091)
 def Event_3091(_, flag: uint):
     """Event 3091"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(flag)
-    IfFlagEnabled(AND_1, 1051369358)
-    IfFlagEnabled(AND_1, 9410)
-    IfFlagDisabled(AND_1, 9412)
-    IfFlagEnabled(AND_1, 3747)
-    IfFlagEnabled(OR_1, 1034509405)
-    IfFlagEnabled(OR_1, 1034509431)
-    IfConditionFalse(AND_2, input_condition=AND_1)
-    IfConditionTrue(AND_2, input_condition=OR_1)
+    AND_1.Add(FlagEnabled(1051369358))
+    AND_1.Add(FlagEnabled(9410))
+    AND_1.Add(FlagDisabled(9412))
+    AND_1.Add(FlagEnabled(3747))
+    OR_1.Add(FlagEnabled(1034509405))
+    OR_1.Add(FlagEnabled(1034509431))
+    AND_2.Add(not AND_1)
+    AND_2.Add(OR_1)
     SkipLinesIfConditionFalse(1, AND_2)
     EnableFlag(flag)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1051369358)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 9410)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 9412)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3747)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1034509405)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1034509431)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1051369358))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 9410))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 9412))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3747))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1034509405))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1034509431))
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @RestartOnRest(3092)
 def Event_3092(_, flag: uint):
     """Event 3092"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(flag)
-    IfFlagEnabled(OR_1, 1034499205)
-    IfFlagEnabled(OR_1, 1034499238)
-    IfFlagEnabled(OR_1, 1034499233)
+    OR_1.Add(FlagEnabled(1034499205))
+    OR_1.Add(FlagEnabled(1034499238))
+    OR_1.Add(FlagEnabled(1034499233))
     SkipLinesIfConditionFalse(1, OR_1)
     EnableFlag(flag)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1034499205)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1034499238)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1034499233)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1034499205))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1034499238))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1034499233))
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @RestartOnRest(3093)
 def Event_3093(_, flag: uint):
     """Event 3093"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(flag)
-    IfFlagEnabled(OR_1, 1034509310)
-    IfFlagEnabled(OR_1, 1034509312)
+    OR_1.Add(FlagEnabled(1034509310))
+    OR_1.Add(FlagEnabled(1034509312))
     SkipLinesIfConditionFalse(1, OR_1)
     EnableFlag(flag)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1034509310)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1034509312)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1034509310))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1034509312))
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @RestartOnRest(3094)
 def Event_3094(_, flag: uint):
     """Event 3094"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(flag)
-    IfFlagEnabled(OR_1, 12039155)
-    IfFlagEnabled(OR_1, 12039156)
+    OR_1.Add(FlagEnabled(12039155))
+    OR_1.Add(FlagEnabled(12039156))
     SkipLinesIfConditionFalse(1, OR_1)
     EnableFlag(flag)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 12039155)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 12039156)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 12039155))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 12039156))
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @RestartOnRest(3095)
 def Event_3095(_, flag: uint):
     """Event 3095"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(flag)
-    IfFlagEnabled(OR_1, 1045399205)
-    IfFlagEnabled(OR_1, 1045399206)
+    OR_1.Add(FlagEnabled(1045399205))
+    OR_1.Add(FlagEnabled(1045399206))
     SkipLinesIfConditionFalse(1, OR_1)
     EnableFlag(flag)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1045399205)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1045399206)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1045399205))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1045399206))
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @RestartOnRest(3096)
 def Event_3096(_, flag: uint, flag_1: uint):
     """Event 3096"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(flag_1)
-    IfFlagEnabled(OR_1, 1038439205)
+    OR_1.Add(FlagEnabled(1038439205))
     SkipLinesIfConditionFalse(1, OR_1)
     EnableFlag(flag)
-    IfFlagEnabled(OR_2, 35009205)
-    IfFlagEnabled(OR_2, 35009206)
+    OR_2.Add(FlagEnabled(35009205))
+    OR_2.Add(FlagEnabled(35009206))
     SkipLinesIfConditionFalse(1, OR_2)
     EnableFlag(flag_1)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1038439205)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 35009205)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 35009206)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1038439205))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 35009205))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 35009206))
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @RestartOnRest(3097)
 def Event_3097(_, flag: uint):
     """Event 3097"""
-    EndIfPlayerNotInOwnWorld()
-    IfFlagEnabled(OR_1, 1051369227)
+    if PlayerNotInOwnWorld():
+        return
+    OR_1.Add(FlagEnabled(1051369227))
     SkipLinesIfConditionFalse(1, OR_1)
     EnableFlag(flag)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1051369227)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1051369227))
     AwaitConditionTrue(OR_15)
     Restart()
 
@@ -5359,24 +5921,30 @@ def Event_3097(_, flag: uint):
 @RestartOnRest(3098)
 def Event_3098():
     """Event 3098"""
-    EndIfPlayerNotInOwnWorld()
-    IfFlagEnabled(AND_1, 1051369204)
-    EndIfConditionTrue(input_condition=AND_1)
-    IfFlagEnabled(MAIN, 3367)
-    SkipLinesIfFlagEnabled(1, 9118)
-    IfFlagEnabled(OR_1, 9118)
-    SkipLinesIfFlagEnabled(1, 9101)
-    IfFlagEnabled(OR_1, 9101)
-    SkipLinesIfFlagEnabled(1, 9104)
-    IfFlagEnabled(OR_1, 9104)
-    SkipLinesIfFlagEnabled(1, 9122)
-    IfFlagEnabled(OR_1, 9122)
-    SkipLinesIfFlagEnabled(1, 9120)
-    IfFlagEnabled(OR_1, 9120)
-    SkipLinesIfFlagEnabled(1, 9112)
-    IfFlagEnabled(OR_1, 9112)
-    IfFlagEnabled(OR_1, 6000)
-    IfConditionTrue(MAIN, input_condition=OR_1)
+    if PlayerNotInOwnWorld():
+        return
+    AND_1.Add(FlagEnabled(1051369204))
+    if AND_1:
+        return
+    
+    MAIN.Await(FlagEnabled(3367))
+    
+    if FlagDisabled(9118):
+        OR_1.Add(FlagEnabled(9118))
+    if FlagDisabled(9101):
+        OR_1.Add(FlagEnabled(9101))
+    if FlagDisabled(9104):
+        OR_1.Add(FlagEnabled(9104))
+    if FlagDisabled(9122):
+        OR_1.Add(FlagEnabled(9122))
+    if FlagDisabled(9120):
+        OR_1.Add(FlagEnabled(9120))
+    if FlagDisabled(9112):
+        OR_1.Add(FlagEnabled(9112))
+    OR_1.Add(FlagEnabled(6000))
+    
+    MAIN.Await(OR_1)
+    
     EnableNetworkFlag(1051369204)
     EnableFlag(3378)
     End()
@@ -5385,51 +5953,53 @@ def Event_3098():
 @RestartOnRest(3099)
 def Event_3099():
     """Event 3099"""
-    EndIfPlayerNotInOwnWorld()
-    IfFlagEnabled(AND_1, 11109304)
-    EndIfConditionTrue(input_condition=AND_1)
+    if PlayerNotInOwnWorld():
+        return
+    AND_1.Add(FlagEnabled(11109304))
+    if AND_1:
+        return
     AwaitFlagEnabled(flag=11109806)
     GotoIfFlagEnabled(Label.L1, flag=11109303)
 
     # --- Label 0 --- #
     DefineLabel(0)
-    SkipLinesIfFlagDisabled(1, 9130)
-    EnableNetworkFlag(11109309)
-    SkipLinesIfFlagDisabled(1, 9101)
-    EnableNetworkFlag(11109310)
-    SkipLinesIfFlagDisabled(1, 9104)
-    EnableNetworkFlag(11109311)
-    SkipLinesIfFlagDisabled(1, 9122)
-    EnableNetworkFlag(11109312)
-    SkipLinesIfFlagDisabled(1, 9120)
-    EnableNetworkFlag(11109313)
-    SkipLinesIfFlagDisabled(1, 9112)
-    EnableNetworkFlag(11109314)
+    if FlagEnabled(9130):
+        EnableNetworkFlag(11109309)
+    if FlagEnabled(9101):
+        EnableNetworkFlag(11109310)
+    if FlagEnabled(9104):
+        EnableNetworkFlag(11109311)
+    if FlagEnabled(9122):
+        EnableNetworkFlag(11109312)
+    if FlagEnabled(9120):
+        EnableNetworkFlag(11109313)
+    if FlagEnabled(9112):
+        EnableNetworkFlag(11109314)
     EnableNetworkFlag(11109303)
     End()
 
     # --- Label 1 --- #
     DefineLabel(1)
-    SkipLinesIfFlagEnabled(1, 11109309)
-    IfFlagEnabled(OR_1, 9130)
-    SkipLinesIfFlagEnabled(1, 11109310)
-    IfFlagEnabled(OR_1, 9101)
-    SkipLinesIfFlagEnabled(1, 11109311)
-    IfFlagEnabled(OR_1, 9104)
-    SkipLinesIfFlagEnabled(1, 11109312)
-    IfFlagEnabled(OR_1, 9122)
-    SkipLinesIfFlagEnabled(1, 11109313)
-    IfFlagEnabled(OR_1, 9120)
-    SkipLinesIfFlagEnabled(1, 11109314)
-    IfFlagEnabled(OR_1, 9112)
-    IfFlagEnabled(AND_5, 11109309)
-    IfFlagEnabled(AND_5, 11109310)
-    IfFlagEnabled(AND_5, 11109311)
-    IfFlagEnabled(AND_5, 11109312)
-    IfFlagEnabled(AND_5, 11109313)
-    IfFlagEnabled(AND_5, 11109314)
-    IfConditionTrue(OR_1, input_condition=AND_5)
-    IfFlagEnabled(OR_1, 6000)
+    if FlagDisabled(11109309):
+        OR_1.Add(FlagEnabled(9130))
+    if FlagDisabled(11109310):
+        OR_1.Add(FlagEnabled(9101))
+    if FlagDisabled(11109311):
+        OR_1.Add(FlagEnabled(9104))
+    if FlagDisabled(11109312):
+        OR_1.Add(FlagEnabled(9122))
+    if FlagDisabled(11109313):
+        OR_1.Add(FlagEnabled(9120))
+    if FlagDisabled(11109314):
+        OR_1.Add(FlagEnabled(9112))
+    AND_5.Add(FlagEnabled(11109309))
+    AND_5.Add(FlagEnabled(11109310))
+    AND_5.Add(FlagEnabled(11109311))
+    AND_5.Add(FlagEnabled(11109312))
+    AND_5.Add(FlagEnabled(11109313))
+    AND_5.Add(FlagEnabled(11109314))
+    OR_1.Add(AND_5)
+    OR_1.Add(FlagEnabled(6000))
     AwaitConditionTrue(OR_1)
     EnableNetworkFlag(11109304)
     End()
@@ -5438,318 +6008,358 @@ def Event_3099():
 @RestartOnRest(4600)
 def Event_4600(_, flag: uint, flag_1: uint):
     """Event 4600"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(flag)
-    IfFlagRangeAnyEnabled(AND_1, flag_range=(3265, 3268))
-    IfFlagEnabled(OR_1, 10009351)
-    IfFlagEnabled(OR_1, 10009353)
-    IfFlagEnabled(OR_1, 10009397)
-    IfConditionTrue(AND_1, input_condition=OR_1)
+    AND_1.Add(FlagRangeAnyEnabled(flag_range=(3265, 3268)))
+    OR_1.Add(FlagEnabled(10009351))
+    OR_1.Add(FlagEnabled(10009353))
+    OR_1.Add(FlagEnabled(10009397))
+    AND_1.Add(OR_1)
     SkipLinesIfConditionFalse(1, AND_1)
     EnableFlag(flag)
-    IfFlagEnabled(OR_2, 10009399)
-    IfFlagEnabled(OR_2, 10002768)
+    OR_2.Add(FlagEnabled(10009399))
+    OR_2.Add(FlagEnabled(10002768))
     SkipLinesIfConditionFalse(1, OR_2)
     EnableFlag(flag_1)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3265)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3266)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3267)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3268)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 10009351)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 10009353)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 10009397)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 10009399)
-    IfFlagEnabled(AND_15, 10002768)
-    IfFlagDisabled(AND_15, flag_1)
-    IfConditionTrue(OR_15, input_condition=AND_15)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3265))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3266))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3267))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3268))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 10009351))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 10009353))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 10009397))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 10009399))
+    AND_15.Add(FlagEnabled(10002768))
+    AND_15.Add(FlagDisabled(flag_1))
+    OR_15.Add(AND_15)
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @RestartOnRest(4601)
 def Event_4601(_, flag: uint):
     """Event 4601"""
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(flag)
-    IfFlagEnabled(OR_1, 14009205)
-    IfFlagEnabled(OR_1, 14002705)
-    IfFlagEnabled(OR_1, 14002706)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(flag):
+        return
+    OR_1.Add(FlagEnabled(14009205))
+    OR_1.Add(FlagEnabled(14002705))
+    OR_1.Add(FlagEnabled(14002706))
     SkipLinesIfConditionFalse(1, OR_1)
     EnableFlag(flag)
-    IfFlagEnabled(OR_15, 14009205)
-    IfFlagEnabled(OR_14, 14002705)
-    IfFlagEnabled(OR_14, 14002706)
-    IfConditionTrue(AND_14, input_condition=OR_14)
-    IfFlagDisabled(AND_14, flag)
-    IfConditionTrue(OR_15, input_condition=AND_14)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagEnabled(14009205))
+    OR_14.Add(FlagEnabled(14002705))
+    OR_14.Add(FlagEnabled(14002706))
+    AND_14.Add(OR_14)
+    AND_14.Add(FlagDisabled(flag))
+    OR_15.Add(AND_14)
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @RestartOnRest(4602)
 def Event_4602(_, flag: uint, flag_1: uint, flag_2: uint):
     """Event 4602"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     SkipLinesIfFlagEnabled(1, 16002731)
     SkipLinesIfFlagRangeAnyEnabled(1, (3448, 3449))
     DisableFlag(flag_1)
-    IfFlagEnabled(OR_1, 1037449205)
-    IfFlagEnabled(OR_1, 1037442700)
+    OR_1.Add(FlagEnabled(1037449205))
+    OR_1.Add(FlagEnabled(1037442700))
     SkipLinesIfConditionFalse(1, OR_1)
     EnableFlag(flag)
-    IfFlagRangeAnyEnabled(AND_2, flag_range=(3448, 3449))
-    IfFlagDisabled(AND_2, 16002731)
-    IfFlagEnabled(OR_2, 16009405)
-    IfFlagEnabled(OR_2, 16009415)
-    IfFlagEnabled(OR_2, 16009416)
-    IfConditionTrue(AND_2, input_condition=OR_2)
+    AND_2.Add(FlagRangeAnyEnabled(flag_range=(3448, 3449)))
+    AND_2.Add(FlagDisabled(16002731))
+    OR_2.Add(FlagEnabled(16009405))
+    OR_2.Add(FlagEnabled(16009415))
+    OR_2.Add(FlagEnabled(16009416))
+    AND_2.Add(OR_2)
     SkipLinesIfConditionFalse(1, AND_2)
     EnableFlag(flag_1)
-    IfFlagEnabled(OR_3, 1039449305)
-    IfFlagEnabled(OR_3, 1039442721)
+    OR_3.Add(FlagEnabled(1039449305))
+    OR_3.Add(FlagEnabled(1039442721))
     SkipLinesIfConditionFalse(1, OR_3)
     EnableFlag(flag_2)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1037449205)
-    IfFlagEnabled(AND_13, 1037442700)
-    IfFlagDisabled(AND_13, flag)
-    IfConditionTrue(OR_15, input_condition=AND_13)
-    IfFlagEnabled(OR_15, 3448)
-    IfFlagEnabled(OR_15, 3449)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 16009405)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 16009415)
-    IfFlagState(AND_14, FlagSetting.Change, FlagType.Absolute, 16002731)
-    IfFlagEnabled(AND_14, 16009416)
-    IfFlagDisabled(AND_14, flag_1)
-    IfConditionTrue(OR_15, input_condition=AND_14)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1039449305)
-    IfFlagEnabled(AND_15, 1039442721)
-    IfFlagDisabled(AND_15, flag_2)
-    IfConditionTrue(OR_15, input_condition=AND_15)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1037449205))
+    AND_13.Add(FlagEnabled(1037442700))
+    AND_13.Add(FlagDisabled(flag))
+    OR_15.Add(AND_13)
+    OR_15.Add(FlagEnabled(3448))
+    OR_15.Add(FlagEnabled(3449))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 16009405))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 16009415))
+    AND_14.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 16002731))
+    AND_14.Add(FlagEnabled(16009416))
+    AND_14.Add(FlagDisabled(flag_1))
+    OR_15.Add(AND_14)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1039449305))
+    AND_15.Add(FlagEnabled(1039442721))
+    AND_15.Add(FlagDisabled(flag_2))
+    OR_15.Add(AND_15)
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @RestartOnRest(4603)
 def Event_4603(_, flag: uint):
     """Event 4603"""
-    EndIfPlayerNotInOwnWorld()
-    IfFlagEnabled(OR_1, 35009306)
-    IfFlagEnabled(OR_1, 35009307)
-    IfFlagEnabled(OR_1, 35002724)
+    if PlayerNotInOwnWorld():
+        return
+    OR_1.Add(FlagEnabled(35009306))
+    OR_1.Add(FlagEnabled(35009307))
+    OR_1.Add(FlagEnabled(35002724))
     SkipLinesIfConditionFalse(1, OR_1)
     EnableFlag(flag)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 35009306)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 35009307)
-    IfFlagEnabled(AND_15, 35002724)
-    IfFlagDisabled(AND_15, flag)
-    IfConditionTrue(OR_15, input_condition=AND_15)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 35009306))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 35009307))
+    AND_15.Add(FlagEnabled(35002724))
+    AND_15.Add(FlagDisabled(flag))
+    OR_15.Add(AND_15)
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @RestartOnRest(4604)
 def Event_4604(_, flag: uint, flag_1: uint, flag_2: uint):
     """Event 4604"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(flag_1)
     DisableFlag(flag_2)
-    IfFlagEnabled(OR_1, 1050389256)
-    IfFlagEnabled(OR_1, 1050382713)
+    OR_1.Add(FlagEnabled(1050389256))
+    OR_1.Add(FlagEnabled(1050382713))
     SkipLinesIfConditionFalse(1, OR_1)
     EnableFlag(flag)
-    IfFlagEnabled(AND_1, 1050389265)
-    IfFlagEnabled(AND_1, 1050389266)
+    AND_1.Add(FlagEnabled(1050389265))
+    AND_1.Add(FlagEnabled(1050389266))
     SkipLinesIfConditionFalse(1, AND_1)
     EnableFlag(flag_1)
-    IfFlagEnabled(AND_2, 1038519255)
-    IfFlagEnabled(AND_2, 1038519256)
+    AND_2.Add(FlagEnabled(1038519255))
+    AND_2.Add(FlagEnabled(1038519256))
     SkipLinesIfConditionFalse(1, AND_2)
     EnableFlag(flag_2)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1050389256)
-    IfFlagEnabled(AND_15, 1050382713)
-    IfFlagDisabled(AND_15, flag)
-    IfConditionTrue(OR_15, input_condition=AND_15)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1050389265)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1050389266)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1038519255)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1038519256)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1050389256))
+    AND_15.Add(FlagEnabled(1050382713))
+    AND_15.Add(FlagDisabled(flag))
+    OR_15.Add(AND_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1050389265))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1050389266))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1038519255))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1038519256))
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @RestartOnRest(4606)
 def Event_4606(_, flag: uint):
     """Event 4606"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(flag)
-    IfFlagDisabled(AND_1, 7611)
-    IfFlagDisabled(AND_1, 1050389265)
-    IfFlagEnabled(OR_1, 1050389205)
-    IfFlagEnabled(OR_1, 1050389206)
-    IfConditionTrue(AND_1, input_condition=OR_1)
+    AND_1.Add(FlagDisabled(7611))
+    AND_1.Add(FlagDisabled(1050389265))
+    OR_1.Add(FlagEnabled(1050389205))
+    OR_1.Add(FlagEnabled(1050389206))
+    AND_1.Add(OR_1)
     SkipLinesIfConditionFalse(1, AND_1)
     EnableFlag(flag)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 7611)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1050389265)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1050389205)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1050389206)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 7611))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1050389265))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1050389205))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1050389206))
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @RestartOnRest(4607)
 def Event_4607(_, flag: uint, flag_1: uint, flag_2: uint, flag_3: uint):
     """Event 4607"""
-    EndIfPlayerNotInOwnWorld()
-    SkipLinesIfFlagDisabled(1, 1035539204)
-    DisableFlag(flag_1)
-    IfFlagEnabled(OR_1, 1043399305)
-    IfFlagEnabled(OR_1, 1043392713)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(1035539204):
+        DisableFlag(flag_1)
+    OR_1.Add(FlagEnabled(1043399305))
+    OR_1.Add(FlagEnabled(1043392713))
     SkipLinesIfConditionFalse(1, OR_1)
     EnableFlag(flag)
-    IfFlagDisabled(AND_2, 1035539204)
-    IfFlagEnabled(OR_2, 1039449205)
-    IfFlagEnabled(OR_2, 1039442703)
-    IfConditionTrue(AND_2, input_condition=OR_2)
+    AND_2.Add(FlagDisabled(1035539204))
+    OR_2.Add(FlagEnabled(1039449205))
+    OR_2.Add(FlagEnabled(1039442703))
+    AND_2.Add(OR_2)
     SkipLinesIfConditionFalse(1, AND_2)
     EnableFlag(flag_1)
-    IfFlagEnabled(OR_3, 1035539205)
-    IfFlagEnabled(OR_3, 1035532703)
+    OR_3.Add(FlagEnabled(1035539205))
+    OR_3.Add(FlagEnabled(1035532703))
     SkipLinesIfConditionFalse(2, OR_3)
     EnableFlag(flag_2)
-    IfFlagEnabled(OR_4, 400173)
-    IfFlagEnabled(OR_4, 400174)
-    IfFlagEnabled(OR_4, 400175)
+    OR_4.Add(FlagEnabled(400173))
+    OR_4.Add(FlagEnabled(400174))
+    OR_4.Add(FlagEnabled(400175))
     SkipLinesIfConditionFalse(1, OR_4)
     EnableFlag(flag_3)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1043399305)
-    IfFlagEnabled(AND_13, 1043392713)
-    IfFlagDisabled(AND_13, flag)
-    IfConditionTrue(OR_15, input_condition=AND_13)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1035539204)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1039449205)
-    IfFlagEnabled(AND_14, 1039442703)
-    IfFlagDisabled(AND_14, flag_1)
-    IfConditionTrue(OR_15, input_condition=AND_14)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3669)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3670)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1035539205)
-    IfFlagEnabled(AND_15, 1035532703)
-    IfFlagDisabled(AND_15, flag_2)
-    IfConditionTrue(OR_15, input_condition=AND_15)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 400173)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 400174)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 400175)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1043399305))
+    AND_13.Add(FlagEnabled(1043392713))
+    AND_13.Add(FlagDisabled(flag))
+    OR_15.Add(AND_13)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1035539204))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1039449205))
+    AND_14.Add(FlagEnabled(1039442703))
+    AND_14.Add(FlagDisabled(flag_1))
+    OR_15.Add(AND_14)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3669))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3670))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1035539205))
+    AND_15.Add(FlagEnabled(1035532703))
+    AND_15.Add(FlagDisabled(flag_2))
+    OR_15.Add(AND_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 400173))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 400174))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 400175))
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @RestartOnRest(4608)
 def Event_4608(_, flag: uint):
     """Event 4608"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(flag)
-    IfFlagRangeAnyEnabled(AND_1, flag_range=(3825, 3829))
-    IfFlagRangeAllDisabled(AND_1, flag_range=(3821, 3822))
-    IfFlagEnabled(OR_1, 1039449255)
-    IfFlagEnabled(OR_1, 1039449256)
-    IfConditionTrue(AND_1, input_condition=OR_1)
+    AND_1.Add(FlagRangeAnyEnabled(flag_range=(3825, 3829)))
+    AND_1.Add(FlagRangeAllDisabled(flag_range=(3821, 3822)))
+    OR_1.Add(FlagEnabled(1039449255))
+    OR_1.Add(FlagEnabled(1039449256))
+    AND_1.Add(OR_1)
     SkipLinesIfConditionFalse(1, AND_1)
     EnableFlag(flag)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3825)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3826)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3827)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3828)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3829)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3821)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3822)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1039449255)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1039449256)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3825))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3826))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3827))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3828))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3829))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3821))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3822))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1039449255))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1039449256))
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @RestartOnRest(4609)
 def Event_4609(_, flag: uint, flag_1: uint, flag_2: uint, flag_3: uint):
     """Event 4609"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(flag)
     DisableFlag(flag_1)
     DisableFlag(flag_2)
     DisableFlag(flag_3)
-    IfFlagEnabled(AND_1, 3947)
-    IfFlagEnabled(AND_1, 1039409255)
-    IfFlagEnabled(AND_1, 1039409264)
-    IfFlagDisabled(AND_1, 1036489213)
-    IfFlagDisabled(AND_1, 1039519209)
-    IfFlagDisabled(AND_1, 11109819)
+    AND_1.Add(FlagEnabled(3947))
+    AND_1.Add(FlagEnabled(1039409255))
+    AND_1.Add(FlagEnabled(1039409264))
+    AND_1.Add(FlagDisabled(1036489213))
+    AND_1.Add(FlagDisabled(1039519209))
+    AND_1.Add(FlagDisabled(11109819))
     SkipLinesIfConditionFalse(1, AND_1)
     EnableFlag(flag)
-    IfFlagEnabled(AND_2, 3947)
-    IfFlagEnabled(AND_2, 1039409255)
-    IfFlagEnabled(AND_2, 1036489213)
-    IfFlagDisabled(AND_2, 1039519209)
-    IfFlagDisabled(AND_2, 11109819)
+    AND_2.Add(FlagEnabled(3947))
+    AND_2.Add(FlagEnabled(1039409255))
+    AND_2.Add(FlagEnabled(1036489213))
+    AND_2.Add(FlagDisabled(1039519209))
+    AND_2.Add(FlagDisabled(11109819))
     SkipLinesIfConditionFalse(1, AND_2)
     EnableFlag(flag_1)
-    IfFlagEnabled(AND_3, 3947)
-    IfFlagEnabled(AND_3, 1039409255)
-    IfFlagEnabled(AND_3, 1039519209)
-    IfFlagDisabled(AND_3, 11109819)
+    AND_3.Add(FlagEnabled(3947))
+    AND_3.Add(FlagEnabled(1039409255))
+    AND_3.Add(FlagEnabled(1039519209))
+    AND_3.Add(FlagDisabled(11109819))
     SkipLinesIfConditionFalse(1, AND_3)
     EnableFlag(flag_2)
-    IfFlagEnabled(AND_4, 3947)
-    IfFlagEnabled(AND_4, 1039409255)
-    IfFlagEnabled(AND_4, 11109819)
+    AND_4.Add(FlagEnabled(3947))
+    AND_4.Add(FlagEnabled(1039409255))
+    AND_4.Add(FlagEnabled(11109819))
     SkipLinesIfConditionFalse(1, AND_4)
     EnableFlag(flag_3)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 3947)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1039409255)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1039409264)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1036489213)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1039519209)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 11109819)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 3947))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1039409255))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1039409264))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1036489213))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1039519209))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 11109819))
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @RestartOnRest(4611)
 def Event_4611(_, flag: uint, flag_1: uint):
     """Event 4611"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(flag)
     DisableFlag(flag_1)
-    IfFlagRangeAnyEnabled(AND_1, flag_range=(4208, 4209))
-    IfFlagEnabled(AND_1, 11009554)
-    IfFlagEnabled(AND_1, 11009460)
-    IfFlagDisabled(AND_1, 1051569454)
+    AND_1.Add(FlagRangeAnyEnabled(flag_range=(4208, 4209)))
+    OR_1.Add(FlagEnabled(11009554))
+    AND_5.Add(FlagDisabled(11009555))
+    AND_5.Add(FlagEnabled(118))
+    OR_1.Add(AND_5)
+    AND_1.Add(OR_1)
+    AND_1.Add(FlagEnabled(11009460))
+    AND_1.Add(FlagDisabled(1051569454))
     SkipLinesIfConditionFalse(1, AND_1)
     EnableFlag(flag)
-    IfFlagRangeAnyEnabled(AND_2, flag_range=(4207, 4208))
-    IfFlagEnabled(AND_2, 1040549254)
-    IfFlagEnabled(AND_2, 1040549205)
-    IfFlagDisabled(AND_2, 11009554)
+    AND_2.Add(FlagRangeAnyEnabled(flag_range=(4207, 4208)))
+    AND_2.Add(FlagEnabled(1040549254))
+    AND_2.Add(FlagEnabled(1040549205))
+    AND_2.Add(FlagDisabled(11009554))
     SkipLinesIfConditionFalse(1, AND_2)
     EnableFlag(flag_1)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 4207)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 4208)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 4209)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 11009554)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 11009460)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1040549254)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1040549205)
-    IfFlagState(OR_15, FlagSetting.Change, FlagType.Absolute, 1051569454)
-    IfConditionTrue(MAIN, input_condition=OR_15)
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 4207))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 4208))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 4209))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 11009554))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 11009555))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 118))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 11009460))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1040549254))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1040549205))
+    OR_15.Add(FlagState(FlagSetting.Change, FlagType.Absolute, 1051569454))
+    
+    MAIN.Await(OR_15)
+    
     Restart()
 
 
 @ContinueOnRest(4612)
 def Event_4612():
     """Event 4612"""
-    EndIfPlayerNotInOwnWorld()
-    EndIfFlagEnabled(1051579201)
+    if PlayerNotInOwnWorld():
+        return
+    if FlagEnabled(1051579201):
+        return
     EnableFlag(1051579201)
-    EndIfFlagDisabled(1051579200)
+    if FlagDisabled(1051579200):
+        return
     GotoIfFlagEnabled(Label.L0, flag=1251570400)
     GotoIfFlagEnabled(Label.L1, flag=1247580400)
     Goto(Label.L0)
@@ -5770,7 +6380,8 @@ def Event_4612():
 @RestartOnRest(3179)
 def Event_3179():
     """Event 3179"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     SkipLinesIfFlagRangeAnyEnabled(2, (3160, 3164))
     DisableNetworkConnectedFlagRange(flag_range=(3160, 3164))
     EnableNetworkFlag(3160)
@@ -5787,13 +6398,14 @@ def Event_3179():
 @RestartOnRest(3239)
 def Event_3239():
     """Event 3239"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3238)
     SkipLinesIfFlagRangeAnyEnabled(2, (3220, 3224))
     DisableNetworkConnectedFlagRange(flag_range=(3220, 3224))
     EnableNetworkFlag(3220)
-    IfFlagEnabled(AND_10, 3221)
-    IfFlagEnabled(AND_10, 3000)
+    AND_10.Add(FlagEnabled(3221))
+    AND_10.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(3220, 3224))
     EnableNetworkFlag(3220)
@@ -5801,16 +6413,18 @@ def Event_3239():
     DisableNetworkConnectedFlagRange(flag_range=(3225, 3228))
     EnableNetworkFlag(3225)
     GotoIfFlagDisabled(Label.L0, flag=3220)
-    SkipLinesIfFlagDisabled(2, 110)
-    DisableNetworkConnectedFlagRange(flag_range=(3225, 3228))
-    EnableNetworkFlag(3226)
-    SkipLinesIfFlagDisabled(2, 9116)
-    DisableNetworkConnectedFlagRange(flag_range=(3225, 3228))
-    EnableNetworkFlag(3227)
-    SkipLinesIfFlagDisabled(2, 11109246)
-    DisableNetworkConnectedFlagRange(flag_range=(3225, 3228))
-    EnableNetworkFlag(3228)
-    IfFlagEnabled(MAIN, 3238)
+    if FlagEnabled(110):
+        DisableNetworkConnectedFlagRange(flag_range=(3225, 3228))
+        EnableNetworkFlag(3226)
+    if FlagEnabled(9116):
+        DisableNetworkConnectedFlagRange(flag_range=(3225, 3228))
+        EnableNetworkFlag(3227)
+    if FlagEnabled(11109246):
+        DisableNetworkConnectedFlagRange(flag_range=(3225, 3228))
+        EnableNetworkFlag(3228)
+    
+    MAIN.Await(FlagEnabled(3238))
+    
     Restart()
 
     # --- Label 0 --- #
@@ -5821,13 +6435,14 @@ def Event_3239():
 @RestartOnRest(4719)
 def Event_4719():
     """Event 4719"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(4718)
     SkipLinesIfFlagRangeAnyEnabled(2, (4700, 4704))
     DisableNetworkConnectedFlagRange(flag_range=(4700, 4704))
     EnableNetworkFlag(4700)
-    IfFlagEnabled(AND_10, 4701)
-    IfFlagEnabled(AND_10, 3000)
+    AND_10.Add(FlagEnabled(4701))
+    AND_10.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(4700, 4704))
     EnableNetworkFlag(4700)
@@ -5835,12 +6450,12 @@ def Event_4719():
     DisableNetworkConnectedFlagRange(flag_range=(4705, 4719))
     EnableNetworkFlag(4705)
     GotoIfFlagDisabled(Label.L0, flag=4700)
-    IfFlagEnabled(AND_14, 4717)
+    AND_14.Add(FlagEnabled(4717))
     SkipLinesIfConditionFalse(2, AND_14)
     DisableNetworkConnectedFlagRange(flag_range=(4705, 4719))
     EnableNetworkFlag(4705)
-    IfFlagEnabled(AND_15, 4705)
-    IfFlagEnabled(AND_15, 1042369414)
+    AND_15.Add(FlagEnabled(4705))
+    AND_15.Add(FlagEnabled(1042369414))
     SkipLinesIfConditionFalse(2, AND_15)
     DisableNetworkConnectedFlagRange(flag_range=(4705, 4719))
     EnableNetworkFlag(4717)
@@ -5848,14 +6463,17 @@ def Event_4719():
     # --- Label 0 --- #
     DefineLabel(0)
     DisableFlag(1042369414)
-    IfFlagEnabled(MAIN, 4718)
+    
+    MAIN.Await(FlagEnabled(4718))
+    
     Restart()
 
 
 @RestartOnRest(4739)
 def Event_4739():
     """Event 4739"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     SkipLinesIfFlagRangeAnyEnabled(2, (4720, 4723))
     DisableNetworkConnectedFlagRange(flag_range=(4720, 4723))
     EnableNetworkFlag(4720)
@@ -5919,12 +6537,13 @@ def Event_4739():
 @RestartOnRest(4759)
 def Event_4759():
     """Event 4759"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     SkipLinesIfFlagRangeAnyEnabled(2, (4740, 4744))
     DisableNetworkConnectedFlagRange(flag_range=(4740, 4744))
     EnableNetworkFlag(4740)
-    IfFlagEnabled(AND_10, 4741)
-    IfFlagEnabled(AND_10, 3000)
+    AND_10.Add(FlagEnabled(4741))
+    AND_10.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(4740, 4744))
     EnableNetworkFlag(4740)
@@ -5932,46 +6551,46 @@ def Event_4759():
     DisableNetworkConnectedFlagRange(flag_range=(4745, 4758))
     EnableNetworkFlag(4745)
     GotoIfFlagDisabled(Label.L0, flag=4740)
-    IfFlagEnabled(AND_1, 1041369201)
-    IfFlagDisabled(AND_1, 1041369202)
+    AND_1.Add(FlagEnabled(1041369201))
+    AND_1.Add(FlagDisabled(1041369202))
     SkipLinesIfConditionFalse(2, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(4745, 4758))
     EnableNetworkFlag(4746)
-    IfFlagEnabled(AND_2, 1041369201)
-    IfFlagEnabled(AND_2, 1041369202)
+    AND_2.Add(FlagEnabled(1041369201))
+    AND_2.Add(FlagEnabled(1041369202))
     SkipLinesIfConditionFalse(2, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(4745, 4758))
     EnableNetworkFlag(4747)
-    IfFlagDisabled(AND_5, 1041369226)
-    IfFlagDisabled(AND_5, 1044349221)
-    IfFlagDisabled(AND_5, 1045369221)
-    IfFlagDisabled(AND_5, 1043399221)
+    AND_5.Add(FlagDisabled(1041369226))
+    AND_5.Add(FlagDisabled(1044349221))
+    AND_5.Add(FlagDisabled(1045369221))
+    AND_5.Add(FlagDisabled(1043399221))
     SkipLinesIfConditionFalse(4, AND_5)
     EnableFlag(1041369226)
     EnableFlag(1044349221)
     EnableFlag(1045369221)
     EnableFlag(1043399221)
-    IfFlagDisabled(AND_6, 1041369225)
-    IfFlagDisabled(AND_6, 1044349220)
-    IfFlagDisabled(AND_6, 1045369220)
-    IfFlagDisabled(AND_6, 1043399220)
+    AND_6.Add(FlagDisabled(1041369225))
+    AND_6.Add(FlagDisabled(1044349220))
+    AND_6.Add(FlagDisabled(1045369220))
+    AND_6.Add(FlagDisabled(1043399220))
     GotoIfConditionTrue(Label.L0, input_condition=AND_6)
     EnableNetworkFlag(1041369226)
     EnableNetworkFlag(1044349221)
     EnableNetworkFlag(1045369221)
     EnableNetworkFlag(1043399221)
-    SkipLinesIfFlagDisabled(2, 1041369225)
-    DisableNetworkFlag(1041369226)
-    Goto(Label.L10)
-    SkipLinesIfFlagDisabled(2, 1044349220)
-    DisableNetworkFlag(1044349221)
-    Goto(Label.L10)
-    SkipLinesIfFlagDisabled(2, 1045369220)
-    DisableNetworkFlag(1045369221)
-    Goto(Label.L10)
-    SkipLinesIfFlagDisabled(2, 1043399220)
-    DisableNetworkFlag(1043399221)
-    Goto(Label.L10)
+    if FlagEnabled(1041369225):
+        DisableNetworkFlag(1041369226)
+        Goto(Label.L10)
+    if FlagEnabled(1044349220):
+        DisableNetworkFlag(1044349221)
+        Goto(Label.L10)
+    if FlagEnabled(1045369220):
+        DisableNetworkFlag(1045369221)
+        Goto(Label.L10)
+    if FlagEnabled(1043399220):
+        DisableNetworkFlag(1043399221)
+        Goto(Label.L10)
 
     # --- Label 10 --- #
     DefineLabel(10)
@@ -5989,12 +6608,13 @@ def Event_4759():
 @RestartOnRest(4979)
 def Event_4979():
     """Event 4979"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     SkipLinesIfFlagRangeAnyEnabled(2, (4960, 4964))
     DisableNetworkConnectedFlagRange(flag_range=(4960, 4964))
     EnableNetworkFlag(4960)
-    IfFlagEnabled(AND_10, 4961)
-    IfFlagEnabled(AND_10, 3000)
+    AND_10.Add(FlagEnabled(4961))
+    AND_10.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(4960, 4964))
     EnableNetworkFlag(4960)
@@ -6002,13 +6622,13 @@ def Event_4979():
     DisableNetworkConnectedFlagRange(flag_range=(4965, 4979))
     EnableNetworkFlag(4965)
     GotoIfFlagDisabled(Label.L0, flag=4960)
-    IfFlagEnabled(AND_1, 1043379201)
-    IfFlagDisabled(AND_1, 1043379202)
+    AND_1.Add(FlagEnabled(1043379201))
+    AND_1.Add(FlagDisabled(1043379202))
     SkipLinesIfConditionFalse(2, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(4965, 4979))
     EnableNetworkFlag(4966)
-    IfFlagEnabled(AND_2, 1043379201)
-    IfFlagEnabled(AND_2, 1043379202)
+    AND_2.Add(FlagEnabled(1043379201))
+    AND_2.Add(FlagEnabled(1043379202))
     SkipLinesIfConditionFalse(2, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(4965, 4979))
     EnableNetworkFlag(4967)
@@ -6020,31 +6640,32 @@ def Event_4979():
 @RestartOnRest(4999)
 def Event_4999():
     """Event 4999"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     SkipLinesIfFlagRangeAnyEnabled(2, (4980, 4984))
     DisableNetworkConnectedFlagRange(flag_range=(4980, 4984))
     EnableNetworkFlag(4980)
     DisableNetworkConnectedFlagRange(flag_range=(4982, 4983))
-    SkipLinesIfFlagDisabled(1, 4703)
-    IncrementEventValue(4982, bit_count=2, max_value=2)
-    SkipLinesIfFlagDisabled(1, 4723)
-    IncrementEventValue(4982, bit_count=2, max_value=2)
-    SkipLinesIfFlagDisabled(1, 4743)
-    IncrementEventValue(4982, bit_count=2, max_value=2)
-    SkipLinesIfFlagDisabled(2, 4982)
-    DisableNetworkConnectedFlagRange(flag_range=(4980, 4984))
-    EnableNetworkFlag(4982)
-    SkipLinesIfFlagDisabled(2, 4983)
-    DisableNetworkConnectedFlagRange(flag_range=(4980, 4984))
-    EnableNetworkFlag(4983)
-    IfFlagEnabled(OR_5, 1043379201)
-    IfFlagEnabled(OR_5, 1042389201)
-    IfFlagEnabled(OR_5, 1041369201)
+    if FlagEnabled(4703):
+        IncrementEventValue(4982, bit_count=2, max_value=2)
+    if FlagEnabled(4723):
+        IncrementEventValue(4982, bit_count=2, max_value=2)
+    if FlagEnabled(4743):
+        IncrementEventValue(4982, bit_count=2, max_value=2)
+    if FlagEnabled(4982):
+        DisableNetworkConnectedFlagRange(flag_range=(4980, 4984))
+        EnableNetworkFlag(4982)
+    if FlagEnabled(4983):
+        DisableNetworkConnectedFlagRange(flag_range=(4980, 4984))
+        EnableNetworkFlag(4983)
+    OR_5.Add(FlagEnabled(1043379201))
+    OR_5.Add(FlagEnabled(1042389201))
+    OR_5.Add(FlagEnabled(1041369201))
     SkipLinesIfConditionFalse(1, OR_5)
     EnableNetworkFlag(4985)
-    IfFlagEnabled(OR_6, 1043379206)
-    IfFlagEnabled(OR_6, 1042389206)
-    IfFlagEnabled(OR_6, 1041369206)
+    OR_6.Add(FlagEnabled(1043379206))
+    OR_6.Add(FlagEnabled(1042389206))
+    OR_6.Add(FlagEnabled(1041369206))
     SkipLinesIfConditionFalse(1, OR_6)
     EnableNetworkFlag(4986)
     End()
@@ -6053,13 +6674,14 @@ def Event_4999():
 @RestartOnRest(3679)
 def Event_3679():
     """Event 3679"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3678)
     SkipLinesIfFlagRangeAnyEnabled(2, (3660, 3663))
     DisableNetworkConnectedFlagRange(flag_range=(3660, 3663))
     EnableNetworkFlag(3660)
-    IfFlagEnabled(AND_2, 3661)
-    IfFlagEnabled(AND_2, 3000)
+    AND_2.Add(FlagEnabled(3661))
+    AND_2.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(3660, 3663))
     EnableNetworkFlag(3660)
@@ -6067,54 +6689,55 @@ def Event_3679():
     DisableNetworkConnectedFlagRange(flag_range=(3665, 3671))
     EnableNetworkFlag(3665)
     GotoIfFlagDisabled(Label.L0, flag=3660)
-    IfFlagEnabled(AND_3, 3665)
-    IfFlagEnabled(AND_3, 1043399307)
-    IfFlagEnabled(OR_3, 32009203)
-    IfConditionTrue(OR_3, input_condition=AND_3)
-    SkipLinesIfConditionFalse(2, OR_3)
+    AND_3.Add(FlagEnabled(3665))
+    OR_3.Add(FlagEnabled(1043399307))
+    OR_3.Add(FlagEnabled(32009203))
+    AND_3.Add(OR_3)
+    SkipLinesIfConditionFalse(2, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(3665, 3671))
     EnableNetworkFlag(3666)
-    IfFlagEnabled(OR_4, 3665)
-    IfFlagEnabled(OR_4, 3666)
-    IfFlagEnabled(AND_4, 9410)
-    IfConditionTrue(AND_4, input_condition=OR_4)
+    OR_4.Add(FlagEnabled(3665))
+    OR_4.Add(FlagEnabled(3666))
+    AND_4.Add(FlagEnabled(9410))
+    AND_4.Add(OR_4)
     SkipLinesIfConditionFalse(4, AND_4)
     DisableNetworkConnectedFlagRange(flag_range=(3665, 3671))
     EnableNetworkFlag(3667)
     EnableFlag(1051369259)
     EnableFlag(1051369361)
-    IfFlagEnabled(AND_5, 3667)
-    IfFlagEnabled(AND_5, 9130)
+    AND_5.Add(FlagEnabled(3667))
+    AND_5.Add(FlagEnabled(9130))
     SkipLinesIfConditionFalse(2, AND_5)
     DisableNetworkConnectedFlagRange(flag_range=(3665, 3671))
     EnableNetworkFlag(3668)
-    IfFlagEnabled(AND_6, 3668)
-    IfFlagEnabled(AND_6, 1051369266)
-    IfFlagDisabled(AND_6, 1035539204)
+    AND_6.Add(FlagEnabled(3668))
+    AND_6.Add(FlagEnabled(1051369266))
     SkipLinesIfConditionFalse(4, AND_6)
     DisableNetworkConnectedFlagRange(flag_range=(3665, 3671))
     EnableNetworkFlag(3669)
     DisableFlag(1051369361)
     EnableFlag(1035539208)
-    IfFlagEnabled(AND_7, 3669)
-    IfFlagEnabled(AND_7, 1051369266)
-    IfFlagEnabled(AND_7, 1035539204)
+    AND_7.Add(FlagEnabled(3669))
+    AND_7.Add(FlagEnabled(1051369266))
+    AND_7.Add(FlagEnabled(1035539204))
     SkipLinesIfConditionFalse(3, AND_7)
     DisableNetworkConnectedFlagRange(flag_range=(3665, 3671))
     EnableNetworkFlag(3670)
     EnableFlag(1035539208)
-    IfFlagDisabled(AND_9, 1052520800)
-    IfFlagEnabled(AND_9, 1035539205)
+    AND_9.Add(FlagDisabled(1052520800))
+    AND_9.Add(FlagEnabled(1035539205))
     SkipLinesIfConditionFalse(1, AND_9)
     EnableNetworkFlag(1035539209)
-    IfFlagEnabled(AND_10, 3670)
-    IfFlagEnabled(AND_10, 1052520800)
-    IfFlagEnabled(AND_10, 1035539205)
+    AND_10.Add(FlagEnabled(3670))
+    AND_10.Add(FlagEnabled(1052520800))
+    AND_10.Add(FlagEnabled(1035539205))
     SkipLinesIfConditionFalse(3, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(3665, 3671))
     EnableNetworkFlag(3671)
     DisableFlag(1035539208)
-    IfFlagEnabled(MAIN, 3678)
+    
+    MAIN.Await(FlagEnabled(3678))
+    
     Restart()
 
     # --- Label 0 --- #
@@ -6125,13 +6748,14 @@ def Event_3679():
 @RestartOnRest(3199)
 def Event_3199():
     """Event 3199"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3198)
     SkipLinesIfFlagRangeAnyEnabled(2, (3180, 3184))
     DisableNetworkConnectedFlagRange(flag_range=(3180, 3184))
     EnableNetworkFlag(3180)
-    IfFlagEnabled(AND_10, 3181)
-    IfFlagEnabled(AND_10, 3000)
+    AND_10.Add(FlagEnabled(3181))
+    AND_10.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(3180, 3184))
     EnableNetworkFlag(3180)
@@ -6139,48 +6763,55 @@ def Event_3199():
     DisableNetworkConnectedFlagRange(flag_range=(3185, 3199))
     EnableNetworkFlag(3185)
     GotoIfFlagDisabled(Label.L0, flag=3180)
-    SkipLinesIfFlagDisabled(2, 105)
-    DisableNetworkConnectedFlagRange(flag_range=(3185, 3199))
-    EnableNetworkFlag(3187)
-    SkipLinesIfFlagDisabled(2, 181)
-    DisableNetworkConnectedFlagRange(flag_range=(3185, 3199))
-    EnableNetworkFlag(3191)
-    SkipLinesIfFlagDisabled(2, 11109358)
-    DisableNetworkConnectedFlagRange(flag_range=(3185, 3199))
-    EnableNetworkFlag(3188)
-    SkipLinesIfFlagDisabled(2, 1035449235)
+    if FlagEnabled(105):
+        DisableNetworkConnectedFlagRange(flag_range=(3185, 3199))
+        EnableNetworkFlag(3187)
+    if FlagEnabled(181):
+        DisableNetworkConnectedFlagRange(flag_range=(3185, 3199))
+        EnableNetworkFlag(3191)
+    if FlagEnabled(11109358):
+        DisableNetworkConnectedFlagRange(flag_range=(3185, 3199))
+        EnableNetworkFlag(3188)
+    OR_1.Add(FlagEnabled(1035449235))
+    AND_1.Add(FlagEnabled(1035449207))
+    AND_1.Add(FlagEnabled(7612))
+    OR_1.Add(AND_1)
+    SkipLinesIfConditionFalse(2, OR_1)
     DisableNetworkConnectedFlagRange(flag_range=(3185, 3199))
     EnableNetworkFlag(3189)
-    SkipLinesIfFlagDisabled(2, 400033)
-    DisableNetworkConnectedFlagRange(flag_range=(3185, 3199))
-    EnableNetworkFlag(3190)
-    SkipLinesIfFlagDisabled(2, 1035449226)
-    DisableNetworkConnectedFlagRange(flag_range=(3185, 3199))
-    EnableNetworkFlag(3192)
-    SkipLinesIfFlagDisabled(2, 7601)
-    DisableNetworkConnectedFlagRange(flag_range=(3185, 3199))
-    EnableNetworkFlag(3193)
-    SkipLinesIfFlagDisabled(3, 12059166)
-    DisableNetworkConnectedFlagRange(flag_range=(3180, 3184))
-    EnableNetworkFlag(3183)
-    SaveRequest()
+    if FlagEnabled(400033):
+        DisableNetworkConnectedFlagRange(flag_range=(3185, 3199))
+        EnableNetworkFlag(3190)
+    if FlagEnabled(1035449226):
+        DisableNetworkConnectedFlagRange(flag_range=(3185, 3199))
+        EnableNetworkFlag(3192)
+    if FlagEnabled(7601):
+        DisableNetworkConnectedFlagRange(flag_range=(3185, 3199))
+        EnableNetworkFlag(3193)
+    if FlagEnabled(12059166):
+        DisableNetworkConnectedFlagRange(flag_range=(3180, 3184))
+        EnableNetworkFlag(3183)
+        SaveRequest()
 
     # --- Label 0 --- #
     DefineLabel(0)
-    IfFlagEnabled(MAIN, 3198)
+    
+    MAIN.Await(FlagEnabled(3198))
+    
     Restart()
 
 
 @RestartOnRest(3279)
 def Event_3279():
     """Event 3279"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3278)
     SkipLinesIfFlagRangeAnyEnabled(2, (3260, 3264))
     DisableNetworkConnectedFlagRange(flag_range=(3260, 3264))
     EnableNetworkFlag(3260)
-    IfFlagEnabled(AND_10, 3261)
-    IfFlagEnabled(AND_10, 3000)
+    AND_10.Add(FlagEnabled(3261))
+    AND_10.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(3260, 3264))
     EnableNetworkFlag(3260)
@@ -6188,22 +6819,22 @@ def Event_3279():
     DisableNetworkConnectedFlagRange(flag_range=(3265, 3269))
     EnableNetworkFlag(3265)
     GotoIfFlagDisabled(Label.L20, flag=3260)
-    IfFlagEnabled(AND_1, 10009360)
-    IfFlagDisabled(AND_1, 10009362)
+    AND_1.Add(FlagEnabled(10009360))
+    AND_1.Add(FlagDisabled(10009362))
     SkipLinesIfConditionFalse(2, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(3265, 3269))
     EnableNetworkFlag(3266)
-    IfFlagEnabled(AND_2, 10009360)
-    IfFlagEnabled(AND_2, 10009362)
+    AND_2.Add(FlagEnabled(10009360))
+    AND_2.Add(FlagEnabled(10009362))
     SkipLinesIfConditionFalse(2, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(3265, 3269))
     EnableFlag(3268)
-    IfFlagEnabled(AND_4, 4229)
+    AND_4.Add(FlagEnabled(4229))
     SkipLinesIfConditionFalse(3, AND_4)
     DisableNetworkConnectedFlagRange(flag_range=(3265, 3270))
     EnableFlag(3270)
     Goto(Label.L20)
-    IfFlagEnabled(AND_3, 10000800)
+    AND_3.Add(FlagEnabled(10000800))
     SkipLinesIfConditionFalse(3, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(3265, 3270))
     EnableFlag(3269)
@@ -6214,35 +6845,35 @@ def Event_3279():
     SkipLinesIfFlagRangeAnyEnabled(2, (10009510, 10009514))
     DisableNetworkConnectedFlagRange(flag_range=(10009510, 10009514))
     EnableNetworkFlag(10009514)
-    IfFlagDisabled(OR_10, 3260)
-    IfFlagEnabled(OR_10, 3268)
-    IfFlagEnabled(OR_10, 3269)
-    IfFlagEnabled(OR_10, 3270)
+    OR_10.Add(FlagDisabled(3260))
+    OR_10.Add(FlagEnabled(3268))
+    OR_10.Add(FlagEnabled(3269))
+    OR_10.Add(FlagEnabled(3270))
     GotoIfConditionTrue(Label.L19, input_condition=OR_10)
-    IfFlagEnabled(AND_5, 10002736)
-    IfFlagDisabled(AND_5, 10009390)
+    AND_5.Add(FlagEnabled(10002736))
+    AND_5.Add(FlagDisabled(10009390))
     SkipLinesIfConditionFalse(2, AND_5)
     DisableNetworkConnectedFlagRange(flag_range=(10009510, 10009514))
     EnableNetworkFlag(10009510)
-    IfFlagEnabled(AND_6, 10002737)
-    IfFlagDisabled(AND_6, 10009391)
+    AND_6.Add(FlagEnabled(10002737))
+    AND_6.Add(FlagDisabled(10009391))
     SkipLinesIfConditionFalse(2, AND_6)
     DisableNetworkConnectedFlagRange(flag_range=(10009510, 10009514))
     EnableNetworkFlag(10009511)
-    IfFlagEnabled(AND_7, 10002738)
-    IfFlagDisabled(AND_7, 10009392)
+    AND_7.Add(FlagEnabled(10002738))
+    AND_7.Add(FlagDisabled(10009392))
     SkipLinesIfConditionFalse(2, AND_7)
     DisableNetworkConnectedFlagRange(flag_range=(10009510, 10009514))
     EnableNetworkFlag(10009512)
-    IfFlagEnabled(AND_8, 10002739)
-    IfFlagDisabled(AND_8, 10009393)
+    AND_8.Add(FlagEnabled(10002739))
+    AND_8.Add(FlagDisabled(10009393))
     SkipLinesIfConditionFalse(2, AND_8)
     DisableNetworkConnectedFlagRange(flag_range=(10009510, 10009514))
     EnableNetworkFlag(10009513)
-    SkipLinesIfFlagDisabled(3, 10002765)
-    DisableNetworkConnectedFlagRange(flag_range=(10009510, 10009514))
-    EnableNetworkFlag(10009514)
-    Goto(Label.L15)
+    if FlagEnabled(10002765):
+        DisableNetworkConnectedFlagRange(flag_range=(10009510, 10009514))
+        EnableNetworkFlag(10009514)
+        Goto(Label.L15)
 
     # --- Label 15 --- #
     DefineLabel(15)
@@ -6261,7 +6892,9 @@ def Event_3279():
     # --- Label 20 --- #
     DefineLabel(20)
     EnableNetworkFlag(10009350)
-    IfFlagEnabled(MAIN, 3278)
+    
+    MAIN.Await(FlagEnabled(3278))
+    
     Restart()
 
     # --- Label 0 --- #
@@ -6272,7 +6905,8 @@ def Event_3279():
 @RestartOnRest(3299)
 def Event_3299():
     """Event 3299"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     SkipLinesIfFlagRangeAnyEnabled(2, (3280, 3284))
     DisableNetworkConnectedFlagRange(flag_range=(3280, 3284))
     EnableNetworkFlag(3280)
@@ -6280,15 +6914,15 @@ def Event_3299():
     DisableNetworkConnectedFlagRange(flag_range=(3285, 3298))
     EnableNetworkFlag(3285)
     GotoIfFlagDisabled(Label.L0, flag=3280)
-    IfFlagEnabled(AND_1, 1043359201)
-    IfFlagEnabled(AND_1, 1044350800)
-    IfFlagDisabled(AND_1, 1043359247)
+    AND_1.Add(FlagEnabled(1043359201))
+    AND_1.Add(FlagEnabled(1044350800))
+    AND_1.Add(FlagDisabled(1043359247))
     SkipLinesIfConditionFalse(2, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(3285, 3298))
     EnableNetworkFlag(3286)
-    IfFlagEnabled(OR_1, 4703)
-    IfFlagEnabled(OR_1, 4723)
-    IfFlagEnabled(OR_1, 4743)
+    OR_1.Add(FlagEnabled(4703))
+    OR_1.Add(FlagEnabled(4723))
+    OR_1.Add(FlagEnabled(4743))
     SkipLinesIfConditionFalse(2, OR_1)
     DisableNetworkConnectedFlagRange(flag_range=(3285, 3298))
     EnableNetworkFlag(3295)
@@ -6300,12 +6934,12 @@ def Event_3299():
 @RestartOnRest(3259)
 def Event_3259(_, first_flag: uint, last_flag: uint, first_flag_1: uint, last_flag_1: uint):
     """Event 3259"""
-    SkipLinesIfFlagRangeAnyEnabled(2, (first_flag, last_flag))
-    DisableNetworkConnectedFlagRange(flag_range=(first_flag, last_flag))
-    EnableNetworkFlag(first_flag)
-    SkipLinesIfFlagRangeAnyEnabled(2, (first_flag_1, last_flag_1))
-    DisableNetworkConnectedFlagRange(flag_range=(first_flag_1, last_flag_1))
-    EnableNetworkFlag(first_flag_1)
+    if FlagRangeAllDisabled((first_flag, last_flag)):
+        DisableNetworkConnectedFlagRange(flag_range=(first_flag, last_flag))
+        EnableNetworkFlag(first_flag)
+    if FlagRangeAllDisabled((first_flag_1, last_flag_1)):
+        DisableNetworkConnectedFlagRange(flag_range=(first_flag_1, last_flag_1))
+        EnableNetworkFlag(first_flag_1)
     GotoIfFlagDisabled(Label.L0, flag=first_flag)
 
     # --- Label 0 --- #
@@ -6315,13 +6949,14 @@ def Event_3259(_, first_flag: uint, last_flag: uint, first_flag_1: uint, last_fl
 @RestartOnRest(3119)
 def Event_3119():
     """Event 3119"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3118)
     SkipLinesIfFlagRangeAnyEnabled(2, (3100, 3104))
     DisableNetworkConnectedFlagRange(flag_range=(3100, 3104))
     EnableNetworkFlag(3100)
-    IfFlagEnabled(AND_10, 3101)
-    IfFlagEnabled(AND_10, 3000)
+    AND_10.Add(FlagEnabled(3101))
+    AND_10.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(3100, 3104))
     EnableNetworkFlag(3100)
@@ -6329,42 +6964,45 @@ def Event_3119():
     DisableNetworkConnectedFlagRange(flag_range=(3105, 3119))
     EnableNetworkFlag(3105)
     GotoIfFlagDisabled(Label.L0, flag=3100)
-    SkipLinesIfFlagDisabled(2, 400073)
-    DisableNetworkConnectedFlagRange(flag_range=(3105, 3119))
-    EnableFlag(3106)
-    IfEventValueGreaterThanOrEqual(AND_1, flag=16009260, bit_count=4, value=3)
+    if FlagEnabled(400073):
+        DisableNetworkConnectedFlagRange(flag_range=(3105, 3119))
+        EnableFlag(3106)
+    AND_1.Add(EventValue(flag=16009260, bit_count=4) >= 3)
     SkipLinesIfConditionFalse(2, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(3105, 3119))
     EnableFlag(3107)
-    IfFlagEnabled(AND_2, 16000800)
-    IfFlagEnabled(AND_2, 16009208)
+    AND_2.Add(FlagEnabled(16000800))
+    AND_2.Add(FlagEnabled(16009208))
     SkipLinesIfConditionFalse(2, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(3105, 3119))
     EnableFlag(3108)
-    IfFlagEnabled(AND_3, 16000800)
-    IfFlagDisabled(AND_3, 16009208)
-    IfConditionTrue(OR_3, input_condition=AND_3)
-    IfFlagEnabled(OR_3, 16009246)
+    AND_3.Add(FlagEnabled(16000800))
+    AND_3.Add(FlagDisabled(16009208))
+    OR_3.Add(AND_3)
+    OR_3.Add(FlagEnabled(16009246))
     SkipLinesIfConditionFalse(2, OR_3)
     DisableNetworkConnectedFlagRange(flag_range=(3105, 3119))
     EnableFlag(3109)
-    SkipLinesIfFlagDisabled(2, 16009265)
-    DisableNetworkConnectedFlagRange(flag_range=(3105, 3119))
-    EnableFlag(3110)
-    SkipLinesIfFlagDisabled(2, 16009264)
-    DisableNetworkConnectedFlagRange(flag_range=(3105, 3119))
-    EnableFlag(3111)
+    if FlagEnabled(16009265):
+        DisableNetworkConnectedFlagRange(flag_range=(3105, 3119))
+        EnableFlag(3110)
+    if FlagEnabled(16009264):
+        DisableNetworkConnectedFlagRange(flag_range=(3105, 3119))
+        EnableFlag(3111)
 
     # --- Label 0 --- #
     DefineLabel(0)
-    IfFlagEnabled(MAIN, 3118)
+    
+    MAIN.Await(FlagEnabled(3118))
+    
     Restart()
 
 
 @RestartOnRest(3399)
 def Event_3399():
     """Event 3399"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3398)
     SkipLinesIfFlagRangeAnyEnabled(2, (3380, 3383))
     DisableNetworkConnectedFlagRange(flag_range=(3380, 3383))
@@ -6373,69 +7011,72 @@ def Event_3399():
     DisableNetworkConnectedFlagRange(flag_range=(3385, 3397))
     EnableNetworkFlag(3385)
     GotoIfFlagDisabled(Label.L0, flag=3380)
-    IfFlagEnabled(OR_1, 1043319206)
-    IfFlagEnabled(OR_1, 3403)
-    IfFlagEnabled(OR_1, 3062)
-    IfFlagEnabled(OR_1, 9101)
-    IfFlagEnabled(AND_1, 3385)
-    IfFlagEnabled(AND_1, 1045349207)
-    IfConditionTrue(AND_1, input_condition=OR_1)
+    OR_1.Add(FlagEnabled(1043319206))
+    OR_1.Add(FlagEnabled(3403))
+    OR_1.Add(FlagEnabled(3062))
+    OR_1.Add(FlagEnabled(9101))
+    AND_1.Add(FlagEnabled(3385))
+    AND_1.Add(FlagEnabled(1045349207))
+    AND_1.Add(OR_1)
     SkipLinesIfConditionFalse(2, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(3385, 3397))
     EnableNetworkFlag(3386)
-    IfFlagEnabled(AND_2, 3386)
+    AND_2.Add(FlagEnabled(3386))
     SkipLinesIfConditionFalse(2, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(3385, 3397))
     EnableNetworkFlag(3387)
-    IfFlagEnabled(AND_3, 3387)
-    IfFlagEnabled(AND_3, 1039409206)
+    AND_3.Add(FlagEnabled(3387))
+    AND_3.Add(FlagEnabled(1039409206))
     SkipLinesIfConditionFalse(2, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(3385, 3397))
     EnableNetworkFlag(3388)
-    IfFlagEnabled(AND_4, 3388)
-    IfFlagEnabled(AND_4, 1038419205)
+    AND_4.Add(FlagEnabled(3388))
+    AND_4.Add(FlagEnabled(1038419205))
     SkipLinesIfConditionFalse(2, AND_4)
     DisableNetworkConnectedFlagRange(flag_range=(3385, 3397))
     EnableNetworkFlag(3389)
-    IfFlagEnabled(AND_5, 3389)
-    IfFlagEnabled(AND_5, 1038439206)
+    AND_5.Add(FlagEnabled(3389))
+    AND_5.Add(FlagEnabled(1038439206))
     SkipLinesIfConditionFalse(2, AND_5)
     DisableNetworkConnectedFlagRange(flag_range=(3385, 3397))
     EnableNetworkFlag(3390)
-    IfFlagEnabled(AND_6, 3390)
-    IfFlagEnabled(AND_6, 1038439209)
+    AND_6.Add(FlagEnabled(3390))
+    AND_6.Add(FlagEnabled(1038439209))
     SkipLinesIfConditionFalse(2, AND_6)
     DisableNetworkConnectedFlagRange(flag_range=(3385, 3397))
     EnableNetworkFlag(3391)
-    IfFlagEnabled(AND_7, 3391)
-    IfFlagEnabled(AND_7, 1036499207)
+    AND_7.Add(FlagEnabled(3391))
+    AND_7.Add(FlagEnabled(1036499207))
     SkipLinesIfConditionFalse(2, AND_7)
     DisableNetworkConnectedFlagRange(flag_range=(3385, 3397))
     EnableNetworkFlag(3392)
 
     # --- Label 0 --- #
     DefineLabel(0)
-    IfFlagEnabled(AND_14, 3392)
-    IfFlagEnabled(AND_14, 35009209)
+    AND_14.Add(FlagEnabled(3392))
+    AND_14.Add(FlagEnabled(35009209))
     SkipLinesIfConditionFalse(4, AND_14)
     DisableNetworkConnectedFlagRange(flag_range=(3385, 3397))
     EnableNetworkFlag(3393)
     DisableNetworkConnectedFlagRange(flag_range=(3380, 3383))
     EnableNetworkFlag(3383)
-    IfFlagEnabled(MAIN, 3398)
+    
+    MAIN.Await(FlagEnabled(3398))
+    
     Restart()
 
 
 @RestartOnRest(3419)
 def Event_3419():
     """Event 3419"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3418)
     SkipLinesIfFlagRangeAnyEnabled(2, (3400, 3403))
     DisableNetworkConnectedFlagRange(flag_range=(3400, 3403))
     EnableNetworkFlag(3400)
-    IfFlagEnabled(AND_15, 3402)
-    IfFlagDisabled(AND_15, 1045349256)
+    AND_15.Add(FlagEnabled(3402))
+    AND_15.Add(FlagDisabled(1045349256))
     SkipLinesIfConditionFalse(2, AND_15)
     DisableNetworkConnectedFlagRange(flag_range=(3400, 3403))
     EnableNetworkFlag(3400)
@@ -6443,62 +7084,62 @@ def Event_3419():
     DisableNetworkConnectedFlagRange(flag_range=(3405, 3417))
     EnableNetworkFlag(3405)
     GotoIfFlagDisabled(Label.L0, flag=3400)
-    IfFlagEnabled(AND_14, 3408)
-    IfFlagDisabled(AND_14, 1045349256)
+    AND_14.Add(FlagEnabled(3408))
+    AND_14.Add(FlagDisabled(1045349256))
     SkipLinesIfConditionFalse(2, AND_14)
     DisableNetworkConnectedFlagRange(flag_range=(3405, 3417))
     EnableNetworkFlag(3407)
-    IfFlagEnabled(AND_1, 3405)
-    IfFlagEnabled(AND_1, 1043319206)
+    AND_1.Add(FlagEnabled(3405))
+    AND_1.Add(FlagEnabled(1043319206))
     SkipLinesIfConditionFalse(3, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(3405, 3417))
     EnableNetworkFlag(3406)
     EnableFlag(1043319209)
-    IfFlagEnabled(AND_2, 3406)
-    IfFlagEnabled(AND_2, 1043300800)
+    AND_2.Add(FlagEnabled(3406))
+    AND_2.Add(FlagEnabled(1043300800))
     SkipLinesIfConditionFalse(3, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(3405, 3417))
     EnableNetworkFlag(3407)
     DisableFlag(1043319209)
-    IfFlagEnabled(AND_3, 3407)
-    IfFlagRangeAnyEnabled(AND_3, flag_range=(3386, 3397))
-    IfFlagEnabled(AND_3, 1043319207)
+    AND_3.Add(FlagEnabled(3407))
+    AND_3.Add(FlagRangeAnyEnabled(flag_range=(3386, 3397)))
+    AND_3.Add(FlagEnabled(1043319207))
     SkipLinesIfConditionFalse(3, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(3405, 3417))
     EnableNetworkFlag(3408)
     EnableFlag(1045349256)
-    IfFlagEnabled(AND_4, 3407)
-    IfFlagRangeAnyEnabled(AND_4, flag_range=(3386, 3397))
-    IfFlagEnabled(AND_4, 1045342719)
+    AND_4.Add(FlagEnabled(3407))
+    AND_4.Add(FlagRangeAnyEnabled(flag_range=(3386, 3397)))
+    AND_4.Add(FlagEnabled(1045342719))
     SkipLinesIfConditionFalse(2, AND_4)
     DisableNetworkConnectedFlagRange(flag_range=(3405, 3417))
     EnableNetworkFlag(3408)
-    IfFlagEnabled(AND_5, 3408)
-    IfFlagEnabled(AND_5, 1045349255)
+    AND_5.Add(FlagEnabled(3408))
+    AND_5.Add(FlagEnabled(1045349255))
     SkipLinesIfConditionFalse(3, AND_5)
     DisableNetworkConnectedFlagRange(flag_range=(3405, 3417))
     EnableNetworkFlag(3409)
     EnableFlag(1045349259)
-    IfFlagRangeAnyEnabled(AND_6, flag_range=(3405, 3408))
-    IfFlagEnabled(AND_6, 1039409206)
+    AND_6.Add(FlagRangeAnyEnabled(flag_range=(3405, 3408)))
+    AND_6.Add(FlagEnabled(1039409206))
     SkipLinesIfConditionFalse(3, AND_6)
     DisableNetworkConnectedFlagRange(flag_range=(3405, 3417))
     EnableNetworkFlag(3409)
     EnableFlag(1045349259)
-    IfFlagEnabled(AND_7, 3407)
-    IfFlagEnabled(AND_7, 3385)
-    IfFlagEnabled(AND_7, 3383)
-    IfFlagEnabled(AND_7, 1043319207)
+    AND_7.Add(FlagEnabled(3407))
+    AND_7.Add(FlagEnabled(3385))
+    AND_7.Add(FlagEnabled(3383))
+    AND_7.Add(FlagEnabled(1043319207))
     SkipLinesIfConditionFalse(5, AND_7)
     DisableNetworkConnectedFlagRange(flag_range=(3405, 3417))
     EnableNetworkFlag(3408)
     DisableNetworkConnectedFlagRange(flag_range=(3400, 3403))
     EnableNetworkFlag(3402)
     EnableFlag(1045349256)
-    IfFlagEnabled(AND_8, 3407)
-    IfFlagEnabled(AND_8, 3385)
-    IfFlagEnabled(AND_8, 3383)
-    IfFlagEnabled(AND_8, 1045342719)
+    AND_8.Add(FlagEnabled(3407))
+    AND_8.Add(FlagEnabled(3385))
+    AND_8.Add(FlagEnabled(3383))
+    AND_8.Add(FlagEnabled(1045342719))
     SkipLinesIfConditionFalse(4, AND_8)
     DisableNetworkConnectedFlagRange(flag_range=(3405, 3417))
     EnableNetworkFlag(3408)
@@ -6507,7 +7148,9 @@ def Event_3419():
 
     # --- Label 0 --- #
     DefineLabel(0)
-    IfFlagEnabled(MAIN, 3418)
+    
+    MAIN.Await(FlagEnabled(3418))
+    
     Restart()
     End()
 
@@ -6515,13 +7158,14 @@ def Event_3419():
 @RestartOnRest(3439)
 def Event_3439():
     """Event 3439"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3438)
     SkipLinesIfFlagRangeAnyEnabled(2, (3420, 3424))
     DisableNetworkConnectedFlagRange(flag_range=(3420, 3424))
     EnableNetworkFlag(3420)
-    IfFlagEnabled(AND_10, 3421)
-    IfFlagEnabled(AND_10, 3000)
+    AND_10.Add(FlagEnabled(3421))
+    AND_10.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(3420, 3424))
     EnableNetworkFlag(3420)
@@ -6529,156 +7173,162 @@ def Event_3439():
     DisableNetworkConnectedFlagRange(flag_range=(3425, 3439))
     EnableNetworkFlag(3425)
     GotoIfFlagDisabled(Label.L0, flag=3420)
-    IfFlagEnabled(AND_1, 1037429210)
-    IfFlagDisabled(AND_1, 1038519205)
-    IfFlagDisabled(AND_1, 16009208)
+    AND_1.Add(FlagEnabled(1037429210))
+    AND_1.Add(FlagDisabled(1038519205))
+    AND_1.Add(FlagDisabled(16009208))
     SkipLinesIfConditionFalse(2, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(3425, 3439))
     EnableNetworkFlag(3426)
-    IfFlagEnabled(OR_2, 1038519205)
-    IfFlagEnabled(OR_2, 16009208)
+    OR_2.Add(FlagEnabled(1038519205))
+    OR_2.Add(FlagEnabled(16009208))
     SkipLinesIfConditionFalse(2, OR_2)
     DisableNetworkConnectedFlagRange(flag_range=(3425, 3439))
     EnableFlag(3427)
-    IfFlagEnabled(AND_3, 16009306)
-    IfEventValueGreaterThanOrEqual(AND_3, flag=16009260, bit_count=3, value=2)
+    AND_3.Add(FlagEnabled(16009306))
+    AND_3.Add(EventValue(flag=16009260, bit_count=3) >= 2)
     SkipLinesIfConditionFalse(2, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(3425, 3439))
     EnableFlag(3428)
-    SkipLinesIfFlagDisabled(2, 16009319)
-    DisableNetworkConnectedFlagRange(flag_range=(3425, 3439))
-    EnableFlag(3429)
-    IfFlagEnabled(AND_14, 16000800)
-    IfFlagDisabled(AND_14, 16009208)
-    IfConditionTrue(OR_14, input_condition=AND_14)
-    IfFlagEnabled(OR_14, 16009246)
-    IfFlagEnabled(AND_4, 16009327)
-    IfConditionTrue(AND_4, input_condition=OR_14)
-    IfFlagDisabled(AND_4, 3689)
-    IfFlagDisabled(AND_4, 3448)
-    IfFlagDisabled(AND_4, 3449)
-    IfFlagDisabled(AND_4, 3886)
+    if FlagEnabled(16009319):
+        DisableNetworkConnectedFlagRange(flag_range=(3425, 3439))
+        EnableFlag(3429)
+    AND_14.Add(FlagEnabled(16000800))
+    AND_14.Add(FlagDisabled(16009208))
+    OR_14.Add(AND_14)
+    OR_14.Add(FlagEnabled(16009246))
+    AND_4.Add(FlagEnabled(16009327))
+    AND_4.Add(OR_14)
+    AND_4.Add(FlagDisabled(3689))
+    AND_4.Add(FlagDisabled(3448))
+    AND_4.Add(FlagDisabled(3449))
+    AND_4.Add(FlagDisabled(3886))
     SkipLinesIfConditionFalse(2, AND_4)
     DisableNetworkConnectedFlagRange(flag_range=(3425, 3439))
     EnableFlag(3430)
-    IfFlagEnabled(AND_5, 16009328)
-    IfFlagDisabled(AND_5, 16009327)
-    IfFlagRangeAnyEnabled(AND_6, flag_range=(3425, 3428))
-    IfFlagDisabled(AND_6, 16009319)
-    IfFlagEnabled(AND_6, 16000800)
-    IfConditionTrue(OR_5, input_condition=AND_5)
-    IfConditionTrue(OR_5, input_condition=AND_6)
-    IfFlagEnabled(OR_5, 16009335)
+    AND_5.Add(FlagEnabled(16009328))
+    AND_5.Add(FlagDisabled(16009327))
+    AND_6.Add(FlagRangeAnyEnabled(flag_range=(3425, 3428)))
+    AND_6.Add(FlagDisabled(16009319))
+    AND_6.Add(FlagEnabled(16000800))
+    OR_5.Add(AND_5)
+    OR_5.Add(AND_6)
+    OR_5.Add(FlagEnabled(16009335))
     SkipLinesIfConditionFalse(2, OR_5)
     DisableNetworkConnectedFlagRange(flag_range=(3425, 3439))
     EnableFlag(3431)
 
     # --- Label 0 --- #
     DefineLabel(0)
-    IfFlagEnabled(MAIN, 3438)
+    
+    MAIN.Await(FlagEnabled(3438))
+    
     Restart()
 
 
 @RestartOnRest(3459)
 def Event_3459():
     """Event 3459"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3458)
     SkipLinesIfFlagRangeAnyEnabled(2, (3440, 3444))
     DisableNetworkConnectedFlagRange(flag_range=(3440, 3444))
     EnableNetworkFlag(3440)
-    IfFlagEnabled(AND_15, 3442)
-    IfFlagEnabled(AND_15, 3443)
+    AND_15.Add(FlagEnabled(3442))
+    AND_15.Add(FlagEnabled(3443))
     SkipLinesIfConditionFalse(2, AND_15)
     DisableNetworkConnectedFlagRange(flag_range=(3440, 3444))
     EnableNetworkFlag(3443)
-    IfFlagDisabled(AND_14, 3450)
-    IfFlagEnabled(AND_14, 3440)
-    IfFlagEnabled(AND_14, 3442)
+    AND_14.Add(FlagDisabled(3450))
+    AND_14.Add(FlagEnabled(3440))
+    AND_14.Add(FlagEnabled(3442))
     SkipLinesIfConditionFalse(2, AND_14)
     DisableNetworkConnectedFlagRange(flag_range=(3440, 3444))
     EnableNetworkFlag(3440)
-    IfFlagEnabled(AND_13, 3450)
-    IfFlagEnabled(AND_13, 3440)
-    IfFlagEnabled(AND_13, 3442)
+    AND_13.Add(FlagEnabled(3450))
+    AND_13.Add(FlagEnabled(3440))
+    AND_13.Add(FlagEnabled(3442))
     SkipLinesIfConditionFalse(2, AND_13)
     DisableNetworkConnectedFlagRange(flag_range=(3440, 3444))
     EnableNetworkFlag(3442)
-    IfFlagEnabled(AND_10, 3441)
-    IfFlagEnabled(AND_10, 3000)
+    AND_10.Add(FlagEnabled(3441))
+    AND_10.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(3440, 3444))
     EnableNetworkFlag(3440)
     SkipLinesIfFlagRangeAnyEnabled(2, (3445, 3459))
     DisableNetworkConnectedFlagRange(flag_range=(3445, 3457))
     EnableNetworkFlag(3445)
-    IfFlagEnabled(AND_11, 1039449285)
-    IfFlagDisabled(AND_11, 1039449316)
+    AND_11.Add(FlagEnabled(1039449285))
+    AND_11.Add(FlagDisabled(1039449316))
     SkipLinesIfConditionFalse(1, AND_11)
     EnableNetworkFlag(1039449316)
     GotoIfFlagDisabled(Label.L0, flag=3440)
-    IfFlagRangeAnyEnabled(AND_1, flag_range=(3445, 3447))
-    IfFlagEnabled(AND_1, 9122)
+    AND_1.Add(FlagRangeAnyEnabled(flag_range=(3445, 3447)))
+    AND_1.Add(FlagEnabled(9122))
     SkipLinesIfConditionFalse(5, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(3445, 3457))
     EnableNetworkFlag(3457)
     DisableNetworkConnectedFlagRange(flag_range=(3440, 3444))
     EnableNetworkFlag(3443)
     Goto(Label.L0)
-    IfFlagEnabled(OR_1, 1037442701)
-    IfFlagEnabled(OR_1, 1037449206)
-    IfFlagEnabled(OR_1, 110)
+    OR_1.Add(FlagEnabled(1037442701))
+    OR_1.Add(FlagEnabled(1037449206))
+    OR_1.Add(FlagEnabled(110))
     SkipLinesIfConditionFalse(2, OR_1)
     DisableNetworkConnectedFlagRange(flag_range=(3445, 3457))
     EnableNetworkFlag(3446)
-    SkipLinesIfFlagDisabled(2, 1037449205)
-    DisableNetworkConnectedFlagRange(flag_range=(3445, 3457))
-    EnableNetworkFlag(3447)
-    SkipLinesIfFlagDisabled(2, 11109430)
-    DisableNetworkConnectedFlagRange(flag_range=(3445, 3457))
-    EnableNetworkFlag(3448)
-    IfFlagEnabled(AND_5, 16009406)
-    IfEventValueGreaterThanOrEqual(AND_5, flag=16009260, bit_count=4, value=1)
-    IfConditionTrue(OR_5, input_condition=AND_5)
-    IfFlagDisabled(AND_6, 16009405)
-    IfFlagEnabled(AND_6, 9122)
-    IfConditionTrue(OR_5, input_condition=AND_6)
+    if FlagEnabled(1037449205):
+        DisableNetworkConnectedFlagRange(flag_range=(3445, 3457))
+        EnableNetworkFlag(3447)
+    if FlagEnabled(11109430):
+        DisableNetworkConnectedFlagRange(flag_range=(3445, 3457))
+        EnableNetworkFlag(3448)
+    AND_5.Add(FlagEnabled(16009406))
+    AND_5.Add(EventValue(flag=16009260, bit_count=4) >= 1)
+    OR_5.Add(AND_5)
+    AND_6.Add(FlagDisabled(16009405))
+    AND_6.Add(FlagEnabled(9122))
+    OR_5.Add(AND_6)
     SkipLinesIfConditionFalse(2, OR_5)
     DisableNetworkConnectedFlagRange(flag_range=(3445, 3457))
     EnableNetworkFlag(3449)
-    IfFlagEnabled(AND_7, 16009405)
-    IfFlagEnabled(AND_7, 9122)
-    IfConditionTrue(OR_7, input_condition=AND_7)
-    IfFlagEnabled(AND_8, 16009416)
-    IfConditionTrue(OR_7, input_condition=AND_8)
+    AND_7.Add(FlagEnabled(16009405))
+    AND_7.Add(FlagEnabled(9122))
+    OR_7.Add(AND_7)
+    AND_8.Add(FlagEnabled(16009416))
+    OR_7.Add(AND_8)
     SkipLinesIfConditionFalse(3, OR_7)
     DisableNetworkConnectedFlagRange(flag_range=(3445, 3457))
     EnableNetworkFlag(3456)
     EnableNetworkFlag(11109430)
-    IfFlagEnabled(AND_9, 3456)
-    IfFlagEnabled(AND_9, 1039449263)
+    AND_9.Add(FlagEnabled(3456))
+    AND_9.Add(FlagEnabled(1039449263))
     SkipLinesIfConditionFalse(2, AND_9)
     DisableNetworkConnectedFlagRange(flag_range=(3445, 3457))
     EnableNetworkFlag(3450)
-    SkipLinesIfFlagDisabled(2, 3827)
-    DisableNetworkConnectedFlagRange(flag_range=(3445, 3457))
-    EnableNetworkFlag(3451)
+    if FlagEnabled(3827):
+        DisableNetworkConnectedFlagRange(flag_range=(3445, 3457))
+        EnableNetworkFlag(3451)
 
     # --- Label 0 --- #
     DefineLabel(0)
-    IfFlagEnabled(MAIN, 3458)
+    
+    MAIN.Await(FlagEnabled(3458))
+    
     Restart()
 
 
 @RestartOnRest(3499)
 def Event_3499():
     """Event 3499"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     SkipLinesIfFlagRangeAnyEnabled(2, (3480, 3484))
     DisableNetworkConnectedFlagRange(flag_range=(3480, 3484))
     EnableNetworkFlag(3480)
-    IfFlagEnabled(AND_10, 3481)
-    IfFlagEnabled(AND_10, 3000)
+    AND_10.Add(FlagEnabled(3481))
+    AND_10.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(3480, 3484))
     EnableNetworkFlag(3480)
@@ -6686,34 +7336,33 @@ def Event_3499():
     DisableNetworkConnectedFlagRange(flag_range=(3485, 3499))
     EnableNetworkFlag(3485)
     GotoIfFlagDisabled(Label.L0, flag=3480)
-    SkipLinesIfFlagDisabled(2, 182)
-    DisableNetworkConnectedFlagRange(flag_range=(3485, 3499))
-    EnableFlag(3486)
-    SkipLinesIfFlagDisabled(2, 11000500)
-    DisableNetworkConnectedFlagRange(flag_range=(3485, 3499))
-    EnableFlag(3487)
-    SkipLinesIfFlagDisabled(2, 110)
-    DisableNetworkConnectedFlagRange(flag_range=(3485, 3499))
-    EnableFlag(3488)
-    SkipLinesIfFlagDisabled(5, 118)
-    DisableNetworkConnectedFlagRange(flag_range=(3485, 3499))
-    EnableFlag(3489)
-    SaveRequest()
-
-    # --- Label 0 --- #
-    DefineLabel(0)
-    End()
+    if FlagEnabled(182):
+        DisableNetworkConnectedFlagRange(flag_range=(3485, 3499))
+        EnableFlag(3486)
+    if FlagEnabled(11000500):
+        DisableNetworkConnectedFlagRange(flag_range=(3485, 3499))
+        EnableFlag(3487)
+    if FlagEnabled(110):
+        DisableNetworkConnectedFlagRange(flag_range=(3485, 3499))
+        EnableFlag(3488)
+    if FlagEnabled(118):
+        DisableNetworkConnectedFlagRange(flag_range=(3485, 3499))
+        EnableFlag(3489)
+        SaveRequest()
+        DefineLabel(0)
+        End()
 
 
 @RestartOnRest(3559)
 def Event_3559():
     """Event 3559"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     SkipLinesIfFlagRangeAnyEnabled(2, (3540, 3544))
     DisableNetworkConnectedFlagRange(flag_range=(3540, 3544))
     EnableNetworkFlag(3540)
-    IfFlagEnabled(AND_10, 3541)
-    IfFlagEnabled(AND_10, 3000)
+    AND_10.Add(FlagEnabled(3541))
+    AND_10.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(3540, 3544))
     EnableNetworkFlag(3540)
@@ -6721,12 +7370,12 @@ def Event_3559():
     DisableNetworkConnectedFlagRange(flag_range=(3545, 3559))
     EnableNetworkFlag(3545)
     GotoIfFlagDisabled(Label.L0, flag=3540)
-    SkipLinesIfFlagDisabled(5, 1035429210)
-    DisableNetworkConnectedFlagRange(flag_range=(3545, 3559))
-    EnableFlag(3546)
-    DisableNetworkConnectedFlagRange(flag_range=(3540, 3544))
-    EnableNetworkFlag(3543)
-    SaveRequest()
+    if FlagEnabled(1035429210):
+        DisableNetworkConnectedFlagRange(flag_range=(3545, 3559))
+        EnableFlag(3546)
+        DisableNetworkConnectedFlagRange(flag_range=(3540, 3544))
+        EnableNetworkFlag(3543)
+        SaveRequest()
 
     # --- Label 0 --- #
     DefineLabel(0)
@@ -6736,21 +7385,22 @@ def Event_3559():
 @RestartOnRest(3639)
 def Event_3639():
     """Event 3639"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3638)
     SkipLinesIfFlagRangeAnyEnabled(2, (3620, 3624))
     DisableNetworkConnectedFlagRange(flag_range=(3620, 3624))
     EnableNetworkFlag(3620)
-    IfFlagEnabled(AND_10, 3621)
-    IfFlagEnabled(AND_10, 3000)
+    AND_10.Add(FlagEnabled(3621))
+    AND_10.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(3620, 3624))
     EnableNetworkFlag(3620)
     SkipLinesIfFlagRangeAnyEnabled(2, (3625, 3639))
     DisableNetworkConnectedFlagRange(flag_range=(3625, 3639))
     EnableNetworkFlag(3626)
-    IfFlagEnabled(AND_5, 3623)
-    IfFlagDisabled(AND_5, 3631)
+    AND_5.Add(FlagEnabled(3623))
+    AND_5.Add(FlagDisabled(3631))
     SkipLinesIfConditionFalse(7, AND_5)
     DisableNetworkConnectedFlagRange(flag_range=(3620, 3624))
     EnableNetworkFlag(3620)
@@ -6760,73 +7410,78 @@ def Event_3639():
     SaveRequest()
     Goto(Label.L0)
     GotoIfFlagDisabled(Label.L0, flag=3620)
-    IfFlagEnabled(AND_1, 1043379263)
-    IfFlagDisabled(AND_1, 1044389206)
+    AND_1.Add(FlagEnabled(1043379263))
+    AND_1.Add(FlagDisabled(1044389206))
     SkipLinesIfConditionFalse(2, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(3625, 3637))
     EnableFlag(3625)
-    IfFlagEnabled(AND_2, 1043379263)
-    IfFlagEnabled(AND_2, 1044389206)
-    IfConditionTrue(OR_2, input_condition=AND_2)
-    IfFlagDisabled(OR_2, 1043379263)
+    AND_2.Add(FlagEnabled(1043379263))
+    AND_2.Add(FlagEnabled(1044389206))
+    OR_2.Add(AND_2)
+    OR_2.Add(FlagDisabled(1043379263))
     SkipLinesIfConditionFalse(2, OR_2)
     DisableNetworkConnectedFlagRange(flag_range=(3625, 3637))
     EnableFlag(3626)
-    SkipLinesIfFlagDisabled(2, 7607)
-    DisableNetworkConnectedFlagRange(flag_range=(3625, 3637))
-    EnableNetworkFlag(3627)
-    SkipLinesIfFlagDisabled(2, 1035469207)
-    DisableNetworkConnectedFlagRange(flag_range=(3625, 3637))
-    EnableNetworkFlag(3630)
-    IfFlagEnabled(OR_5, 1039529206)
-    IfFlagEnabled(OR_5, 1049539210)
+    if FlagEnabled(7607):
+        DisableNetworkConnectedFlagRange(flag_range=(3625, 3637))
+        EnableNetworkFlag(3627)
+    if FlagEnabled(1035469207):
+        DisableNetworkConnectedFlagRange(flag_range=(3625, 3637))
+        EnableNetworkFlag(3630)
+    OR_5.Add(FlagEnabled(1039529206))
+    OR_5.Add(FlagEnabled(1049539210))
     SkipLinesIfConditionFalse(2, OR_5)
     DisableNetworkConnectedFlagRange(flag_range=(3625, 3637))
     EnableNetworkFlag(3631)
 
     # --- Label 0 --- #
     DefineLabel(0)
-    IfFlagEnabled(MAIN, 3638)
+    
+    MAIN.Await(FlagEnabled(3638))
+    
     Restart()
 
 
 @RestartOnRest(3659)
 def Event_3659():
     """Event 3659"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3658)
     SkipLinesIfFlagRangeAnyEnabled(2, (3640, 3643))
     DisableNetworkConnectedFlagRange(flag_range=(3640, 3643))
     EnableNetworkFlag(3640)
-    SkipLinesIfFlagDisabled(2, 3641)
-    DisableNetworkConnectedFlagRange(flag_range=(3640, 3643))
-    EnableNetworkFlag(3640)
+    if FlagEnabled(3641):
+        DisableNetworkConnectedFlagRange(flag_range=(3640, 3643))
+        EnableNetworkFlag(3640)
     SkipLinesIfFlagRangeAnyEnabled(2, (3645, 3657))
     DisableNetworkConnectedFlagRange(flag_range=(3645, 3657))
     EnableNetworkFlag(3645)
     GotoIfFlagDisabled(Label.L0, flag=3640)
-    IfFlagEnabled(AND_1, 3645)
-    IfEventValueGreaterThanOrEqual(AND_1, flag=1051439235, bit_count=5, value=4)
+    AND_1.Add(FlagEnabled(3645))
+    AND_1.Add(EventValue(flag=1051439235, bit_count=5) >= 4)
     SkipLinesIfConditionFalse(5, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(3645, 3657))
     EnableNetworkFlag(3646)
     DisableNetworkConnectedFlagRange(flag_range=(3640, 3643))
     EnableNetworkFlag(3642)
     EnableFlag(1051439212)
-    IfFlagEnabled(AND_2, 3646)
-    IfFlagEnabled(AND_2, 3640)
+    AND_2.Add(FlagEnabled(3646))
+    AND_2.Add(FlagEnabled(3640))
     SkipLinesIfConditionFalse(2, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(3645, 3657))
     EnableNetworkFlag(3647)
-    IfFlagEnabled(AND_3, 3647)
-    IfEventValueGreaterThanOrEqual(AND_3, flag=1051439235, bit_count=5, value=9)
+    AND_3.Add(FlagEnabled(3647))
+    AND_3.Add(EventValue(flag=1051439235, bit_count=5) >= 9)
     SkipLinesIfConditionFalse(2, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(3645, 3657))
     EnableNetworkFlag(3648)
 
     # --- Label 0 --- #
     DefineLabel(0)
-    IfFlagEnabled(MAIN, 3658)
+    
+    MAIN.Await(FlagEnabled(3658))
+    
     Restart()
     End()
 
@@ -6834,13 +7489,14 @@ def Event_3659():
 @RestartOnRest(3699)
 def Event_3699():
     """Event 3699"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3698)
     SkipLinesIfFlagRangeAnyEnabled(2, (3680, 3684))
     DisableNetworkConnectedFlagRange(flag_range=(3680, 3684))
     EnableNetworkFlag(3680)
-    IfFlagEnabled(AND_10, 3681)
-    IfFlagEnabled(AND_10, 3000)
+    AND_10.Add(FlagEnabled(3681))
+    AND_10.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(3680, 3684))
     EnableNetworkFlag(3680)
@@ -6852,23 +7508,23 @@ def Event_3699():
     DisableFlag(1037549209)
     DisableFlag(31009266)
     WaitFrames(frames=1)
-    IfFlagEnabled(OR_11, 3685)
-    IfFlagEnabled(OR_11, 3686)
+    OR_11.Add(FlagEnabled(3685))
+    OR_11.Add(FlagEnabled(3686))
     SkipLinesIfConditionFalse(2, OR_11)
     EnableFlag(31009207)
     Goto(Label.L1)
-    IfFlagEnabled(OR_12, 3687)
+    OR_12.Add(FlagEnabled(3687))
     SkipLinesIfConditionFalse(2, OR_12)
     EnableFlag(1038419265)
     Goto(Label.L1)
-    IfFlagEnabled(OR_13, 3688)
-    IfFlagEnabled(OR_13, 3693)
+    OR_13.Add(FlagEnabled(3688))
+    OR_13.Add(FlagEnabled(3693))
     SkipLinesIfConditionFalse(2, OR_13)
     EnableFlag(1037549209)
     Goto(Label.L1)
-    IfFlagEnabled(OR_14, 3691)
-    IfFlagEnabled(OR_14, 3692)
-    IfFlagEnabled(OR_14, 3694)
+    OR_14.Add(FlagEnabled(3691))
+    OR_14.Add(FlagEnabled(3692))
+    OR_14.Add(FlagEnabled(3694))
     SkipLinesIfConditionFalse(2, OR_14)
     EnableFlag(31009266)
     Goto(Label.L1)
@@ -6883,63 +7539,63 @@ def Event_3699():
     EnableFlag(31009219)
     GotoIfFlagDisabled(Label.L0, flag=3680)
     GotoIfFlagEnabled(Label.L2, flag=3691)
-    SkipLinesIfFlagDisabled(4, 31009206)
-    DisableNetworkConnectedFlagRange(flag_range=(3685, 3699))
-    EnableNetworkFlag(3686)
-    EnableNetworkFlag(1038419270)
-    DisableNetworkFlag(1038419271)
-    IfFlagEnabled(AND_2, 31009206)
-    IfFlagEnabled(AND_2, 1038419254)
-    IfFlagDisabled(AND_2, 16009208)
+    if FlagEnabled(31009206):
+        DisableNetworkConnectedFlagRange(flag_range=(3685, 3699))
+        EnableNetworkFlag(3686)
+        EnableNetworkFlag(1038419270)
+        DisableNetworkFlag(1038419271)
+    AND_2.Add(FlagEnabled(31009206))
+    AND_2.Add(FlagEnabled(1038419254))
+    AND_2.Add(FlagDisabled(16009208))
     SkipLinesIfConditionFalse(4, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(3685, 3699))
     EnableNetworkFlag(3687)
     DisableNetworkFlag(1038419270)
     EnableNetworkFlag(1038419271)
-    IfFlagEnabled(AND_3, 31009206)
-    IfFlagEnabled(AND_3, 1037549211)
-    IfFlagDisabled(AND_3, 16009208)
-    IfFlagDisabled(AND_3, 1037549210)
+    AND_3.Add(FlagEnabled(31009206))
+    AND_3.Add(FlagEnabled(1037549211))
+    AND_3.Add(FlagDisabled(16009208))
+    AND_3.Add(FlagDisabled(1037549210))
     SkipLinesIfConditionFalse(4, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(3685, 3699))
     EnableNetworkFlag(3688)
     DisableNetworkFlag(1038419270)
     EnableNetworkFlag(1038419271)
-    IfFlagEnabled(AND_4, 31009206)
-    IfFlagEnabled(AND_4, 1037549211)
-    IfFlagDisabled(AND_4, 16009208)
-    IfFlagEnabled(AND_4, 1037549210)
+    AND_4.Add(FlagEnabled(31009206))
+    AND_4.Add(FlagEnabled(1037549211))
+    AND_4.Add(FlagDisabled(16009208))
+    AND_4.Add(FlagEnabled(1037549210))
     SkipLinesIfConditionFalse(4, AND_4)
     DisableNetworkConnectedFlagRange(flag_range=(3685, 3699))
     EnableNetworkFlag(3693)
     DisableNetworkFlag(1038419270)
     EnableNetworkFlag(1038419271)
-    IfFlagEnabled(AND_5, 31009206)
-    IfFlagEnabled(AND_5, 16009208)
+    AND_5.Add(FlagEnabled(31009206))
+    AND_5.Add(FlagEnabled(16009208))
     SkipLinesIfConditionFalse(4, AND_5)
     DisableNetworkConnectedFlagRange(flag_range=(3685, 3699))
     EnableNetworkFlag(3689)
     DisableNetworkFlag(1038419270)
     EnableNetworkFlag(1038419271)
-    SkipLinesIfFlagDisabled(2, 3697)
-    DisableNetworkConnectedFlagRange(flag_range=(3685, 3699))
-    EnableNetworkFlag(3690)
-    SkipLinesIfFlagDisabled(4, 16009359)
-    DisableNetworkConnectedFlagRange(flag_range=(3685, 3699))
-    EnableNetworkFlag(3690)
-    DisableNetworkFlag(1038419270)
-    EnableNetworkFlag(1038419271)
-    IfFlagEnabled(OR_6, 1039549205)
+    if FlagEnabled(3697):
+        DisableNetworkConnectedFlagRange(flag_range=(3685, 3699))
+        EnableNetworkFlag(3690)
+    if FlagEnabled(16009359):
+        DisableNetworkConnectedFlagRange(flag_range=(3685, 3699))
+        EnableNetworkFlag(3690)
+        DisableNetworkFlag(1038419270)
+        EnableNetworkFlag(1038419271)
+    OR_6.Add(FlagEnabled(1039549205))
     SkipLinesIfConditionFalse(4, OR_6)
     DisableNetworkConnectedFlagRange(flag_range=(3685, 3699))
     EnableNetworkFlag(3696)
     DisableNetworkFlag(1038419270)
     EnableNetworkFlag(1038419271)
-    IfFlagEnabled(OR_7, 1039549205)
-    IfFlagEnabled(OR_7, 3696)
-    IfConditionTrue(AND_7, input_condition=OR_7)
-    IfFlagDisabled(AND_7, 31002715)
-    IfFlagDisabled(AND_7, 9000)
+    OR_7.Add(FlagEnabled(1039549205))
+    OR_7.Add(FlagEnabled(3696))
+    AND_7.Add(OR_7)
+    AND_7.Add(FlagDisabled(31002715))
+    AND_7.Add(FlagDisabled(9000))
     SkipLinesIfConditionFalse(5, AND_7)
     DisableNetworkConnectedFlagRange(flag_range=(3685, 3699))
     EnableNetworkFlag(3691)
@@ -6949,35 +7605,38 @@ def Event_3699():
 
     # --- Label 2 --- #
     DefineLabel(2)
-    IfFlagEnabled(AND_8, 31000850)
-    IfFlagDisabled(AND_8, 31009256)
+    AND_8.Add(FlagEnabled(31000850))
+    AND_8.Add(FlagDisabled(31009256))
     SkipLinesIfConditionFalse(4, AND_8)
     DisableNetworkConnectedFlagRange(flag_range=(3685, 3699))
     EnableNetworkFlag(3694)
     DisableNetworkFlag(1038419270)
     EnableNetworkFlag(1038419271)
-    SkipLinesIfFlagDisabled(4, 31009256)
-    DisableNetworkConnectedFlagRange(flag_range=(3685, 3699))
-    EnableNetworkFlag(3692)
-    DisableNetworkFlag(1038419270)
-    EnableNetworkFlag(1038419271)
+    if FlagEnabled(31009256):
+        DisableNetworkConnectedFlagRange(flag_range=(3685, 3699))
+        EnableNetworkFlag(3692)
+        DisableNetworkFlag(1038419270)
+        EnableNetworkFlag(1038419271)
 
     # --- Label 0 --- #
     DefineLabel(0)
-    IfFlagEnabled(MAIN, 3698)
+    
+    MAIN.Await(FlagEnabled(3698))
+    
     Restart()
 
 
 @RestartOnRest(3719)
 def Event_3719():
     """Event 3719"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3718)
     SkipLinesIfFlagRangeAnyEnabled(2, (3700, 3704))
     DisableNetworkConnectedFlagRange(flag_range=(3700, 3704))
     EnableNetworkFlag(3700)
-    IfFlagEnabled(AND_10, 3701)
-    IfFlagEnabled(AND_10, 3000)
+    AND_10.Add(FlagEnabled(3701))
+    AND_10.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(3700, 3704))
     EnableNetworkFlag(3700)
@@ -6986,26 +7645,28 @@ def Event_3719():
     EnableNetworkFlag(3705)
     EnableFlag(10007452)
     GotoIfFlagDisabled(Label.L0, flag=3700)
-    IfFlagEnabled(AND_1, 3705)
-    IfFlagEnabled(AND_1, 1041389413)
-    IfConditionTrue(OR_1, input_condition=AND_1)
-    IfFlagEnabled(OR_1, 3062)
+    AND_1.Add(FlagEnabled(3705))
+    AND_1.Add(FlagEnabled(1041389413))
+    OR_1.Add(AND_1)
+    OR_1.Add(FlagEnabled(3062))
     SkipLinesIfConditionFalse(2, OR_1)
     DisableNetworkConnectedFlagRange(flag_range=(3705, 3719))
     EnableNetworkFlag(3707)
-    IfFlagEnabled(AND_2, 3707)
-    IfFlagEnabled(AND_2, 11109213)
+    AND_2.Add(FlagEnabled(3707))
+    AND_2.Add(FlagEnabled(11109213))
     SkipLinesIfConditionFalse(2, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(3705, 3719))
     EnableNetworkFlag(3708)
-    IfFlagEnabled(AND_3, 110)
+    AND_3.Add(FlagEnabled(110))
     SkipLinesIfConditionFalse(2, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(3705, 3719))
     EnableNetworkFlag(3709)
 
     # --- Label 0 --- #
     DefineLabel(0)
-    IfFlagEnabled(MAIN, 3718)
+    
+    MAIN.Await(FlagEnabled(3718))
+    
     Restart()
     End()
 
@@ -7013,13 +7674,14 @@ def Event_3719():
 @RestartOnRest(3879)
 def Event_3879():
     """Event 3879"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3878)
     SkipLinesIfFlagRangeAnyEnabled(2, (3860, 3864))
     DisableNetworkConnectedFlagRange(flag_range=(3860, 3864))
     EnableNetworkFlag(3860)
-    IfFlagEnabled(AND_10, 3861)
-    IfFlagEnabled(AND_10, 3000)
+    AND_10.Add(FlagEnabled(3861))
+    AND_10.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(3860, 3864))
     EnableNetworkFlag(3860)
@@ -7027,26 +7689,29 @@ def Event_3879():
     DisableNetworkConnectedFlagRange(flag_range=(3865, 3879))
     EnableNetworkFlag(3865)
     GotoIfFlagDisabled(Label.L0, flag=3860)
-    SkipLinesIfFlagDisabled(2, 11009210)
-    DisableNetworkConnectedFlagRange(flag_range=(3865, 3879))
-    EnableFlag(3866)
+    if FlagEnabled(11009210):
+        DisableNetworkConnectedFlagRange(flag_range=(3865, 3879))
+        EnableFlag(3866)
 
     # --- Label 0 --- #
     DefineLabel(0)
-    IfFlagEnabled(MAIN, 3878)
+    
+    MAIN.Await(FlagEnabled(3878))
+    
     Restart()
 
 
 @RestartOnRest(3899)
 def Event_3899():
     """Event 3899"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3898)
     SkipLinesIfFlagRangeAnyEnabled(2, (3880, 3884))
     DisableNetworkConnectedFlagRange(flag_range=(3880, 3884))
     EnableNetworkFlag(3880)
-    IfFlagEnabled(AND_10, 3881)
-    IfFlagEnabled(AND_10, 3000)
+    AND_10.Add(FlagEnabled(3881))
+    AND_10.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(3880, 3884))
     EnableNetworkFlag(3880)
@@ -7054,83 +7719,86 @@ def Event_3899():
     DisableNetworkConnectedFlagRange(flag_range=(3885, 3899))
     EnableNetworkFlag(3885)
     GotoIfFlagDisabled(Label.L0, flag=3880)
-    SkipLinesIfFlagDisabled(2, 16009208)
-    DisableNetworkConnectedFlagRange(flag_range=(3885, 3899))
-    EnableFlag(3886)
-    SkipLinesIfFlagDisabled(2, 16009460)
-    DisableNetworkConnectedFlagRange(flag_range=(3885, 3899))
-    EnableFlag(3887)
-    IfFlagDisabled(AND_1, 16009208)
-    IfFlagEnabled(AND_1, 16000800)
+    if FlagEnabled(16009208):
+        DisableNetworkConnectedFlagRange(flag_range=(3885, 3899))
+        EnableFlag(3886)
+    if FlagEnabled(16009460):
+        DisableNetworkConnectedFlagRange(flag_range=(3885, 3899))
+        EnableFlag(3887)
+    AND_1.Add(FlagDisabled(16009208))
+    AND_1.Add(FlagEnabled(16000800))
     SkipLinesIfConditionFalse(4, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(3885, 3899))
     EnableFlag(3888)
     DisableNetworkConnectedFlagRange(flag_range=(3880, 3884))
     EnableFlag(3883)
     DisableFlag(16009464)
-    IfFlagEnabled(OR_2, 7605)
-    IfFlagDisabled(OR_2, 3886)
-    IfFlagEnabled(OR_2, 118)
+    OR_2.Add(FlagEnabled(7605))
+    OR_2.Add(FlagDisabled(3886))
+    OR_2.Add(FlagEnabled(118))
     GotoIfConditionFalse(Label.L0, input_condition=OR_2)
     EnableFlag(16009464)
 
     # --- Label 0 --- #
     DefineLabel(0)
-    IfFlagEnabled(OR_5, 16009460)
-    IfFlagEnabled(OR_5, 3883)
+    OR_5.Add(FlagEnabled(16009460))
+    OR_5.Add(FlagEnabled(3883))
     GotoIfConditionFalse(Label.L1, input_condition=OR_5)
-    IfFlagDisabled(OR_6, 16009458)
-    IfFlagEnabled(OR_6, 7605)
+    OR_6.Add(FlagDisabled(16009458))
+    OR_6.Add(FlagEnabled(7605))
     GotoIfConditionFalse(Label.L1, input_condition=OR_6)
     EnableFlag(400295)
 
     # --- Label 1 --- #
     DefineLabel(1)
-    IfFlagEnabled(MAIN, 3898)
+    
+    MAIN.Await(FlagEnabled(3898))
+    
     Restart()
 
 
 @RestartOnRest(3479)
 def Event_3479():
     """Event 3479"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3478)
-    IfFlagRangeAllDisabled(AND_1, flag_range=(3460, 3463))
-    IfConditionFalse(OR_1, input_condition=AND_1)
-    IfConditionFalse(OR_1, input_condition=AND_2)
-    IfFlagEnabled(AND_2, 3461)
-    IfFlagEnabled(AND_2, 3000)
+    AND_1.Add(FlagRangeAllDisabled(flag_range=(3460, 3463)))
+    OR_1.Add(not AND_1)
+    OR_1.Add(not AND_2)
+    AND_2.Add(FlagEnabled(3461))
+    AND_2.Add(FlagEnabled(3000))
     SkipLinesIfConditionTrue(2, OR_1)
     DisableNetworkConnectedFlagRange(flag_range=(3460, 3463))
     EnableNetworkFlag(3460)
     SkipLinesIfFlagRangeAnyEnabled(2, (3465, 3469))
     DisableNetworkConnectedFlagRange(flag_range=(3465, 3469))
     EnableNetworkFlag(3465)
-    SkipLinesIfFlagDisabled(2, 7608)
-    DisableNetworkConnectedFlagRange(flag_range=(3460, 3463))
-    EnableNetworkFlag(3463)
+    if FlagEnabled(7608):
+        DisableNetworkConnectedFlagRange(flag_range=(3460, 3463))
+        EnableNetworkFlag(3463)
     GotoIfFlagDisabled(Label.L0, flag=3460)
-    IfFlagEnabled(AND_3, 3465)
-    IfFlagEnabled(AND_3, 3369)
+    AND_3.Add(FlagEnabled(3465))
+    AND_3.Add(FlagEnabled(3369))
     SkipLinesIfConditionFalse(2, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(3465, 3469))
     EnableNetworkFlag(3466)
-    IfFlagEnabled(AND_10, 1034509255)
-    IfFlagDisabled(AND_10, 3469)
+    AND_10.Add(FlagEnabled(1034509255))
+    AND_10.Add(FlagDisabled(3469))
     SkipLinesIfConditionFalse(1, AND_10)
     EnableNetworkFlag(1034509259)
-    IfFlagEnabled(AND_4, 3466)
-    IfFlagEnabled(AND_4, 1034509256)
-    IfFlagEnabled(AND_4, 9118)
+    AND_4.Add(FlagEnabled(3466))
+    AND_4.Add(FlagEnabled(1034509256))
+    AND_4.Add(FlagEnabled(9118))
     SkipLinesIfConditionFalse(3, AND_4)
     DisableNetworkConnectedFlagRange(flag_range=(3465, 3469))
     EnableNetworkFlag(3467)
     EnableNetworkFlag(1034509269)
-    IfFlagEnabled(OR_5, 3363)
-    IfFlagEnabled(OR_5, 7609)
-    IfConditionTrue(AND_5, input_condition=OR_5)
-    IfFlagEnabled(AND_5, 9118)
-    IfFlagEnabled(AND_5, 1034509256)
+    OR_5.Add(FlagEnabled(3363))
+    OR_5.Add(FlagEnabled(7609))
+    AND_5.Add(OR_5)
+    AND_5.Add(FlagEnabled(9118))
+    AND_5.Add(FlagEnabled(1034509256))
     SkipLinesIfConditionFalse(6, AND_5)
     DisableNetworkConnectedFlagRange(flag_range=(3465, 3469))
     EnableNetworkFlag(3468)
@@ -7138,16 +7806,18 @@ def Event_3479():
     DisableNetworkFlag(1034509269)
     DisableNetworkFlag(1051369239)
     DisableNetworkFlag(1034509267)
-    IfFlagEnabled(AND_6, 3468)
-    IfFlagEnabled(AND_6, 14009266)
-    IfFlagEnabled(OR_6, 1044369228)
-    IfFlagEnabled(OR_6, 14009263)
-    IfConditionTrue(AND_6, input_condition=OR_6)
+    AND_6.Add(FlagEnabled(3468))
+    AND_6.Add(FlagEnabled(14009266))
+    OR_6.Add(FlagEnabled(1044369228))
+    OR_6.Add(FlagEnabled(14009263))
+    AND_6.Add(OR_6)
     SkipLinesIfConditionFalse(3, AND_6)
     DisableNetworkConnectedFlagRange(flag_range=(3465, 3469))
     EnableNetworkFlag(3469)
     DisableNetworkFlag(1034509259)
-    IfFlagEnabled(MAIN, 3478)
+    
+    MAIN.Await(FlagEnabled(3478))
+    
     Restart()
 
     # --- Label 0 --- #
@@ -7158,11 +7828,12 @@ def Event_3479():
 @RestartOnRest(3599)
 def Event_3599():
     """Event 3599"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3598)
     SkipLinesIfFlagRangeAllDisabled(3, (3580, 3583))
-    IfFlagEnabled(AND_1, 3581)
-    IfFlagEnabled(AND_1, 3000)
+    AND_1.Add(FlagEnabled(3581))
+    AND_1.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(3580, 3583))
     EnableNetworkFlag(3580)
@@ -7170,18 +7841,20 @@ def Event_3599():
     DisableNetworkConnectedFlagRange(flag_range=(3585, 3587))
     EnableNetworkFlag(3585)
     GotoIfFlagDisabled(Label.L0, flag=3580)
-    IfFlagEnabled(AND_2, 3585)
-    IfFlagEnabled(AND_2, 1045389222)
+    AND_2.Add(FlagEnabled(3585))
+    AND_2.Add(FlagEnabled(1045389222))
     SkipLinesIfConditionFalse(3, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(3585, 3587))
     EnableNetworkFlag(3586)
     EnableNetworkFlag(1046360706)
-    IfFlagEnabled(AND_3, 4229)
-    IfFlagEnabled(AND_3, 1046369205)
+    AND_3.Add(FlagEnabled(4229))
+    AND_3.Add(FlagEnabled(1046369205))
     SkipLinesIfConditionFalse(2, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(3585, 3587))
     EnableNetworkFlag(3587)
-    IfFlagEnabled(MAIN, 3598)
+    
+    MAIN.Await(FlagEnabled(3598))
+    
     Restart()
 
     # --- Label 0 --- #
@@ -7192,11 +7865,12 @@ def Event_3599():
 @RestartOnRest(3819)
 def Event_3819():
     """Event 3819"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3818)
     SkipLinesIfFlagRangeAllDisabled(3, (3800, 3803))
-    IfFlagEnabled(AND_1, 3801)
-    IfFlagEnabled(AND_1, 3000)
+    AND_1.Add(FlagEnabled(3801))
+    AND_1.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(3800, 3803))
     EnableNetworkFlag(3800)
@@ -7204,14 +7878,16 @@ def Event_3819():
     DisableNetworkConnectedFlagRange(flag_range=(3805, 3806))
     EnableNetworkFlag(3805)
     GotoIfFlagDisabled(Label.L0, flag=3800)
-    IfFlagEnabled(AND_2, 3805)
-    IfFlagEnabled(AND_2, 1039399220)
+    AND_2.Add(FlagEnabled(3805))
+    AND_2.Add(FlagEnabled(1039399220))
     SkipLinesIfConditionFalse(4, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(3805, 3806))
     EnableNetworkFlag(3806)
     DisableNetworkConnectedFlagRange(flag_range=(3800, 3803))
     EnableNetworkFlag(3803)
-    IfFlagEnabled(MAIN, 3818)
+    
+    MAIN.Await(FlagEnabled(3818))
+    
     Restart()
 
     # --- Label 0 --- #
@@ -7222,77 +7898,80 @@ def Event_3819():
 @RestartOnRest(3379)
 def Event_3379():
     """Event 3379"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3378)
     SkipLinesIfFlagRangeAnyEnabled(2, (3360, 3364))
     DisableNetworkConnectedFlagRange(flag_range=(3360, 3364))
     EnableNetworkFlag(3360)
-    IfFlagEnabled(AND_10, 3361)
-    IfFlagEnabled(AND_10, 3000)
+    AND_10.Add(FlagEnabled(3361))
+    AND_10.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(3360, 3364))
     EnableNetworkFlag(3360)
-    SkipLinesIfFlagDisabled(2, 7609)
-    DisableNetworkConnectedFlagRange(flag_range=(3360, 3364))
-    EnableNetworkFlag(3363)
+    if FlagEnabled(7609):
+        DisableNetworkConnectedFlagRange(flag_range=(3360, 3364))
+        EnableNetworkFlag(3363)
     GotoIfFlagDisabled(Label.L0, flag=3360)
     SkipLinesIfFlagRangeAnyEnabled(2, (3365, 3377))
     DisableNetworkConnectedFlagRange(flag_range=(3365, 3377))
     EnableNetworkFlag(3365)
-    IfFlagEnabled(AND_3, 3365)
-    IfFlagEnabled(AND_3, 9410)
+    AND_3.Add(FlagEnabled(3365))
+    AND_3.Add(FlagEnabled(9410))
     SkipLinesIfConditionFalse(3, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(3365, 3377))
     EnableNetworkFlag(3366)
     EnableFlag(1051369360)
-    IfFlagEnabled(AND_4, 3366)
-    IfFlagEnabled(AND_4, 9130)
+    AND_4.Add(FlagEnabled(3366))
+    AND_4.Add(FlagEnabled(9130))
     SkipLinesIfConditionFalse(2, AND_4)
     DisableNetworkConnectedFlagRange(flag_range=(3365, 3377))
     EnableNetworkFlag(3367)
-    IfFlagEnabled(AND_5, 3367)
-    IfFlagEnabled(OR_5, 1051369235)
-    IfFlagEnabled(OR_5, 1051369204)
-    IfConditionTrue(AND_5, input_condition=OR_5)
+    AND_5.Add(FlagEnabled(3367))
+    OR_5.Add(FlagEnabled(1051369235))
+    OR_5.Add(FlagEnabled(1051369204))
+    AND_5.Add(OR_5)
     SkipLinesIfConditionFalse(3, AND_5)
     DisableNetworkConnectedFlagRange(flag_range=(3365, 3377))
     EnableNetworkFlag(3368)
     DisableFlag(1051369360)
-    IfFlagEnabled(AND_6, 3368)
-    IfFlagEnabled(AND_6, 1044369231)
+    AND_6.Add(FlagEnabled(3368))
+    AND_6.Add(FlagEnabled(1044369231))
     SkipLinesIfConditionFalse(4, AND_6)
     DisableNetworkConnectedFlagRange(flag_range=(3365, 3377))
     EnableNetworkFlag(3369)
     EnableNetworkFlag(1041339259)
     EnableNetworkFlag(1034509254)
-    IfFlagEnabled(AND_7, 3369)
-    IfFlagEnabled(AND_7, 1034509256)
-    IfFlagEnabled(AND_7, 9118)
+    AND_7.Add(FlagEnabled(3369))
+    AND_7.Add(FlagEnabled(1034509256))
+    AND_7.Add(FlagEnabled(9118))
     SkipLinesIfConditionFalse(4, AND_7)
     DisableNetworkConnectedFlagRange(flag_range=(3365, 3377))
     EnableNetworkFlag(3370)
     EnableNetworkFlag(1051369239)
     EnableNetworkFlag(1034509267)
-    IfFlagEnabled(AND_8, 3370)
-    IfFlagEnabled(AND_8, 7608)
+    AND_8.Add(FlagEnabled(3370))
+    AND_8.Add(FlagEnabled(7608))
     SkipLinesIfConditionFalse(5, AND_8)
     DisableNetworkConnectedFlagRange(flag_range=(3365, 3377))
     EnableNetworkFlag(3371)
     DisableNetworkFlag(1034509269)
     DisableNetworkFlag(1051369239)
     DisableNetworkFlag(1034509267)
-    IfFlagEnabled(AND_9, 3371)
-    IfFlagEnabled(AND_9, 14009356)
-    IfConditionTrue(OR_9, input_condition=AND_9)
-    IfFlagEnabled(AND_11, 3463)
-    IfFlagRangeAnyEnabled(AND_11, flag_range=(3368, 3370))
-    IfConditionTrue(OR_9, input_condition=AND_11)
+    AND_9.Add(FlagEnabled(3371))
+    AND_9.Add(FlagEnabled(14009356))
+    OR_9.Add(AND_9)
+    AND_11.Add(FlagEnabled(3463))
+    AND_11.Add(FlagRangeAnyEnabled(flag_range=(3368, 3370)))
+    OR_9.Add(AND_11)
     SkipLinesIfConditionFalse(4, OR_9)
     DisableNetworkConnectedFlagRange(flag_range=(3365, 3377))
     EnableNetworkFlag(3372)
     DisableNetworkFlag(1034509269)
     DisableNetworkFlag(1051369239)
-    IfFlagEnabled(MAIN, 3378)
+    
+    MAIN.Await(FlagEnabled(3378))
+    
     Restart()
 
     # --- Label 0 --- #
@@ -7303,7 +7982,8 @@ def Event_3379():
 @RestartOnRest(3739)
 def Event_3739():
     """Event 3739"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3738)
     SkipLinesIfFlagRangeAnyEnabled(2, (3720, 3724))
     DisableNetworkConnectedFlagRange(flag_range=(3720, 3724))
@@ -7315,7 +7995,9 @@ def Event_3739():
 
     # --- Label 0 --- #
     DefineLabel(0)
-    IfFlagEnabled(MAIN, 3738)
+    
+    MAIN.Await(FlagEnabled(3738))
+    
     Restart()
     End()
 
@@ -7323,13 +8005,14 @@ def Event_3739():
 @RestartOnRest(4159)
 def Event_4159():
     """Event 4159"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(4158)
     SkipLinesIfFlagRangeAnyEnabled(2, (4140, 4144))
     DisableNetworkConnectedFlagRange(flag_range=(4140, 4144))
     EnableNetworkFlag(4140)
-    IfFlagEnabled(AND_10, 4141)
-    IfFlagEnabled(AND_10, 3000)
+    AND_10.Add(FlagEnabled(4141))
+    AND_10.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(4140, 4144))
     EnableNetworkFlag(4140)
@@ -7337,33 +8020,36 @@ def Event_4159():
     DisableNetworkConnectedFlagRange(flag_range=(4145, 4159))
     EnableNetworkFlag(4145)
     GotoIfFlagDisabled(Label.L0, flag=4140)
-    IfFlagDisabled(OR_1, 35009316)
-    IfFlagEnabled(OR_1, 1045520180)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfFlagEnabled(AND_1, 1036439213)
-    IfFlagEnabled(AND_1, 3063)
-    IfFlagDisabled(AND_1, 1044522701)
+    OR_1.Add(FlagDisabled(35009316))
+    OR_1.Add(FlagEnabled(1045520180))
+    AND_1.Add(OR_1)
+    AND_1.Add(FlagEnabled(1036439213))
+    AND_1.Add(FlagEnabled(3063))
+    AND_1.Add(FlagDisabled(1044522701))
     SkipLinesIfConditionFalse(2, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(4145, 4159))
     EnableNetworkFlag(4146)
-    SkipLinesIfFlagDisabled(2, 1044529259)
-    DisableNetworkConnectedFlagRange(flag_range=(4145, 4159))
-    EnableNetworkFlag(4147)
+    if FlagEnabled(1044529259):
+        DisableNetworkConnectedFlagRange(flag_range=(4145, 4159))
+        EnableNetworkFlag(4147)
 
     # --- Label 0 --- #
     DefineLabel(0)
-    IfFlagEnabled(MAIN, 4158)
+    
+    MAIN.Await(FlagEnabled(4158))
+    
     Restart()
 
 
 @RestartOnRest(3799)
 def Event_3799():
     """Event 3799"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3798)
     SkipLinesIfFlagRangeAllDisabled(3, (3780, 3783))
-    IfFlagEnabled(AND_1, 3781)
-    IfFlagEnabled(AND_1, 3000)
+    AND_1.Add(FlagEnabled(3781))
+    AND_1.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(3780, 3783))
     EnableNetworkFlag(3780)
@@ -7371,12 +8057,14 @@ def Event_3799():
     DisableNetworkConnectedFlagRange(flag_range=(3785, 3787))
     EnableNetworkFlag(3785)
     GotoIfFlagDisabled(Label.L0, flag=3780)
-    IfFlagEnabled(AND_2, 3785)
-    IfFlagEnabled(AND_2, 9122)
+    AND_2.Add(FlagEnabled(3785))
+    AND_2.Add(FlagEnabled(9122))
     SkipLinesIfConditionFalse(2, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(3785, 3787))
     EnableNetworkFlag(3786)
-    IfFlagEnabled(MAIN, 3798)
+    
+    MAIN.Await(FlagEnabled(3798))
+    
     Restart()
 
     # --- Label 0 --- #
@@ -7387,11 +8075,12 @@ def Event_3799():
 @RestartOnRest(3859)
 def Event_3859():
     """Event 3859"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     SkipLinesIfFlagRangeAnyEnabled(2, (3840, 3844))
     DisableNetworkConnectedFlagRange(flag_range=(3840, 3844))
     EnableNetworkFlag(3840)
-    IfFlagEnabled(AND_10, 3841)
+    AND_10.Add(FlagEnabled(3841))
     SkipLinesIfConditionFalse(2, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(3840, 3844))
     EnableNetworkFlag(3840)
@@ -7399,9 +8088,9 @@ def Event_3859():
     DisableNetworkConnectedFlagRange(flag_range=(3845, 3859))
     EnableNetworkFlag(3845)
     GotoIfFlagDisabled(Label.L0, flag=3840)
-    SkipLinesIfFlagDisabled(2, 1051569206)
-    DisableNetworkConnectedFlagRange(flag_range=(3845, 3859))
-    EnableFlag(3846)
+    if FlagEnabled(1051569206):
+        DisableNetworkConnectedFlagRange(flag_range=(3845, 3859))
+        EnableFlag(3846)
 
     # --- Label 0 --- #
     DefineLabel(0)
@@ -7411,16 +8100,17 @@ def Event_3859():
 @RestartOnRest(3959)
 def Event_3959():
     """Event 3959"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3958)
     SkipLinesIfFlagRangeAnyEnabled(2, (3940, 3944))
     DisableNetworkConnectedFlagRange(flag_range=(3940, 3944))
     EnableNetworkFlag(3940)
-    SkipLinesIfFlagDisabled(2, 11109306)
-    DisableNetworkConnectedFlagRange(flag_range=(3940, 3944))
-    EnableNetworkFlag(3943)
-    IfFlagEnabled(AND_10, 3941)
-    IfFlagEnabled(AND_10, 3000)
+    if FlagEnabled(11109306):
+        DisableNetworkConnectedFlagRange(flag_range=(3940, 3944))
+        EnableNetworkFlag(3943)
+    AND_10.Add(FlagEnabled(3941))
+    AND_10.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(3940, 3944))
     EnableNetworkFlag(3940)
@@ -7428,27 +8118,27 @@ def Event_3959():
     DisableNetworkConnectedFlagRange(flag_range=(3945, 3949))
     EnableNetworkFlag(3945)
     GotoIfFlagDisabled(Label.L0, flag=3940)
-    IfFlagEnabled(AND_1, 3945)
-    IfFlagEnabled(AND_1, 1043379356)
+    AND_1.Add(FlagEnabled(3945))
+    AND_1.Add(FlagEnabled(1043379356))
     SkipLinesIfConditionFalse(2, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(3945, 3949))
     EnableNetworkFlag(3946)
-    IfFlagEnabled(AND_2, 3946)
-    IfFlagEnabled(AND_2, 31159206)
+    AND_2.Add(FlagEnabled(3946))
+    AND_2.Add(FlagEnabled(31159206))
     SkipLinesIfConditionFalse(2, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(3945, 3949))
     EnableFlag(3947)
-    IfFlagEnabled(AND_3, 3947)
-    IfFlagDisabled(AND_3, 1039409260)
-    IfFlagEnabled(AND_3, 11109808)
-    IfFlagEnabled(AND_3, 9118)
+    AND_3.Add(FlagEnabled(3947))
+    AND_3.Add(FlagDisabled(1039409260))
+    AND_3.Add(FlagEnabled(11109808))
+    AND_3.Add(FlagEnabled(9118))
     SkipLinesIfConditionFalse(2, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(3945, 3949))
     EnableFlag(3948)
-    IfFlagEnabled(AND_4, 3947)
-    IfFlagDisabled(AND_4, 1039409260)
-    IfFlagEnabled(AND_4, 11109812)
-    IfFlagEnabled(AND_4, 9118)
+    AND_4.Add(FlagEnabled(3947))
+    AND_4.Add(FlagDisabled(1039409260))
+    AND_4.Add(FlagEnabled(11109812))
+    AND_4.Add(FlagEnabled(9118))
     SkipLinesIfConditionFalse(4, AND_4)
     DisableNetworkConnectedFlagRange(flag_range=(3945, 3949))
     EnableFlag(3949)
@@ -7463,13 +8153,14 @@ def Event_3959():
 @RestartOnRest(3759)
 def Event_3759():
     """Event 3759"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3758)
     SkipLinesIfFlagRangeAnyEnabled(2, (3740, 3743))
     DisableNetworkConnectedFlagRange(flag_range=(3740, 3743))
     EnableNetworkFlag(3740)
-    IfFlagEnabled(AND_15, 3748)
-    IfFlagEnabled(AND_15, 1034509425)
+    AND_15.Add(FlagEnabled(3748))
+    AND_15.Add(FlagEnabled(1034509425))
     SkipLinesIfConditionFalse(4, AND_15)
     DisableNetworkConnectedFlagRange(flag_range=(3740, 3743))
     EnableNetworkFlag(3741)
@@ -7478,23 +8169,23 @@ def Event_3759():
     SkipLinesIfFlagRangeAnyEnabled(2, (3745, 3757))
     DisableNetworkConnectedFlagRange(flag_range=(3745, 3757))
     EnableNetworkFlag(3745)
-    IfFlagRangeAnyEnabled(AND_14, flag_range=(3745, 3749))
-    IfFlagEnabled(AND_14, 1035420150)
+    AND_14.Add(FlagRangeAnyEnabled(flag_range=(3745, 3749)))
+    AND_14.Add(FlagEnabled(1035420150))
     SkipLinesIfConditionFalse(5, AND_14)
     DisableNetworkConnectedFlagRange(flag_range=(3740, 3743))
     EnableNetworkFlag(3740)
     DisableNetworkConnectedFlagRange(flag_range=(3745, 3757))
     EnableNetworkFlag(3750)
     DisableFlag(1042369415)
-    IfFlagEnabled(AND_1, 3746)
-    IfFlagDisabled(AND_1, 1042369410)
-    IfFlagDisabled(AND_1, 1042369407)
+    AND_1.Add(FlagEnabled(3746))
+    AND_1.Add(FlagDisabled(1042369410))
+    AND_1.Add(FlagDisabled(1042369407))
     SkipLinesIfConditionFalse(3, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(3745, 3757))
     EnableNetworkFlag(3745)
     DisableFlag(1042369415)
-    IfFlagEnabled(AND_2, 3745)
-    IfFlagEnabled(AND_2, 1042369411)
+    AND_2.Add(FlagEnabled(3745))
+    AND_2.Add(FlagEnabled(1042369411))
     SkipLinesIfConditionFalse(6, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(3745, 3757))
     EnableNetworkFlag(3746)
@@ -7502,34 +8193,34 @@ def Event_3759():
     EnableFlag(1042369414)
     EnableFlag(1042369415)
     EnableFlag(4718)
-    IfFlagEnabled(OR_3, 1042369410)
-    IfFlagEnabled(OR_3, 1042369407)
-    IfFlagEnabled(AND_3, 3746)
-    IfConditionTrue(AND_3, input_condition=OR_3)
+    OR_3.Add(FlagEnabled(1042369410))
+    OR_3.Add(FlagEnabled(1042369407))
+    AND_3.Add(FlagEnabled(3746))
+    AND_3.Add(OR_3)
     SkipLinesIfConditionFalse(4, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(3745, 3757))
     EnableNetworkFlag(3747)
     EnableFlag(1042369413)
     DisableFlag(1042369415)
-    IfFlagEnabled(OR_4, 1034509419)
-    IfFlagEnabled(OR_4, 3062)
-    IfFlagRangeAnyEnabled(AND_4, flag_range=(3745, 3746))
-    IfConditionTrue(AND_4, input_condition=OR_4)
+    OR_4.Add(FlagEnabled(1034509419))
+    OR_4.Add(FlagEnabled(3062))
+    AND_4.Add(FlagRangeAnyEnabled(flag_range=(3745, 3746)))
+    AND_4.Add(OR_4)
     SkipLinesIfConditionFalse(6, AND_4)
     DisableNetworkConnectedFlagRange(flag_range=(3745, 3757))
     EnableNetworkFlag(3747)
     DisableFlag(1042369415)
-    SkipLinesIfFlagEnabled(2, 1042369410)
-    EnableFlag(1042369416)
-    EnableFlag(11109785)
+    if FlagDisabled(1042369410):
+        EnableFlag(1042369416)
+        EnableFlag(11109785)
     GotoIfFlagDisabled(Label.L0, flag=3740)
-    IfFlagEnabled(AND_5, 3747)
-    IfFlagEnabled(AND_5, 1034509416)
+    AND_5.Add(FlagEnabled(3747))
+    AND_5.Add(FlagEnabled(1034509416))
     SkipLinesIfConditionFalse(2, AND_5)
     DisableNetworkConnectedFlagRange(flag_range=(3745, 3757))
     EnableNetworkFlag(3748)
-    IfFlagEnabled(AND_6, 3748)
-    IfFlagEnabled(AND_6, 1034509421)
+    AND_6.Add(FlagEnabled(3748))
+    AND_6.Add(FlagEnabled(1034509421))
     SkipLinesIfConditionFalse(7, AND_6)
     DisableNetworkConnectedFlagRange(flag_range=(3745, 3757))
     EnableNetworkFlag(3749)
@@ -7538,8 +8229,8 @@ def Event_3759():
     EnableFlag(1034509430)
     EnableFlag(1034509433)
     EnableFlag(3578)
-    IfFlagEnabled(AND_7, 3750)
-    IfFlagEnabled(AND_7, 1034509406)
+    AND_7.Add(FlagEnabled(3750))
+    AND_7.Add(FlagEnabled(1034509406))
     SkipLinesIfConditionFalse(3, AND_7)
     DisableNetworkConnectedFlagRange(flag_range=(3745, 3757))
     EnableNetworkFlag(3751)
@@ -7547,14 +8238,17 @@ def Event_3759():
 
     # --- Label 0 --- #
     DefineLabel(0)
-    IfFlagEnabled(MAIN, 3758)
+    
+    MAIN.Await(FlagEnabled(3758))
+    
     Restart()
 
 
 @RestartOnRest(3619)
 def Event_3619():
     """Event 3619"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3618)
     SkipLinesIfFlagRangeAnyEnabled(2, (3600, 3603))
     DisableNetworkConnectedFlagRange(flag_range=(3600, 3603))
@@ -7575,104 +8269,104 @@ def Event_3619():
 
     # --- Label 1 --- #
     DefineLabel(1)
-    SkipLinesIfFlagDisabled(2, 3600)
-    DisableFlag(1045379207)
-    DisableFlag(1045379209)
+    if FlagEnabled(3600):
+        DisableFlag(1045379207)
+        DisableFlag(1045379209)
     GotoIfFlagDisabled(Label.L0, flag=3600)
-    IfFlagEnabled(AND_7, 3612)
-    IfFlagDisabled(AND_7, 9411)
+    AND_7.Add(FlagEnabled(3612))
+    AND_7.Add(FlagDisabled(9411))
     SkipLinesIfConditionFalse(3, AND_7)
     DisableNetworkConnectedFlagRange(flag_range=(3605, 3617))
     EnableNetworkFlag(3611)
     DisableFlag(1051369359)
-    IfFlagEnabled(AND_8, 3611)
-    IfFlagDisabled(AND_8, 1051369358)
-    IfFlagDisabled(AND_8, 12029157)
+    AND_8.Add(FlagEnabled(3611))
+    AND_8.Add(FlagDisabled(1051369358))
+    AND_8.Add(FlagDisabled(12029157))
     SkipLinesIfConditionFalse(3, AND_8)
     DisableNetworkConnectedFlagRange(flag_range=(3605, 3617))
     EnableNetworkFlag(3605)
     DisableFlag(1051369357)
-    IfFlagRangeAnyEnabled(AND_9, flag_range=(3605, 3610))
-    IfFlagEnabled(AND_9, 9412)
-    IfFlagDisabled(AND_9, 1051369357)
+    AND_9.Add(FlagRangeAnyEnabled(flag_range=(3605, 3610)))
+    AND_9.Add(FlagEnabled(9412))
+    AND_9.Add(FlagDisabled(1051369357))
     SkipLinesIfConditionFalse(2, AND_9)
     DisableNetworkConnectedFlagRange(flag_range=(3605, 3617))
     EnableNetworkFlag(3614)
-    IfFlagEnabled(AND_1, 3606)
-    IfFlagDisabled(AND_1, 1044350800)
+    AND_1.Add(FlagEnabled(3606))
+    AND_1.Add(FlagDisabled(1044350800))
     SkipLinesIfConditionFalse(3, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(3605, 3617))
     EnableNetworkFlag(3605)
     DisableFlag(1044349257)
-    IfFlagEnabled(AND_2, 3605)
-    IfFlagEnabled(AND_2, 1045379205)
-    IfFlagEnabled(AND_2, 1044352717)
+    AND_2.Add(FlagEnabled(3605))
+    AND_2.Add(FlagEnabled(1045379205))
+    AND_2.Add(FlagEnabled(1044352717))
     SkipLinesIfConditionFalse(3, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(3605, 3617))
     EnableNetworkFlag(3606)
     EnableFlag(1044349257)
-    IfFlagRangeAnyEnabled(AND_3, flag_range=(3605, 3606))
-    IfFlagEnabled(AND_3, 1045379205)
-    IfFlagEnabled(AND_3, 1044350800)
+    AND_3.Add(FlagRangeAnyEnabled(flag_range=(3605, 3606)))
+    AND_3.Add(FlagEnabled(1045379205))
+    AND_3.Add(FlagEnabled(1044350800))
     SkipLinesIfConditionFalse(3, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(3605, 3617))
     EnableNetworkFlag(3607)
     DisableFlag(1044349257)
-    IfFlagEnabled(AND_4, 3607)
-    IfFlagEnabled(AND_4, 1044349255)
+    AND_4.Add(FlagEnabled(3607))
+    AND_4.Add(FlagEnabled(1044349255))
     SkipLinesIfConditionFalse(2, AND_4)
     DisableNetworkConnectedFlagRange(flag_range=(3605, 3617))
     EnableNetworkFlag(3608)
-    IfFlagRangeAnyEnabled(AND_5, flag_range=(3605, 3608))
-    IfFlagEnabled(AND_5, 1034509410)
+    AND_5.Add(FlagRangeAnyEnabled(flag_range=(3605, 3608)))
+    AND_5.Add(FlagEnabled(1034509410))
     SkipLinesIfConditionFalse(2, AND_5)
     DisableNetworkConnectedFlagRange(flag_range=(3605, 3617))
     EnableNetworkFlag(3609)
-    IfFlagEnabled(AND_6, 3609)
-    IfFlagEnabled(AND_6, 1034509416)
+    AND_6.Add(FlagEnabled(3609))
+    AND_6.Add(FlagEnabled(1034509416))
     SkipLinesIfConditionFalse(2, AND_6)
     DisableNetworkConnectedFlagRange(flag_range=(3605, 3617))
     EnableNetworkFlag(3610)
-    IfFlagEnabled(OR_10, 12029157)
-    IfFlagEnabled(OR_10, 1051362739)
-    IfFlagRangeAnyEnabled(AND_10, flag_range=(3605, 3610))
-    IfFlagEnabled(AND_10, 9410)
-    IfConditionTrue(AND_10, input_condition=OR_10)
+    OR_10.Add(FlagEnabled(12029157))
+    OR_10.Add(FlagEnabled(1051362739))
+    AND_10.Add(FlagRangeAnyEnabled(flag_range=(3605, 3610)))
+    AND_10.Add(FlagEnabled(9410))
+    AND_10.Add(OR_10)
     SkipLinesIfConditionFalse(3, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(3605, 3617))
     EnableNetworkFlag(3611)
     EnableFlag(1051369357)
-    IfFlagEnabled(AND_11, 3611)
-    IfFlagEnabled(AND_11, 9411)
+    AND_11.Add(FlagEnabled(3611))
+    AND_11.Add(FlagEnabled(9411))
     SkipLinesIfConditionFalse(4, AND_11)
     DisableNetworkConnectedFlagRange(flag_range=(3605, 3617))
     EnableNetworkFlag(3612)
     EnableFlag(1051369359)
     EnableFlag(1051369358)
-    IfFlagEnabled(AND_12, 3612)
-    IfFlagEnabled(AND_12, 9412)
+    AND_12.Add(FlagEnabled(3612))
+    AND_12.Add(FlagEnabled(9412))
     SkipLinesIfConditionFalse(3, AND_12)
     DisableNetworkConnectedFlagRange(flag_range=(3605, 3617))
     EnableNetworkFlag(3613)
     DisableFlag(1051369359)
-    IfFlagEnabled(OR_13, 1052389306)
-    IfFlagEnabled(OR_13, 1034499238)
-    IfFlagEnabled(OR_13, 12027080)
-    IfFlagEnabled(AND_13, 3613)
-    IfConditionTrue(AND_13, input_condition=OR_13)
+    OR_13.Add(FlagEnabled(1052389306))
+    OR_13.Add(FlagEnabled(1034499238))
+    OR_13.Add(FlagEnabled(12027080))
+    AND_13.Add(FlagEnabled(3613))
+    AND_13.Add(OR_13)
     SkipLinesIfConditionFalse(3, AND_13)
     DisableNetworkConnectedFlagRange(flag_range=(3605, 3617))
     EnableNetworkFlag(3614)
     DisableFlag(1051369357)
-    IfFlagEnabled(AND_14, 3614)
-    IfFlagEnabled(AND_14, 1044350800)
-    IfFlagEnabled(AND_14, 1034509410)
+    AND_14.Add(FlagEnabled(3614))
+    AND_14.Add(FlagEnabled(1044350800))
+    AND_14.Add(FlagEnabled(1034509410))
     SkipLinesIfConditionFalse(3, AND_14)
     DisableNetworkConnectedFlagRange(flag_range=(3605, 3617))
     EnableNetworkFlag(3615)
     EnableFlag(1044359259)
-    IfFlagEnabled(AND_15, 3615)
-    IfFlagEnabled(AND_15, 1044359256)
+    AND_15.Add(FlagEnabled(3615))
+    AND_15.Add(FlagEnabled(1044359256))
     SkipLinesIfConditionFalse(3, AND_15)
     DisableNetworkConnectedFlagRange(flag_range=(3605, 3617))
     EnableNetworkFlag(3616)
@@ -7689,14 +8383,17 @@ def Event_3619():
 
     # --- Label 2 --- #
     DefineLabel(2)
-    IfFlagEnabled(MAIN, 3618)
+    
+    MAIN.Await(FlagEnabled(3618))
+    
     Restart()
 
 
 @RestartOnRest(3579)
 def Event_3579():
     """Event 3579"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3578)
     SkipLinesIfFlagRangeAnyEnabled(3, (3560, 3563))
     DisableNetworkConnectedFlagRange(flag_range=(3560, 3563))
@@ -7706,50 +8403,53 @@ def Event_3579():
     DisableNetworkConnectedFlagRange(flag_range=(3565, 3577))
     EnableNetworkFlag(3565)
     GotoIfFlagDisabled(Label.L0, flag=3560)
-    IfFlagEnabled(AND_1, 3565)
-    IfFlagEnabled(AND_1, 1034509410)
+    AND_1.Add(FlagEnabled(3565))
+    AND_1.Add(FlagEnabled(1034509410))
     SkipLinesIfConditionFalse(2, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(3565, 3577))
     EnableNetworkFlag(3566)
-    IfFlagEnabled(AND_2, 3566)
-    IfFlagEnabled(AND_2, 1034509416)
+    AND_2.Add(FlagEnabled(3566))
+    AND_2.Add(FlagEnabled(1034509416))
     SkipLinesIfConditionFalse(2, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(3565, 3577))
     EnableNetworkFlag(3567)
-    IfFlagEnabled(AND_3, 3567)
-    IfFlagEnabled(AND_3, 1034509315)
+    AND_3.Add(FlagEnabled(3567))
+    AND_3.Add(FlagEnabled(1034509315))
     SkipLinesIfConditionFalse(2, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(3565, 3577))
     EnableNetworkFlag(3568)
-    IfFlagRangeAnyEnabled(AND_4, flag_range=(3565, 3568))
-    IfFlagEnabled(AND_4, 1034509424)
+    AND_4.Add(FlagRangeAnyEnabled(flag_range=(3565, 3568)))
+    AND_4.Add(FlagEnabled(1034509424))
     SkipLinesIfConditionFalse(6, AND_4)
     DisableNetworkConnectedFlagRange(flag_range=(3565, 3577))
     EnableNetworkFlag(3569)
-    SkipLinesIfFlagEnabled(2, 11109919)
-    EnableFlag(1035509215)
-    SkipLines(1)
-    EnableFlag(1035509216)
-    IfFlagRangeAnyEnabled(AND_5, flag_range=(3565, 3568))
-    IfFlagEnabled(AND_5, 1034509433)
+    if FlagDisabled(11109919):
+        EnableFlag(1035509215)
+    else:
+        EnableFlag(1035509216)
+    AND_5.Add(FlagRangeAnyEnabled(flag_range=(3565, 3568)))
+    AND_5.Add(FlagEnabled(1034509433))
     SkipLinesIfConditionFalse(6, AND_5)
     DisableNetworkConnectedFlagRange(flag_range=(3565, 3577))
     EnableNetworkFlag(3569)
-    SkipLinesIfFlagEnabled(2, 11109919)
-    EnableFlag(1035509215)
-    SkipLines(1)
-    EnableFlag(1035509216)
+    if FlagDisabled(11109919):
+        EnableFlag(1035509215)
+    else:
+        EnableFlag(1035509216)
 
     # --- Label 0 --- #
     DefineLabel(0)
-    IfFlagEnabled(MAIN, 3578)
+    
+    MAIN.Await(FlagEnabled(3578))
+    
     Restart()
 
 
 @RestartOnRest(3779)
 def Event_3779():
     """Event 3779"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3778)
     SkipLinesIfFlagRangeAnyEnabled(2, (3760, 3763))
     DisableNetworkConnectedFlagRange(flag_range=(3760, 3763))
@@ -7758,19 +8458,19 @@ def Event_3779():
     DisableNetworkConnectedFlagRange(flag_range=(3765, 3777))
     EnableNetworkFlag(3765)
     GotoIfFlagDisabled(Label.L0, flag=3760)
-    IfFlagEnabled(AND_1, 3765)
-    IfFlagEnabled(AND_1, 1034509410)
+    AND_1.Add(FlagEnabled(3765))
+    AND_1.Add(FlagEnabled(1034509410))
     SkipLinesIfConditionFalse(3, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(3765, 3777))
     EnableNetworkFlag(3766)
     EnableFlagRange((1034509360, 1034509361))
-    IfFlagEnabled(AND_2, 3766)
-    IfFlagEnabled(AND_2, 1034509416)
+    AND_2.Add(FlagEnabled(3766))
+    AND_2.Add(FlagEnabled(1034509416))
     SkipLinesIfConditionFalse(2, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(3765, 3777))
     EnableNetworkFlag(3767)
-    IfFlagRangeAnyEnabled(AND_3, flag_range=(3765, 3767))
-    IfFlagEnabled(AND_3, 1034499242)
+    AND_3.Add(FlagRangeAnyEnabled(flag_range=(3765, 3767)))
+    AND_3.Add(FlagEnabled(1034499242))
     SkipLinesIfConditionFalse(4, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(3765, 3777))
     EnableNetworkFlag(3768)
@@ -7779,14 +8479,17 @@ def Event_3779():
 
     # --- Label 0 --- #
     DefineLabel(0)
-    IfFlagEnabled(MAIN, 3778)
+    
+    MAIN.Await(FlagEnabled(3778))
+    
     Restart()
 
 
 @RestartOnRest(3919)
 def Event_3919():
     """Event 3919"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3918)
     SkipLinesIfFlagRangeAnyEnabled(3, (3900, 3903))
     DisableNetworkConnectedFlagRange(flag_range=(3900, 3903))
@@ -7796,36 +8499,36 @@ def Event_3919():
     DisableNetworkConnectedFlagRange(flag_range=(3905, 3917))
     EnableNetworkFlag(3905)
     GotoIfFlagDisabled(Label.L0, flag=3900)
-    IfFlagEnabled(OR_1, 9101)
-    IfFlagEnabled(OR_1, 10009610)
-    IfFlagEnabled(AND_1, 3905)
-    IfConditionTrue(AND_1, input_condition=OR_1)
+    OR_1.Add(FlagEnabled(9101))
+    OR_1.Add(FlagEnabled(10009610))
+    AND_1.Add(FlagEnabled(3905))
+    AND_1.Add(OR_1)
     SkipLinesIfConditionFalse(2, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(3905, 3917))
     EnableNetworkFlag(3906)
-    IfFlagEnabled(AND_2, 3906)
-    IfFlagEnabled(AND_2, 9101)
+    AND_2.Add(FlagEnabled(3906))
+    AND_2.Add(FlagEnabled(9101))
     SkipLinesIfConditionFalse(2, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(3905, 3917))
     EnableNetworkFlag(3907)
-    IfFlagEnabled(OR_3, 11109532)
-    IfFlagEnabled(OR_3, 1034509421)
-    IfFlagRangeAnyEnabled(AND_3, flag_range=(3905, 3907))
-    IfConditionTrue(AND_3, input_condition=OR_3)
+    OR_3.Add(FlagEnabled(11109532))
+    OR_3.Add(FlagEnabled(1034509421))
+    AND_3.Add(FlagRangeAnyEnabled(flag_range=(3905, 3907)))
+    AND_3.Add(OR_3)
     SkipLinesIfConditionFalse(2, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(3905, 3917))
     EnableNetworkFlag(3908)
-    IfFlagDisabled(OR_5, 11109506)
-    IfFlagEnabled(OR_5, 1034509410)
-    IfFlagEnabled(OR_5, 1034509431)
-    IfFlagRangeAnyEnabled(AND_5, flag_range=(3905, 3907))
-    IfFlagEnabled(AND_5, 110)
-    IfConditionTrue(AND_5, input_condition=OR_5)
+    OR_5.Add(FlagDisabled(11109506))
+    OR_5.Add(FlagEnabled(1034509410))
+    OR_5.Add(FlagEnabled(1034509431))
+    AND_5.Add(FlagRangeAnyEnabled(flag_range=(3905, 3907)))
+    AND_5.Add(FlagEnabled(110))
+    AND_5.Add(OR_5)
     SkipLinesIfConditionFalse(2, AND_5)
     DisableNetworkConnectedFlagRange(flag_range=(3905, 3917))
     EnableNetworkFlag(3908)
-    IfFlagEnabled(AND_4, 3908)
-    IfEventValueGreaterThanOrEqual(AND_4, flag=11109545, bit_count=5, value=2)
+    AND_4.Add(FlagEnabled(3908))
+    AND_4.Add(EventValue(flag=11109545, bit_count=5) >= 2)
     SkipLinesIfConditionFalse(4, AND_4)
     DisableNetworkConnectedFlagRange(flag_range=(3905, 3917))
     EnableNetworkFlag(3909)
@@ -7835,9 +8538,11 @@ def Event_3919():
     # --- Label 0 --- #
     DefineLabel(0)
     DisableFlag(10009614)
-    SkipLinesIfFlagDisabled(1, 3905)
-    EnableFlag(10009614)
-    IfFlagEnabled(MAIN, 3918)
+    if FlagEnabled(3905):
+        EnableFlag(10009614)
+    
+    MAIN.Await(FlagEnabled(3918))
+    
     Restart()
     End()
 
@@ -7845,7 +8550,8 @@ def Event_3919():
 @RestartOnRest(4139)
 def Event_4139():
     """Event 4139"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(4138)
     SkipLinesIfFlagRangeAnyEnabled(2, (4120, 4123))
     DisableNetworkConnectedFlagRange(flag_range=(4120, 4123))
@@ -7854,9 +8560,9 @@ def Event_4139():
     DisableNetworkConnectedFlagRange(flag_range=(4125, 4137))
     EnableNetworkFlag(4125)
     GotoIfFlagDisabled(Label.L0, flag=4120)
-    IfFlagEnabled(AND_1, 4125)
-    IfFlagEnabled(AND_1, 4047)
-    IfFlagEnabled(AND_1, 11109625)
+    AND_1.Add(FlagEnabled(4125))
+    AND_1.Add(FlagEnabled(4047))
+    AND_1.Add(FlagEnabled(11109625))
     SkipLinesIfConditionFalse(7, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(4125, 4137))
     EnableNetworkFlag(4126)
@@ -7865,75 +8571,77 @@ def Event_4139():
     DisableNetworkConnectedFlagRange(flag_range=(4040, 4043))
     EnableNetworkFlag(4043)
     EnableFlag(4058)
-    IfFlagEnabled(AND_2, 4126)
-    IfFlagEnabled(AND_2, 11109015)
+    AND_2.Add(FlagEnabled(4126))
+    AND_2.Add(FlagEnabled(11109015))
     SkipLinesIfConditionFalse(2, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(4125, 4137))
     EnableNetworkFlag(4127)
-    IfFlagEnabled(OR_3, 3063)
-    IfFlagEnabled(OR_3, 9410)
-    IfFlagEnabled(AND_3, 4125)
-    IfFlagEnabled(AND_3, 4043)
-    IfConditionTrue(AND_3, input_condition=OR_3)
+    OR_3.Add(FlagEnabled(3063))
+    OR_3.Add(FlagEnabled(9410))
+    AND_3.Add(FlagEnabled(4125))
+    AND_3.Add(FlagEnabled(4043))
+    AND_3.Add(OR_3)
     SkipLinesIfConditionFalse(2, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(4125, 4137))
     EnableNetworkFlag(4127)
-    IfFlagRangeAnyEnabled(AND_11, flag_range=(4125, 4126))
-    IfFlagEnabled(AND_11, 110)
+    AND_11.Add(FlagRangeAnyEnabled(flag_range=(4125, 4126)))
+    AND_11.Add(FlagEnabled(110))
     SkipLinesIfConditionFalse(8, AND_11)
     DisableNetworkConnectedFlagRange(flag_range=(4125, 4137))
     EnableNetworkFlag(4127)
-    SkipLinesIfFlagEnabled(4, 4043)
-    DisableNetworkConnectedFlagRange(flag_range=(4045, 4057))
-    EnableNetworkFlag(4048)
-    DisableNetworkConnectedFlagRange(flag_range=(4040, 4043))
-    EnableNetworkFlag(4043)
+    if FlagDisabled(4043):
+        DisableNetworkConnectedFlagRange(flag_range=(4045, 4057))
+        EnableNetworkFlag(4048)
+        DisableNetworkConnectedFlagRange(flag_range=(4040, 4043))
+        EnableNetworkFlag(4043)
     EnableFlag(4058)
-    IfFlagEnabled(AND_4, 4127)
-    IfFlagEnabled(AND_4, 12030800)
+    AND_4.Add(FlagEnabled(4127))
+    AND_4.Add(FlagEnabled(12030800))
     SkipLinesIfConditionFalse(2, AND_4)
     DisableNetworkConnectedFlagRange(flag_range=(4125, 4137))
     EnableNetworkFlag(4128)
-    IfFlagEnabled(AND_5, 4128)
-    IfFlagEnabled(AND_5, 12039157)
+    AND_5.Add(FlagEnabled(4128))
+    AND_5.Add(FlagEnabled(12039157))
     SkipLinesIfConditionFalse(2, AND_5)
     DisableNetworkConnectedFlagRange(flag_range=(4125, 4137))
     EnableNetworkFlag(4129)
-    IfFlagEnabled(AND_6, 4129)
-    IfFlagEnabled(AND_6, 12039158)
+    AND_6.Add(FlagEnabled(4129))
+    AND_6.Add(FlagEnabled(12039158))
     SkipLinesIfConditionFalse(2, AND_6)
     DisableNetworkConnectedFlagRange(flag_range=(4125, 4137))
     EnableNetworkFlag(4130)
-    IfFlagEnabled(AND_7, 4137)
-    IfFlagDisabled(AND_7, 12030850)
+    AND_7.Add(FlagEnabled(4137))
+    AND_7.Add(FlagDisabled(12030850))
     SkipLinesIfConditionFalse(2, AND_7)
     DisableNetworkConnectedFlagRange(flag_range=(4125, 4137))
     EnableNetworkFlag(4130)
-    IfFlagEnabled(AND_8, 4130)
-    IfFlagEnabled(AND_8, 12032870)
+    AND_8.Add(FlagEnabled(4130))
+    AND_8.Add(FlagEnabled(12032870))
     SkipLinesIfConditionFalse(2, AND_8)
     DisableNetworkConnectedFlagRange(flag_range=(4125, 4137))
     EnableNetworkFlag(4137)
-    IfFlagEnabled(AND_9, 4130)
-    IfFlagEnabled(AND_9, 12030850)
+    AND_9.Add(FlagEnabled(4130))
+    AND_9.Add(FlagEnabled(12030850))
     SkipLinesIfConditionFalse(2, AND_9)
     DisableNetworkConnectedFlagRange(flag_range=(4125, 4137))
     EnableNetworkFlag(4131)
-    IfFlagEnabled(AND_10, 4137)
-    IfFlagEnabled(AND_10, 12030850)
+    AND_10.Add(FlagEnabled(4137))
+    AND_10.Add(FlagEnabled(12030850))
     SkipLinesIfConditionFalse(2, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(4125, 4137))
     EnableNetworkFlag(4131)
 
     # --- Label 0 --- #
     DefineLabel(0)
-    IfFlagRangeAnyEnabled(AND_15, flag_range=(4125, 4129))
-    IfFlagEnabled(AND_15, 4123)
-    IfFlagEnabled(OR_15, 9502)
-    IfConditionTrue(OR_15, input_condition=AND_15)
+    AND_15.Add(FlagRangeAnyEnabled(flag_range=(4125, 4129)))
+    AND_15.Add(FlagEnabled(4123))
+    OR_15.Add(FlagEnabled(9502))
+    OR_15.Add(AND_15)
     SkipLinesIfConditionFalse(1, OR_15)
     EnableFlag(12039162)
-    IfFlagEnabled(MAIN, 4138)
+    
+    MAIN.Await(FlagEnabled(4138))
+    
     Restart()
     End()
 
@@ -7941,7 +8649,8 @@ def Event_4139():
 @RestartOnRest(4059)
 def Event_4059():
     """Event 4059"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(4058)
     SkipLinesIfFlagRangeAnyEnabled(2, (4040, 4043))
     DisableNetworkConnectedFlagRange(flag_range=(4040, 4043))
@@ -7950,24 +8659,24 @@ def Event_4059():
     DisableNetworkConnectedFlagRange(flag_range=(4045, 4057))
     EnableNetworkFlag(4045)
     GotoIfFlagDisabled(Label.L0, flag=4040)
-    IfFlagEnabled(AND_1, 4045)
-    IfFlagEnabled(AND_1, 1045390800)
+    AND_1.Add(FlagEnabled(4045))
+    AND_1.Add(FlagEnabled(1045390800))
     SkipLinesIfConditionFalse(2, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(4045, 4057))
     EnableNetworkFlag(4046)
-    IfFlagEnabled(OR_2, 1045399206)
-    IfFlagEnabled(OR_2, 11109609)
-    IfFlagEnabled(AND_2, 4046)
-    IfConditionTrue(AND_2, input_condition=OR_2)
+    OR_2.Add(FlagEnabled(1045399206))
+    OR_2.Add(FlagEnabled(11109609))
+    AND_2.Add(FlagEnabled(4046))
+    AND_2.Add(OR_2)
     SkipLinesIfConditionFalse(2, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(4045, 4057))
     EnableNetworkFlag(4047)
-    IfFlagEnabled(OR_3, 132)
-    IfFlagEnabled(OR_3, 3064)
-    IfFlagEnabled(OR_3, 3063)
-    IfFlagEnabled(OR_3, 1051439205)
-    IfFlagRangeAnyEnabled(AND_3, flag_range=(4045, 4046))
-    IfConditionTrue(AND_3, input_condition=OR_3)
+    OR_3.Add(FlagEnabled(132))
+    OR_3.Add(FlagEnabled(3064))
+    OR_3.Add(FlagEnabled(3063))
+    OR_3.Add(FlagEnabled(1051439205))
+    AND_3.Add(FlagRangeAnyEnabled(flag_range=(4045, 4046)))
+    AND_3.Add(OR_3)
     SkipLinesIfConditionFalse(2, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(4045, 4057))
     EnableNetworkFlag(4047)
@@ -7976,16 +8685,18 @@ def Event_4059():
     DefineLabel(0)
     DisableFlag(11109648)
     DisableFlag(11109649)
-    IfFlagEnabled(OR_15, 1045399206)
-    IfFlagEnabled(OR_15, 1051439205)
-    IfFlagEnabled(AND_15, 4040)
-    IfFlagEnabled(AND_15, 4047)
-    IfFlagEnabled(AND_15, 1044399206)
-    IfConditionTrue(AND_15, input_condition=OR_15)
+    OR_15.Add(FlagEnabled(1045399206))
+    OR_15.Add(FlagEnabled(1051439205))
+    AND_15.Add(FlagEnabled(4040))
+    AND_15.Add(FlagEnabled(4047))
+    AND_15.Add(FlagEnabled(1044399206))
+    AND_15.Add(OR_15)
     SkipLinesIfConditionFalse(2, AND_15)
     EnableFlag(11109648)
     EnableFlag(11109649)
-    IfFlagEnabled(MAIN, 4058)
+    
+    MAIN.Await(FlagEnabled(4058))
+    
     Restart()
     End()
 
@@ -7993,7 +8704,8 @@ def Event_4059():
 @RestartOnRest(4079)
 def Event_4079():
     """Event 4079"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(4078)
     SkipLinesIfFlagRangeAnyEnabled(2, (4060, 4063))
     DisableNetworkConnectedFlagRange(flag_range=(4060, 4063))
@@ -8002,22 +8714,22 @@ def Event_4079():
     DisableNetworkConnectedFlagRange(flag_range=(4065, 4077))
     EnableNetworkFlag(4065)
     GotoIfFlagDisabled(Label.L0, flag=4060)
-    IfFlagEnabled(AND_1, 4065)
-    IfFlagEnabled(AND_1, 12029016)
-    IfFlagEnabled(AND_1, 4048)
+    AND_1.Add(FlagEnabled(4065))
+    AND_1.Add(FlagEnabled(12029016))
+    AND_1.Add(FlagEnabled(4048))
     SkipLinesIfConditionFalse(3, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(4065, 4077))
     EnableNetworkFlag(4077)
     EnableFlag(12029019)
-    IfFlagEnabled(AND_2, 4065)
-    IfFlagEnabled(AND_2, 12029016)
-    IfFlagDisabled(AND_2, 4048)
+    AND_2.Add(FlagEnabled(4065))
+    AND_2.Add(FlagEnabled(12029016))
+    AND_2.Add(FlagDisabled(4048))
     SkipLinesIfConditionFalse(2, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(4060, 4063))
     EnableNetworkFlag(4062)
-    IfFlagEnabled(AND_3, 4077)
-    IfFlagEnabled(AND_3, 9502)
-    IfFlagEnabled(AND_3, 4131)
+    AND_3.Add(FlagEnabled(4077))
+    AND_3.Add(FlagEnabled(9502))
+    AND_3.Add(FlagEnabled(4131))
     SkipLinesIfConditionFalse(7, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(4065, 4077))
     EnableNetworkFlag(4066)
@@ -8026,14 +8738,14 @@ def Event_4079():
     DisableNetworkConnectedFlagRange(flag_range=(4120, 4123))
     EnableNetworkFlag(4123)
     DisableFlag(12029019)
-    IfFlagEnabled(AND_4, 4066)
-    IfFlagEnabled(AND_4, 12039005)
+    AND_4.Add(FlagEnabled(4066))
+    AND_4.Add(FlagEnabled(12039005))
     SkipLinesIfConditionFalse(2, AND_4)
     DisableNetworkConnectedFlagRange(flag_range=(4065, 4077))
     EnableNetworkFlag(4067)
-    IfFlagEnabled(AND_5, 4077)
-    IfFlagEnabled(AND_5, 4123)
-    IfFlagRangeAnyEnabled(AND_5, flag_range=(4128, 4129))
+    AND_5.Add(FlagEnabled(4077))
+    AND_5.Add(FlagEnabled(4123))
+    AND_5.Add(FlagRangeAnyEnabled(flag_range=(4128, 4129)))
     SkipLinesIfConditionFalse(3, AND_5)
     DisableNetworkConnectedFlagRange(flag_range=(4065, 4077))
     EnableNetworkFlag(4067)
@@ -8041,7 +8753,9 @@ def Event_4079():
 
     # --- Label 0 --- #
     DefineLabel(0)
-    IfFlagEnabled(MAIN, 4078)
+    
+    MAIN.Await(FlagEnabled(4078))
+    
     Restart()
     End()
 
@@ -8049,12 +8763,13 @@ def Event_4079():
 @RestartOnRest(4119)
 def Event_4119():
     """Event 4119"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     SkipLinesIfFlagRangeAnyEnabled(2, (4100, 4104))
     DisableNetworkConnectedFlagRange(flag_range=(4100, 4104))
     EnableNetworkFlag(4100)
-    IfFlagEnabled(AND_10, 4101)
-    IfFlagEnabled(AND_10, 3000)
+    AND_10.Add(FlagEnabled(4101))
+    AND_10.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(4100, 4104))
     EnableNetworkFlag(4100)
@@ -8062,9 +8777,9 @@ def Event_4119():
     DisableNetworkConnectedFlagRange(flag_range=(4105, 4119))
     EnableNetworkFlag(4105)
     GotoIfFlagDisabled(Label.L0, flag=4100)
-    SkipLinesIfFlagDisabled(2, 1036419209)
-    DisableNetworkConnectedFlagRange(flag_range=(4105, 4119))
-    EnableNetworkFlag(4106)
+    if FlagEnabled(1036419209):
+        DisableNetworkConnectedFlagRange(flag_range=(4105, 4119))
+        EnableNetworkFlag(4106)
 
     # --- Label 0 --- #
     DefineLabel(0)
@@ -8074,11 +8789,12 @@ def Event_4119():
 @RestartOnRest(4179)
 def Event_4179():
     """Event 4179"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(4178)
     SkipLinesIfFlagRangeAllDisabled(3, (4160, 4163))
-    IfFlagEnabled(AND_1, 4161)
-    IfFlagEnabled(AND_1, 3000)
+    AND_1.Add(FlagEnabled(4161))
+    AND_1.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(4160, 4163))
     EnableNetworkFlag(4160)
@@ -8086,51 +8802,53 @@ def Event_4179():
     DisableNetworkConnectedFlagRange(flag_range=(4165, 4177))
     EnableNetworkFlag(4165)
     EnableNetworkFlag(1050389209)
-    IfFlagRangeAnyEnabled(AND_10, flag_range=(4165, 4168))
-    IfFlagEnabled(AND_10, 4163)
+    AND_10.Add(FlagRangeAnyEnabled(flag_range=(4165, 4168)))
+    AND_10.Add(FlagEnabled(4163))
     SkipLinesIfConditionFalse(1, AND_10)
     EnableFlag(1050382702)
     SkipLinesIfFlagRangeAnyEnabled(2, (4169, 4170))
     DisableNetworkConnectedFlagRange(flag_range=(4160, 4163))
     EnableNetworkFlag(4160)
     GotoIfFlagDisabled(Label.L0, flag=4160)
-    IfFlagEnabled(AND_2, 4165)
-    IfFlagEnabled(AND_2, 1050389207)
+    AND_2.Add(FlagEnabled(4165))
+    AND_2.Add(FlagEnabled(1050389207))
     SkipLinesIfConditionFalse(3, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(4165, 4177))
     EnableNetworkFlag(4166)
     DisableNetworkFlag(1050389209)
-    IfFlagEnabled(AND_3, 4166)
-    IfFlagEnabled(AND_3, 1050389255)
+    AND_3.Add(FlagEnabled(4166))
+    AND_3.Add(FlagEnabled(1050389255))
     SkipLinesIfConditionFalse(3, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(4165, 4177))
     EnableNetworkFlag(4167)
     DisableNetworkFlag(1050389209)
-    IfFlagEnabled(AND_4, 4167)
-    IfFlagEnabled(AND_4, 4193)
+    AND_4.Add(FlagEnabled(4167))
+    AND_4.Add(FlagEnabled(4193))
     SkipLinesIfConditionFalse(3, AND_4)
     DisableNetworkConnectedFlagRange(flag_range=(4165, 4177))
     EnableNetworkFlag(4168)
     DisableNetworkFlag(1050389209)
-    IfFlagRangeAnyEnabled(AND_5, flag_range=(4191, 4192))
+    AND_5.Add(FlagRangeAnyEnabled(flag_range=(4191, 4192)))
     SkipLinesIfConditionFalse(3, AND_5)
     DisableNetworkConnectedFlagRange(flag_range=(4165, 4177))
     EnableNetworkFlag(4169)
     DisableNetworkFlag(1050389209)
-    IfFlagEnabled(AND_6, 7611)
+    AND_6.Add(FlagEnabled(7611))
     SkipLinesIfConditionFalse(5, AND_6)
     DisableNetworkConnectedFlagRange(flag_range=(4165, 4177))
     EnableNetworkFlag(4171)
     DisableNetworkFlag(1050389209)
     DisableNetworkConnectedFlagRange(flag_range=(4160, 4163))
     EnableNetworkFlag(4163)
-    IfFlagRangeAllDisabled(AND_7, flag_range=(4191, 4192))
-    IfFlagEnabled(AND_7, 4183)
+    AND_7.Add(FlagRangeAllDisabled(flag_range=(4191, 4192)))
+    AND_7.Add(FlagEnabled(4183))
     SkipLinesIfConditionFalse(3, AND_7)
     DisableNetworkConnectedFlagRange(flag_range=(4165, 4177))
     EnableNetworkFlag(4170)
     DisableNetworkFlag(1050389209)
-    IfFlagEnabled(MAIN, 4178)
+    
+    MAIN.Await(FlagEnabled(4178))
+    
     Restart()
 
     # --- Label 0 --- #
@@ -8141,13 +8859,14 @@ def Event_4179():
 @RestartOnRest(4199)
 def Event_4199():
     """Event 4199"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(4198)
     SkipLinesIfFlagRangeAnyEnabled(2, (4180, 4183))
     DisableNetworkConnectedFlagRange(flag_range=(4180, 4183))
     EnableNetworkFlag(4180)
-    IfFlagEnabled(AND_1, 4181)
-    IfFlagEnabled(AND_1, 3000)
+    AND_1.Add(FlagEnabled(4181))
+    AND_1.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(4180, 4183))
     EnableNetworkFlag(4180)
@@ -8159,57 +8878,57 @@ def Event_4199():
     EnableNetworkFlag(4185)
     EnableNetworkFlag(1050389259)
     GotoIfFlagDisabled(Label.L0, flag=4180)
-    IfFlagEnabled(AND_2, 4185)
-    IfFlagEnabled(AND_2, 1050389255)
+    AND_2.Add(FlagEnabled(4185))
+    AND_2.Add(FlagEnabled(1050389255))
     SkipLinesIfConditionFalse(3, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(4185, 4197))
     EnableNetworkFlag(4186)
     DisableNetworkFlag(1050389259)
-    IfFlagEnabled(AND_3, 4186)
-    IfFlagEnabled(AND_3, 1050389257)
+    AND_3.Add(FlagEnabled(4186))
+    AND_3.Add(FlagEnabled(1050389257))
     SkipLinesIfConditionFalse(4, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(4185, 4197))
     EnableNetworkFlag(4187)
-    SkipLinesIfFlagDisabled(1, 1050389266)
-    EnableNetworkFlag(4197)
-    IfFlagEnabled(AND_11, 4187)
-    IfFlagEnabled(AND_11, 1050389266)
-    IfFlagDisabled(AND_11, 1038519257)
+    if FlagEnabled(1050389266):
+        EnableNetworkFlag(4197)
+    AND_11.Add(FlagEnabled(4187))
+    AND_11.Add(FlagEnabled(1050389266))
+    AND_11.Add(FlagDisabled(1038519257))
     SkipLinesIfConditionFalse(4, AND_11)
     EnableNetworkFlag(1042559206)
     DisableNetworkFlag(1042559207)
     DisableNetworkFlag(1042559208)
     DisableNetworkFlag(1042559209)
-    IfFlagEnabled(AND_4, 4187)
-    IfFlagEnabled(AND_4, 1042550800)
-    IfFlagEnabled(AND_4, 1038519257)
+    AND_4.Add(FlagEnabled(4187))
+    AND_4.Add(FlagEnabled(1042550800))
+    AND_4.Add(FlagEnabled(1038519257))
     SkipLinesIfConditionFalse(2, AND_4)
     DisableNetworkConnectedFlagRange(flag_range=(4185, 4197))
     EnableNetworkFlag(4188)
-    IfFlagEnabled(AND_5, 4188)
-    IfFlagEnabled(AND_5, 1042559205)
+    AND_5.Add(FlagEnabled(4188))
+    AND_5.Add(FlagEnabled(1042559205))
     SkipLinesIfConditionFalse(2, AND_5)
     DisableNetworkConnectedFlagRange(flag_range=(4185, 4197))
     EnableNetworkFlag(4189)
-    IfFlagEnabled(AND_6, 4189)
-    IfFlagEnabled(AND_6, 1051569256)
+    AND_6.Add(FlagEnabled(4189))
+    AND_6.Add(FlagEnabled(1051569256))
     SkipLinesIfConditionFalse(2, AND_6)
     DisableNetworkConnectedFlagRange(flag_range=(4185, 4197))
     EnableNetworkFlag(4190)
-    IfFlagRangeAnyEnabled(AND_12, flag_range=(4187, 4190))
-    IfFlagEnabled(AND_12, 1050389266)
-    IfFlagEnabled(AND_12, 1038519257)
+    AND_12.Add(FlagRangeAnyEnabled(flag_range=(4187, 4190)))
+    AND_12.Add(FlagEnabled(1050389266))
+    AND_12.Add(FlagEnabled(1038519257))
     SkipLinesIfConditionFalse(4, AND_12)
     DisableNetworkFlag(1042559206)
     EnableNetworkFlag(1042559207)
     EnableNetworkFlag(1042559208)
     EnableNetworkFlag(1042559209)
-    IfFlagEnabled(AND_7, 4190)
-    IfFlagEnabled(AND_7, 15009206)
-    IfFlagEnabled(AND_7, 15000398)
-    IfFlagEnabled(OR_7, 1050389227)
-    IfFlagEnabled(OR_7, 15009213)
-    IfConditionTrue(AND_7, input_condition=OR_7)
+    AND_7.Add(FlagEnabled(4190))
+    AND_7.Add(FlagEnabled(15009206))
+    AND_7.Add(FlagEnabled(15000398))
+    OR_7.Add(FlagEnabled(1050389227))
+    OR_7.Add(FlagEnabled(15009213))
+    AND_7.Add(OR_7)
     SkipLinesIfConditionFalse(8, AND_7)
     DisableNetworkConnectedFlagRange(flag_range=(4185, 4197))
     EnableNetworkFlag(4193)
@@ -8219,26 +8938,28 @@ def Event_4199():
     DisableNetworkFlag(1042559207)
     DisableNetworkFlag(1042559208)
     DisableNetworkFlag(1042559209)
-    IfFlagEnabled(AND_8, 4193)
-    IfFlagEnabled(AND_8, 7610)
+    AND_8.Add(FlagEnabled(4193))
+    AND_8.Add(FlagEnabled(7610))
     SkipLinesIfConditionFalse(4, AND_8)
     DisableNetworkConnectedFlagRange(flag_range=(4185, 4197))
     EnableNetworkFlag(4191)
     DisableNetworkFlag(15009208)
     DisableNetworkFlag(15009209)
-    IfFlagEnabled(AND_9, 4193)
-    IfFlagEnabled(AND_9, 7611)
+    AND_9.Add(FlagEnabled(4193))
+    AND_9.Add(FlagEnabled(7611))
     SkipLinesIfConditionFalse(4, AND_9)
     DisableNetworkConnectedFlagRange(flag_range=(4185, 4197))
     EnableNetworkFlag(4194)
     DisableNetworkFlag(15009208)
     DisableNetworkFlag(15009209)
-    IfFlagEnabled(AND_10, 4191)
-    IfFlagEnabled(AND_10, 15009211)
+    AND_10.Add(FlagEnabled(4191))
+    AND_10.Add(FlagEnabled(15009211))
     SkipLinesIfConditionFalse(2, AND_10)
     DisableNetworkConnectedFlagRange(flag_range=(4185, 4197))
     EnableNetworkFlag(4192)
-    IfFlagEnabled(MAIN, 4198)
+    
+    MAIN.Await(FlagEnabled(4198))
+    
     Restart()
 
     # --- Label 0 --- #
@@ -8249,11 +8970,12 @@ def Event_4199():
 @RestartOnRest(3979)
 def Event_3979():
     """Event 3979"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3978)
     SkipLinesIfFlagRangeAllDisabled(3, (3960, 3963))
-    IfFlagEnabled(AND_1, 3961)
-    IfFlagEnabled(AND_1, 3000)
+    AND_1.Add(FlagEnabled(3961))
+    AND_1.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(3960, 3963))
     EnableNetworkFlag(3960)
@@ -8261,31 +8983,33 @@ def Event_3979():
     DisableNetworkConnectedFlagRange(flag_range=(3965, 3968))
     EnableNetworkFlag(3965)
     GotoIfFlagDisabled(Label.L0, flag=3960)
-    IfFlagEnabled(AND_2, 3965)
-    IfFlagEnabled(AND_2, 11109659)
-    IfFlagEnabled(AND_10, 181)
-    IfFlagEnabled(AND_10, 11109659)
-    IfConditionTrue(OR_1, input_condition=AND_2)
-    IfConditionTrue(OR_1, input_condition=AND_10)
+    AND_2.Add(FlagEnabled(3965))
+    AND_2.Add(FlagEnabled(11109659))
+    AND_10.Add(FlagEnabled(181))
+    AND_10.Add(FlagEnabled(11109659))
+    OR_1.Add(AND_2)
+    OR_1.Add(AND_10)
     SkipLinesIfConditionFalse(2, OR_1)
     DisableNetworkConnectedFlagRange(flag_range=(3965, 3968))
     EnableNetworkFlag(3966)
-    IfFlagEnabled(AND_3, 3966)
-    IfFlagEnabled(AND_3, 11109358)
-    IfFlagEnabled(AND_3, 11109660)
-    IfFlagEnabled(AND_11, 181)
-    IfFlagEnabled(AND_11, 11109659)
-    IfFlagEnabled(OR_2, 110)
-    IfConditionTrue(OR_2, input_condition=AND_3)
-    IfConditionTrue(OR_2, input_condition=AND_11)
+    AND_3.Add(FlagEnabled(3966))
+    AND_3.Add(FlagEnabled(11109358))
+    AND_3.Add(FlagEnabled(11109660))
+    AND_11.Add(FlagEnabled(181))
+    AND_11.Add(FlagEnabled(11109659))
+    OR_2.Add(FlagEnabled(110))
+    OR_2.Add(AND_3)
+    OR_2.Add(AND_11)
     SkipLinesIfConditionFalse(2, OR_2)
     DisableNetworkConnectedFlagRange(flag_range=(3965, 3968))
     EnableNetworkFlag(3967)
-    IfFlagEnabled(AND_4, 9116)
+    AND_4.Add(FlagEnabled(9116))
     SkipLinesIfConditionFalse(2, AND_4)
     DisableNetworkConnectedFlagRange(flag_range=(3965, 3968))
     EnableNetworkFlag(3968)
-    IfFlagEnabled(MAIN, 3978)
+    
+    MAIN.Await(FlagEnabled(3978))
+    
     Restart()
 
     # --- Label 0 --- #
@@ -8296,11 +9020,12 @@ def Event_3979():
 @RestartOnRest(4219)
 def Event_4219():
     """Event 4219"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(4218)
     SkipLinesIfFlagRangeAllDisabled(3, (4200, 4203))
-    IfFlagEnabled(AND_1, 4201)
-    IfFlagEnabled(AND_1, 3000)
+    AND_1.Add(FlagEnabled(4201))
+    AND_1.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(4200, 4203))
     EnableNetworkFlag(4200)
@@ -8308,51 +9033,53 @@ def Event_4219():
     DisableNetworkConnectedFlagRange(flag_range=(4205, 4217))
     EnableNetworkFlag(4205)
     GotoIfFlagDisabled(Label.L0, flag=4200)
-    IfFlagDisabled(AND_15, 11009555)
-    IfFlagEnabled(AND_15, 110)
+    AND_15.Add(FlagDisabled(11009555))
+    AND_15.Add(FlagEnabled(110))
     SkipLinesIfConditionFalse(4, AND_15)
     DisableNetworkConnectedFlagRange(flag_range=(4200, 4203))
     EnableNetworkFlag(4203)
     EnableNetworkFlag(4217)
     Goto(Label.L0)
-    IfFlagEnabled(AND_2, 4205)
-    IfFlagEnabled(AND_2, 11109859)
+    AND_2.Add(FlagEnabled(4205))
+    AND_2.Add(FlagEnabled(11109859))
     SkipLinesIfConditionFalse(2, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(4205, 4217))
     EnableNetworkFlag(4206)
-    IfFlagEnabled(AND_3, 4206)
-    IfFlagEnabled(AND_3, 1040529259)
+    AND_3.Add(FlagEnabled(4206))
+    AND_3.Add(FlagEnabled(1040529259))
     SkipLinesIfConditionFalse(2, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(4205, 4217))
     EnableNetworkFlag(4207)
-    IfFlagEnabled(AND_4, 4207)
-    IfFlagEnabled(AND_4, 1040549205)
+    AND_4.Add(FlagEnabled(4207))
+    AND_4.Add(FlagEnabled(1040549205))
     SkipLinesIfConditionFalse(2, AND_4)
     DisableNetworkConnectedFlagRange(flag_range=(4205, 4217))
     EnableNetworkFlag(4208)
-    IfFlagEnabled(AND_5, 4208)
-    IfFlagEnabled(AND_5, 11009555)
+    AND_5.Add(FlagEnabled(4208))
+    AND_5.Add(FlagEnabled(11009555))
     SkipLinesIfConditionFalse(2, AND_5)
     DisableNetworkConnectedFlagRange(flag_range=(4205, 4217))
     EnableNetworkFlag(4209)
-    IfFlagEnabled(AND_6, 4209)
-    IfFlagEnabled(AND_6, 9116)
-    IfFlagDisabled(AND_6, 1051569361)
+    AND_6.Add(FlagEnabled(4209))
+    AND_6.Add(FlagEnabled(9116))
+    AND_6.Add(FlagDisabled(1051569361))
     SkipLinesIfConditionFalse(2, AND_6)
     DisableNetworkConnectedFlagRange(flag_range=(4205, 4217))
     EnableNetworkFlag(4210)
-    IfFlagEnabled(AND_7, 4209)
-    IfFlagEnabled(AND_7, 9116)
-    IfFlagEnabled(AND_7, 1051569361)
+    AND_7.Add(FlagEnabled(4209))
+    AND_7.Add(FlagEnabled(9116))
+    AND_7.Add(FlagEnabled(1051569361))
     SkipLinesIfConditionFalse(2, AND_7)
     DisableNetworkConnectedFlagRange(flag_range=(4205, 4217))
     EnableNetworkFlag(4211)
-    IfFlagDisabled(AND_8, 1051569362)
-    IfFlagDisabled(AND_8, 11059207)
+    AND_8.Add(FlagDisabled(1051569362))
+    AND_8.Add(FlagDisabled(11059207))
     SkipLinesIfConditionTrue(2, AND_8)
     DisableNetworkConnectedFlagRange(flag_range=(4200, 4203))
     EnableNetworkFlag(4203)
-    IfFlagEnabled(MAIN, 4218)
+    
+    MAIN.Await(FlagEnabled(4218))
+    
     Restart()
 
     # --- Label 0 --- #
@@ -8363,11 +9090,12 @@ def Event_4219():
 @RestartOnRest(4259)
 def Event_4259():
     """Event 4259"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(4258)
     SkipLinesIfFlagRangeAllDisabled(3, (4240, 4243))
-    IfFlagEnabled(AND_1, 4241)
-    IfFlagEnabled(AND_1, 3000)
+    AND_1.Add(FlagEnabled(4241))
+    AND_1.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(4240, 4243))
     EnableNetworkFlag(4240)
@@ -8375,36 +9103,38 @@ def Event_4259():
     DisableNetworkConnectedFlagRange(flag_range=(4245, 4257))
     EnableNetworkFlag(4245)
     GotoIfFlagDisabled(Label.L0, flag=4240)
-    IfFlagEnabled(AND_2, 4245)
-    IfFlagEnabled(AND_2, 11109957)
+    AND_2.Add(FlagEnabled(4245))
+    AND_2.Add(FlagEnabled(11109957))
     SkipLinesIfConditionFalse(2, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(4245, 4257))
     EnableNetworkFlag(4246)
-    IfFlagEnabled(AND_3, 4246)
-    IfFlagEnabled(AND_3, 35009306)
+    AND_3.Add(FlagEnabled(4246))
+    AND_3.Add(FlagEnabled(35009306))
     SkipLinesIfConditionFalse(4, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(4245, 4257))
     EnableNetworkFlag(4247)
     EnableNetworkFlag(35009317)
     EnableNetworkFlag(35009318)
-    IfFlagEnabled(AND_4, 4247)
-    IfFlagEnabled(AND_4, 1045520180)
+    AND_4.Add(FlagEnabled(4247))
+    AND_4.Add(FlagEnabled(1045520180))
     SkipLinesIfConditionFalse(4, AND_4)
     DisableNetworkConnectedFlagRange(flag_range=(4245, 4257))
     EnableNetworkFlag(4248)
     DisableNetworkFlag(35009317)
     DisableNetworkFlag(35009318)
-    IfFlagEnabled(AND_5, 4248)
-    IfFlagEnabled(AND_5, 11109959)
+    AND_5.Add(FlagEnabled(4248))
+    AND_5.Add(FlagEnabled(11109959))
     SkipLinesIfConditionFalse(2, AND_5)
     DisableNetworkConnectedFlagRange(flag_range=(4245, 4257))
     EnableNetworkFlag(4249)
-    IfFlagEnabled(AND_6, 4249)
-    IfFlagEnabled(AND_6, 35009326)
+    AND_6.Add(FlagEnabled(4249))
+    AND_6.Add(FlagEnabled(35009326))
     SkipLinesIfConditionFalse(2, AND_6)
     DisableNetworkConnectedFlagRange(flag_range=(4245, 4257))
     EnableNetworkFlag(4251)
-    IfFlagEnabled(MAIN, 4258)
+    
+    MAIN.Await(FlagEnabled(4258))
+    
     Restart()
 
     # --- Label 0 --- #
@@ -8415,76 +9145,79 @@ def Event_4259():
 @RestartOnRest(4239)
 def Event_4239():
     """Event 4239"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(4238)
     SkipLinesIfFlagRangeAnyEnabled(2, (4220, 4223))
     DisableNetworkConnectedFlagRange(flag_range=(4220, 4223))
     EnableNetworkFlag(4220)
-    IfFlagEnabled(AND_1, 4221)
-    IfFlagEnabled(AND_1, 3000)
+    AND_1.Add(FlagEnabled(4221))
+    AND_1.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(4220, 4223))
     EnableNetworkFlag(4220)
     SkipLinesIfFlagRangeAnyEnabled(2, (4225, 4237))
     DisableNetworkConnectedFlagRange(flag_range=(4225, 4237))
     EnableNetworkFlag(4225)
-    IfFlagEnabled(AND_8, 11109921)
-    IfFlagEnabled(AND_8, 4228)
+    AND_8.Add(FlagEnabled(11109921))
+    AND_8.Add(FlagEnabled(4228))
     SkipLinesIfConditionFalse(2, AND_8)
     DisableNetworkConnectedFlagRange(flag_range=(4220, 4223))
     EnableNetworkFlag(4220)
     GotoIfFlagDisabled(Label.L0, flag=4220)
-    IfFlagRangeAnyEnabled(AND_13, flag_range=(4225, 4227))
-    IfFlagEnabled(AND_13, 110)
-    IfConditionFalse(AND_15, input_condition=AND_13)
-    IfFlagEnabled(AND_14, 4228)
-    IfFlagEnabled(AND_14, 9116)
-    IfFlagDisabled(AND_14, 11109921)
-    IfConditionFalse(AND_15, input_condition=AND_14)
+    AND_13.Add(FlagRangeAnyEnabled(flag_range=(4225, 4227)))
+    AND_13.Add(FlagEnabled(110))
+    AND_15.Add(not AND_13)
+    AND_14.Add(FlagEnabled(4228))
+    AND_14.Add(FlagEnabled(9116))
+    AND_14.Add(FlagDisabled(11109921))
+    AND_15.Add(not AND_14)
     SkipLinesIfConditionTrue(3, AND_15)
     DisableNetworkConnectedFlagRange(flag_range=(4220, 4223))
     EnableNetworkFlag(4223)
     Goto(Label.L0)
-    IfFlagEnabled(AND_10, 4225)
-    IfFlagEnabled(AND_10, 10009706)
+    AND_10.Add(FlagEnabled(4225))
+    AND_10.Add(FlagEnabled(10009706))
     SkipLinesIfConditionFalse(1, AND_10)
     EnableNetworkFlag(10009709)
-    IfFlagEnabled(AND_2, 4225)
-    IfFlagEnabled(OR_2, 9101)
-    IfFlagEnabled(OR_2, 1034509305)
-    IfConditionTrue(AND_2, input_condition=OR_2)
+    AND_2.Add(FlagEnabled(4225))
+    OR_2.Add(FlagEnabled(9101))
+    OR_2.Add(FlagEnabled(1034509305))
+    AND_2.Add(OR_2)
     SkipLinesIfConditionFalse(3, AND_2)
     DisableNetworkConnectedFlagRange(flag_range=(4225, 4237))
     EnableNetworkFlag(4226)
     DisableNetworkFlag(10009709)
-    IfFlagEnabled(AND_3, 4226)
-    IfFlagEnabled(AND_3, 11109909)
+    AND_3.Add(FlagEnabled(4226))
+    AND_3.Add(FlagEnabled(11109909))
     SkipLinesIfConditionFalse(2, AND_3)
     DisableNetworkConnectedFlagRange(flag_range=(4225, 4237))
     EnableNetworkFlag(4227)
-    IfFlagEnabled(AND_11, 4227)
-    IfFlagEnabled(AND_11, 1034429205)
+    AND_11.Add(FlagEnabled(4227))
+    AND_11.Add(FlagEnabled(1034429205))
     SkipLinesIfConditionFalse(1, AND_11)
     EnableNetworkFlag(1034429209)
-    IfFlagEnabled(AND_4, 4227)
-    IfFlagEnabled(AND_4, 1035420800)
-    IfFlagEnabled(AND_4, 1034429205)
+    AND_4.Add(FlagEnabled(4227))
+    AND_4.Add(FlagEnabled(1035420800))
+    AND_4.Add(FlagEnabled(1034429205))
     SkipLinesIfConditionFalse(2, AND_4)
     DisableNetworkConnectedFlagRange(flag_range=(4225, 4237))
     EnableNetworkFlag(4228)
-    IfFlagEnabled(AND_5, 4228)
-    IfFlagEnabled(AND_5, 9101)
-    IfFlagEnabled(AND_5, 10009722)
+    AND_5.Add(FlagEnabled(4228))
+    AND_5.Add(FlagEnabled(9101))
+    AND_5.Add(FlagEnabled(10009722))
     SkipLinesIfConditionFalse(3, AND_5)
     DisableNetworkConnectedFlagRange(flag_range=(4225, 4237))
     EnableNetworkFlag(4229)
     EnableNetworkFlag(10009719)
-    IfFlagEnabled(AND_6, 4228)
-    IfFlagEnabled(AND_6, 11109919)
+    AND_6.Add(FlagEnabled(4228))
+    AND_6.Add(FlagEnabled(11109919))
     SkipLinesIfConditionFalse(2, AND_6)
     DisableNetworkConnectedFlagRange(flag_range=(4225, 4237))
     EnableNetworkFlag(4230)
-    IfFlagEnabled(MAIN, 4238)
+    
+    MAIN.Await(FlagEnabled(4238))
+    
     Restart()
 
     # --- Label 0 --- #
@@ -8495,21 +9228,22 @@ def Event_4239():
 @RestartOnRest(3839)
 def Event_3839():
     """Event 3839"""
-    EndIfPlayerNotInOwnWorld()
+    if PlayerNotInOwnWorld():
+        return
     DisableFlag(3838)
     SkipLinesIfFlagRangeAnyEnabled(2, (3820, 3823))
     DisableNetworkConnectedFlagRange(flag_range=(3820, 3823))
     EnableNetworkFlag(3820)
-    SkipLinesIfFlagDisabled(2, 3823)
-    DisableNetworkConnectedFlagRange(flag_range=(3820, 3823))
-    EnableNetworkFlag(3821)
-    IfFlagEnabled(AND_15, 3820)
-    IfFlagEnabled(AND_15, 3822)
+    if FlagEnabled(3823):
+        DisableNetworkConnectedFlagRange(flag_range=(3820, 3823))
+        EnableNetworkFlag(3821)
+    AND_15.Add(FlagEnabled(3820))
+    AND_15.Add(FlagEnabled(3822))
     SkipLinesIfConditionFalse(2, AND_15)
     DisableNetworkConnectedFlagRange(flag_range=(3820, 3823))
     EnableNetworkFlag(3822)
-    IfFlagEnabled(AND_1, 3821)
-    IfFlagEnabled(AND_1, 3000)
+    AND_1.Add(FlagEnabled(3821))
+    AND_1.Add(FlagEnabled(3000))
     SkipLinesIfConditionFalse(2, AND_1)
     DisableNetworkConnectedFlagRange(flag_range=(3820, 3823))
     EnableNetworkFlag(3820)
@@ -8517,32 +9251,34 @@ def Event_3839():
     DisableNetworkConnectedFlagRange(flag_range=(3825, 3829))
     EnableNetworkFlag(3825)
     GotoIfFlagDisabled(Label.L0, flag=3820)
-    IfFlagEnabled(AND_6, 3825)
-    IfFlagEnabled(AND_6, 1039449258)
-    IfFlagEnabled(OR_6, 1043399313)
-    IfFlagEnabled(OR_6, 3663)
-    IfConditionTrue(AND_6, input_condition=OR_6)
+    AND_6.Add(FlagEnabled(3825))
+    AND_6.Add(FlagEnabled(1039449258))
+    OR_6.Add(FlagEnabled(1043399313))
+    OR_6.Add(FlagEnabled(3663))
+    AND_6.Add(OR_6)
     SkipLinesIfConditionFalse(2, AND_6)
     DisableNetworkConnectedFlagRange(flag_range=(3825, 3829))
     EnableNetworkFlag(3826)
-    IfFlagEnabled(AND_7, 3826)
-    IfFlagEnabled(AND_7, 1039449278)
+    AND_7.Add(FlagEnabled(3826))
+    AND_7.Add(FlagEnabled(1039449278))
     SkipLinesIfConditionFalse(2, AND_7)
     DisableNetworkConnectedFlagRange(flag_range=(3825, 3829))
     EnableNetworkFlag(3827)
-    IfFlagEnabled(AND_8, 3827)
-    IfFlagEnabled(AND_8, 3443)
-    IfFlagEnabled(AND_8, 1039449270)
+    AND_8.Add(FlagEnabled(3827))
+    AND_8.Add(FlagEnabled(3443))
+    AND_8.Add(FlagEnabled(1039449270))
     SkipLinesIfConditionFalse(2, AND_8)
     DisableNetworkConnectedFlagRange(flag_range=(3825, 3829))
     EnableNetworkFlag(3828)
-    SkipLinesIfFlagDisabled(1, 1039449285)
-    EnableNetworkFlag(1039449296)
-    IfFlagEnabled(AND_9, 1039449291)
+    if FlagEnabled(1039449285):
+        EnableNetworkFlag(1039449296)
+    AND_9.Add(FlagEnabled(1039449291))
     SkipLinesIfConditionFalse(2, AND_9)
     DisableNetworkConnectedFlagRange(flag_range=(3825, 3829))
     EnableNetworkFlag(3829)
-    IfFlagEnabled(MAIN, 3838)
+    
+    MAIN.Await(FlagEnabled(3838))
+    
     Restart()
 
     # --- Label 0 --- #
@@ -8550,23 +9286,51 @@ def Event_3839():
     End()
 
 
-@ContinueOnRest(9930)
-def Event_9930(_, flag: uint, flag_1: uint, unk_0_4: int):
-    """Event 9930"""
-    EndIfPlayerNotInOwnWorld()
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, flag)
-    IfConditionTrue(MAIN, input_condition=AND_1)
-    SkipLinesIfFlagEnabled(2, flag_1)
-    Unknown_2003_71(unk_0_4=unk_0_4)
+@ContinueOnRest(60701)
+def Event_60701(_, flag: uint, flag_1: uint):
+    """Event 60701"""
+    GotoIfPlayerNotInOwnWorld(Label.L15)
+    OR_1.Add(FlagEnabled(flag))
+    OR_1.Add(FlagEnabled(flag_1))
+    
+    MAIN.Await(OR_1)
+    
+    EnableFlag(flag)
     EnableFlag(flag_1)
+    End()
+
+    # --- Label 15 --- #
+    DefineLabel(15)
+    AND_15.Add(FlagEnabled(6000))
+    AND_15.Add(FlagDisabled(6000))
+    
+    MAIN.Await(AND_15)
+    
+    Wait(1.0)
+    ReplanAI(0)
+
+
+@ContinueOnRest(9930)
+def Event_9930(_, flag: uint, flag_1: uint, gesture_param_id: int):
+    """Event 9930"""
+    if PlayerNotInOwnWorld():
+        return
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(flag))
+    
+    MAIN.Await(AND_1)
+    
+    if FlagDisabled(flag_1):
+        AwardGesture(gesture_param_id=gesture_param_id)
+        EnableFlag(flag_1)
     DisableFlag(flag)
 
 
 @ContinueOnRest(9940)
 def Event_9940():
     """Event 9940"""
-    IfFlagEnabled(MAIN, 9992)
+    MAIN.Await(FlagEnabled(9992))
+    
     EnableFlag(82000)
     EnableFlag(82010)
     EnableFlag(82011)
@@ -8593,7 +9357,8 @@ def Event_9940():
 @ContinueOnRest(9941)
 def Event_9941():
     """Event 9941"""
-    IfFlagEnabled(MAIN, 9993)
+    MAIN.Await(FlagEnabled(9993))
+    
     EnableFlagRange((10000000, 10000004))
     EnableFlagRange((11000000, 11000001))
     EnableFlagRange((11000003, 11000007))
@@ -8658,7 +9423,9 @@ def Event_9941():
     EnableFlag(1037520000)
     EnableFlagRange((1099000000, 1099000015))
     EnableFlagRange((1099000190, 1099000195))
-    IfFlagDisabled(MAIN, 9991)
+    
+    MAIN.Await(FlagDisabled(9991))
+    
     DisableFlagRange((10000000, 10000004))
     DisableFlagRange((11000000, 11000001))
     DisableFlagRange((11000003, 11000007))
@@ -8728,16 +9495,19 @@ def Event_9941():
 @ContinueOnRest(9943)
 def Event_9943():
     """Event 9943"""
-    IfFlagEnabled(MAIN, 9993)
+    MAIN.Await(FlagEnabled(9993))
+    
     AwardItemLot(100400, host_only=True)
 
 
 @ContinueOnRest(9945)
 def Event_9945():
     """Event 9945"""
-    IfPlayerInOwnWorld(AND_1)
-    IfFlagEnabled(AND_1, 9995)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    AND_1.Add(PlayerInOwnWorld())
+    AND_1.Add(FlagEnabled(9995))
+    
+    MAIN.Await(AND_1)
+    
     GotoIfPlayerInOwnWorld(Label.L1)
     Move(
         20000,
@@ -8750,24 +9520,30 @@ def Event_9945():
     # --- Label 1 --- #
     DefineLabel(1)
     Wait(2.4000000953674316)
-    SkipLinesIfPlayerNotInOwnWorld(1)
-    Wait(0.6000000238418579)
+    if PlayerInOwnWorld():
+        Wait(0.6000000238418579)
     Restart()
 
 
 @ContinueOnRest(9946)
 def Event_9946(_, flag: uint, flag_1: uint):
     """Event 9946"""
-    EndIfThisEventSlotFlagEnabled()
-    IfFlagEnabled(MAIN, flag_1)
+    if ThisEventSlotFlagEnabled():
+        return
+    
+    MAIN.Await(FlagEnabled(flag_1))
+    
     EnableFlag(flag)
 
 
 @ContinueOnRest(9950)
 def Event_9950(_, flag: uint, flag_1: uint):
     """Event 9950"""
-    EndIfFlagEnabled(flag)
-    IfFlagEnabled(MAIN, flag)
+    if FlagEnabled(flag):
+        return
+    
+    MAIN.Await(FlagEnabled(flag))
+    
     EnableFlag(flag_1)
 
 
@@ -8775,147 +9551,151 @@ def Event_9950(_, flag: uint, flag_1: uint):
 def Event_19001040():
     """Event 19001040"""
     DisableFlag(19001050)
-    IfInsideMap(OR_1, game_map=(60, 40, 30, 0))
-    IfInsideMap(OR_1, game_map=(60, 40, 31, 0))
-    IfInsideMap(OR_1, game_map=(60, 40, 32, 0))
-    IfInsideMap(OR_1, game_map=WEST_WEEPING_PENINSULA_SW_NW)
-    IfInsideMap(OR_1, game_map=(60, 40, 34, 0))
-    IfInsideMap(OR_1, game_map=(60, 40, 35, 0))
-    IfInsideMap(OR_1, game_map=(60, 40, 36, 0))
-    IfInsideMap(OR_1, game_map=(60, 40, 37, 0))
-    IfInsideMap(OR_1, game_map=WEST_LIMGRAVE_NW_SW)
-    IfInsideMap(OR_1, game_map=WEST_LIMGRAVE_NW_NW)
-    IfInsideMap(OR_1, game_map=(60, 41, 30, 0))
-    IfInsideMap(OR_1, game_map=(60, 41, 31, 0))
-    IfInsideMap(OR_1, game_map=WEST_WEEPING_PENINSULA_SW_SE)
-    IfInsideMap(OR_1, game_map=WEST_WEEPING_PENINSULA_SW_NE)
-    IfInsideMap(OR_1, game_map=WEST_WEEPING_PENINSULA_NW_SE)
-    IfInsideMap(OR_1, game_map=WEST_WEEPING_PENINSULA_NW_NE)
-    IfInsideMap(OR_1, game_map=WEST_LIMGRAVE_SW_SE)
-    IfInsideMap(OR_1, game_map=WEST_LIMGRAVE_SW_NE)
-    IfInsideMap(OR_1, game_map=WEST_LIMGRAVE_NW_SE)
-    IfInsideMap(OR_1, game_map=WEST_LIMGRAVE_NW_NE)
-    IfInsideMap(OR_1, game_map=(60, 42, 30, 0))
-    IfInsideMap(OR_1, game_map=(60, 42, 31, 0))
-    IfInsideMap(OR_1, game_map=WEST_WEEPING_PENINSULA_SE_SW)
-    IfInsideMap(OR_1, game_map=WEST_WEEPING_PENINSULA_SE_NW)
-    IfInsideMap(OR_1, game_map=WEST_WEEPING_PENINSULA_NE_SW)
-    IfInsideMap(OR_1, game_map=WEST_WEEPING_PENINSULA_NE_NW)
-    IfInsideMap(OR_1, game_map=WEST_LIMGRAVE_SE_SW)
-    IfInsideMap(OR_1, game_map=WEST_LIMGRAVE_SE_NW)
-    IfInsideMap(OR_1, game_map=WEST_LIMGRAVE_NE_SW)
-    IfInsideMap(OR_1, game_map=WEST_LIMGRAVE_NE_NW)
-    IfInsideMap(OR_1, game_map=SOUTH_WEEPING_PENINSULA_NE_SE)
-    IfInsideMap(OR_1, game_map=SOUTH_WEEPING_PENINSULA_NE_NE)
-    IfInsideMap(OR_1, game_map=WEST_WEEPING_PENINSULA_SE_SE)
-    IfInsideMap(OR_1, game_map=WEST_WEEPING_PENINSULA_SE_NE)
-    IfInsideMap(OR_1, game_map=WEST_WEEPING_PENINSULA_NE_SE)
-    IfInsideMap(OR_1, game_map=WEST_WEEPING_PENINSULA_NE_NE)
-    IfInsideMap(OR_1, game_map=WEST_LIMGRAVE_SE_SE)
-    IfInsideMap(OR_1, game_map=WEST_LIMGRAVE_SE_NE)
-    IfInsideMap(OR_1, game_map=WEST_LIMGRAVE_NE_SE)
-    IfInsideMap(OR_1, game_map=WEST_LIMGRAVE_NE_NE)
-    IfInsideMap(OR_1, game_map=(60, 44, 30, 0))
-    IfInsideMap(OR_1, game_map=SOUTHEAST_WEEPING_PENINSULA_COAST_NW_NW)
-    IfInsideMap(OR_1, game_map=EAST_WEEPING_PENINSULA_SW_SW)
-    IfInsideMap(OR_1, game_map=EAST_WEEPING_PENINSULA_SW_NW)
-    IfInsideMap(OR_1, game_map=EAST_WEEPING_PENINSULA_NW_SW)
-    IfInsideMap(OR_1, game_map=EAST_WEEPING_PENINSULA_NW_NW)
-    IfInsideMap(OR_1, game_map=EAST_LIMGRAVE_SW_SW)
-    IfInsideMap(OR_1, game_map=EAST_LIMGRAVE_SW_NW)
-    IfInsideMap(OR_1, game_map=EAST_LIMGRAVE_NW_SW)
-    IfInsideMap(OR_1, game_map=EAST_LIMGRAVE_NW_NW)
-    IfInsideMap(OR_1, game_map=(60, 45, 30, 0))
-    IfInsideMap(OR_1, game_map=(60, 45, 31, 0))
-    IfInsideMap(OR_1, game_map=EAST_WEEPING_PENINSULA_SW_SE)
-    IfInsideMap(OR_1, game_map=EAST_WEEPING_PENINSULA_SW_NE)
-    IfInsideMap(OR_1, game_map=EAST_WEEPING_PENINSULA_NW_SE)
-    IfInsideMap(OR_1, game_map=EAST_WEEPING_PENINSULA_NW_NE)
-    IfInsideMap(OR_1, game_map=EAST_LIMGRAVE_SW_SE)
-    IfInsideMap(OR_1, game_map=EAST_LIMGRAVE_SW_NE)
-    IfInsideMap(OR_1, game_map=EAST_LIMGRAVE_NW_SE)
-    IfInsideMap(OR_1, game_map=EAST_LIMGRAVE_NW_NE)
-    IfInsideMap(OR_1, game_map=NORTHWEST_LIMGRAVE_COAST_SE_SW)
-    IfInsideMap(OR_1, game_map=NORTHWEST_LIMGRAVE_COAST_SE_SE)
-    IfInsideMap(OR_1, game_map=(60, 44, 40, 0))
-    IfInsideMap(OR_1, game_map=EAST_LIMGRAVE_SE_SW)
-    IfInsideMap(OR_1, game_map=EAST_LIMGRAVE_SE_NW)
-    IfInsideMap(OR_1, game_map=EAST_LIMGRAVE_NE_SW)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfFlagDisabled(AND_1, 19001057)
-    IfFlagDisabled(AND_1, 19001056)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    OR_1.Add(InsideMap(game_map=(60, 40, 30, 0)))
+    OR_1.Add(InsideMap(game_map=(60, 40, 31, 0)))
+    OR_1.Add(InsideMap(game_map=(60, 40, 32, 0)))
+    OR_1.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_SW_NW))
+    OR_1.Add(InsideMap(game_map=(60, 40, 34, 0)))
+    OR_1.Add(InsideMap(game_map=(60, 40, 35, 0)))
+    OR_1.Add(InsideMap(game_map=(60, 40, 36, 0)))
+    OR_1.Add(InsideMap(game_map=(60, 40, 37, 0)))
+    OR_1.Add(InsideMap(game_map=WEST_LIMGRAVE_NW_SW))
+    OR_1.Add(InsideMap(game_map=WEST_LIMGRAVE_NW_NW))
+    OR_1.Add(InsideMap(game_map=(60, 41, 30, 0)))
+    OR_1.Add(InsideMap(game_map=(60, 41, 31, 0)))
+    OR_1.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_SW_SE))
+    OR_1.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_SW_NE))
+    OR_1.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_NW_SE))
+    OR_1.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_NW_NE))
+    OR_1.Add(InsideMap(game_map=WEST_LIMGRAVE_SW_SE))
+    OR_1.Add(InsideMap(game_map=WEST_LIMGRAVE_SW_NE))
+    OR_1.Add(InsideMap(game_map=WEST_LIMGRAVE_NW_SE))
+    OR_1.Add(InsideMap(game_map=WEST_LIMGRAVE_NW_NE))
+    OR_1.Add(InsideMap(game_map=(60, 42, 30, 0)))
+    OR_1.Add(InsideMap(game_map=(60, 42, 31, 0)))
+    OR_1.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_SE_SW))
+    OR_1.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_SE_NW))
+    OR_1.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_NE_SW))
+    OR_1.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_NE_NW))
+    OR_1.Add(InsideMap(game_map=WEST_LIMGRAVE_SE_SW))
+    OR_1.Add(InsideMap(game_map=WEST_LIMGRAVE_SE_NW))
+    OR_1.Add(InsideMap(game_map=WEST_LIMGRAVE_NE_SW))
+    OR_1.Add(InsideMap(game_map=WEST_LIMGRAVE_NE_NW))
+    OR_1.Add(InsideMap(game_map=SOUTH_WEEPING_PENINSULA_NE_SE))
+    OR_1.Add(InsideMap(game_map=SOUTH_WEEPING_PENINSULA_NE_NE))
+    OR_1.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_SE_SE))
+    OR_1.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_SE_NE))
+    OR_1.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_NE_SE))
+    OR_1.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_NE_NE))
+    OR_1.Add(InsideMap(game_map=WEST_LIMGRAVE_SE_SE))
+    OR_1.Add(InsideMap(game_map=WEST_LIMGRAVE_SE_NE))
+    OR_1.Add(InsideMap(game_map=WEST_LIMGRAVE_NE_SE))
+    OR_1.Add(InsideMap(game_map=WEST_LIMGRAVE_NE_NE))
+    OR_1.Add(InsideMap(game_map=(60, 44, 30, 0)))
+    OR_1.Add(InsideMap(game_map=SOUTHEAST_WEEPING_PENINSULA_COAST_NW_NW))
+    OR_1.Add(InsideMap(game_map=EAST_WEEPING_PENINSULA_SW_SW))
+    OR_1.Add(InsideMap(game_map=EAST_WEEPING_PENINSULA_SW_NW))
+    OR_1.Add(InsideMap(game_map=EAST_WEEPING_PENINSULA_NW_SW))
+    OR_1.Add(InsideMap(game_map=EAST_WEEPING_PENINSULA_NW_NW))
+    OR_1.Add(InsideMap(game_map=EAST_LIMGRAVE_SW_SW))
+    OR_1.Add(InsideMap(game_map=EAST_LIMGRAVE_SW_NW))
+    OR_1.Add(InsideMap(game_map=EAST_LIMGRAVE_NW_SW))
+    OR_1.Add(InsideMap(game_map=EAST_LIMGRAVE_NW_NW))
+    OR_1.Add(InsideMap(game_map=(60, 45, 30, 0)))
+    OR_1.Add(InsideMap(game_map=(60, 45, 31, 0)))
+    OR_1.Add(InsideMap(game_map=EAST_WEEPING_PENINSULA_SW_SE))
+    OR_1.Add(InsideMap(game_map=EAST_WEEPING_PENINSULA_SW_NE))
+    OR_1.Add(InsideMap(game_map=EAST_WEEPING_PENINSULA_NW_SE))
+    OR_1.Add(InsideMap(game_map=EAST_WEEPING_PENINSULA_NW_NE))
+    OR_1.Add(InsideMap(game_map=EAST_LIMGRAVE_SW_SE))
+    OR_1.Add(InsideMap(game_map=EAST_LIMGRAVE_SW_NE))
+    OR_1.Add(InsideMap(game_map=EAST_LIMGRAVE_NW_SE))
+    OR_1.Add(InsideMap(game_map=EAST_LIMGRAVE_NW_NE))
+    OR_1.Add(InsideMap(game_map=NORTHWEST_LIMGRAVE_COAST_SE_SW))
+    OR_1.Add(InsideMap(game_map=NORTHWEST_LIMGRAVE_COAST_SE_SE))
+    OR_1.Add(InsideMap(game_map=(60, 44, 40, 0)))
+    OR_1.Add(InsideMap(game_map=EAST_LIMGRAVE_SE_SW))
+    OR_1.Add(InsideMap(game_map=EAST_LIMGRAVE_SE_NW))
+    OR_1.Add(InsideMap(game_map=EAST_LIMGRAVE_NE_SW))
+    AND_1.Add(OR_1)
+    AND_1.Add(FlagDisabled(19001057))
+    AND_1.Add(FlagDisabled(19001056))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(19001050)
-    IfInsideMap(OR_2, game_map=(60, 40, 30, 0))
-    IfInsideMap(OR_2, game_map=(60, 40, 31, 0))
-    IfInsideMap(OR_2, game_map=(60, 40, 32, 0))
-    IfInsideMap(OR_2, game_map=WEST_WEEPING_PENINSULA_SW_NW)
-    IfInsideMap(OR_2, game_map=(60, 40, 34, 0))
-    IfInsideMap(OR_2, game_map=(60, 40, 35, 0))
-    IfInsideMap(OR_2, game_map=(60, 40, 36, 0))
-    IfInsideMap(OR_2, game_map=(60, 40, 37, 0))
-    IfInsideMap(OR_2, game_map=WEST_LIMGRAVE_NW_SW)
-    IfInsideMap(OR_2, game_map=WEST_LIMGRAVE_NW_NW)
-    IfInsideMap(OR_2, game_map=(60, 41, 30, 0))
-    IfInsideMap(OR_2, game_map=(60, 41, 31, 0))
-    IfInsideMap(OR_2, game_map=WEST_WEEPING_PENINSULA_SW_SE)
-    IfInsideMap(OR_2, game_map=WEST_WEEPING_PENINSULA_SW_NE)
-    IfInsideMap(OR_2, game_map=WEST_WEEPING_PENINSULA_NW_SE)
-    IfInsideMap(OR_2, game_map=WEST_WEEPING_PENINSULA_NW_NE)
-    IfInsideMap(OR_2, game_map=WEST_LIMGRAVE_SW_SE)
-    IfInsideMap(OR_2, game_map=WEST_LIMGRAVE_SW_NE)
-    IfInsideMap(OR_2, game_map=WEST_LIMGRAVE_NW_SE)
-    IfInsideMap(OR_2, game_map=WEST_LIMGRAVE_NW_NE)
-    IfInsideMap(OR_2, game_map=(60, 42, 30, 0))
-    IfInsideMap(OR_2, game_map=(60, 42, 31, 0))
-    IfInsideMap(OR_2, game_map=WEST_WEEPING_PENINSULA_SE_SW)
-    IfInsideMap(OR_2, game_map=WEST_WEEPING_PENINSULA_SE_NW)
-    IfInsideMap(OR_2, game_map=WEST_WEEPING_PENINSULA_NE_SW)
-    IfInsideMap(OR_2, game_map=WEST_WEEPING_PENINSULA_NE_NW)
-    IfInsideMap(OR_2, game_map=WEST_LIMGRAVE_SE_SW)
-    IfInsideMap(OR_2, game_map=WEST_LIMGRAVE_SE_NW)
-    IfInsideMap(OR_2, game_map=WEST_LIMGRAVE_NE_SW)
-    IfInsideMap(OR_2, game_map=WEST_LIMGRAVE_NE_NW)
-    IfInsideMap(OR_2, game_map=SOUTH_WEEPING_PENINSULA_NE_SE)
-    IfInsideMap(OR_2, game_map=SOUTH_WEEPING_PENINSULA_NE_NE)
-    IfInsideMap(OR_2, game_map=WEST_WEEPING_PENINSULA_SE_SE)
-    IfInsideMap(OR_2, game_map=WEST_WEEPING_PENINSULA_SE_NE)
-    IfInsideMap(OR_2, game_map=WEST_WEEPING_PENINSULA_NE_SE)
-    IfInsideMap(OR_2, game_map=WEST_WEEPING_PENINSULA_NE_NE)
-    IfInsideMap(OR_2, game_map=WEST_LIMGRAVE_SE_SE)
-    IfInsideMap(OR_2, game_map=WEST_LIMGRAVE_SE_NE)
-    IfInsideMap(OR_2, game_map=WEST_LIMGRAVE_NE_SE)
-    IfInsideMap(OR_2, game_map=WEST_LIMGRAVE_NE_NE)
-    IfInsideMap(OR_2, game_map=(60, 44, 30, 0))
-    IfInsideMap(OR_2, game_map=SOUTHEAST_WEEPING_PENINSULA_COAST_NW_NW)
-    IfInsideMap(OR_2, game_map=EAST_WEEPING_PENINSULA_SW_SW)
-    IfInsideMap(OR_2, game_map=EAST_WEEPING_PENINSULA_SW_NW)
-    IfInsideMap(OR_2, game_map=EAST_WEEPING_PENINSULA_NW_SW)
-    IfInsideMap(OR_2, game_map=EAST_WEEPING_PENINSULA_NW_NW)
-    IfInsideMap(OR_2, game_map=EAST_LIMGRAVE_SW_SW)
-    IfInsideMap(OR_2, game_map=EAST_LIMGRAVE_SW_NW)
-    IfInsideMap(OR_2, game_map=EAST_LIMGRAVE_NW_SW)
-    IfInsideMap(OR_2, game_map=EAST_LIMGRAVE_NW_NW)
-    IfInsideMap(OR_2, game_map=(60, 45, 30, 0))
-    IfInsideMap(OR_2, game_map=(60, 45, 31, 0))
-    IfInsideMap(OR_2, game_map=EAST_WEEPING_PENINSULA_SW_SE)
-    IfInsideMap(OR_2, game_map=EAST_WEEPING_PENINSULA_SW_NE)
-    IfInsideMap(OR_2, game_map=EAST_WEEPING_PENINSULA_NW_SE)
-    IfInsideMap(OR_2, game_map=EAST_WEEPING_PENINSULA_NW_NE)
-    IfInsideMap(OR_2, game_map=EAST_LIMGRAVE_SW_SE)
-    IfInsideMap(OR_2, game_map=EAST_LIMGRAVE_SW_NE)
-    IfInsideMap(OR_2, game_map=EAST_LIMGRAVE_NW_SE)
-    IfInsideMap(OR_2, game_map=EAST_LIMGRAVE_NW_NE)
-    IfInsideMap(OR_2, game_map=NORTHWEST_LIMGRAVE_COAST_SE_SW)
-    IfInsideMap(OR_2, game_map=NORTHWEST_LIMGRAVE_COAST_SE_SE)
-    IfInsideMap(OR_2, game_map=(60, 44, 40, 0))
-    IfInsideMap(OR_2, game_map=EAST_LIMGRAVE_SE_SW)
-    IfInsideMap(OR_2, game_map=EAST_LIMGRAVE_SE_NW)
-    IfInsideMap(OR_2, game_map=EAST_LIMGRAVE_NE_SW)
-    IfConditionTrue(AND_2, input_condition=OR_2)
-    IfFlagDisabled(AND_2, 19001057)
-    IfFlagDisabled(AND_2, 19001056)
-    IfConditionFalse(MAIN, input_condition=AND_2)
+    OR_2.Add(InsideMap(game_map=(60, 40, 30, 0)))
+    OR_2.Add(InsideMap(game_map=(60, 40, 31, 0)))
+    OR_2.Add(InsideMap(game_map=(60, 40, 32, 0)))
+    OR_2.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_SW_NW))
+    OR_2.Add(InsideMap(game_map=(60, 40, 34, 0)))
+    OR_2.Add(InsideMap(game_map=(60, 40, 35, 0)))
+    OR_2.Add(InsideMap(game_map=(60, 40, 36, 0)))
+    OR_2.Add(InsideMap(game_map=(60, 40, 37, 0)))
+    OR_2.Add(InsideMap(game_map=WEST_LIMGRAVE_NW_SW))
+    OR_2.Add(InsideMap(game_map=WEST_LIMGRAVE_NW_NW))
+    OR_2.Add(InsideMap(game_map=(60, 41, 30, 0)))
+    OR_2.Add(InsideMap(game_map=(60, 41, 31, 0)))
+    OR_2.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_SW_SE))
+    OR_2.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_SW_NE))
+    OR_2.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_NW_SE))
+    OR_2.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_NW_NE))
+    OR_2.Add(InsideMap(game_map=WEST_LIMGRAVE_SW_SE))
+    OR_2.Add(InsideMap(game_map=WEST_LIMGRAVE_SW_NE))
+    OR_2.Add(InsideMap(game_map=WEST_LIMGRAVE_NW_SE))
+    OR_2.Add(InsideMap(game_map=WEST_LIMGRAVE_NW_NE))
+    OR_2.Add(InsideMap(game_map=(60, 42, 30, 0)))
+    OR_2.Add(InsideMap(game_map=(60, 42, 31, 0)))
+    OR_2.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_SE_SW))
+    OR_2.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_SE_NW))
+    OR_2.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_NE_SW))
+    OR_2.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_NE_NW))
+    OR_2.Add(InsideMap(game_map=WEST_LIMGRAVE_SE_SW))
+    OR_2.Add(InsideMap(game_map=WEST_LIMGRAVE_SE_NW))
+    OR_2.Add(InsideMap(game_map=WEST_LIMGRAVE_NE_SW))
+    OR_2.Add(InsideMap(game_map=WEST_LIMGRAVE_NE_NW))
+    OR_2.Add(InsideMap(game_map=SOUTH_WEEPING_PENINSULA_NE_SE))
+    OR_2.Add(InsideMap(game_map=SOUTH_WEEPING_PENINSULA_NE_NE))
+    OR_2.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_SE_SE))
+    OR_2.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_SE_NE))
+    OR_2.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_NE_SE))
+    OR_2.Add(InsideMap(game_map=WEST_WEEPING_PENINSULA_NE_NE))
+    OR_2.Add(InsideMap(game_map=WEST_LIMGRAVE_SE_SE))
+    OR_2.Add(InsideMap(game_map=WEST_LIMGRAVE_SE_NE))
+    OR_2.Add(InsideMap(game_map=WEST_LIMGRAVE_NE_SE))
+    OR_2.Add(InsideMap(game_map=WEST_LIMGRAVE_NE_NE))
+    OR_2.Add(InsideMap(game_map=(60, 44, 30, 0)))
+    OR_2.Add(InsideMap(game_map=SOUTHEAST_WEEPING_PENINSULA_COAST_NW_NW))
+    OR_2.Add(InsideMap(game_map=EAST_WEEPING_PENINSULA_SW_SW))
+    OR_2.Add(InsideMap(game_map=EAST_WEEPING_PENINSULA_SW_NW))
+    OR_2.Add(InsideMap(game_map=EAST_WEEPING_PENINSULA_NW_SW))
+    OR_2.Add(InsideMap(game_map=EAST_WEEPING_PENINSULA_NW_NW))
+    OR_2.Add(InsideMap(game_map=EAST_LIMGRAVE_SW_SW))
+    OR_2.Add(InsideMap(game_map=EAST_LIMGRAVE_SW_NW))
+    OR_2.Add(InsideMap(game_map=EAST_LIMGRAVE_NW_SW))
+    OR_2.Add(InsideMap(game_map=EAST_LIMGRAVE_NW_NW))
+    OR_2.Add(InsideMap(game_map=(60, 45, 30, 0)))
+    OR_2.Add(InsideMap(game_map=(60, 45, 31, 0)))
+    OR_2.Add(InsideMap(game_map=EAST_WEEPING_PENINSULA_SW_SE))
+    OR_2.Add(InsideMap(game_map=EAST_WEEPING_PENINSULA_SW_NE))
+    OR_2.Add(InsideMap(game_map=EAST_WEEPING_PENINSULA_NW_SE))
+    OR_2.Add(InsideMap(game_map=EAST_WEEPING_PENINSULA_NW_NE))
+    OR_2.Add(InsideMap(game_map=EAST_LIMGRAVE_SW_SE))
+    OR_2.Add(InsideMap(game_map=EAST_LIMGRAVE_SW_NE))
+    OR_2.Add(InsideMap(game_map=EAST_LIMGRAVE_NW_SE))
+    OR_2.Add(InsideMap(game_map=EAST_LIMGRAVE_NW_NE))
+    OR_2.Add(InsideMap(game_map=NORTHWEST_LIMGRAVE_COAST_SE_SW))
+    OR_2.Add(InsideMap(game_map=NORTHWEST_LIMGRAVE_COAST_SE_SE))
+    OR_2.Add(InsideMap(game_map=(60, 44, 40, 0)))
+    OR_2.Add(InsideMap(game_map=EAST_LIMGRAVE_SE_SW))
+    OR_2.Add(InsideMap(game_map=EAST_LIMGRAVE_SE_NW))
+    OR_2.Add(InsideMap(game_map=EAST_LIMGRAVE_NE_SW))
+    AND_2.Add(OR_2)
+    AND_2.Add(FlagDisabled(19001057))
+    AND_2.Add(FlagDisabled(19001056))
+    
+    MAIN.Await(not AND_2)
+    
     Restart()
 
 
@@ -8923,183 +9703,187 @@ def Event_19001040():
 def Event_19001041():
     """Event 19001041"""
     DisableFlag(19001051)
-    IfInsideMap(OR_1, game_map=(60, 32, 40, 0))
-    IfInsideMap(OR_1, game_map=(60, 32, 41, 0))
-    IfInsideMap(OR_1, game_map=(60, 32, 42, 0))
-    IfInsideMap(OR_1, game_map=(60, 32, 43, 0))
-    IfInsideMap(OR_1, game_map=(60, 32, 44, 0))
-    IfInsideMap(OR_1, game_map=(60, 32, 45, 0))
-    IfInsideMap(OR_1, game_map=(60, 32, 46, 0))
-    IfInsideMap(OR_1, game_map=(60, 32, 47, 0))
-    IfInsideMap(OR_1, game_map=(60, 32, 48, 0))
-    IfInsideMap(OR_1, game_map=(60, 32, 49, 0))
-    IfInsideMap(OR_1, game_map=SOUTHWEST_LIURNIA_SW_SE)
-    IfInsideMap(OR_1, game_map=SOUTHWEST_LIURNIA_SW_NE)
-    IfInsideMap(OR_1, game_map=SOUTHWEST_LIURNIA_NW_SE)
-    IfInsideMap(OR_1, game_map=SOUTHWEST_LIURNIA_NW_NE)
-    IfInsideMap(OR_1, game_map=WEST_LIURNIA_SW_SE)
-    IfInsideMap(OR_1, game_map=WEST_LIURNIA_SW_NE)
-    IfInsideMap(OR_1, game_map=WEST_LIURNIA_NW_SE)
-    IfInsideMap(OR_1, game_map=WEST_LIURNIA_NW_NE)
-    IfInsideMap(OR_1, game_map=(60, 33, 48, 0))
-    IfInsideMap(OR_1, game_map=(60, 33, 49, 0))
-    IfInsideMap(OR_1, game_map=(60, 34, 40, 0))
-    IfInsideMap(OR_1, game_map=SOUTHWEST_LIURNIA_SE_NW)
-    IfInsideMap(OR_1, game_map=SOUTHWEST_LIURNIA_NE_SW)
-    IfInsideMap(OR_1, game_map=SOUTHWEST_LIURNIA_NE_NW)
-    IfInsideMap(OR_1, game_map=WEST_LIURNIA_SE_SW)
-    IfInsideMap(OR_1, game_map=WEST_LIURNIA_SE_NW)
-    IfInsideMap(OR_1, game_map=WEST_LIURNIA_NE_SW)
-    IfInsideMap(OR_1, game_map=WEST_LIURNIA_NE_NW)
-    IfInsideMap(OR_1, game_map=NORTHWEST_LIURNIA_SE_SW)
-    IfInsideMap(OR_1, game_map=NORTHWEST_LIURNIA_SE_NW)
-    IfInsideMap(OR_1, game_map=(60, 35, 40, 0))
-    IfInsideMap(OR_1, game_map=SOUTHWEST_LIURNIA_SE_NE)
-    IfInsideMap(OR_1, game_map=SOUTHWEST_LIURNIA_NE_SE)
-    IfInsideMap(OR_1, game_map=SOUTHWEST_LIURNIA_NE_NE)
-    IfInsideMap(OR_1, game_map=WEST_LIURNIA_SE_SE)
-    IfInsideMap(OR_1, game_map=WEST_LIURNIA_SE_NE)
-    IfInsideMap(OR_1, game_map=WEST_LIURNIA_NE_SE)
-    IfInsideMap(OR_1, game_map=WEST_LIURNIA_NE_NE)
-    IfInsideMap(OR_1, game_map=NORTHWEST_LIURNIA_SE_SE)
-    IfInsideMap(OR_1, game_map=NORTHWEST_LIURNIA_SE_NE)
-    IfInsideMap(OR_1, game_map=(60, 36, 40, 0))
-    IfInsideMap(OR_1, game_map=SOUTHEAST_LIURNIA_SW_NW)
-    IfInsideMap(OR_1, game_map=SOUTHEAST_LIURNIA_NW_SW)
-    IfInsideMap(OR_1, game_map=SOUTHEAST_LIURNIA_NW_NW)
-    IfInsideMap(OR_1, game_map=EAST_LIURNIA_SW_SW)
-    IfInsideMap(OR_1, game_map=EAST_LIURNIA_SW_NW)
-    IfInsideMap(OR_1, game_map=EAST_LIURNIA_NW_SW)
-    IfInsideMap(OR_1, game_map=EAST_LIURNIA_NW_NW)
-    IfInsideMap(OR_1, game_map=LIURNIA_TO_ALTUS_PLATEAU_SW_SW)
-    IfInsideMap(OR_1, game_map=LIURNIA_TO_ALTUS_PLATEAU_SW_NW)
-    IfInsideMap(OR_1, game_map=(60, 37, 40, 0))
-    IfInsideMap(OR_1, game_map=SOUTHEAST_LIURNIA_SW_NE)
-    IfInsideMap(OR_1, game_map=SOUTHEAST_LIURNIA_NW_SE)
-    IfInsideMap(OR_1, game_map=SOUTHEAST_LIURNIA_NW_NE)
-    IfInsideMap(OR_1, game_map=EAST_LIURNIA_SW_SE)
-    IfInsideMap(OR_1, game_map=EAST_LIURNIA_SW_NE)
-    IfInsideMap(OR_1, game_map=EAST_LIURNIA_NW_SE)
-    IfInsideMap(OR_1, game_map=EAST_LIURNIA_NW_NE)
-    IfInsideMap(OR_1, game_map=LIURNIA_TO_ALTUS_PLATEAU_SW_SE)
-    IfInsideMap(OR_1, game_map=LIURNIA_TO_ALTUS_PLATEAU_SW_NE)
-    IfInsideMap(OR_1, game_map=SOUTHEAST_LIURNIA_SE_SW)
-    IfInsideMap(OR_1, game_map=SOUTHEAST_LIURNIA_SE_NW)
-    IfInsideMap(OR_1, game_map=SOUTHEAST_LIURNIA_NE_SW)
-    IfInsideMap(OR_1, game_map=SOUTHEAST_LIURNIA_NE_NW)
-    IfInsideMap(OR_1, game_map=EAST_LIURNIA_SE_SW)
-    IfInsideMap(OR_1, game_map=EAST_LIURNIA_SE_NW)
-    IfInsideMap(OR_1, game_map=EAST_LIURNIA_NE_SW)
-    IfInsideMap(OR_1, game_map=EAST_LIURNIA_NE_NW)
-    IfInsideMap(OR_1, game_map=LIURNIA_TO_ALTUS_PLATEAU_SE_SW)
-    IfInsideMap(OR_1, game_map=LIURNIA_TO_ALTUS_PLATEAU_SE_NW)
-    IfInsideMap(OR_1, game_map=NORTHWEST_LIURNIA_NE_SW)
-    IfInsideMap(OR_1, game_map=NORTHWEST_LIURNIA_NE_SE)
-    IfInsideMap(OR_1, game_map=LIURNIA_TO_ALTUS_PLATEAU_NW_SW)
-    IfInsideMap(OR_1, game_map=NORTHWEST_LIURNIA_NE_NW)
-    IfInsideMap(OR_1, game_map=NORTHWEST_LIURNIA_NE_NE)
-    IfInsideMap(OR_1, game_map=SOUTHEAST_LIURNIA_SE_NE)
-    IfInsideMap(OR_1, game_map=SOUTHEAST_LIURNIA_NE_SE)
-    IfInsideMap(OR_1, game_map=SOUTHEAST_LIURNIA_NE_NE)
-    IfInsideMap(OR_1, game_map=EAST_LIURNIA_SE_SE)
-    IfInsideMap(OR_1, game_map=EAST_LIURNIA_SE_NE)
-    IfInsideMap(OR_1, game_map=EAST_LIURNIA_NE_SE)
-    IfInsideMap(OR_1, game_map=(60, 39, 47, 0))
-    IfInsideMap(OR_1, game_map=LIURNIA_TO_ALTUS_PLATEAU_SE_SE)
-    IfInsideMap(OR_1, game_map=LIURNIA_TO_ALTUS_PLATEAU_SE_NE)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfFlagDisabled(AND_1, 19001057)
-    IfFlagDisabled(AND_1, 19001056)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    OR_1.Add(InsideMap(game_map=(60, 32, 40, 0)))
+    OR_1.Add(InsideMap(game_map=(60, 32, 41, 0)))
+    OR_1.Add(InsideMap(game_map=(60, 32, 42, 0)))
+    OR_1.Add(InsideMap(game_map=(60, 32, 43, 0)))
+    OR_1.Add(InsideMap(game_map=(60, 32, 44, 0)))
+    OR_1.Add(InsideMap(game_map=(60, 32, 45, 0)))
+    OR_1.Add(InsideMap(game_map=(60, 32, 46, 0)))
+    OR_1.Add(InsideMap(game_map=(60, 32, 47, 0)))
+    OR_1.Add(InsideMap(game_map=(60, 32, 48, 0)))
+    OR_1.Add(InsideMap(game_map=(60, 32, 49, 0)))
+    OR_1.Add(InsideMap(game_map=SOUTHWEST_LIURNIA_SW_SE))
+    OR_1.Add(InsideMap(game_map=SOUTHWEST_LIURNIA_SW_NE))
+    OR_1.Add(InsideMap(game_map=SOUTHWEST_LIURNIA_NW_SE))
+    OR_1.Add(InsideMap(game_map=SOUTHWEST_LIURNIA_NW_NE))
+    OR_1.Add(InsideMap(game_map=WEST_LIURNIA_SW_SE))
+    OR_1.Add(InsideMap(game_map=WEST_LIURNIA_SW_NE))
+    OR_1.Add(InsideMap(game_map=WEST_LIURNIA_NW_SE))
+    OR_1.Add(InsideMap(game_map=WEST_LIURNIA_NW_NE))
+    OR_1.Add(InsideMap(game_map=(60, 33, 48, 0)))
+    OR_1.Add(InsideMap(game_map=(60, 33, 49, 0)))
+    OR_1.Add(InsideMap(game_map=(60, 34, 40, 0)))
+    OR_1.Add(InsideMap(game_map=SOUTHWEST_LIURNIA_SE_NW))
+    OR_1.Add(InsideMap(game_map=SOUTHWEST_LIURNIA_NE_SW))
+    OR_1.Add(InsideMap(game_map=SOUTHWEST_LIURNIA_NE_NW))
+    OR_1.Add(InsideMap(game_map=WEST_LIURNIA_SE_SW))
+    OR_1.Add(InsideMap(game_map=WEST_LIURNIA_SE_NW))
+    OR_1.Add(InsideMap(game_map=WEST_LIURNIA_NE_SW))
+    OR_1.Add(InsideMap(game_map=WEST_LIURNIA_NE_NW))
+    OR_1.Add(InsideMap(game_map=NORTHWEST_LIURNIA_SE_SW))
+    OR_1.Add(InsideMap(game_map=NORTHWEST_LIURNIA_SE_NW))
+    OR_1.Add(InsideMap(game_map=(60, 35, 40, 0)))
+    OR_1.Add(InsideMap(game_map=SOUTHWEST_LIURNIA_SE_NE))
+    OR_1.Add(InsideMap(game_map=SOUTHWEST_LIURNIA_NE_SE))
+    OR_1.Add(InsideMap(game_map=SOUTHWEST_LIURNIA_NE_NE))
+    OR_1.Add(InsideMap(game_map=WEST_LIURNIA_SE_SE))
+    OR_1.Add(InsideMap(game_map=WEST_LIURNIA_SE_NE))
+    OR_1.Add(InsideMap(game_map=WEST_LIURNIA_NE_SE))
+    OR_1.Add(InsideMap(game_map=WEST_LIURNIA_NE_NE))
+    OR_1.Add(InsideMap(game_map=NORTHWEST_LIURNIA_SE_SE))
+    OR_1.Add(InsideMap(game_map=NORTHWEST_LIURNIA_SE_NE))
+    OR_1.Add(InsideMap(game_map=(60, 36, 40, 0)))
+    OR_1.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_SW_NW))
+    OR_1.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_NW_SW))
+    OR_1.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_NW_NW))
+    OR_1.Add(InsideMap(game_map=EAST_LIURNIA_SW_SW))
+    OR_1.Add(InsideMap(game_map=EAST_LIURNIA_SW_NW))
+    OR_1.Add(InsideMap(game_map=EAST_LIURNIA_NW_SW))
+    OR_1.Add(InsideMap(game_map=EAST_LIURNIA_NW_NW))
+    OR_1.Add(InsideMap(game_map=LIURNIA_TO_ALTUS_PLATEAU_SW_SW))
+    OR_1.Add(InsideMap(game_map=LIURNIA_TO_ALTUS_PLATEAU_SW_NW))
+    OR_1.Add(InsideMap(game_map=(60, 37, 40, 0)))
+    OR_1.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_SW_NE))
+    OR_1.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_NW_SE))
+    OR_1.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_NW_NE))
+    OR_1.Add(InsideMap(game_map=EAST_LIURNIA_SW_SE))
+    OR_1.Add(InsideMap(game_map=EAST_LIURNIA_SW_NE))
+    OR_1.Add(InsideMap(game_map=EAST_LIURNIA_NW_SE))
+    OR_1.Add(InsideMap(game_map=EAST_LIURNIA_NW_NE))
+    OR_1.Add(InsideMap(game_map=LIURNIA_TO_ALTUS_PLATEAU_SW_SE))
+    OR_1.Add(InsideMap(game_map=LIURNIA_TO_ALTUS_PLATEAU_SW_NE))
+    OR_1.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_SE_SW))
+    OR_1.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_SE_NW))
+    OR_1.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_NE_SW))
+    OR_1.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_NE_NW))
+    OR_1.Add(InsideMap(game_map=EAST_LIURNIA_SE_SW))
+    OR_1.Add(InsideMap(game_map=EAST_LIURNIA_SE_NW))
+    OR_1.Add(InsideMap(game_map=EAST_LIURNIA_NE_SW))
+    OR_1.Add(InsideMap(game_map=EAST_LIURNIA_NE_NW))
+    OR_1.Add(InsideMap(game_map=LIURNIA_TO_ALTUS_PLATEAU_SE_SW))
+    OR_1.Add(InsideMap(game_map=LIURNIA_TO_ALTUS_PLATEAU_SE_NW))
+    OR_1.Add(InsideMap(game_map=NORTHWEST_LIURNIA_NE_SW))
+    OR_1.Add(InsideMap(game_map=NORTHWEST_LIURNIA_NE_SE))
+    OR_1.Add(InsideMap(game_map=LIURNIA_TO_ALTUS_PLATEAU_NW_SW))
+    OR_1.Add(InsideMap(game_map=NORTHWEST_LIURNIA_NE_NW))
+    OR_1.Add(InsideMap(game_map=NORTHWEST_LIURNIA_NE_NE))
+    OR_1.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_SE_NE))
+    OR_1.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_NE_SE))
+    OR_1.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_NE_NE))
+    OR_1.Add(InsideMap(game_map=EAST_LIURNIA_SE_SE))
+    OR_1.Add(InsideMap(game_map=EAST_LIURNIA_SE_NE))
+    OR_1.Add(InsideMap(game_map=EAST_LIURNIA_NE_SE))
+    OR_1.Add(InsideMap(game_map=(60, 39, 47, 0)))
+    OR_1.Add(InsideMap(game_map=LIURNIA_TO_ALTUS_PLATEAU_SE_SE))
+    OR_1.Add(InsideMap(game_map=LIURNIA_TO_ALTUS_PLATEAU_SE_NE))
+    AND_1.Add(OR_1)
+    AND_1.Add(FlagDisabled(19001057))
+    AND_1.Add(FlagDisabled(19001056))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(19001051)
-    IfInsideMap(OR_2, game_map=(60, 32, 40, 0))
-    IfInsideMap(OR_2, game_map=(60, 32, 41, 0))
-    IfInsideMap(OR_2, game_map=(60, 32, 42, 0))
-    IfInsideMap(OR_2, game_map=(60, 32, 43, 0))
-    IfInsideMap(OR_2, game_map=(60, 32, 44, 0))
-    IfInsideMap(OR_2, game_map=(60, 32, 45, 0))
-    IfInsideMap(OR_2, game_map=(60, 32, 46, 0))
-    IfInsideMap(OR_2, game_map=(60, 32, 47, 0))
-    IfInsideMap(OR_2, game_map=(60, 32, 48, 0))
-    IfInsideMap(OR_2, game_map=(60, 32, 49, 0))
-    IfInsideMap(OR_2, game_map=SOUTHWEST_LIURNIA_SW_SE)
-    IfInsideMap(OR_2, game_map=SOUTHWEST_LIURNIA_SW_NE)
-    IfInsideMap(OR_2, game_map=SOUTHWEST_LIURNIA_NW_SE)
-    IfInsideMap(OR_2, game_map=SOUTHWEST_LIURNIA_NW_NE)
-    IfInsideMap(OR_2, game_map=WEST_LIURNIA_SW_SE)
-    IfInsideMap(OR_2, game_map=WEST_LIURNIA_SW_NE)
-    IfInsideMap(OR_2, game_map=WEST_LIURNIA_NW_SE)
-    IfInsideMap(OR_2, game_map=WEST_LIURNIA_NW_NE)
-    IfInsideMap(OR_2, game_map=(60, 33, 48, 0))
-    IfInsideMap(OR_2, game_map=(60, 33, 49, 0))
-    IfInsideMap(OR_2, game_map=(60, 34, 40, 0))
-    IfInsideMap(OR_2, game_map=SOUTHWEST_LIURNIA_SE_NW)
-    IfInsideMap(OR_2, game_map=SOUTHWEST_LIURNIA_NE_SW)
-    IfInsideMap(OR_2, game_map=SOUTHWEST_LIURNIA_NE_NW)
-    IfInsideMap(OR_2, game_map=WEST_LIURNIA_SE_SW)
-    IfInsideMap(OR_2, game_map=WEST_LIURNIA_SE_NW)
-    IfInsideMap(OR_2, game_map=WEST_LIURNIA_NE_SW)
-    IfInsideMap(OR_2, game_map=WEST_LIURNIA_NE_NW)
-    IfInsideMap(OR_2, game_map=NORTHWEST_LIURNIA_SE_SW)
-    IfInsideMap(OR_2, game_map=NORTHWEST_LIURNIA_SE_NW)
-    IfInsideMap(OR_2, game_map=(60, 35, 40, 0))
-    IfInsideMap(OR_2, game_map=SOUTHWEST_LIURNIA_SE_NE)
-    IfInsideMap(OR_2, game_map=SOUTHWEST_LIURNIA_NE_SE)
-    IfInsideMap(OR_2, game_map=SOUTHWEST_LIURNIA_NE_NE)
-    IfInsideMap(OR_2, game_map=WEST_LIURNIA_SE_SE)
-    IfInsideMap(OR_2, game_map=WEST_LIURNIA_SE_NE)
-    IfInsideMap(OR_2, game_map=WEST_LIURNIA_NE_SE)
-    IfInsideMap(OR_2, game_map=WEST_LIURNIA_NE_NE)
-    IfInsideMap(OR_2, game_map=NORTHWEST_LIURNIA_SE_SE)
-    IfInsideMap(OR_2, game_map=NORTHWEST_LIURNIA_SE_NE)
-    IfInsideMap(OR_2, game_map=(60, 36, 40, 0))
-    IfInsideMap(OR_2, game_map=SOUTHEAST_LIURNIA_SW_NW)
-    IfInsideMap(OR_2, game_map=SOUTHEAST_LIURNIA_NW_SW)
-    IfInsideMap(OR_2, game_map=SOUTHEAST_LIURNIA_NW_NW)
-    IfInsideMap(OR_2, game_map=EAST_LIURNIA_SW_SW)
-    IfInsideMap(OR_2, game_map=EAST_LIURNIA_SW_NW)
-    IfInsideMap(OR_2, game_map=EAST_LIURNIA_NW_SW)
-    IfInsideMap(OR_2, game_map=EAST_LIURNIA_NW_NW)
-    IfInsideMap(OR_2, game_map=LIURNIA_TO_ALTUS_PLATEAU_SW_SW)
-    IfInsideMap(OR_2, game_map=LIURNIA_TO_ALTUS_PLATEAU_SW_NW)
-    IfInsideMap(OR_2, game_map=(60, 37, 40, 0))
-    IfInsideMap(OR_2, game_map=SOUTHEAST_LIURNIA_SW_NE)
-    IfInsideMap(OR_2, game_map=SOUTHEAST_LIURNIA_NW_SE)
-    IfInsideMap(OR_2, game_map=SOUTHEAST_LIURNIA_NW_NE)
-    IfInsideMap(OR_2, game_map=EAST_LIURNIA_SW_SE)
-    IfInsideMap(OR_2, game_map=EAST_LIURNIA_SW_NE)
-    IfInsideMap(OR_2, game_map=EAST_LIURNIA_NW_SE)
-    IfInsideMap(OR_2, game_map=EAST_LIURNIA_NW_NE)
-    IfInsideMap(OR_2, game_map=LIURNIA_TO_ALTUS_PLATEAU_SW_SE)
-    IfInsideMap(OR_2, game_map=LIURNIA_TO_ALTUS_PLATEAU_SW_NE)
-    IfInsideMap(OR_2, game_map=SOUTHEAST_LIURNIA_SE_SW)
-    IfInsideMap(OR_2, game_map=SOUTHEAST_LIURNIA_SE_NW)
-    IfInsideMap(OR_2, game_map=SOUTHEAST_LIURNIA_NE_SW)
-    IfInsideMap(OR_2, game_map=SOUTHEAST_LIURNIA_NE_NW)
-    IfInsideMap(OR_2, game_map=EAST_LIURNIA_SE_SW)
-    IfInsideMap(OR_2, game_map=EAST_LIURNIA_SE_NW)
-    IfInsideMap(OR_2, game_map=EAST_LIURNIA_NE_SW)
-    IfInsideMap(OR_2, game_map=EAST_LIURNIA_NE_NW)
-    IfInsideMap(OR_2, game_map=LIURNIA_TO_ALTUS_PLATEAU_SE_SW)
-    IfInsideMap(OR_2, game_map=LIURNIA_TO_ALTUS_PLATEAU_SE_NW)
-    IfInsideMap(OR_2, game_map=NORTHWEST_LIURNIA_NE_SW)
-    IfInsideMap(OR_2, game_map=NORTHWEST_LIURNIA_NE_SE)
-    IfInsideMap(OR_2, game_map=LIURNIA_TO_ALTUS_PLATEAU_NW_SW)
-    IfInsideMap(OR_2, game_map=NORTHWEST_LIURNIA_NE_NW)
-    IfInsideMap(OR_2, game_map=NORTHWEST_LIURNIA_NE_NE)
-    IfInsideMap(OR_2, game_map=SOUTHEAST_LIURNIA_SE_NE)
-    IfInsideMap(OR_2, game_map=SOUTHEAST_LIURNIA_NE_SE)
-    IfInsideMap(OR_2, game_map=SOUTHEAST_LIURNIA_NE_NE)
-    IfInsideMap(OR_2, game_map=EAST_LIURNIA_SE_SE)
-    IfInsideMap(OR_2, game_map=EAST_LIURNIA_SE_NE)
-    IfInsideMap(OR_2, game_map=EAST_LIURNIA_NE_SE)
-    IfInsideMap(OR_2, game_map=(60, 39, 47, 0))
-    IfInsideMap(OR_2, game_map=LIURNIA_TO_ALTUS_PLATEAU_SE_SE)
-    IfInsideMap(OR_2, game_map=LIURNIA_TO_ALTUS_PLATEAU_SE_NE)
-    IfConditionTrue(AND_2, input_condition=OR_2)
-    IfFlagDisabled(AND_2, 19001057)
-    IfFlagDisabled(AND_2, 19001056)
-    IfConditionFalse(MAIN, input_condition=AND_2)
+    OR_2.Add(InsideMap(game_map=(60, 32, 40, 0)))
+    OR_2.Add(InsideMap(game_map=(60, 32, 41, 0)))
+    OR_2.Add(InsideMap(game_map=(60, 32, 42, 0)))
+    OR_2.Add(InsideMap(game_map=(60, 32, 43, 0)))
+    OR_2.Add(InsideMap(game_map=(60, 32, 44, 0)))
+    OR_2.Add(InsideMap(game_map=(60, 32, 45, 0)))
+    OR_2.Add(InsideMap(game_map=(60, 32, 46, 0)))
+    OR_2.Add(InsideMap(game_map=(60, 32, 47, 0)))
+    OR_2.Add(InsideMap(game_map=(60, 32, 48, 0)))
+    OR_2.Add(InsideMap(game_map=(60, 32, 49, 0)))
+    OR_2.Add(InsideMap(game_map=SOUTHWEST_LIURNIA_SW_SE))
+    OR_2.Add(InsideMap(game_map=SOUTHWEST_LIURNIA_SW_NE))
+    OR_2.Add(InsideMap(game_map=SOUTHWEST_LIURNIA_NW_SE))
+    OR_2.Add(InsideMap(game_map=SOUTHWEST_LIURNIA_NW_NE))
+    OR_2.Add(InsideMap(game_map=WEST_LIURNIA_SW_SE))
+    OR_2.Add(InsideMap(game_map=WEST_LIURNIA_SW_NE))
+    OR_2.Add(InsideMap(game_map=WEST_LIURNIA_NW_SE))
+    OR_2.Add(InsideMap(game_map=WEST_LIURNIA_NW_NE))
+    OR_2.Add(InsideMap(game_map=(60, 33, 48, 0)))
+    OR_2.Add(InsideMap(game_map=(60, 33, 49, 0)))
+    OR_2.Add(InsideMap(game_map=(60, 34, 40, 0)))
+    OR_2.Add(InsideMap(game_map=SOUTHWEST_LIURNIA_SE_NW))
+    OR_2.Add(InsideMap(game_map=SOUTHWEST_LIURNIA_NE_SW))
+    OR_2.Add(InsideMap(game_map=SOUTHWEST_LIURNIA_NE_NW))
+    OR_2.Add(InsideMap(game_map=WEST_LIURNIA_SE_SW))
+    OR_2.Add(InsideMap(game_map=WEST_LIURNIA_SE_NW))
+    OR_2.Add(InsideMap(game_map=WEST_LIURNIA_NE_SW))
+    OR_2.Add(InsideMap(game_map=WEST_LIURNIA_NE_NW))
+    OR_2.Add(InsideMap(game_map=NORTHWEST_LIURNIA_SE_SW))
+    OR_2.Add(InsideMap(game_map=NORTHWEST_LIURNIA_SE_NW))
+    OR_2.Add(InsideMap(game_map=(60, 35, 40, 0)))
+    OR_2.Add(InsideMap(game_map=SOUTHWEST_LIURNIA_SE_NE))
+    OR_2.Add(InsideMap(game_map=SOUTHWEST_LIURNIA_NE_SE))
+    OR_2.Add(InsideMap(game_map=SOUTHWEST_LIURNIA_NE_NE))
+    OR_2.Add(InsideMap(game_map=WEST_LIURNIA_SE_SE))
+    OR_2.Add(InsideMap(game_map=WEST_LIURNIA_SE_NE))
+    OR_2.Add(InsideMap(game_map=WEST_LIURNIA_NE_SE))
+    OR_2.Add(InsideMap(game_map=WEST_LIURNIA_NE_NE))
+    OR_2.Add(InsideMap(game_map=NORTHWEST_LIURNIA_SE_SE))
+    OR_2.Add(InsideMap(game_map=NORTHWEST_LIURNIA_SE_NE))
+    OR_2.Add(InsideMap(game_map=(60, 36, 40, 0)))
+    OR_2.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_SW_NW))
+    OR_2.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_NW_SW))
+    OR_2.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_NW_NW))
+    OR_2.Add(InsideMap(game_map=EAST_LIURNIA_SW_SW))
+    OR_2.Add(InsideMap(game_map=EAST_LIURNIA_SW_NW))
+    OR_2.Add(InsideMap(game_map=EAST_LIURNIA_NW_SW))
+    OR_2.Add(InsideMap(game_map=EAST_LIURNIA_NW_NW))
+    OR_2.Add(InsideMap(game_map=LIURNIA_TO_ALTUS_PLATEAU_SW_SW))
+    OR_2.Add(InsideMap(game_map=LIURNIA_TO_ALTUS_PLATEAU_SW_NW))
+    OR_2.Add(InsideMap(game_map=(60, 37, 40, 0)))
+    OR_2.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_SW_NE))
+    OR_2.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_NW_SE))
+    OR_2.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_NW_NE))
+    OR_2.Add(InsideMap(game_map=EAST_LIURNIA_SW_SE))
+    OR_2.Add(InsideMap(game_map=EAST_LIURNIA_SW_NE))
+    OR_2.Add(InsideMap(game_map=EAST_LIURNIA_NW_SE))
+    OR_2.Add(InsideMap(game_map=EAST_LIURNIA_NW_NE))
+    OR_2.Add(InsideMap(game_map=LIURNIA_TO_ALTUS_PLATEAU_SW_SE))
+    OR_2.Add(InsideMap(game_map=LIURNIA_TO_ALTUS_PLATEAU_SW_NE))
+    OR_2.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_SE_SW))
+    OR_2.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_SE_NW))
+    OR_2.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_NE_SW))
+    OR_2.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_NE_NW))
+    OR_2.Add(InsideMap(game_map=EAST_LIURNIA_SE_SW))
+    OR_2.Add(InsideMap(game_map=EAST_LIURNIA_SE_NW))
+    OR_2.Add(InsideMap(game_map=EAST_LIURNIA_NE_SW))
+    OR_2.Add(InsideMap(game_map=EAST_LIURNIA_NE_NW))
+    OR_2.Add(InsideMap(game_map=LIURNIA_TO_ALTUS_PLATEAU_SE_SW))
+    OR_2.Add(InsideMap(game_map=LIURNIA_TO_ALTUS_PLATEAU_SE_NW))
+    OR_2.Add(InsideMap(game_map=NORTHWEST_LIURNIA_NE_SW))
+    OR_2.Add(InsideMap(game_map=NORTHWEST_LIURNIA_NE_SE))
+    OR_2.Add(InsideMap(game_map=LIURNIA_TO_ALTUS_PLATEAU_NW_SW))
+    OR_2.Add(InsideMap(game_map=NORTHWEST_LIURNIA_NE_NW))
+    OR_2.Add(InsideMap(game_map=NORTHWEST_LIURNIA_NE_NE))
+    OR_2.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_SE_NE))
+    OR_2.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_NE_SE))
+    OR_2.Add(InsideMap(game_map=SOUTHEAST_LIURNIA_NE_NE))
+    OR_2.Add(InsideMap(game_map=EAST_LIURNIA_SE_SE))
+    OR_2.Add(InsideMap(game_map=EAST_LIURNIA_SE_NE))
+    OR_2.Add(InsideMap(game_map=EAST_LIURNIA_NE_SE))
+    OR_2.Add(InsideMap(game_map=(60, 39, 47, 0)))
+    OR_2.Add(InsideMap(game_map=LIURNIA_TO_ALTUS_PLATEAU_SE_SE))
+    OR_2.Add(InsideMap(game_map=LIURNIA_TO_ALTUS_PLATEAU_SE_NE))
+    AND_2.Add(OR_2)
+    AND_2.Add(FlagDisabled(19001057))
+    AND_2.Add(FlagDisabled(19001056))
+    
+    MAIN.Await(not AND_2)
+    
     Restart()
 
 
@@ -9107,79 +9891,83 @@ def Event_19001041():
 def Event_19001042():
     """Event 19001042"""
     DisableFlag(19001052)
-    IfInsideMap(OR_1, game_map=(60, 47, 36, 0))
-    IfInsideMap(OR_1, game_map=EAST_LIMGRAVE_SE_NE)
-    IfInsideMap(OR_1, game_map=EAST_LIMGRAVE_NE_SE)
-    IfInsideMap(OR_1, game_map=EAST_LIMGRAVE_NE_NE)
-    IfInsideMap(OR_1, game_map=NORTHWEST_CAELID_SE_SE)
-    IfInsideMap(OR_1, game_map=NORTHWEST_CAELID_SE_NE)
-    IfInsideMap(OR_1, game_map=SOUTH_CAELID_SW_SW)
-    IfInsideMap(OR_1, game_map=SOUTH_CAELID_SW_NW)
-    IfInsideMap(OR_1, game_map=SOUTH_CAELID_NW_SW)
-    IfInsideMap(OR_1, game_map=SOUTH_CAELID_NW_NW)
-    IfInsideMap(OR_1, game_map=NORTH_CAELID_SW_SW)
-    IfInsideMap(OR_1, game_map=NORTH_CAELID_SW_NW)
-    IfInsideMap(OR_1, game_map=SOUTH_CAELID_SW_SE)
-    IfInsideMap(OR_1, game_map=SOUTH_CAELID_SW_NE)
-    IfInsideMap(OR_1, game_map=SOUTH_CAELID_NW_SE)
-    IfInsideMap(OR_1, game_map=SOUTH_CAELID_NW_NE)
-    IfInsideMap(OR_1, game_map=NORTH_CAELID_SW_SE)
-    IfInsideMap(OR_1, game_map=NORTH_CAELID_SW_NE)
-    IfInsideMap(OR_1, game_map=SOUTH_CAELID_SE_SW)
-    IfInsideMap(OR_1, game_map=SOUTH_CAELID_SE_SE)
-    IfInsideMap(OR_1, game_map=FAR_SOUTH_CAELID_NE_NE)
-    IfInsideMap(OR_1, game_map=NORTHWEST_CAELID_NE_SE)
-    IfInsideMap(OR_1, game_map=SOUTH_CAELID_NE_NW)
-    IfInsideMap(OR_1, game_map=NORTH_CAELID_SE_SW)
-    IfInsideMap(OR_1, game_map=NORTH_CAELID_SE_NW)
-    IfInsideMap(OR_1, game_map=NORTH_CAELID_SE_SE)
-    IfInsideMap(OR_1, game_map=NORTH_CAELID_SE_NE)
-    IfInsideMap(OR_1, game_map=NORTH_CAELID_NE_SE)
-    IfInsideMap(OR_1, game_map=NORTH_CAELID_NE_NE)
-    IfInsideMap(OR_1, game_map=NORTHEAST_CAELID_SW_NW)
-    IfInsideMap(OR_1, game_map=NORTHEAST_CAELID_NW_SW)
-    IfInsideMap(OR_1, game_map=NORTHEAST_CAELID_NW_NW)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfFlagDisabled(AND_1, 19001057)
-    IfFlagDisabled(AND_1, 19001056)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    OR_1.Add(InsideMap(game_map=(60, 47, 36, 0)))
+    OR_1.Add(InsideMap(game_map=EAST_LIMGRAVE_SE_NE))
+    OR_1.Add(InsideMap(game_map=EAST_LIMGRAVE_NE_SE))
+    OR_1.Add(InsideMap(game_map=EAST_LIMGRAVE_NE_NE))
+    OR_1.Add(InsideMap(game_map=NORTHWEST_CAELID_SE_SE))
+    OR_1.Add(InsideMap(game_map=NORTHWEST_CAELID_SE_NE))
+    OR_1.Add(InsideMap(game_map=SOUTH_CAELID_SW_SW))
+    OR_1.Add(InsideMap(game_map=SOUTH_CAELID_SW_NW))
+    OR_1.Add(InsideMap(game_map=SOUTH_CAELID_NW_SW))
+    OR_1.Add(InsideMap(game_map=SOUTH_CAELID_NW_NW))
+    OR_1.Add(InsideMap(game_map=NORTH_CAELID_SW_SW))
+    OR_1.Add(InsideMap(game_map=NORTH_CAELID_SW_NW))
+    OR_1.Add(InsideMap(game_map=SOUTH_CAELID_SW_SE))
+    OR_1.Add(InsideMap(game_map=SOUTH_CAELID_SW_NE))
+    OR_1.Add(InsideMap(game_map=SOUTH_CAELID_NW_SE))
+    OR_1.Add(InsideMap(game_map=SOUTH_CAELID_NW_NE))
+    OR_1.Add(InsideMap(game_map=NORTH_CAELID_SW_SE))
+    OR_1.Add(InsideMap(game_map=NORTH_CAELID_SW_NE))
+    OR_1.Add(InsideMap(game_map=SOUTH_CAELID_SE_SW))
+    OR_1.Add(InsideMap(game_map=SOUTH_CAELID_SE_SE))
+    OR_1.Add(InsideMap(game_map=FAR_SOUTH_CAELID_NE_NE))
+    OR_1.Add(InsideMap(game_map=NORTHWEST_CAELID_NE_SE))
+    OR_1.Add(InsideMap(game_map=SOUTH_CAELID_NE_NW))
+    OR_1.Add(InsideMap(game_map=NORTH_CAELID_SE_SW))
+    OR_1.Add(InsideMap(game_map=NORTH_CAELID_SE_NW))
+    OR_1.Add(InsideMap(game_map=NORTH_CAELID_SE_SE))
+    OR_1.Add(InsideMap(game_map=NORTH_CAELID_SE_NE))
+    OR_1.Add(InsideMap(game_map=NORTH_CAELID_NE_SE))
+    OR_1.Add(InsideMap(game_map=NORTH_CAELID_NE_NE))
+    OR_1.Add(InsideMap(game_map=NORTHEAST_CAELID_SW_NW))
+    OR_1.Add(InsideMap(game_map=NORTHEAST_CAELID_NW_SW))
+    OR_1.Add(InsideMap(game_map=NORTHEAST_CAELID_NW_NW))
+    AND_1.Add(OR_1)
+    AND_1.Add(FlagDisabled(19001057))
+    AND_1.Add(FlagDisabled(19001056))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(19001052)
-    IfInsideMap(OR_2, game_map=(60, 47, 36, 0))
-    IfInsideMap(OR_2, game_map=EAST_LIMGRAVE_SE_NE)
-    IfInsideMap(OR_2, game_map=EAST_LIMGRAVE_NE_SE)
-    IfInsideMap(OR_2, game_map=EAST_LIMGRAVE_NE_NE)
-    IfInsideMap(OR_2, game_map=NORTHWEST_CAELID_SE_SE)
-    IfInsideMap(OR_2, game_map=NORTHWEST_CAELID_SE_NE)
-    IfInsideMap(OR_2, game_map=SOUTH_CAELID_SW_SW)
-    IfInsideMap(OR_2, game_map=SOUTH_CAELID_SW_NW)
-    IfInsideMap(OR_2, game_map=SOUTH_CAELID_NW_SW)
-    IfInsideMap(OR_2, game_map=SOUTH_CAELID_NW_NW)
-    IfInsideMap(OR_2, game_map=NORTH_CAELID_SW_SW)
-    IfInsideMap(OR_2, game_map=NORTH_CAELID_SW_NW)
-    IfInsideMap(OR_2, game_map=SOUTH_CAELID_SW_SE)
-    IfInsideMap(OR_2, game_map=SOUTH_CAELID_SW_NE)
-    IfInsideMap(OR_2, game_map=SOUTH_CAELID_NW_SE)
-    IfInsideMap(OR_2, game_map=SOUTH_CAELID_NW_NE)
-    IfInsideMap(OR_2, game_map=NORTH_CAELID_SW_SE)
-    IfInsideMap(OR_2, game_map=NORTH_CAELID_SW_NE)
-    IfInsideMap(OR_2, game_map=SOUTH_CAELID_SE_SW)
-    IfInsideMap(OR_2, game_map=SOUTH_CAELID_SE_SE)
-    IfInsideMap(OR_2, game_map=FAR_SOUTH_CAELID_NE_NE)
-    IfInsideMap(OR_2, game_map=NORTHWEST_CAELID_NE_SE)
-    IfInsideMap(OR_2, game_map=SOUTH_CAELID_NE_NW)
-    IfInsideMap(OR_2, game_map=NORTH_CAELID_SE_SW)
-    IfInsideMap(OR_2, game_map=NORTH_CAELID_SE_NW)
-    IfInsideMap(OR_2, game_map=NORTH_CAELID_SE_SE)
-    IfInsideMap(OR_2, game_map=NORTH_CAELID_SE_NE)
-    IfInsideMap(OR_2, game_map=NORTH_CAELID_NE_SE)
-    IfInsideMap(OR_2, game_map=NORTH_CAELID_NE_NE)
-    IfInsideMap(OR_2, game_map=NORTHEAST_CAELID_SW_NW)
-    IfInsideMap(OR_2, game_map=NORTHEAST_CAELID_NW_SW)
-    IfInsideMap(OR_2, game_map=NORTHEAST_CAELID_NW_NW)
-    IfConditionTrue(AND_2, input_condition=OR_2)
-    IfFlagDisabled(AND_2, 19001057)
-    IfFlagDisabled(AND_2, 19001056)
-    IfConditionFalse(MAIN, input_condition=AND_2)
+    OR_2.Add(InsideMap(game_map=(60, 47, 36, 0)))
+    OR_2.Add(InsideMap(game_map=EAST_LIMGRAVE_SE_NE))
+    OR_2.Add(InsideMap(game_map=EAST_LIMGRAVE_NE_SE))
+    OR_2.Add(InsideMap(game_map=EAST_LIMGRAVE_NE_NE))
+    OR_2.Add(InsideMap(game_map=NORTHWEST_CAELID_SE_SE))
+    OR_2.Add(InsideMap(game_map=NORTHWEST_CAELID_SE_NE))
+    OR_2.Add(InsideMap(game_map=SOUTH_CAELID_SW_SW))
+    OR_2.Add(InsideMap(game_map=SOUTH_CAELID_SW_NW))
+    OR_2.Add(InsideMap(game_map=SOUTH_CAELID_NW_SW))
+    OR_2.Add(InsideMap(game_map=SOUTH_CAELID_NW_NW))
+    OR_2.Add(InsideMap(game_map=NORTH_CAELID_SW_SW))
+    OR_2.Add(InsideMap(game_map=NORTH_CAELID_SW_NW))
+    OR_2.Add(InsideMap(game_map=SOUTH_CAELID_SW_SE))
+    OR_2.Add(InsideMap(game_map=SOUTH_CAELID_SW_NE))
+    OR_2.Add(InsideMap(game_map=SOUTH_CAELID_NW_SE))
+    OR_2.Add(InsideMap(game_map=SOUTH_CAELID_NW_NE))
+    OR_2.Add(InsideMap(game_map=NORTH_CAELID_SW_SE))
+    OR_2.Add(InsideMap(game_map=NORTH_CAELID_SW_NE))
+    OR_2.Add(InsideMap(game_map=SOUTH_CAELID_SE_SW))
+    OR_2.Add(InsideMap(game_map=SOUTH_CAELID_SE_SE))
+    OR_2.Add(InsideMap(game_map=FAR_SOUTH_CAELID_NE_NE))
+    OR_2.Add(InsideMap(game_map=NORTHWEST_CAELID_NE_SE))
+    OR_2.Add(InsideMap(game_map=SOUTH_CAELID_NE_NW))
+    OR_2.Add(InsideMap(game_map=NORTH_CAELID_SE_SW))
+    OR_2.Add(InsideMap(game_map=NORTH_CAELID_SE_NW))
+    OR_2.Add(InsideMap(game_map=NORTH_CAELID_SE_SE))
+    OR_2.Add(InsideMap(game_map=NORTH_CAELID_SE_NE))
+    OR_2.Add(InsideMap(game_map=NORTH_CAELID_NE_SE))
+    OR_2.Add(InsideMap(game_map=NORTH_CAELID_NE_NE))
+    OR_2.Add(InsideMap(game_map=NORTHEAST_CAELID_SW_NW))
+    OR_2.Add(InsideMap(game_map=NORTHEAST_CAELID_NW_SW))
+    OR_2.Add(InsideMap(game_map=NORTHEAST_CAELID_NW_NW))
+    AND_2.Add(OR_2)
+    AND_2.Add(FlagDisabled(19001057))
+    AND_2.Add(FlagDisabled(19001056))
+    
+    MAIN.Await(not AND_2)
+    
     Restart()
 
 
@@ -9187,83 +9975,87 @@ def Event_19001042():
 def Event_19001043():
     """Event 19001043"""
     DisableFlag(19001053)
-    IfInsideMap(OR_1, game_map=LIURNIA_TO_ALTUS_PLATEAU_NE_SE)
-    IfInsideMap(OR_1, game_map=LIURNIA_TO_ALTUS_PLATEAU_NE_NE)
-    IfInsideMap(OR_1, game_map=WEST_ALTUS_PLATEAU_SE_SE)
-    IfInsideMap(OR_1, game_map=WEST_ALTUS_PLATEAU_SE_NE)
-    IfInsideMap(OR_1, game_map=WEST_ALTUS_PLATEAU_NE_SE)
-    IfInsideMap(OR_1, game_map=(60, 39, 55, 0))
-    IfInsideMap(OR_1, game_map=SOUTH_ALTUS_PLATEAU_NW_SW)
-    IfInsideMap(OR_1, game_map=SOUTH_ALTUS_PLATEAU_NW_NW)
-    IfInsideMap(OR_1, game_map=NORTH_ALTUS_PLATEAU_SW_SW)
-    IfInsideMap(OR_1, game_map=NORTH_ALTUS_PLATEAU_SW_NW)
-    IfInsideMap(OR_1, game_map=NORTH_ALTUS_PLATEAU_NW_SW)
-    IfInsideMap(OR_1, game_map=NORTH_ALTUS_PLATEAU_NW_NW)
-    IfInsideMap(OR_1, game_map=SOUTH_ALTUS_PLATEAU_NW_SE)
-    IfInsideMap(OR_1, game_map=SOUTH_ALTUS_PLATEAU_NW_NE)
-    IfInsideMap(OR_1, game_map=NORTH_ALTUS_PLATEAU_SW_SE)
-    IfInsideMap(OR_1, game_map=NORTH_ALTUS_PLATEAU_SW_NE)
-    IfInsideMap(OR_1, game_map=NORTH_ALTUS_PLATEAU_NW_SE)
-    IfInsideMap(OR_1, game_map=NORTH_ALTUS_PLATEAU_NW_NE)
-    IfInsideMap(OR_1, game_map=SOUTH_ALTUS_PLATEAU_NE_SW)
-    IfInsideMap(OR_1, game_map=SOUTH_ALTUS_PLATEAU_NE_NW)
-    IfInsideMap(OR_1, game_map=NORTH_ALTUS_PLATEAU_SE_SW)
-    IfInsideMap(OR_1, game_map=NORTH_ALTUS_PLATEAU_SE_NW)
-    IfInsideMap(OR_1, game_map=NORTH_ALTUS_PLATEAU_NE_SW)
-    IfInsideMap(OR_1, game_map=NORTH_ALTUS_PLATEAU_NE_NW)
-    IfInsideMap(OR_1, game_map=SOUTH_ALTUS_PLATEAU_NE_SE)
-    IfInsideMap(OR_1, game_map=SOUTH_ALTUS_PLATEAU_NE_NE)
-    IfInsideMap(OR_1, game_map=NORTH_ALTUS_PLATEAU_SE_SE)
-    IfInsideMap(OR_1, game_map=NORTH_ALTUS_PLATEAU_SE_NE)
-    IfInsideMap(OR_1, game_map=NORTH_ALTUS_PLATEAU_NE_SE)
-    IfInsideMap(OR_1, game_map=(60, 43, 55, 0))
-    IfInsideMap(OR_1, game_map=NORTHEAST_ALTUS_PLATEAU_SW_SW)
-    IfInsideMap(OR_1, game_map=NORTHEAST_ALTUS_PLATEAU_SW_NW)
-    IfInsideMap(OR_1, game_map=NORTHEAST_ALTUS_PLATEAU_SW_SE)
-    IfInsideMap(OR_1, game_map=NORTHEAST_ALTUS_PLATEAU_SW_NE)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfFlagDisabled(AND_1, 19001057)
-    IfFlagDisabled(AND_1, 19001056)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    OR_1.Add(InsideMap(game_map=LIURNIA_TO_ALTUS_PLATEAU_NE_SE))
+    OR_1.Add(InsideMap(game_map=LIURNIA_TO_ALTUS_PLATEAU_NE_NE))
+    OR_1.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_SE_SE))
+    OR_1.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_SE_NE))
+    OR_1.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_NE_SE))
+    OR_1.Add(InsideMap(game_map=(60, 39, 55, 0)))
+    OR_1.Add(InsideMap(game_map=SOUTH_ALTUS_PLATEAU_NW_SW))
+    OR_1.Add(InsideMap(game_map=SOUTH_ALTUS_PLATEAU_NW_NW))
+    OR_1.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_SW_SW))
+    OR_1.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_SW_NW))
+    OR_1.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_NW_SW))
+    OR_1.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_NW_NW))
+    OR_1.Add(InsideMap(game_map=SOUTH_ALTUS_PLATEAU_NW_SE))
+    OR_1.Add(InsideMap(game_map=SOUTH_ALTUS_PLATEAU_NW_NE))
+    OR_1.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_SW_SE))
+    OR_1.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_SW_NE))
+    OR_1.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_NW_SE))
+    OR_1.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_NW_NE))
+    OR_1.Add(InsideMap(game_map=SOUTH_ALTUS_PLATEAU_NE_SW))
+    OR_1.Add(InsideMap(game_map=SOUTH_ALTUS_PLATEAU_NE_NW))
+    OR_1.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_SE_SW))
+    OR_1.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_SE_NW))
+    OR_1.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_NE_SW))
+    OR_1.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_NE_NW))
+    OR_1.Add(InsideMap(game_map=SOUTH_ALTUS_PLATEAU_NE_SE))
+    OR_1.Add(InsideMap(game_map=SOUTH_ALTUS_PLATEAU_NE_NE))
+    OR_1.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_SE_SE))
+    OR_1.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_SE_NE))
+    OR_1.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_NE_SE))
+    OR_1.Add(InsideMap(game_map=(60, 43, 55, 0)))
+    OR_1.Add(InsideMap(game_map=NORTHEAST_ALTUS_PLATEAU_SW_SW))
+    OR_1.Add(InsideMap(game_map=NORTHEAST_ALTUS_PLATEAU_SW_NW))
+    OR_1.Add(InsideMap(game_map=NORTHEAST_ALTUS_PLATEAU_SW_SE))
+    OR_1.Add(InsideMap(game_map=NORTHEAST_ALTUS_PLATEAU_SW_NE))
+    AND_1.Add(OR_1)
+    AND_1.Add(FlagDisabled(19001057))
+    AND_1.Add(FlagDisabled(19001056))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(19001053)
-    IfInsideMap(OR_2, game_map=LIURNIA_TO_ALTUS_PLATEAU_NE_SE)
-    IfInsideMap(OR_2, game_map=LIURNIA_TO_ALTUS_PLATEAU_NE_NE)
-    IfInsideMap(OR_2, game_map=WEST_ALTUS_PLATEAU_SE_SE)
-    IfInsideMap(OR_2, game_map=WEST_ALTUS_PLATEAU_SE_NE)
-    IfInsideMap(OR_2, game_map=WEST_ALTUS_PLATEAU_NE_SE)
-    IfInsideMap(OR_2, game_map=(60, 39, 55, 0))
-    IfInsideMap(OR_2, game_map=SOUTH_ALTUS_PLATEAU_NW_SW)
-    IfInsideMap(OR_2, game_map=SOUTH_ALTUS_PLATEAU_NW_NW)
-    IfInsideMap(OR_2, game_map=NORTH_ALTUS_PLATEAU_SW_SW)
-    IfInsideMap(OR_2, game_map=NORTH_ALTUS_PLATEAU_SW_NW)
-    IfInsideMap(OR_2, game_map=NORTH_ALTUS_PLATEAU_NW_SW)
-    IfInsideMap(OR_2, game_map=NORTH_ALTUS_PLATEAU_NW_NW)
-    IfInsideMap(OR_2, game_map=SOUTH_ALTUS_PLATEAU_NW_SE)
-    IfInsideMap(OR_2, game_map=SOUTH_ALTUS_PLATEAU_NW_NE)
-    IfInsideMap(OR_2, game_map=NORTH_ALTUS_PLATEAU_SW_SE)
-    IfInsideMap(OR_2, game_map=NORTH_ALTUS_PLATEAU_SW_NE)
-    IfInsideMap(OR_2, game_map=NORTH_ALTUS_PLATEAU_NW_SE)
-    IfInsideMap(OR_2, game_map=NORTH_ALTUS_PLATEAU_NW_NE)
-    IfInsideMap(OR_2, game_map=SOUTH_ALTUS_PLATEAU_NE_SW)
-    IfInsideMap(OR_2, game_map=SOUTH_ALTUS_PLATEAU_NE_NW)
-    IfInsideMap(OR_2, game_map=NORTH_ALTUS_PLATEAU_SE_SW)
-    IfInsideMap(OR_2, game_map=NORTH_ALTUS_PLATEAU_SE_NW)
-    IfInsideMap(OR_2, game_map=NORTH_ALTUS_PLATEAU_NE_SW)
-    IfInsideMap(OR_2, game_map=NORTH_ALTUS_PLATEAU_NE_NW)
-    IfInsideMap(OR_2, game_map=SOUTH_ALTUS_PLATEAU_NE_SE)
-    IfInsideMap(OR_2, game_map=SOUTH_ALTUS_PLATEAU_NE_NE)
-    IfInsideMap(OR_2, game_map=NORTH_ALTUS_PLATEAU_SE_SE)
-    IfInsideMap(OR_2, game_map=NORTH_ALTUS_PLATEAU_SE_NE)
-    IfInsideMap(OR_2, game_map=NORTH_ALTUS_PLATEAU_NE_SE)
-    IfInsideMap(OR_2, game_map=(60, 43, 55, 0))
-    IfInsideMap(OR_2, game_map=NORTHEAST_ALTUS_PLATEAU_SW_SW)
-    IfInsideMap(OR_2, game_map=NORTHEAST_ALTUS_PLATEAU_SW_NW)
-    IfInsideMap(OR_2, game_map=NORTHEAST_ALTUS_PLATEAU_SW_SE)
-    IfInsideMap(OR_2, game_map=NORTHEAST_ALTUS_PLATEAU_SW_NE)
-    IfConditionTrue(AND_2, input_condition=OR_2)
-    IfFlagDisabled(AND_2, 19001057)
-    IfFlagDisabled(AND_2, 19001056)
-    IfConditionFalse(MAIN, input_condition=AND_2)
+    OR_2.Add(InsideMap(game_map=LIURNIA_TO_ALTUS_PLATEAU_NE_SE))
+    OR_2.Add(InsideMap(game_map=LIURNIA_TO_ALTUS_PLATEAU_NE_NE))
+    OR_2.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_SE_SE))
+    OR_2.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_SE_NE))
+    OR_2.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_NE_SE))
+    OR_2.Add(InsideMap(game_map=(60, 39, 55, 0)))
+    OR_2.Add(InsideMap(game_map=SOUTH_ALTUS_PLATEAU_NW_SW))
+    OR_2.Add(InsideMap(game_map=SOUTH_ALTUS_PLATEAU_NW_NW))
+    OR_2.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_SW_SW))
+    OR_2.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_SW_NW))
+    OR_2.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_NW_SW))
+    OR_2.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_NW_NW))
+    OR_2.Add(InsideMap(game_map=SOUTH_ALTUS_PLATEAU_NW_SE))
+    OR_2.Add(InsideMap(game_map=SOUTH_ALTUS_PLATEAU_NW_NE))
+    OR_2.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_SW_SE))
+    OR_2.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_SW_NE))
+    OR_2.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_NW_SE))
+    OR_2.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_NW_NE))
+    OR_2.Add(InsideMap(game_map=SOUTH_ALTUS_PLATEAU_NE_SW))
+    OR_2.Add(InsideMap(game_map=SOUTH_ALTUS_PLATEAU_NE_NW))
+    OR_2.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_SE_SW))
+    OR_2.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_SE_NW))
+    OR_2.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_NE_SW))
+    OR_2.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_NE_NW))
+    OR_2.Add(InsideMap(game_map=SOUTH_ALTUS_PLATEAU_NE_SE))
+    OR_2.Add(InsideMap(game_map=SOUTH_ALTUS_PLATEAU_NE_NE))
+    OR_2.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_SE_SE))
+    OR_2.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_SE_NE))
+    OR_2.Add(InsideMap(game_map=NORTH_ALTUS_PLATEAU_NE_SE))
+    OR_2.Add(InsideMap(game_map=(60, 43, 55, 0)))
+    OR_2.Add(InsideMap(game_map=NORTHEAST_ALTUS_PLATEAU_SW_SW))
+    OR_2.Add(InsideMap(game_map=NORTHEAST_ALTUS_PLATEAU_SW_NW))
+    OR_2.Add(InsideMap(game_map=NORTHEAST_ALTUS_PLATEAU_SW_SE))
+    OR_2.Add(InsideMap(game_map=NORTHEAST_ALTUS_PLATEAU_SW_NE))
+    AND_2.Add(OR_2)
+    AND_2.Add(FlagDisabled(19001057))
+    AND_2.Add(FlagDisabled(19001056))
+    
+    MAIN.Await(not AND_2)
+    
     Restart()
 
 
@@ -9271,53 +10063,57 @@ def Event_19001043():
 def Event_19001044():
     """Event 19001044"""
     DisableFlag(19001054)
-    IfInsideMap(OR_1, game_map=(60, 34, 52, 0))
-    IfInsideMap(OR_1, game_map=(60, 34, 53, 0))
-    IfInsideMap(OR_1, game_map=(60, 34, 54, 0))
-    IfInsideMap(OR_1, game_map=(60, 34, 55, 0))
-    IfInsideMap(OR_1, game_map=FAR_WEST_ALTUS_PLATEAU_SE_SE)
-    IfInsideMap(OR_1, game_map=FAR_WEST_ALTUS_PLATEAU_SE_NE)
-    IfInsideMap(OR_1, game_map=FAR_WEST_ALTUS_PLATEAU_NE_SE)
-    IfInsideMap(OR_1, game_map=(60, 35, 55, 0))
-    IfInsideMap(OR_1, game_map=WEST_ALTUS_PLATEAU_SW_SW)
-    IfInsideMap(OR_1, game_map=WEST_ALTUS_PLATEAU_SW_NW)
-    IfInsideMap(OR_1, game_map=WEST_ALTUS_PLATEAU_NW_SW)
-    IfInsideMap(OR_1, game_map=(60, 36, 55, 0))
-    IfInsideMap(OR_1, game_map=WEST_ALTUS_PLATEAU_SW_SE)
-    IfInsideMap(OR_1, game_map=WEST_ALTUS_PLATEAU_SW_NE)
-    IfInsideMap(OR_1, game_map=WEST_ALTUS_PLATEAU_NW_SE)
-    IfInsideMap(OR_1, game_map=WEST_ALTUS_PLATEAU_NW_NE)
-    IfInsideMap(OR_1, game_map=WEST_ALTUS_PLATEAU_SE_SW)
-    IfInsideMap(OR_1, game_map=WEST_ALTUS_PLATEAU_SE_NW)
-    IfInsideMap(OR_1, game_map=WEST_ALTUS_PLATEAU_NE_SW)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfFlagDisabled(AND_1, 19001057)
-    IfFlagDisabled(AND_1, 19001056)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    OR_1.Add(InsideMap(game_map=(60, 34, 52, 0)))
+    OR_1.Add(InsideMap(game_map=(60, 34, 53, 0)))
+    OR_1.Add(InsideMap(game_map=(60, 34, 54, 0)))
+    OR_1.Add(InsideMap(game_map=(60, 34, 55, 0)))
+    OR_1.Add(InsideMap(game_map=FAR_WEST_ALTUS_PLATEAU_SE_SE))
+    OR_1.Add(InsideMap(game_map=FAR_WEST_ALTUS_PLATEAU_SE_NE))
+    OR_1.Add(InsideMap(game_map=FAR_WEST_ALTUS_PLATEAU_NE_SE))
+    OR_1.Add(InsideMap(game_map=(60, 35, 55, 0)))
+    OR_1.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_SW_SW))
+    OR_1.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_SW_NW))
+    OR_1.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_NW_SW))
+    OR_1.Add(InsideMap(game_map=(60, 36, 55, 0)))
+    OR_1.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_SW_SE))
+    OR_1.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_SW_NE))
+    OR_1.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_NW_SE))
+    OR_1.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_NW_NE))
+    OR_1.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_SE_SW))
+    OR_1.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_SE_NW))
+    OR_1.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_NE_SW))
+    AND_1.Add(OR_1)
+    AND_1.Add(FlagDisabled(19001057))
+    AND_1.Add(FlagDisabled(19001056))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(19001054)
-    IfInsideMap(OR_2, game_map=(60, 34, 52, 0))
-    IfInsideMap(OR_2, game_map=(60, 34, 53, 0))
-    IfInsideMap(OR_2, game_map=(60, 34, 54, 0))
-    IfInsideMap(OR_2, game_map=(60, 34, 55, 0))
-    IfInsideMap(OR_2, game_map=FAR_WEST_ALTUS_PLATEAU_SE_SE)
-    IfInsideMap(OR_2, game_map=FAR_WEST_ALTUS_PLATEAU_SE_NE)
-    IfInsideMap(OR_2, game_map=FAR_WEST_ALTUS_PLATEAU_NE_SE)
-    IfInsideMap(OR_2, game_map=(60, 35, 55, 0))
-    IfInsideMap(OR_2, game_map=WEST_ALTUS_PLATEAU_SW_SW)
-    IfInsideMap(OR_2, game_map=WEST_ALTUS_PLATEAU_SW_NW)
-    IfInsideMap(OR_2, game_map=WEST_ALTUS_PLATEAU_NW_SW)
-    IfInsideMap(OR_2, game_map=(60, 36, 55, 0))
-    IfInsideMap(OR_2, game_map=WEST_ALTUS_PLATEAU_SW_SE)
-    IfInsideMap(OR_2, game_map=WEST_ALTUS_PLATEAU_SW_NE)
-    IfInsideMap(OR_2, game_map=WEST_ALTUS_PLATEAU_NW_SE)
-    IfInsideMap(OR_2, game_map=WEST_ALTUS_PLATEAU_NW_NE)
-    IfInsideMap(OR_2, game_map=WEST_ALTUS_PLATEAU_SE_SW)
-    IfInsideMap(OR_2, game_map=WEST_ALTUS_PLATEAU_SE_NW)
-    IfInsideMap(OR_2, game_map=WEST_ALTUS_PLATEAU_NE_SW)
-    IfConditionTrue(AND_2, input_condition=OR_2)
-    IfFlagDisabled(AND_2, 19001057)
-    IfFlagDisabled(AND_2, 19001056)
-    IfConditionFalse(MAIN, input_condition=OR_2)
+    OR_2.Add(InsideMap(game_map=(60, 34, 52, 0)))
+    OR_2.Add(InsideMap(game_map=(60, 34, 53, 0)))
+    OR_2.Add(InsideMap(game_map=(60, 34, 54, 0)))
+    OR_2.Add(InsideMap(game_map=(60, 34, 55, 0)))
+    OR_2.Add(InsideMap(game_map=FAR_WEST_ALTUS_PLATEAU_SE_SE))
+    OR_2.Add(InsideMap(game_map=FAR_WEST_ALTUS_PLATEAU_SE_NE))
+    OR_2.Add(InsideMap(game_map=FAR_WEST_ALTUS_PLATEAU_NE_SE))
+    OR_2.Add(InsideMap(game_map=(60, 35, 55, 0)))
+    OR_2.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_SW_SW))
+    OR_2.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_SW_NW))
+    OR_2.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_NW_SW))
+    OR_2.Add(InsideMap(game_map=(60, 36, 55, 0)))
+    OR_2.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_SW_SE))
+    OR_2.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_SW_NE))
+    OR_2.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_NW_SE))
+    OR_2.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_NW_NE))
+    OR_2.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_SE_SW))
+    OR_2.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_SE_NW))
+    OR_2.Add(InsideMap(game_map=WEST_ALTUS_PLATEAU_NE_SW))
+    AND_2.Add(OR_2)
+    AND_2.Add(FlagDisabled(19001057))
+    AND_2.Add(FlagDisabled(19001056))
+    
+    MAIN.Await(not OR_2)
+    
     Restart()
 
 
@@ -9325,103 +10121,107 @@ def Event_19001044():
 def Event_19001045():
     """Event 19001045"""
     DisableFlag(19001055)
-    IfInsideMap(OR_1, game_map=(60, 47, 53, 0))
-    IfInsideMap(OR_1, game_map=(60, 47, 54, 0))
-    IfInsideMap(OR_1, game_map=NORTHEAST_ALTUS_PLATEAU_NE_NE)
-    IfInsideMap(OR_1, game_map=WEST_CONSECRATED_SNOWFIELD_SE_SE)
-    IfInsideMap(OR_1, game_map=WEST_CONSECRATED_SNOWFIELD_SE_NE)
-    IfInsideMap(OR_1, game_map=WEST_CONSECRATED_SNOWFIELD_NE_SE)
-    IfInsideMap(OR_1, game_map=(60, 48, 53, 0))
-    IfInsideMap(OR_1, game_map=SOUTHWEST_MOUNTAINTOPS_NW_SW)
-    IfInsideMap(OR_1, game_map=SOUTHWEST_MOUNTAINTOPS_NW_NW)
-    IfInsideMap(OR_1, game_map=NORTHWEST_MOUNTAINTOPS_SW_SW)
-    IfInsideMap(OR_1, game_map=NORTHWEST_MOUNTAINTOPS_SW_NW)
-    IfInsideMap(OR_1, game_map=NORTHWEST_MOUNTAINTOPS_NW_SW)
-    IfInsideMap(OR_1, game_map=SOUTHWEST_MOUNTAINTOPS_SW_NE)
-    IfInsideMap(OR_1, game_map=SOUTHWEST_MOUNTAINTOPS_NW_SE)
-    IfInsideMap(OR_1, game_map=SOUTHWEST_MOUNTAINTOPS_NW_NE)
-    IfInsideMap(OR_1, game_map=NORTHWEST_MOUNTAINTOPS_SW_SE)
-    IfInsideMap(OR_1, game_map=NORTHWEST_MOUNTAINTOPS_SW_NE)
-    IfInsideMap(OR_1, game_map=(60, 49, 58, 0))
-    IfInsideMap(OR_1, game_map=SOUTHWEST_MOUNTAINTOPS_SE_NW)
-    IfInsideMap(OR_1, game_map=SOUTHWEST_MOUNTAINTOPS_NE_SW)
-    IfInsideMap(OR_1, game_map=SOUTHWEST_MOUNTAINTOPS_NE_NW)
-    IfInsideMap(OR_1, game_map=NORTHWEST_MOUNTAINTOPS_SE_SW)
-    IfInsideMap(OR_1, game_map=NORTHWEST_MOUNTAINTOPS_SE_NW)
-    IfInsideMap(OR_1, game_map=(60, 50, 58, 0))
-    IfInsideMap(OR_1, game_map=SOUTHWEST_MOUNTAINTOPS_SE_NE)
-    IfInsideMap(OR_1, game_map=SOUTHWEST_MOUNTAINTOPS_NE_SE)
-    IfInsideMap(OR_1, game_map=SOUTHWEST_MOUNTAINTOPS_NE_NE)
-    IfInsideMap(OR_1, game_map=NORTHWEST_MOUNTAINTOPS_SE_SE)
-    IfInsideMap(OR_1, game_map=NORTHWEST_MOUNTAINTOPS_SE_NE)
-    IfInsideMap(OR_1, game_map=NORTHWEST_MOUNTAINTOPS_NE_SE)
-    IfInsideMap(OR_1, game_map=SOUTHEAST_MOUNTAINTOPS_SW_NW)
-    IfInsideMap(OR_1, game_map=SOUTHEAST_MOUNTAINTOPS_NW_SW)
-    IfInsideMap(OR_1, game_map=SOUTHEAST_MOUNTAINTOPS_NW_NW)
-    IfInsideMap(OR_1, game_map=NORTHEAST_MOUNTAINTOPS_SW_SW)
-    IfInsideMap(OR_1, game_map=NORTHEAST_MOUNTAINTOPS_SW_NW)
-    IfInsideMap(OR_1, game_map=NORTHEAST_MOUNTAINTOPS_NW_SW)
-    IfInsideMap(OR_1, game_map=SOUTHEAST_MOUNTAINTOPS_SW_NE)
-    IfInsideMap(OR_1, game_map=SOUTHEAST_MOUNTAINTOPS_NW_SE)
-    IfInsideMap(OR_1, game_map=SOUTHEAST_MOUNTAINTOPS_NW_NE)
-    IfInsideMap(OR_1, game_map=NORTHEAST_MOUNTAINTOPS_SW_SE)
-    IfInsideMap(OR_1, game_map=NORTHEAST_MOUNTAINTOPS_SW_NE)
-    IfInsideMap(OR_1, game_map=NORTHEAST_MOUNTAINTOPS_NW_SE)
-    IfInsideMap(OR_1, game_map=SOUTHEAST_MOUNTAINTOPS_SW_SW)
-    IfInsideMap(OR_1, game_map=SOUTHEAST_MOUNTAINTOPS_SW_SE)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfFlagDisabled(AND_1, 19001057)
-    IfFlagDisabled(AND_1, 19001056)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    OR_1.Add(InsideMap(game_map=(60, 47, 53, 0)))
+    OR_1.Add(InsideMap(game_map=(60, 47, 54, 0)))
+    OR_1.Add(InsideMap(game_map=NORTHEAST_ALTUS_PLATEAU_NE_NE))
+    OR_1.Add(InsideMap(game_map=WEST_CONSECRATED_SNOWFIELD_SE_SE))
+    OR_1.Add(InsideMap(game_map=WEST_CONSECRATED_SNOWFIELD_SE_NE))
+    OR_1.Add(InsideMap(game_map=WEST_CONSECRATED_SNOWFIELD_NE_SE))
+    OR_1.Add(InsideMap(game_map=(60, 48, 53, 0)))
+    OR_1.Add(InsideMap(game_map=SOUTHWEST_MOUNTAINTOPS_NW_SW))
+    OR_1.Add(InsideMap(game_map=SOUTHWEST_MOUNTAINTOPS_NW_NW))
+    OR_1.Add(InsideMap(game_map=NORTHWEST_MOUNTAINTOPS_SW_SW))
+    OR_1.Add(InsideMap(game_map=NORTHWEST_MOUNTAINTOPS_SW_NW))
+    OR_1.Add(InsideMap(game_map=NORTHWEST_MOUNTAINTOPS_NW_SW))
+    OR_1.Add(InsideMap(game_map=SOUTHWEST_MOUNTAINTOPS_SW_NE))
+    OR_1.Add(InsideMap(game_map=SOUTHWEST_MOUNTAINTOPS_NW_SE))
+    OR_1.Add(InsideMap(game_map=SOUTHWEST_MOUNTAINTOPS_NW_NE))
+    OR_1.Add(InsideMap(game_map=NORTHWEST_MOUNTAINTOPS_SW_SE))
+    OR_1.Add(InsideMap(game_map=NORTHWEST_MOUNTAINTOPS_SW_NE))
+    OR_1.Add(InsideMap(game_map=(60, 49, 58, 0)))
+    OR_1.Add(InsideMap(game_map=SOUTHWEST_MOUNTAINTOPS_SE_NW))
+    OR_1.Add(InsideMap(game_map=SOUTHWEST_MOUNTAINTOPS_NE_SW))
+    OR_1.Add(InsideMap(game_map=SOUTHWEST_MOUNTAINTOPS_NE_NW))
+    OR_1.Add(InsideMap(game_map=NORTHWEST_MOUNTAINTOPS_SE_SW))
+    OR_1.Add(InsideMap(game_map=NORTHWEST_MOUNTAINTOPS_SE_NW))
+    OR_1.Add(InsideMap(game_map=(60, 50, 58, 0)))
+    OR_1.Add(InsideMap(game_map=SOUTHWEST_MOUNTAINTOPS_SE_NE))
+    OR_1.Add(InsideMap(game_map=SOUTHWEST_MOUNTAINTOPS_NE_SE))
+    OR_1.Add(InsideMap(game_map=SOUTHWEST_MOUNTAINTOPS_NE_NE))
+    OR_1.Add(InsideMap(game_map=NORTHWEST_MOUNTAINTOPS_SE_SE))
+    OR_1.Add(InsideMap(game_map=NORTHWEST_MOUNTAINTOPS_SE_NE))
+    OR_1.Add(InsideMap(game_map=NORTHWEST_MOUNTAINTOPS_NE_SE))
+    OR_1.Add(InsideMap(game_map=SOUTHEAST_MOUNTAINTOPS_SW_NW))
+    OR_1.Add(InsideMap(game_map=SOUTHEAST_MOUNTAINTOPS_NW_SW))
+    OR_1.Add(InsideMap(game_map=SOUTHEAST_MOUNTAINTOPS_NW_NW))
+    OR_1.Add(InsideMap(game_map=NORTHEAST_MOUNTAINTOPS_SW_SW))
+    OR_1.Add(InsideMap(game_map=NORTHEAST_MOUNTAINTOPS_SW_NW))
+    OR_1.Add(InsideMap(game_map=NORTHEAST_MOUNTAINTOPS_NW_SW))
+    OR_1.Add(InsideMap(game_map=SOUTHEAST_MOUNTAINTOPS_SW_NE))
+    OR_1.Add(InsideMap(game_map=SOUTHEAST_MOUNTAINTOPS_NW_SE))
+    OR_1.Add(InsideMap(game_map=SOUTHEAST_MOUNTAINTOPS_NW_NE))
+    OR_1.Add(InsideMap(game_map=NORTHEAST_MOUNTAINTOPS_SW_SE))
+    OR_1.Add(InsideMap(game_map=NORTHEAST_MOUNTAINTOPS_SW_NE))
+    OR_1.Add(InsideMap(game_map=NORTHEAST_MOUNTAINTOPS_NW_SE))
+    OR_1.Add(InsideMap(game_map=SOUTHEAST_MOUNTAINTOPS_SW_SW))
+    OR_1.Add(InsideMap(game_map=SOUTHEAST_MOUNTAINTOPS_SW_SE))
+    AND_1.Add(OR_1)
+    AND_1.Add(FlagDisabled(19001057))
+    AND_1.Add(FlagDisabled(19001056))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(19001055)
-    IfInsideMap(OR_2, game_map=(60, 47, 53, 0))
-    IfInsideMap(OR_2, game_map=(60, 47, 54, 0))
-    IfInsideMap(OR_2, game_map=NORTHEAST_ALTUS_PLATEAU_NE_NE)
-    IfInsideMap(OR_2, game_map=WEST_CONSECRATED_SNOWFIELD_SE_SE)
-    IfInsideMap(OR_2, game_map=WEST_CONSECRATED_SNOWFIELD_SE_NE)
-    IfInsideMap(OR_2, game_map=WEST_CONSECRATED_SNOWFIELD_NE_SE)
-    IfInsideMap(OR_2, game_map=(60, 48, 53, 0))
-    IfInsideMap(OR_2, game_map=SOUTHWEST_MOUNTAINTOPS_NW_SW)
-    IfInsideMap(OR_2, game_map=SOUTHWEST_MOUNTAINTOPS_NW_NW)
-    IfInsideMap(OR_2, game_map=NORTHWEST_MOUNTAINTOPS_SW_SW)
-    IfInsideMap(OR_2, game_map=NORTHWEST_MOUNTAINTOPS_SW_NW)
-    IfInsideMap(OR_2, game_map=NORTHWEST_MOUNTAINTOPS_NW_SW)
-    IfInsideMap(OR_2, game_map=SOUTHWEST_MOUNTAINTOPS_SW_NE)
-    IfInsideMap(OR_2, game_map=SOUTHWEST_MOUNTAINTOPS_NW_SE)
-    IfInsideMap(OR_2, game_map=SOUTHWEST_MOUNTAINTOPS_NW_NE)
-    IfInsideMap(OR_2, game_map=NORTHWEST_MOUNTAINTOPS_SW_SE)
-    IfInsideMap(OR_2, game_map=NORTHWEST_MOUNTAINTOPS_SW_NE)
-    IfInsideMap(OR_2, game_map=(60, 49, 58, 0))
-    IfInsideMap(OR_2, game_map=SOUTHWEST_MOUNTAINTOPS_SE_NW)
-    IfInsideMap(OR_2, game_map=SOUTHWEST_MOUNTAINTOPS_NE_SW)
-    IfInsideMap(OR_2, game_map=SOUTHWEST_MOUNTAINTOPS_NE_NW)
-    IfInsideMap(OR_2, game_map=NORTHWEST_MOUNTAINTOPS_SE_SW)
-    IfInsideMap(OR_2, game_map=NORTHWEST_MOUNTAINTOPS_SE_NW)
-    IfInsideMap(OR_2, game_map=(60, 50, 58, 0))
-    IfInsideMap(OR_2, game_map=SOUTHWEST_MOUNTAINTOPS_SE_NE)
-    IfInsideMap(OR_2, game_map=SOUTHWEST_MOUNTAINTOPS_NE_SE)
-    IfInsideMap(OR_2, game_map=SOUTHWEST_MOUNTAINTOPS_NE_NE)
-    IfInsideMap(OR_2, game_map=NORTHWEST_MOUNTAINTOPS_SE_SE)
-    IfInsideMap(OR_2, game_map=NORTHWEST_MOUNTAINTOPS_SE_NE)
-    IfInsideMap(OR_2, game_map=NORTHWEST_MOUNTAINTOPS_NE_SE)
-    IfInsideMap(OR_2, game_map=SOUTHEAST_MOUNTAINTOPS_SW_NW)
-    IfInsideMap(OR_2, game_map=SOUTHEAST_MOUNTAINTOPS_NW_SW)
-    IfInsideMap(OR_2, game_map=SOUTHEAST_MOUNTAINTOPS_NW_NW)
-    IfInsideMap(OR_2, game_map=NORTHEAST_MOUNTAINTOPS_SW_SW)
-    IfInsideMap(OR_2, game_map=NORTHEAST_MOUNTAINTOPS_SW_NW)
-    IfInsideMap(OR_2, game_map=NORTHEAST_MOUNTAINTOPS_NW_SW)
-    IfInsideMap(OR_2, game_map=SOUTHEAST_MOUNTAINTOPS_SW_NE)
-    IfInsideMap(OR_2, game_map=SOUTHEAST_MOUNTAINTOPS_NW_SE)
-    IfInsideMap(OR_2, game_map=SOUTHEAST_MOUNTAINTOPS_NW_NE)
-    IfInsideMap(OR_2, game_map=NORTHEAST_MOUNTAINTOPS_SW_SE)
-    IfInsideMap(OR_2, game_map=NORTHEAST_MOUNTAINTOPS_SW_NE)
-    IfInsideMap(OR_2, game_map=NORTHEAST_MOUNTAINTOPS_NW_SE)
-    IfInsideMap(OR_2, game_map=SOUTHEAST_MOUNTAINTOPS_SW_SW)
-    IfInsideMap(OR_2, game_map=SOUTHEAST_MOUNTAINTOPS_SW_SE)
-    IfConditionTrue(AND_2, input_condition=OR_2)
-    IfFlagDisabled(AND_2, 19001057)
-    IfFlagDisabled(AND_2, 19001056)
-    IfConditionFalse(MAIN, input_condition=AND_2)
+    OR_2.Add(InsideMap(game_map=(60, 47, 53, 0)))
+    OR_2.Add(InsideMap(game_map=(60, 47, 54, 0)))
+    OR_2.Add(InsideMap(game_map=NORTHEAST_ALTUS_PLATEAU_NE_NE))
+    OR_2.Add(InsideMap(game_map=WEST_CONSECRATED_SNOWFIELD_SE_SE))
+    OR_2.Add(InsideMap(game_map=WEST_CONSECRATED_SNOWFIELD_SE_NE))
+    OR_2.Add(InsideMap(game_map=WEST_CONSECRATED_SNOWFIELD_NE_SE))
+    OR_2.Add(InsideMap(game_map=(60, 48, 53, 0)))
+    OR_2.Add(InsideMap(game_map=SOUTHWEST_MOUNTAINTOPS_NW_SW))
+    OR_2.Add(InsideMap(game_map=SOUTHWEST_MOUNTAINTOPS_NW_NW))
+    OR_2.Add(InsideMap(game_map=NORTHWEST_MOUNTAINTOPS_SW_SW))
+    OR_2.Add(InsideMap(game_map=NORTHWEST_MOUNTAINTOPS_SW_NW))
+    OR_2.Add(InsideMap(game_map=NORTHWEST_MOUNTAINTOPS_NW_SW))
+    OR_2.Add(InsideMap(game_map=SOUTHWEST_MOUNTAINTOPS_SW_NE))
+    OR_2.Add(InsideMap(game_map=SOUTHWEST_MOUNTAINTOPS_NW_SE))
+    OR_2.Add(InsideMap(game_map=SOUTHWEST_MOUNTAINTOPS_NW_NE))
+    OR_2.Add(InsideMap(game_map=NORTHWEST_MOUNTAINTOPS_SW_SE))
+    OR_2.Add(InsideMap(game_map=NORTHWEST_MOUNTAINTOPS_SW_NE))
+    OR_2.Add(InsideMap(game_map=(60, 49, 58, 0)))
+    OR_2.Add(InsideMap(game_map=SOUTHWEST_MOUNTAINTOPS_SE_NW))
+    OR_2.Add(InsideMap(game_map=SOUTHWEST_MOUNTAINTOPS_NE_SW))
+    OR_2.Add(InsideMap(game_map=SOUTHWEST_MOUNTAINTOPS_NE_NW))
+    OR_2.Add(InsideMap(game_map=NORTHWEST_MOUNTAINTOPS_SE_SW))
+    OR_2.Add(InsideMap(game_map=NORTHWEST_MOUNTAINTOPS_SE_NW))
+    OR_2.Add(InsideMap(game_map=(60, 50, 58, 0)))
+    OR_2.Add(InsideMap(game_map=SOUTHWEST_MOUNTAINTOPS_SE_NE))
+    OR_2.Add(InsideMap(game_map=SOUTHWEST_MOUNTAINTOPS_NE_SE))
+    OR_2.Add(InsideMap(game_map=SOUTHWEST_MOUNTAINTOPS_NE_NE))
+    OR_2.Add(InsideMap(game_map=NORTHWEST_MOUNTAINTOPS_SE_SE))
+    OR_2.Add(InsideMap(game_map=NORTHWEST_MOUNTAINTOPS_SE_NE))
+    OR_2.Add(InsideMap(game_map=NORTHWEST_MOUNTAINTOPS_NE_SE))
+    OR_2.Add(InsideMap(game_map=SOUTHEAST_MOUNTAINTOPS_SW_NW))
+    OR_2.Add(InsideMap(game_map=SOUTHEAST_MOUNTAINTOPS_NW_SW))
+    OR_2.Add(InsideMap(game_map=SOUTHEAST_MOUNTAINTOPS_NW_NW))
+    OR_2.Add(InsideMap(game_map=NORTHEAST_MOUNTAINTOPS_SW_SW))
+    OR_2.Add(InsideMap(game_map=NORTHEAST_MOUNTAINTOPS_SW_NW))
+    OR_2.Add(InsideMap(game_map=NORTHEAST_MOUNTAINTOPS_NW_SW))
+    OR_2.Add(InsideMap(game_map=SOUTHEAST_MOUNTAINTOPS_SW_NE))
+    OR_2.Add(InsideMap(game_map=SOUTHEAST_MOUNTAINTOPS_NW_SE))
+    OR_2.Add(InsideMap(game_map=SOUTHEAST_MOUNTAINTOPS_NW_NE))
+    OR_2.Add(InsideMap(game_map=NORTHEAST_MOUNTAINTOPS_SW_SE))
+    OR_2.Add(InsideMap(game_map=NORTHEAST_MOUNTAINTOPS_SW_NE))
+    OR_2.Add(InsideMap(game_map=NORTHEAST_MOUNTAINTOPS_NW_SE))
+    OR_2.Add(InsideMap(game_map=SOUTHEAST_MOUNTAINTOPS_SW_SW))
+    OR_2.Add(InsideMap(game_map=SOUTHEAST_MOUNTAINTOPS_SW_SE))
+    AND_2.Add(OR_2)
+    AND_2.Add(FlagDisabled(19001057))
+    AND_2.Add(FlagDisabled(19001056))
+    
+    MAIN.Await(not AND_2)
+    
     Restart()
 
 
@@ -9429,105 +10229,109 @@ def Event_19001045():
 def Event_19001046():
     """Event 19001046"""
     DisableFlag(19001056)
-    IfInsideMap(OR_1, game_map=TOMBSWARD_CATACOMBS)
-    IfInsideMap(OR_1, game_map=IMPALERS_CATACOMBS)
-    IfInsideMap(OR_1, game_map=STORMFOOT_CATACOMBS)
-    IfInsideMap(OR_1, game_map=ROADS_END_CATACOMBS)
-    IfInsideMap(OR_1, game_map=MURKWATER_CATACOMBS)
-    IfInsideMap(OR_1, game_map=BLACK_KNIFE_CATACOMBS)
-    IfInsideMap(OR_1, game_map=CLIFFBOTTOM_CATACOMBS)
-    IfInsideMap(OR_1, game_map=WYNDHAM_CATACOMBS)
-    IfInsideMap(OR_1, game_map=DEATHTOUCHED_CATACOMBS)
-    IfInsideMap(OR_1, game_map=UNSIGHTLY_CATACOMBS)
-    IfInsideMap(OR_1, game_map=AURIZA_SIDE_TOMB)
-    IfInsideMap(OR_1, game_map=MINOR_ERDTREE_CATACOMBS)
-    IfInsideMap(OR_1, game_map=CAELID_CATACOMBS)
-    IfInsideMap(OR_1, game_map=WAR_DEAD_CATACOMBS)
-    IfInsideMap(OR_1, game_map=GIANTS_MOUNTAINTOP_CATACOMBS)
-    IfInsideMap(OR_1, game_map=CONSECRATED_SNOWFIELD_CATACOMBS)
-    IfInsideMap(OR_1, game_map=HIDDEN_PATH_TO_THE_HALIGTREE)
-    IfInsideMap(OR_1, game_map=SAINTED_HEROS_GRAVE)
-    IfInsideMap(OR_1, game_map=GELMIR_HEROS_GRAVE)
-    IfInsideMap(OR_1, game_map=AURIZA_HEROS_GRAVE)
-    IfInsideMap(OR_1, game_map=GIANT_CONQUERING_HEROS_GRAVE)
-    IfInsideMap(OR_1, game_map=MURKWATER_CAVE)
-    IfInsideMap(OR_1, game_map=EARTHBORE_CAVE)
-    IfInsideMap(OR_1, game_map=TOMBSWARD_CAVE)
-    IfInsideMap(OR_1, game_map=GROVESIDE_CAVE)
-    IfInsideMap(OR_1, game_map=STILLWATER_CAVE)
-    IfInsideMap(OR_1, game_map=LAKESIDE_CRYSTAL_CAVE)
-    IfInsideMap(OR_1, game_map=ACADEMY_CRYSTAL_CAVE)
-    IfInsideMap(OR_1, game_map=SEETHEWATER_CAVE)
-    IfInsideMap(OR_1, game_map=VOLCANO_CAVE)
-    IfInsideMap(OR_1, game_map=DRAGONBARROW_CAVE)
-    IfInsideMap(OR_1, game_map=SELLIA_HIDEAWAY)
-    IfInsideMap(OR_1, game_map=CAVE_OF_THE_FORLORN)
-    IfInsideMap(OR_1, game_map=COASTAL_CAVE)
-    IfInsideMap(OR_1, game_map=HIGHROAD_CAVE)
-    IfInsideMap(OR_1, game_map=PERFUMERS_GROTTO)
-    IfInsideMap(OR_1, game_map=SAGES_CAVE)
-    IfInsideMap(OR_1, game_map=ABANDONED_CAVE)
-    IfInsideMap(OR_1, game_map=GAOL_CAVE)
-    IfInsideMap(OR_1, game_map=SPIRITCALLER_CAVE)
-    IfInsideMap(OR_1, game_map=MORNE_TUNNEL)
-    IfInsideMap(OR_1, game_map=LIMGRAVE_TUNNELS)
-    IfInsideMap(OR_1, game_map=RAYA_LUCARIA_CRYSTAL_TUNNEL)
-    IfInsideMap(OR_1, game_map=OLD_ALTUS_TUNNEL)
-    IfInsideMap(OR_1, game_map=ALTUS_TUNNEL)
-    IfInsideMap(OR_1, game_map=GAEL_TUNNEL)
-    IfInsideMap(OR_1, game_map=SELLIA_CRYSTAL_TUNNEL)
-    IfInsideMap(OR_1, game_map=YELOUGH_ANIX_TUNNEL)
-    IfConditionTrue(MAIN, input_condition=OR_1)
+    OR_1.Add(InsideMap(game_map=TOMBSWARD_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=IMPALERS_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=STORMFOOT_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=ROADS_END_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=MURKWATER_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=BLACK_KNIFE_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=CLIFFBOTTOM_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=WYNDHAM_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=DEATHTOUCHED_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=UNSIGHTLY_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=AURIZA_SIDE_TOMB))
+    OR_1.Add(InsideMap(game_map=MINOR_ERDTREE_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=CAELID_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=WAR_DEAD_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=GIANTS_MOUNTAINTOP_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=CONSECRATED_SNOWFIELD_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=HIDDEN_PATH_TO_THE_HALIGTREE))
+    OR_1.Add(InsideMap(game_map=SAINTED_HEROS_GRAVE))
+    OR_1.Add(InsideMap(game_map=GELMIR_HEROS_GRAVE))
+    OR_1.Add(InsideMap(game_map=AURIZA_HEROS_GRAVE))
+    OR_1.Add(InsideMap(game_map=GIANT_CONQUERING_HEROS_GRAVE))
+    OR_1.Add(InsideMap(game_map=MURKWATER_CAVE))
+    OR_1.Add(InsideMap(game_map=EARTHBORE_CAVE))
+    OR_1.Add(InsideMap(game_map=TOMBSWARD_CAVE))
+    OR_1.Add(InsideMap(game_map=GROVESIDE_CAVE))
+    OR_1.Add(InsideMap(game_map=STILLWATER_CAVE))
+    OR_1.Add(InsideMap(game_map=LAKESIDE_CRYSTAL_CAVE))
+    OR_1.Add(InsideMap(game_map=ACADEMY_CRYSTAL_CAVE))
+    OR_1.Add(InsideMap(game_map=SEETHEWATER_CAVE))
+    OR_1.Add(InsideMap(game_map=VOLCANO_CAVE))
+    OR_1.Add(InsideMap(game_map=DRAGONBARROW_CAVE))
+    OR_1.Add(InsideMap(game_map=SELLIA_HIDEAWAY))
+    OR_1.Add(InsideMap(game_map=CAVE_OF_THE_FORLORN))
+    OR_1.Add(InsideMap(game_map=COASTAL_CAVE))
+    OR_1.Add(InsideMap(game_map=HIGHROAD_CAVE))
+    OR_1.Add(InsideMap(game_map=PERFUMERS_GROTTO))
+    OR_1.Add(InsideMap(game_map=SAGES_CAVE))
+    OR_1.Add(InsideMap(game_map=ABANDONED_CAVE))
+    OR_1.Add(InsideMap(game_map=GAOL_CAVE))
+    OR_1.Add(InsideMap(game_map=SPIRITCALLER_CAVE))
+    OR_1.Add(InsideMap(game_map=MORNE_TUNNEL))
+    OR_1.Add(InsideMap(game_map=LIMGRAVE_TUNNELS))
+    OR_1.Add(InsideMap(game_map=RAYA_LUCARIA_CRYSTAL_TUNNEL))
+    OR_1.Add(InsideMap(game_map=OLD_ALTUS_TUNNEL))
+    OR_1.Add(InsideMap(game_map=ALTUS_TUNNEL))
+    OR_1.Add(InsideMap(game_map=GAEL_TUNNEL))
+    OR_1.Add(InsideMap(game_map=SELLIA_CRYSTAL_TUNNEL))
+    OR_1.Add(InsideMap(game_map=YELOUGH_ANIX_TUNNEL))
+    
+    MAIN.Await(OR_1)
+    
     EnableFlag(19001056)
-    IfInsideMap(OR_2, game_map=TOMBSWARD_CATACOMBS)
-    IfInsideMap(OR_2, game_map=IMPALERS_CATACOMBS)
-    IfInsideMap(OR_2, game_map=STORMFOOT_CATACOMBS)
-    IfInsideMap(OR_2, game_map=ROADS_END_CATACOMBS)
-    IfInsideMap(OR_2, game_map=MURKWATER_CATACOMBS)
-    IfInsideMap(OR_2, game_map=BLACK_KNIFE_CATACOMBS)
-    IfInsideMap(OR_2, game_map=CLIFFBOTTOM_CATACOMBS)
-    IfInsideMap(OR_2, game_map=WYNDHAM_CATACOMBS)
-    IfInsideMap(OR_2, game_map=DEATHTOUCHED_CATACOMBS)
-    IfInsideMap(OR_2, game_map=UNSIGHTLY_CATACOMBS)
-    IfInsideMap(OR_2, game_map=AURIZA_SIDE_TOMB)
-    IfInsideMap(OR_2, game_map=MINOR_ERDTREE_CATACOMBS)
-    IfInsideMap(OR_2, game_map=CAELID_CATACOMBS)
-    IfInsideMap(OR_2, game_map=WAR_DEAD_CATACOMBS)
-    IfInsideMap(OR_2, game_map=GIANTS_MOUNTAINTOP_CATACOMBS)
-    IfInsideMap(OR_2, game_map=CONSECRATED_SNOWFIELD_CATACOMBS)
-    IfInsideMap(OR_2, game_map=HIDDEN_PATH_TO_THE_HALIGTREE)
-    IfInsideMap(OR_2, game_map=SAINTED_HEROS_GRAVE)
-    IfInsideMap(OR_2, game_map=GELMIR_HEROS_GRAVE)
-    IfInsideMap(OR_2, game_map=AURIZA_HEROS_GRAVE)
-    IfInsideMap(OR_2, game_map=GIANT_CONQUERING_HEROS_GRAVE)
-    IfInsideMap(OR_2, game_map=MURKWATER_CAVE)
-    IfInsideMap(OR_2, game_map=EARTHBORE_CAVE)
-    IfInsideMap(OR_2, game_map=TOMBSWARD_CAVE)
-    IfInsideMap(OR_2, game_map=GROVESIDE_CAVE)
-    IfInsideMap(OR_2, game_map=STILLWATER_CAVE)
-    IfInsideMap(OR_2, game_map=LAKESIDE_CRYSTAL_CAVE)
-    IfInsideMap(OR_2, game_map=ACADEMY_CRYSTAL_CAVE)
-    IfInsideMap(OR_2, game_map=SEETHEWATER_CAVE)
-    IfInsideMap(OR_2, game_map=VOLCANO_CAVE)
-    IfInsideMap(OR_2, game_map=DRAGONBARROW_CAVE)
-    IfInsideMap(OR_2, game_map=SELLIA_HIDEAWAY)
-    IfInsideMap(OR_2, game_map=CAVE_OF_THE_FORLORN)
-    IfInsideMap(OR_2, game_map=COASTAL_CAVE)
-    IfInsideMap(OR_2, game_map=HIGHROAD_CAVE)
-    IfInsideMap(OR_2, game_map=PERFUMERS_GROTTO)
-    IfInsideMap(OR_2, game_map=SAGES_CAVE)
-    IfInsideMap(OR_2, game_map=ABANDONED_CAVE)
-    IfInsideMap(OR_2, game_map=GAOL_CAVE)
-    IfInsideMap(OR_2, game_map=SPIRITCALLER_CAVE)
-    IfInsideMap(OR_2, game_map=MORNE_TUNNEL)
-    IfInsideMap(OR_2, game_map=LIMGRAVE_TUNNELS)
-    IfInsideMap(OR_2, game_map=RAYA_LUCARIA_CRYSTAL_TUNNEL)
-    IfInsideMap(OR_2, game_map=OLD_ALTUS_TUNNEL)
-    IfInsideMap(OR_2, game_map=ALTUS_TUNNEL)
-    IfInsideMap(OR_2, game_map=GAEL_TUNNEL)
-    IfInsideMap(OR_2, game_map=SELLIA_CRYSTAL_TUNNEL)
-    IfInsideMap(OR_2, game_map=YELOUGH_ANIX_TUNNEL)
-    IfConditionFalse(MAIN, input_condition=OR_2)
+    OR_2.Add(InsideMap(game_map=TOMBSWARD_CATACOMBS))
+    OR_2.Add(InsideMap(game_map=IMPALERS_CATACOMBS))
+    OR_2.Add(InsideMap(game_map=STORMFOOT_CATACOMBS))
+    OR_2.Add(InsideMap(game_map=ROADS_END_CATACOMBS))
+    OR_2.Add(InsideMap(game_map=MURKWATER_CATACOMBS))
+    OR_2.Add(InsideMap(game_map=BLACK_KNIFE_CATACOMBS))
+    OR_2.Add(InsideMap(game_map=CLIFFBOTTOM_CATACOMBS))
+    OR_2.Add(InsideMap(game_map=WYNDHAM_CATACOMBS))
+    OR_2.Add(InsideMap(game_map=DEATHTOUCHED_CATACOMBS))
+    OR_2.Add(InsideMap(game_map=UNSIGHTLY_CATACOMBS))
+    OR_2.Add(InsideMap(game_map=AURIZA_SIDE_TOMB))
+    OR_2.Add(InsideMap(game_map=MINOR_ERDTREE_CATACOMBS))
+    OR_2.Add(InsideMap(game_map=CAELID_CATACOMBS))
+    OR_2.Add(InsideMap(game_map=WAR_DEAD_CATACOMBS))
+    OR_2.Add(InsideMap(game_map=GIANTS_MOUNTAINTOP_CATACOMBS))
+    OR_2.Add(InsideMap(game_map=CONSECRATED_SNOWFIELD_CATACOMBS))
+    OR_2.Add(InsideMap(game_map=HIDDEN_PATH_TO_THE_HALIGTREE))
+    OR_2.Add(InsideMap(game_map=SAINTED_HEROS_GRAVE))
+    OR_2.Add(InsideMap(game_map=GELMIR_HEROS_GRAVE))
+    OR_2.Add(InsideMap(game_map=AURIZA_HEROS_GRAVE))
+    OR_2.Add(InsideMap(game_map=GIANT_CONQUERING_HEROS_GRAVE))
+    OR_2.Add(InsideMap(game_map=MURKWATER_CAVE))
+    OR_2.Add(InsideMap(game_map=EARTHBORE_CAVE))
+    OR_2.Add(InsideMap(game_map=TOMBSWARD_CAVE))
+    OR_2.Add(InsideMap(game_map=GROVESIDE_CAVE))
+    OR_2.Add(InsideMap(game_map=STILLWATER_CAVE))
+    OR_2.Add(InsideMap(game_map=LAKESIDE_CRYSTAL_CAVE))
+    OR_2.Add(InsideMap(game_map=ACADEMY_CRYSTAL_CAVE))
+    OR_2.Add(InsideMap(game_map=SEETHEWATER_CAVE))
+    OR_2.Add(InsideMap(game_map=VOLCANO_CAVE))
+    OR_2.Add(InsideMap(game_map=DRAGONBARROW_CAVE))
+    OR_2.Add(InsideMap(game_map=SELLIA_HIDEAWAY))
+    OR_2.Add(InsideMap(game_map=CAVE_OF_THE_FORLORN))
+    OR_2.Add(InsideMap(game_map=COASTAL_CAVE))
+    OR_2.Add(InsideMap(game_map=HIGHROAD_CAVE))
+    OR_2.Add(InsideMap(game_map=PERFUMERS_GROTTO))
+    OR_2.Add(InsideMap(game_map=SAGES_CAVE))
+    OR_2.Add(InsideMap(game_map=ABANDONED_CAVE))
+    OR_2.Add(InsideMap(game_map=GAOL_CAVE))
+    OR_2.Add(InsideMap(game_map=SPIRITCALLER_CAVE))
+    OR_2.Add(InsideMap(game_map=MORNE_TUNNEL))
+    OR_2.Add(InsideMap(game_map=LIMGRAVE_TUNNELS))
+    OR_2.Add(InsideMap(game_map=RAYA_LUCARIA_CRYSTAL_TUNNEL))
+    OR_2.Add(InsideMap(game_map=OLD_ALTUS_TUNNEL))
+    OR_2.Add(InsideMap(game_map=ALTUS_TUNNEL))
+    OR_2.Add(InsideMap(game_map=GAEL_TUNNEL))
+    OR_2.Add(InsideMap(game_map=SELLIA_CRYSTAL_TUNNEL))
+    OR_2.Add(InsideMap(game_map=YELOUGH_ANIX_TUNNEL))
+    
+    MAIN.Await(not OR_2)
+    
     Restart()
 
 
@@ -9535,51 +10339,55 @@ def Event_19001046():
 def Event_19001047():
     """Event 19001047"""
     DisableFlag(19001057)
-    IfInsideMap(OR_1, game_map=STORMVEIL_CASTLE)
-    IfInsideMap(OR_1, game_map=CHAPEL_OF_ANTICIPATION)
-    IfInsideMap(OR_1, game_map=LEYNDELL_ROYAL_CAPITAL)
-    IfInsideMap(OR_1, game_map=LEYNDELL_ASHEN_CAPITAL)
-    IfInsideMap(OR_1, game_map=ROUNDTABLE_HOLD)
-    IfInsideMap(OR_1, game_map=AINSEL_RIVER)
-    IfInsideMap(OR_1, game_map=SIOFRA_RIVER)
-    IfInsideMap(OR_1, game_map=DEEPROOT_DEPTHS)
-    IfInsideMap(OR_1, game_map=ASTEL_ARENA)
-    IfInsideMap(OR_1, game_map=MOHGWYN_PALACE)
-    IfInsideMap(OR_1, game_map=SIOFRA_RIVER_START)
-    IfInsideMap(OR_1, game_map=ANCESTOR_SPIRIT_ARENA)
-    IfInsideMap(OR_1, game_map=REGAL_ANCESTOR_ARENA)
-    IfInsideMap(OR_1, game_map=CRUMBLING_FARUM_AZULA)
-    IfInsideMap(OR_1, game_map=RAYA_LUCARIA)
-    IfInsideMap(OR_1, game_map=HALIGTREE)
-    IfInsideMap(OR_1, game_map=VOLCANO_MANOR)
-    IfInsideMap(OR_1, game_map=STRANDED_GRAVEYARD)
-    IfInsideMap(OR_1, game_map=STONE_PLATFORM)
-    IfInsideMap(OR_1, game_map=SHUNNING_GROUNDS)
-    IfInsideMap(OR_1, game_map=RUIN_STREWN_PRECIPICE)
-    IfConditionTrue(MAIN, input_condition=OR_1)
+    OR_1.Add(InsideMap(game_map=STORMVEIL_CASTLE))
+    OR_1.Add(InsideMap(game_map=CHAPEL_OF_ANTICIPATION))
+    OR_1.Add(InsideMap(game_map=LEYNDELL_ROYAL_CAPITAL))
+    OR_1.Add(InsideMap(game_map=LEYNDELL_ASHEN_CAPITAL))
+    OR_1.Add(InsideMap(game_map=ROUNDTABLE_HOLD))
+    OR_1.Add(InsideMap(game_map=AINSEL_RIVER))
+    OR_1.Add(InsideMap(game_map=SIOFRA_RIVER))
+    OR_1.Add(InsideMap(game_map=DEEPROOT_DEPTHS))
+    OR_1.Add(InsideMap(game_map=ASTEL_ARENA))
+    OR_1.Add(InsideMap(game_map=MOHGWYN_PALACE))
+    OR_1.Add(InsideMap(game_map=SIOFRA_RIVER_START))
+    OR_1.Add(InsideMap(game_map=ANCESTOR_SPIRIT_ARENA))
+    OR_1.Add(InsideMap(game_map=REGAL_ANCESTOR_ARENA))
+    OR_1.Add(InsideMap(game_map=CRUMBLING_FARUM_AZULA))
+    OR_1.Add(InsideMap(game_map=RAYA_LUCARIA))
+    OR_1.Add(InsideMap(game_map=HALIGTREE))
+    OR_1.Add(InsideMap(game_map=VOLCANO_MANOR))
+    OR_1.Add(InsideMap(game_map=STRANDED_GRAVEYARD))
+    OR_1.Add(InsideMap(game_map=STONE_PLATFORM))
+    OR_1.Add(InsideMap(game_map=SHUNNING_GROUNDS))
+    OR_1.Add(InsideMap(game_map=RUIN_STREWN_PRECIPICE))
+    
+    MAIN.Await(OR_1)
+    
     EnableFlag(19001057)
-    IfInsideMap(OR_2, game_map=STORMVEIL_CASTLE)
-    IfInsideMap(OR_2, game_map=CHAPEL_OF_ANTICIPATION)
-    IfInsideMap(OR_2, game_map=LEYNDELL_ROYAL_CAPITAL)
-    IfInsideMap(OR_2, game_map=LEYNDELL_ASHEN_CAPITAL)
-    IfInsideMap(OR_2, game_map=ROUNDTABLE_HOLD)
-    IfInsideMap(OR_2, game_map=AINSEL_RIVER)
-    IfInsideMap(OR_2, game_map=SIOFRA_RIVER)
-    IfInsideMap(OR_2, game_map=DEEPROOT_DEPTHS)
-    IfInsideMap(OR_2, game_map=ASTEL_ARENA)
-    IfInsideMap(OR_2, game_map=MOHGWYN_PALACE)
-    IfInsideMap(OR_2, game_map=SIOFRA_RIVER_START)
-    IfInsideMap(OR_2, game_map=ANCESTOR_SPIRIT_ARENA)
-    IfInsideMap(OR_2, game_map=REGAL_ANCESTOR_ARENA)
-    IfInsideMap(OR_2, game_map=CRUMBLING_FARUM_AZULA)
-    IfInsideMap(OR_2, game_map=RAYA_LUCARIA)
-    IfInsideMap(OR_2, game_map=HALIGTREE)
-    IfInsideMap(OR_2, game_map=VOLCANO_MANOR)
-    IfInsideMap(OR_2, game_map=STRANDED_GRAVEYARD)
-    IfInsideMap(OR_2, game_map=STONE_PLATFORM)
-    IfInsideMap(OR_2, game_map=SHUNNING_GROUNDS)
-    IfInsideMap(OR_2, game_map=RUIN_STREWN_PRECIPICE)
-    IfConditionFalse(MAIN, input_condition=OR_2)
+    OR_2.Add(InsideMap(game_map=STORMVEIL_CASTLE))
+    OR_2.Add(InsideMap(game_map=CHAPEL_OF_ANTICIPATION))
+    OR_2.Add(InsideMap(game_map=LEYNDELL_ROYAL_CAPITAL))
+    OR_2.Add(InsideMap(game_map=LEYNDELL_ASHEN_CAPITAL))
+    OR_2.Add(InsideMap(game_map=ROUNDTABLE_HOLD))
+    OR_2.Add(InsideMap(game_map=AINSEL_RIVER))
+    OR_2.Add(InsideMap(game_map=SIOFRA_RIVER))
+    OR_2.Add(InsideMap(game_map=DEEPROOT_DEPTHS))
+    OR_2.Add(InsideMap(game_map=ASTEL_ARENA))
+    OR_2.Add(InsideMap(game_map=MOHGWYN_PALACE))
+    OR_2.Add(InsideMap(game_map=SIOFRA_RIVER_START))
+    OR_2.Add(InsideMap(game_map=ANCESTOR_SPIRIT_ARENA))
+    OR_2.Add(InsideMap(game_map=REGAL_ANCESTOR_ARENA))
+    OR_2.Add(InsideMap(game_map=CRUMBLING_FARUM_AZULA))
+    OR_2.Add(InsideMap(game_map=RAYA_LUCARIA))
+    OR_2.Add(InsideMap(game_map=HALIGTREE))
+    OR_2.Add(InsideMap(game_map=VOLCANO_MANOR))
+    OR_2.Add(InsideMap(game_map=STRANDED_GRAVEYARD))
+    OR_2.Add(InsideMap(game_map=STONE_PLATFORM))
+    OR_2.Add(InsideMap(game_map=SHUNNING_GROUNDS))
+    OR_2.Add(InsideMap(game_map=RUIN_STREWN_PRECIPICE))
+    
+    MAIN.Await(not OR_2)
+    
     Restart()
 
 
@@ -9587,49 +10395,57 @@ def Event_19001047():
 def Event_19001398():
     """Event 19001398"""
     DisableFlag(19001592)
-    IfFlagEnabled(OR_1, 19001050)
-    IfFlagEnabled(OR_1, 19001051)
-    IfFlagEnabled(OR_1, 19001052)
-    IfFlagEnabled(OR_1, 19001053)
-    IfFlagEnabled(OR_1, 19001054)
-    IfFlagEnabled(OR_1, 19001055)
-    IfInsideMap(OR_1, game_map=STORMVEIL_CASTLE)
-    IfInsideMap(OR_1, game_map=RAYA_LUCARIA)
-    IfInsideMap(OR_1, game_map=VOLCANO_MANOR)
-    IfInsideMap(OR_1, game_map=LEYNDELL_ROYAL_CAPITAL)
-    IfInsideMap(OR_1, game_map=LEYNDELL_ASHEN_CAPITAL)
-    IfInsideMap(OR_1, game_map=HALIGTREE)
-    IfInsideMap(OR_1, game_map=CRUMBLING_FARUM_AZULA)
-    IfInsideMap(OR_1, game_map=CHAPEL_OF_ANTICIPATION)
-    IfConditionTrue(MAIN, input_condition=OR_1)
+    OR_1.Add(FlagEnabled(19001050))
+    OR_1.Add(FlagEnabled(19001051))
+    OR_1.Add(FlagEnabled(19001052))
+    OR_1.Add(FlagEnabled(19001053))
+    OR_1.Add(FlagEnabled(19001054))
+    OR_1.Add(FlagEnabled(19001055))
+    OR_1.Add(InsideMap(game_map=STORMVEIL_CASTLE))
+    OR_1.Add(InsideMap(game_map=RAYA_LUCARIA))
+    OR_1.Add(InsideMap(game_map=VOLCANO_MANOR))
+    OR_1.Add(InsideMap(game_map=LEYNDELL_ROYAL_CAPITAL))
+    OR_1.Add(InsideMap(game_map=LEYNDELL_ASHEN_CAPITAL))
+    OR_1.Add(InsideMap(game_map=HALIGTREE))
+    OR_1.Add(InsideMap(game_map=CRUMBLING_FARUM_AZULA))
+    OR_1.Add(InsideMap(game_map=CHAPEL_OF_ANTICIPATION))
+    
+    MAIN.Await(OR_1)
+    
     EnableFlag(19001592)
-    IfFlagEnabled(OR_2, 19001050)
-    IfFlagEnabled(OR_2, 19001051)
-    IfFlagEnabled(OR_2, 19001052)
-    IfFlagEnabled(OR_2, 19001053)
-    IfFlagEnabled(OR_2, 19001054)
-    IfFlagEnabled(OR_2, 19001055)
-    IfInsideMap(OR_2, game_map=STORMVEIL_CASTLE)
-    IfInsideMap(OR_2, game_map=RAYA_LUCARIA)
-    IfInsideMap(OR_2, game_map=VOLCANO_MANOR)
-    IfInsideMap(OR_2, game_map=LEYNDELL_ROYAL_CAPITAL)
-    IfInsideMap(OR_2, game_map=LEYNDELL_ASHEN_CAPITAL)
-    IfInsideMap(OR_2, game_map=HALIGTREE)
-    IfInsideMap(OR_2, game_map=CRUMBLING_FARUM_AZULA)
-    IfConditionFalse(MAIN, input_condition=OR_2)
+    OR_2.Add(FlagEnabled(19001050))
+    OR_2.Add(FlagEnabled(19001051))
+    OR_2.Add(FlagEnabled(19001052))
+    OR_2.Add(FlagEnabled(19001053))
+    OR_2.Add(FlagEnabled(19001054))
+    OR_2.Add(FlagEnabled(19001055))
+    OR_2.Add(InsideMap(game_map=STORMVEIL_CASTLE))
+    OR_2.Add(InsideMap(game_map=RAYA_LUCARIA))
+    OR_2.Add(InsideMap(game_map=VOLCANO_MANOR))
+    OR_2.Add(InsideMap(game_map=LEYNDELL_ROYAL_CAPITAL))
+    OR_2.Add(InsideMap(game_map=LEYNDELL_ASHEN_CAPITAL))
+    OR_2.Add(InsideMap(game_map=HALIGTREE))
+    OR_2.Add(InsideMap(game_map=CRUMBLING_FARUM_AZULA))
+    
+    MAIN.Await(not OR_2)
+    
     Restart()
 
 
 @ContinueOnRest(19001550)
-def Event_19001550(_, earliest_hour__latest_hour: uchar, flag: uint):
+def Event_19001550(_, hour: uchar, flag: uint):
     """Event 19001550"""
     DisableFlag(flag)
-    IfTimeOfDay(MAIN, earliest=(earliest_hour__latest_hour, 0, 0), latest=(earliest_hour__latest_hour, 59, 59))
+    
+    MAIN.Await(TimeOfDay(time=(hour, 0, 0)))
+    
     DisableFlagRange((19001600, 19001623))
     EnableFlag(flag)
     DisplayBanner(BannerType.BloodyFingerVanquished)
-    IfTimeOfDay(AND_1, earliest=(earliest_hour__latest_hour, 0, 0), latest=(earliest_hour__latest_hour, 59, 59))
-    IfConditionFalse(MAIN, input_condition=AND_1)
+    AND_1.Add(TimeOfDay(time=(hour, 0, 0)))
+    
+    MAIN.Await(not AND_1)
+    
     Wait(1.0)
     Restart()
 
@@ -9638,9 +10454,13 @@ def Event_19001550(_, earliest_hour__latest_hour: uchar, flag: uint):
 def Event_19001583():
     """Event 19001583"""
     DisableFlag(19001584)
-    IfCharacterHasSpecialEffect(MAIN, PLAYER, 415)
+    
+    MAIN.Await(CharacterHasSpecialEffect(PLAYER, 415))
+    
     EnableFlag(19001584)
-    IfCharacterDoesNotHaveSpecialEffect(MAIN, PLAYER, 415)
+    
+    MAIN.Await(CharacterDoesNotHaveSpecialEffect(PLAYER, 415))
+    
     Restart()
 
 
@@ -9752,7 +10572,8 @@ def Event_15003996():
 @ContinueOnRest(15003995)
 def Event_15003995():
     """Event 15003995"""
-    IfFlagEnabled(MAIN, 19001620)
+    MAIN.Await(FlagEnabled(19001620))
+    
     DisplayBanner(BannerType.BloodyFingerVanquished)
     Wait(5.0)
     Restart()
@@ -9761,100 +10582,102 @@ def Event_15003995():
 @ContinueOnRest(19001000)
 def Event_19001000():
     """Event 19001000"""
-    IfCharacterDoesNotHaveSpecialEffect(AND_1, PLAYER, 51912)
-    IfCharacterDoesNotHaveSpecialEffect(AND_1, PLAYER, 40015)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    AND_1.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 51912))
+    AND_1.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 40015))
+    
+    MAIN.Await(AND_1)
+    
     SkipLinesIfFlagEnabled(5, 19001010)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=53000)
+    SkipLinesIfCharacterDoesNotHaveSpecialEffect(2, character=PLAYER, special_effect=53000)
     Wait(25.0)
     SkipLines(1)
     Wait(30.0)
     EnableFlag(19001010)
     SkipLinesIfFlagEnabled(5, 19001011)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=53000)
+    SkipLinesIfCharacterDoesNotHaveSpecialEffect(2, character=PLAYER, special_effect=53000)
     Wait(25.0)
     SkipLines(1)
     Wait(30.0)
     EnableFlag(19001011)
     SkipLinesIfFlagEnabled(5, 19001012)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=53000)
+    SkipLinesIfCharacterDoesNotHaveSpecialEffect(2, character=PLAYER, special_effect=53000)
     Wait(25.0)
     SkipLines(1)
     Wait(30.0)
     EnableFlag(19001012)
     SkipLinesIfFlagEnabled(5, 19001013)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=53000)
+    SkipLinesIfCharacterDoesNotHaveSpecialEffect(2, character=PLAYER, special_effect=53000)
     Wait(25.0)
     SkipLines(1)
     Wait(30.0)
     EnableFlag(19001013)
     SkipLinesIfFlagEnabled(5, 19001014)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=53000)
+    SkipLinesIfCharacterDoesNotHaveSpecialEffect(2, character=PLAYER, special_effect=53000)
     Wait(25.0)
     SkipLines(1)
     Wait(30.0)
     EnableFlag(19001014)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=53000)
-    Wait(25.0)
-    SkipLines(1)
-    Wait(30.0)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=53000):
+        Wait(25.0)
+    else:
+        Wait(30.0)
     DisableFlagRange((19001010, 19001014))
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40001)
-    RemoveSpecialEffect(PLAYER, 40001)
-    AddSpecialEffect(PLAYER, 40002)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40002)
-    RemoveSpecialEffect(PLAYER, 40002)
-    AddSpecialEffect(PLAYER, 40003)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40003)
-    RemoveSpecialEffect(PLAYER, 40003)
-    AddSpecialEffect(PLAYER, 40004)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40004)
-    RemoveSpecialEffect(PLAYER, 40004)
-    AddSpecialEffect(PLAYER, 40005)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40005)
-    RemoveSpecialEffect(PLAYER, 40005)
-    AddSpecialEffect(PLAYER, 40006)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40006)
-    RemoveSpecialEffect(PLAYER, 40006)
-    AddSpecialEffect(PLAYER, 40007)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40007)
-    RemoveSpecialEffect(PLAYER, 40007)
-    AddSpecialEffect(PLAYER, 40008)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40008)
-    RemoveSpecialEffect(PLAYER, 40008)
-    AddSpecialEffect(PLAYER, 40009)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40009)
-    RemoveSpecialEffect(PLAYER, 40009)
-    AddSpecialEffect(PLAYER, 40010)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40010)
-    RemoveSpecialEffect(PLAYER, 40010)
-    AddSpecialEffect(PLAYER, 40011)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40011)
-    RemoveSpecialEffect(PLAYER, 40011)
-    AddSpecialEffect(PLAYER, 40012)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40012)
-    RemoveSpecialEffect(PLAYER, 40012)
-    AddSpecialEffect(PLAYER, 40013)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40013)
-    RemoveSpecialEffect(PLAYER, 40013)
-    AddSpecialEffect(PLAYER, 40014)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40014)
-    RemoveSpecialEffect(PLAYER, 40014)
-    AddSpecialEffect(PLAYER, 40015)
-    Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40001):
+        RemoveSpecialEffect(PLAYER, 40001)
+        AddSpecialEffect(PLAYER, 40002)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40002):
+        RemoveSpecialEffect(PLAYER, 40002)
+        AddSpecialEffect(PLAYER, 40003)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40003):
+        RemoveSpecialEffect(PLAYER, 40003)
+        AddSpecialEffect(PLAYER, 40004)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40004):
+        RemoveSpecialEffect(PLAYER, 40004)
+        AddSpecialEffect(PLAYER, 40005)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40005):
+        RemoveSpecialEffect(PLAYER, 40005)
+        AddSpecialEffect(PLAYER, 40006)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40006):
+        RemoveSpecialEffect(PLAYER, 40006)
+        AddSpecialEffect(PLAYER, 40007)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40007):
+        RemoveSpecialEffect(PLAYER, 40007)
+        AddSpecialEffect(PLAYER, 40008)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40008):
+        RemoveSpecialEffect(PLAYER, 40008)
+        AddSpecialEffect(PLAYER, 40009)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40009):
+        RemoveSpecialEffect(PLAYER, 40009)
+        AddSpecialEffect(PLAYER, 40010)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40010):
+        RemoveSpecialEffect(PLAYER, 40010)
+        AddSpecialEffect(PLAYER, 40011)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40011):
+        RemoveSpecialEffect(PLAYER, 40011)
+        AddSpecialEffect(PLAYER, 40012)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40012):
+        RemoveSpecialEffect(PLAYER, 40012)
+        AddSpecialEffect(PLAYER, 40013)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40013):
+        RemoveSpecialEffect(PLAYER, 40013)
+        AddSpecialEffect(PLAYER, 40014)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40014):
+        RemoveSpecialEffect(PLAYER, 40014)
+        AddSpecialEffect(PLAYER, 40015)
+        Restart()
     AddSpecialEffect(PLAYER, 40001)
     Restart()
 
@@ -9862,77 +10685,79 @@ def Event_19001000():
 @ContinueOnRest(19001001)
 def Event_19001001():
     """Event 19001001"""
-    IfCharacterDoesNotHaveSpecialEffect(AND_1, PLAYER, 51913)
-    IfCharacterDoesNotHaveSpecialEffect(AND_1, PLAYER, 40029)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    AND_1.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 51913))
+    AND_1.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 40029))
+    
+    MAIN.Await(AND_1)
+    
     SkipLinesIfFlagEnabled(5, 19001015)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=53000)
+    SkipLinesIfCharacterDoesNotHaveSpecialEffect(2, character=PLAYER, special_effect=53000)
     Wait(40.0)
     SkipLines(1)
     Wait(50.0)
     EnableFlag(19001015)
     SkipLinesIfFlagEnabled(5, 19001016)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=53000)
+    SkipLinesIfCharacterDoesNotHaveSpecialEffect(2, character=PLAYER, special_effect=53000)
     Wait(40.0)
     SkipLines(1)
     Wait(50.0)
     EnableFlag(19001016)
     SkipLinesIfFlagEnabled(5, 19001017)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=53000)
+    SkipLinesIfCharacterDoesNotHaveSpecialEffect(2, character=PLAYER, special_effect=53000)
     Wait(40.0)
     SkipLines(1)
     Wait(50.0)
     EnableFlag(19001017)
     SkipLinesIfFlagEnabled(5, 19001018)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=53000)
+    SkipLinesIfCharacterDoesNotHaveSpecialEffect(2, character=PLAYER, special_effect=53000)
     Wait(40.0)
     SkipLines(1)
     Wait(50.0)
     EnableFlag(19001018)
     SkipLinesIfFlagEnabled(5, 19001019)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=53000)
+    SkipLinesIfCharacterDoesNotHaveSpecialEffect(2, character=PLAYER, special_effect=53000)
     Wait(40.0)
     SkipLines(1)
     Wait(50.0)
     EnableFlag(19001019)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=53000)
-    Wait(40.0)
-    SkipLines(1)
-    Wait(50.0)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=53000):
+        Wait(40.0)
+    else:
+        Wait(50.0)
     DisableFlagRange((19001015, 19001019))
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40021)
-    RemoveSpecialEffect(PLAYER, 40021)
-    AddSpecialEffect(PLAYER, 40022)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40022)
-    RemoveSpecialEffect(PLAYER, 40022)
-    AddSpecialEffect(PLAYER, 40023)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40023)
-    RemoveSpecialEffect(PLAYER, 40023)
-    AddSpecialEffect(PLAYER, 40024)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40024)
-    RemoveSpecialEffect(PLAYER, 40024)
-    AddSpecialEffect(PLAYER, 40025)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40025)
-    RemoveSpecialEffect(PLAYER, 40025)
-    AddSpecialEffect(PLAYER, 40026)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40026)
-    RemoveSpecialEffect(PLAYER, 40026)
-    AddSpecialEffect(PLAYER, 40027)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40027)
-    RemoveSpecialEffect(PLAYER, 40027)
-    AddSpecialEffect(PLAYER, 40028)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=4, character=PLAYER, special_effect=40028)
-    RemoveSpecialEffect(PLAYER, 40028)
-    AddSpecialEffect(PLAYER, 40029)
-    DisplayStatus(50050)
-    Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40021):
+        RemoveSpecialEffect(PLAYER, 40021)
+        AddSpecialEffect(PLAYER, 40022)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40022):
+        RemoveSpecialEffect(PLAYER, 40022)
+        AddSpecialEffect(PLAYER, 40023)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40023):
+        RemoveSpecialEffect(PLAYER, 40023)
+        AddSpecialEffect(PLAYER, 40024)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40024):
+        RemoveSpecialEffect(PLAYER, 40024)
+        AddSpecialEffect(PLAYER, 40025)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40025):
+        RemoveSpecialEffect(PLAYER, 40025)
+        AddSpecialEffect(PLAYER, 40026)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40026):
+        RemoveSpecialEffect(PLAYER, 40026)
+        AddSpecialEffect(PLAYER, 40027)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40027):
+        RemoveSpecialEffect(PLAYER, 40027)
+        AddSpecialEffect(PLAYER, 40028)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40028):
+        RemoveSpecialEffect(PLAYER, 40028)
+        AddSpecialEffect(PLAYER, 40029)
+        DisplayStatus(50050)
+        Restart()
     AddSpecialEffect(PLAYER, 40021)
     Restart()
 
@@ -9940,101 +10765,102 @@ def Event_19001001():
 @ContinueOnRest(19001003)
 def Event_19001003():
     """Event 19001003"""
-    IfFlagEnabled(MAIN, 19001002)
+    MAIN.Await(FlagEnabled(19001002))
+    
     DisableFlag(19001002)
     DisableFlagRange((19001010, 19001014))
     DisableFlagRange((19001015, 19001019))
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40001)
+    SkipLinesIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40001)
     RemoveSpecialEffect(PLAYER, 40001)
     AddSpecialEffect(PLAYER, 40006)
     SkipLines(53)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40002)
+    SkipLinesIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40002)
     RemoveSpecialEffect(PLAYER, 40002)
     AddSpecialEffect(PLAYER, 40007)
     SkipLines(49)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40003)
+    SkipLinesIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40003)
     RemoveSpecialEffect(PLAYER, 40003)
     AddSpecialEffect(PLAYER, 40008)
     SkipLines(45)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40004)
+    SkipLinesIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40004)
     RemoveSpecialEffect(PLAYER, 40004)
     AddSpecialEffect(PLAYER, 40009)
     SkipLines(41)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40005)
+    SkipLinesIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40005)
     RemoveSpecialEffect(PLAYER, 40005)
     AddSpecialEffect(PLAYER, 40010)
     SkipLines(37)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40006)
+    SkipLinesIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40006)
     RemoveSpecialEffect(PLAYER, 40006)
     AddSpecialEffect(PLAYER, 40011)
     SkipLines(33)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40007)
+    SkipLinesIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40007)
     RemoveSpecialEffect(PLAYER, 40007)
     AddSpecialEffect(PLAYER, 40012)
     SkipLines(29)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40008)
+    SkipLinesIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40008)
     RemoveSpecialEffect(PLAYER, 40008)
     AddSpecialEffect(PLAYER, 40013)
     SkipLines(25)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40009)
+    SkipLinesIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40009)
     RemoveSpecialEffect(PLAYER, 40009)
     AddSpecialEffect(PLAYER, 40014)
     SkipLines(21)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40010)
+    SkipLinesIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40010)
     RemoveSpecialEffect(PLAYER, 40010)
     AddSpecialEffect(PLAYER, 40015)
     SkipLines(17)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40011)
+    SkipLinesIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40011)
     RemoveSpecialEffect(PLAYER, 40011)
     AddSpecialEffect(PLAYER, 40015)
     SkipLines(13)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40012)
+    SkipLinesIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40012)
     RemoveSpecialEffect(PLAYER, 40012)
     AddSpecialEffect(PLAYER, 40015)
     SkipLines(9)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40013)
+    SkipLinesIfCharacterDoesNotHaveSpecialEffect(3, character=PLAYER, special_effect=40013)
     RemoveSpecialEffect(PLAYER, 40013)
     AddSpecialEffect(PLAYER, 40015)
     SkipLines(5)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40014)
-    RemoveSpecialEffect(PLAYER, 40014)
-    AddSpecialEffect(PLAYER, 40015)
-    SkipLines(1)
-    AddSpecialEffect(PLAYER, 40005)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40021)
-    RemoveSpecialEffect(PLAYER, 40021)
-    AddSpecialEffect(PLAYER, 40023)
-    End()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40022)
-    RemoveSpecialEffect(PLAYER, 40022)
-    AddSpecialEffect(PLAYER, 40024)
-    End()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40023)
-    RemoveSpecialEffect(PLAYER, 40023)
-    AddSpecialEffect(PLAYER, 40025)
-    End()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40024)
-    RemoveSpecialEffect(PLAYER, 40024)
-    AddSpecialEffect(PLAYER, 40026)
-    End()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40025)
-    RemoveSpecialEffect(PLAYER, 40025)
-    AddSpecialEffect(PLAYER, 40027)
-    End()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40026)
-    RemoveSpecialEffect(PLAYER, 40026)
-    AddSpecialEffect(PLAYER, 40028)
-    End()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=4, character=PLAYER, special_effect=40027)
-    RemoveSpecialEffect(PLAYER, 40027)
-    AddSpecialEffect(PLAYER, 40029)
-    DisplayStatus(50050)
-    End()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=4, character=PLAYER, special_effect=40028)
-    RemoveSpecialEffect(PLAYER, 40028)
-    AddSpecialEffect(PLAYER, 40029)
-    DisplayStatus(50050)
-    End()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40014):
+        RemoveSpecialEffect(PLAYER, 40014)
+        AddSpecialEffect(PLAYER, 40015)
+    else:
+        AddSpecialEffect(PLAYER, 40005)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40021):
+        RemoveSpecialEffect(PLAYER, 40021)
+        AddSpecialEffect(PLAYER, 40023)
+        End()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40022):
+        RemoveSpecialEffect(PLAYER, 40022)
+        AddSpecialEffect(PLAYER, 40024)
+        End()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40023):
+        RemoveSpecialEffect(PLAYER, 40023)
+        AddSpecialEffect(PLAYER, 40025)
+        End()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40024):
+        RemoveSpecialEffect(PLAYER, 40024)
+        AddSpecialEffect(PLAYER, 40026)
+        End()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40025):
+        RemoveSpecialEffect(PLAYER, 40025)
+        AddSpecialEffect(PLAYER, 40027)
+        End()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40026):
+        RemoveSpecialEffect(PLAYER, 40026)
+        AddSpecialEffect(PLAYER, 40028)
+        End()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40027):
+        RemoveSpecialEffect(PLAYER, 40027)
+        AddSpecialEffect(PLAYER, 40029)
+        DisplayStatus(50050)
+        End()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40028):
+        RemoveSpecialEffect(PLAYER, 40028)
+        AddSpecialEffect(PLAYER, 40029)
+        DisplayStatus(50050)
+        End()
     AddSpecialEffect(PLAYER, 40022)
     End()
 
@@ -10042,954 +10868,1014 @@ def Event_19001003():
 @ContinueOnRest(19001489)
 def Event_19001489():
     """Event 19001489"""
-    SkipLinesIfFlagDisabled(2, 19001470)
-    DisableFlag(19001470)
-    AddSpecialEffect(PLAYER, 40001)
-    SkipLinesIfFlagDisabled(2, 19001471)
-    DisableFlag(19001471)
-    AddSpecialEffect(PLAYER, 40002)
-    SkipLinesIfFlagDisabled(2, 19001472)
-    DisableFlag(19001472)
-    AddSpecialEffect(PLAYER, 40003)
-    SkipLinesIfFlagDisabled(2, 19001473)
-    DisableFlag(19001473)
-    AddSpecialEffect(PLAYER, 40004)
-    SkipLinesIfFlagDisabled(2, 19001474)
-    DisableFlag(19001474)
-    AddSpecialEffect(PLAYER, 40005)
-    SkipLinesIfFlagDisabled(2, 19001475)
-    DisableFlag(19001475)
-    AddSpecialEffect(PLAYER, 40006)
-    SkipLinesIfFlagDisabled(2, 19001476)
-    DisableFlag(19001476)
-    AddSpecialEffect(PLAYER, 40007)
-    SkipLinesIfFlagDisabled(2, 19001477)
-    DisableFlag(19001477)
-    AddSpecialEffect(PLAYER, 40008)
-    SkipLinesIfFlagDisabled(2, 19001478)
-    DisableFlag(19001478)
-    AddSpecialEffect(PLAYER, 40009)
-    SkipLinesIfFlagDisabled(2, 19001479)
-    DisableFlag(19001479)
-    AddSpecialEffect(PLAYER, 40010)
-    SkipLinesIfFlagDisabled(2, 19001480)
-    DisableFlag(19001480)
-    AddSpecialEffect(PLAYER, 40011)
-    SkipLinesIfFlagDisabled(2, 19001481)
-    DisableFlag(19001481)
-    AddSpecialEffect(PLAYER, 40012)
-    SkipLinesIfFlagDisabled(2, 19001482)
-    DisableFlag(19001482)
-    AddSpecialEffect(PLAYER, 40013)
-    SkipLinesIfFlagDisabled(2, 19001483)
-    DisableFlag(19001483)
-    AddSpecialEffect(PLAYER, 40014)
-    SkipLinesIfFlagDisabled(2, 19001484)
-    DisableFlag(19001484)
-    AddSpecialEffect(PLAYER, 40015)
-    IfHealthRatioLessThanOrEqual(MAIN, PLAYER, value=0.0)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40001)
-    EnableFlag(19001470)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40002)
-    EnableFlag(19001471)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40003)
-    EnableFlag(19001472)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40004)
-    EnableFlag(19001473)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40005)
-    EnableFlag(19001474)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40006)
-    EnableFlag(19001475)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40007)
-    EnableFlag(19001476)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40008)
-    EnableFlag(19001477)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40009)
-    EnableFlag(19001478)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40010)
-    EnableFlag(19001479)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40011)
-    EnableFlag(19001480)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40012)
-    EnableFlag(19001481)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40013)
-    EnableFlag(19001482)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40014)
-    EnableFlag(19001483)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40015)
-    EnableFlag(19001484)
+    if FlagEnabled(19001470):
+        DisableFlag(19001470)
+        AddSpecialEffect(PLAYER, 40001)
+    if FlagEnabled(19001471):
+        DisableFlag(19001471)
+        AddSpecialEffect(PLAYER, 40002)
+    if FlagEnabled(19001472):
+        DisableFlag(19001472)
+        AddSpecialEffect(PLAYER, 40003)
+    if FlagEnabled(19001473):
+        DisableFlag(19001473)
+        AddSpecialEffect(PLAYER, 40004)
+    if FlagEnabled(19001474):
+        DisableFlag(19001474)
+        AddSpecialEffect(PLAYER, 40005)
+    if FlagEnabled(19001475):
+        DisableFlag(19001475)
+        AddSpecialEffect(PLAYER, 40006)
+    if FlagEnabled(19001476):
+        DisableFlag(19001476)
+        AddSpecialEffect(PLAYER, 40007)
+    if FlagEnabled(19001477):
+        DisableFlag(19001477)
+        AddSpecialEffect(PLAYER, 40008)
+    if FlagEnabled(19001478):
+        DisableFlag(19001478)
+        AddSpecialEffect(PLAYER, 40009)
+    if FlagEnabled(19001479):
+        DisableFlag(19001479)
+        AddSpecialEffect(PLAYER, 40010)
+    if FlagEnabled(19001480):
+        DisableFlag(19001480)
+        AddSpecialEffect(PLAYER, 40011)
+    if FlagEnabled(19001481):
+        DisableFlag(19001481)
+        AddSpecialEffect(PLAYER, 40012)
+    if FlagEnabled(19001482):
+        DisableFlag(19001482)
+        AddSpecialEffect(PLAYER, 40013)
+    if FlagEnabled(19001483):
+        DisableFlag(19001483)
+        AddSpecialEffect(PLAYER, 40014)
+    if FlagEnabled(19001484):
+        DisableFlag(19001484)
+        AddSpecialEffect(PLAYER, 40015)
+    
+    MAIN.Await(HealthRatio(PLAYER) <= 0.0)
+    
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40001):
+        EnableFlag(19001470)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40002):
+        EnableFlag(19001471)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40003):
+        EnableFlag(19001472)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40004):
+        EnableFlag(19001473)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40005):
+        EnableFlag(19001474)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40006):
+        EnableFlag(19001475)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40007):
+        EnableFlag(19001476)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40008):
+        EnableFlag(19001477)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40009):
+        EnableFlag(19001478)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40010):
+        EnableFlag(19001479)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40011):
+        EnableFlag(19001480)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40012):
+        EnableFlag(19001481)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40013):
+        EnableFlag(19001482)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40014):
+        EnableFlag(19001483)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40015):
+        EnableFlag(19001484)
     End()
 
 
 @ContinueOnRest(19001499)
 def Event_19001499():
     """Event 19001499"""
-    SkipLinesIfFlagDisabled(2, 19001490)
-    DisableFlag(19001490)
-    AddSpecialEffect(PLAYER, 40021)
-    SkipLinesIfFlagDisabled(2, 19001491)
-    DisableFlag(19001491)
-    AddSpecialEffect(PLAYER, 40022)
-    SkipLinesIfFlagDisabled(2, 19001492)
-    DisableFlag(19001492)
-    AddSpecialEffect(PLAYER, 40023)
-    SkipLinesIfFlagDisabled(2, 19001493)
-    DisableFlag(19001493)
-    AddSpecialEffect(PLAYER, 40024)
-    SkipLinesIfFlagDisabled(2, 19001494)
-    DisableFlag(19001494)
-    AddSpecialEffect(PLAYER, 40025)
-    SkipLinesIfFlagDisabled(2, 19001495)
-    DisableFlag(19001495)
-    AddSpecialEffect(PLAYER, 40026)
-    SkipLinesIfFlagDisabled(2, 19001496)
-    DisableFlag(19001496)
-    AddSpecialEffect(PLAYER, 40027)
-    SkipLinesIfFlagDisabled(2, 19001497)
-    DisableFlag(19001497)
-    AddSpecialEffect(PLAYER, 40028)
-    SkipLinesIfFlagDisabled(2, 19001498)
-    DisableFlag(19001498)
-    AddSpecialEffect(PLAYER, 40029)
-    IfHealthRatioLessThanOrEqual(MAIN, PLAYER, value=0.0)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40021)
-    EnableFlag(19001490)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40022)
-    EnableFlag(19001491)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40023)
-    EnableFlag(19001492)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40024)
-    EnableFlag(19001493)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40025)
-    EnableFlag(19001494)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40026)
-    EnableFlag(19001495)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40027)
-    EnableFlag(19001496)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40028)
-    EnableFlag(19001497)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40029)
-    EnableFlag(19001497)
+    if FlagEnabled(19001490):
+        DisableFlag(19001490)
+        AddSpecialEffect(PLAYER, 40021)
+    if FlagEnabled(19001491):
+        DisableFlag(19001491)
+        AddSpecialEffect(PLAYER, 40022)
+    if FlagEnabled(19001492):
+        DisableFlag(19001492)
+        AddSpecialEffect(PLAYER, 40023)
+    if FlagEnabled(19001493):
+        DisableFlag(19001493)
+        AddSpecialEffect(PLAYER, 40024)
+    if FlagEnabled(19001494):
+        DisableFlag(19001494)
+        AddSpecialEffect(PLAYER, 40025)
+    if FlagEnabled(19001495):
+        DisableFlag(19001495)
+        AddSpecialEffect(PLAYER, 40026)
+    if FlagEnabled(19001496):
+        DisableFlag(19001496)
+        AddSpecialEffect(PLAYER, 40027)
+    if FlagEnabled(19001497):
+        DisableFlag(19001497)
+        AddSpecialEffect(PLAYER, 40028)
+    if FlagEnabled(19001498):
+        DisableFlag(19001498)
+        AddSpecialEffect(PLAYER, 40029)
+    
+    MAIN.Await(HealthRatio(PLAYER) <= 0.0)
+    
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40021):
+        EnableFlag(19001490)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40022):
+        EnableFlag(19001491)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40023):
+        EnableFlag(19001492)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40024):
+        EnableFlag(19001493)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40025):
+        EnableFlag(19001494)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40026):
+        EnableFlag(19001495)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40027):
+        EnableFlag(19001496)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40028):
+        EnableFlag(19001497)
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40029):
+        EnableFlag(19001497)
     End()
 
 
 @ContinueOnRest(19001260)
 def Event_19001260():
     """Event 19001260"""
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51904)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51906)
-    IfConditionFalse(MAIN, input_condition=OR_1)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51904)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51906)
-    IfConditionTrue(MAIN, input_condition=OR_2)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40001)
-    RemoveSpecialEffect(PLAYER, 40001)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40002)
-    RemoveSpecialEffect(PLAYER, 40002)
-    AddSpecialEffect(PLAYER, 40001)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40003)
-    RemoveSpecialEffect(PLAYER, 40003)
-    AddSpecialEffect(PLAYER, 40002)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40004)
-    RemoveSpecialEffect(PLAYER, 40004)
-    AddSpecialEffect(PLAYER, 40003)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40005)
-    RemoveSpecialEffect(PLAYER, 40005)
-    AddSpecialEffect(PLAYER, 40004)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40006)
-    RemoveSpecialEffect(PLAYER, 40006)
-    AddSpecialEffect(PLAYER, 40005)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40007)
-    RemoveSpecialEffect(PLAYER, 40007)
-    AddSpecialEffect(PLAYER, 40006)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40008)
-    RemoveSpecialEffect(PLAYER, 40008)
-    AddSpecialEffect(PLAYER, 40007)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40009)
-    RemoveSpecialEffect(PLAYER, 40009)
-    AddSpecialEffect(PLAYER, 40008)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40010)
-    RemoveSpecialEffect(PLAYER, 40010)
-    AddSpecialEffect(PLAYER, 40009)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40011)
-    RemoveSpecialEffect(PLAYER, 40011)
-    AddSpecialEffect(PLAYER, 40010)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40012)
-    RemoveSpecialEffect(PLAYER, 40012)
-    AddSpecialEffect(PLAYER, 40011)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40013)
-    RemoveSpecialEffect(PLAYER, 40013)
-    AddSpecialEffect(PLAYER, 40012)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40014)
-    RemoveSpecialEffect(PLAYER, 40014)
-    AddSpecialEffect(PLAYER, 40013)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40015)
-    RemoveSpecialEffect(PLAYER, 40015)
-    AddSpecialEffect(PLAYER, 40014)
-    Restart()
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51904))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51906))
+    
+    MAIN.Await(not OR_1)
+    
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51904))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51906))
+    
+    MAIN.Await(OR_2)
+    
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40001):
+        RemoveSpecialEffect(PLAYER, 40001)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40002):
+        RemoveSpecialEffect(PLAYER, 40002)
+        AddSpecialEffect(PLAYER, 40001)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40003):
+        RemoveSpecialEffect(PLAYER, 40003)
+        AddSpecialEffect(PLAYER, 40002)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40004):
+        RemoveSpecialEffect(PLAYER, 40004)
+        AddSpecialEffect(PLAYER, 40003)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40005):
+        RemoveSpecialEffect(PLAYER, 40005)
+        AddSpecialEffect(PLAYER, 40004)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40006):
+        RemoveSpecialEffect(PLAYER, 40006)
+        AddSpecialEffect(PLAYER, 40005)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40007):
+        RemoveSpecialEffect(PLAYER, 40007)
+        AddSpecialEffect(PLAYER, 40006)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40008):
+        RemoveSpecialEffect(PLAYER, 40008)
+        AddSpecialEffect(PLAYER, 40007)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40009):
+        RemoveSpecialEffect(PLAYER, 40009)
+        AddSpecialEffect(PLAYER, 40008)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40010):
+        RemoveSpecialEffect(PLAYER, 40010)
+        AddSpecialEffect(PLAYER, 40009)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40011):
+        RemoveSpecialEffect(PLAYER, 40011)
+        AddSpecialEffect(PLAYER, 40010)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40012):
+        RemoveSpecialEffect(PLAYER, 40012)
+        AddSpecialEffect(PLAYER, 40011)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40013):
+        RemoveSpecialEffect(PLAYER, 40013)
+        AddSpecialEffect(PLAYER, 40012)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40014):
+        RemoveSpecialEffect(PLAYER, 40014)
+        AddSpecialEffect(PLAYER, 40013)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40015):
+        RemoveSpecialEffect(PLAYER, 40015)
+        AddSpecialEffect(PLAYER, 40014)
+        Restart()
     Restart()
 
 
 @ContinueOnRest(19001261)
 def Event_19001261():
     """Event 19001261"""
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51907)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51908)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51909)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51910)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51905)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 500820)
-    IfConditionFalse(MAIN, input_condition=OR_1)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51907)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51908)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51909)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51910)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51905)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 500820)
-    IfConditionTrue(MAIN, input_condition=OR_2)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40001)
-    RemoveSpecialEffect(PLAYER, 40001)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40002)
-    RemoveSpecialEffect(PLAYER, 40002)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40003)
-    RemoveSpecialEffect(PLAYER, 40003)
-    AddSpecialEffect(PLAYER, 40001)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40004)
-    RemoveSpecialEffect(PLAYER, 40004)
-    AddSpecialEffect(PLAYER, 40002)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40005)
-    RemoveSpecialEffect(PLAYER, 40005)
-    AddSpecialEffect(PLAYER, 40003)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40006)
-    RemoveSpecialEffect(PLAYER, 40006)
-    AddSpecialEffect(PLAYER, 40004)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40007)
-    RemoveSpecialEffect(PLAYER, 40007)
-    AddSpecialEffect(PLAYER, 40005)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40008)
-    RemoveSpecialEffect(PLAYER, 40008)
-    AddSpecialEffect(PLAYER, 40006)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40009)
-    RemoveSpecialEffect(PLAYER, 40009)
-    AddSpecialEffect(PLAYER, 40007)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40010)
-    RemoveSpecialEffect(PLAYER, 40010)
-    AddSpecialEffect(PLAYER, 40008)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40011)
-    RemoveSpecialEffect(PLAYER, 40011)
-    AddSpecialEffect(PLAYER, 40009)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40012)
-    RemoveSpecialEffect(PLAYER, 40012)
-    AddSpecialEffect(PLAYER, 40010)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40013)
-    RemoveSpecialEffect(PLAYER, 40013)
-    AddSpecialEffect(PLAYER, 40011)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40014)
-    RemoveSpecialEffect(PLAYER, 40014)
-    AddSpecialEffect(PLAYER, 40012)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40015)
-    RemoveSpecialEffect(PLAYER, 40015)
-    AddSpecialEffect(PLAYER, 40013)
-    Restart()
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51907))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51908))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51909))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51910))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51905))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 500820))
+    
+    MAIN.Await(not OR_1)
+    
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51907))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51908))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51909))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51910))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51905))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 500820))
+    
+    MAIN.Await(OR_2)
+    
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40001):
+        RemoveSpecialEffect(PLAYER, 40001)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40002):
+        RemoveSpecialEffect(PLAYER, 40002)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40003):
+        RemoveSpecialEffect(PLAYER, 40003)
+        AddSpecialEffect(PLAYER, 40001)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40004):
+        RemoveSpecialEffect(PLAYER, 40004)
+        AddSpecialEffect(PLAYER, 40002)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40005):
+        RemoveSpecialEffect(PLAYER, 40005)
+        AddSpecialEffect(PLAYER, 40003)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40006):
+        RemoveSpecialEffect(PLAYER, 40006)
+        AddSpecialEffect(PLAYER, 40004)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40007):
+        RemoveSpecialEffect(PLAYER, 40007)
+        AddSpecialEffect(PLAYER, 40005)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40008):
+        RemoveSpecialEffect(PLAYER, 40008)
+        AddSpecialEffect(PLAYER, 40006)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40009):
+        RemoveSpecialEffect(PLAYER, 40009)
+        AddSpecialEffect(PLAYER, 40007)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40010):
+        RemoveSpecialEffect(PLAYER, 40010)
+        AddSpecialEffect(PLAYER, 40008)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40011):
+        RemoveSpecialEffect(PLAYER, 40011)
+        AddSpecialEffect(PLAYER, 40009)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40012):
+        RemoveSpecialEffect(PLAYER, 40012)
+        AddSpecialEffect(PLAYER, 40010)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40013):
+        RemoveSpecialEffect(PLAYER, 40013)
+        AddSpecialEffect(PLAYER, 40011)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40014):
+        RemoveSpecialEffect(PLAYER, 40014)
+        AddSpecialEffect(PLAYER, 40012)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40015):
+        RemoveSpecialEffect(PLAYER, 40015)
+        AddSpecialEffect(PLAYER, 40013)
+        Restart()
     Restart()
 
 
 @ContinueOnRest(19001262)
 def Event_19001262():
     """Event 19001262"""
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51900)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51920)
-    IfConditionFalse(MAIN, input_condition=OR_1)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51900)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51920)
-    IfConditionTrue(MAIN, input_condition=OR_2)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40001)
-    RemoveSpecialEffect(PLAYER, 40001)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40002)
-    RemoveSpecialEffect(PLAYER, 40002)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40003)
-    RemoveSpecialEffect(PLAYER, 40003)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40004)
-    RemoveSpecialEffect(PLAYER, 40004)
-    AddSpecialEffect(PLAYER, 40001)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40005)
-    RemoveSpecialEffect(PLAYER, 40005)
-    AddSpecialEffect(PLAYER, 40002)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40006)
-    RemoveSpecialEffect(PLAYER, 40006)
-    AddSpecialEffect(PLAYER, 40003)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40007)
-    RemoveSpecialEffect(PLAYER, 40007)
-    AddSpecialEffect(PLAYER, 40004)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40008)
-    RemoveSpecialEffect(PLAYER, 40008)
-    AddSpecialEffect(PLAYER, 40005)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40009)
-    RemoveSpecialEffect(PLAYER, 40009)
-    AddSpecialEffect(PLAYER, 40006)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40010)
-    RemoveSpecialEffect(PLAYER, 40010)
-    AddSpecialEffect(PLAYER, 40007)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40011)
-    RemoveSpecialEffect(PLAYER, 40011)
-    AddSpecialEffect(PLAYER, 40008)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40012)
-    RemoveSpecialEffect(PLAYER, 40012)
-    AddSpecialEffect(PLAYER, 40009)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40013)
-    RemoveSpecialEffect(PLAYER, 40013)
-    AddSpecialEffect(PLAYER, 40010)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40014)
-    RemoveSpecialEffect(PLAYER, 40014)
-    AddSpecialEffect(PLAYER, 40011)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40015)
-    RemoveSpecialEffect(PLAYER, 40015)
-    AddSpecialEffect(PLAYER, 40012)
-    Restart()
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51900))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51920))
+    
+    MAIN.Await(not OR_1)
+    
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51900))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51920))
+    
+    MAIN.Await(OR_2)
+    
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40001):
+        RemoveSpecialEffect(PLAYER, 40001)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40002):
+        RemoveSpecialEffect(PLAYER, 40002)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40003):
+        RemoveSpecialEffect(PLAYER, 40003)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40004):
+        RemoveSpecialEffect(PLAYER, 40004)
+        AddSpecialEffect(PLAYER, 40001)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40005):
+        RemoveSpecialEffect(PLAYER, 40005)
+        AddSpecialEffect(PLAYER, 40002)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40006):
+        RemoveSpecialEffect(PLAYER, 40006)
+        AddSpecialEffect(PLAYER, 40003)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40007):
+        RemoveSpecialEffect(PLAYER, 40007)
+        AddSpecialEffect(PLAYER, 40004)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40008):
+        RemoveSpecialEffect(PLAYER, 40008)
+        AddSpecialEffect(PLAYER, 40005)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40009):
+        RemoveSpecialEffect(PLAYER, 40009)
+        AddSpecialEffect(PLAYER, 40006)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40010):
+        RemoveSpecialEffect(PLAYER, 40010)
+        AddSpecialEffect(PLAYER, 40007)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40011):
+        RemoveSpecialEffect(PLAYER, 40011)
+        AddSpecialEffect(PLAYER, 40008)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40012):
+        RemoveSpecialEffect(PLAYER, 40012)
+        AddSpecialEffect(PLAYER, 40009)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40013):
+        RemoveSpecialEffect(PLAYER, 40013)
+        AddSpecialEffect(PLAYER, 40010)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40014):
+        RemoveSpecialEffect(PLAYER, 40014)
+        AddSpecialEffect(PLAYER, 40011)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40015):
+        RemoveSpecialEffect(PLAYER, 40015)
+        AddSpecialEffect(PLAYER, 40012)
+        Restart()
     Restart()
 
 
 @ContinueOnRest(19001263)
 def Event_19001263():
     """Event 19001263"""
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51909)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51911)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 500830)
-    IfConditionFalse(MAIN, input_condition=OR_1)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51909)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51911)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 500830)
-    IfConditionTrue(MAIN, input_condition=OR_2)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40001)
-    RemoveSpecialEffect(PLAYER, 40001)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40002)
-    RemoveSpecialEffect(PLAYER, 40002)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40003)
-    RemoveSpecialEffect(PLAYER, 40003)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40004)
-    RemoveSpecialEffect(PLAYER, 40004)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40005)
-    RemoveSpecialEffect(PLAYER, 40005)
-    AddSpecialEffect(PLAYER, 40001)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40006)
-    RemoveSpecialEffect(PLAYER, 40006)
-    AddSpecialEffect(PLAYER, 40002)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40007)
-    RemoveSpecialEffect(PLAYER, 40007)
-    AddSpecialEffect(PLAYER, 40003)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40008)
-    RemoveSpecialEffect(PLAYER, 40008)
-    AddSpecialEffect(PLAYER, 40004)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40009)
-    RemoveSpecialEffect(PLAYER, 40009)
-    AddSpecialEffect(PLAYER, 40005)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40010)
-    RemoveSpecialEffect(PLAYER, 40010)
-    AddSpecialEffect(PLAYER, 40006)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40011)
-    RemoveSpecialEffect(PLAYER, 40011)
-    AddSpecialEffect(PLAYER, 40007)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40012)
-    RemoveSpecialEffect(PLAYER, 40012)
-    AddSpecialEffect(PLAYER, 40008)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40013)
-    RemoveSpecialEffect(PLAYER, 40013)
-    AddSpecialEffect(PLAYER, 40009)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40014)
-    RemoveSpecialEffect(PLAYER, 40014)
-    AddSpecialEffect(PLAYER, 40010)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40015)
-    RemoveSpecialEffect(PLAYER, 40015)
-    AddSpecialEffect(PLAYER, 40011)
-    Restart()
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51909))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51911))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 500830))
+    
+    MAIN.Await(not OR_1)
+    
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51909))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51911))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 500830))
+    
+    MAIN.Await(OR_2)
+    
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40001):
+        RemoveSpecialEffect(PLAYER, 40001)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40002):
+        RemoveSpecialEffect(PLAYER, 40002)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40003):
+        RemoveSpecialEffect(PLAYER, 40003)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40004):
+        RemoveSpecialEffect(PLAYER, 40004)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40005):
+        RemoveSpecialEffect(PLAYER, 40005)
+        AddSpecialEffect(PLAYER, 40001)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40006):
+        RemoveSpecialEffect(PLAYER, 40006)
+        AddSpecialEffect(PLAYER, 40002)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40007):
+        RemoveSpecialEffect(PLAYER, 40007)
+        AddSpecialEffect(PLAYER, 40003)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40008):
+        RemoveSpecialEffect(PLAYER, 40008)
+        AddSpecialEffect(PLAYER, 40004)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40009):
+        RemoveSpecialEffect(PLAYER, 40009)
+        AddSpecialEffect(PLAYER, 40005)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40010):
+        RemoveSpecialEffect(PLAYER, 40010)
+        AddSpecialEffect(PLAYER, 40006)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40011):
+        RemoveSpecialEffect(PLAYER, 40011)
+        AddSpecialEffect(PLAYER, 40007)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40012):
+        RemoveSpecialEffect(PLAYER, 40012)
+        AddSpecialEffect(PLAYER, 40008)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40013):
+        RemoveSpecialEffect(PLAYER, 40013)
+        AddSpecialEffect(PLAYER, 40009)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40014):
+        RemoveSpecialEffect(PLAYER, 40014)
+        AddSpecialEffect(PLAYER, 40010)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40015):
+        RemoveSpecialEffect(PLAYER, 40015)
+        AddSpecialEffect(PLAYER, 40011)
+        Restart()
     Restart()
 
 
 @ContinueOnRest(19001264)
 def Event_19001264():
     """Event 19001264"""
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51901)
-    IfConditionFalse(MAIN, input_condition=OR_1)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51901)
-    IfConditionTrue(MAIN, input_condition=OR_2)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40001)
-    RemoveSpecialEffect(PLAYER, 40001)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40002)
-    RemoveSpecialEffect(PLAYER, 40002)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40003)
-    RemoveSpecialEffect(PLAYER, 40003)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40004)
-    RemoveSpecialEffect(PLAYER, 40004)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40005)
-    RemoveSpecialEffect(PLAYER, 40005)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40006)
-    RemoveSpecialEffect(PLAYER, 40006)
-    AddSpecialEffect(PLAYER, 40001)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40007)
-    RemoveSpecialEffect(PLAYER, 40007)
-    AddSpecialEffect(PLAYER, 40002)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40008)
-    RemoveSpecialEffect(PLAYER, 40008)
-    AddSpecialEffect(PLAYER, 40003)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40009)
-    RemoveSpecialEffect(PLAYER, 40009)
-    AddSpecialEffect(PLAYER, 40004)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40010)
-    RemoveSpecialEffect(PLAYER, 40010)
-    AddSpecialEffect(PLAYER, 40005)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40011)
-    RemoveSpecialEffect(PLAYER, 40011)
-    AddSpecialEffect(PLAYER, 40006)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40012)
-    RemoveSpecialEffect(PLAYER, 40012)
-    AddSpecialEffect(PLAYER, 40007)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40013)
-    RemoveSpecialEffect(PLAYER, 40013)
-    AddSpecialEffect(PLAYER, 40008)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40014)
-    RemoveSpecialEffect(PLAYER, 40014)
-    AddSpecialEffect(PLAYER, 40009)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40015)
-    RemoveSpecialEffect(PLAYER, 40015)
-    AddSpecialEffect(PLAYER, 40010)
-    Restart()
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51901))
+    
+    MAIN.Await(not OR_1)
+    
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51901))
+    
+    MAIN.Await(OR_2)
+    
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40001):
+        RemoveSpecialEffect(PLAYER, 40001)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40002):
+        RemoveSpecialEffect(PLAYER, 40002)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40003):
+        RemoveSpecialEffect(PLAYER, 40003)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40004):
+        RemoveSpecialEffect(PLAYER, 40004)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40005):
+        RemoveSpecialEffect(PLAYER, 40005)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40006):
+        RemoveSpecialEffect(PLAYER, 40006)
+        AddSpecialEffect(PLAYER, 40001)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40007):
+        RemoveSpecialEffect(PLAYER, 40007)
+        AddSpecialEffect(PLAYER, 40002)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40008):
+        RemoveSpecialEffect(PLAYER, 40008)
+        AddSpecialEffect(PLAYER, 40003)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40009):
+        RemoveSpecialEffect(PLAYER, 40009)
+        AddSpecialEffect(PLAYER, 40004)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40010):
+        RemoveSpecialEffect(PLAYER, 40010)
+        AddSpecialEffect(PLAYER, 40005)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40011):
+        RemoveSpecialEffect(PLAYER, 40011)
+        AddSpecialEffect(PLAYER, 40006)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40012):
+        RemoveSpecialEffect(PLAYER, 40012)
+        AddSpecialEffect(PLAYER, 40007)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40013):
+        RemoveSpecialEffect(PLAYER, 40013)
+        AddSpecialEffect(PLAYER, 40008)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40014):
+        RemoveSpecialEffect(PLAYER, 40014)
+        AddSpecialEffect(PLAYER, 40009)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40015):
+        RemoveSpecialEffect(PLAYER, 40015)
+        AddSpecialEffect(PLAYER, 40010)
+        Restart()
     Restart()
 
 
 @ContinueOnRest(19001265)
 def Event_19001265():
     """Event 19001265"""
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51902)
-    IfConditionFalse(MAIN, input_condition=OR_1)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51902)
-    IfConditionTrue(MAIN, input_condition=OR_2)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40001)
-    RemoveSpecialEffect(PLAYER, 40001)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40002)
-    RemoveSpecialEffect(PLAYER, 40002)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40003)
-    RemoveSpecialEffect(PLAYER, 40003)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40004)
-    RemoveSpecialEffect(PLAYER, 40004)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40005)
-    RemoveSpecialEffect(PLAYER, 40005)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40006)
-    RemoveSpecialEffect(PLAYER, 40006)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40007)
-    RemoveSpecialEffect(PLAYER, 40007)
-    AddSpecialEffect(PLAYER, 40001)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40008)
-    RemoveSpecialEffect(PLAYER, 40008)
-    AddSpecialEffect(PLAYER, 40002)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40009)
-    RemoveSpecialEffect(PLAYER, 40009)
-    AddSpecialEffect(PLAYER, 40003)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40010)
-    RemoveSpecialEffect(PLAYER, 40010)
-    AddSpecialEffect(PLAYER, 40004)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40011)
-    RemoveSpecialEffect(PLAYER, 40011)
-    AddSpecialEffect(PLAYER, 40005)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40012)
-    RemoveSpecialEffect(PLAYER, 40012)
-    AddSpecialEffect(PLAYER, 40006)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40013)
-    RemoveSpecialEffect(PLAYER, 40013)
-    AddSpecialEffect(PLAYER, 40007)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40014)
-    RemoveSpecialEffect(PLAYER, 40014)
-    AddSpecialEffect(PLAYER, 40008)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40015)
-    RemoveSpecialEffect(PLAYER, 40015)
-    AddSpecialEffect(PLAYER, 40009)
-    Restart()
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51902))
+    
+    MAIN.Await(not OR_1)
+    
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51902))
+    
+    MAIN.Await(OR_2)
+    
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40001):
+        RemoveSpecialEffect(PLAYER, 40001)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40002):
+        RemoveSpecialEffect(PLAYER, 40002)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40003):
+        RemoveSpecialEffect(PLAYER, 40003)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40004):
+        RemoveSpecialEffect(PLAYER, 40004)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40005):
+        RemoveSpecialEffect(PLAYER, 40005)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40006):
+        RemoveSpecialEffect(PLAYER, 40006)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40007):
+        RemoveSpecialEffect(PLAYER, 40007)
+        AddSpecialEffect(PLAYER, 40001)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40008):
+        RemoveSpecialEffect(PLAYER, 40008)
+        AddSpecialEffect(PLAYER, 40002)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40009):
+        RemoveSpecialEffect(PLAYER, 40009)
+        AddSpecialEffect(PLAYER, 40003)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40010):
+        RemoveSpecialEffect(PLAYER, 40010)
+        AddSpecialEffect(PLAYER, 40004)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40011):
+        RemoveSpecialEffect(PLAYER, 40011)
+        AddSpecialEffect(PLAYER, 40005)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40012):
+        RemoveSpecialEffect(PLAYER, 40012)
+        AddSpecialEffect(PLAYER, 40006)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40013):
+        RemoveSpecialEffect(PLAYER, 40013)
+        AddSpecialEffect(PLAYER, 40007)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40014):
+        RemoveSpecialEffect(PLAYER, 40014)
+        AddSpecialEffect(PLAYER, 40008)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40015):
+        RemoveSpecialEffect(PLAYER, 40015)
+        AddSpecialEffect(PLAYER, 40009)
+        Restart()
     Restart()
 
 
 @ContinueOnRest(19001267)
 def Event_19001267():
     """Event 19001267"""
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51903)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51912)
-    IfConditionFalse(MAIN, input_condition=OR_1)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51903)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51912)
-    IfConditionTrue(MAIN, input_condition=OR_2)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40001)
-    RemoveSpecialEffect(PLAYER, 40001)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40002)
-    RemoveSpecialEffect(PLAYER, 40002)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40003)
-    RemoveSpecialEffect(PLAYER, 40003)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40004)
-    RemoveSpecialEffect(PLAYER, 40004)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40005)
-    RemoveSpecialEffect(PLAYER, 40005)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40006)
-    RemoveSpecialEffect(PLAYER, 40006)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40007)
-    RemoveSpecialEffect(PLAYER, 40007)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40008)
-    RemoveSpecialEffect(PLAYER, 40008)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40009)
-    RemoveSpecialEffect(PLAYER, 40009)
-    AddSpecialEffect(PLAYER, 40001)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40010)
-    RemoveSpecialEffect(PLAYER, 40010)
-    AddSpecialEffect(PLAYER, 40002)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40011)
-    RemoveSpecialEffect(PLAYER, 40011)
-    AddSpecialEffect(PLAYER, 40003)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40012)
-    RemoveSpecialEffect(PLAYER, 40012)
-    AddSpecialEffect(PLAYER, 40004)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40013)
-    RemoveSpecialEffect(PLAYER, 40013)
-    AddSpecialEffect(PLAYER, 40005)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40014)
-    RemoveSpecialEffect(PLAYER, 40014)
-    AddSpecialEffect(PLAYER, 40006)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40015)
-    RemoveSpecialEffect(PLAYER, 40015)
-    AddSpecialEffect(PLAYER, 40007)
-    Restart()
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51903))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51912))
+    
+    MAIN.Await(not OR_1)
+    
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51903))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51912))
+    
+    MAIN.Await(OR_2)
+    
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40001):
+        RemoveSpecialEffect(PLAYER, 40001)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40002):
+        RemoveSpecialEffect(PLAYER, 40002)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40003):
+        RemoveSpecialEffect(PLAYER, 40003)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40004):
+        RemoveSpecialEffect(PLAYER, 40004)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40005):
+        RemoveSpecialEffect(PLAYER, 40005)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40006):
+        RemoveSpecialEffect(PLAYER, 40006)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40007):
+        RemoveSpecialEffect(PLAYER, 40007)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40008):
+        RemoveSpecialEffect(PLAYER, 40008)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40009):
+        RemoveSpecialEffect(PLAYER, 40009)
+        AddSpecialEffect(PLAYER, 40001)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40010):
+        RemoveSpecialEffect(PLAYER, 40010)
+        AddSpecialEffect(PLAYER, 40002)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40011):
+        RemoveSpecialEffect(PLAYER, 40011)
+        AddSpecialEffect(PLAYER, 40003)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40012):
+        RemoveSpecialEffect(PLAYER, 40012)
+        AddSpecialEffect(PLAYER, 40004)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40013):
+        RemoveSpecialEffect(PLAYER, 40013)
+        AddSpecialEffect(PLAYER, 40005)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40014):
+        RemoveSpecialEffect(PLAYER, 40014)
+        AddSpecialEffect(PLAYER, 40006)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40015):
+        RemoveSpecialEffect(PLAYER, 40015)
+        AddSpecialEffect(PLAYER, 40007)
+        Restart()
     Restart()
 
 
 @ContinueOnRest(19001270)
 def Event_19001270():
     """Event 19001270"""
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51907)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51914)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51915)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51916)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51917)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51918)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51919)
-    IfConditionFalse(MAIN, input_condition=OR_1)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51907)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51914)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51915)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51916)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51917)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51918)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51919)
-    IfConditionTrue(MAIN, input_condition=OR_2)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40021)
-    RemoveSpecialEffect(PLAYER, 40021)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40022)
-    RemoveSpecialEffect(PLAYER, 40022)
-    AddSpecialEffect(PLAYER, 40021)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40023)
-    RemoveSpecialEffect(PLAYER, 40023)
-    AddSpecialEffect(PLAYER, 40022)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40024)
-    RemoveSpecialEffect(PLAYER, 40024)
-    AddSpecialEffect(PLAYER, 40023)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40025)
-    RemoveSpecialEffect(PLAYER, 40025)
-    AddSpecialEffect(PLAYER, 40024)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40026)
-    RemoveSpecialEffect(PLAYER, 40026)
-    AddSpecialEffect(PLAYER, 40025)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40027)
-    RemoveSpecialEffect(PLAYER, 40027)
-    AddSpecialEffect(PLAYER, 40026)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40028)
-    RemoveSpecialEffect(PLAYER, 40028)
-    AddSpecialEffect(PLAYER, 40027)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40029)
-    RemoveSpecialEffect(PLAYER, 40029)
-    AddSpecialEffect(PLAYER, 40028)
-    Restart()
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51907))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51914))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51915))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51916))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51917))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51918))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51919))
+    
+    MAIN.Await(not OR_1)
+    
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51907))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51914))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51915))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51916))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51917))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51918))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51919))
+    
+    MAIN.Await(OR_2)
+    
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40021):
+        RemoveSpecialEffect(PLAYER, 40021)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40022):
+        RemoveSpecialEffect(PLAYER, 40022)
+        AddSpecialEffect(PLAYER, 40021)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40023):
+        RemoveSpecialEffect(PLAYER, 40023)
+        AddSpecialEffect(PLAYER, 40022)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40024):
+        RemoveSpecialEffect(PLAYER, 40024)
+        AddSpecialEffect(PLAYER, 40023)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40025):
+        RemoveSpecialEffect(PLAYER, 40025)
+        AddSpecialEffect(PLAYER, 40024)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40026):
+        RemoveSpecialEffect(PLAYER, 40026)
+        AddSpecialEffect(PLAYER, 40025)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40027):
+        RemoveSpecialEffect(PLAYER, 40027)
+        AddSpecialEffect(PLAYER, 40026)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40028):
+        RemoveSpecialEffect(PLAYER, 40028)
+        AddSpecialEffect(PLAYER, 40027)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40029):
+        RemoveSpecialEffect(PLAYER, 40029)
+        AddSpecialEffect(PLAYER, 40028)
+        Restart()
     Restart()
 
 
 @ContinueOnRest(19001271)
 def Event_19001271():
     """Event 19001271"""
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51908)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51910)
-    IfConditionFalse(MAIN, input_condition=OR_1)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51908)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51910)
-    IfConditionTrue(MAIN, input_condition=OR_2)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40021)
-    RemoveSpecialEffect(PLAYER, 40021)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40022)
-    RemoveSpecialEffect(PLAYER, 40022)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40023)
-    RemoveSpecialEffect(PLAYER, 40023)
-    AddSpecialEffect(PLAYER, 40021)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40024)
-    RemoveSpecialEffect(PLAYER, 40024)
-    AddSpecialEffect(PLAYER, 40022)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40025)
-    RemoveSpecialEffect(PLAYER, 40025)
-    AddSpecialEffect(PLAYER, 40023)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40026)
-    RemoveSpecialEffect(PLAYER, 40026)
-    AddSpecialEffect(PLAYER, 40024)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40027)
-    RemoveSpecialEffect(PLAYER, 40027)
-    AddSpecialEffect(PLAYER, 40025)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40028)
-    RemoveSpecialEffect(PLAYER, 40028)
-    AddSpecialEffect(PLAYER, 40026)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40029)
-    RemoveSpecialEffect(PLAYER, 40029)
-    AddSpecialEffect(PLAYER, 40027)
-    Restart()
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51908))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51910))
+    
+    MAIN.Await(not OR_1)
+    
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51908))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51910))
+    
+    MAIN.Await(OR_2)
+    
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40021):
+        RemoveSpecialEffect(PLAYER, 40021)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40022):
+        RemoveSpecialEffect(PLAYER, 40022)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40023):
+        RemoveSpecialEffect(PLAYER, 40023)
+        AddSpecialEffect(PLAYER, 40021)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40024):
+        RemoveSpecialEffect(PLAYER, 40024)
+        AddSpecialEffect(PLAYER, 40022)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40025):
+        RemoveSpecialEffect(PLAYER, 40025)
+        AddSpecialEffect(PLAYER, 40023)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40026):
+        RemoveSpecialEffect(PLAYER, 40026)
+        AddSpecialEffect(PLAYER, 40024)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40027):
+        RemoveSpecialEffect(PLAYER, 40027)
+        AddSpecialEffect(PLAYER, 40025)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40028):
+        RemoveSpecialEffect(PLAYER, 40028)
+        AddSpecialEffect(PLAYER, 40026)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40029):
+        RemoveSpecialEffect(PLAYER, 40029)
+        AddSpecialEffect(PLAYER, 40027)
+        Restart()
     Restart()
 
 
 @ContinueOnRest(19001272)
 def Event_19001272():
     """Event 19001272"""
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51904)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51909)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51911)
-    IfConditionFalse(MAIN, input_condition=OR_1)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51904)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51909)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51911)
-    IfConditionTrue(MAIN, input_condition=OR_2)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40021)
-    RemoveSpecialEffect(PLAYER, 40021)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40022)
-    RemoveSpecialEffect(PLAYER, 40022)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40023)
-    RemoveSpecialEffect(PLAYER, 40023)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40024)
-    RemoveSpecialEffect(PLAYER, 40024)
-    AddSpecialEffect(PLAYER, 40021)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40025)
-    RemoveSpecialEffect(PLAYER, 40025)
-    AddSpecialEffect(PLAYER, 40022)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40026)
-    RemoveSpecialEffect(PLAYER, 40026)
-    AddSpecialEffect(PLAYER, 40023)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40027)
-    RemoveSpecialEffect(PLAYER, 40027)
-    AddSpecialEffect(PLAYER, 40024)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40028)
-    RemoveSpecialEffect(PLAYER, 40028)
-    AddSpecialEffect(PLAYER, 40025)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40029)
-    RemoveSpecialEffect(PLAYER, 40029)
-    AddSpecialEffect(PLAYER, 40026)
-    Restart()
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51904))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51909))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51911))
+    
+    MAIN.Await(not OR_1)
+    
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51904))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51909))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51911))
+    
+    MAIN.Await(OR_2)
+    
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40021):
+        RemoveSpecialEffect(PLAYER, 40021)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40022):
+        RemoveSpecialEffect(PLAYER, 40022)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40023):
+        RemoveSpecialEffect(PLAYER, 40023)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40024):
+        RemoveSpecialEffect(PLAYER, 40024)
+        AddSpecialEffect(PLAYER, 40021)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40025):
+        RemoveSpecialEffect(PLAYER, 40025)
+        AddSpecialEffect(PLAYER, 40022)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40026):
+        RemoveSpecialEffect(PLAYER, 40026)
+        AddSpecialEffect(PLAYER, 40023)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40027):
+        RemoveSpecialEffect(PLAYER, 40027)
+        AddSpecialEffect(PLAYER, 40024)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40028):
+        RemoveSpecialEffect(PLAYER, 40028)
+        AddSpecialEffect(PLAYER, 40025)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40029):
+        RemoveSpecialEffect(PLAYER, 40029)
+        AddSpecialEffect(PLAYER, 40026)
+        Restart()
     Restart()
 
 
 @ContinueOnRest(19001273)
 def Event_19001273():
     """Event 19001273"""
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51906)
-    IfConditionFalse(MAIN, input_condition=OR_1)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51906)
-    IfConditionTrue(MAIN, input_condition=OR_2)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40021)
-    RemoveSpecialEffect(PLAYER, 40021)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40022)
-    RemoveSpecialEffect(PLAYER, 40022)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40023)
-    RemoveSpecialEffect(PLAYER, 40023)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40024)
-    RemoveSpecialEffect(PLAYER, 40024)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40025)
-    RemoveSpecialEffect(PLAYER, 40025)
-    AddSpecialEffect(PLAYER, 40021)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40026)
-    RemoveSpecialEffect(PLAYER, 40026)
-    AddSpecialEffect(PLAYER, 40022)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40027)
-    RemoveSpecialEffect(PLAYER, 40027)
-    AddSpecialEffect(PLAYER, 40023)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40028)
-    RemoveSpecialEffect(PLAYER, 40028)
-    AddSpecialEffect(PLAYER, 40024)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40029)
-    RemoveSpecialEffect(PLAYER, 40029)
-    AddSpecialEffect(PLAYER, 40025)
-    Restart()
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51906))
+    
+    MAIN.Await(not OR_1)
+    
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51906))
+    
+    MAIN.Await(OR_2)
+    
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40021):
+        RemoveSpecialEffect(PLAYER, 40021)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40022):
+        RemoveSpecialEffect(PLAYER, 40022)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40023):
+        RemoveSpecialEffect(PLAYER, 40023)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40024):
+        RemoveSpecialEffect(PLAYER, 40024)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40025):
+        RemoveSpecialEffect(PLAYER, 40025)
+        AddSpecialEffect(PLAYER, 40021)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40026):
+        RemoveSpecialEffect(PLAYER, 40026)
+        AddSpecialEffect(PLAYER, 40022)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40027):
+        RemoveSpecialEffect(PLAYER, 40027)
+        AddSpecialEffect(PLAYER, 40023)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40028):
+        RemoveSpecialEffect(PLAYER, 40028)
+        AddSpecialEffect(PLAYER, 40024)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40029):
+        RemoveSpecialEffect(PLAYER, 40029)
+        AddSpecialEffect(PLAYER, 40025)
+        Restart()
     Restart()
 
 
 @ContinueOnRest(19001274)
 def Event_19001274():
     """Event 19001274"""
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51905)
-    IfConditionFalse(MAIN, input_condition=OR_1)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51905)
-    IfConditionTrue(MAIN, input_condition=OR_2)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40021)
-    RemoveSpecialEffect(PLAYER, 40021)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40022)
-    RemoveSpecialEffect(PLAYER, 40022)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40023)
-    RemoveSpecialEffect(PLAYER, 40023)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40024)
-    RemoveSpecialEffect(PLAYER, 40024)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40025)
-    RemoveSpecialEffect(PLAYER, 40025)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40026)
-    RemoveSpecialEffect(PLAYER, 40026)
-    AddSpecialEffect(PLAYER, 40021)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40027)
-    RemoveSpecialEffect(PLAYER, 40027)
-    AddSpecialEffect(PLAYER, 40022)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40028)
-    RemoveSpecialEffect(PLAYER, 40028)
-    AddSpecialEffect(PLAYER, 40023)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40029)
-    RemoveSpecialEffect(PLAYER, 40029)
-    AddSpecialEffect(PLAYER, 40024)
-    Restart()
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51905))
+    
+    MAIN.Await(not OR_1)
+    
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51905))
+    
+    MAIN.Await(OR_2)
+    
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40021):
+        RemoveSpecialEffect(PLAYER, 40021)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40022):
+        RemoveSpecialEffect(PLAYER, 40022)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40023):
+        RemoveSpecialEffect(PLAYER, 40023)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40024):
+        RemoveSpecialEffect(PLAYER, 40024)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40025):
+        RemoveSpecialEffect(PLAYER, 40025)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40026):
+        RemoveSpecialEffect(PLAYER, 40026)
+        AddSpecialEffect(PLAYER, 40021)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40027):
+        RemoveSpecialEffect(PLAYER, 40027)
+        AddSpecialEffect(PLAYER, 40022)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40028):
+        RemoveSpecialEffect(PLAYER, 40028)
+        AddSpecialEffect(PLAYER, 40023)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40029):
+        RemoveSpecialEffect(PLAYER, 40029)
+        AddSpecialEffect(PLAYER, 40024)
+        Restart()
     Restart()
 
 
 @ContinueOnRest(19001275)
 def Event_19001275():
     """Event 19001275"""
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51913)
-    IfConditionFalse(MAIN, input_condition=OR_1)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51913)
-    IfConditionTrue(MAIN, input_condition=OR_2)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40021)
-    RemoveSpecialEffect(PLAYER, 40021)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40022)
-    RemoveSpecialEffect(PLAYER, 40022)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40023)
-    RemoveSpecialEffect(PLAYER, 40023)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40024)
-    RemoveSpecialEffect(PLAYER, 40024)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40025)
-    RemoveSpecialEffect(PLAYER, 40025)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=2, character=PLAYER, special_effect=40026)
-    RemoveSpecialEffect(PLAYER, 40026)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40027)
-    RemoveSpecialEffect(PLAYER, 40027)
-    AddSpecialEffect(PLAYER, 40021)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40028)
-    RemoveSpecialEffect(PLAYER, 40028)
-    AddSpecialEffect(PLAYER, 40022)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40029)
-    RemoveSpecialEffect(PLAYER, 40029)
-    AddSpecialEffect(PLAYER, 40023)
-    Restart()
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51913))
+    
+    MAIN.Await(not OR_1)
+    
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51913))
+    
+    MAIN.Await(OR_2)
+    
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40021):
+        RemoveSpecialEffect(PLAYER, 40021)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40022):
+        RemoveSpecialEffect(PLAYER, 40022)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40023):
+        RemoveSpecialEffect(PLAYER, 40023)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40024):
+        RemoveSpecialEffect(PLAYER, 40024)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40025):
+        RemoveSpecialEffect(PLAYER, 40025)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40026):
+        RemoveSpecialEffect(PLAYER, 40026)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40027):
+        RemoveSpecialEffect(PLAYER, 40027)
+        AddSpecialEffect(PLAYER, 40021)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40028):
+        RemoveSpecialEffect(PLAYER, 40028)
+        AddSpecialEffect(PLAYER, 40022)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40029):
+        RemoveSpecialEffect(PLAYER, 40029)
+        AddSpecialEffect(PLAYER, 40023)
+        Restart()
     Restart()
 
 
 @ContinueOnRest(19001277)
 def Event_19001277():
     """Event 19001277"""
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 3960)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 3961)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 3962)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 3963)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 3910)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 3920)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 3930)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 501180)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 501310)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 501320)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 501330)
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 501340)
-    IfConditionFalse(MAIN, input_condition=OR_1)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 3960)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 3961)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 3962)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 3963)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 3910)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 3920)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 3930)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 501180)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 501310)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 501320)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 501330)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 501340)
-    IfConditionTrue(MAIN, input_condition=OR_2)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40021)
-    RemoveSpecialEffect(PLAYER, 40021)
-    AddSpecialEffect(PLAYER, 40022)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40022)
-    RemoveSpecialEffect(PLAYER, 40022)
-    AddSpecialEffect(PLAYER, 40023)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40023)
-    RemoveSpecialEffect(PLAYER, 40023)
-    AddSpecialEffect(PLAYER, 40024)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40024)
-    RemoveSpecialEffect(PLAYER, 40024)
-    AddSpecialEffect(PLAYER, 40025)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40025)
-    RemoveSpecialEffect(PLAYER, 40025)
-    AddSpecialEffect(PLAYER, 40026)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40026)
-    RemoveSpecialEffect(PLAYER, 40026)
-    AddSpecialEffect(PLAYER, 40027)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40027)
-    RemoveSpecialEffect(PLAYER, 40027)
-    AddSpecialEffect(PLAYER, 40028)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40028)
-    RemoveSpecialEffect(PLAYER, 40028)
-    AddSpecialEffect(PLAYER, 40029)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40029)
-    Restart()
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 3960))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 3961))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 3962))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 3963))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 3910))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 3920))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 3930))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 501180))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 501310))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 501320))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 501330))
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 501340))
+    
+    MAIN.Await(not OR_1)
+    
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 3960))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 3961))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 3962))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 3963))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 3910))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 3920))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 3930))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 501180))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 501310))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 501320))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 501330))
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 501340))
+    
+    MAIN.Await(OR_2)
+    
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40021):
+        RemoveSpecialEffect(PLAYER, 40021)
+        AddSpecialEffect(PLAYER, 40022)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40022):
+        RemoveSpecialEffect(PLAYER, 40022)
+        AddSpecialEffect(PLAYER, 40023)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40023):
+        RemoveSpecialEffect(PLAYER, 40023)
+        AddSpecialEffect(PLAYER, 40024)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40024):
+        RemoveSpecialEffect(PLAYER, 40024)
+        AddSpecialEffect(PLAYER, 40025)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40025):
+        RemoveSpecialEffect(PLAYER, 40025)
+        AddSpecialEffect(PLAYER, 40026)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40026):
+        RemoveSpecialEffect(PLAYER, 40026)
+        AddSpecialEffect(PLAYER, 40027)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40027):
+        RemoveSpecialEffect(PLAYER, 40027)
+        AddSpecialEffect(PLAYER, 40028)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40028):
+        RemoveSpecialEffect(PLAYER, 40028)
+        AddSpecialEffect(PLAYER, 40029)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40029):
+        Restart()
     AddSpecialEffect(PLAYER, 40021)
     Restart()
 
@@ -10997,44 +11883,48 @@ def Event_19001277():
 @ContinueOnRest(19001278)
 def Event_19001278():
     """Event 19001278"""
-    IfCharacterHasSpecialEffect(OR_1, PLAYER, 51920)
-    IfConditionFalse(MAIN, input_condition=OR_1)
-    IfCharacterHasSpecialEffect(OR_2, PLAYER, 51920)
-    IfConditionTrue(MAIN, input_condition=OR_2)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40021)
-    RemoveSpecialEffect(PLAYER, 40021)
-    AddSpecialEffect(PLAYER, 40024)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40022)
-    RemoveSpecialEffect(PLAYER, 40022)
-    AddSpecialEffect(PLAYER, 40025)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40023)
-    RemoveSpecialEffect(PLAYER, 40023)
-    AddSpecialEffect(PLAYER, 40026)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40024)
-    RemoveSpecialEffect(PLAYER, 40024)
-    AddSpecialEffect(PLAYER, 40027)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40025)
-    RemoveSpecialEffect(PLAYER, 40025)
-    AddSpecialEffect(PLAYER, 40028)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40026)
-    RemoveSpecialEffect(PLAYER, 40026)
-    AddSpecialEffect(PLAYER, 40029)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40027)
-    RemoveSpecialEffect(PLAYER, 40027)
-    AddSpecialEffect(PLAYER, 40029)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=3, character=PLAYER, special_effect=40028)
-    RemoveSpecialEffect(PLAYER, 40028)
-    AddSpecialEffect(PLAYER, 40029)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=1, character=PLAYER, special_effect=40029)
-    Restart()
+    OR_1.Add(CharacterHasSpecialEffect(PLAYER, 51920))
+    
+    MAIN.Await(not OR_1)
+    
+    OR_2.Add(CharacterHasSpecialEffect(PLAYER, 51920))
+    
+    MAIN.Await(OR_2)
+    
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40021):
+        RemoveSpecialEffect(PLAYER, 40021)
+        AddSpecialEffect(PLAYER, 40024)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40022):
+        RemoveSpecialEffect(PLAYER, 40022)
+        AddSpecialEffect(PLAYER, 40025)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40023):
+        RemoveSpecialEffect(PLAYER, 40023)
+        AddSpecialEffect(PLAYER, 40026)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40024):
+        RemoveSpecialEffect(PLAYER, 40024)
+        AddSpecialEffect(PLAYER, 40027)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40025):
+        RemoveSpecialEffect(PLAYER, 40025)
+        AddSpecialEffect(PLAYER, 40028)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40026):
+        RemoveSpecialEffect(PLAYER, 40026)
+        AddSpecialEffect(PLAYER, 40029)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40027):
+        RemoveSpecialEffect(PLAYER, 40027)
+        AddSpecialEffect(PLAYER, 40029)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40028):
+        RemoveSpecialEffect(PLAYER, 40028)
+        AddSpecialEffect(PLAYER, 40029)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=40029):
+        Restart()
     AddSpecialEffect(PLAYER, 40023)
     Restart()
 
@@ -11042,8 +11932,10 @@ def Event_19001278():
 @ContinueOnRest(19001280)
 def Event_19001280():
     """Event 19001280"""
-    IfCharacterHasSpecialEffect(MAIN, PLAYER, 51920)
-    IfCharacterDoesNotHaveSpecialEffect(MAIN, PLAYER, 51920)
+    MAIN.Await(CharacterHasSpecialEffect(PLAYER, 51920))
+    
+    MAIN.Await(CharacterDoesNotHaveSpecialEffect(PLAYER, 51920))
+    
     AddSpecialEffect(PLAYER, 52201)
     AddSpecialEffect(PLAYER, 52251)
     Restart()
@@ -11052,21 +11944,23 @@ def Event_19001280():
 @ContinueOnRest(19001020)
 def Event_19001020():
     """Event 19001020"""
-    IfTimeOfDay(AND_1, earliest=(10, 0, 0), latest=(17, 0, 0))
-    IfFlagEnabled(OR_1, 19001052)
-    IfFlagEnabled(OR_1, 19001053)
-    IfInsideMap(OR_1, game_map=LEYNDELL_ROYAL_CAPITAL)
-    IfInsideMap(OR_1, game_map=LEYNDELL_ASHEN_CAPITAL)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfTimeOfDay(AND_2, earliest=(18, 0, 0), latest=(8, 0, 0))
-    IfFlagEnabled(AND_2, 19001054)
-    IfConditionTrue(OR_3, input_condition=AND_1)
-    IfConditionTrue(OR_3, input_condition=AND_2)
-    IfConditionTrue(AND_3, input_condition=OR_3)
-    IfCharacterDoesNotHaveSpecialEffect(AND_3, PLAYER, 52200)
-    IfCharacterDoesNotHaveSpecialEffect(AND_3, PLAYER, 52201)
-    IfCharacterDoesNotHaveSpecialEffect(AND_3, PLAYER, 52202)
-    IfConditionTrue(MAIN, input_condition=AND_3)
+    AND_1.Add(TimeOfDay(time=(10, 0, 0)))
+    OR_1.Add(FlagEnabled(19001052))
+    OR_1.Add(FlagEnabled(19001053))
+    OR_1.Add(InsideMap(game_map=LEYNDELL_ROYAL_CAPITAL))
+    OR_1.Add(InsideMap(game_map=LEYNDELL_ASHEN_CAPITAL))
+    AND_1.Add(OR_1)
+    AND_2.Add(TimeOfDay(time=(18, 0, 0)))
+    AND_2.Add(FlagEnabled(19001054))
+    OR_3.Add(AND_1)
+    OR_3.Add(AND_2)
+    AND_3.Add(OR_3)
+    AND_3.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 52200))
+    AND_3.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 52201))
+    AND_3.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 52202))
+    
+    MAIN.Await(AND_3)
+    
     AddSpecialEffect(PLAYER, 52100)
     EnableFlag(19001032)
     Wait(3.0)
@@ -11077,22 +11971,24 @@ def Event_19001020():
 @ContinueOnRest(19001022)
 def Event_19001022():
     """Event 19001022"""
-    IfTimeOfDay(AND_1, earliest=(8, 0, 0), latest=(18, 0, 0))
-    IfFlagEnabled(AND_1, 19001054)
-    IfTimeOfDay(AND_2, earliest=(18, 0, 0), latest=(8, 0, 0))
-    IfInsideMap(AND_2, game_map=VOLCANO_MANOR)
-    IfConditionTrue(OR_3, input_condition=AND_1)
-    IfConditionTrue(OR_3, input_condition=AND_2)
-    IfConditionTrue(AND_3, input_condition=OR_3)
-    IfCharacterDoesNotHaveSpecialEffect(AND_3, PLAYER, 52201)
-    IfCharacterDoesNotHaveSpecialEffect(AND_3, PLAYER, 52202)
-    IfConditionTrue(MAIN, input_condition=AND_3)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=5, character=PLAYER, special_effect=52200)
-    AddSpecialEffect(PLAYER, 52100)
-    EnableFlag(19001032)
-    Wait(3.0)
-    DisableFlag(19001032)
-    Restart()
+    AND_1.Add(TimeOfDay(time=(8, 0, 0)))
+    AND_1.Add(FlagEnabled(19001054))
+    AND_2.Add(TimeOfDay(time=(18, 0, 0)))
+    AND_2.Add(InsideMap(game_map=VOLCANO_MANOR))
+    OR_3.Add(AND_1)
+    OR_3.Add(AND_2)
+    AND_3.Add(OR_3)
+    AND_3.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 52201))
+    AND_3.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 52202))
+    
+    MAIN.Await(AND_3)
+    
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=52200):
+        AddSpecialEffect(PLAYER, 52100)
+        EnableFlag(19001032)
+        Wait(3.0)
+        DisableFlag(19001032)
+        Restart()
     AddSpecialEffect(PLAYER, 52101)
     EnableFlag(19001033)
     Wait(3.0)
@@ -11103,26 +11999,28 @@ def Event_19001022():
 @ContinueOnRest(19001024)
 def Event_19001024():
     """Event 19001024"""
-    IfTimeOfDay(AND_1, earliest=(8, 0, 0), latest=(18, 0, 0))
-    IfInsideMap(AND_1, game_map=VOLCANO_MANOR)
-    IfInsideMap(AND_2, game_map=MOHGWYN_PALACE)
-    IfConditionTrue(OR_3, input_condition=AND_1)
-    IfConditionTrue(OR_3, input_condition=AND_2)
-    IfConditionTrue(AND_3, input_condition=OR_3)
-    IfCharacterDoesNotHaveSpecialEffect(AND_3, PLAYER, 52202)
-    IfConditionTrue(MAIN, input_condition=AND_3)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=5, character=PLAYER, special_effect=52201)
-    AddSpecialEffect(PLAYER, 52100)
-    EnableFlag(19001032)
-    Wait(3.0)
-    DisableFlag(19001032)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=5, character=PLAYER, special_effect=52200)
-    AddSpecialEffect(PLAYER, 52101)
-    EnableFlag(19001033)
-    Wait(3.0)
-    DisableFlag(19001033)
-    Restart()
+    AND_1.Add(TimeOfDay(time=(8, 0, 0)))
+    AND_1.Add(InsideMap(game_map=VOLCANO_MANOR))
+    AND_2.Add(InsideMap(game_map=MOHGWYN_PALACE))
+    OR_3.Add(AND_1)
+    OR_3.Add(AND_2)
+    AND_3.Add(OR_3)
+    AND_3.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 52202))
+    
+    MAIN.Await(AND_3)
+    
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=52201):
+        AddSpecialEffect(PLAYER, 52100)
+        EnableFlag(19001032)
+        Wait(3.0)
+        DisableFlag(19001032)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=52200):
+        AddSpecialEffect(PLAYER, 52101)
+        EnableFlag(19001033)
+        Wait(3.0)
+        DisableFlag(19001033)
+        Restart()
     AddSpecialEffect(PLAYER, 52102)
     EnableFlag(19001034)
     Wait(3.0)
@@ -11133,20 +12031,22 @@ def Event_19001024():
 @ContinueOnRest(19001026)
 def Event_19001026():
     """Event 19001026"""
-    IfTimeOfDay(AND_1, earliest=(18, 0, 0), latest=(8, 0, 0))
-    IfFlagEnabled(OR_1, 19001051)
-    IfInsideMap(OR_1, game_map=RAYA_LUCARIA)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfInsideMap(OR_2, game_map=SIOFRA_RIVER)
-    IfInsideMap(OR_2, game_map=SIOFRA_RIVER_START)
-    IfConditionTrue(AND_2, input_condition=OR_2)
-    IfConditionTrue(OR_3, input_condition=AND_1)
-    IfConditionTrue(OR_3, input_condition=AND_2)
-    IfConditionTrue(AND_3, input_condition=OR_3)
-    IfCharacterDoesNotHaveSpecialEffect(AND_3, PLAYER, 52250)
-    IfCharacterDoesNotHaveSpecialEffect(AND_3, PLAYER, 52251)
-    IfCharacterDoesNotHaveSpecialEffect(AND_3, PLAYER, 52252)
-    IfConditionTrue(MAIN, input_condition=AND_3)
+    AND_1.Add(TimeOfDay(time=(18, 0, 0)))
+    OR_1.Add(FlagEnabled(19001051))
+    OR_1.Add(InsideMap(game_map=RAYA_LUCARIA))
+    AND_1.Add(OR_1)
+    OR_2.Add(InsideMap(game_map=SIOFRA_RIVER))
+    OR_2.Add(InsideMap(game_map=SIOFRA_RIVER_START))
+    AND_2.Add(OR_2)
+    OR_3.Add(AND_1)
+    OR_3.Add(AND_2)
+    AND_3.Add(OR_3)
+    AND_3.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 52250))
+    AND_3.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 52251))
+    AND_3.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 52252))
+    
+    MAIN.Await(AND_3)
+    
     AddSpecialEffect(PLAYER, 52150)
     EnableFlag(19001035)
     Wait(3.0)
@@ -11157,23 +12057,25 @@ def Event_19001026():
 @ContinueOnRest(19001028)
 def Event_19001028():
     """Event 19001028"""
-    IfTimeOfDay(AND_1, earliest=(8, 0, 0), latest=(18, 0, 0))
-    IfFlagEnabled(AND_1, 19001055)
-    IfInsideMap(OR_2, game_map=AINSEL_RIVER)
-    IfInsideMap(OR_2, game_map=DEEPROOT_DEPTHS)
-    IfConditionTrue(AND_2, input_condition=OR_2)
-    IfConditionTrue(OR_3, input_condition=AND_1)
-    IfConditionTrue(OR_3, input_condition=AND_2)
-    IfConditionTrue(AND_3, input_condition=OR_3)
-    IfCharacterDoesNotHaveSpecialEffect(AND_3, PLAYER, 52251)
-    IfCharacterDoesNotHaveSpecialEffect(AND_3, PLAYER, 52252)
-    IfConditionTrue(MAIN, input_condition=AND_3)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=5, character=PLAYER, special_effect=52250)
-    AddSpecialEffect(PLAYER, 52150)
-    EnableFlag(19001035)
-    Wait(3.0)
-    DisableFlag(19001035)
-    Restart()
+    AND_1.Add(TimeOfDay(time=(8, 0, 0)))
+    AND_1.Add(FlagEnabled(19001055))
+    OR_2.Add(InsideMap(game_map=AINSEL_RIVER))
+    OR_2.Add(InsideMap(game_map=DEEPROOT_DEPTHS))
+    AND_2.Add(OR_2)
+    OR_3.Add(AND_1)
+    OR_3.Add(AND_2)
+    AND_3.Add(OR_3)
+    AND_3.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 52251))
+    AND_3.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 52252))
+    
+    MAIN.Await(AND_3)
+    
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=52250):
+        AddSpecialEffect(PLAYER, 52150)
+        EnableFlag(19001035)
+        Wait(3.0)
+        DisableFlag(19001035)
+        Restart()
     AddSpecialEffect(PLAYER, 52151)
     EnableFlag(19001036)
     Wait(3.0)
@@ -11184,28 +12086,30 @@ def Event_19001028():
 @ContinueOnRest(19001030)
 def Event_19001030():
     """Event 19001030"""
-    IfTimeOfDay(AND_1, earliest=(18, 0, 0), latest=(8, 0, 0))
-    IfFlagEnabled(OR_1, 19001055)
-    IfInsideMap(OR_1, game_map=CRUMBLING_FARUM_AZULA)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfInsideMap(AND_2, game_map=ASTEL_ARENA)
-    IfConditionTrue(OR_3, input_condition=AND_1)
-    IfConditionTrue(OR_3, input_condition=AND_2)
-    IfConditionTrue(AND_3, input_condition=OR_3)
-    IfCharacterDoesNotHaveSpecialEffect(AND_3, PLAYER, 52252)
-    IfConditionTrue(MAIN, input_condition=AND_3)
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=5, character=PLAYER, special_effect=52251)
-    AddSpecialEffect(PLAYER, 52150)
-    EnableFlag(19001035)
-    Wait(3.0)
-    DisableFlag(19001035)
-    Restart()
-    SkipLinesIfCharacterDoesNotHaveSpecialEffect(line_count=5, character=PLAYER, special_effect=52250)
-    AddSpecialEffect(PLAYER, 52151)
-    EnableFlag(19001036)
-    Wait(3.0)
-    DisableFlag(19001036)
-    Restart()
+    AND_1.Add(TimeOfDay(time=(18, 0, 0)))
+    OR_1.Add(FlagEnabled(19001055))
+    OR_1.Add(InsideMap(game_map=CRUMBLING_FARUM_AZULA))
+    AND_1.Add(OR_1)
+    AND_2.Add(InsideMap(game_map=ASTEL_ARENA))
+    OR_3.Add(AND_1)
+    OR_3.Add(AND_2)
+    AND_3.Add(OR_3)
+    AND_3.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 52252))
+    
+    MAIN.Await(AND_3)
+    
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=52251):
+        AddSpecialEffect(PLAYER, 52150)
+        EnableFlag(19001035)
+        Wait(3.0)
+        DisableFlag(19001035)
+        Restart()
+    if CharacterHasSpecialEffect(character=PLAYER, special_effect=52250):
+        AddSpecialEffect(PLAYER, 52151)
+        EnableFlag(19001036)
+        Wait(3.0)
+        DisableFlag(19001036)
+        Restart()
     AddSpecialEffect(PLAYER, 52152)
     EnableFlag(19001037)
     Wait(3.0)
@@ -11217,7 +12121,9 @@ def Event_19001030():
 def Event_19001021():
     """Event 19001021"""
     Wait(5.0)
-    IfFlagEnabled(MAIN, 19001032)
+    
+    MAIN.Await(FlagEnabled(19001032))
+    
     DisplayStatus(50000)
     DisableFlag(19001032)
     Wait(295.0)
@@ -11228,7 +12134,9 @@ def Event_19001021():
 def Event_19001023():
     """Event 19001023"""
     Wait(5.0)
-    IfFlagEnabled(MAIN, 19001033)
+    
+    MAIN.Await(FlagEnabled(19001033))
+    
     DisplayStatus(50001)
     DisableFlag(19001033)
     Wait(295.0)
@@ -11239,7 +12147,9 @@ def Event_19001023():
 def Event_19001025():
     """Event 19001025"""
     Wait(5.0)
-    IfFlagEnabled(MAIN, 19001034)
+    
+    MAIN.Await(FlagEnabled(19001034))
+    
     DisplayStatus(50002)
     DisableFlag(19001034)
     Wait(295.0)
@@ -11250,7 +12160,9 @@ def Event_19001025():
 def Event_19001027():
     """Event 19001027"""
     Wait(5.0)
-    IfFlagEnabled(MAIN, 19001035)
+    
+    MAIN.Await(FlagEnabled(19001035))
+    
     DisplayStatus(50003)
     DisableFlag(19001035)
     Wait(295.0)
@@ -11261,7 +12173,9 @@ def Event_19001027():
 def Event_19001029():
     """Event 19001029"""
     Wait(5.0)
-    IfFlagEnabled(MAIN, 19001036)
+    
+    MAIN.Await(FlagEnabled(19001036))
+    
     DisplayStatus(50004)
     DisableFlag(19001036)
     Wait(295.0)
@@ -11272,7 +12186,9 @@ def Event_19001029():
 def Event_19001031():
     """Event 19001031"""
     Wait(5.0)
-    IfFlagEnabled(MAIN, 19001037)
+    
+    MAIN.Await(FlagEnabled(19001037))
+    
     DisplayStatus(50005)
     DisableFlag(19001037)
     Wait(295.0)
@@ -11280,13 +12196,14 @@ def Event_19001031():
 
 
 @ContinueOnRest(19002000)
-def Event_19002000(_, item: int, item_lot_param_id: int, item_1: int):
+def Event_19002000(_, item: int, item_lot: int, item_1: int):
     """Event 19002000"""
-    IfPlayerHasWeapon(MAIN, item)
+    MAIN.Await(PlayerHasWeapon(item))
+    
     RemoveWeaponFromPlayer(item=item, quantity=1)
-    AwardItemLot(item_lot_param_id, host_only=True)
-    SkipLinesIfValueEqual(1, left=item_1, right=0)
-    RemoveWeaponFromPlayer(item=item_1, quantity=1)
+    AwardItemLot(item_lot, host_only=True)
+    if ValueNotEqual(left=item_1, right=0):
+        RemoveWeaponFromPlayer(item=item_1, quantity=1)
     Restart()
 
 
@@ -11294,15 +12211,19 @@ def Event_19002000(_, item: int, item_lot_param_id: int, item_1: int):
 def Event_19003000(_, item: int, item_1: int, flag: uint):
     """Event 19003000"""
     DisableFlag(flag)
-    IfPlayerHasWeapon(AND_1, item)
-    SkipLinesIfValueEqual(1, left=item_1, right=0)
-    IfPlayerHasGood(AND_1, item_1)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    AND_1.Add(PlayerHasWeapon(item))
+    if ValueNotEqual(left=item_1, right=0):
+        AND_1.Add(PlayerHasGood(item_1))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(flag)
-    IfPlayerDoesNotHaveWeapon(OR_1, item)
-    SkipLinesIfValueEqual(1, left=item_1, right=0)
-    IfPlayerDoesNotHaveGood(OR_1, item_1)
-    IfConditionTrue(MAIN, input_condition=OR_1)
+    OR_1.Add(PlayerDoesNotHaveWeapon(item))
+    if ValueNotEqual(left=item_1, right=0):
+        OR_1.Add(PlayerDoesNotHaveGood(item_1))
+    
+    MAIN.Await(OR_1)
+    
     Restart()
 
 
@@ -11310,68 +12231,69 @@ def Event_19003000(_, item: int, item_1: int, flag: uint):
 def Event_19001450(_, item: int, item_1: int, flag: uint):
     """Event 19001450"""
     DisableFlag(flag)
-    SkipLinesIfValueEqual(1, left=item, right=0)
-    IfPlayerHasGood(AND_1, item)
-    IfPlayerDoesNotHaveGood(AND_1, item_1)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if ValueNotEqual(left=item, right=0):
+        AND_1.Add(PlayerHasGood(item))
+    AND_1.Add(PlayerDoesNotHaveGood(item_1))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(flag)
-    SkipLinesIfValueEqual(1, left=item, right=0)
-    IfPlayerDoesNotHaveGood(OR_1, item)
-    IfPlayerHasGood(OR_1, item_1)
-    IfConditionTrue(MAIN, input_condition=OR_1)
+    if ValueNotEqual(left=item, right=0):
+        OR_1.Add(PlayerDoesNotHaveGood(item))
+    OR_1.Add(PlayerHasGood(item_1))
+    
+    MAIN.Await(OR_1)
+    
     Restart()
 
 
 @ContinueOnRest(19001060)
-def Event_19001060(
-    _,
-    special_effect__special_effect_id: int,
-    flag: uint,
-    flag_1: uint,
-    flag_2: uint,
-    item: int,
-    item_lot_param_id: int,
-):
+def Event_19001060(_, special_effect: int, flag: uint, flag_1: uint, flag_2: uint, item: int, item_lot: int):
     """Event 19001060"""
-    IfPlayerHasGood(AND_7, item)
+    AND_7.Add(PlayerHasGood(item))
     SkipLinesIfConditionFalse(2, AND_7)
-    AddSpecialEffect(PLAYER, special_effect__special_effect_id)
+    AddSpecialEffect(PLAYER, special_effect)
     End()
-    EndIfFlagEnabled(flag_2)
-    IfCharacterDoesNotHaveSpecialEffect(AND_6, PLAYER, 51900)
-    IfCharacterDoesNotHaveSpecialEffect(AND_6, PLAYER, 51902)
-    IfConditionTrue(MAIN, input_condition=AND_6)
-    IfFlagEnabled(AND_1, flag)
-    IfCharacterHasSpecialEffect(OR_3, PLAYER, 51900)
-    IfCharacterHasSpecialEffect(OR_3, PLAYER, 51902)
-    IfAttackedWithDamageType(OR_3, attacked_entity=PLAYER, attacker=4294967295)
-    IfConditionTrue(AND_1, input_condition=OR_3)
-    IfCharacterDoesNotHaveSpecialEffect(AND_1, PLAYER, special_effect__special_effect_id)
-    IfFlagDisabled(AND_1, 19001099)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if FlagEnabled(flag_2):
+        return
+    AND_6.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 51900))
+    AND_6.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 51902))
+    
+    MAIN.Await(AND_6)
+    
+    AND_1.Add(FlagEnabled(flag))
+    OR_3.Add(CharacterHasSpecialEffect(PLAYER, 51900))
+    OR_3.Add(CharacterHasSpecialEffect(PLAYER, 51902))
+    OR_3.Add(AttackedWithDamageType(attacked_entity=PLAYER, attacker=4294967295))
+    AND_1.Add(OR_3)
+    AND_1.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, special_effect))
+    AND_1.Add(FlagDisabled(19001099))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(19001099)
     DisableFlagRange((19001101, 19001199))
     EnableRandomFlagInRange(flag_range=(19001101, 19001199))
-    IfFlagEnabled(OR_2, 19001101)
-    IfFlagDisabled(AND_2, flag_1)
-    IfFlagEnabled(AND_2, 19001102)
-    IfConditionTrue(OR_2, input_condition=AND_2)
+    OR_2.Add(FlagEnabled(19001101))
+    AND_2.Add(FlagDisabled(flag_1))
+    AND_2.Add(FlagEnabled(19001102))
+    OR_2.Add(AND_2)
     SkipLinesIfConditionTrue(2, OR_2)
     DisableFlag(19001099)
     Restart()
     DisableFlag(19001099)
-    AwardItemLot(item_lot_param_id, host_only=True)
-    AddSpecialEffect(PLAYER, special_effect__special_effect_id)
-    SkipLinesIfFlagEnabled(2, flag_1)
-    EnableFlag(flag_1)
-    SkipLines(1)
-    EnableFlag(flag_2)
+    AwardItemLot(item_lot, host_only=True)
+    AddSpecialEffect(PLAYER, special_effect)
+    if FlagDisabled(flag_1):
+        EnableFlag(flag_1)
+    else:
+        EnableFlag(flag_2)
 
 
 @ContinueOnRest(19001070)
 def Event_19001070(
     _,
-    special_effect__special_effect_id: int,
+    special_effect: int,
     area_id: char,
     block_id: char,
     cc_id: char,
@@ -11379,348 +12301,386 @@ def Event_19001070(
     flag: uint,
     flag_1: uint,
     item: int,
-    item_lot_param_id: int,
+    item_lot: int,
 ):
     """Event 19001070"""
-    IfPlayerHasGood(AND_7, item)
+    AND_7.Add(PlayerHasGood(item))
     SkipLinesIfConditionFalse(2, AND_7)
-    AddSpecialEffect(PLAYER, special_effect__special_effect_id)
+    AddSpecialEffect(PLAYER, special_effect)
     End()
-    EndIfFlagEnabled(flag_1)
-    IfCharacterDoesNotHaveSpecialEffect(AND_6, PLAYER, 51900)
-    IfCharacterDoesNotHaveSpecialEffect(AND_6, PLAYER, 51902)
-    IfConditionTrue(MAIN, input_condition=AND_6)
-    IfInsideMap(AND_1, game_map=(area_id, block_id, cc_id, dd_id))
-    IfCharacterHasSpecialEffect(OR_3, PLAYER, 51900)
-    IfCharacterHasSpecialEffect(OR_3, PLAYER, 51902)
-    IfAttackedWithDamageType(OR_3, attacked_entity=PLAYER, attacker=4294967295)
-    IfConditionTrue(AND_1, input_condition=OR_3)
-    IfCharacterDoesNotHaveSpecialEffect(AND_1, PLAYER, special_effect__special_effect_id)
-    IfFlagDisabled(AND_1, 19001099)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if FlagEnabled(flag_1):
+        return
+    AND_6.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 51900))
+    AND_6.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 51902))
+    
+    MAIN.Await(AND_6)
+    
+    AND_1.Add(InsideMap(game_map=(area_id, block_id, cc_id, dd_id)))
+    OR_3.Add(CharacterHasSpecialEffect(PLAYER, 51900))
+    OR_3.Add(CharacterHasSpecialEffect(PLAYER, 51902))
+    OR_3.Add(AttackedWithDamageType(attacked_entity=PLAYER, attacker=4294967295))
+    AND_1.Add(OR_3)
+    AND_1.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, special_effect))
+    AND_1.Add(FlagDisabled(19001099))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(19001099)
     DisableFlagRange((19001101, 19001199))
     EnableRandomFlagInRange(flag_range=(19001101, 19001199))
-    IfFlagEnabled(OR_2, 19001101)
-    IfFlagDisabled(AND_2, flag)
-    IfFlagEnabled(AND_2, 19001102)
-    IfConditionTrue(OR_2, input_condition=AND_2)
+    OR_2.Add(FlagEnabled(19001101))
+    AND_2.Add(FlagDisabled(flag))
+    AND_2.Add(FlagEnabled(19001102))
+    OR_2.Add(AND_2)
     SkipLinesIfConditionTrue(2, OR_2)
     DisableFlag(19001099)
     Restart()
     DisableFlag(19001099)
-    AddSpecialEffect(PLAYER, special_effect__special_effect_id)
-    AwardItemLot(item_lot_param_id, host_only=True)
-    SkipLinesIfFlagEnabled(2, flag)
-    EnableFlag(flag)
-    End()
+    AddSpecialEffect(PLAYER, special_effect)
+    AwardItemLot(item_lot, host_only=True)
+    if FlagDisabled(flag):
+        EnableFlag(flag)
+        End()
     EnableFlag(flag_1)
 
 
 @ContinueOnRest(19001080)
 def Event_19001080():
     """Event 19001080"""
-    IfPlayerHasGood(AND_7, 8416)
+    AND_7.Add(PlayerHasGood(8416))
     SkipLinesIfConditionFalse(2, AND_7)
     AddSpecialEffect(PLAYER, 53006)
     End()
-    EndIfFlagEnabled(19001215)
-    IfCharacterDoesNotHaveSpecialEffect(AND_6, PLAYER, 51900)
-    IfCharacterDoesNotHaveSpecialEffect(AND_6, PLAYER, 51902)
-    IfConditionTrue(MAIN, input_condition=AND_6)
-    IfInsideMap(OR_1, game_map=SIOFRA_RIVER)
-    IfInsideMap(OR_1, game_map=SIOFRA_RIVER_START)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfCharacterHasSpecialEffect(OR_3, PLAYER, 51900)
-    IfCharacterHasSpecialEffect(OR_3, PLAYER, 51902)
-    IfAttackedWithDamageType(OR_3, attacked_entity=PLAYER, attacker=4294967295)
-    IfConditionTrue(AND_1, input_condition=OR_3)
-    IfCharacterDoesNotHaveSpecialEffect(AND_1, PLAYER, 53006)
-    IfFlagDisabled(AND_1, 19001099)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if FlagEnabled(19001215):
+        return
+    AND_6.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 51900))
+    AND_6.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 51902))
+    
+    MAIN.Await(AND_6)
+    
+    OR_1.Add(InsideMap(game_map=SIOFRA_RIVER))
+    OR_1.Add(InsideMap(game_map=SIOFRA_RIVER_START))
+    AND_1.Add(OR_1)
+    OR_3.Add(CharacterHasSpecialEffect(PLAYER, 51900))
+    OR_3.Add(CharacterHasSpecialEffect(PLAYER, 51902))
+    OR_3.Add(AttackedWithDamageType(attacked_entity=PLAYER, attacker=4294967295))
+    AND_1.Add(OR_3)
+    AND_1.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 53006))
+    AND_1.Add(FlagDisabled(19001099))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(19001099)
     DisableFlagRange((19001101, 19001199))
     EnableRandomFlagInRange(flag_range=(19001101, 19001199))
-    IfFlagEnabled(OR_2, 19001101)
-    IfFlagDisabled(AND_2, 19001214)
-    IfFlagEnabled(AND_2, 19001102)
-    IfConditionTrue(OR_2, input_condition=AND_2)
+    OR_2.Add(FlagEnabled(19001101))
+    AND_2.Add(FlagDisabled(19001214))
+    AND_2.Add(FlagEnabled(19001102))
+    OR_2.Add(AND_2)
     SkipLinesIfConditionTrue(2, OR_2)
     DisableFlag(19001099)
     Restart()
     DisableFlag(19001099)
     AddSpecialEffect(PLAYER, 53006)
     AwardItemLot(84160, host_only=True)
-    SkipLinesIfFlagEnabled(2, 19001214)
-    EnableFlag(19001214)
-    End()
+    if FlagDisabled(19001214):
+        EnableFlag(19001214)
+        End()
     EnableFlag(19001215)
 
 
 @ContinueOnRest(19001081)
 def Event_19001081():
     """Event 19001081"""
-    IfPlayerHasGood(AND_7, 8417)
+    AND_7.Add(PlayerHasGood(8417))
     SkipLinesIfConditionFalse(2, AND_7)
     AddSpecialEffect(PLAYER, 53007)
     End()
-    EndIfFlagEnabled(19001217)
-    IfCharacterDoesNotHaveSpecialEffect(AND_6, PLAYER, 51900)
-    IfCharacterDoesNotHaveSpecialEffect(AND_6, PLAYER, 51902)
-    IfConditionTrue(MAIN, input_condition=AND_6)
-    IfInsideMap(AND_1, game_map=AINSEL_RIVER)
-    IfCharacterHasSpecialEffect(OR_3, PLAYER, 51900)
-    IfCharacterHasSpecialEffect(OR_3, PLAYER, 51902)
-    IfAttackedWithDamageType(OR_3, attacked_entity=PLAYER, attacker=4294967295)
-    IfConditionTrue(AND_1, input_condition=OR_3)
-    IfCharacterDoesNotHaveSpecialEffect(AND_1, PLAYER, 53007)
-    IfFlagDisabled(AND_1, 19001099)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if FlagEnabled(19001217):
+        return
+    AND_6.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 51900))
+    AND_6.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 51902))
+    
+    MAIN.Await(AND_6)
+    
+    AND_1.Add(InsideMap(game_map=AINSEL_RIVER))
+    OR_3.Add(CharacterHasSpecialEffect(PLAYER, 51900))
+    OR_3.Add(CharacterHasSpecialEffect(PLAYER, 51902))
+    OR_3.Add(AttackedWithDamageType(attacked_entity=PLAYER, attacker=4294967295))
+    AND_1.Add(OR_3)
+    AND_1.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 53007))
+    AND_1.Add(FlagDisabled(19001099))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(19001099)
     DisableFlagRange((19001101, 19001199))
     EnableRandomFlagInRange(flag_range=(19001101, 19001199))
-    IfFlagEnabled(OR_2, 19001101)
-    IfFlagDisabled(AND_2, 19001216)
-    IfFlagEnabled(AND_2, 19001102)
-    IfConditionTrue(OR_2, input_condition=AND_2)
+    OR_2.Add(FlagEnabled(19001101))
+    AND_2.Add(FlagDisabled(19001216))
+    AND_2.Add(FlagEnabled(19001102))
+    OR_2.Add(AND_2)
     SkipLinesIfConditionTrue(2, OR_2)
     DisableFlag(19001099)
     Restart()
     DisableFlag(19001099)
     AddSpecialEffect(PLAYER, 53007)
     AwardItemLot(84170, host_only=True)
-    SkipLinesIfFlagEnabled(2, 19001216)
-    EnableFlag(19001216)
-    End()
+    if FlagDisabled(19001216):
+        EnableFlag(19001216)
+        End()
     EnableFlag(19001217)
 
 
 @ContinueOnRest(19001082)
 def Event_19001082():
     """Event 19001082"""
-    IfPlayerHasGood(AND_7, 8418)
+    AND_7.Add(PlayerHasGood(8418))
     SkipLinesIfConditionFalse(2, AND_7)
     AddSpecialEffect(PLAYER, 53008)
     End()
-    EndIfFlagEnabled(19001219)
-    IfCharacterDoesNotHaveSpecialEffect(AND_6, PLAYER, 51900)
-    IfCharacterDoesNotHaveSpecialEffect(AND_6, PLAYER, 51902)
-    IfConditionTrue(MAIN, input_condition=AND_6)
-    IfInsideMap(OR_1, game_map=DEEPROOT_DEPTHS)
-    IfInsideMap(OR_1, game_map=ASTEL_ARENA)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfCharacterHasSpecialEffect(OR_3, PLAYER, 51900)
-    IfCharacterHasSpecialEffect(OR_3, PLAYER, 51902)
-    IfAttackedWithDamageType(OR_3, attacked_entity=PLAYER, attacker=4294967295)
-    IfConditionTrue(AND_1, input_condition=OR_3)
-    IfCharacterDoesNotHaveSpecialEffect(AND_1, PLAYER, 53008)
-    IfFlagDisabled(AND_1, 19001099)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if FlagEnabled(19001219):
+        return
+    AND_6.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 51900))
+    AND_6.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 51902))
+    
+    MAIN.Await(AND_6)
+    
+    OR_1.Add(InsideMap(game_map=DEEPROOT_DEPTHS))
+    OR_1.Add(InsideMap(game_map=ASTEL_ARENA))
+    AND_1.Add(OR_1)
+    OR_3.Add(CharacterHasSpecialEffect(PLAYER, 51900))
+    OR_3.Add(CharacterHasSpecialEffect(PLAYER, 51902))
+    OR_3.Add(AttackedWithDamageType(attacked_entity=PLAYER, attacker=4294967295))
+    AND_1.Add(OR_3)
+    AND_1.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 53008))
+    AND_1.Add(FlagDisabled(19001099))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(19001099)
     DisableFlagRange((19001101, 19001199))
     EnableRandomFlagInRange(flag_range=(19001101, 19001199))
-    IfFlagEnabled(OR_2, 19001101)
-    IfFlagDisabled(AND_2, 19001218)
-    IfFlagEnabled(AND_2, 19001102)
-    IfConditionTrue(OR_2, input_condition=AND_2)
+    OR_2.Add(FlagEnabled(19001101))
+    AND_2.Add(FlagDisabled(19001218))
+    AND_2.Add(FlagEnabled(19001102))
+    OR_2.Add(AND_2)
     SkipLinesIfConditionTrue(2, OR_2)
     DisableFlag(19001099)
     Restart()
     DisableFlag(19001099)
     AddSpecialEffect(PLAYER, 53008)
     AwardItemLot(84180, host_only=True)
-    SkipLinesIfFlagEnabled(2, 19001218)
-    EnableFlag(19001218)
-    End()
+    if FlagDisabled(19001218):
+        EnableFlag(19001218)
+        End()
     EnableFlag(19001219)
 
 
 @ContinueOnRest(19001083)
 def Event_19001083():
     """Event 19001083"""
-    IfPlayerHasGood(AND_7, 8421)
+    AND_7.Add(PlayerHasGood(8421))
     SkipLinesIfConditionFalse(2, AND_7)
     AddSpecialEffect(PLAYER, 53011)
     End()
-    EndIfFlagEnabled(19001225)
-    IfAttackedWithDamageType(AND_1, attacked_entity=PLAYER, attacker=1052380800)
-    IfCharacterDoesNotHaveSpecialEffect(AND_1, PLAYER, 53011)
-    IfFlagDisabled(AND_1, 19001099)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if FlagEnabled(19001225):
+        return
+    AND_1.Add(AttackedWithDamageType(attacked_entity=PLAYER, attacker=1052380800))
+    AND_1.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 53011))
+    AND_1.Add(FlagDisabled(19001099))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(19001099)
     DisableFlagRange((19001101, 19001199))
     EnableRandomFlagInRange(flag_range=(19001101, 19001199))
-    IfFlagEnabled(OR_2, 19001101)
-    IfFlagDisabled(AND_2, 19001224)
-    IfFlagEnabled(AND_2, 19001102)
-    IfConditionTrue(OR_2, input_condition=AND_2)
+    OR_2.Add(FlagEnabled(19001101))
+    AND_2.Add(FlagDisabled(19001224))
+    AND_2.Add(FlagEnabled(19001102))
+    OR_2.Add(AND_2)
     SkipLinesIfConditionTrue(2, OR_2)
     DisableFlag(19001099)
     Restart()
     DisableFlag(19001099)
     AddSpecialEffect(PLAYER, 53011)
     AwardItemLot(84210, host_only=True)
-    SkipLinesIfFlagEnabled(2, 19001224)
-    EnableFlag(19001224)
-    End()
+    if FlagDisabled(19001224):
+        EnableFlag(19001224)
+        End()
     EnableFlag(19001225)
 
 
 @ContinueOnRest(19001084)
 def Event_19001084():
     """Event 19001084"""
-    IfPlayerHasGood(AND_7, 8428)
+    AND_7.Add(PlayerHasGood(8428))
     SkipLinesIfConditionFalse(2, AND_7)
     AddSpecialEffect(PLAYER, 53018)
     End()
-    EndIfFlagEnabled(19001239)
-    IfCharacterDoesNotHaveSpecialEffect(AND_6, PLAYER, 51900)
-    IfCharacterDoesNotHaveSpecialEffect(AND_6, PLAYER, 51902)
-    IfConditionTrue(MAIN, input_condition=AND_6)
-    IfInsideMap(OR_1, game_map=TOMBSWARD_CATACOMBS)
-    IfInsideMap(OR_1, game_map=IMPALERS_CATACOMBS)
-    IfInsideMap(OR_1, game_map=STORMFOOT_CATACOMBS)
-    IfInsideMap(OR_1, game_map=ROADS_END_CATACOMBS)
-    IfInsideMap(OR_1, game_map=MURKWATER_CATACOMBS)
-    IfInsideMap(OR_1, game_map=BLACK_KNIFE_CATACOMBS)
-    IfInsideMap(OR_1, game_map=CLIFFBOTTOM_CATACOMBS)
-    IfInsideMap(OR_1, game_map=WYNDHAM_CATACOMBS)
-    IfInsideMap(OR_1, game_map=DEATHTOUCHED_CATACOMBS)
-    IfInsideMap(OR_1, game_map=UNSIGHTLY_CATACOMBS)
-    IfInsideMap(OR_1, game_map=AURIZA_SIDE_TOMB)
-    IfInsideMap(OR_1, game_map=MINOR_ERDTREE_CATACOMBS)
-    IfInsideMap(OR_1, game_map=CAELID_CATACOMBS)
-    IfInsideMap(OR_1, game_map=WAR_DEAD_CATACOMBS)
-    IfInsideMap(OR_1, game_map=GIANTS_MOUNTAINTOP_CATACOMBS)
-    IfInsideMap(OR_1, game_map=CONSECRATED_SNOWFIELD_CATACOMBS)
-    IfInsideMap(OR_1, game_map=HIDDEN_PATH_TO_THE_HALIGTREE)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfCharacterHasSpecialEffect(OR_3, PLAYER, 51900)
-    IfCharacterHasSpecialEffect(OR_3, PLAYER, 51902)
-    IfAttackedWithDamageType(OR_3, attacked_entity=PLAYER, attacker=4294967295)
-    IfConditionTrue(AND_1, input_condition=OR_3)
-    IfCharacterDoesNotHaveSpecialEffect(AND_1, PLAYER, 53018)
-    IfFlagDisabled(AND_1, 19001099)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if FlagEnabled(19001239):
+        return
+    AND_6.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 51900))
+    AND_6.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 51902))
+    
+    MAIN.Await(AND_6)
+    
+    OR_1.Add(InsideMap(game_map=TOMBSWARD_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=IMPALERS_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=STORMFOOT_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=ROADS_END_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=MURKWATER_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=BLACK_KNIFE_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=CLIFFBOTTOM_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=WYNDHAM_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=DEATHTOUCHED_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=UNSIGHTLY_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=AURIZA_SIDE_TOMB))
+    OR_1.Add(InsideMap(game_map=MINOR_ERDTREE_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=CAELID_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=WAR_DEAD_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=GIANTS_MOUNTAINTOP_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=CONSECRATED_SNOWFIELD_CATACOMBS))
+    OR_1.Add(InsideMap(game_map=HIDDEN_PATH_TO_THE_HALIGTREE))
+    AND_1.Add(OR_1)
+    OR_3.Add(CharacterHasSpecialEffect(PLAYER, 51900))
+    OR_3.Add(CharacterHasSpecialEffect(PLAYER, 51902))
+    OR_3.Add(AttackedWithDamageType(attacked_entity=PLAYER, attacker=4294967295))
+    AND_1.Add(OR_3)
+    AND_1.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 53018))
+    AND_1.Add(FlagDisabled(19001099))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(19001099)
     DisableFlagRange((19001101, 19001199))
     EnableRandomFlagInRange(flag_range=(19001101, 19001199))
-    IfFlagEnabled(OR_2, 19001101)
-    IfFlagDisabled(AND_2, 19001238)
-    IfFlagEnabled(AND_2, 19001102)
-    IfConditionTrue(OR_2, input_condition=AND_2)
+    OR_2.Add(FlagEnabled(19001101))
+    AND_2.Add(FlagDisabled(19001238))
+    AND_2.Add(FlagEnabled(19001102))
+    OR_2.Add(AND_2)
     SkipLinesIfConditionTrue(2, OR_2)
     DisableFlag(19001099)
     Restart()
     DisableFlag(19001099)
     AddSpecialEffect(PLAYER, 53018)
     AwardItemLot(84280, host_only=True)
-    SkipLinesIfFlagEnabled(2, 19001238)
-    EnableFlag(19001238)
-    End()
+    if FlagDisabled(19001238):
+        EnableFlag(19001238)
+        End()
     EnableFlag(19001239)
 
 
 @ContinueOnRest(19001085)
 def Event_19001085():
     """Event 19001085"""
-    IfPlayerHasGood(AND_7, 8429)
+    AND_7.Add(PlayerHasGood(8429))
     SkipLinesIfConditionFalse(2, AND_7)
     AddSpecialEffect(PLAYER, 53019)
     End()
-    EndIfFlagEnabled(19001241)
-    IfCharacterDoesNotHaveSpecialEffect(AND_6, PLAYER, 51900)
-    IfCharacterDoesNotHaveSpecialEffect(AND_6, PLAYER, 51902)
-    IfConditionTrue(MAIN, input_condition=AND_6)
-    IfInsideMap(OR_1, game_map=MURKWATER_CAVE)
-    IfInsideMap(OR_1, game_map=EARTHBORE_CAVE)
-    IfInsideMap(OR_1, game_map=TOMBSWARD_CAVE)
-    IfInsideMap(OR_1, game_map=GROVESIDE_CAVE)
-    IfInsideMap(OR_1, game_map=STILLWATER_CAVE)
-    IfInsideMap(OR_1, game_map=LAKESIDE_CRYSTAL_CAVE)
-    IfInsideMap(OR_1, game_map=ACADEMY_CRYSTAL_CAVE)
-    IfInsideMap(OR_1, game_map=SEETHEWATER_CAVE)
-    IfInsideMap(OR_1, game_map=VOLCANO_CAVE)
-    IfInsideMap(OR_1, game_map=DRAGONBARROW_CAVE)
-    IfInsideMap(OR_1, game_map=SELLIA_HIDEAWAY)
-    IfInsideMap(OR_1, game_map=CAVE_OF_THE_FORLORN)
-    IfInsideMap(OR_1, game_map=COASTAL_CAVE)
-    IfInsideMap(OR_1, game_map=HIGHROAD_CAVE)
-    IfInsideMap(OR_1, game_map=PERFUMERS_GROTTO)
-    IfInsideMap(OR_1, game_map=SAGES_CAVE)
-    IfInsideMap(OR_1, game_map=ABANDONED_CAVE)
-    IfInsideMap(OR_1, game_map=GAOL_CAVE)
-    IfInsideMap(OR_1, game_map=SPIRITCALLER_CAVE)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfCharacterHasSpecialEffect(OR_3, PLAYER, 51900)
-    IfCharacterHasSpecialEffect(OR_3, PLAYER, 51902)
-    IfAttackedWithDamageType(OR_3, attacked_entity=PLAYER, attacker=4294967295)
-    IfConditionTrue(AND_1, input_condition=OR_3)
-    IfCharacterDoesNotHaveSpecialEffect(AND_1, PLAYER, 53019)
-    IfFlagDisabled(AND_1, 19001099)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if FlagEnabled(19001241):
+        return
+    AND_6.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 51900))
+    AND_6.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 51902))
+    
+    MAIN.Await(AND_6)
+    
+    OR_1.Add(InsideMap(game_map=MURKWATER_CAVE))
+    OR_1.Add(InsideMap(game_map=EARTHBORE_CAVE))
+    OR_1.Add(InsideMap(game_map=TOMBSWARD_CAVE))
+    OR_1.Add(InsideMap(game_map=GROVESIDE_CAVE))
+    OR_1.Add(InsideMap(game_map=STILLWATER_CAVE))
+    OR_1.Add(InsideMap(game_map=LAKESIDE_CRYSTAL_CAVE))
+    OR_1.Add(InsideMap(game_map=ACADEMY_CRYSTAL_CAVE))
+    OR_1.Add(InsideMap(game_map=SEETHEWATER_CAVE))
+    OR_1.Add(InsideMap(game_map=VOLCANO_CAVE))
+    OR_1.Add(InsideMap(game_map=DRAGONBARROW_CAVE))
+    OR_1.Add(InsideMap(game_map=SELLIA_HIDEAWAY))
+    OR_1.Add(InsideMap(game_map=CAVE_OF_THE_FORLORN))
+    OR_1.Add(InsideMap(game_map=COASTAL_CAVE))
+    OR_1.Add(InsideMap(game_map=HIGHROAD_CAVE))
+    OR_1.Add(InsideMap(game_map=PERFUMERS_GROTTO))
+    OR_1.Add(InsideMap(game_map=SAGES_CAVE))
+    OR_1.Add(InsideMap(game_map=ABANDONED_CAVE))
+    OR_1.Add(InsideMap(game_map=GAOL_CAVE))
+    OR_1.Add(InsideMap(game_map=SPIRITCALLER_CAVE))
+    AND_1.Add(OR_1)
+    OR_3.Add(CharacterHasSpecialEffect(PLAYER, 51900))
+    OR_3.Add(CharacterHasSpecialEffect(PLAYER, 51902))
+    OR_3.Add(AttackedWithDamageType(attacked_entity=PLAYER, attacker=4294967295))
+    AND_1.Add(OR_3)
+    AND_1.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 53019))
+    AND_1.Add(FlagDisabled(19001099))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(19001099)
     DisableFlagRange((19001101, 19001199))
     EnableRandomFlagInRange(flag_range=(19001101, 19001199))
-    IfFlagEnabled(OR_2, 19001101)
-    IfFlagDisabled(AND_2, 19001240)
-    IfFlagEnabled(AND_2, 19001102)
-    IfConditionTrue(OR_2, input_condition=AND_2)
+    OR_2.Add(FlagEnabled(19001101))
+    AND_2.Add(FlagDisabled(19001240))
+    AND_2.Add(FlagEnabled(19001102))
+    OR_2.Add(AND_2)
     SkipLinesIfConditionTrue(2, OR_2)
     DisableFlag(19001099)
     Restart()
     DisableFlag(19001099)
     AddSpecialEffect(PLAYER, 53019)
     AwardItemLot(84290, host_only=True)
-    SkipLinesIfFlagEnabled(2, 19001240)
-    EnableFlag(19001240)
-    End()
+    if FlagDisabled(19001240):
+        EnableFlag(19001240)
+        End()
     EnableFlag(19001241)
 
 
 @ContinueOnRest(19001086)
 def Event_19001086():
     """Event 19001086"""
-    IfPlayerHasGood(AND_7, 8430)
+    AND_7.Add(PlayerHasGood(8430))
     SkipLinesIfConditionFalse(2, AND_7)
     AddSpecialEffect(PLAYER, 53020)
     End()
-    EndIfFlagEnabled(19001243)
-    IfCharacterDoesNotHaveSpecialEffect(AND_6, PLAYER, 51900)
-    IfCharacterDoesNotHaveSpecialEffect(AND_6, PLAYER, 51902)
-    IfConditionTrue(MAIN, input_condition=AND_6)
-    IfInsideMap(OR_1, game_map=MORNE_TUNNEL)
-    IfInsideMap(OR_1, game_map=LIMGRAVE_TUNNELS)
-    IfInsideMap(OR_1, game_map=RAYA_LUCARIA_CRYSTAL_TUNNEL)
-    IfInsideMap(OR_1, game_map=OLD_ALTUS_TUNNEL)
-    IfInsideMap(OR_1, game_map=ALTUS_TUNNEL)
-    IfInsideMap(OR_1, game_map=GAEL_TUNNEL)
-    IfInsideMap(OR_1, game_map=SELLIA_CRYSTAL_TUNNEL)
-    IfInsideMap(OR_1, game_map=YELOUGH_ANIX_TUNNEL)
-    IfConditionTrue(AND_1, input_condition=OR_1)
-    IfCharacterHasSpecialEffect(OR_3, PLAYER, 51900)
-    IfCharacterHasSpecialEffect(OR_3, PLAYER, 51902)
-    IfAttackedWithDamageType(OR_3, attacked_entity=PLAYER, attacker=4294967295)
-    IfConditionTrue(AND_1, input_condition=OR_3)
-    IfCharacterDoesNotHaveSpecialEffect(AND_1, PLAYER, 53020)
-    IfFlagDisabled(AND_1, 19001099)
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    if FlagEnabled(19001243):
+        return
+    AND_6.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 51900))
+    AND_6.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 51902))
+    
+    MAIN.Await(AND_6)
+    
+    OR_1.Add(InsideMap(game_map=MORNE_TUNNEL))
+    OR_1.Add(InsideMap(game_map=LIMGRAVE_TUNNELS))
+    OR_1.Add(InsideMap(game_map=RAYA_LUCARIA_CRYSTAL_TUNNEL))
+    OR_1.Add(InsideMap(game_map=OLD_ALTUS_TUNNEL))
+    OR_1.Add(InsideMap(game_map=ALTUS_TUNNEL))
+    OR_1.Add(InsideMap(game_map=GAEL_TUNNEL))
+    OR_1.Add(InsideMap(game_map=SELLIA_CRYSTAL_TUNNEL))
+    OR_1.Add(InsideMap(game_map=YELOUGH_ANIX_TUNNEL))
+    AND_1.Add(OR_1)
+    OR_3.Add(CharacterHasSpecialEffect(PLAYER, 51900))
+    OR_3.Add(CharacterHasSpecialEffect(PLAYER, 51902))
+    OR_3.Add(AttackedWithDamageType(attacked_entity=PLAYER, attacker=4294967295))
+    AND_1.Add(OR_3)
+    AND_1.Add(CharacterDoesNotHaveSpecialEffect(PLAYER, 53020))
+    AND_1.Add(FlagDisabled(19001099))
+    
+    MAIN.Await(AND_1)
+    
     EnableFlag(19001099)
     DisableFlagRange((19001101, 19001199))
     EnableRandomFlagInRange(flag_range=(19001101, 19001199))
-    IfFlagEnabled(OR_2, 19001101)
-    IfFlagDisabled(AND_2, 19001242)
-    IfFlagEnabled(AND_2, 19001102)
-    IfConditionTrue(OR_2, input_condition=AND_2)
+    OR_2.Add(FlagEnabled(19001101))
+    AND_2.Add(FlagDisabled(19001242))
+    AND_2.Add(FlagEnabled(19001102))
+    OR_2.Add(AND_2)
     SkipLinesIfConditionTrue(2, OR_2)
     DisableFlag(19001099)
     Restart()
     DisableFlag(19001099)
     AddSpecialEffect(PLAYER, 53020)
     AwardItemLot(84300, host_only=True)
-    SkipLinesIfFlagEnabled(2, 19001242)
-    EnableFlag(19001242)
-    End()
+    if FlagDisabled(19001242):
+        EnableFlag(19001242)
+        End()
     EnableFlag(19001243)
 
 
@@ -11728,24 +12688,32 @@ def Event_19001086():
 def Event_19001088():
     """Event 19001088"""
     RemoveSpecialEffect(PLAYER, 53030)
-    IfCharacterHasSpecialEffect(AND_1, PLAYER, 53019)
-    IfTimeOfDay(AND_1, earliest=(6, 0, 0), latest=(19, 0, 0))
-    IfConditionTrue(MAIN, input_condition=AND_1)
+    AND_1.Add(CharacterHasSpecialEffect(PLAYER, 53019))
+    AND_1.Add(TimeOfDay(time=(6, 0, 0)))
+    
+    MAIN.Await(AND_1)
+    
     AddSpecialEffect(PLAYER, 53030)
-    IfCharacterHasSpecialEffect(AND_2, PLAYER, 53019)
-    IfTimeOfDay(AND_2, earliest=(6, 0, 0), latest=(19, 0, 0))
-    IfConditionFalse(MAIN, input_condition=AND_2)
+    AND_2.Add(CharacterHasSpecialEffect(PLAYER, 53019))
+    AND_2.Add(TimeOfDay(time=(6, 0, 0)))
+    
+    MAIN.Await(not AND_2)
+    
     Restart()
 
 
 @ContinueOnRest(19001500)
-def Event_19001500(_, special_effect__special_effect_id: int, special_effect: int, item: int, text: int):
+def Event_19001500(_, special_effect: int, special_effect_1: int, item: int, text: int):
     """Event 19001500"""
-    IfCharacterHasSpecialEffect(AND_1, PLAYER, special_effect)
-    IfCharacterHasSpecialEffect(AND_1, PLAYER, special_effect__special_effect_id)
-    IfConditionTrue(MAIN, input_condition=AND_1)
-    RemoveSpecialEffect(PLAYER, special_effect__special_effect_id)
+    AND_1.Add(CharacterHasSpecialEffect(PLAYER, special_effect_1))
+    AND_1.Add(CharacterHasSpecialEffect(PLAYER, special_effect))
+    
+    MAIN.Await(AND_1)
+    
+    RemoveSpecialEffect(PLAYER, special_effect)
     DisplayStatus(text)
     RemoveGoodFromPlayer(item=item, quantity=99)
-    IfCharacterDoesNotHaveSpecialEffect(MAIN, PLAYER, special_effect)
+    
+    MAIN.Await(CharacterDoesNotHaveSpecialEffect(PLAYER, special_effect_1))
+    
     Restart()

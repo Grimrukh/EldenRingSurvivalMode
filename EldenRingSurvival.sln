@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EldenRingSurvival", "EldenRingSurvival\EldenRingSurvival.csproj", "{9FB8FD33-7851-4044-A93C-DA502DD99E0F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Erd-Tools", "Dependencies\Erd-Tools\src\Erd-Tools\Erd-Tools.csproj", "{2BEB9F64-59AC-4E03-9210-95E9FC44934D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoulsFormats", "Dependencies\Erd-Tools\src\SoulsFormats\SoulsFormats\SoulsFormats.csproj", "{7C95EC2A-D2CD-4AC2-87D2-9A4BD6530513}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertyHook", "Dependencies\Erd-Tools\src\PropertyHook\PropertyHook\PropertyHook.csproj", "{18EFF8D2-C4D5-4E18-9A31-38E106BA1CF7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Publish|Any CPU = Publish|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FB8FD33-7851-4044-A93C-DA502DD99E0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FB8FD33-7851-4044-A93C-DA502DD99E0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FB8FD33-7851-4044-A93C-DA502DD99E0F}.Publish|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FB8FD33-7851-4044-A93C-DA502DD99E0F}.Publish|Any CPU.Build.0 = Debug|Any CPU
+		{9FB8FD33-7851-4044-A93C-DA502DD99E0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FB8FD33-7851-4044-A93C-DA502DD99E0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BEB9F64-59AC-4E03-9210-95E9FC44934D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BEB9F64-59AC-4E03-9210-95E9FC44934D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BEB9F64-59AC-4E03-9210-95E9FC44934D}.Publish|Any CPU.ActiveCfg = Publish|Any CPU
+		{2BEB9F64-59AC-4E03-9210-95E9FC44934D}.Publish|Any CPU.Build.0 = Publish|Any CPU
+		{2BEB9F64-59AC-4E03-9210-95E9FC44934D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BEB9F64-59AC-4E03-9210-95E9FC44934D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C95EC2A-D2CD-4AC2-87D2-9A4BD6530513}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C95EC2A-D2CD-4AC2-87D2-9A4BD6530513}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C95EC2A-D2CD-4AC2-87D2-9A4BD6530513}.Publish|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C95EC2A-D2CD-4AC2-87D2-9A4BD6530513}.Publish|Any CPU.Build.0 = Debug|Any CPU
+		{7C95EC2A-D2CD-4AC2-87D2-9A4BD6530513}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C95EC2A-D2CD-4AC2-87D2-9A4BD6530513}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18EFF8D2-C4D5-4E18-9A31-38E106BA1CF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18EFF8D2-C4D5-4E18-9A31-38E106BA1CF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18EFF8D2-C4D5-4E18-9A31-38E106BA1CF7}.Publish|Any CPU.ActiveCfg = Debug|Any CPU
+		{18EFF8D2-C4D5-4E18-9A31-38E106BA1CF7}.Publish|Any CPU.Build.0 = Debug|Any CPU
+		{18EFF8D2-C4D5-4E18-9A31-38E106BA1CF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18EFF8D2-C4D5-4E18-9A31-38E106BA1CF7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1559CCE9-649C-43F0-B294-F93A7AFFCB69}
+	EndGlobalSection
+EndGlobal

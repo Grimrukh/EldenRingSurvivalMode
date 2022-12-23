@@ -1,13 +1,14 @@
-"""Loads Yapped FMG XML and makes some simple changes."""
+"""Loads Yabber FMG XML and makes some simple changes."""
 from xml.etree import ElementTree
 from pathlib import Path
 
 from survival_goods import *
 from yabber import yabber
 
-GAME_ROOT = Path(r"C:\Steam\steamapps\common\ELDEN RING (Modding)\Game")
-ITEM_PATH = GAME_ROOT / r"msg\engus\item-msgbnd-dcx\GR\data\INTERROOT_win64\msg\engUS"
-MENU_PATH = GAME_ROOT / r"msg\engus\menu-msgbnd-dcx\GR\data\INTERROOT_win64\msg\engUS"
+
+ITEM_PATH = Path(r"..\..\EldenRingSurvivalScripts\EldenRingSurvivalScripts\Text\item-msgbnd-dcx\GR\data\INTERROOT_win64\msg\engUS")
+MENU_PATH = Path(r"..\..\EldenRingSurvivalScripts\EldenRingSurvivalScripts\Text\menu-msgbnd-dcx\GR\data\INTERROOT_win64\msg\engUS")
+VANILLA_PATH = Path(r"..\..\EldenRingSurvivalScripts\EldenRingSurvivalScripts\Text\Vanilla")
 
 
 class YabberText:
@@ -43,9 +44,9 @@ class YabberText:
 
 def read_weapon_text():
     return (
-        YabberText(ITEM_PATH / "WeaponName_vanilla.fmg.xml"),
-        YabberText(ITEM_PATH / "WeaponInfo_vanilla.fmg.xml"),
-        YabberText(ITEM_PATH / "WeaponCaption_vanilla.fmg.xml"),
+        YabberText(VANILLA_PATH / "WeaponName.fmg.xml"),
+        YabberText(VANILLA_PATH / "WeaponInfo.fmg.xml"),
+        YabberText(VANILLA_PATH / "WeaponCaption.fmg.xml"),
     )
 
 
@@ -92,10 +93,10 @@ EVENT_TEXT = {
 
 
 def set_goods_text():
-    goods_name = YabberText(ITEM_PATH / "GoodsName_vanilla.fmg.xml")
-    goods_info = YabberText(ITEM_PATH / "GoodsInfo_vanilla.fmg.xml")
-    goods_material_info = YabberText(ITEM_PATH / "GoodsInfo2_vanilla.fmg.xml")
-    goods_caption = YabberText(ITEM_PATH / "GoodsCaption_vanilla.fmg.xml")
+    goods_name = YabberText(VANILLA_PATH / "GoodsName.fmg.xml")
+    goods_info = YabberText(VANILLA_PATH / "GoodsInfo.fmg.xml")
+    goods_material_info = YabberText(VANILLA_PATH / "GoodsInfo2.fmg.xml")
+    goods_caption = YabberText(VANILLA_PATH / "GoodsCaption.fmg.xml")
 
     for goods_dict in ALL_GOODS_DICTS:
         for good_id, good_info in goods_dict.items():
@@ -128,7 +129,7 @@ def set_goods_text():
 
 
 def set_event_text():
-    event_text = YabberText(MENU_PATH / "EventTextForMap_vanilla.fmg.xml")
+    event_text = YabberText(VANILLA_PATH / "EventTextForMap.fmg.xml")
 
     for text_id, text in EVENT_TEXT.items():
         event_text[text_id] = text
@@ -138,7 +139,7 @@ def set_event_text():
 
 
 def set_menu_text():
-    menu_text = YabberText(MENU_PATH / "GR_MenuText_vanilla.fmg.xml")
+    menu_text = YabberText(VANILLA_PATH / "GR_MenuText.fmg.xml")
 
     # TODO: Same text is used in standard Inventory, unfortunately. Probably have to leave it.
     # menu_text[40511] = "Weapons/Ammo"
@@ -153,8 +154,8 @@ def set_all_text():
     # set_menu_text()
 
     # Pack up MSGBNDs with Yabber when done with FMGs.
-    yabber(GAME_ROOT / "msg/engus/item-msgbnd-dcx")
-    yabber(GAME_ROOT / "msg/engus/menu-msgbnd-dcx")
+    yabber(Path(r"..\..\EldenRingSurvivalScripts\EldenRingSurvivalScripts\Text\item-msgbnd-dcx"))
+    yabber(Path(r"..\..\EldenRingSurvivalScripts\EldenRingSurvivalScripts\Text\menu-msgbnd-dcx"))
 
 
 if __name__ == '__main__':

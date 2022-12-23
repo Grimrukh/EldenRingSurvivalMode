@@ -21,8 +21,8 @@ from survival_params import generate_all_params
 from survival_text import set_all_text
 
 
-VANILLA_PATH = Path("C:/Steam/steamapps/common/ELDEN RING (Vanilla)/Game")
-MODDING_PATH = Path("C:/Steam/steamapps/common/ELDEN RING (Modding)/Game")
+VANILLA_PATH = Path("C:/Steam/steamapps/common/ELDEN RING (Vanilla 1.08)/Game")
+MODDING_PATH = Path("C:/Steam/steamapps/common/ELDEN RING (Modding 1.08)/Game")
 
 DO_SURVIVAL = True
 DO_WEAPON_TREE = True
@@ -31,13 +31,20 @@ DIST_PATH = Path("../../dist/GAME (OPTIONS)")
 
 
 def vanilla_common_emevd_to_evs():
-    EMEVD(VANILLA_PATH / "event/common.emevd").write_evs(Path(__file__).parent / "common.evs.py")
+    EMEVD(VANILLA_PATH / "event/common.emevd.dcx").write_evs(Path(__file__).parent / "common.evs.py")
 
 
-def install_regulation():
-    modded_regulation_path = Path(__file__).parent.parent / "regulation.bin"
-    shutil.copy2(modded_regulation_path, MODDING_PATH / "regulation.bin")
-    print("Copied modded `regulation.bin` to game directory.")
+def install_text():
+    set_all_text()
+    for text_type in ("item", "menu"):
+        shutil.copy2(
+            f"../../EldenRingSurvivalScripts/EldenRingSurvivalScripts/Text/{text_type}.msgbnd.dcx",
+            MODDING_PATH / f"msg/engus/{text_type}.msgbnd.dcx",
+        )
+        shutil.copy2(
+            f"../../EldenRingSurvivalScripts/EldenRingSurvivalScripts/Text/{text_type}.msgbnd.dcx",
+            DIST_PATH / f"../Game (SHARED)/msg/engus/{text_type}.msgbnd.dcx",
+        )
 
 
 def install_evs():
@@ -111,7 +118,9 @@ def get_vanilla_common_emevd():
 
 
 if __name__ == '__main__':
+    # vanilla_common_emevd_to_evs()
     # install_all_evs_variants()
+    install_text()
 
     install_evs()
     # generate_all_params()
