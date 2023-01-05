@@ -334,6 +334,11 @@ class Flags(Flag):
     Hour22 = BASE_FLAG + 622
     Hour23 = BASE_FLAG + 623
 
+    # Event slots for setting the game hour back to the last one.
+    MonitorDeath = BASE_FLAG + 648
+    ResetHourOnDeath = BASE_FLAG + 649  # enabled on player death, to tell game to reset time to last monitored
+    ResetHour = BASE_FLAG + 650
+
     # For crafting weapons.
     CraftDummyWeaponEvent = BASE_FLAG + 1000  # 377 event slots
     AllowWeaponUpgradeEvent = BASE_FLAG + 2000  # 377 slots (event slot)

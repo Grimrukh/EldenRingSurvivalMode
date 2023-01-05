@@ -1,7 +1,9 @@
-﻿using System.Diagnostics;
+﻿using System.ComponentModel;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using Erd_Tools;
 using PropertyHook;
+using static EldenRingSurvival.DebugTools;
 
 namespace EldenRingSurvival
 {
@@ -22,6 +24,11 @@ namespace EldenRingSurvival
     internal class FogManager
     {
         public bool InjectionEnabled => LightingInjectionCodeAddr != null;
+        public long? BaseAddress { get; set; } = null;
+
+        static int HasTorchFlag { get; } = 19001584;
+        static int IsOutdoorsFlag { get; } = 19001592;
+        static int HourBaseFlag { get; } = 19001600;  // 0000 midnight (+0), 0100 (+1), ... 2300 (+23)
 
         ErdHook Hook { get; }
         nint Handle => Hook.Handle;
@@ -29,8 +36,7 @@ namespace EldenRingSurvival
 
         PHPointer? LightingInjectionSiteAddr { get; set; } = null;  // found on hook with AOB
         IntPtr? LightingInjectionCodeAddr { get; set; } = null;  // allocated on enable with `GetPrefferedIntPtr()`
-        long? BaseAddress { get; set; } = null;
-
+        
         const long freeAddress = 0x294F600;  // 1.08
 
         // mov [rcx+0x00000120]
@@ -76,7 +82,7 @@ namespace EldenRingSurvival
         void Darkness_OnHooked(object? sender, PHEventArgs e)
         {
             BaseAddress = Process.MainModule?.BaseAddress.ToInt64();
-            Console.WriteLine($"Elden Ring base address: {BaseAddress:X}");
+            DebugPrint($"Elden Ring base address: {BaseAddress:X}");
 
             //EnableFogInjection();
         }
@@ -96,18 +102,26 @@ namespace EldenRingSurvival
             // Read hard-coded event flags to determine which hour the game is currently in, from 0 (midnight) to 23.
             // Returns -1 if no hour flag is active (e.g., game is not loaded) or an error occurs.
 
-            bool playerHasTorch = Hook.IsEventFlag(19001584);
-            Console.WriteLine($"Has Torch: {playerHasTorch}");
-
-            // HACK: Currently checks flag 19001592 and returns 12 (noon) if enabled, so as to disable darkness.
-            bool playerIsOutdoors = Hook.IsEventFlag(19001592);
-            Console.WriteLine($"Is Outdoors: {playerIsOutdoors}");
+            bool playerHasTorch = false;
+            bool playerIsOutdoors = false;
+            try
+            {
+                playerHasTorch = Hook.IsEventFlag(HasTorchFlag);
+                DebugPrint($"Has Torch: {playerHasTorch}");
+                playerIsOutdoors = Hook.IsEventFlag(IsOutdoorsFlag);
+                DebugPrint($"Is Outdoors: {playerIsOutdoors}");
+            }
+            catch (Win32Exception)
+            {
+                // Event flag read error occurred (e.g., game is shutting down).
+                return (-1, false, false);
+            }
 
             int currentHour = -1;
             int[] allHours = new int[24];
             for (int hour = 0; hour < 24; hour++)
             {
-                if (Hook.IsEventFlag(19001600 + hour))
+                if (Hook.IsEventFlag(HourBaseFlag + hour))
                 {
                     allHours[hour] = 1;
                     if (currentHour == -1)
@@ -117,6 +131,7 @@ namespace EldenRingSurvival
                     else
                     {
                         Console.WriteLine($"ERROR: Time of day is ambiguous. Multiple hour flags enabled: at least {currentHour} and {hour}.");
+                        Console.WriteLine("This may be an issue with the mod's event scripts.");
                         return (-1, false, playerIsOutdoors);
                     }
                 }
@@ -131,10 +146,7 @@ namespace EldenRingSurvival
             {
                 hoursString += hour.ToString();
             }
-            Console.WriteLine($"HOUR FLAGS: {hoursString}");
-
-            if (currentHour == -1)
-                Console.WriteLine("ERROR: Could not detect time of day.");
+            DebugPrint($"HOUR FLAGS: {hoursString}");
 
             return (currentHour, playerHasTorch, playerIsOutdoors);
         }
@@ -158,7 +170,7 @@ namespace EldenRingSurvival
 
             IntPtr siteAddr = LightingInjectionSiteAddr.Resolve() + 21;
             long siteAddrLong = siteAddr.ToInt64();
-            Console.WriteLine($"Injection site address: {siteAddrLong:X}");
+            DebugPrint($"Injection site address: {siteAddrLong:X}");
 
             // TODO: Need to construct injection code first, so we know how much space we need to allocate.
             MemBuilder lightingCode = GetInjectionCode();
@@ -172,13 +184,13 @@ namespace EldenRingSurvival
                 Console.WriteLine($"ERROR: Could not allocate memory of size {lightingCode.Offset} for lighting injection code.");
                 return;
             }
-            Console.WriteLine($"Lighting injection code address allocated: {codeAddr:X}");
+            DebugPrint($"Lighting injection code address allocated: {codeAddr:X}");
             
             byte[] lightingCodeBytes = FillInjectionCodeOffsets(lightingCode, siteAddr, codeAddr);
-            Console.WriteLine($"Final injection code: {BitConverter.ToString(lightingCodeBytes)}");
+            DebugPrint($"Final injection code: {BitConverter.ToString(lightingCodeBytes)}");
 
             //byte[] currentMem = Kernel32.ReadBytes(Handle, FogInjectionAddr.Resolve(), 7);
-            //Console.WriteLine($"Vanilla fog function bytes: {BitConverter.ToString(currentMem)}");
+            //DebugPrint($"Vanilla fog function bytes: {BitConverter.ToString(currentMem)}");
 
             long codeAddrLong = codeAddr.ToInt64();
 
@@ -198,7 +210,7 @@ namespace EldenRingSurvival
             {
                 // Script write failed. Do NOT inject, or it will crash the game.
                 // Check if code script already seems to be there (based on first four bytes).
-                Console.WriteLine($"Failed to write Elden Ring Fog assembly. Error: {Marshal.GetLastWin32Error()}");
+                Console.WriteLine($"ERROR: Failed to write Elden Ring Fog assembly. Error: {Marshal.GetLastWin32Error()}");
                 byte[] codeExisting = Kernel32.ReadBytes(Handle, codeAddr, 4);
                 byte[] codeAsmStart = new byte[4];
                 Array.Copy(lightingCodeBytes, 0, codeAsmStart, 0, 4);
@@ -213,7 +225,7 @@ namespace EldenRingSurvival
             // Code was written successfully, so we now try to write the code jump instruction to the injection site.
             if (!Kernel32.WriteBytes(Handle, siteAddr, siteReplacementBytes))
             {
-                Console.WriteLine($"Failed to inject Elden Ring Fog assembly into game function. Error: {Marshal.GetLastWin32Error()}");
+                Console.WriteLine($"ERROR: Failed to inject Elden Ring Fog assembly into game function. Error: {Marshal.GetLastWin32Error()}");
                 Console.WriteLine("Fog effects will probably not work.");
                 Hook.Free(codeAddr);  // free injected code
             }
@@ -427,7 +439,7 @@ namespace EldenRingSurvival
                 bool writeSuccess = Kernel32.WriteBytes(Handle, valuePtr, value);
 #if DEBUG
                 if (!writeSuccess)
-                    Console.WriteLine($"Attempted to set {name} to {BitConverter.ToString(value)}, but failed.");
+                    Console.WriteLine($"ERROR: Attempted to set {name} to {BitConverter.ToString(value)}, but failed.");
                 //else
                 //    Console.WriteLine($"    --> {name} set to {BitConverter.ToString(value)}.");
 #endif
@@ -436,11 +448,11 @@ namespace EldenRingSurvival
             return true;
         }
 
+        /// <summary>
+        /// Free new memory and write original ASM back to fog function address.
+        /// </summary>
         public void DisableFogInjection()
         {
-            // Free newmem and write original ASM back to fog function address.
-            // Not actually used, but here for reference.
-
             if (LightingInjectionCodeAddr == null)
             {
                 return;  // nothing to disable

@@ -528,31 +528,6 @@ def Constructor():
     Event_9943()
     Event_9940()
     Event_1700()
-    Event_19001550(0, hour=0, flag=19001600)
-    Event_19001550(1, hour=1, flag=19001601)
-    Event_19001550(2, hour=2, flag=19001602)
-    Event_19001550(3, hour=3, flag=19001603)
-    Event_19001550(4, hour=4, flag=19001604)
-    Event_19001550(5, hour=5, flag=19001605)
-    Event_19001550(6, hour=6, flag=19001606)
-    Event_19001550(7, hour=7, flag=19001607)
-    Event_19001550(8, hour=8, flag=19001608)
-    Event_19001550(9, hour=9, flag=19001609)
-    Event_19001550(10, hour=10, flag=19001610)
-    Event_19001550(11, hour=11, flag=19001611)
-    Event_19001550(12, hour=12, flag=19001612)
-    Event_19001550(13, hour=13, flag=19001613)
-    Event_19001550(14, hour=14, flag=19001614)
-    Event_19001550(15, hour=15, flag=19001615)
-    Event_19001550(16, hour=16, flag=19001616)
-    Event_19001550(17, hour=17, flag=19001617)
-    Event_19001550(18, hour=18, flag=19001618)
-    Event_19001550(19, hour=19, flag=19001619)
-    Event_19001550(20, hour=20, flag=19001620)
-    Event_19001550(21, hour=21, flag=19001621)
-    Event_19001550(22, hour=22, flag=19001622)
-    Event_19001550(23, hour=23, flag=19001623)
-    Event_19001583()
     Event_19001040()
     Event_19001041()
     Event_19001042()
@@ -562,6 +537,58 @@ def Constructor():
     Event_19001046()
     Event_19001047()
     Event_19001398()
+    Event_19001650(0, hour=0, flag=19001600)
+    Event_19001650(1, hour=1, flag=19001601)
+    Event_19001650(2, hour=2, flag=19001602)
+    Event_19001650(3, hour=3, flag=19001603)
+    Event_19001650(4, hour=4, flag=19001604)
+    Event_19001650(5, hour=5, flag=19001605)
+    Event_19001650(6, hour=6, flag=19001606)
+    Event_19001650(7, hour=7, flag=19001607)
+    Event_19001650(8, hour=8, flag=19001608)
+    Event_19001650(9, hour=9, flag=19001609)
+    Event_19001650(10, hour=10, flag=19001610)
+    Event_19001650(11, hour=11, flag=19001611)
+    Event_19001650(12, hour=12, flag=19001612)
+    Event_19001650(13, hour=13, flag=19001613)
+    Event_19001650(14, hour=14, flag=19001614)
+    Event_19001650(15, hour=15, flag=19001615)
+    Event_19001650(16, hour=16, flag=19001616)
+    Event_19001650(17, hour=17, flag=19001617)
+    Event_19001650(18, hour=18, flag=19001618)
+    Event_19001650(19, hour=19, flag=19001619)
+    Event_19001650(20, hour=20, flag=19001620)
+    Event_19001650(21, hour=21, flag=19001621)
+    Event_19001650(22, hour=22, flag=19001622)
+    Event_19001650(23, hour=23, flag=19001623)
+    Event_19001648()
+    Wait(0.5)
+    DisableFlag(19001649)
+    Event_19001550(0, earliest_hour__latest_hour=0, flag=19001600)
+    Event_19001550(1, earliest_hour__latest_hour=1, flag=19001601)
+    Event_19001550(2, earliest_hour__latest_hour=2, flag=19001602)
+    Event_19001550(3, earliest_hour__latest_hour=3, flag=19001603)
+    Event_19001550(4, earliest_hour__latest_hour=4, flag=19001604)
+    Event_19001550(5, earliest_hour__latest_hour=5, flag=19001605)
+    Event_19001550(6, earliest_hour__latest_hour=6, flag=19001606)
+    Event_19001550(7, earliest_hour__latest_hour=7, flag=19001607)
+    Event_19001550(8, earliest_hour__latest_hour=8, flag=19001608)
+    Event_19001550(9, earliest_hour__latest_hour=9, flag=19001609)
+    Event_19001550(10, earliest_hour__latest_hour=10, flag=19001610)
+    Event_19001550(11, earliest_hour__latest_hour=11, flag=19001611)
+    Event_19001550(12, earliest_hour__latest_hour=12, flag=19001612)
+    Event_19001550(13, earliest_hour__latest_hour=13, flag=19001613)
+    Event_19001550(14, earliest_hour__latest_hour=14, flag=19001614)
+    Event_19001550(15, earliest_hour__latest_hour=15, flag=19001615)
+    Event_19001550(16, earliest_hour__latest_hour=16, flag=19001616)
+    Event_19001550(17, earliest_hour__latest_hour=17, flag=19001617)
+    Event_19001550(18, earliest_hour__latest_hour=18, flag=19001618)
+    Event_19001550(19, earliest_hour__latest_hour=19, flag=19001619)
+    Event_19001550(20, earliest_hour__latest_hour=20, flag=19001620)
+    Event_19001550(21, earliest_hour__latest_hour=21, flag=19001621)
+    Event_19001550(22, earliest_hour__latest_hour=22, flag=19001622)
+    Event_19001550(23, earliest_hour__latest_hour=23, flag=19001623)
+    Event_19001583()
     Event_19001000()
     Event_19001001()
     Event_19001489()
@@ -10433,21 +10460,38 @@ def Event_19001398():
 
 
 @ContinueOnRest(19001550)
-def Event_19001550(_, hour: uchar, flag: uint):
+def Event_19001550(_, earliest_hour__latest_hour: uchar, flag: uint):
     """Event 19001550"""
     DisableFlag(flag)
     
-    MAIN.Await(TimeOfDay(time=(hour, 0, 0)))
+    MAIN.Await(TimeOfDayInRange(earliest=(earliest_hour__latest_hour, 0, 0), latest=(earliest_hour__latest_hour, 59, 59)))
     
     DisableFlagRange((19001600, 19001623))
     EnableFlag(flag)
-    DisplayBanner(BannerType.BloodyFingerVanquished)
-    AND_1.Add(TimeOfDay(time=(hour, 0, 0)))
+    AND_1.Add(TimeOfDayInRange(earliest=(earliest_hour__latest_hour, 0, 0), latest=(earliest_hour__latest_hour, 59, 59)))
     
     MAIN.Await(not AND_1)
     
     Wait(1.0)
     Restart()
+
+
+@ContinueOnRest(19001650)
+def Event_19001650(_, hour: uchar, flag: uint):
+    """Event 19001650"""
+    if FlagDisabled(flag):
+        return
+    if FlagDisabled(19001649):
+        return
+    SetCurrentTime(
+        time=(hour, 0, 0),
+        fade_transition=False,
+        wait_for_completion=False,
+        show_clock=False,
+        clock_start_delay=0.0,
+        clock_change_duration=0.0,
+        clock_finish_delay=0.0,
+    )
 
 
 @ContinueOnRest(19001583)
@@ -10462,6 +10506,14 @@ def Event_19001583():
     MAIN.Await(CharacterDoesNotHaveSpecialEffect(PLAYER, 415))
     
     Restart()
+
+
+@ContinueOnRest(19001648)
+def Event_19001648():
+    """Event 19001648"""
+    MAIN.Await(HealthRatio(PLAYER) <= 0.0)
+    
+    EnableFlag(19001649)
 
 
 @ContinueOnRest(15003999)

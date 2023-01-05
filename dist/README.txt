@@ -7,11 +7,13 @@
   ____) | |__| | | \ \  \  /   _| |_   \  / ____ \| |____  | |  | | |__| | |__| | |____ 
  |_____/ \____/|_|  \_\  \/   |_____|   \/_/    \_\______| |_|  |_|\____/|_____/|______|
 
-                                         v1.4
+                                         v1.6
                                     
                                      by Grimrukh
                        
               with special thanks to @JanZielasko, @Thens_DeS, @king_bore_haha
+              
+                 --- DARKNESS EXECUTABLE REQUIRES GAME VERSION 1.08.1 ---
 
 === INSTRUCTIONS ===
 
@@ -53,13 +55,22 @@
        
             [You can find UXM on the FromSoft modding Discord server.]
 
-3) Run `SurvivalModeDarkness.exe`. This is a simple companion program that 
-   will connect to your Elden Ring game and create the darkness effects. If
-   you don't want the darkness effects, you can simply skip this step. If
-   you close the program accidentally, you can restart it without needing
-   to restart or even quit out of your Elden Ring game. Note that darkness
-   effects will ONLY work if you run this executable AND you have installed
-   one of the bottom subfolders in `Game (OPTIONS)` (they all have darkness).
+3) Run `EldenRingSurvival.exe` in the 'Darkess Executable' folder. This is 
+   a simple companion program that will connect to your Elden Ring game and 
+   create the darkness effects. If you don't want the darkness effects, you
+   can simply skip this step. If you close the program accidentally, you 
+   can restart it without needing to restart or even quit out of your Elden 
+   Ring game -- however, if you close Elden Ring or it crashes, you should
+   close the companion program and start a fresh instance of it when re-opening
+   the game. 
+   
+   Note that darkness effects will ONLY work if you run this executable AND 
+   you have installed one of the bottom subfolders in `Game (OPTIONS)` (they 
+   all have darkness).
+   
+   The darkness executable is ONLY compatible for the Elden Ring version in
+   the header above. I will try to keep it updated as new Elden Ring patches are
+   released (the change required on my end is fairly simple).
 
 4) Run Elden Ring, either through `launchmod_eldenring.bat` if using Mod
    Engine 2 (which disables anticheat) or through Steam if using UXM
@@ -71,7 +82,7 @@ Thank you for playing!
 
 This mod was created as part of my annual tradition of making an off-the-wall
 mod for LobosJr's St Jude charity drive in May. It's also the first mod I've
-made for a game other than the original Dark Souls.
+made for a game other than the original Dark Souls or Bloodborne.
 
 If you like my mods, and want to support my ongoing activities (including
 Dark Souls: Nightfall), you can become a supporter on Patreon!
@@ -98,6 +109,7 @@ YouTube channel.
 
 Other legends creating FromSoft modding tools used by this mod:
 
+    Nordgaren (ErdTools)
     TKGP (SoulsFormats, PropertyHook, Yapped)
     vawser (Yapped for Elden Ring)
     katalash (Mod Engine 2)

@@ -1,4 +1,5 @@
 ﻿using Erd_Tools;
+using static EldenRingSurvival.DebugTools;
 
 namespace EldenRingSurvival
 {
@@ -13,6 +14,7 @@ namespace EldenRingSurvival
         }
 
         static int DarknessDrawTiming { get; } = 2;  // 'Show VFX'
+        static int UpdateIntervalMs { get; } = 400;  // milliseconds between darkness update checks
 
         static readonly Dictionary<DarknessLevel, Dictionary<string, float>> DarknessPresets = new()
         {
@@ -79,14 +81,7 @@ namespace EldenRingSurvival
         static FogManager? Fog { get; set; }
 
         static DarknessLevel CurrentDarknessLevel { get; set; } = DarknessLevel.None;
-        const bool doDebugPrint = true;
-
-        static void DebugPrint(string msg)
-        {
-            if (doDebugPrint)
-                Console.WriteLine(msg);
-        }
-
+        
         static string TitleText { get; } = @"
 
                                   E L D E N   R I N G 
@@ -103,11 +98,25 @@ namespace EldenRingSurvival
                        
               with special thanks to @JanZielasko, @Thens_DeS, @king_bore_haha
 
+                         --- REQUIRES GAME VERSION 1.08.1 ---
+
         Keep this companion app running alongside Elden Ring to create the enhanced
         darkness at night. If you don't want darkness, you can simply play without
         running this program. If you ONLY want darkness, make sure you are using the
         modded files from the triple-DISABLED subfolder in `Game (OPTIONS)` in addition 
         to running this app.
+
+        This mod requires the usage of free memory inside the game process, the address
+        of which is liable to change whenever the game executable is updated (and I
+        don't yet trust my tools to automatically find free memory). I will update the
+        mod when the game version updates -- if you run it with a different version, it
+        will probably crash your game. See the latest compatible version above.
+
+        NOTE: As memory injection is fairly fragile, I highly recommend that you only
+        run this program AFTER opening Elden Ring (even just to the main menu), and that
+        you close and start a fresh run of this program each time the game process is
+        launched. Otherwise, this program may have trouble cleaning up information about
+        the previous Elden Ring process and cause the new process to crash on startup.
 ";
 
         [STAThread]
@@ -124,7 +133,10 @@ namespace EldenRingSurvival
             Console.WriteLine("\nSearching for running ELDEN RING process...");
             while (!Hook.Hooked)
                 Thread.Sleep(100);
-            Console.WriteLine("--> Connected to ELDEN RING successfully.");
+            Console.WriteLine("--> Connected to ELDEN RING successfully. Acquiring base address...");
+            while (Fog.BaseAddress == null)
+                Thread.Sleep(100);
+            Console.WriteLine("--> ELDEN RING base address acquired.");
 
             bool lastHasTorch = false;
 
@@ -136,12 +148,28 @@ namespace EldenRingSurvival
                     Console.WriteLine("\nLost game connection. Waiting to reconnect...");
                     while (!Hook.Hooked)
                         Thread.Sleep(100);
-                    Console.WriteLine("--> Reconnected to ELDEN RING successfully.");
+                    Console.WriteLine("--> Reconnected to ELDEN RING successfully. Acquiring base address...");
+                    while (Fog.BaseAddress == null)
+                        Thread.Sleep(100);
+                    Console.WriteLine("--> ELDEN RING base address acquired.");
                 }
 
                 var (hour, hasTorch, isOutdoors) = Fog.GetIngameHourTorchOutdoors();
                 DebugPrint($"Fog injection enabled? {Fog.InjectionEnabled}");
-                DebugPrint($"Hour = {hour} | Torch = {hasTorch} | Outdoors = {isOutdoors}");
+                
+                // This carriage-return message is shown only in release build.
+                if (!DoDebugPrint)
+                {
+                    if (hour == -1)
+                    {
+                        Console.Write($"Hour: ????? | Torch = {hasTorch} | Outdoors = {isOutdoors}        \r");
+                    }
+                    else
+                    {
+                        Console.Write($"Hour: {hour:00}:00 | Torch = {hasTorch} | Outdoors = {isOutdoors}        \r");
+                    }
+                }
+                    
 
                 if (hour == -1)
                 {
@@ -199,7 +227,8 @@ namespace EldenRingSurvival
                     }
                 }
                 lastHasTorch = hasTorch;
-                Thread.Sleep(500);  // 0.5 sec
+                
+                Thread.Sleep(UpdateIntervalMs);
             }
         }
 
@@ -336,7 +365,7 @@ namespace EldenRingSurvival
                 }
                 else
                 {
-                    Console.WriteLine($"ERROR: Could not get original fog values.");
+                    Console.WriteLine("ERROR: Could not get original fog values.");
                 }
                 return;
             }

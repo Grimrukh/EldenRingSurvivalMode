@@ -28,6 +28,55 @@ def Constructor():
     # endregion
 
     # DARKNESS
+
+
+    # SHARED
+    # region Map area checks
+    MonitorInLimgrave()
+    MonitorInLiurnia()
+    MonitorInCaelid()
+    MonitorInAltus()
+    MonitorInMtGelmir()
+    MonitorInMountaintops()
+    MonitorInGenericDungeon()
+    MonitorInLegacyDungeon()
+    MonitorOutdoors()
+    # endregion
+
+    # DEBUG_Hour18()
+    # DEBUG_AlternateFlag()
+
+    # region Time Reset
+    ResetHour(0, 0, Flags.Hour0)
+    ResetHour(1, 1, Flags.Hour1)
+    ResetHour(2, 2, Flags.Hour2)
+    ResetHour(3, 3, Flags.Hour3)
+    ResetHour(4, 4, Flags.Hour4)
+    ResetHour(5, 5, Flags.Hour5)
+    ResetHour(6, 6, Flags.Hour6)
+    ResetHour(7, 7, Flags.Hour7)
+    ResetHour(8, 8, Flags.Hour8)
+    ResetHour(9, 9, Flags.Hour9)
+    ResetHour(10, 10, Flags.Hour10)
+    ResetHour(11, 11, Flags.Hour11)
+    ResetHour(12, 12, Flags.Hour12)
+    ResetHour(13, 13, Flags.Hour13)
+    ResetHour(14, 14, Flags.Hour14)
+    ResetHour(15, 15, Flags.Hour15)
+    ResetHour(16, 16, Flags.Hour16)
+    ResetHour(17, 17, Flags.Hour17)
+    ResetHour(18, 18, Flags.Hour18)
+    ResetHour(19, 19, Flags.Hour19)
+    ResetHour(20, 20, Flags.Hour20)
+    ResetHour(21, 21, Flags.Hour21)
+    ResetHour(22, 22, Flags.Hour22)
+    ResetHour(23, 23, Flags.Hour23)
+    MonitorDeathForHourReset()
+
+    # Wait for time reset events above to take effect before monitoring hour.
+    Wait(0.5)
+    DisableFlag(Flags.ResetHourOnDeath)
+
     # region Time of Day / Torch Monitors
     MonitorHour(0, 0, Flags.Hour0)
     MonitorHour(1, 1, Flags.Hour1)
@@ -55,22 +104,6 @@ def Constructor():
     MonitorHour(23, 23, Flags.Hour23)
     MonitorPlayerTorch()
     # endregion
-
-    # SHARED
-    # region Map area checks
-    MonitorInLimgrave()
-    MonitorInLiurnia()
-    MonitorInCaelid()
-    MonitorInAltus()
-    MonitorInMtGelmir()
-    MonitorInMountaintops()
-    MonitorInGenericDungeon()
-    MonitorInLegacyDungeon()
-    MonitorOutdoors()
-    # endregion
-
-    # DEBUG_Hour18()
-    # DEBUG_AlternateFlag()
 
 
 # --- MAP CHECKS ---
@@ -592,17 +625,34 @@ def MonitorOutdoors():
 def MonitorHour(_, hour: uchar, hour_flag: int):
     DisableFlag(hour_flag)
 
-    IfTimeOfDay(0, (hour, 0, 0), (hour, 59, 59))
+    IfTimeOfDayInRange(0, (hour, 0, 0), (hour, 59, 59))
     DisableFlagRange((Flags.Hour0, Flags.Hour23))
     EnableFlag(hour_flag)
-    DisplayBanner(BannerType.BloodyFingerVanquished)  # TODO: Remove.
+    # DisplayBanner(BannerType.BloodyFingerVanquished)  # TODO: Remove.
 
     # Wait for it to NOT be this hour before restarting to check again.
-    IfTimeOfDay(1, (hour, 0, 0), (hour, 59, 59))
+    IfTimeOfDayInRange(1, (hour, 0, 0), (hour, 59, 59))
     IfConditionFalse(0, 1)
-    DisplayBanner(BannerType.DuelistVanquished)  # TODO: Remove.
+    # DisplayBanner(BannerType.DuelistVanquished)  # TODO: Remove.
     Wait(1.0)
     return RESTART
+
+
+@ContinueOnRest(Flags.ResetHour)
+def ResetHour(_, hour: uchar, hour_flag: int):
+    """If `hour_flag` is enabled, set time to `hour`. Only checked once."""
+    EndIfFlagDisabled(hour_flag)
+    EndIfFlagDisabled(Flags.ResetHourOnDeath)
+
+    SetCurrentTime(
+        time=(hour, 0, 0),
+        fade_transition=False,
+        wait_for_completion=False,
+        show_clock=False,
+        clock_start_delay=0.0,
+        clock_change_duration=0.0,
+        clock_finish_delay=0.0,
+    )
 
 
 @ContinueOnRest(Flags.MonitorPlayerTorch)
@@ -613,6 +663,13 @@ def MonitorPlayerTorch():
     EnableFlag(Flags.PlayerHasTorch)
     IfPlayerDoesNotHaveSpecialEffect(0, 415)
     return RESTART
+
+
+@ContinueOnRest(Flags.MonitorDeath)
+def MonitorDeathForHourReset():
+    """Enables a flag when player's health is zero."""
+    IfHealthRatioLessThanOrEqual(0, PLAYER, 0.0)
+    EnableFlag(Flags.ResetHourOnDeath)
 
 
 @ContinueOnRest(15003999)

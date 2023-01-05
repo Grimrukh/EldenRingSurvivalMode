@@ -1,0 +1,100 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "EldenRingSurvival/1.0.0": {
+        "dependencies": {
+          "Erd-Tools": "1.0.0",
+          "SoulsFormats": "1.0.0"
+        },
+        "runtime": {
+          "EldenRingSurvival.dll": {}
+        }
+      },
+      "keystoneengine.csharp/0.9.1.1": {
+        "runtime": {
+          "lib/netstandard2.0/Keystone.Net.dll": {
+            "assemblyVersion": "0.9.1.1",
+            "fileVersion": "0.9.1.1"
+          }
+        }
+      },
+      "Microsoft.NETCore.Platforms/3.1.0": {},
+      "System.Text.Encoding.CodePages/4.7.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.1.0"
+        }
+      },
+      "Erd-Tools/1.0.0": {
+        "dependencies": {
+          "PropertyHook": "1.0.0",
+          "SoulsFormats": "1.0.0",
+          "keystoneengine.csharp": "0.9.1.1"
+        },
+        "runtime": {
+          "Erd-Tools.dll": {}
+        }
+      },
+      "PropertyHook/1.0.0": {
+        "runtime": {
+          "PropertyHook.dll": {}
+        }
+      },
+      "SoulsFormats/1.0.0": {
+        "dependencies": {
+          "System.Text.Encoding.CodePages": "4.7.0"
+        },
+        "runtime": {
+          "SoulsFormats.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EldenRingSurvival/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "keystoneengine.csharp/0.9.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zDGl3WRslq4J/T/4gaDw8lv//DSnZQQpBwAFnQ1n6wljPW6DX8wB5dsZNAY1aBPXI34xt7IATNFr7xI6zP9LrQ==",
+      "path": "keystoneengine.csharp/0.9.1.1",
+      "hashPath": "keystoneengine.csharp.0.9.1.1.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Platforms/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
+      "path": "microsoft.netcore.platforms/3.1.0",
+      "hashPath": "microsoft.netcore.platforms.3.1.0.nupkg.sha512"
+    },
+    "System.Text.Encoding.CodePages/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aeu4FlaUTemuT1qOd1MyU4T516QR4Fy+9yDbwWMPHOHy7U8FD6SgTzdZFO7gHcfAPHtECqInbwklVvUK4RHcNg==",
+      "path": "system.text.encoding.codepages/4.7.0",
+      "hashPath": "system.text.encoding.codepages.4.7.0.nupkg.sha512"
+    },
+    "Erd-Tools/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PropertyHook/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SoulsFormats/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

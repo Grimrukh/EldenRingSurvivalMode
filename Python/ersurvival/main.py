@@ -120,7 +120,7 @@ def get_vanilla_common_emevd():
 if __name__ == '__main__':
     # vanilla_common_emevd_to_evs()
     # install_all_evs_variants()
-    install_text()
+    # install_text()
 
     install_evs()
     # generate_all_params()
